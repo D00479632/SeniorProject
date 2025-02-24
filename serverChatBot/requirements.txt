@@ -1,0 +1,10 @@
+transformers
+langchain
+langchain-huggingface
+pinecone
+langchain-core 
+langgraph>0.2.27
+-qU "langchain[groq]"
+torch
+request
+accelerate
