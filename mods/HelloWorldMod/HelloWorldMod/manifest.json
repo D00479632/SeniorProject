@@ -1,0 +1,10 @@
+{
+  "Name": "HelloWorldMod",
+  "Author": "Paula",
+  "Version": "0.0.1",
+  "Description": "Hello world to display my name",
+  "UniqueID": "Paula.HelloWorldMod",
+  "EntryDll": "HelloWorldMod.dll",
+  "MinimumApiVersion": "4.0.0",
+  "UpdateKeys": []
+}

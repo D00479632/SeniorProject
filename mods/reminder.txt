@@ -1,0 +1,6 @@
+Because of some software update when you try to use the "install on
+macOS.command" it pops up an error and tells you that it cannot be opened
+because its from an unidentified developer. To fix this, go into the settings
+and under Privacy and Security tab and scroll down, somewhere there should 
+be an "Open anyways". Once you have followed these steps just keep following the
+instructions on "https://stardewvalleywiki.com/Modding:Installing_SMAPI_on_Mac"

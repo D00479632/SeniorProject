@@ -1,0 +1,10 @@
+{
+  "Name": "PythonServer",
+  "Author": "Paula",
+  "Version": "0.0.1",
+  "Description": "Mod connects to python server to send info.",
+  "UniqueID": "Paula.PythonServer",
+  "EntryDll": "PythonServer.dll",
+  "MinimumApiVersion": "4.1.0",
+  "UpdateKeys": []
+}
