@@ -1,0 +1,9 @@
+{
+  "Name": "MenuMod",
+  "Author": "patatotama",
+  "Version": "1.0.0",
+  "Description": "Change the menu with Stardew UI",
+  "UniqueID": "patatotama.MenuMod",
+  "EntryDll": "MenuMod.dll",
+  "UpdateKeys": []
+}
