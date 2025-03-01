@@ -39,11 +39,5 @@ The Stardew Valley Assistant is a mod designed to enhance gameplay by providing 
 - Expanded support for more game mechanics
 - Additional language support for broader accessibility
 
-## Contributions
-Contributions are welcome! If you'd like to contribute, please submit a pull request or open an issue on the project's repository.
-
-## Contact
-For questions or suggestions, feel free to reach out via the project's GitHub repository.
-
 ---
 Note: This is not the final README, as some aspects of the project may change throughout development.
