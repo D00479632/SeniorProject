@@ -1,0 +1,50 @@
+Jump to navigation
+Jump to search
+Dried Mushrooms
+A package of gourmet mushrooms.
+Information
+Source Artisan Goods
+Sell Price (7.5 × mushroom Base Price) + 25
+Artisan Goods
+Equipment
+Dehydrator
+Processing Time
+1750m (≈1d)
+Ingredients Any positive energy mushrooms (5)
+Dried Mushrooms are an Artisan Good made from placing mushrooms (except for Red Mushroom) inside a Dehydrator, taking one in-game day.
+5 mushrooms of the same quality are required to produce 1 bag of Dried Mushrooms. The amount of energy and health restored from Dried Mushrooms is 3 times the base mushroom Energy/Health restoration. The sell price of Dried Mushrooms depends on the mushrooms used ((7.5 x mushroom Base Price) + 25) total, or ((1.5x mushroom Base Price) + 5) per mushroom used. When the player has the Artisan profession, the sell price changes to ((10.5 x mushroom Base Price) + 35) total, or ((2.1x mushroom Base Price) + 7) per mushroom used.
+Since value is based on mushroom Base Price alone, the actual benefit compared to selling the raw mushrooms will decrease for mushrooms of higher quality. For example, if the Artisan profession is not chosen, iridium quality mushrooms will generally make a loss if dehydrated, and gold quality make a profit of only 5g per mushroom.
+Contents
+1 Recipes
+2 Bundles
+3 Gifting
+4 Quests
+5 Note
+6 History
+Recipes
+Dried Mushrooms are not used in any recipes.
+Bundles
+Dried Mushrooms are not used in any bundles.
+Gifting
+Villager Reactions
+Like  Abigail •  Alex •  Caroline •  Clint •  Demetrius •  Dwarf •  Elliott •  Emily •  Evelyn •  George •  Gus •  Haley •  Harvey •  Jodi •  Krobus •  Leah •  Leo •  Lewis •  Linus •  Marnie •  Maru •  Pam •  Penny •  Pierre •  Robin •  Sam •  Sandy •  Shane •  Willy •  Wizard
+Hate  Jas •  Sebastian •  Vincent
+Quests
+One Dried Mushrooms is requested by the Raccoon at the Giant Stump as part of his third request. It may also be requested as part of any request starting with the sixth.
+Note
+Truffles are not classified as mushrooms and therefore cannot be placed into the Dehydrator.
+History
+1.6: Introduced.
+Artisan Goods
+Bee House Honey
+Cask Beer • Cheese • Goat Cheese • Mead • Pale Ale • Wine
+Cheese Press Cheese • Goat Cheese
+Keg Beer • Coffee • Green Tea • Juice • Mead • Pale Ale • Wine
+Loom Cloth
+Mayonnaise Machine Dinosaur Mayonnaise • Duck Mayonnaise • Mayonnaise • Void Mayonnaise
+Oil Maker Oil • Truffle Oil
+Preserves Jar Aged Roe • Caviar • Jellies and Pickles
+Fish Smoker Smoked Fish
+Dehydrator Dried Mushrooms • Dried Fruit • Raisins
+Misc Maple Syrup • Oak Resin • Pine Tar • Mystic Syrup
+Category: Artisan Goods

@@ -1,0 +1,77 @@
+Jump to navigation
+Jump to search
+Golden Mystery Box
+A blacksmith can open this for you. Who knows what might be inside?
+Information
+Source Fishing Treasure Chests • Mining • Monsters • Panning • Trees • Giant Stump
+Sell Price 0g
+Golden Mystery Boxes are drop crates unlocked after claiming Foraging Mastery and viewing the cutscene with Mr. Qi informing the player that Mystery Boxes can now be found. They are similar to normal Mystery Boxes, and they can be obtained in a variety of ways. With the exception of the Golden Animal Cracker and Auto-Petter, every item in a Golden Mystery Box can also be found in a Mystery Box.
+Golden Mystery Boxes can be cracked by Clint in the Blacksmith shop for 25g, similar to Geodes. However, unlike Geodes, they cannot be broken open using a Geode Crusher.
+Contents
+1 Locations
+2 Contents
+3 Gifting
+4 Bundles
+5 Tailoring
+6 Quests
+7 Trading
+8 References
+9 History
+Locations
+The following table lists the different actions that can spawn a Golden Mystery Box.
+The "Chance" column below indicates the probabilities that the game will attempt to spawn a Golden Mystery Box. When such an attempt is made, the game performs a further check to see if it succeeds. If the player does not have Foraging Mastery, the check will fail. Otherwise, the probability of succeeding is 66% if the player does not have the power obtained from the Book of Mysteries and 88% if they do.[1]
+Also note that the chances of obtaining Golden Mystery Boxes from some of the sources depends on and increases with higher daily luck, and in some cases, with Luck Buffs.
+Activity Chance
+Regular Fishing Treasure Chests [2] 9-17% (dependent on daily luck)
+Golden Fishing Treasure Chests [2] 12-21% (dependent on daily luck)
+Panning [3] 5%
+Shaking trees with seeds [4] 3%
+Monsters [5] 0.01 + (Daily Luck / 10) + (Luck Buffs / 125)
+Breaking containers in the Mines, Skull Cavern, and Volcano Dungeon [6] 0.0081 + (Daily Luck / 15)
+Chopping trees (Each Axe hit) [7] 0.5%
+In addition, Golden Mystery Boxes can be obtained by trading 3 Mystery Boxes at the Giant Stump. There is also a 3.6% chance to obtain 5 Golden Mystery Boxes from a treasure chest in the Skull Cavern if Foraging Mastery has been claimed. This chance is not subject to an additional check for success, but it is slightly increased if Farming Mastery and/or Combat Mastery have not been claimed.[8]
+Contents
+Below is a table of possible contents. All percent chances listed below are assuming that the player has claimed Farming Mastery (for the Golden Animal Cracker) and has already received at least one Book of Mysteries. If Farming Mastery has not been claimed, then the chances for all other available items are slightly increased. If the player has not received their first Book of Mysteries, then the Book Of Stars cannot be obtained from Golden Mystery Boxes, and the Book of Mysteries has an increased chance. See the Book of Mysteries page for more details.
+Item
+Expand
+Chance [9] 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Gifting
+Villager Reactions
+Hate  Abigail •  Alex •  Caroline •  Clint •  Demetrius •  Dwarf •  Elliott •  Emily •  Evelyn •  George •  Gus •  Haley •  Harvey •  Jas •  Jodi •  Kent •  Krobus •  Leah •  Leo •  Lewis •  Linus •  Marnie •  Maru •  Pam •  Penny •  Pierre •  Robin •  Sam •  Sandy •  Sebastian •  Shane •  Vincent •  Willy •  Wizard
+Bundles
+Golden Mystery Box is not used in any bundles.
+Tailoring
+Golden Mystery Box is not used in any tailoring. It can be used in dyeing, serving as a yellow dye at the dye pots located in Emily's and Haley's house, 2 Willow Lane. It can also be used as a gold dye when used in the spool of the Sewing Machine with a dyeable clothing item in the feed.
+Quests
+Golden Mystery Box is not used in any quests.
+Trading
+Twenty Golden Mystery Boxes can be traded to the Raccoon's wife for 1 Magic Rock Candy, after the sixth request from the Raccoon family is completed and Foraging Mastery is claimed.
+References
+↑ See Utility::tryRollMysteryBox in the game code.
+↑
+2.0 2.1 See FishingRod::openTreasureMenuEndFunction in the game code.
+↑ See Pan::getPanItems in the game code.
+↑ See tree::Shake in the game code.
+↑ See GameLocation::monsterDrop in the game code.
+↑ See BreakableContainer::releaseContents in the game code.
+↑ See tree::performToolAction in the game code.
+↑ See MineShaft::getTreasureRoomItem in the game code.
+↑ See Utility::getTreasureFromGeode in the game code.
+History
+1.6: Introduced.
+1.6.4: Can now be traded for Magic Rock Candy at the Giant Stump, and can be obtained from a Mystery Box trade there. Can be obtained from Skull Cavern treasure chests. Slightly reduced chance to find golden mystery boxes. The order of mystery box rewards is now randomized per-player instead of per-save. Golden mystery boxes now have a small chance to yield an Auto-Petter.
+Category: Special items

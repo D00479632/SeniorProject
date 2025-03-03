@@ -1,0 +1,293 @@
+Jump to navigation
+Jump to search
+Emily
+Information
+Birthday  Spring 27
+Lives In Pelican Town
+Address 2 Willow Lane
+Family
+Haley (Sister)
+Marriage Yes
+Clinic Visit  Winter 11
+Loved Gifts
+Amethyst
+Aquamarine
+Cloth
+Emerald
+Jade
+Parrot Egg
+Ruby
+Survival Burger
+Topaz
+Wool
+Contents
+1 Schedule
+2 Relationships
+3 Gifts
+3.1 Love
+3.2 Like
+3.3 Neutral
+3.4 Dislike
+3.5 Hate
+4 Movies & Concessions
+5 Heart Events
+5.1 Anytime
+5.2 Two Hearts
+5.3 Three Hearts
+5.4 Four Hearts
+5.5 Six Hearts
+5.6 Seven Hearts
+5.7 Eight Hearts
+5.8 Ten Hearts
+5.9 Group Ten-Heart Event
+5.10 Fourteen Hearts
+6 Marriage
+7 Quotes
+8 Quests
+9 Portraits
+10 Timeline
+11 Trivia
+12 History
+“ “I'm just working at Gus' to make ends meet... but my real passion is tailoring. I made these clothes from scratch.”
+— Emily
+Emily is a villager who lives in Pelican Town. She's one of the twelve characters available to marry. Her home is south of the town square, right next to Jodi's house, at the address 2 Willow Lane. She works most evenings at The Stardrop Saloon starting at about 4:00 PM.
+Emily loves to make her own clothing, but fabric can be difficult to come by in town. Among her favorite gifts are cloth and wool.
+Schedule
+After the Beach Resort on Ginger Island is unlocked, Emily may randomly spend the day there. After leaving the Island at 6pm, Emily will immediately go home to bed. Emily never visits the Resort on Fall 15, Festival days, or her checkup day at Harvey's Clinic.
+Shown below are Emily's schedules prioritized highest to lowest. For example, if it is raining, that schedule overrides all others below it.
+Desert Festival (As Vendor)
+Spring 15, 16 and 17 (Bus Service Restored)
+Fall 15 (Bus Service Restored)
+Winter 11
+Winter 15
+Green Rain (Year 1)
+Rain
+Tuesday
+Friday (Community Center Restored)
+Regular Schedule
+ Marriage
+Relationships
+Emily lives with her sister Haley, and together they care for their parents' home, who have been traveling the world for the past two years. She works with Gus, who employs her part-time at the saloon.
+She is also friends with Sandy, the two mention each other in dialogues, and she visits The Calico Desert on Sandy's birthday each year. Sandy, at her first meeting with the player, claims to have been aware of the farmer's presence even before access to The Calico Desert was opened, saying that Emily had written to her about the newcomer.
+Several dialogues and cutscenes reveal that Clint has romantic interest in Emily, though he is too shy to tell her.
+She will dance with Shane at the Flower Dance if neither of them are dancing with the player.
+Gifts
+Main article: Friendship
+See also: List of All Gifts
+You can give Emily up to two gifts per week (plus one on her birthday), which will raise or lower her friendship with you. Gifts on her birthday ( 27 Spring) will have 8× effect and show a unique dialogue.
+For loved, liked, or neutral gifts, Emily responds
+“ “Oh, you remembered my birthday! Thanks, <player>! That's really nice of you.”
+For disliked or hated gifts, Emily responds
+“ “Oh, you remembered my birthday! Thanks, <player>! That's really ni--
+...*sniff*...*sniff*... what is that smell?
+... What is this...?”
+Love
+“ “This gift is fabulous! Thank you so much!”
+Amethyst
+“ “Oh, it's beautiful, [Name]! I hope you didn't put yourself in too much danger to get this.”
+“ “Ah, an amethyst! This will protect me on those late nights working at the Saloon.”
+Aquamarine
+“ “Thank you! I'm gonna put this under my pillow, and hopefully I'll dream about the ocean.”
+“ “It's so smooth! When I hold it... I can feel the energy of all the mermaids in the sea. Thank you!”
+Emerald
+“ “Oh!... Heheh... I know exactly why you gave me this stone today. Very interesting...”
+“ “Wow, it's beautiful! This color makes me think of all the spiritual power within the forest... Can you feel that wood energy?”
+Jade
+“ “That's funny, I had a dream that you would give me a piece of jade today!”
+“ “Ooh, it's jade! This is supposed to attract wealth... And who couldn't do with a few extra coins in the pocket?”
+Parrot Egg
+“ “Oh, good, it’s still warm… Poor thing, where’s it’s [sic] mother? *Whisper* ...I’ll be your mother, don’t worry… Poor baby.
+I’m glad you gave this to me, [Name]. I’ll take very good care of it.”
+Ruby
+“ “Wow, look at that color! It matches perfectly with my outfit. ”
+“ “Oh, this is perfect... I've been feeling a little sluggish lately. Rubies are great for energizing the spirit!”
+Stardrop Tea
+“ “ Wow, thank you! I've heard that if you drink this before bed you'll have vivid dreams.”
+Topaz
+“ “Oh, wow... Thank you! This color perfectly captures my mood today.”
+“ “The warm, soothing energy of this stone helps us re-center our thoughts... It's actually just what I needed on a day like this. Thanks!”
+Image Name Description Source Ingredients
+All Universal Loves
+Amethyst A purple variant of quartz. Mining
+Aquamarine A shimmery blue-green gem. Mining
+Cloth A bolt of fine wool cloth. Loom
+Wool (1)
+Emerald A precious stone with a brilliant green color. Mining
+Jade A pale green ornamental stone. Mining
+Parrot Egg Summons a level X parrot companion, who grants you a Y chance to find gold coins when slaying monsters. Trinkets
+Ruby A precious stone that is sought after for its rich color and beautiful luster. Mining
+Survival Burger A convenient snack for the explorer. Cooking
+Bread (1)
+Cave Carrot (1)
+Eggplant (1)
+Topaz Fairly common but still prized for its beauty. Mining
+Wool Soft, fluffy wool. Sheep, Rabbit
+Like
+“ “Thank you! I'm feeling a positive energy from this gift.”
+Image Name Description Source
+All Universal Likes (except Fish Taco, Fried Eel, Ice Cream, Maki Roll, Rice Pudding, Salmon Dinner, Spicy Eel, & Sashimi)
+Daffodil A traditional spring flower that makes a nice gift. Foraging - Spring
+Quartz A clear crystal commonly found in caves and mines. Foraging - The Mines
+Neutral
+“ “Thanks!”
+Image Name Description Source
+All Universal Neutrals (except Wool)
+All Eggs (except Void Egg)*
+All Fruit (except Fruit Tree Fruit & Salmonberry)
+All Milk
+Chanterelle A tasty mushroom with a fruity smell and slightly peppery flavor. Foraging - Fall
+Common Mushroom Slightly nutty, with good texture. Foraging - Fall
+Dandelion Not the prettiest flower, but the leaves make a good salad. Foraging - Spring
+Ginger This sharp, spicy root is said to increase vitality. Foraging - Ginger Island
+Hazelnut That's one big hazelnut! Foraging - Fall
+Leek A tasty relative of the onion. Foraging - Spring
+Magma Cap A very rare mushroom that lives next to pools of lava. Foraging - Volcano Dungeon
+Morel Sought after for its unique nutty flavor. Foraging - Spring
+Purple Mushroom A rare mushroom found deep in caves. Foraging - The Mines
+Snow Yam This little yam was hiding beneath the snow. Foraging - Winter
+Wild Horseradish A spicy root found in the spring. Foraging - Spring
+Winter Root A starchy tuber. Foraging - Winter
+*Note that Dinosaur Eggs are considered Artifacts and not Eggs for gifting purposes.
+Dislike
+“ “Sorry, (Name). I don't like this.”
+Image Name Description Source Ingredients
+All Universal Dislikes (except Parrot Egg)
+Fried Eel Greasy but flavorful. Cooking
+Eel (1)
+Oil (1)
+Ice Cream It's hard to find someone who doesn't like this. Cooking
+Milk (1)
+Sugar (1)
+Rice Pudding It's creamy, sweet, and fun to eat. Cooking
+Milk (1)
+Sugar (1)
+Rice (1)
+Salmonberry A spring-time berry with the flavor of the forest. Foraging - Spring
+Spicy Eel It's really spicy! Be careful. Cooking
+Eel (1)
+Hot Pepper (1)
+Hate
+“ “This gift has a strong negative energy. I can't stand it.”
+Image Name Description Source Ingredients
+All Universal Hates
+Fish Taco It smells delicious. Cooking
+Tuna (1)
+Tortilla (1)
+Red Cabbage (1)
+Mayonnaise (1)
+Holly The leaves and bright red berries make a popular winter decoration. Foraging - Winter
+Maki Roll Fish and rice wrapped in seaweed. Cooking
+Fish (1)
+Seaweed (1)
+Rice (1)
+Salmon Dinner The lemon spritz makes it special. Cooking
+Salmon (1)
+Amaranth (1)
+Kale (1)
+Sashimi Raw fish sliced into thin pieces. Cooking
+Fish (1)
+Movies & Concessions
+Main article: Movie Theater
+Love
+The Miracle At Coldstar Ranch
+Like
+Journey Of The Prairie King: The Motion Picture
+Natural Wonders: Exploring Our Vibrant World
+The Brave Little Sapling
+The Zuzu City Express
+Wumbus
+Dislike
+It Howls In The Rain
+Mysterium
+Love
+Kale Smoothie
+Stardrop Sorbet
+Dislike
+Black Licorice
+Fries
+Joja Cola
+JojaCorn
+Nachos
+Personal Pizza
+Popcorn
+Salted Peanuts
+Like
+Everything else
+Heart Events
+Anytime
+At any friendship level greater than zero friendship points, you may receive a gift in the mail from Emily. The chance of receiving a gift in the mail increases as your friendship with Emily increases.
+Details 
+Two Hearts
+Enter Emily's house when she's there.
+Details 
+Three Hearts
+After reaching 3 hearts with Emily she will send you a recipe in the mail.
+Details 
+
+
+Four Hearts
+Enter town on a sunny day. Cannot be triggered in winter.
+Details 
+Six Hearts
+Enter Emily's house when she's there.
+Details 
+Seven Hearts
+After reaching 7 hearts with Emily she will send you a recipe in the mail.
+Details 
+
+
+Eight Hearts
+A letter in the mail will invite the player to the Mayor's Manor that day during open hours. The event will be available on subsequent days if not seen the same day as the letter arrives.
+Note: This event will not trigger until the player has seen Emily's 6-Heart Event.
+Details 
+Ten Hearts
+A letter will invite the player to meet Emily in the Secret Woods after 10pm that night.
+You will need a Steel Axe in order to break the Large Log blocking the entrance to the Secret Woods. If you do not have a Steel Axe, do not worry, as the heart event will trigger whenever you next go into the Secret Woods after 10 pm and when it is not raining or a festival day.
+After triggering the cut-scene, the night will immediately end for the player.
+Details 
+
+
+
+
+
+Group Ten-Heart Event
+If the player is unmarried and has given a bouquet to all available bachelorettes, raised friendship with each bachelorette to 10 hearts, and seen each bachelorette's 10-heart event, then entering Haley/Emily's House will trigger a cutscene. If Haley is the final bachelorette you share a Ten-Heart Event with, the Group Ten-Heart Event will be unavoidable as it is triggered immediately afterwards.
+Details 
+This event will trigger only one time per save file. This event will not trigger if you are married or have given a Wilted Bouquet or Mermaid's Pendant to one of the marriage candidates.
+Fourteen Hearts
+Exit the farmhouse between 6am and 8:20am.
+Details 
+Marriage
+Main article: Marriage
+Once married, Emily will move into the farmhouse. Like other marriage candidates, she will add her own room to the right of the bedroom. She'll also set up a small crystal garden behind the farmhouse where she'll sometimes go to meditate. Note that Emily's parrot will not be visible to anyone in multiplayer who has not completed her 4 heart event.
+On rainy mornings, Emily may offer you Cloth, Wool, Duck Feather, Refined Quartz, or Bean Hotpot. On rainy nights, she may offer you dessert that is "raw", "gluten-free", and "sweetened only with cactus syrup": Rice Pudding, Blueberry Tart, Cookie, or Chocolate Cake. On days when Emily stays inside the farmhouse all day, she may offer you Cloth, Wool, Duck Feather, Refined Quartz, Bean Hotpot, Coffee, or an Omni Geode.
+Emily's room
+Emily meditating
+Quotes
+Regular 
+Events 
+After Marriage 
+Quests
+"Fresh Fruit": Emily will send you a letter on the 6th of Spring, year 2, requesting an Apricot. The reward is 600g and 1 Friendship heart.
+Emily may randomly request an item at the "Help Wanted" board outside Pierre's General Store. The reward is 3x the item's base value and 150 Friendship points.
+Although not requested by Emily, fulfilling the quest "Clint's Attempt" will reward you with 1 Friendship heart with Emily. Note that fulfilling this quest does not count against Emily's 2 gift per week limit.
+"Rock Rejuvenation": On the Special Orders board in front of the Mayor's Manor, Emily may randomly request that the player deliver to her 1 each of Ruby, Topaz, Emerald, Jade, and Amethyst. The reward is 1,000g, 250 Friendship points, and a Sewing Machine. The player must have access to the Sewing Machine in Emily's house for this quest to appear.
+"Saying 'Hello'": A rare quest that appears on the "Help Wanted" board after completing the "Introductions" quest. Emily will ask you to say 'Hi' to everyone in town. (This excludes the Dwarf, Kent, Krobus, Leo, Sandy, and the Wizard.) The reward is 100 friendship points with everyone.
+Portraits
+Timeline
+Emily's look evolved over the years the game was in development. Here's a timeline showing how ConcernedApe's art and Emily's style changed over the years before the game was launched.
+Trivia
+If it is raining in Stardew Valley when Emily runs her shop at the Desert Festival, she may comment that she wishes she could have visited her friend Sandy that day, despite standing only a short distance from her.
+History
+1.0: Introduced.
+1.1: Added ability to marry, updated heart events, dialogue and schedule.
+1.3.27: Added group 10-heart event.
+1.4: Added 14 heart event. Fixed bug where all recipes would be sent in the mail at 3 hearts.
+1.5: Added beach portraits.
+1.6: Added custom gift reactions. Updated main portraits. Added winter portraits and more beach portraits. Added Emily Portrait. Emily may now post "Saying 'Hello'" quests.
+Villagers
+Bachelors Alex • Elliott • Harvey • Sam • Sebastian • Shane
+Bachelorettes Abigail • Emily • Haley • Leah • Maru • Penny
+Townspeople Caroline • Clint • Demetrius • Evelyn • George • Gil • Gunther • Gus • Jas • Jodi • Kent • Lewis • Linus • Marlon • Marnie • Morris • Pam • Pierre • Robin • Vincent • Willy
+Other Birdie • Bouncer • Dwarf • Fizz • Governor • Grandpa • Henchman • Junimos • Krobus • Leo • Mr. Qi • Old Mariner • Professor Snail • Sandy • Wizard
+Category: Marriage candidates

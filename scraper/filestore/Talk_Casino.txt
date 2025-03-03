@@ -1,0 +1,17 @@
+Jump to navigation
+Jump to search
+This talk page is for discussing Casino.
+Sign and date your posts by typing four tildes (~~~~).
+Put new text below old text.
+Be polite.
+Assume good faith.
+Don't delete discussions.
+Negative Qi coins
+I'm wondering if there's a way to reset my negative Qi coins after winning too many times in CalicoJack. :( 群星之尘 (talk) 16:53, 14 May 2024 (UTC)
+Yeah, PSA for everybody: if you earn (or cheat your way to) a billion Qi coins, the counter overflows and you get negative coins. (If you try to bet again, the game crashes.) It may help to submit a bug report on the forum, but it'd be faster to just edit the clubCoins value in your save file. Back it up first of course. Rekiy (talk) 18:37, 1 June 2024 (UTC)
+
+Questionable Tips
+Unless I'm misunderstanding, isn't purchasing fireworks just better for Qi to gold, at a rate of 4 to 1g, instead of deconstructing and selling the honey without turning it into mead, at a rate of 5 to 1g. Converting the honey into mead is still better at 2.5 to 1g, but that is much more involved than simply buying & selling the fireworks. Tethys (talk) 16:23, 17 December 2024 (UTC)
+Restore the Qi coin to Gold tip
+I saw the edit comment "This is not a min/max guide", but considering the late-game abundance of Qi coins, it is in fact useful to know the best exchange rates. IBugOne (talk) 17:13, 18 December 2024 (UTC)
+Category: Talk pages

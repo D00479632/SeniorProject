@@ -1,0 +1,188 @@
+Jump to navigation
+Jump to search
+←Index
+This page is for mod authors. Players: see the mod compatibility list instead.
+This page explains how to update your mod code for compatibility with SMAPI 3.0. See also Modding:Migrate to Stardew Valley 1.4.
+Contents
+1 Overview
+1.1 What's changing?
+1.2 Is this the modapocalypse?
+1.3 How to update your mod
+2 Changes
+2.1 Mod build package updated
+2.2 Mods are loaded earlier
+2.3 API changes
+2.4 Event changes
+2.5 Manifest version format
+2.6 Version format
+Overview
+What's changing?
+SMAPI compatibility over time. The SMAPI 2.0 release in October 2017 appears as a small bump. The Stardew Valley 1.3 release in May 2018 appears as a sudden cliff.
+Events are arguably the most important and most visible part of SMAPI, but they've stayed essentially unchanged since SMAPI 0.40. New events have been added organically since then, but the event system has always been separate from the rest of SMAPI — they're inconsistent, have some weird behaviours (like MenuEvents.MenuChanged not being raised when a menu is closed), aren't available through the same helper as every other API, and there are some glaring omissions in the available events.
+SMAPI 3.0 is the release that fixes all that. This release...
+Completely rewrites the event engine to make events more efficient and enable events that weren't possible before.
+Makes events much more consistent: they're now fully compliant with the .NET design guidelines, have predictable and descriptive names, have consistent event handler signatures, and have clear documentation.
+All events are now accessible through helper.Events, so they're discoverable like any other SMAPI API.
+Weird behaviours and overlapping events have been eliminated.
+Many new events have been added.
+Events now have relevant event arguments.
+Each mod now has its own event instances, to support features like mod message targeting.
+SMAPI 3.0 also adds compatibility with Stardew Valley 1.4, drops all deprecated APIs, and makes a number of other changes listed below.
+Is this the modapocalypse?
+Nope. Although this is a major change, significant efforts were undertaken to minimize the impact:
+the old events were supported for a long time with increasingly prominent warnings in the SMAPI console about their deprecation and removal;
+pull requests were submitted to update affected open-source mods;
+unofficial updates were created for mods which haven't updated officially by the time SMAPI 3.0 is released;
+the changes were actively communicated and documented to modders.
+In addition, the current target is at least 95% compatibility for open-source mods before SMAPI 3.0 is released. All of this means that the 3.0 release should have minimal impact on mod compatibility, despite the scope of the changes.
+How to update your mod
+You don't need to comb through your code manually. SMAPI can tell you if you're using a deprecated interface:
+Use the latest SMAPI for developers download. This will show deprecation messages in the console:
+When you look at the code, you'll see a deprecation warning with a hint of how to fix it:
+You can refer to the following sections on how to replace specific interfaces.
+Changes
+Mod build package updated
+Update the mod build package for compatibility with SMAPI 3.0.
+Mods are loaded earlier
+Mods were previously loaded right before the first UpdateTicking event, which is too late for some changes like intercepting core assets. SMAPI 3.0 loads them much earlier, before the game is fully initialised. Do not depend on game fields like Game1.objectInformation having a valid value in your Entry method! You can use the GameLaunched event for that instead. See Modding:Modder Guide/APIs/Mod structure#Mod entry for more info.
+For example, let's say you have code like this:
+public override void Entry(IModHelper helper)
+{
+   this.Config = helper.ReadConfig<ModConfig>();
+
+   CommunityCenter communityCenter = (CommunityCenter)Game1.getLocationFromName("CommunityCenter");
+   this.VaultRoomID = communityCenter.getAreaNumberFromName("Vault");
+}
+That code fails in SMAPI 3.0, because no locations are loaded yet. This code could be rewritten like this:
+public override void Entry(IModHelper helper)
+{
+   this.Config = helper.ReadConfig<ModConfig>();
+
+   helper.Events.GameLoop.GameLaunched += this.OnGameLaunched;
+}
+
+private void OnGameLaunched(object sender, GameLaunchedEventArgs args)
+{
+   CommunityCenter communityCenter = (CommunityCenter)Game1.getLocationFromName("CommunityCenter");
+   this.VaultRoomID = communityCenter.getAreaNumberFromName("Vault");
+}
+API changes
+old API → new API conversion notes
+helper.GetContentPacks → helper.ContentPacks.GetOwned Identical usage.
+helper.CreateTransitionalContentPack → helper.ContentPacks.CreateTemporary Identical usage. (This was a temporary method for the transition to SMAPI content packs, but a few mods have permanent use cases for it.)
+assetData.AsDictionary<T, T>().Set → assetData.AsDictionary<T, T>().Data The Set methods caused a lot of confusion and were of limited usefulness. You can access the dictionary directly using the Data field instead.
+SemanticVersion.Build → SemanticVersion.PrereleaseTag Identical usage.
+Event changes
+The former events are removed in SMAPI 3.0. Here's how to convert them to the new events under this.Helper.Events. This list only shows equivalent events in SMAPI 3.0; see events in the modder guide for a full list.
+old event → new event conversion notes
+#
+ContentEvents.AfterLocaleChanged → none Mods very rarely need to handle this, since SMAPI's translation and content APIs do. Since the locale can only change on the title screen, mods that used this can check once the save is loaded instead.
+#
+ControlEvents.ControllerButtonPressed
+ControlEvents.ControllerButtonReleased
+ControlEvents.ControllerTriggerPressed
+ControlEvents.ControllerTriggerReleased → Input.ButtonPressed
+Input.ButtonReleased Mostly equivalent.
+Remove e.PlayerIndex (this was always PlayerIndex.One).
+Change e.ButtonPressed to e.Button, which is now an SButton value.
+Remove e.Value for trigger events.
+#
+ControlEvents.KeyboardChanged → Input.ButtonPressed
+Input.ButtonReleased Not directly equivalent; may need to rewrite affected code.
+#
+ControlEvents.KeyPressed
+ControlEvents.KeyReleased → Input.ButtonPressed
+Input.ButtonReleased Mostly equivalent.
+Change e.KeyPressed to e.Button, which is now an SButton value.
+#
+ControlEvents.MouseChanged → Input.ButtonPressed
+Input.ButtonReleased
+Input.CursorMoved
+Input.MouseWheelScrolled Not directly equivalent; may need to rewrite affected code.
+#
+GameEvents.EighthUpdateTick
+GameEvents.FourthUpdateTick
+GameEvents.HalfSecondTick
+GameEvents.QuarterSecondTick
+GameEvents.SecondUpdateTick → GameLoop.UpdateTicked Mostly equivalent. You can use e.IsMultipleOf to choose an update rate (SecondUpdateTick = 2, FourthUpdateTick = 4, EighthUpdateTick = 8, QuarterSecondTick = 15, and HalfSecondTick = 30).
+#
+GameEvents.FirstUpdateTick → GameLoop.GameLaunched The new event is raised before the first update tick (the old one happened after it). To do something after the first update tick, use GameEvents.UpdateTicked with if (e.Ticks == 1).
+#
+GameEvents.UpdateTick → GameLoop.UpdateTicked Equivalent.
+#
+GameEvents.OneSecondTick → GameLoop.OneSecondUpdateTicked Equivalent.
+#
+GraphicsEvents.OnPostRenderEvent → Display.Rendered Equivalent, except the new event isn't triggered during certain special cutscenes and minigames (e.g., the board game scene).
+#
+GraphicsEvents.OnPostRenderGuiEvent → Display.RenderedActiveMenu Equivalent.
+#
+GraphicsEvents.OnPostRenderHudEvent → Display.RenderedHud Equivalent.
+#
+GraphicsEvents.OnPreRenderEvent → Display.RenderingWorld Equivalent.
+#
+GraphicsEvents.OnPreRenderGuiEvent → Display.RenderingActiveMenu Equivalent.
+#
+GraphicsEvents.OnPreRenderHudEvent → Display.RenderingHud Equivalent.
+#
+GraphicsEvents.Resize → Display.WindowResized Equivalent.
+#
+InputEvents.ButtonPressed
+InputEvents.ButtonReleased → Input.ButtonPressed
+Input.ButtonReleased Mostly equivalent.
+Change e.IsActionButton to e.Button.IsActionButton().
+Change e.IsUseToolButton to e.Button.IsUseToolButton().
+Change e.SuppressButton to this.Helper.Input.Suppress(button).
+#
+LocationEvents.BuildingsChanged → World.BuildingListChanged Equivalent.
+#
+LocationEvents.LocationsChanged → World.LocationListChanged Equivalent.
+#
+LocationEvents.ObjectsChanged → World.ObjectListChanged Equivalent.
+#
+MenuEvents.MenuChanged
+MenuEvents.MenuClosed → Display.MenuChanged These caused a lot of confusion (e.g., MenuEvents.MenuClosed wasn't called when a menu was closed and immediately replaced), so they've been combined into one event which is called when a menu is opened, closed, or replaced. You can check the e.OldMenu and e.NewMenu event args to know what the change is (e.g., to match the old MenuEvents.MenuClosed, check if (e.NewMenu == null)).
+#
+MineEvents.MineLevelChanged → Player.Warped Check if (e.NewLocation is MineShaft mine) to detect a mine level change (the new mine level will be mine.mineLevel). Although the new event is still only called for the current player, that may change in a future version; make sure to check e.IsLocalPlayer if you only want to handle the current player.
+#
+MultiplayerEvents.AfterMainBroadcast
+MultiplayerEvents.AfterMainSync
+MultiplayerEvents.BeforeMainBroadcast
+MultiplayerEvents.BeforeMainSync → none No known mods use these. If you need them, consider replacing Game1.multiplayer with a delegating subclass.
+#
+PlayerEvents.InventoryChanged → Player.InventoryChanged Mostly equivalent. The event arguments changed type, but should be straightforward to migrate. Although the new event is still only called for the current player, that may change in a future version; make sure to check e.IsLocalPlayer if you only want to handle the current player.
+#
+PlayerEvents.LeveledUp → Player.LevelChanged Mostly equivalent. The event arguments changed type, but should be straightforward to migrate. Although the new event is still only called for the current player, that may change in a future version; make sure to check e.IsLocalPlayer if you only want to handle the current player.
+#
+PlayerEvents.Warped → Player.Warped Mostly equivalent. The event arguments changed type, but should be straightforward to migrate. Although the new event is still only called for the current player, that may change in a future version; make sure to check e.IsLocalPlayer if you only want to handle the current player.
+#
+SaveEvents.AfterCreate → GameLoop.SaveCreated Equivalent.
+#
+SaveEvents.AfterLoad → GameLoop.SaveLoaded Equivalent.
+#
+SaveEvents.AfterReturnToTitle → GameLoop.ReturnedToTitle Equivalent.
+#
+SaveEvents.AfterSave → GameLoop.Saved Equivalent.
+#
+SaveEvents.BeforeCreate → GameLoop.SaveCreating Equivalent.
+#
+SaveEvents.BeforeSave → GameLoop.Saving Equivalent.
+#
+SpecialisedEvents.UnvalidatedUpdateTick → Specialised.UnvalidatedUpdateTicked Equivalent.
+#
+TimeEvents.AfterDayStarted → GameLoop.DayStarted Equivalent.
+#
+TimeEvents.TimeOfDayChanged → GameLoop.TimeChanged Mostly equivalent. Change e.OldInt and e.NewInt to e.OldTime and e.NewTime respectively.
+Manifest version format
+The manifest.json no longer allows versions in this form:
+"Version": {
+   "MajorVersion": 1,
+   "MinorVersion": 0,
+   "PatchVersion": 0,
+   "Build": "beta"
+}
+Versions should be written in the standard string form instead:
+"Version": "1.0.0-beta"
+Version format
+SMAPI no longer omits .0 patch numbers when formatting versions. For example, the console now shows SMAPI 3.0.0 instead of 3.0. That's more standard, improves compatibility with external tools, and reduces player confusion.
+This doesn't affect most mod code. You may need to update your code if you use ISemanticVersion.ToString() and compare the output to a hardcoded two-part version string.
+Category: Modding

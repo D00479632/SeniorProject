@@ -1,0 +1,36 @@
+Jump to navigation
+Jump to search
+Price Catalogue
+You can now see the value of your items.
+Information
+Source Bookseller
+Sell Price 1,000g
+The Price Catalogue is a power book that can be purchased from the Bookseller for 3,000g.
+The first reading grants the player a power that allows them to view the sell price of any sellable item in-game. If an item is stacked or its price is affected by professions, then the sell price is displayed accordingly in the hover menu.[1] Once read, it can be found in the Player's Menu on the Special Items & Powers tab. Subsequent readings do not give any effects or additional XP.[2]
+Contents
+1 Gifting
+2 Bundles
+3 Tailoring
+4 Quests
+5 Trivia
+6 References
+7 History
+Gifting
+Villager Reactions
+Love  Penny •  Pierre
+Like  Elliott
+Dislike  Abigail •  Alex •  Caroline •  Clint •  Demetrius •  Dwarf •  Emily •  Evelyn •  George •  Gus •  Haley •  Harvey •  Jas •  Jodi •  Kent •  Krobus •  Leah •  Leo •  Lewis •  Linus •  Marnie •  Maru •  Pam •  Robin •  Sam •  Sandy •  Sebastian •  Shane •  Vincent •  Willy •  Wizard
+Bundles
+Price Catalogue is not used in any bundles.
+Tailoring
+Price Catalogue is not used in any tailoring. It can be used in dyeing, serving as a yellow dye at the dye pots located in Emily's and Haley's house, 2 Willow Lane. It can also be used as a gold dye when used in the spool of the Sewing Machine with a dyeable clothing item in the feed.
+Quests
+Price Catalogue is not used in any quests.
+Trivia
+This is one of the few items in the game that is spelled using British English instead of American English (where the -ue ending would be dropped, becoming catalog).
+References
+↑ See IClickableMenu::drawHoverText in the game code.
+↑ See Object::readBook in the game code.
+History
+1.6: Introduced.
+Category: Books

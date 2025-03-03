@@ -1,0 +1,1631 @@
+Jump to navigation
+Jump to search
+←Index
+This page is for mod authors. Players: see the mod compatibility list instead.
+
+This page explains how to update your mods for compatibility with Stardew Valley 1.6.9, and documents some of the changes and new functionality. See also Migrate to Stardew Valley 1.6.
+Contents
+1 FAQs
+1.1 What's changing?
+1.2 Is this the modapocalypse?
+1.3 How to update your mod
+2 Changes for all mods
+2.1 Lost items shop
+2.2 Dialogue changes
+2.3 Game state query changes
+2.4 Debug command changes
+2.5 Translation changes
+2.6 Building data changes
+2.7 Farm animal data changes
+2.8 Fish pond data changes
+2.9 Item data changes
+2.10 Machine data changes
+2.11 Map property changes
+2.12 Map tile index logic is now safer
+2.13 Pet data changes
+2.14 Tokenizable string changes
+2.15 Tool data changes
+2.16 Trigger action changes
+2.17 Other changes
+3 Changes for C# mods
+3.1 Player changes
+3.2 Chat commands API
+3.3 Screen reader changes
+3.4 Light source revamp
+3.5 Quest event revamp
+3.6 New extension methods
+3.7 SyntaxAbstractor
+3.8 TranslationValidator
+3.9 Utility fields & methods
+3.10 New constants
+3.11 ForEachItem changes
+3.12 OutputMethod changes in Data/Machines
+3.13 Other changes
+4 Changes for SMAPI and external tools
+4.1 Content hashes
+5 Name translation changes for wiki maintainers
+5.1 Objects
+5.2 Furniture
+5.3 Hats
+5.4 Movie concessions
+5.5 Pants
+5.6 Shirts
+5.7 Tools
+5.8 Weapons
+5.9 Animals
+5.10 Buildings
+5.11 Monsters
+5.12 Movies
+5.13 NPCs
+6 XNB impact
+6.1 Overview
+6.2 Changed assets
+6.3 Removed unused assets
+7 See also
+FAQs
+What's changing?
+Stardew Valley 1.6.9 contains many smaller changes for mods after the major 1.6 update.
+Is this the modapocalypse?
+SMAPI compatibility over time. The Stardew Valley 1.6.9 release appears as a small drop in November 2024.
+No. The vast majority of mods should be unaffected by the changes in 1.6.9, and SMAPI will automatically rewrite most mods that are.
+How to update your mod
+Most mods won't need any changes. Here's a suggested 'quick start' guide to update a mod for Stardew Valley 1.6.9.
+For C# mods:
+If you haven't already, update the mod for Stardew Valley 1.6.0.
+Rebuild the solution.
+Fix any build errors. You can search this page for relevant info as needed.
+Test to make sure the mod works.
+Skim through the changes below, and check any section that might be relevant to the mod.
+For Content Patcher packs:
+If you haven't already, follow the Content Patcher migration guide until your content pack has "Format": "2.5.0".
+Do not skip this step! Content Patcher will assume your content pack is pre-1.6 if you don't, which can cause confusing errors if you already updated it.
+Skim through the changes below, and check any section that might be relevant to the mod.
+For content packs which use another framework:
+See the documentation for the framework mod. Often you won't need to update the content pack if the framework mod itself was updated.
+Changes for all mods
+Lost items shop
+See the updated docs at Modding:Lost items shop. The section below focuses on what's new in this version.
+1.6.9 adds a hidden shop in the secret woods which sells unique items you've already unlocked but no longer own. For example, the soda machine is received from the JojaMart completion event; if you lose it, it would otherwise be gone forever. All items are sold for a flat 10,000g price.
+The items which can appear in the shop are listed in the new Data/LostItemsShop asset, which consists of a list of models with these fields:
+field effect
+Id The unique string ID for this entry.
+ItemId The qualified item ID of the item to add to the shop.
+RequireMailReceived
+RequireEventSeen The requirement for this item to be added to the shop.
+You can specify either RequireMailReceived (a mail flag to match in players' received mail) or RequireEventSeen (an event ID players have seen). If you specify both, only RequireMailReceived is used.
+The number added to the shop is the number of players which match this field minus the number of the item which exist in the world. For example, if three players found the 'Boat' painting but only one exists in the world, the shop will sell two 'Boat' paintings.
+Dialogue changes
+See the updated docs at Modding:Dialogue. The section below focuses on what's new in this version.
+1.6.9 adds several new dialogue keys:
+asset key format description
+Characters/Dialogue/<name> AcceptBirthdayGift_<taste>_<context tag> (Optional) Shown when the NPC receives a birthday gift with the specified gift taste and context tag. See AcceptGift_<taste> for valid gift tastes.
+This is checked immediately before the AcceptBirthdayGift_<context tag> key added in 1.6.
+AcceptGift_<taste>_<context tag> (Optional) Shown when the NPC receives a non-birthday gift with the specified gift taste and context tag. See AcceptGift_<taste> for valid gift tastes.
+This is checked immediately before the AcceptGift_<context tag> key added in 1.6.
+AcceptGift_<taste> (Optional) Shown when the NPC receives a gift with the specified gift taste. The <taste> can be a specific taste level (Loved, Liked, Neutral, Disliked, or Hated), Positive (neutral/liked/loved), or Negative (disliked/hated).
+This is checked after all AcceptGift_* keys added in 1.6.
+AcceptGift (Optional) Shown when the NPC receives a non-birthday gift, if no other AcceptGift_* dialogue key was found.
+RejectBouquet_AlreadyAccepted_Engaged
+RejectBouquet_AlreadyAccepted_Married
+RejectBouquet_AlreadyAccepted (Optional) Shown when the player gives a bouquet to an NPC who already accepted one from them.
+RejectMermaidPendant_AlreadyAccepted_Engaged
+RejectMermaidPendant_AlreadyAccepted_Married
+RejectMermaidPendant_AlreadyAccepted (Optional) Shown when the player gives a mermaid's pendant to an NPC who already accepted one from them.
+RejectRoommateProposal_AlreadyAccepted
+RejectRoommateProposal_NpcWithSomeoneElse
+RejectRoommateProposal_PlayerWithSomeoneElse
+RejectRoommateProposal_LowFriendship
+RejectRoommateProposal_SmallHouse (Optional) Shown when the NPC rejects a roommate proposal because the player doesn't meet a specific requirement:
+AlreadyAccepted: the NPC is already a roommate with this player.
+NpcWithSomeoneElse: the NPC is already a roommate with another player.
+PlayerWithSomeoneElse: the player making the proposal already has a roommate.
+LowFriendship: the player doesn't have 10+ hearts with the NPC.
+SmallHouse: the player hasn't upgraded their house yet.
+RejectRoommateProposal (Optional) Shown when the NPC rejects a roommate proposal, if a more specific RejectRoommateProposal_* dialogue wasn't found.
+When using the $y dialogue command, you can now escape asterisks. For example, A*B will split A and B into separate dialogue boxes like before, but A**B will be shown with a single literal asterisk.
+Game state query changes
+See the updated docs at Modding:Game state queries. The section below focuses on what's new in this version.
+1.6.9 adds some new game state queries:
+Condition effect
+DATE_RANGE <min season> <min day> <min year> [max season] [max day] [max year] Whether the calendar date is within the specified range, inclusively. The max values default to winter (season), 28 (day), and unlimited (year) if omitted.
+For example, between summer 15 and winter 15 in year one:
+DATE_RANGE Summer 15 1 Winter 15 1
+Or fall 15 or later:
+DATE_RANGE Fall 15 1
+PLAYER_BASE_COMBAT_LEVEL
+PLAYER_BASE_FARMING_LEVEL
+PLAYER_BASE_FISHING_LEVEL
+PLAYER_BASE_FORAGING_LEVEL
+PLAYER_BASE_LUCK_LEVEL
+PLAYER_BASE_MINING_LEVEL Same as the non-BASE queries, but ignores buffs which change skill levels.
+PLAYER_HAS_TRINKET <player>+ <trinket ID>+ Whether the specified player(s) have one of the listed trinkets equipped. Each ID can be a qualified or unqualified item ID.
+You can now check multiple values in more queries, like PLAYER_HAS_CAUGHT_FISH Current 128 139 for pufferfish or salmon. This affects PLAYER_HAS_BUFF, PLAYER_HAS_CAUGHT_FISH, PLAYER_HAS_CONVERSATION_TOPIC, PLAYER_HAS_DIALOGUE_ANSWER, PLAYER_HAS_HEARD_SONG, PLAYER_HAS_RUN_TRIGGER_ACTION, PLAYER_HAS_SEEN_EVENT, PLAYER_SPECIAL_ORDER_ACTIVE, PLAYER_SPECIAL_ORDER_RULE_ACTIVE, and PLAYER_SPECIAL_ORDER_COMPLETE.
+Debug command changes
+See the updated docs at Modding:Console commands. The section below focuses on what's new in this version.
+All debug commands now validate their arguments.
+Improved error-handling in many cases.
+1.6.9 adds some new debug command:
+command description
+listLights Show debug info about all currently active light sources.
+logWallAndFloorWarnings Enable debug logs when applying wallpaper and flooring to a farmhouse (or other decoratable location) to help troubleshoot cases where they don't work with a custom map. You'd usually enable this before loading the save.
+netJoin <IP> Connect to a given IP address.
+This replaces the former netJoin command which opened the join menu.
+performTitleAction <button>
+pta <button> While on the title screen, jump to a given title submenu.
+toggleNetCompression Disable (or re-enable) multiplayer compression.
+toggleTimingOverlay
+tto Show an on-screen overlay with basic timing info (e.g. draw loop times) to help with performance profiling.
+whereIsItem,
+whereItem List all items matching the given item ID or name in the save.
+For example:
+> debug whereItem "Watering Can"
+
+Found 1 item matching name 'Watering Can':
+- Farm > Shed at 50, 14 > Shed149bae63-2add-4ab6-a5aa-b3bd76372004 > Chest at 4, 4 > Watering Can ((T)CopperWateringCan)
+worldMapPosition [includeLog] Show detailed info to help troubleshoot world map positioning data. If [includeLog] is true, it will print a detailed log of how the current position was determined based on the Data/WorldMap entries.
+These have been removed:
+command notes
+buildCoop Replaced by debug build coop.
+These have been improved:
+command changes
+achieve This now unlocks the related trophy when run on a console.
+build The building type is now case-insensitive, and will list fuzzy matches if an exact match isn't found.
+event The dontClearEvent option (default false) has been replaced by clearEventsSeen (default true), and no longer treats any value as true.
+furniture Now allows non-numeric furniture IDs.
+growCrops Now affects crops in garden pots.
+holdItem Added an optional [showMessage] boolean argument to show the item-received message after playing the hold-item animation.
+item The item ID argument is now required.
+mineLevel Added an optional [layout] argument, which can be set to the layout number in Content/Maps/Mines. For example, debug mineLevel 101 47 warps to mine level 101 using layout 47.
+setUpFarm The clearMore argument no longer treats any value as true.
+spreadSeeds Now affects crops in garden pots.
+warpCharacterTo Added a separate argument for the NPC's facing direction, instead of using the Y argument.
+water Now affects crops in garden pots.
+Translation changes
+Many of the 1.6 translations were moved from Strings/1_6_Strings into Strings/BigCraftables, Strings/Objects, and Strings/Tools.
+Tool names/descriptions were moved from Strings/StringsFromCSFiles into a new Strings/Tools asset. Dynamic tool names (like "Gold {0}") have also been replaced by specific names (like "Gold Axe") to allow fixing awkward translations.
+Building data changes
+These docs should be merged into Modding:Buildings. When copying content, make sure you attribute the original authors.
+1.6.9 adds new fields in Data/Buildings:
+field effect
+NameForGeneralType
+(in Stardew Valley 1.6.15) (Optional) A tokenizable string for the display name which represents the general building type, like 'Coop' for a Deluxe Coop. For example, this can be shown in Robin's started-construction dialogue. If omitted, it defaults to the Name field.
+IndoorItems This already existed before 1.6.9, but has one new sub-field:
+field effect
+ClearTile (Optional) Whether to remove any item on the target tile, except for one matching the indoor item's ItemId. The previous contents of the tile will be moved into the lost and found if applicable. Default true.
+Farm animal data changes
+See the updated docs at Modding:Animal data. The section below focuses on what's new in this version.
+1.6.9 adds a new field in Data/FarmAnimals:
+field effect
+Shadow (Optional) The shadow to draw under the farm animal, if a more specific field like ShadowWhenAdult doesn't apply. Defaults to omitted.
+The previously hardcoded stats (cowMilkProduced, goatMilkProduced, and sheepWoolProduced) are now incremented via the StatToIncrementOnproduce data field.
+Fish pond data changes
+See the updated docs at Modding:Fish ponds. The section below focuses on what's new in this version.
+Added new fields:
+field effect
+MaxPopulation (Optional) The maximum number of fish that can live in this pond, whether added manually or through population growth. This can't exceed the hardcoded maximum of 10. If omitted, defaults to the maximum based on PopulationGates.
+WaterColor (Optional) The color tint to apply to the water when this entry applies. If multiple are specified, the first matching entry is applied. If none match, the default water color is used.
+This consists of a list of models with these fields:
+field effect
+Id The unique string ID for this entry.
+Color (Optional) The water color to apply. This can be a standard color value, or CopyFromInput (to use the item color from the fish item data). Default none.
+MinPopulation (Optional) The minimum number of fish in the pond before this color applies. Default 1.
+MinUnlockedPopulationGate (Optional) The minimum population for the last population gate that was unlocked, or 0 for any value. Default 0.
+Condition (Optional) A game state query which indicates whether this entry should be applied. Defaults to always true.
+ProducedItems This field already existed, but now has item spawn fields, conditions, and Id:
+field effect
+Id The unique string ID for this entry.
+common fields See item spawn fields for the generic item fields supported by fish pond rewards.
+Notes:
+If ItemId or RandomItemId is set to an item query which returns multiple items, one item will be selected at random.
+If ItemId and RandomItemId is set to the exact string (O)812 (roe), it will produce roe for the current fish.
+For the Condition field, the input item matches the fish living in the pond.
+The former MinQuantity/MaxQuantity fields are now obsolete, and replaced by the standard MinStack/MaxStack item spawn fields. For content packs which set the old fields, the value will be applied to the new ones automatically instead.
+Item data changes
+In Data/Objects
+See the updated docs at Modding:Objects. The section below focuses on what's new in this version.
+Added a new field:
+field effect
+ColorOverlayFromNextIndex (Optional) When drawn as a colored object, whether to apply the color to the next sprite in the spritesheet and draw that over the main sprite. If false, the color is applied to the main sprite instead. Default false.
+Object buffs can now also set these buff attributes: CombatLevel, AttackMultiplier, CriticalChanceMultiplier, CriticalPowerMultiplier, Immunity, KnockbackMultiplier, WeaponPrecisionMultiplier, and WeaponSpeedMultiplier.
+Flavor name translations like Wine_Flavored_Name can use a new {1} token for the lowercase name.
+You can now customize the display name for specific flavor items. For example, the Wine_Flavored_(O)282_Name translation ("Cranberry Wine") overrides Wine_Flavored_Name ("{0} Wine").
+Item spawn fields
+These docs should be merged into Modding:Item queries#Item spawn fields. When copying content, make sure you attribute the original authors.
+1.6.9 adds a new field for all item spawn fields:
+field effect
+ObjectColor (Optional) The tint color to apply to the produced item. Default none.
+Other
+For C# mods, the Object.displayNameFormat field can now use two new tokens: %DISPLAY_NAME_LOWERCASE and %PRESERVED_DISPLAY_NAME_LOWERCASE.
+Machine data changes
+These docs should be merged into Modding:Machines. When copying content, make sure you attribute the original authors.
+1.6.9 fixes some issues with Data/Machines:
+The PreserveId field now supports the DROP_IN_PRESERVE token.
+The CopyColor field now works for any input item, even if it's not a ColoredObject (in which case it uses the color from its context tags).
+The CopyQuality field no longer disables QualityModifiers; those are now applied to the result of the copy.
+Map property changes
+These docs should be merged into Modding:Maps. When copying content, make sure you attribute the original authors.
+1.6.9 adds new map properties:
+property explanation
+AllowBeds <allowed>
+AllowMiniFridges <allowed> Whether beds or mini-fridges can be placed in this location. This can be true or false. If specified, this bypasses the usual specific requirements (e.g. farmhouse upgrade level), though general furniture restrictions still apply (e.g. the 'placement restriction' field in Data/Furniture).
+Map tile index logic is now safer
+Vanilla logic that checks for a map tile index now consistently checks the tilesheet ID (case-insensitively), which eliminates the entire class of bugs related to tile index collisions. (This doesn't apply to Paths layer indexes, to avoid breaking mods and because you shouldn't have custom tilesheets on that layer anyway.)
+For example, the vanilla beach code in 1.6.8 does this:
+switch (getTileIndexAt(tileLocation, "Buildings"))
+{
+    case 284:
+        if (who.Items.ContainsId("(O)388", 300))
+            createQuestionDialogue(Game1.content.LoadString("Strings\\Locations:Beach_FixBridge_Question"), createYesNoResponses(), "BeachBridge");
+        else
+            Game1.drawObjectDialogue(Game1.content.LoadString("Strings\\Locations:Beach_FixBridge_Hint"));
+        break;
+So if you added a custom tilesheet to the map, any tile with index 284 would show that message (even if it was from your custom tilesheet).
+That no longer happens in 1.6.9, since it only recognizes the tile index from the relevant tilesheet:
+switch (getTileIndexAt(tileLocation, "Buildings", "untitled tile sheet")) // "untitled tile sheet" is the actual tilesheet ID in this case
+Pet data changes
+These docs should be merged into Modding:Pets. When copying content, make sure you attribute the original authors.
+In Data/Pets, the Gifts field now uses item spawn fields (including conditions and item quality/color/name/etc). The previous QualifiedItemID and Stack fields are now deprecated, but content packs which set them should still work.
+Tokenizable string changes
+These docs should be merged into Modding:Tokenizable strings. When copying content, make sure you attribute the original authors.
+Added new tokens:
+token format output
+[CapitalizeFirstLetter <text>] The input text, with the first letter capitalized.
+[ItemNameWithFlavor <flavor type> <flavor ID>] The translated display name for a flavored item name, where...
+<flavor type> is one of AgedRoe, Bait, DriedFruit, DriedMushroom, Honey, Jelly, Juice, Pickle, Roe, SmokedFish, or Wine;
+<flavor ID> is the qualified or qualified item ID for the flavor (e.g. the blueberry in blueberry wine).
+For C# mods with custom tokens, parsers now receive argument values with any escape characters from [EscapedText] stripped back out.
+Tool data changes
+In Data/Tools, the ApplyUpgradeLevelToDisplayName field no longer exists. Every tool now has its own name instead (see translation changes).
+Trigger action changes
+These docs should be merged into Modding:Trigger actions. When copying content, make sure you attribute the original authors.
+1.6.9 adds a new field in Data/TriggerActions:
+field effect
+SkipPermanentlyCondition (Optional) If set, a game state query which indicates that the action should be marked applied when this condition matches. This happens before Condition, Action, and Actions are applied.
+This mainly allows optimizing cases where the action will never be applied, to avoid parsing the Condition each time.
+Other changes
+In Stardew Valley 1.6.9:
+The game now always finds map tilesheets by ID, which eliminates bugs due to mods reordering tilesheets. However, it'll still try to get it by index first in some cases (since that's faster), so you should still avoid changing the tilesheet order to avoid the performance impact of falling back to an ID lookup.
+The 'Jewels Of The Sea' book now only produces roe for fish with the new fish_has_roe context tag. Consider adding it for custom fish in Data/Objects if needed.
+Added generic support for receiving recipe items from any source.
+Added player stats to track how often the player finished Junimo Kart (completedJunimoKart) and Prairie King (completedPrairieKing and completedPrairieKingWithoutDying). For pre-1.6.9 saves, the first two are set to 1 if the player has finished them at least once.
+Error messages related to argument parsing (e.g. in debug commands, dialogue, event commands, map properties, etc) now also show a human-readable argument name. For example, "required index 0 not found" now shows something like "required index 0 (string itemId) not found".
+Any item type can now be shipped, subject to its item.canBeShipped() method.
+For events:
+Fixed move command ignoring all remaining NPCs if an optional NPC isn't found.
+Fixed speak command ending the event if an optional NPC isn't found.
+Fixed GameStateQuery/G event precondition not handling quoted arguments correctly.
+For items:
+Context tags are now case-insensitive in nearly all cases.
+Merged item name translations from Strings/1_6_Strings + Strings/StringsFromCSFiles into Strings/BigCraftables, Strings/Objects, and Strings/Weapons.
+Fixed ancient dolls not having the doll_item context tag.
+Fixed spirit & custom torches switching to default torch sprite on purchase or stack split.
+Fixed cases where item names could be set to null. Trying to do so now defaults the name to Error Item instead.
+For item spawn fields:
+Added Color to set the tint color.
+Fixed vague error when producing a null item ID.
+For tools:
+Unified tool names/descriptions from Strings/StringsFromCSFiles + Strings/1_6_Strings into a new Strings/Tools asset, with readable keys like Axe_Description.
+Each tool upgrade now has its own translation (like "Gold Axe"), instead of generic ones like "Gold {0}" which were hard to translate well. This removes the ApplyUpgradeLevelToDisplayName field in Data/Tools.
+Fixed tool.getOne() not copying some tool fields.
+For trinkets:
+Added CustomFields and ModData data fields for mod use. These replace the former TrinketMetadata field.
+Added data fields to configure the locations/monsters ignored by magic quivers.
+Added error handling for some invalid data.
+For game state queries:
+Fixed HAS_TARGET_LOCATION always returning true.
+Fixed PLAYER_HAS_ITEM counting Qi gems owned by the main player instead of the target player.
+For machines:
+Geode crushers now handle mystery boxes correctly if a mod enables them in geode crushers.
+Fixed some machine effects only applied on the next time change after a machine begins processing.
+Fixed Data/Machines' DROP_IN_PRESERVE not working in the PreserveId field.
+Fixed Data/Machines' CopyColor field doing nothing if the input isn't a ColoredObject; it now defaults to the color from its context tags.
+Fixed Data/Machines' quality modifiers ignored for entries with CopyQuality.
+Fixed Object.OutputAnvil ignoring its probe argument.
+Fixed wild honey producing invalid item names when using tokens like DROP_IN_PRESERVE or %PRESERVED_DISPLAY_NAME in Data/Machines.
+For maps:
+Terrain sounds like footsteps now work in locations with the TreatAsOutdoors map property too.
+Wallpaper and flooring can now be applied to custom map tiles if their tilesheet ID contains walls_and_floors.
+The TouchAction ConditionalDoor tile property now correctly gets its LockedDoorMessage from the Back layer, instead of the Buildings layer.
+Fixed bugs related to mods changing maps' tilesheet order.
+Fixed tile index collisions. Vanilla logic that checks for a map tile index now consistently checks the tilesheet ID (case-insensitive), which eliminates the entire class of bugs related to tile index collisions (e.g. custom tilesheet tiles being unexpectedly treated as lights).
+Fixed inconsistent map tilesheet sort order between platforms.
+For NPCs and dialogue:
+When loading a save, NPCs now warp to their current home in Data/Characters if the location they were in before saving no longer exists. (This also works for NPCs using a former name listed in the FormerCharacterNames field.)
+When using the $y dialogue command, you can now escape asterisks (* is still a dialogue break, but ** is now shown as a single literal asterisk).
+You can now override schedule/resort dialogue based on your relationship with the NPC. For example, rain.000_Married overrides rain.000 if you're married to that NPC. The possible relationships are Friendly, Dating, Engaged, Married, and Divorced.
+Improved error-handling when an NPC can't find a suitable dialogue.
+Fixed $action dialogue command not working after a #$b# break.
+Fixed empty dialogue box shown if a command is between #$b# breaks.
+Fixed NPCs no longer applying AcceptGift_<id> dialogue key.
+Fixed Data/Characters appearance options not weighted correctly by default.
+Fixed some friendship logic still checking for a Data/NPCGiftTastes entry, instead of the CanSocialize field in Data/Characters.
+For pets:
+The Data/Pets' Gifts list now supports item spawn fields (including conditions and item quality/color/name/etc). The previous QualifiedItemID and Stack fields are now deprecated, but content packs which set them should still work.
+Fixed a Data/Pets turtle gift ID to match what it actually gifts (Radish -> SeafoamPudding).
+For desert festival makeover outfits:
+You can now have gender-variant outfit parts within an outfit.
+The Gender field now uses the three-part gender enum added in 1.6.
+Every outfit part now has a descriptive Id.
+For cooking/crafting recipes:
+The format for a skill level condition is s <skill> <level> or <skill> <level>. Due to a quirk in how it was implemented, previously any string containing a skill name and level would work (like 10boopFarming); the format is now stricter and validated.
+Fixed handling of qualified item IDs in the Data/CraftingRecipes output field.
+Fixed skill-level-10 recipes being unlocked at level 1.
+Removed unused assets and translations.
+Wild seeds now choose their output when they're planted, so mods can predict their harvest.
+Fixed support for gender-switch blocks in pass-out mail text.
+Fixed crashes when player's daily luck is far outside the normal range. Daily luck is now clamped to reasonable values.
+Fixed fish ponds ignoring the DrawShadow field in Data/Buildings.
+Fixed StatIncrement fields in machine and farm animal data not using the specified ID.
+Fixed AllowWakeUpWithoutBed map property not working consistently.
+In Stardew Valley 1.6.15:
+Improved building data:
+Added a new NameForGeneralType field. This replaces the former hardcoded logic which tried to parse it from the Name.
+Improved fish pond data:
+You can now override a fish pond's base output chance via BaseMinProduceChance and BaseMaxProduceChance.
+You can now prioritize output rules via the produced items' Precedence field.
+The game no longer tries to auto-balance custom legendary fish in fish ponds. Mods can add their own output rule if they want to override the now-static default values.
+Improved mannequin data:
+Removed ID field (redundant with the entry key).
+The CustomFields field is now null by default (like other assets).
+Improved trinket data:
+Removed the Id field (redundant with the entry key).
+Changes for C# mods:
+Marked more code public or virtual for mods.
+The chest.sourceItem field is no longer null for fridge chests.
+Added Game1.ResetGameStateOnTitleScreen() method, split from Game1.CleanupReturningToTitle(). These are specialized methods which most mods shouldn't call though.
+Fixed NPC.CanSocializePerData not applying the given location.
+Fixed farmhand.hasOrWillReceiveMail checking the main player's mailbox in some cases.
+Fixed items' context tags not updated if their state changed (e.g. gold-quality items with the quality_none tag).
+Robin's construction-started dialogues now have extra tokens for the non-lowercase building names.
+Added optional argument to [GenderedText] and [SpouseGenderedText] tokens for non-binary text.
+Added two variants of the locked-door message tile property: DoorUnlock_NotFriend_{npcName} (for a specific NPC) and DoorUnlock_NotFriend_Undefined (for non-binary NPCs).
+The game's dynamic textures now set their Name field to simplify troubleshooting. These are shown in error messages like object-disposed errors.
+The itemAboveHead event command now has an optional argument to set whether a 'you received' message is shown. This defaults to true (previously disabled for custom item IDs).
+Removed some redundant platform-specific translations.
+You can now customize the name/description for any item shown in the collection tab (via Strings/Objects:<item id>_CollectionsTabName and <item id>_CollectionsTabDescription).
+Changes for C# mods
+Player changes
+The Game1.getFarmer and Game1.getFarmerMaybeOffline methods are now obsolete and should no longer be used. They've been replaced by a unified Game1.GetPlayer method. The old methods have inconsistent and sometimes counterintuitive behavior. For example, getFarmer(id) returns the main player if the target player is offline, which usually isn't the expected result. getFarmer also returns the main player given an invalid player ID, while getFarmerMaybeOffline returns null in that case. The new method matches offline players by default, returns null if the ID isn't found (so you can choose the best fallback behavior), and has full code docs and nullability annotations. To migrate existing code:
+old code migration
+Farmer player = Game1.getFarmer(id);
+The exact equivalent is:
+Farmer player = Game1.GetPlayer(id, onlyOnline: true) ?? Game1.MasterPlayer;
+However, most mods probably didn't expect it to work that way. Consider whether you meant this instead:
+Farmer? player = Game1.GetPlayer(id);
+Farmer? player = Game1.getFarmerMaybeOffline(id);
+This is directly equivalent to:
+Farmer? player = Game1.GetPlayer(id);
+The Game1.player setter is now internal. Setting it causes side-effects that are typically unexpected by mod authors, which led to frequent errors and crashes. These are explained in its new code docs. Mods can still set it via reflection if they really want to.
+Chat commands API
+These docs should be merged into Modding:Console commands. When copying content, make sure you attribute the original authors.
+Chat commands are now modular and extensible in 1.6.9, with a new ChatCommands API to manage them.
+For example, you can add a custom chat command like this:
+string modId = this.ModManifest.UniqueId;
+ChatCommands.Register($"{modId}_echo", this.Echo, name => $"{name} [message]: show the given message in the chat box.");
+
+...
+
+/// <inheritdoc cref="ChatCommandHandlerDelegate" />
+private void Echo(string[] command, ChatBox chat)
+{
+    string message = ArgUtility.GetRemainder(command, 1);
+
+    chat.addInfoMessage(message);
+}
+Screen reader changes
+1.6.9 adds fields to support screen reader mods. These let mods with custom UI elements add information which can be shown to blind players, without requiring an integration with each screen reader mod.
+The main change is a new interface:
+/// <summary>A UI element that provides information for screen readers.</summary>
+/// <remarks>These values aren't displayed by the game; they're provided to allow for implementing screen reader mods.</remarks>
+public interface IScreenReadable
+{
+    /// <summary>If set, the translated text which represents this component for a screen reader. This may be the displayed text (for a text component), or an equivalent representation (e.g. "exit" for an 'X' button).</summary>
+    string ScreenReaderText { get; }
+
+    /// <summary>If set, a translated tooltip-like description for this component which can be displayed by screen readers, in addition to the <see cref="ScreenReaderText"/>.</summary>
+    string ScreenReaderDescription { get; }
+
+    /// <summary>Whether this is a purely visual component which should be ignored by screen readers.</summary>
+    bool ScreenReaderIgnore { get; }
+}
+This is implemented by ClickableComponent and OptionsElement, so you can add screen reader data to most UI elements out of the box.
+Light source revamp
+1.6.9 revamps how light sources are tracked:
+LightSource now has a required string ID (LightSource.Id), instead of the former optional numeric ID (LightSource.Identifier).
+Game1.currentLightSources is now a dictionary by ID. (You can still write Game1.currentLightSources.Add(light) like before if you add using StardewValley.Extensions.)
+Added unique IDs for every vanilla light source.
+Added validation warnings and auto-recovery for some issues.
+Added null handling in related helpers. For example, you can replace logic like if (light != null) Utility.repositionLightSource(light.Id, position) with Utility.repositionLightSource(light?.Id, position).
+Added optional LightSource.onlyLocation field, which ensures that the light is only shown when viewing that location.
+Added code docs.
+Removed the TemporaryAnimatedSprite.light boolean field; the light is now enabled by setting the lightId field.
+Quest event revamp
+Previously, the game would call Game1.player.checkForQuestComplete with various arguments like string str and int number2, which had different behavior depending on the quest type.
+These have been replaced with more specific methods like Quest.OnMonsterSlain, which...
+are more intuitive to use;
+receive more detailed info (e.g. the damage type when a monster is slain);
+and let custom quests handle multiple event types (e.g. both item crafted and item received).
+The Farmer method has been replaced with a single NotifyQuests method, which performs an action on each quest and returns whether any quest was updated.
+Here's how the old Quest methods map to the new ones. (The Farmer methods are the same thing, but just add Game1.player.NotifyQuests(quest => ...) around them.)
+old code new code
+quest.checkForQuestComplete(npc, -1, -1, null, null, Quests.Quest.type_socialize)
+quest.OnNpcSocialized(npc)
+quest.checkForQuestComplete(null, -1, -1, null, buildingType, Quests.Quest.type_building)
+quest.OnBuildingExists(buildingType)
+quest.checkForQuestComplete(null, -1, numberCaught, null, itemId, Quest.type_fishing)
+quest.OnFishCaught(itemId, numberCaught, size)
+quest.checkForQuestComplete(null, -1, countAdded, item, null, Quest.type_harvest)
+quest.checkForQuestComplete(null, -1, countAdded, item, null, Quest.type_resource)
+quest.OnItemReceived(item, countAdded)
+quest.checkForQuestComplete(npc, -1, -1, item, "", Quests.Quest.type_harvest, Quests.Quest.type_itemDelivery)
+quest.OnItemOfferedToNpc(npc, item)
+quest.checkForQuestComplete(null, 1, 1, null, monster.Name, Quests.Quest.type_monster)
+quest.OnMonsterSlain(location, monster, killedByBomb, isHutchSlime)
+quest.checkForQuestComplete(null, -1, -1, crafted, null, Quests.Quest.type_crafting)
+quest.OnRecipeCrafted(recipe, crafted)
+quest.checkIfComplete(null, -1, -2, null, location.name)
+quest.OnWarped(location)
+Two related changes:
+Building quests are now represented by a new HaveBuildingQuest type which uses the above events.
+The completionString field is now obsolete and unused; you should use the above methods instead.
+New extension methods
+The game has extension methods in the StardewValley.Extensions namespace. These add utility methods to more general types like strings.
+1.6.9 adds some new extension methods:
+method usage
+Dictionary<TKey, TValue>.TryAddMany Add all the key/value pairs from another dictionary to this one, except for keys that already exist.
+For example:
+// before 1.6.9
+Dictionary<string, string> fields = new();
+if (obj.customFields != null)
+{
+    foreach ((string key, string value) in obj.customFields)
+        fields.TryAdd(key, value);
+}
+
+// after 1.6.9
+Dictionary<string, string> fields = new();
+fields.TryAddMany(obj.customFields);
+IList<T>.RemoveWhere Remove all elements from an arbitrary list that match a condition. This is equivalent to the RemoveWhere methods added in 1.6, but works on any list type.
+Layer.HasTileAt(…)
+Map.HasTileAt(…) Get whether there's a tile at a specific position on a map layer. This is equivalent to the pre-existing location.GetTileIndexAt(…) != -1.
+Map.AddTileSheet(…) Add an arbitrary texture as a map tile sheet.
+Map.RequireTileSheet(…) Get a map tilesheet by ID, and throw an exception if it doesn't exist.
+string.ContainsIgnoreCase
+string.EqualsIgnoreCase
+string.IndexOfIgnoreCase
+string.StartsWithIgnoreCase
+string.EndsWithIgnoreCase Compare two strings case-insensitively.
+For example:
+// before 1.6.9
+if (string.Equals(left, right, StringComparison.OrdinalIgnoreCase))
+   ...
+
+// after 1.6.9
+if (left.EqualsIgnoreCase(right))
+   ...
+The new methods also handle null as you'd expect. For example, left.EqualsIgnoreCase(right) will be true if both are null.
+SyntaxAbstractor
+⚠ This is highly specialized. It's meant for vanilla unit tests, so it may not handle non-vanilla text correctly and may change at any time.
+The new SyntaxAbstractor class converts arbitrary text from content assets into language-independent syntax representations. These representations can be compared between languages to make sure they have the same sequence of commands, portraits, unlocalized metadata and delimiters, etc. This supports dialogue, event/festival, mail, and specific data formats.
+For example:
+SyntaxAbstractor abstractor = new();
+
+// for an asset
+string syntax = abstractor.ExtractSyntaxFor("Characters/Dialogue/Abigail", "Sun_old", "$p 17#I guess you think nothing would happen, right?$u|Maybe a wicked ghost would appear!"); // $p 17#text$u|text
+
+// for a format
+string syntax = abstractor.ExtractMailSyntax("Hey there!^I had some extra wood lying around... I thought maybe you could use it. Take care!  ^   -Robin %item id (O)388 50 %%[#]A Gift From Robin"); // text%item id (O)388 50%%[#]text
+
+// for arbitrary delimited data
+string customData = "SomeKey/Example Title/An example description./Robin (O)788 Forest 110 81/-1/true/Hey, nice to see you!$h";
+int[] textFields = [1, 2];
+int[] dialogueFields = [6];
+string syntax = abstractor.ExtractDelimitedDataSyntax(customData, '/', textFields, dialogueFields); // SomeKey/text/text/Robin (O)788 Forest 110 81/-1/true/text$h
+This is meant for unit tests that compare translations with the base text to make sure the basic format is the same. For unit tests, you'd usually use this through the TranslationValidator instead of directly.
+TranslationValidator
+The new TranslationValidator class compares translations to the original data, and returns a list of detected issues like missing or unknown keys, mismatched syntax, or malformed syntax (e.g. invalid gender-switch blocks).
+For example, to validate a C# mod's translations:
+// get translations
+var translatedData = helper.Translation.GetTranslations().ToDictionary(p => p.Key);
+
+// get base text
+var baseData = new Dictionary<string, Translation>();
+foreach (string key in translatedData.Keys)
+{
+    if (helper.Translation.GetInAllLocales(key).TryGetValue("default", out Translation? baseText))
+        baseData[key] = baseText;
+}
+
+// assert all tests succeed
+SyntaxAbstractor abstractor = new();
+foreach (var issue in TranslationValidator.Compare(baseData, translatedData, element => element.Value, (key, value) => abstractor.ExtractDialogueSyntax(value)))
+    Assert.Fail($"Validation failed for '{issue.Key}': {issue.SuggestedError}.");
+Utility fields & methods
+1.6.9 adds many new utility methods and fields. For example:
+member usage
+object dictionaries → GetValueOrDefault(…) Object dictionaries (like GameLocation.objects) now implement the .NET GetValueOrDefault method, which lets you simplify common code:
+// before 1.6.9
+string? itemId = location.objects.TryGetValue(tile, out Object? obj)
+    ? obj.ItemId
+    : null;
+
+// after 1.6.9
+string? itemId = location.objects.GetValueOrDefault(tile)?.ItemId;
+Buff.customFields The custom fields from the Data/Buffs and/or Data/Objects entry used to create the buff, if any.
+Bush.readyForHarvest() Get whether this bush has berries or fruit to harvest.
+ClickableTextureComponent.drawLabel Set whether the label should be drawn. This lets you add a label that's not rendered automatically.
+ColoredObject.TrySetColor(…) Apply a tint color to an arbitrary item. This will change the input item directly if it's a ColoredObject, otherwise it'll create a new ColoredObject instance.
+For example:
+Item inputItem = ItemRegistry.Create("(O)128"); // pufferfish
+if (ColoredObject.TrySetColor(inputItem, Color.Red, out ColoredObject? coloredObj)) // coloredObj = red pufferfish
+   ...;
+CrabPot.NeedsBait(player) Get whether the crab pot doesn't have bait, and bait is needed before it can catch anything based on the player's professions.
+CraftingRecipe.TryParseLevelRequirement(…) Try to parse the skill level requirement from a raw cooking or crafting recipe data entry, if applicable.
+Crop.replaceWithObjectOnFullGrown If set, the qualified object ID to spawn on the crop's tile when it's full-grown. The crop will be removed when the object is spawned.
+Dialogue.GetFallbackForError(npc)
+Dialogue.GetFallbackTextForError() Get a translated default "..." dialogue, which is shown in cases where a valid dialogue couldn't be loaded.
+Event.TryResolveCommandName(…) Get the actual event command name which matches an input command or alias name. This can be used to resolve an alias (like mailReceived → AddMailReceived) or normalize the capitalization (like itemnamed → ItemNamed).
+For example:
+if (Event.TryResolveCommandName("mailRECEIVED", out string commandName))
+    ...; // commandName = AddMailReceived
+FarmAnimal.homeInterior The interior location for the animal's home building.
+FarmHouse.GetFridgePositionFromMap() Get the position of the map fridge by scanning the map tiles. (Most code should use the cached fridgePosition field instead.)
+FruitTree.GetCosmeticSeason() Get the season for which to show a fruit tree sprite (which isn't necessarily the season for which it produces fruit). This mainly lets mods override the logic.
+Game1.IsHudDrawn Whether HUD elements like the toolbar are currently visible.
+Game1.locationData A cached view of the Data/Locations asset.
+GameLocation.CanWakeUpHere() Get whether a player can wake up in this location, instead of being warped home.
+GameLocation.ForEachDirt(…) Perform an action for every tilled dirt in the location. You can optionally exclude dirt in garden pots.
+For example:
+Game1.currentLocation.ForEachDirt(dirt =>
+{
+    dirt.Pot?.Water();
+    dirt.state.Value = HoeDirt.watered;
+    return true;
+});
+GameLocation.GetHarvestSpawnedObjectQuality(…) Get the quality to set when harvesting a spawned object like forage.
+GameLocation.GetAddedMapOverrideTilesheetId(…) Get the dynamic ID assigned to a tilesheet added via location.ApplyMapOverride(…).
+GameLocation.removeMapTile(…) Remove a map tile on a given layer and position.
+GameLocation.setMapTile(…) Add or overwrite a map tile on a given layer and position. You can optionally set an Action tile property at the same time. This copies any previous tile properties automatically, unless you set copyProperties: false.
+This unifies the former setMapTile and setMapTileIndex methods. Note that it doesn't delete the tile if the index is set to -1; use removeMapTile to do that.
+GameLocation.hasTileAt(…) Get whether there's a tile at a specific position on a map layer. This is equivalent to the pre-existing GetTileIndexAt(…) != -1.
+GameLocation.OnHarvestedForage(…) Grant foraging or farming XP when the player harvests forage, and any other behavior defined by mods.
+GameLocation.ParentBuilding The building which contains this location, if applicable. This replaces the former GetContainingBuilding() method, to avoid iterating the parent location's building list each time.
+HoeDirt.Pot The garden pot which holds the dirt, if applicable. This is set automatically by the game.
+Inventory.IsLocalPlayerInventory Whether this is the main inventory for Game1.player.
+Inventory.Reduce(…) Reduce an item's stack size by this amount in the inventory, and optionally deduct any remainder from other items with the same ID in the inventory. This clears any affected slots if they reach a stack size of zero.
+This is similar to player.reduceActiveItemByOne(), but works even if it's not the active item and allows reducing by an arbitrary amount. For example:
+Item item = ...;
+int countRemoved = Game1.player.Reduce(item, 5, reduceRemainderFromInventory: false);
+Item.BaseName If the item's Name contains temporary dynamic changes like the " Recipe" suffix for a recipe, the item name without those changes.
+Item.canBeShipped() Get whether this item can be put in the shipping bin. This replaces the former Object.canBeShipped(), and returning true now works with any item type.
+Item.CopyFieldsFrom(otherItem) Copy all fields from another item into the current one. This is equivalent to item.getOne(), except that you update an existing item instead.
+LocalizedContentManager.LoadBaseStringOrNull(…) Get the default English text for a translation path, or null if it's not found.
+Item.LearnRecipe() Learn the recipe for this item (regardless of whether the recipe is in Data/CookingRecipes or Data/CraftingRecipes).
+NPC.CanSocializePerData(…) Get whether social features (like birthdays, gift giving, friendship, and an entry in the social tab) should be enabled for an NPC, based on their entry in Data/Characters. This is equivalent to npc.CanSocialize, but doesn't need an instance of the NPC.
+Object.GetPreservedItemId() Get the item ID which was preserved as part of this item (e.g. the tulip ID for tulip honey), if applicable. This is equivalent to item.preservedParentSheetIndex, except in special cases like wild honey where preservedParentSheetIndex is set to a non-item value like -1.
+Object.IsTextSign() Get whether the object can have editable text which is shown on hover like a text sign.
+Object.GetObjectDisplayName(…) Get the display name which would be set for an object, without needing to create an object instance.
+Raccoon.GetBundle()
+Raccoon.GetBundle(timesFed) Get the raccoon bundle that will be shown currently, or after completing a given number of bundles.
+Utility.fuzzySearchAll(…) Find all matches for a search term based on fuzzy compare rules.
+For example:
+IEnumerable<string> coopNames = Utility.FuzzySearchAll("coop", Game1.buildingData.Keys); // [ "Coop", "Big Coop", "Deluxe Coop" ]
+WorldDate.GetDaysPlayed(…) Get the total days for a given date from the start of the game, to allow for efficient date comparisons.
+For example:
+int minDaysPlayed = WorldDate.GetDaysPlayed(year, season, dayOfMonth);
+int actualDaysPlayed = Game1.Date.TotalDays;
+if (actualDaysPlayed >= minDaysPlayed)
+   ...;
+And improves many existing fields & methods. For example:
+member changes
+ArgUtility.UnsplitQuoteAware
+You can now set an optional start index and count, which avoids needing to copy the array before unsplitting the desired arguments.
+It now returns an empty string instead of null when given a null array, to match the other ArgUtility/samp> methods.
+GameLocation.getTileIndexAt(…)
+Layer.GetTileIndexAt(…)
+Map.GetTileIndexAt(…) Added a string tilesheetId = null argument, which checks for a tile index from a specific tilesheet if set.
+LocalizedContentManager.LoadStringReturnNullIfNotFound(…) Added optional substitution arguments and an optional localeFallback argument.
+MineShaft.IsGeneratedLevel(…)
+VolcanoDungeon.IsGeneratedLevel(…) Added overloads without the out parameters to simplify common logic. For example:
+if (MineShaft.IsGeneratedLevel(location))
+   ...;
+ResourceClump.IsGreenRainBush() Get whether this is a special Green Rain bush (which looks like a giant weed).
+Utility.consolidateStacks(…) When a stack is removed, it now sets that index to null instead of removing it, so it's safe to use with player inventories.
+If your code doesn't expect null entries in the list, you can remove them after consolidating:
+Utility.consolidateStacks(itemList);
+itemList.RemoveWhere(slot => slot is null);
+And removes various methods, including...
+member replacement
+GameLocation.refurbishMapPortion(…) use location.ApplyMapOverride instead.
+GameLocation.setMapTileIndex(…) Use location.setMapTile instead.
+New constants
+1.6.9 adds new constants:
+constant usage
+AchievementIds.* The IDs for achievements in Data/Achievements. For example:
+// before 1.6.9
+if (player.achievements.Contains(34))
+   ...;
+
+// after 1.6.9
+if (player.achievements.Contains(AchievementIds.FullShipment))
+   ...;
+GameLocation.DefaultTileSheetId
+MineShaft.MainTileSheetId
+MovieTheater.MainTileSheetId
+Submarine.MainTileSheetId
+VolcanoDungeon.MainTileSheetId The main tilesheet IDs for each location: default (untitled tile sheet), mines (mine), movie theater (movieTheater_tileSheet), submarine (submarine tiles), and volcano dungeon (dungeon) respectively.
+Item.ErrorItemName The "Error Item" name shown for invalid items.
+SpecialCurrencyDisplay.currency_qiGems
+SpecialCurrencyDisplay.currency_walnuts The currency types supported by the special currency display (shown in the top-left corner when you find a Qi gem or golden walnut).
+ForEachItem changes
+The ForEachItem methods changed a bit in 1.6.9. (These methods iterate through every item in the world, and optionally remove/replace instances.)
+Most mods aren't affected. This affects mods which use the advanced ForEachItem form (like Utility.ForEachItem((item, remove, replaceWith) => ...)), or which implement custom item types which can contain other items. Mods which use the simple form (like Utility.ForEachItem(item => ...)) don't need any changes.
+The main changes are:
+The advanced forms now use a context object, which also provides the 'path' to the item. For example, an item inside a chest would have a path consisting of the location and chest:
+Utility.ForEachItemContext(delegate(in ForEachItemContext context)
+{
+    // remove pufferfish inside chests
+     if (context.Item.QualifiedItemId == "(O)128" && context.GetPath().Last() is Chest)
+        context.RemoveItem();
+    return true;
+});
+The context must be passed by reference using the in keyword. This doesn't work with lambdas, so you'll need to adjust the format:
+// ✘ lambda can't use 'in'
+Utility.ForEachItemContext(in context =>
+{
+    context.RemoveItem();
+    return true;
+});
+
+// ✓ use method or local function
+bool HandleItem(in ForEachItemContext context)
+{
+    context.RemoveItem();
+    return true;
+}
+Utility.ForEachItemContext(HandleItem);
+
+// ✓ use delegate
+Utility.ForEachItemContext(delegate(in ForEachItemContext context)
+{
+    context.RemoveItem();
+    return true;
+});
+For custom items which override Item.ForEachItem, the method signature has changed from this:
+/// <summary>Perform an action for each item contained within this item (e.g. items stored within a chest, item placed on a table, etc). This doesn't include the item itself.</summary>
+/// <param name="handler">The action to perform for each item.</param>
+/// <returns>Returns whether to continue iterating.</returns>
+bool ForEachItem(ForEachItemDelegate handler);
+To this:
+/// <summary>Perform an action for each item contained within this item (e.g. items stored within a chest, item placed on a table, etc). This doesn't include the item itself.</summary>
+/// <param name="handler">The action to perform for each item.</param>
+/// <param name="getPath">The contextual path leading to this item (including the item), or <c>null</c> to treat this as the root.</param>
+/// <returns>Returns whether to continue iterating.</returns>
+bool ForEachItem(ForEachItemDelegate handler, GetForEachItemPathDelegate getPath);
+You should pass the getPath value to ForEachItemHelper methods.
+OutputMethod changes in Data/Machines
+These docs should be merged into Modding:Machines. When copying content, make sure you attribute the original authors.
+If you have custom C# methods which are used in the OutputMethod field in Data/Machines, the method signature has changed in 1.6.9. You'll need to add the new Farmer player argument to your methods:
+/// <summary>The method signature for a custom <see cref="MachineItemOutput.OutputMethod"/> method.</summary>
+/// <param name="machine">The machine instance for which to produce output.</param>
+/// <param name="inputItem">The item being dropped into the machine, if applicable.</param>
+/// <param name="probe">Whether the machine is only checking the output that would be produced. If so, the input/machine shouldn't be changed and no animations/sounds should play.</param>
+/// <param name="outputData">The item output data from <c>Data/Machines</c> for which output is being created, if applicable.</param>
+/// <param name="player">The player interacting with the machine, if any.</param>
+/// <param name="overrideMinutesUntilReady">The in-game minutes until the item will be ready to collect, if set. This overrides the equivalent fields in the machine data if set.</param>
+/// <returns>Returns the item to produce, or <c>null</c> if none should be produced.</returns>
+public delegate Item MachineOutputDelegate(Object machine, Item inputItem, bool probe, MachineItemOutput outputData, Farmer player, out int? overrideMinutesUntilReady);
+Other changes
+For items:
+Object.signText can now use game tokens. The new SignText property contains the parsed display text.
+For trinkets:
+trinket.OnDamageMonster methods now receive isBomb and isCriticalHit arguments.
+For C# mods, added a new namespace and code docs, made more code public, renamed fields for clarity, etc.
+Fixed Trinket.getOne() not copying trinker fields.
+Fixed TrinketEffect.GenerateRandomStats() not updating the description correctly if valled again after its constructor.
+UI changes:
+Added [screen reader fields](https://stardewvalleywiki.com/Modding:Migrate_to_Stardew_Valley_1.6.9#Screen_reader_changes).
+Added an ItemGrabMenu constructor to copy an existing menu (e.g. when reopening it).
+Rewrote Game1.specialCurrencyDisplay. It can now handle and display multiple currencies at once, has constants and full code docs, and you no longer need to manually manage persistent display (e.g. while a menu is open).
+The default controller navigation in menus already auto-detected ClickableComponent values in public List<T> and some Dictionary<TKey, TValue> fields. That now works with any subclass of ClickableComponent and any combination of dictionary key/value types too.
+Fixed organize button in inventory UIs resetting various menu options.
+Added a new Game1.GetPlayer method, which deprecates the old getFarmer and getFarmerMaybeOffline methods.
+Added support for tokenized strings in Game1.multiplayer.broadcastGlobalMessage arguments.
+In Data/Machines, OutputMethod C# methods now get the player interacting with the machine too (if any). Unfortunately this is a breaking change for C# mods which have custom OutputMethod methods.
+Item data is now loaded earlier, so mods can use it when loading other assets (e.g. to check item context tags when generating location fish).
+The Object.displayNameFormat field is now synced in multiplayer, to let mods create customized non-temporary items.
+Changed signature of IClickableMenu.draw(SpriteBatch b, int red = -1, int green = -1, int blue = -1)</cide> so the arguments are no longer optional, which fixes the conflict with draw(SpriteBatch b).
+You can now warp to a specific mine layout using the new forceLayout argument to Game1.enterMine or MineShaft.GetLevelName.
+ItemStockInformation is now a class instead of a struct, which avoids counterintuitive behavior when editing shop stock.
+LanguageSelectionMenu was rewritten to de-hardcode language support a bit.
+ShopMenu's onPurchase callback now receives the stock info, and uses a documented delegate.
+Quests and special orders can now optionally count wild monsters killed on the farm (default false). This is indicated in Data/Quests by a fourth argument in slay quests' objectives field, and in Data/SpecialOrders via an IgnoreFarmMonsters entry in slay objectives' Data field.
+Fixed desert festival makeover not calling hat/clothing onEquip/onUnEquip methods.
+Fixed location.playTerrainSound changing the sound based on the player's current location instead of the location it's called for.
+Fixed Utility.tryToPlaceItem taking an Item argument instead of Object, despite throwing an exception when given a non-Object value.
+Fixed farmers misrendering when drawn with a non-default scale.
+Fixed some cases where you could call TriggerActionManager before it was fully initialized.
+Fixed errors when calling some Bush methods on a destroyed or non-placed bush.
+Fixed warning text when calling TriggerActionManager.RegisterAction with a duplicate name incorrectly saying the newer value will be used.
+Added more code docs.
+Made more code public for mods.
+Removed the last net field implicit conversion operators (for NetBool, NetInt, and NetString).
+Removed unused types, fields/properties, and methods.
+Tweaked powers tab code so mods can get the power ID for a slot.
+Changes for SMAPI and external tools
+Content hashes
+The game now has a Content/ContentHashes.json file, which contains the MD5 hash for every vanilla content asset. This lets SMAPI, mod managers, and other tools auto-detect content files that are outdated, broken, missing, or replaced by XNB mods.
+Name translation changes for wiki maintainers
+Some in-game item or monster names were retranslated in some languages for clarity or correctness.
+This list is mostly provided to help wiki maintainers update pages, so it doesn't include names which only changed capitalization, changed ' (straight apostrophe) to ’ (curly) in French, or aren't visible to vanilla players (like mine rocks).
+Objects
+English
+item old name new name
+Jelly Cranberries Jelly Cranberry Jelly
+Juice Cranberries Juice Cranberry Juice
+Wine Cranberries Wine Cranberry Wine
+French
+item old name new name
+Aerinite Aerinite Aérinite
+Blobfish Blobfish Poisson-blob
+Bone Mill Bone Moulin Moulin à os
+Cave Jelly Méduse des cavernes Gelée des cavernes
+Cookie Cookie Biscuit
+Dinosaur Mayonnaise Mayonnaise dinosaure Mayonnaise de dinosaure
+Dried Fruit Un morceau séché de abricot Un morceau séché d’abricot
+Un morceau séché de ananas Un morceau séché d’ananas
+Un morceau séché de orange Un morceau séché d’orange
+Fairy Rose Rose Féerie Rose de fée
+Fairy Seeds Graines de rose Féerie Graines de rose de fée
+Fiddlehead Fern Fougères de Fern Crosse de fougère
+Fiddlehead Risotto Risotto aux fougères Risotto aux crosses de fougère
+Granite Granite Granit
+Haley's Lost Bracelet Haley's Lost Bracelet Bracelet perdu de Haley
+Item Pedestal Item Pedestal Piédestal
+Jelly Gelée de abricot Gelée d’abricot
+Gelée de ananas Gelée d’ananas
+Gelée de orange Gelée d’orange
+Juice Jus de Ail Jus d’ail
+Jus de Amarante Jus d’amarante
+Jus de Artichaut Jus d’artichaut
+Jus de Aubergine Jus d’aubergine
+Jus de Igname Jus d’igname
+Maple Bar Gâteau à l'érable Gâteau d’érable
+Midnight Squid Calmar de minuit Calamar de minuit
+Qi Bean Haricot Qi Haricot de Qi
+Qi Fruit Fruit Qi Fruit de Qi
+Qi Gem Gemme Qi Gemmes de Qi
+River Jelly Méduse d’eau douce Gelée de rivière
+Sea Jelly Méduse de l’océan. Gelée de mer
+Squid Calmar Calamar
+Sweet Gem Berry Baie gemme sucrée Baie de gemme sucrée
+Targeted Bait Appât de Achigan à grande bouche Appât d’achigan à grande bouche
+Appât de Achigan à petite bouche Appât d’achigan à petite bouche
+Appât de Albacore Appât d’albacore
+Appât de Alose Appât d’alose
+Appât de Anchois Appât d’anchois
+Appât de Anguille Appât d’anguille
+Appât de Anguille de lave Appât d’anguille de lave
+Appât de Écrevisse Appât d’écrevisse
+Appât de Escargot Appât d’escargot
+Appât de Esturgeon Appât d’esturgeon
+Wine Vin de abricot Vin d’abricot
+Vin de ananas Vin d’ananas
+Vin de orange Vin d’orange
+German
+item old name new name
+Artifact Trove Artefakt Fund Artefaktfund
+Calico Egg Calico Ei Calico-Ei
+Combat Quarterly Kampf-Vierteljahresschrift Kampf-Quartalsheft
+Curiosity Lure Neugierde Köder Neugierköder
+Deluxe Worm Bin Luxus-Wurmbehälter Luxus-Wurmeimer
+Dressed Spinner Verkleideter Dreher Verkleideter Spinner
+Farm Computer Hof Rechner Hof-Rechner
+Fireworks Fireworks (Grün) Feuerwerk (Grün)
+Goby Goby Grundeln
+Hot Java Ring Heißer Java Ring Heißer Java-Ring
+Item Pedestal Item Pedestal Gegenstand Podest
+Magma Cap Magma Hut Magmahut
+Mango Sticky Rice Mango Klebreis Mango-Klebreis
+Monster Compendium Monster Kompendium Monster-Kompendium
+Movie Ticket Kino Ticket Kinoticket
+Qi Fruit Qi Frucht Qi-Frucht
+Qi Gem Qi Edelstein Qi-Edelstein
+Raccoon Journal Waschbär Tagebuch Waschbär-Tagebuch
+Sonar Bobber Sonar Köder Sonarköder
+Spinner Dreher Spinner
+Stardew Valley Almanac Stardew Valley Almanach Sternentautaler Almanach
+Stardew Valley Rose Stardew Valley Rose Sternentautaler Rose
+Stardrop Tea Sternentropfen-Tee Sternenfall-Tee
+Tea Leaves Tee Blätter Teeblätter
+Tent Kit Zelt Bausatz Zelt-Bausatz
+Treasure Totem Schatz Totem Schatz-Totem
+Warp Totem: Desert Teleport Totem: Wüste Teleport-Totem: Wüste
+Hungarian
+item old name new name
+Baryte
+(in 1.6.15) Baryt Barit
+Carp Surprise
+(in 1.6.15) Ponty meglepetés Pontymeglepetés
+Cave Jelly Barlangi medúza Barlangi zselé
+Charcoal Kiln
+(in 1.6.15) Faszén kemence Faszenes kemence
+Chewing Stick
+(in 1.6.15) Rágó bot Rágóbot
+Chicken Statue
+(in 1.6.15) Csirke szobor Csirkeszobor
+Dehydrator
+(in 1.6.15) Szárító Aszaló
+Deluxe Worm Bin
+(in 1.6.15) Luxus gilisztás láda Luxus gilisztásláda
+Dinosaur Egg
+(in 1.6.15) Dinoszaurusz tojás Dinoszaurusztojás
+Dried Fruit (base item)
+(in 1.6.15) Szárított Aszalt
+Dried Fruit (collections tab)
+(in 1.6.15) Szárított gyümölcs Aszalt gyümölcs
+Dried Fruit (flavored)
+(in 1.6.15) Szárított <item name> Aszalt <item name>
+Eggplant Parmesan
+(in 1.6.15) Padlizsán parmezán Padlizsános parmezán
+Farm Computer
+(in 1.6.15) Farm számítógép Farm-számítógép
+Fiddlehead Fern
+(in 1.6.15) Hegedűfej páfrány Hegedűfejpáfrány
+Fiddlehead Risotto
+(in 1.6.15) Hegedűfej rizottó Hegedűfejes rizottó
+Fire Opal
+(in 1.6.15) Tűz opál Tűzopál
+Fire Quartz
+(in 1.6.15) Tűz kvarc Tűzkvarc
+Fish Taco
+(in 1.6.15) Hal taco Haltaco
+Glass Shards
+(in 1.6.15) Üveg töredékek Üvegtöredékek
+Golden Relic
+(in 1.6.15) Arany ereklye Aranyereklye
+Iridium Sprinkler
+(in 1.6.15) Irídium öntöző Irídiumöntöző
+Preserves Jar
+(in 1.6.15) Tartósító tégely Tartósítótégely
+Lobster Bisque
+(in 1.6.15) Homár krémleves Homárkrémleves
+Lucky Ring
+(in 1.6.15) Szerencsés gyűrű Szerencsegyűrű
+Maki Roll
+(in 1.6.15) Maki tekercs Maki-tekercs
+Mega Bomb
+(in 1.6.15) Mega bomba Megabomba
+Prize Ticket
+(in 1.6.15) Jutalom jegy Jutalomjegy
+Rainbow Shell
+(in 1.6.15) Szivárvány kagyló Szivárványos kagyló
+Rhubarb Pie
+(in 1.6.15) Rebarbara pite Rebarbarás pite
+Rice Pudding
+(in 1.6.15) Rizspuding Tejberizs
+River Jelly Folyami medúza Folyami zselé
+Salmon Dinner
+(in 1.6.15) Lazac vacsora Lazacvacsora
+Sashimi
+(in 1.6.15) Sashimi Szasimi
+Seafoam Pudding
+(in 1.6.15) Tengeri hab puding Tengerihab-puding
+Sea Jelly Tengeri medúza Tengeri zselé
+Shrimp Cocktail
+(in 1.6.15) Garnéla koktél Garnélakoktél
+Skeletal Hand
+(in 1.6.15) Csontváz kéz Csontvázkéz
+Sonar Bobber
+(in 1.6.15) Szonár úszó Szonárúszó
+Squid Ink
+(in 1.6.15) Tintahal tinta Tintahaltinta
+Squid Ink Ravioli
+(in 1.6.15) Tintahal tintás ravioli Tintahaltintás ravioli
+Star Shards
+(in 1.6.15) Csillagtöredékek Csillagtöredék
+Stepping Stone Path
+(in 1.6.15) Lépcsős kőút Lépőköves út
+Straw Floor
+(in 1.6.15) Szalma padló Szalmapadló
+Sweet Gem Berry
+(in 1.6.15) Édes drágakő bogyó Édes drágakőbogyó
+Trap Bobber
+(in 1.6.15) Csapda úszó Csapdaúszó
+Tree Fertilizer
+(in 1.6.15) Fa trágya Fatrágya
+Truffle Oil
+(in 1.6.15) Szarvasgomba olaj Szarvasgombaolaj
+Warrior Ring
+(in 1.6.15) Harcos gyűrű Harci gyűrű
+Worm Bin
+(in 1.6.15) Gilisztás láda Gilisztásláda
+Italian
+item old name new name
+Cave Jelly Medusa di grotta Gelatina di grotta
+Ginger Ale Ginger ale Liquore allo zenzero
+Haley's Lost Bracelet Haley's Lost Bracelet Braccialetto perduto di Haley
+Item Pedestal Item Pedestal Piedistallo per oggetto
+Rice Shoot Spara di riso Germoglio di riso
+River Jelly Medusa fluviale Gelatina fluviale
+Sea Jelly Medusa marina Gelatina marina
+Japanese
+item old name new name
+Bone Mill クリスタルチェア 骨粉砕機
+Cave Jelly 洞窟クラゲ 洞窟ゼリー
+Haley's Lost Bracelet Haley's Lost Bracelet ヘイリーがなくしたブレスレット
+Heavy Tapper Heavy Tapper 大型樹液採取器
+Item Pedestal Item Pedestal アイテム用の台座
+River Jelly 川クラゲ 川ゼリー
+Roe 明太子 魚卵
+Sea Jelly 海クラゲ 海ゼリー
+Stone Cairn 石のカイム 石のケアン
+Korean
+item old name new name
+Haley's Lost Bracelet Haley's Lost Bracelet 헤일리의 잃어버린 팔찌
+Sunfish 개복치 선피쉬
+Russian
+item old name new name
+Big Green Cane Большой зеленый тростник Большая зеленая трость
+Big Red Cane Большой красный тростник Большая красная трость
+Blobfish
+(in 1.6.15) Рыба-пузырь Рыба-капля
+Blue Slime Egg
+(in 1.6.15) Синее яйцо слайма Яйцо синего слайма
+Bok Choy Seeds Семена бок-чой Семена бок-чоя
+Chicken Decal Наклейка «Курица» Наклейка «Курицы»
+Crimsonfish Кримзонфиш Багрянник
+Crispy Bass
+(in 1.6.15) Окунь с хруст. корочкой Окунь с хрустящей корочкой
+Dried Fruit <item name> (засушено) Сушен. <item name>
+Ревень (засушено) Сушеный ревень
+Дыня (засушено) Сушеные кусочки дыни
+Сморчок (засушено) Сушеные сморчки
+Черника (засушено) Сушеная черника
+Жгучий перец (засушено) Сушеные жгучие перцы
+Карамбола (засушено) Сушеные кусочки карамболы
+Лисичка (засушено) Сушеные лисички
+Клюква (засушено) Сушеная клюква
+Морошка (засушено) Сушеная морошка
+Острая ягода (засушено) Сушеные острые ягоды
+Клубника (засушено) Сушеная клубника
+Шампиньон (засушено) Сушеные шампиньоны
+Дикая слива (засушено) Сушеные дикие сливы
+Ежевика (засушено) Сушеная ежевика
+Кристальный фрукт (засушено) Сушеные кристальные фрукты
+Фиолетовый гриб (засушено) Сушеные фиолетовые грибы
+Древний плод (засушено) Сушеные древние плоды
+Яблоко (засушено) Сушеные яблоки
+Абрикос (засушено) Сушеные абрикосы
+Апельсин (засушено) Сушеные апельсины
+Персик (засушено) Сушеные персики
+Гранат (засушено) Сушеные гранаты
+Вишня (засушено) Сушеная вишня
+Ананас (засушено) Сушеные ананасы
+Манго (засушено) Сушеные манго
+Магмовый гриб (засушено) Сушеные магмовые грибы
+Фрукт Ки (засушено) Сушеные фрукты Ки
+Кокос (засушено) Сушеные кокосы
+Плод кактуса (засушено) Сушеные плоды кактуса
+Банан (засушено) Сушеные бананы
+Снегодыня (засушено) Сушеные кусочки снегодыни
+Far Away Stone Камень издалека Камень из далеких земель
+Fish Taco Рыбный тако Рыбное тако
+Flounder
+(in 1.6.15) Мелкая камбала Камбала
+Glacierfish Jr. Ледорыб Мл. Ледорыб-младший
+Green Canes Зеленый тростник Зеленые тросточки
+Halibut
+(in 1.6.15) Камбала Палтус
+Honey Мед (Мак) Маковый мед
+Мед (Подсолнух) Подсолнуховый мед
+Мед (Тюльпан) Тюльпановый мед
+Мед (Летний блестник) Мед из летнего блестника
+Мед (Сказочная роза) Мед из сказочной розы
+Мед (Синий яркоцвет) Яркоцветовый мед
+Green Slime Egg
+(in 1.6.15) Зеленое яйцо слайма Яйцо зеленого слайма
+Immunity Band
+(in 1.6.15) Кольцо стойкости Перстень преодоления
+Iridium Band
+(in 1.6.15) Иридиевый обод Иридиевый перстень
+Jelly Джем (Ревень) Джем из ревеня
+Джем (Дыня) Дынный джем
+Джем (Черника) Черничный джем
+Джем (Жгучий перец) Джем из жгучего перца
+Джем (Карамбола) Джем из карамболы
+Джем (Клюква) Клюквенный джем
+Джем (Морошка) Джем из морошки
+Джем (Острая ягода) Джем из острой ягоды
+Джем (Виноград) Виноградный джем
+Джем (Клубника) Клубничный джем
+Джем (Дикая слива) Джем из дикой сливы
+Джем (Ежевика) Ежевичный джем
+Джем (Кристальный фрукт) Джем из кристального фрукта
+Джем (Древний плод) Джем из древнего плода
+Джем (Яблоко) Яблочный джем
+Джем (Абрикос) Абрикосовый джем
+Джем (Апельсин) Апельсиновый джем
+Джем (Персик) Персиковый джем
+Джем (Гранат) Гранатовый джем
+Джем (Вишня) Вишневый джем
+Джем (Ананас) Ананасовый джем
+Джем (Манго) Манговый джем
+Джем (Фрукт Ки) Джем из фрукта Ки
+Джем (Кокос) Кокосовый джем
+Джем (Плод кактуса) Кактусовый джем
+Джем (Банан) Банановый джем
+Джем (Снегодыня) Джем из снегодыни
+Juice Сок (Амарант) Амарантовый сок
+Сок (Артишок) Артишоковый сок
+Сок (Свекла) Свекольный сок
+Сок (Бок-чой) Сок бок-чоя
+Сок (Брокколи) Сок брокколи
+Сок (Морковь) Морковный сок
+Сок (Цветная) Сок цветной капусты
+Сок (Кукуруза) Кукурузный сок
+Сок (Баклажан) Баклажановый сок
+Сок (Съедобный папоротник) Папоротниковый сок
+Сок (Чеснок) Чесночный сок
+Сок (Зеленая фасоль) Сок зеленой фасоли
+Сок (Кудрявая капуста) Сок кудрявой капусты
+Сок (Пастернак) Сок пастернака
+Сок (Картофель) Картофельный сок
+Сок (Тыква) Тыквенный сок
+Сок (Редис) Сок редиса
+Сок (Красная капуста) Сок красной капусты
+Сок (Сквош) Сок сквоша
+Сок (Корень таро) Сок корня таро
+Сок (Помидор) Томатный сок
+Сок (Неочищенный рис) Рисовый сок
+Сок (Батат) Сок батата
+Сок (Пещерная морковка) Сок пещерной морковки
+Сок (Одуванчик) Сок одуванчика
+Сок (Имбирь) Имбирный сок
+Сок (Фундук) Ореховый сок
+Сок (Лук-порей) Сок лука-порея
+Сок (Лук-батун) Сок лука-батуна
+Сок (Снежный батат) Сок снежного батата
+Сок (Дикий хрен) Сок дикого хрена
+Сок (Зимний корень) Сок зимнего корня
+Lionfish
+(in 1.6.15) Морской ёрш Крылатка
+Mini-Shipping Bin Мини-ящик для отгрузок Мини-ящик для отгрузки
+Mixed Cane Смешанный тростник Смешанные тросточки
+Mystic Tree Seed Семечко таинственного дерева Семя таинственного дерева
+Oil of Garlic Масло Чеснока Чесночное масло
+Pickles Маринованные консервы: <item name> Маринов. <item name>
+Маринованные консервы: Дикий хрен Маринованный дикий хрен
+Маринованные консервы: Зеленая фасоль Маринованная зеленая фасоль
+Маринованные консервы: Цветная капуста Квашеная цветная капуста
+Маринованные консервы: Картофель Маринованный картофель
+Маринованные консервы: Лук-порей Маринованный лук-порей
+Маринованные консервы: Одуванчик Маринованный одуванчик
+Маринованные консервы: Чеснок Маринованный чеснок
+Маринованные консервы: Пастернак Маринованный пастернак
+Маринованные консервы: Кудрявая капуста Квашеная кудрявая капуста
+Маринованные консервы: Помидор Маринованные помидоры
+Маринованные консервы: Сморчок Маринованные сморчки
+Маринованные консервы: Съедобный папоротник Маринованный папоротник
+Маринованные консервы: Пшеница Квашеная пшеница
+Маринованные консервы: Редис Маринованный редис
+Маринованные консервы: Красная капуста Квашеная красная капуста
+Маринованные консервы: Кукуруза Маринованная кукуруза
+Маринованные консервы: Неочищенный рис Квашеный рис
+Маринованные консервы: Баклажан Маринованные баклажаны
+Маринованные консервы: Артишок Маринованные артишоки
+Маринованные консервы: Тыква Маринованная тыква
+Маринованные консервы: Бок-чой Маринованный бок-чой
+Маринованные консервы: Батат Маринованный батат
+Маринованные консервы: Лисичка Маринованные лисички
+Маринованные консервы: Свекла Маринованная свекла
+Маринованные консервы: Амарант Маринованный амарант
+Маринованные консервы: Хмель Маринованный хмель
+Маринованные консервы: Лук-батун Маринованный лук-батун
+Маринованные консервы: Шампиньон Маринованные шампиньоны
+Маринованные консервы: Фундук Маринованный фундук
+Маринованные консервы: Зимний корень Маринованный зимний корень
+Маринованные консервы: Снежный батат Маринованный снежный батат
+Маринованные консервы: Фиолетовый гриб Маринованные фиолетовые грибы
+Маринованные консервы: Пещерная морковка Маринованная пещерная морковка
+Маринованные консервы: Чайные листья Маринованные чайные листья
+Маринованные консервы: Имбирь Маринованный имбирь
+Маринованные консервы: Корень таро Маринованный корень таро
+Маринованные консервы: Магмовый гриб Маринованные магмовые грибы
+Маринованные консервы: Брокколи Маринованная брокколи
+Маринованные консервы: Морковь Маринованная морковь
+Маринованные консервы: Сквош Маринованный сквош
+Pufferfish
+(in 1.6.15) Рыба-еж Иглобрюх
+Purple Slime Egg
+(in 1.6.15) Фиолетовое яйцо слайма Яйцо фиолетового слайма
+Qi Bean
+(in 1.6.15) Семя Ки Боб Ки
+Qi Gem Драгоценный камень Ки Самоцвет Ки
+Red Slime Egg
+(in 1.6.15) Красное яйцо слайма Яйцо красного слайма
+Slime Crate
+(in 1.6.15) Ящик слайма Ящик для слайма
+Smoked Fish <item name> (закопчено) Копченый <item name>
+Рыба-еж (закопчено) Копченая рыба-еж (in 1.6.9)
+Копченый иглобрюх (in 1.6.15)
+Сардина (закопчено) Копченая сардина
+Радужная форель (закопчено) Копченая радужная форель
+Щука (закопчено) Копченая щука
+Барабулька (закопчено) Копченая барабулька
+Сельдь (закопчено) Копченая сельдь
+Рыба-камень (закопчено) Копченая рыба-камень
+Кримзонфиш (закопчено) Копченый Багрянник
+Морской черт (закопчено) Копченый Морской черт
+Легенда (закопчено) Копченая Легенда
+Мелкая камбала (закопчено) Копченая мелкая камбала (in 1.6.9)
+Копченая камбала (in 1.6.15)
+Карп-мутант (закопчено) Копченый Карп-мутант
+Тигровая форель (закопчено) Копченая тигровая форель
+Тиляпия (закопчено) Копченая тиляпия
+Дорада (закопчено) Копченая дорада
+Камбала (закопчено) Копченая камбала (in 1.6.9)
+Копченый палтус (in 1.6.15)
+Сердцевидка (закопчено) Копченая сердцевидка
+Мидия (закопчено) Копченая мидия
+Креветка (закопчено) Копченая креветка
+Улитка (закопчено) Копченая улитка
+Литорина (закопчено) Копченая литорина
+Устрица (закопчено) Копченая устрица
+Ледорыб (закопчено) Копченый Ледорыб
+Жуть-рыба (закопчено) Копченая жуть-рыба
+Рыба-пузырь (закопчено) Копченая рыба-пузырь
+Сын Кримзонфиш (закопчено) Копченый Малек Багрянника
+Мисс Морской черт (закопчено) Копченая Мисс Морской черт
+Легенда II (закопчено) Копченая Легенда II
+Радиоактивный карп (закопчено) Копченый Радиоактивный карп
+Ледорыб Мл. (закопчено) Копченый Ледорыб-младший
+Морской ёрш (закопчено) Копченый морской ёрш (in 1.6.9)
+Копченая крылатка (in 1.6.15)
+Son of Crimsonfish Сын Кримзонфиш Малек Багрянника
+Statue of Endless Fortune Статуя Вечной Удачи Статуя бесконечной удачи
+Stonefish Камень-рыба Рыба-камень
+Sunfish Санфиш Солнечник
+Sweet Gem Berry Сладкая ягодка Сладкая самоцветинка
+Tall Torch Стоячий факел Длинный факел
+The Art O' Crabbing Искусство крабства Краболовное искусство
+Unmilled Rice Неизмельченный рис Неочищенный рис
+Way Of The Wind pt. 1 Путь Ветра, ч. 1 Путь Ветра, том 1
+Way Of The Wind pt. 2 Путь Ветра, ч. 2 Путь Ветра, том 2
+Wild Plum Черная слива Дикая слива
+Wine Вино (Ревень) Вино из ревеня
+Вино (Дыня) Вино из дыни
+Вино (Черника) Черничное вино
+Вино (Жгучий перец) Вино из жгучего перца
+Вино (Карамбола) Вино из карамболы
+Вино (Клюква) Клюквенное вино
+Вино (Морошка) Вино из морошки
+Вино (Острая ягода) Вино из острой ягоды
+Вино (Виноград) Виноградное вино
+Вино (Клубника) Клубничное вино
+Вино (Дикая слива) Вино из дикой сливы
+Вино (Ежевика) Ежевичное вино
+Вино (Кристальный фрукт) Вино из кристального фрукта
+Вино (Древний плод) Вино из древнего плода
+Вино (Яблоко) Яблочное вино
+Вино (Абрикос) Абрикосовое вино
+Вино (Апельсин) Апельсиновое вино
+Вино (Персик) Персиковое вино
+Вино (Гранат) Гранатовое вино
+Вино (Вишня) Вишневое вино
+Вино (Ананас) Ананасовое вино
+Вино (Манго) Манговое вино
+Вино (Фрукт Ки) Вино из фрукта Ки
+Вино (Кокос) Кокосовое вино
+Вино (Плод кактуса) Кактусовое вино
+Вино (Банан) Банановое вино
+Вино (Снегодыня) Вино из снегодыни
+Spanish
+item old name new name
+Glacierfish Jr. Pez glacial jóven Pez glacial joven
+Haley's Lost Bracelet Haley's Lost Bracelet El brazalete perdido de Haley
+Item Pedestal Item Pedestal Pedestal para objetos
+Stardrop Tea Té de fruta estelar. Té de fruta estelar
+Tent Kit Kit de tienda de campaña. Kit de tienda de campaña
+Treasure Totem Totem del tesoro Tótem del tesoro
+Warp Totem: Island Totem de teletransporte: Isla Tótem de teletransporte: Isla
+Turkish
+item old name new name
+Aged Roe (unflavored) Olgun Yumurta Olgun Balık Yumurtası
+Algae Soup Yosun Çorbası Su Yosunu Çorbası
+Big Green Cane Büyük Yeşil Şekerkamışı Büyük Yeşil Şeker Kamışı
+Big Red Cane Büyük Kırmızı Şekerkamışı Büyük Kırmızı Şeker Kamışı
+Blueberry Yabanmersini Yaban Mersini
+Blueberry Seeds Yabanmersini Tohumu Yaban Mersini Tohumu
+Blueberry Tart Yabanmersinli Turta Yaban Mersinli Turta
+Broccoli Seeds Brokoli Tohumları Brokoli Tohumu
+Carrot Seeds Havuç Tohumları Havuç Tohumu
+Cask Fıçı Varil
+Caviar Hayvar Havyar
+Coleslaw Lahana Salatası Kırmızı Lahana Salatası
+Dark Sign Kara İşaret Kara Tabela
+Dried Sunflowers Kurumuş Ayçicekleri Kurumuş Ayçiçekleri
+Fiddlehead Fern Eğreltiotu Eğrelti Otu
+Fiddlehead Risotto Eğreltiotlu Pilav Eğrelti Otlu Pilav
+Haley's Lost Bracelet Haley's Lost Bracelet Haley'nin Kayıp Bileziği
+Goby Kayabalığı Taşbalığı
+Golden Pumpkin Altın Balkabağı Altın Bal Kabağı
+Green Canes Yeşil Şekerkamışları Yeşil Şeker Kamışları
+Hops Şerbetçiotu Şerbetçi Otu
+Hops Starter Şerbetçiotu Yetiştirici Şerbetçi Otu Yetiştirici
+Jelly Marmelat Reçel
+Loom Dokuma Tezgahı Dokuma Tezgâhı
+Magma Cap Mağma Mantarı Magma Mantarı
+Mini-Forge Mini Dökümhane Mini Demir Ocağı
+Mixed Cane Renkli Şekerkamışları Renkli Şeker Kamışları
+Ostrich Egg Devekuşu Yumurtası Deve Kuşu Yumurtası
+Ostrich Incubator Devekuşu Kuluçka Makinesi Deve Kuşu Kuluçka Makinesi
+Poppyseed Muffin Haşhaşlı Börek Haşhaşlı Kek
+Powdermelon Seeds Kış Kavunu Tohumları Kış Kavunu Tohumu
+Plush Bunny Peluş Tavşan Pelüş Tavşan
+Pumpkin Balkabağı Bal Kabağı
+Pumpkin Seeds Balkabağı Tohumu Bal Kabağı Tohumu
+Queen Of Sauce Cookbook Sosun Kraliçesi Yemek Kitabı Soslar Kraliçesi Yemek Kitabı
+Rarecrows Hepsini bul! (1 Hepsini bul! (X/8)
+(where X is the rarecrow number)
+Red Canes Kırmızı Şekerkamışları Kırmızı Şeker Kamışları
+Roe Yavru <item name> Yumurtası <item name> Yumurtası
+Sloth Skeleton L Tembel Hayvan İskeleti Tembel Hayvan İskeleti (Sol)
+Sloth Skeleton M Tembel Hayvan İskeleti Tembel Hayvan İskeleti (Orta)
+Sloth Skeleton R Tembel Hayvan İskeleti Tembel Hayvan İskeleti (Sağ)
+Stardew Valley Almanac Stardew Valley Yıllığı Yıldızçiyi Vadisi Yıllığı
+Stuffing İç Doldurma
+Summer Squash Seeds Yaz Kabak Tohumları Yaz Kabağı Tohumu
+Workbench Çalışma Tezgahı Çalışma Tezgâhı
+Furniture
+French
+item old name new name
+Book Stack Pile de livres Tas de livres
+J. Cola Light "J. Cola Light" Enseigne murale lumineuse J.Cola
+Large Book Stack Grande pile de livres Grand tas de livres
+Midnight Beach Bed Lit Lit de plage nocturne
+Midnight Beach Double Bed Lit Lit double de plage nocturne
+Small Book Stack Petite pile de livres Petit tas de livres
+Wizard Bookshelf Bibliothèque de sorcier Étagère de sorcier
+Hungarian
+item old name new name
+Cat Tree
+(in 1.6.15) Macskás fa Macskabútor
+Chicken Statue
+(in 1.6.15) Csirke szobor Csirkeszobor
+Dark Cat Tree
+(in 1.6.15) Sötét macskás fa Sötét macskabútor
+Doghouse
+(in 1.6.15) Kutyaház Kutyaól
+Dark Doghouse
+(in 1.6.15) Sötét kutyaház Sötét kutyaól
+Floor TV
+(in 1.6.15) Padló tévé Padlótévé
+Midnight Beach Bed Ágy Éjféli strand ágy
+Midnight Beach Double Bed Dupla ágy Éjféli strand dupla ágy
+Spirits Table
+(in 1.6.15) Italos asztal Italosasztal
+Wine Table
+(in 1.6.15) Borozó asztal Borozóasztal
+Italian
+item old name new name
+Large Green Rug Tappeto verde gande Tappeto verde grande
+Russian
+item old name new name
+Birch Lamp End Table Березовый приставной столик Березовый приставной столик с лампой
+Blossom Rug Цветочный коврик Цветочный ковер
+Bountiful Dining Table Изобильный обеденный стол Обеденный стол «Изобилие»
+Circular Junimo Rug Круглый коврик Джунимо Круглый ковер Джунимо
+'Community Center' «Общественный центр» «Клуб»
+Curly Tree Изогнутое дерево Кудрявое дерево
+Dark Leafy Wall Panel Темная панель «Листва» Средняя панель «Листва»
+Dark Rug Темный Коврик Темный ковер
+Decorative Trash Can Декоративная мусорка Декоративный мусорный бак
+Deluxe Tree Элитное дерево Изысканное дерево
+Dining Chair
+(in 1.6.15) Стул к обеденному столу Обеденный стул
+Elixir Shelf Полка для эликсиров Полка с эликсирами
+Elixir Table Стол для эликсиров Стол с эликсирами
+Funky Rug Модный коврик Модный ковер
+Green Plush Seat Зеленое плюшевое сидение Зеленое плюшевое сиденье
+'Groovy' «Клево» «Волнистые линии»
+Harvey Portrait Портрет Хэйли Портрет Харви
+Icy Rug Ледяной коврик Ледяной ковер
+Indoor Hanging Basket Комнатная висячая корзина Комнатная подвесная корзина
+J Джей Буква «J»
+'Jade Hills Extended' «Нефритовые холмы» (расширенная версия) «Нефритовые холмы» (широкая версия)
+Joja Cola Tea Table Чайный столик Джоджа-кола Чайный столик «Джоджа-кола»
+'Journey Of The Prairie King: The Motion Picture' «Путешествие Короля Прерий: Фильм» «Путешествие Короля прерий: Худ. фильм»
+Junimo Bag Сумка Джунимо Мешочек Джунимо
+Junimo Bundle Сверток Джунимо Узелок Джунимо
+Junimo Mat Мат Джунимо Коврик Джунимо
+Junimo Plaque Табличка Джунимо Пластина Джунимо
+Junimo Rug Коврик Джунимо Ковер Джунимо
+Junimo Wall Plaque Настенная табличка Джунимо Настенная пластина Джунимо
+Large Cottage Rug Большой домашний коврик Большой деревенский ковер
+Large Green Rug Большой зеленый коврик Большой зеленый ковер
+Large Joja Rug Большой коврик Джоджа Большой ковер Джоджа
+Large Red Rug Большой красный коврик Большой красный ковер
+Large Retro Rug Большой коврик «Ретро» Большой ковер «Ретро»
+Light Green Rug Коврик «Зеленые листья» Ковер «Зеленые листья»
+Light Leafy Wall Panel Светлая панель «Листва» Короткая панель «Листва»
+Log Panel Панель «Бревно» Бревенчатая панель
+Long Elixir Table Длинный стол для эликсиров Длинный стол с эликсирами
+Mahogany Lamp End Table Приставной столик из красного дерева Приставной столик из красного дерева с лампой
+Midnight Beach Bed Кровать Кровать «Полночь на пляже»
+Midnight Beach Double Bed Двуспальная кровать Двуспальная кровать «Полночь на пляже»
+Modern Fish Tank Современный аквариум Аквариум «Модерн»
+Modern Rug Современный коврик Ковер «Модерн»
+Oak Lamp End Table Дубовый приставной столик Дубовый приставной столик с лампой
+Old World Rug Старый протертый коврик Старый протертый ковер
+Patchwork Rug Лоскутный коврик Лоскутный ковер
+Pink Plush Seat Розовое плюшевое сидение Розовое плюшевое сиденье
+Retro Banner Плакат «Ретро» Баннер «Ретро»
+Retro Mat Мат «Ретро» Маленький коврик «Ретро»
+Retro Rug Коврик «Ретро» Ковер «Ретро»
+Rune Rug
+(in 1.6.15) Рунный коврик Рунический коврик
+Small Book Pile Кучка книг Несколько книг
+Small Book Stack Стопочка книг Малая стопка книг
+Small Elixir Shelf Полочка для эликсиров Узкая полка с эликсирами
+Small Junimo Mat Маленький мат Джунимо Маленький коврик Джунимо
+Small Stacked Elixir Shelf Заставленная эликсирами полочка Двойная узкая полка с эликсирами
+Stacked Elixir Shelf Заставленная эликсирами полка Двойная полка с эликсирами
+Stacked Joja Boxes Куча коробок Джоджа Стопка коробок Джоджа
+Standing Geode Стоячая жеода Жеода на подставке
+Starry Double Bed Звездная двуспальная кровать Звездчатая двуспальная кровать
+Starry Moon Rug Коврик со звездной ночью Ковер «Звездная ночь»
+'Sun #44' «Солнце №44» «Солнце № 44»
+'Sun #45' «Солнце №45» «Солнце № 45»
+Swirl Rug Коврик с завихрениями Ковер с завихрениями
+'VGA Paradise' «VGA-рай» «Рай VGA»
+Wallflower Pal Дружок у стенки Настенный дружок
+Wall Sconce Настенный канделябр Настенный светильник
+Walnut Lamp End Table Ореховый приставной столик Ореховый приставной столик с лампой
+Winter Tree Decal Наклейка «Зимнее дерево» Наклейка «Зимняя ель»
+Witch's Broom Метла ведьмы Ведьмина метла
+Wood Panel Панель «Дерево» Дощатая панель
+Spanish
+item old name new name
+Modern Fish Tank Pecera mdoerna Pecera moderna
+Turkish
+item old name new name
+Aquamarine Crystal Ball Deniz Yeşili Kristal Küre Gök Zümrütü Kristal Küre
+Birch Dresser Huş Şifoniyer Huş Şifonyer
+Book Pile Kitap Yığını Yığılmış Kitaplar
+Green Cottage Rug Yeşil Baraka Yeşil Baraka Kilimi
+Green Serpent Statue Yeşil Kertenkele Heykeli Yeşil Yılan Heykeli
+J. Cola Light Diyet J. Kola J. Kola Işığı
+Joja Crate Joja Sandığı Joja Kutusu
+Journey Of The Prairie King: The Motion Picture 'Çayır Kralı'nın Yolculuğu' 'Çayır Kralı'nın Yolculuğu: Sinema Filmi'
+Junimo Plush Peluş Junimo Pelüş Junimo
+Krobus Portrait Krobus'in Portresi Krobus'un Portresi
+Large Book Pile Büyük Kitap Yığını Büyük Yığılmış Kitaplar
+Large Joja Crate Büyük Joja Sandığı Büyük Joja Kutusu
+Leah Portrait Leah'ın Portresi Leah'nın Portresi
+Leah's Sculpture Leah'ın Heykeli Leah'nın Heykeli
+Mahogany Bench Mahun Oturak Maun Oturak
+Mahogany Chair Mahun Sandalye Maun Sandalye
+Mahogany Dining Table Mahun Yemek Masası Maun Yemek Masası
+Mahogany Dresser Mahun Şifoniyer Maun Şifonyer
+Mahogany End Table Mahun Komodin Maun Komodin
+Mahogany Table Mahun Masa Maun Masa
+Mahogany Tea-Table Mahun Sehpa Maun Sehpa
+Midnight Beach Bed Yatak Gece Yarısı Kumsallı Yatak
+Midnight Beach Double Bed Çift Kişilik Yatak Gece Yarısı Kumsallı Çift Kişilik Yatak
+Modern Rug Modern Kilim Modern Halı
+Oak Dresser Meşe Şifoniyer Meşe Şifonyer
+Pierre's Sign Pierre'nin Tabelası Pierre'in Tabelası
+Purple Serpent Statue Mor Kertenkele Heykeli Mor Yılan Heykeli
+Red Cottage Rug Kırmızı Baraka Kırmızı Baraka Kilimi
+Short Wizard Bookcase Küçük Büyücü Kitaplığı Kısa Büyücü Kitaplığı
+Small Book Pile Küçük Kitap Yığını Küçük Yığılmış Kitaplar
+Small Junimo Plush Küçük Junimo Peluşu Küçük Junimo Pelüşü
+'The Brave Little Sapling' 'Cesur Fidan' 'Küçük Cesur Fidan'
+Tree of the Winter Star Kışyıldızı Ağacı Kış Yıldızı Ağacı
+Walnut Dresser Ceviz Şifoniyer Ceviz Şifonyer
+Wizard Bookshelf Büyücü Kitaplığı Büyücü Rafı
+Hats
+French
+item old name new name
+blue Bow Ruban bleu Noeud ruban bleu
+Fedora Fedora Fédora
+German
+item old name new name
+Bucket Hat Fischerhut Bucket-Hut
+Panda Hat Panda Hat Panda-Hut
+Russian
+item old name new name
+Arcane Hat Загадочная шляпа Таинственная шляпа
+Flat Topped Hat Канотье Капотен
+Laurel Wreath Crown Лавровая корона Лавровый венок
+Spanish
+item old name new name
+Gold Pan Sartén de Oro Cacerola de Oro
+Iridium Pan Sartén de Iridio Cacerola de Iridio
+Steel Pan Sartén de Acero Cacerola de Acero
+Totem Mask Máscara totem Máscara tótem
+Turkish
+item old name new name
+Arcane Hat Gizemli Şapka Büyücü Şapkası
+Copper Pan Bakır Tava Bakır Eleme Tavası
+Flat Topped Hat Fötr Şapka Seyyah Şapkası
+Leprechaun Hat Cüce Şapkası Cüce Cin Şapkası
+Movie concessions
+Hungarian
+item old name new name
+Cappuccino Mousse Cake
+(in 1.6.15) Kapuccsinó habos torta Kapucsínó habos torta
+Pants
+German
+item old name new name
+Island Bikini Island Bikini Insel Bikini
+Prismatic Pants Prismatic Pants Prisma Hose
+Japanese
+item old name new name
+Messy Shorts
+(in 1.6.15) 散らかったシャツ 散らかったパンツ
+Turkish
+item old name new name
+Trimmed Lucky Purple Shorts İşlemeli Mor Şort İşlemeli Şanslı Mor Şort
+Shirts
+French
+item old name new name
+gender-variant shirts "(M)" suffix "(H)" suffix
+Island Bikini Island Bikini Bikini des îles
+German
+item old name new name
+Hot Pink Shirt Hot Pink Shirt Pinkes Hemd
+Italian
+item old name new name
+Island Bikini Island Bikini Bikini delle isole
+Japanese
+item old name new name
+gender-variant shirts " (F)" and " (M)" suffixes "（女）" and "（男）" suffixes
+Island Bikini Island Bikini アイランドビキニ
+Korean
+item old name new name
+gender-variant shirts "(F)" and "(M)" suffixes "(여)" and "(남)" suffixes
+Island Bikini Island Bikini 섬 비키니
+Russian
+item old name new name
+Midnight Dog Jacket Куртка полночного пса Куртка полуночного пса
+Mineral Dog Jacket Минеральная куртка для собаки Куртка минерального пса
+Prismatic Shirt Призматичная рубашка Радужная рубашка
+Spanish
+item old name new name
+Island Bikini Island Bikini Bikini isleño
+Turkish
+item old name new name
+gender-variant shirts "(F)" and "(M)" suffixes "(K)" and "(E)" suffixes
+Aquamarine Shirt Deniz Yeşili Tişört Gök Zümrütü Tişört
+Midnight Dog Jacket Geceyarısı Ceketi Gece Yarısı Ceketi
+Tan Striped Shirt Çizgili Tenrengi Tişört Çizgili Ten Rengi Tişört
+Tools
+German
+item old name new name
+upgradeable tools <level> <tool> (like Stahl-Axt) <level><tool> (like StahlAxt)
+Hungarian
+item old name new name
+upgradeable tools <level> <tool> (like Acél Balta) <level><tool> (like Acélbalta)
+Milk Pail
+(in 1.6.15) Tejes vödör Tejesvödör
+Japanese
+item old name new name
+upgradeable tools <level> <tool> (like 鋼 オノ) <level>の<tool> (like 鋼のオノ)
+Korean
+item old name new name
+Bamboo Pole 대나무 막대 대나무 낚싯대
+Russian
+item old name new name
+upgradeable tools <tool> (<level>) (like Топор (Медь)) <level> <tool> (like Медный топор)
+Spanish
+item old name new name
+Advanced Iridium Rod Barra de Iridio Avanzada Caña de Iridio Avanzada
+Turkish
+item old name new name
+Advanced Iridium Rod Gelişmiş İridyum Oltası Gelişmiş İridyum Olta
+Bamboo Pole Bambu Oltası Bambu Olta
+Fiberglass Rod Camyünü Oltası Camyünü Olta
+Iridium Rod İridyum Oltası İridyum Olta
+Weapons
+Japanese
+item old name new name
+Galaxy Hammer Galaxy Hammer ギャラクシーハンマー
+Hungarian
+item old name new name
+Golden Scythe
+(in 1.6.15) Arany kasza Aranykasza
+Turkish
+item old name new name
+Elliott's Pencil Elliot'ın Kalemi Elliott'ın Kalemi
+Animals
+Russian
+animal old name new name
+Blue Chicken Голубая курица Синяя курица
+Golden Chicken Золотой цыпленок Золотая курица
+Buildings
+Hungarian
+building old name new name
+Pet Bowl
+(in 1.6.15) Háziállat tálka Háziállattálka
+Monsters
+French
+monster old name new name
+Pepper Rex Poivron Rex Poivrosaure
+Squid Kid Jeune calmar Tête flottante
+German
+monster old name new name
+Magma Duggy Magma Schwenker Magma-Schwenker
+Magma Sparker Magma Sprenger Magma-Sprenger
+Magma Sprite Magma Wicht Magma-Wicht
+Wilderness Golem Golem der Wildnis Wildnis-Golem
+Hungarian
+monster old name new name
+Carbon Ghost Szén szellem Szénszellem
+Iridium Bat Irídium denevér Irídiumdenevér
+Iridium Crab Irídium rák Irídiumrák
+Iridium Golem Wilderness Golem Vad gólem
+Lava Bat Láva denevér Lávadenevér
+Lava Crab Láva rák Lávarák
+Rock Crab Kő rák Kőrák
+Shadow Brute Árnyék állat Árnyékállat
+Shadow Shaman Árnyék sámán Árnyéksámán
+Tiger Slime Tigris ragacs Tigrisragacs
+Truffle Crab Rock Crab Kőrák
+Portuguese
+monster old name new name
+Frost Jelly Geleia congelada Gosma Congelada
+Iridium Golem Wilderness Golem Golem Selvagem
+Pepper Rex Pimenta Rex Rex Pimenta
+Shadow Guy O cara das sombras Homem das Sombras
+Skeleton Mage Mago esqueleto Esqueleto Mago
+Skeleton Warrior Guerreiro esqueleto Esqueleto Guerreiro
+Russian
+monster old name new name
+Carbon Ghost Углеродный признак Углеродный призрак
+Dwarvish Sentry Часовой дварфов Дварфийский часовой
+Iridium Golem Wilderness Golem Голем из глуши
+Shadow Shaman Шаман теней Теневой шаман
+Truffle Crab Rock Crab Каменный краб
+Turkish
+monster old name new name
+Magma Duggy Mağma Kazılcası Magma Kazılcası
+Magma Sprite Mağma Tayfı Magma Tayfı
+Movies
+Turkish
+movie old name new name
+The Brave Little Sapling Cesur Fidan Küçük Cesur Fidan
+NPCs
+Russian
+NPC old name new name
+Professor Snail
+(in 1.6.15) Проф. Улиткин Проф. Улиткинс
+XNB impact
+Overview
+This section provides a summary of the XNB files which changed in Stardew Valley 1.6.9. This doesn't include new files (since they won't impact existing mods), or text changes in non-English files.
+XNB mods are disproportionately affected, since...
+they replace the entire file;
+they're loaded through the MonoGame content pipeline which is less tolerant of format changes;
+they don't benefit from the compatibility rewrites Content Patcher provides for its content packs.
+Content Patcher packs are typically unaffected (and Content Patcher will try to rewrite content packs automatically). However if a content pack replaces an entire asset instead of editing, it's more likely to be affected like an XNB mod.
+Changed assets
+TODO
+Removed unused assets
+Stardew Valley 1.6.9 deletes assets which weren't used by the game. Mods usually aren't affected by this.
+Removed assets:
+LooseSprites/buildingPlacementTiles
+LooseSprites/DialogBoxGreen
+LooseSprites/hoverBox
+LooseSprites/robinAtWork
+LooseSprites/skillTitles
+Maps/cavedarker
+Maps/FarmhouseTiles
+Maps/GreenhouseInterior
+Maps/spring_BusStop
+Maps/TownIndoors
+Maps/WizardHouseTiles
+Maps/WoodBuildings
+TerrainFeatures/BuffsIcons
+See also
+The 1.6.9 release notes list many smaller technical changes not covered on this page.

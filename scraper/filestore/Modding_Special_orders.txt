@@ -1,0 +1,129 @@
+Jump to navigation
+Jump to search
+← Index
+Article Stub
+This article is marked as a stub for the following reason:
+Rewards are marked as "to do"
+Special orders are a more flexible and customizable quest system unlocked in late game. Special orders can be added to the data file with options like duration, repeatability, objectives, and rewards.
+This page explains how the game stores and uses special orders. This is an advanced guide for mod developers.
+Contents
+1 Raw data
+2 Format
+2.1 Basic Fields
+2.2 Randomized Elements
+2.3 Objectives
+2.4 Rewards
+2.5 Context tags
+3 Special rules
+4 See also
+Raw data
+Special orders are stored in Content\Data\SpecialOrders.xnb, which can be unpacked for editing. Here's the raw data as of 1.5.1:
+Data 
+Format
+Basic Fields
+Each special order has a few basic fields, as well as some more complex fields (which are explained below).
+Field Name Description
+Name Name of the special order. This is in brackets, referring to a string in Strings/SpecialOrderStrings.
+Requester The name of the NPC the order is for. Can take the form of non-friendable NPCs such as Qi or Gunther.
+Duration How long you have to complete the order before it auto-fails. Can be one of the following: Day, ThreeDays, Week, TwoWeeks, or Month.
+Repeatable Whether or not the order can be repeated. Either true or false.
+RequiredTags Defines conditions for the order appearing. Can be one or several of the following in a comma-delimited list:
+season_<season>: must currently be the specified season.
+event_<ID>: the host player has seen the event with the specified ID.
+mail_<ID>: the host player has the specified mail key.
+rule_<name>: the specified rule is in effect. (See below.)
+dropbox_<name>: the specified dropbox is currently in use by another quest or special order. (See below.)
+island: Ginger Island has been unlocked. This also adds an island motif to the note.
+knows_<NPCname>: Returns true if any farmer knows the specified NPC.
+NOT_IMPLEMENTED: Always returns false.
+Additionally, requirements may be prefixed with ! to invert the condition. For example, !dropbox_<name> returns true only if the specified dropbox is not in use.
+OrderType Is either blank or Qi.
+SpecialRule A comma-delimited list of special rules that apply while this special order is active.
+Text Put in brackets, refers to a string in Strings/SpecialOrderStrings.
+ItemToRemoveOnEnd Removes all instances of the specified item ID from all inventories and containers. Used to prevent keeping hold of quest items.
+MailToRemoveOnEnd Sets the specified mail as unread.
+Randomized Elements
+This field, if not null, is a collection of blocks, each representing a random element. The format for each one is as follows:
+Field Name Description
+Name The name of the random element, used within the special order data and in the order's strings in Strings/SpecialOrderStrings.
+Values A list of blocks, each containing required tags and a value to set the random element to if the tags are met. RequiredTags here follows the same format as the field of the same name in the main block. (See above.)
+Value is a text string in the following format:
+If randomly selecting items, the format is: PICK_ITEM, <item name>, <item name>, <item name>.... Items are checking for an ID match then if there's none, their internal names, i.e. field 0 in Data/ObjectInformation.
+If randomly selecting groups of items by context tag, the format is: Text|[<string key>]|Tags|<context tags>.
+If randomly selecting a monster, the format is: Target|<monster name>|LocalizedName|[<string key>]
+If simply setting the value of the random element to a string in Strings/SpecialOrderStrings, the format is simply: [<string key>].
+Random elements can then be called in the following ways, depending on what the format of their Value field is:
+If the random element is simply a string, just the random element name surrounded by single curly braces will return the string.
+{<element name>:Text}: If the random element is an item, returns its name.
+{<element name>:TextPlural}: If the random element is an item, returns its name in plural form.
+{<element name>:TextPluralCapitalized}: If the random element is an item, returns its name in plural form, capitalized.
+{<element name>:Tags}: If the random element is an item, returns its tags.
+{<element name>:Price}: If the random element is an item, returns its price.
+{<element name>:Target}: If the random element is a monster, returns its name.
+Objectives
+Each order can have any number of objectives of the given types.
+Objective type Description
+Collect The player must obtain items that match the AcceptedContextTags field. The items must never have been in a player inventory. This applies to any method of collecting items (e.g., harvesting crops, slaying monsters, collecting from a machine, cooking a dish, etc). There's no restriction to how the item can be collected; e.g., a special order for emeralds will be equally find with gems found in the mines or produced in a crystalarium.
+Deliver The player must give items that match the AcceptedContextTags field to a given character. This doesn't count towards the character's gift limit.
+Fish Equivalent to Collect, but only counts items found by fishing.
+Gift The player must give items that match the AcceptedContextTags field to a given character. This does count towards the character's gift limit. Parameters can include a minimum gift taste level.
+JKScore The player must achieve at least the given Junimo Kart score. This tracks the highest score reached while the special order is active.
+ReachMineFloor The player must reach or exceed the given floor in the mines or the Skull Cavern (depending on the SkullCave field) while the special order is active.
+Ship The player must ship items through their shipping bin which match the AcceptedContextTags field. The quest objective progresses when the items are collected, not when they're put in the bin. Player still get money for the shipped items as they would normally. The UseShipmentValue field ("false" by default) can be set to "true" to require shipping a certain amount of money worth of items, instead of a certain number of items.
+Donate The player must add items that match the AcceptedContextTags field to a dropbox.
+Slay The player must kill a minimum number of monsters of the given name while the special order is active.
+Rewards
+Each order can have any number of rewards of the given types.
+Reward Description
+Friendship Increases the amount of friendship, which is by default 250 points (1 heart) and for the requesting NPC. If specified, the units are in terms of number of friendship points, not hearts.
+"Type": "Friendship",
+"Data": {
+    "Amount": "Number of friendship points to add", // integer
+    "TargetName": "Name of NPC to add them to" // string
+}
+Gems Rewards the farmer a set amount of Qi Gems.
+"Type": "Gems",
+"Data": {
+    "Amount": "Number of Qi Gems to award" // integer
+}
+Mail Sets a mail flag, which can be used to trigger custom events, dialogue, or other changes. "MailReceived" sets the name of the mail flag that is set upon completion of the special order. "NoLetter" controls whether there is an actual letter corresponding to the mail flag, and is true by default (no mail sent). "Host" seems to be intended to control whether only the host receives the quest completion letter, but due to "send to everyone" being always true, appears to have no real effect in the game. (TODO: verify this.) "Host" is false by default.
+"Type": "Mail",
+"Data": {
+    "MailReceived": "Name of mail flag", // string
+    "NoLetter": "true/false", // boolean
+    "Host": "true/false" // boolean
+}
+Money Rewards the farmer a set amount of money or a value that depends on the donated item. The total money rewarded is Amount * Multiplier.
+"Type": "Money",
+"Data": {
+    "Amount": "Amount of money", // integer
+    "Multiplier": "Multiplier on amount" // float
+}
+ResetEvent Removes the event IDs from the list of event IDs seen by the player, thus making the events repeatable.
+"Type": "ResetEvent",
+"Data": {
+    "ResetEvents": "eventID1 eventID2 eventID3" // space-separated integers
+}
+Context tags
+The AcceptedContextTags fields specify context tags for required items. This consists of a string with the following format:
+syntax effect
+! When prefixed to a context tag, indicates that an item must not have that tag.
+, Separates any number of required context tags. For example, A, B, C matches items that have all of those tags.
+/ Separates any number of alternate context tags. For example, A/B/C matches items that have at least one of those tags.
+For example, !forage_item, category_vegetable/category_fruit, quality_gold would match non-forage gold-quality items which are either fruits or vegetables.
+Special rules
+Special rules are unique string IDs that can be used to apply logic while the special order is active.
+The game has some predefined rules:
+rule ID effect
+DROP_QI_BEANS The player can find Qi Beans for the Qi's Crop order.
+LEGENDARY_FAMILY The player can catch the new legendary fish for the Extended Family order.
+MINE_HARD
+SC_HARD Raises the difficulty level of the mines or Skull Cavern.
+SC_NO_FOOD The player can't eat food in the Skull Cavern.
+QI_BEANS
+QI_COOKING
+QI_DOUBLE TODO: document what these do.
+Special orders can also have arbitrary rule IDs, which can be checked using game state queries (via PLAYER_SPECIAL_ORDER_RULE_ACTIVE) or in C# (via Game1.player.team.SpecialOrderRuleActive).
+See also
+Modding:Quest data
+Categories: Article stubsModding

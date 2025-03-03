@@ -1,0 +1,89 @@
+Jump to navigation
+Jump to search
+← Index
+This page explains location contexts. This is an advanced guide for modders.
+Contents
+1 Format
+1.1 Required fields
+1.2 Player actions
+1.3 Season
+1.4 Weather
+1.5 Music
+1.6 Advanced
+2 See also
+Format
+Custom contexts can be created by editing the new Data/LocationContexts asset, and setting the context name in the location's LocationContext map property.
+The data asset consists of a string → model lookup, where the key matches the Name field and the value is a model with these fields:
+Required fields
+field effect
+Name The unique string ID for the location context.
+Player actions
+field effect
+AllowRainTotem (Optional) Whether a rain totem can be used to force rain in this context tomorrow. If false, using a rain totem here will show a "this item can't be used here" message instead.
+RainTotemAffectsContext (Optional) If set, using a rain totem here will change the weather in the given context ID. For example, rain totems in the desert change weather in the valley.
+MaxPassOutCost (Optional) When the player passes out (due to exhaustion or at 2am) in this context, the maximum amount of gold lost. If omitted or set to -1, uses the same value as the Default context (1,000g by default).
+PassOutMail (Optional) When the player passes out (due to exhaustion or at 2am) in this context, the possible letter IDs to add to their mailbox (if they haven't received it before). If multiple letters are valid, one will be chosen randomly (unless one specifies SkipRandomSelection).
+This consists of a list of models with these fields:
+field effect
+Id The unique string ID for this entry in the list.
+Mail The letter ID to add.
+The game will look for an existing letter ID in Data/mail in this order (where <billed> is Billed if they lost gold or NotBilled otherwise, and <gender> is Female or Male):
+<letter id>_<billed>_<gender>
+<letter id>_<billed>
+<letter id>
+If no match is found in Data/mail, the game will send passedOut2 instead.
+If the mail ID starts with passedOut, {0} in the letter text will be replaced with the gold amount lost, and it won't appear in the collections page.
+MaxPassOutCost (Optional) The maximum amount of gold lost. This is applied after the context's MaxPassOutCost (i.e. the context's value is used to calculate the random amount, then this field caps the result). Defaults to unlimited.
+Condition (Optional) A game state query which indicates whether this entry is active. Defaults to always true.
+SkipRandomSelection (Optional) If true, send this mail if the Condition matches instead of choosing a random valid mail. Default false.
+PassOutLocations (Optional) When the player passes out (due to exhaustion or at 2am) in this context and they started the day in a different location context, the locations where they'll wake up. (If the player started the day in the same context, they'll wake up in the last bed they slept in instead.)
+If the selected location doesn't contain a bed and doesn't have the AllowWakeUpWithoutBed map property, the player will wake up in the farmhouse instead.
+This consists of a list of models with these fields:
+field effect
+Id The unique string ID for this entry in the list.
+Location The internal location name.
+Position The default tile position within the location, specified as an object with X and Y fields. If the location has any bed furniture, they'll be placed in the first bed found instead.
+Condition (Optional) A game state query which indicates whether this entry is active. Defaults to always applied.
+If no locations are specified or none match, the player will wake up in their bed at home.
+ReviveLocations (Optional) If the player just got knocked out in combat, the location names where they'll wake up.
+This consists of a list of models with these fields:
+field effect
+Id The unique string ID for this entry in the list.
+Location The internal location name.
+Position The tile position within the location, specified as an object with X and Y fields.
+Condition (Optional) A game state query which indicates whether this entry is active. Defaults to always applied.
+If the selected location has a standard event with the exact key PlayerKilled (with no / or preconditions in the key), that event will play when the player wakes up and the game will apply the lost items or gold logic. The game won't track this event, so it'll repeat each time the player is revived. If there's no such event, the player will wake up without an event, and no items or gold will be lost.
+If no locations are specified or none match, the player will wake up at Harvey's clinic.
+Season
+field effect
+SeasonOverride (Optional) The season which is always active for locations within this context (one of spring, summer, fall, or winter). For example, setting summer will make it always summer there regardless of the calendar season. If not set, the calendar season applies.
+Weather
+field effect
+WeatherConditions (Optional) The weather logic to apply for locations in this context (ignored if CopyWeatherFromLocation is set). Defaults to always sunny. If multiple are specified, the first matching weather is applied.
+This consists of a list of models with these fields:
+field effect
+Id The unique string ID for this entry in the list.
+Weather The weather ID to set.
+Condition (Optional) A game state query which indicates whether to apply the weather. Defaults to always applied.
+CopyWeatherFromLocation (Optional) The Name (i.e. unique ID) of the location context from which to inherit weather.
+If a passive festival is active in any location within this context, the weather is sunny for the entire context regardless of these fields.
+Music
+field effect
+DefaultMusic (Optional) The cue ID for the music to play when the player is in the location, unless overridden by a Music map property. Despite the name, this has a higher priority than the seasonal music fields below. Ignored if omitted.
+DefaultMusicCondition (Optional) A game state query which returns whether the DefaultMusic field should be applied (if more specific music isn't playing). Defaults to always true.
+DefaultMusicDelayOneScreen (Optional) When the player warps and the music changes, whether to silence the music and play the ambience (if any) until the next warp (similar to the default valley locations). Default false.
+Music (Optional) A list of cue IDs to play before noon in this location unless it's raining, there's a Music map property, or the context has a DefaultMusic value. If multiple values are specified, the game will play one per day in sequence.
+This consists of a list of models with these fields:
+field effect
+Id (Optional) A unique string ID which identifies this entry within the list. Defaults to the Track value.
+Track The audio track ID to play.
+Condition (Optional) A game state query which indicates whether this entry applies. Default true.
+DayAmbience
+NightAmbience (Optional) The cue ID for the background ambience to play when there's no music active, depending on the time of day. Both default to none.
+PlayRandomAmbientSounds (Optional) Whether to play random outdoor ambience sounds depending on factors like the season and time of day (e.g. birds, crickets, and mysterious groan sounds in the rain). This is unrelated to the DayAmbience and NightAmbience fields. Default true.
+Advanced
+field effect
+CustomFields The custom fields for this entry.
+See also
+Modding:Location data
+Category: Modding

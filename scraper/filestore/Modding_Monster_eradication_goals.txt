@@ -1,0 +1,43 @@
+Jump to navigation
+Jump to search
+← Index
+This page explains monster eradication goals. This is an advanced guide for mod developers.
+Format
+You can add/edit Adventurer's Guild monster eradication goals by editing the Data/MonsterSlayerQuests data asset.
+This consists of a string → model lookup, where...
+The key is a unique string ID for the monster eradication goal.
+The value is a model with the fields listed below.
+field effect
+DisplayName A tokenizable string for the goal's display name, shown on the board in the Adventurer's Guild.
+Targets A list of monster IDs that are counted towards the Count.
+Count The total number of monsters (matching the Targets) which must be defeated to complete this goal.
+RewardItemId (Optional) The qualified ID for the item that can be collected from Gil when this goal is completed. Default none.
+RewardItemPrice (Optional) The price of the RewardItemId in Marlon's shop after the goal is completed, or -1 to disable buying it from Marlon. Default -1.
+RewardDialogue
+RewardDialogueFlag (Optional) A tokenizable string for custom Gil dialogue shown when talking to him after completing the goal, and an optional mail flag to set when the player has seen the dialogue. Both default to none.
+If there are reward items, they're shown after this dialogue.
+If RewardDialogue is used without RewardDialogueFlag, then this dialogue will be shown each time the reward menu is opened after completing the goal, until the player collects the reward items. If the RewardItems isn't set, this can safely be omitted since the goal will be marked collected immediately.
+This doesn't send a letter; see RewardMail or RewardMailAll for that.
+RewardFlag
+RewardFlagAll (Optional) The mail flag ID to set for the current player (RewardFlag) or all players (RewardFlagAll) when talking to Gil after completing the goal. Default none.
+Note that RewardFlag is usually not needed, since the game will also set a Gil_<goal ID> flag regardless.
+This doesn't send a letter; see RewardMail or RewardMailAll for that.
+RewardMail
+RewardMailAll (Optional) The mail letter ID to add to the mailbox tomorrow for the current player (RewardMail) or all players (RewardMailAll). Default none.
+CustomFields The custom fields for this entry.
+Flag changes
+The game now tracks Adventurer's Guild monster eradication goal completion by the goal ID, instead of the produced item. Here is a list for vanilla goal IDs:
+goal flag
+Slimes ×1000 Gil_Slimes
+Void Sprits ×150 Gil_Shadows
+Bats ×200 Gil_Bats
+Skeletons ×50 Gil_Skeletons
+Cave Insects ×80 Gil_Insects
+Duggies ×30 Gil_Duggy
+Dust Sprites ×500 Gil_DustSpirits
+Rock Crabs ×60 Gil_Crabs
+Mummies ×100 Gil_Mummies
+Pepper Rex ×50 Gil_Dinos
+Serpents ×250 Gil_Serpents
+Magma Spirits ×150 Gil_FlameSpirits
+Category: Modding

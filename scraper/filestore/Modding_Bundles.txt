@@ -1,0 +1,23 @@
+Jump to navigation
+Jump to search
+←Index
+Raw data
+Bundle data is stored in Content\Data\Bundles.xnb, which can be unpacked for editing. Here's the raw data as of 1.5.1 for reference:
+Expand
+Data 
+Format
+All bundles share the same format, which cannot be re-ordered. Each field is explained below.
+index syntax description
+0 <Room ID> The room of the Community Center that the bundle is located in. Possible values are Pantry, Crafts Room, Fish Tank, Boiler Room, Vault, and Bulletin Board.
+1 <Sprite Index> The index number for the bundle sprite, pulled from JunimoNote.xnb. Some index numbers will cause a menu crash if used, for unknown reasons. Starts from 0.
+2 <Bundle Name> Name to display for the bundle. Can be changed freely.
+3 <Type of object> <Object ID> <Number of object given> Reward given for completion of that bundle. Possible object types are O Object, BO Big Object, F Furniture, H Hat, C Clothing or R Ring. IDs may overlap between categories, hence the need for the object type. By default, only multiples of regular objects can be rewarded, not Big Objects or Rings. You also cannot award more than one object per bundle (i.e., give a mayo machine and a cheese press for completing one bundle).
+4 <Object ID> <Number needed> <Minimum quality> Objects needed for bundle. May repeat up to twelve entries; any over that will crash the bundle menu. Quality starts at 0 for no quality, up to 4 for iridium quality. Note that not all objects can be iridium quality.
+5 <Color Index> Index number of bundle color, as found in JunimoNote.xnb. Starts from 0.
+6 <Number of items> Number of items out of possible needed to complete bundle. May not exceed twelve. Higher numbers will cause the deposit spaces to expand out of the background box. If left blank, game will require all possible items for that bundle.
+7 <Translated Name> Optional entry. Contains translated name of bundle if playing in language other than English.
+Reward limitation
+Bundles can only reward one big object (auto-grabber, crystalarium, lightning rod, etc.) at a time. If you attempt to make it reward multiple big objects by changing the quantity, it will only reward one and ignore the others.
+Bundles can also only reward one type of object at a time. Thus, it is possible to make a bundle reward 5 iridium sprinklers, but it is not possible to make a bundle reward 2 iridium sprinklers and 3 quality sprinklers.
+Either way, it is not possible to reward multiple objects by editing bundles.xnb. Doing so would require modding the game code itself, and that particular mod does not exist yet.
+Category: Modding

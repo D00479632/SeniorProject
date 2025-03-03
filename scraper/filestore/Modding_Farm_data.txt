@@ -1,0 +1,156 @@
+Jump to navigation
+Jump to search
+← Index
+This page explains how the game stores and parses farm types, maps, and related data. This is an advanced guide for mod developers.
+Before reading this page, see Modding:Editing XNB files for the basic concepts.
+Contents
+1 Assets
+1.1 Farm type data
+1.2 Farm map
+1.3 Farm map properties
+1.4 Location data
+2 Example
+Assets
+Farm type data
+You can define custom farm types by editing the Data/AdditionalFarms asset.
+This consists of a list of models, where each model has the fields listed below.
+field description
+ID A unique string ID for the farm type.
+TooltipStringPath The translation key containing the translatable farm name and description. For example, Strings/UI:Farm_Description will get it from the Farm_Description entry in the Strings/UI file.
+The translated text must be in the form "<name>_<description>", like "Pineapple Farm_A farm shaped like a pineapple".
+MapName The asset name for the farm's map asset, relative to the Maps folder. For example, Farm_Pineapple would load Maps/Farm_Pineapple.
+IconTexture (Optional) The asset name for a 22x20 pixel icon texture, shown on the 'New Game' and co-op join screens.
+WorldMapTexture (Optional) The asset name for a 131x61 pixel texture that's drawn over the farm area in the in-game world map.
+ModData (Optional) The mod data fields for this farm type, which can be accessed in C# code via Game1.GetFarmTypeModData(key).
+Farm map
+The farm map contains the general appearance and layout of your farm. Modding:Maps describes the basic process of creating a map.
+Copying and editing an existing farm map is recommended to avoid problems with missing information. The map must be added to the game files, and not replace an existing one.
+Farm map properties
+You can customize the farm behavior by setting map properties in the map asset.
+When testing map property changes, it's best to create a new save since some of these are only applied when the save is created. These properties are optional, and the game will use default values for any properties that aren't specified.
+Some notable map properties are:
+Warp & map positions set the player position when arriving on the farm (e.g. BackwoodsEntry when arriving from the backwoods, or WarpTotemEntry when using a warp totem or farm obelisk), and the default positions of some location contents (e.g. MailboxLocation for the default mailbox position).
+Farmhouse interior properties set the appearance and contents of the farmhouse (e.g. FarmHouseFlooring for the default flooring, or FarmHouseStarterGift for what's in the starter giftbox).
+Fishing properties override fishing and crab pot behavior.
+Plants, forage, & item spawning properties override how crops, forage, artifact spots, etc work on the farm.
+Location data
+Optionally, you can override additional farm location behavior by editing Data/Locations. Each farm type can have its own entry, with a key in the form Farm_<farm type ID>. If omitted, it defaults to the location data for the standard farm layout.
+This can be used to override forage, fish, crab pot catches, artifact spots, etc.
+For custom farms, some fields should have specific values to preserve expected behavior:
+field description
+DisplayName A tokenizable string for the farm name. It should contain at least the FarmName token to be sure the farm name is shown. The standard value is [LocalizedText Strings\\StringsFromCSFiles:MapPage.cs.11064 [EscapedText [FarmName]]].
+CreateOnLoad Must be null or omitted. Any other value will create duplicate locations.
+CanPlantHere Should be true or omitted. If false, crops can't be grown on your farm.
+Example
+For example, this Content Patcher pack adds a farm type with custom location data.
+{
+    "Changes": [
+        // add farm type
+        {
+            "Action": "EditData",
+            "Target": "Data/AdditionalFarms",
+            "Entries": {
+                "{{ModId}}_PineappleFarm": { // for technical reasons, you need to specify the ID here *and* in the 'ID' field
+                    "ID": "{{ModId}}_PineappleFarm",
+                    "TooltipStringPath": "Strings/UI:{{ModId}}",
+                    "MapName": "{{ModId}}",
+                    "IconTexture": "Mods/{{ModId}}/Icon",
+                    "WorldMapTexture": "Mods/{{ModId}}/WorldMap"
+                }
+            }
+        },
+
+        // add farm name + description
+        {
+            "Action": "EditData",
+            "Target": "Strings/UI",
+            "Entries": {
+                "{{ModId}}": "Pineapple Farm_A farm shaped like a pineapple!" // tip: use {{i18n}} to translate it
+            }
+        },
+
+        // load map
+        {
+            "Action": "Load",
+            "Target": "Maps/{{ModId}}",
+            "FromFile": "assets/map.tmx"
+        },
+
+        // load icon
+        {
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/Icon, Mods/{{ModId}}/WorldMap",
+            "FromFile": "assets/{{TargetWithoutPath}}.png"
+        },
+
+        // custom location data
+        {
+            "Action": "EditData",
+            "Target": "Data/Locations",
+            "Entries": {
+                "Farm_{{ModId}}_PineappleFarm": {
+                    "DisplayName": "[LocalizedText Strings\\StringsFromCSFiles:MapPage.cs.11064 [EscapedText [FarmName]]]",
+                    "CanPlantHere": true,
+                    "DefaultArrivalTile": {"X": 64, "Y": 15},
+                    "MinDailyWeeds": 5,
+                    "MaxDailyWeeds": 11,
+                    "ArtifactSpots": [
+                        // default artifact data
+                        {
+                            "Id": "Coal",
+                            "ItemId": "(O)382",
+                            "Chance": 0.5,
+                            "MaxStack": 3
+                        },
+                        {
+                            "Id": "MixedSeeds",
+                            "ItemId": "(O)770",
+                            "Chance": 0.1,
+                            "MaxStack": 3
+                        },
+                        {
+                            "Id": "Stone",
+                            "ItemId": "(O)390",
+                            "Chance": 0.25,
+                            "MaxStack": 3
+                        },
+                        // custom artifacts
+                        {
+                            "Id": "SpringSeeds",
+                            "ItemId": "(O)495",
+                            "Chance": 0.2,
+                            "MaxStack": 4,
+                            "Condition": "SEASON Spring",
+                            "Precedence": 1
+                        },
+                        {
+                            "Id": "SummerSeeds",
+                            "ItemId": "(O)496",
+                            "Chance": 0.2,
+                            "MaxStack": 4,
+                            "Condition": "SEASON Summer",
+                            "Precedence": 1
+                        },
+                        {
+                            "Id": "FallSeeds",
+                            "ItemId": "(O)497",
+                            "Chance": 0.2,
+                            "MaxStack": 4,
+                            "Condition": "SEASON Fall",
+                            "Precedence": 1
+                        },
+                        {
+                            "Id": "WinterSeeds",
+                            "ItemId": "(O)498",
+                            "Chance": 0.2,
+                            "MaxStack": 4,
+                            "Condition": "SEASON Winter",
+                            "Precedence": 1
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}
+Category: Modding

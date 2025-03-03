@@ -1,0 +1,395 @@
+Jump to navigation
+Jump to search
+← Index
+This page provides an overview of what's needed to create a custom NPC. This is an advanced guide for mod developers.
+Before reading this page, see Modding:Editing XNB files for the basic concepts.
+Contents
+1 Files to edit
+1.1 Main data
+1.1.1 Basic info
+1.1.2 Social features
+1.1.3 Dumpster diving
+1.1.4 Festivals
+1.1.5 Spawn rules
+1.1.6 Appearance & sprite
+1.1.7 Hidden gift log emote
+1.1.8 Advanced
+1.2 Gift tastes
+1.3 Overworld sprites
+1.4 Portraits
+1.5 Schedule
+1.6 Dialogue
+1.7 Sleep animation
+1.8 Secondary assets
+2 Examples
+2.1 Full NPC
+2.2 Dynamic appearances
+3 See also
+Files to edit
+To create a new NPC, you need to edit a number of different files. However, you don't need any programming experience and it can be done with Content Patcher.
+Main data
+The Data/Characters asset contains most of the data about an NPC. That includes their name, social info (e.g. personality, birthday, and romance), appearance, spouse room & patio, festival participation, etc.
+This consists of a string → model lookup, where...
+The key is a unique string ID for the NPC like Example.ModId_NpcName, which will be used as the internal Name (not DisplayName).
+The value is a model with the following fields.
+Basic info
+field effect
+DisplayName A tokenizable string for the NPC's display name.
+Language (Optional) The language spoken by the NPC. One of Default (the default language understood by the player) or Dwarvish (which the player can only understand after finding the Dwarvish translation guide). Default Default.
+Gender (Optional) The NPC's gender identity. One of Female, Male, or Undefined. Default Undefined.
+Age (Optional) The general age of the NPC. One of Child, Teen, or Adult. Default Adult.
+This affects generated dialogue lines (e.g. a child might say "stupid" and an adult might say "depressing"), generic dialogue (e.g. a child might respond to dumpster diving with "Eww... What are you doing?" and a teen would say "Um... Why are you digging in the trash?"), and the gift they choose as Feast of the Winter Star gift-giver. Children are also excluded from item delivery quests.
+Manner (Optional) A measure of the character's general politeness, which affects some generic dialogue lines. One of Neutral, Polite, or Rude. Default Neutral.
+SocialAnxiety (Optional) A measure of the character's comfort with social situations, which affects some generic dialogue lines. One of Neutral, Outgoing, or Shy. Default Neutral.
+Optimism (Optional) A measure of the character's overall optimism. One of Neutral, Negative, or Positive. Default Neutral.
+BirthSeason (Optional if non-social) The season name (case-sensitive) for the NPC's birthday. One of spring, summer, fall, or winter. Default none.
+BirthDay (Optional if non-social) The day number for the NPC's birthday. Default 0.
+HomeRegion (Optional) The region of the world in which the NPC lives (one of Desert, Town, or Other). For example, only Town NPCs are counted for the introductions quest, can be selected as a secret santa for the Feast of the Winter Star, or get a friendship boost from the Luau. Default Other.
+IsDarkSkinned (Optional) Whether the NPC has dark skin, which affects the chance of children with the player having dark skin too. Default false.
+Social features
+field effect
+CanSocialize (Optional) A game state query which indicates whether to enable social features (like birthdays, gift giving, friendship, and an entry in the social tab). Default true.
+CanBeRomanced (Optional) Whether the NPC can be dated and romanced. This enables romance features for this NPC (like a 'single' label in the social menu, bouquet gifting, and marriage). Default false.
+CanReceiveGifts (Optional) Whether players can give gifts to this NPC. Default true.
+The NPC must also be social per CanSocialize and have an entry in Data/NPCGiftTastes to be giftable, regardless of this value.
+CanCommentOnPurchasedShopItems (Optional) Whether this NPC can comment on items that a player sold to a shop which then resold it to them. If null (or omitted), this will default to true if their HomeRegion is set to Town.
+The NPC must also be social per CanSocialize to allow it, regardless of this value.
+CanGreetNearbyCharacters (Optional) Whether this NPC can show a speech bubble greeting nearby players or NPCs, and or be greeted by other NPCs. Default true.
+CanVisitIsland (Optional) A game state query which indicates whether the NPC can visit the Ginger Island resort once it's unlocked. Default true.
+The NPC must also be social per CanSocialize to visit the island, regardless of this value.
+LoveInterest (Optional) Unused.
+Calendar (Optional) Determines when the NPC's birthday is shown in the calendar. Possible values:
+value effect
+HiddenAlways They never appear in the calendar.
+HiddenUntilMet Until the player meets them, they don't appear in the calendar.
+AlwaysShown They always appear in the calendar.
+Defaults to AlwaysShown.
+SocialTab (Optional) Determines how the NPC is shown on the social tab when unlocked. Possible values:
+value effect
+HiddenAlways They never appear in the social tab.
+HiddenUntilMet Until the player meets them, they don't appear on the social tab.
+UnknownUntilMet Until the player meets them, their name on the social tab is replaced with "???".
+AlwaysShown They always appear in the social tab (including their name).
+Defaults to UnknownUntilMet.
+SpouseAdopts (Optional) A game state query which indicates whether the player will need to adopt children with this spouse, instead of either the player or NPC giving birth. If null, defaults to true for same-gender and false for opposite-gender spouses.
+The Target player is the one they're married to.
+SpouseWantsChildren (Optional) A game state query which indicates whether the spouse will ask to have children. Defaults to true.
+The Target player is the one they're married to.
+SpouseGiftJealousy (Optional) A game state query which indicates whether the spouse will get jealous of gifts to other NPCs. Defaults to true.
+The Target player is the one they're married to, and the Target item is the one that was gifted.
+SpouseGiftJealousyFriendshipChange (Optional) The friendship point effect when the SpouseGiftJealously is triggered. Default -30.
+SpouseRoom (Optional) The NPC's spouse room in the farmhouse when the player marries them, if applicable. If this is omitted for a marriageable NPC, they'll use Abigail's spouse room by default.
+This consists of a model with these fields:
+field effect
+MapAsset (Optional) The asset name for the spouse room map. The Maps/ prefix is added automatically and shouldn't be included. Defaults to spouseRooms.
+MapSourceRect (Optional) The tile area within the MapAsset containing the spouse's room. This should usually be a 6x9 tile area, though the game will try to adjust to a different size. Specified as a model with X, Y, Width, and Height fields. Defaults to (0, 0, 6, 9).
+You can mark where the spouse stands in their spouse room by placing the red circle path tile (tile index 7) on the Paths layer.
+SpousePatio (Optional) The NPC's patio area on the farm when the player marries them, if any. Default none.
+This consists of a model with these fields:
+field effect
+MapAsset (Optional) The asset name for the patio area. The Maps/ prefix is added automatically and shouldn't be included. Defaults to spousePatios.
+MapSourceRect (Optional) The tile area within the MapAsset containing the spouse's patio area. This must be a 4x4 tile area. Specified as a model with X, Y, Width, and Height fields. Defaults to (0, 0, 4, 4).
+SpriteAnimationFrames (Optional) The spouse's animation frames when they're in the patio. Each frame is an array containing [0] the sprite index in their spritesheet, and [1] the optional duration in milliseconds (default 100). If omitted or empty, the NPC won't be animated.
+For example, here is Abigail playing the flute:
+"SpriteAnimationFrames": [
+    [16, 500], // show index 16 for 500ms
+    [17, 500],
+    [18, 500],
+    [19]       // if duration is omitted, defaults to 100ms
+]
+SpriteAnimationPixelOffset (Optional) The pixel offset to apply to the NPC's sprite when they're animated in the patio, specified as a model with X and Y fields. This is ignored if the NPC isn't animated via SpriteAnimationFrames. Default none.
+SpouseFloors
+SpouseWallpapers (Optional) The floors and wallpapers which the NPC may randomly apply to the farmhouse when married to the player. If omitted or empty, the NPC will randomly choose a base floor (0–39) or wallpaper (0–111).
+IntroductionsQuest (Optional) Whether to include this NPC in the introductions quest. If null (or omitted), this will default to true if the HomeRegion field is set to Town.
+ItemDeliveryQuests (Optional) A game state query which indicates whether this NPC can give item delivery quests. If null (or omitted), this will default to true if the HomeRegion field is set to Town.
+The NPC must also be social per CanSocialize to allow it, regardless of this value.
+PerfectionScore (Optional) Whether to include this NPC when checking whether the player has max friendships with every NPC for the perfection score. Default true.
+The NPC must also be social per CanSocialize to be counted, regardless of this value.
+EndSlideShow (Optional) How the NPC appears in the end-game perfection slide show. Possible values:
+value effect
+Hidden The NPC doesn't appear in the slide show.
+MainGroup The NPC is added to the main group of NPCs which walk across the screen.
+TrailingGroup The NPC is added to the trailing group of NPCs which follow the main group.
+Defaults to MainGroup.
+FriendsAndFamily (Optional) The NPC's closest friends and family, as a dictionary where the key is the other NPC's internal name and the value is an optional tokenizable string for the name to use in dialogue text (like 'mom'). Default none.
+This affects generic dialogue for revealing likes and dislikes to family members, and may affect inlaw_<NPC> dialogues. This isn't necessarily comprehensive.
+Dumpster diving
+field effect
+DumpsterDiveEmote (Optional) The emote ID to show above the NPC's head when they see a player rummaging through trash. See emote IDs. If omitted or null, the default depends on the NPC's age: a child will show sad (28), a teen will show a question mark (8), and an adult will show angry (12).
+DumpsterDiveFriendshipEffect (Optional) The friendship point change if this NPC sees a player rummaging through trash. Default -25.
+Festivals
+field effect
+FlowerDanceCanDance (Optional) Whether players can ask the NPC to dance at the Flower Dance festival. The possible values are true (can always ask), false (can never ask), or null (can ask if they're romanceable). Default null.
+If the NPC can dance, you should also add the dance sprite frames and FlowerDance_Decline dialogue text. You can optionally set the FlowerDance_Accept dialogue too (though NPCs have a default accept dialogue if not).
+WinterStarParticipant (Optional) A game state query which indicates whether this NPC can give and receive gifts at the Feast of the Winter Star. If null (or omitted), this will default to true if the HomeRegion field is set to Town.
+WinterStarGifts At the Feast of the Winter Star, the possible gifts this NPC can give to players. A matching entry is selected at random.
+This consists of a list of models with these fields:
+field effect
+common fields See item spawn fields for the generic item fields.
+If set to an item query which returns multiple items, one of them will be selected at random.
+Spawn rules
+field effect
+UnlockConditions (Optional) A game state query which indicates whether the NPC should be added to the world, checked when loading a save and when ending each day. This only affects whether the NPC is added when missing; returning false won't remove an NPC that's already been added. Defaults to true.
+SpawnIfMissing (Optional) Whether to add this NPC to the world if they're missing (if the UnlockConditions match and HomeLocation is valid). Default true.
+Home (Optional) The default place where this NPC spawns and returns each day. If there are multiple entries, the first matching one is used.
+This consists of a list of models with these fields:
+field effect
+ID The unique string ID for this entry within the current list.
+Location (Optional) The internal name for the home location where this NPC spawns and returns each day. Default none.
+Tile (Optional) The tile position within the home location where this NPC spawns and returns each day. Specified as a model with X and Y fields. Defaults to (0, 0).
+Direction (Optional) The default direction the NPC faces when they start each day. The possible values are down, left, right, and up. Defaults to up.
+Condition (Optional) A game state query which indicates whether this entry can be selected. Default true.
+Appearance & sprite
+field effect
+TextureName (Optional) The last segment of the NPC's portrait and sprite asset names. For example, set to Abigail to use Portraits/Abigail and Characters/Abigail respectively. Defaults to the internal NPC name. The Calendar and Social Tab use this texture, ignoring any currently applied appearance options.
+Appearance (Optional) The portrait/sprite textures to use.
+This can list any number of appearance options. They'll be sorted by Precedence value (with lower values taking priority), then filtered to those whose fields match. If multiple matching appearances have precedence, one entry is randomly chosen based on their relative weight. This randomization is stable per day, so the NPC always makes the same choice until the next day. If a portrait/sprite can't be loaded (or no appearances match), the NPC will use the default asset based on TextureName.
+The NPC rechecks this field each time they change location.
+This consists of a list of models with these fields:
+field effect
+Id The unique string ID for this entry within the current list.
+Season (Optional) The season in which this appearance should be used (one of spring, summer, fall, or winter), or omit for any season. Defaults to any season.
+Indoors
+Outdoors (Optional) Whether this appearance should be used when indoors and/or outdoors. Both default to true.
+Condition (Optional) A game state query which indicates whether this entry can be selected. Default true.
+Portrait
+Sprite (Optional) The asset name for the portraits and/or sprites texture to load. If omitted or it can't be loaded, it will default to the default asset per the Texture field.
+IsIslandAttire (Optional) Whether this is island beach attire worn at the resort. Default false.
+This is mutually exclusive: NPCs will never wear it in other contexts if it's true, and will never wear it as island attire if it's false.
+Precedence (Optional) The order in which this entry should be checked, where lower values are checked first. This can be a negative value. Default 0.
+Weight (Optional) If multiple entries with the same Precedence match, the relative weight to use when randomly choosing one. Default 1.
+For example, let's say two appearance entries match: one has a weight of 2, and the other has a weight of 1. Their probability of being chosen is 2/3 and 1/3 respectively.
+Note: the default textures based on TextureName must still exist, even if you use this field to override them. The image of the NPC in the Calendar and Social Tab will ignore appearance options.
+MugShotSourceRect (Optional) The 16x24-pixel area in the character's sprite texture to show as their mug shot icon in the calendar, social menu, and other contexts. Defaults to part of their first sprite.
+Size (Optional) The pixel size of the individual sprites in their overworld sprite spritesheet. Specified as a model with X and Y fields. Defaults to (16, 32).
+Note: sizes bigger than 16×32 will cause issues like broken spawning, pathfinding, misalignment in the perfection end-game slide show, etc.
+Breather (Optional) Whether the chest on the NPC's overworld sprite puffs in and out as they breathe. Default true.
+BreathChestRect (Optional) A rectangle pixel area within the spritesheet which expands and contracts to simulate breathing, relative to the top-left corner of the source rectangle for their current sprite. Omit to calculate it automatically. This should be omitted for most NPCs, unless they have a non-standard size.
+BreathChestPosition (Optional) A point pixel offset to apply to the NPC's BreathChestPosition when drawn over the NPC. Omit to calculate it automatically. This should be omitted for most NPCs, unless they have a non-standard size.
+Shadow (Optional) The options for the shadow to draw under the NPC, or omit to apply the default shadow behavior.
+This consists of a model with these fields:
+field effect
+Visible (Optional) Whether the shadow should be drawn. Default true.
+Offset (Optional) A point pixel offset applied to the shadow position. Default zero.
+Scale (Optional) The scale at which to draw the shadow. Default 1.
+This is a multiplier applied to the default shadow scale, which can change based on factors like whether the NPC is jumping. For example, 0.5 means half the size it'd be drawn if you didn't specify a scale.
+EmoteOffset (Optional) A point pixel offset applied to emote drawn over the NPC. Default zero.
+ShakePortraits (Optional) The portrait indexes which should shake when displayed. Default none.
+KissSpriteIndex (Optional) If the NPC can be married, the sprite index within their Texture to use when kissing a player. Default 28.
+KissSpriteFacingDirection (Optional) Whether the character is facing right (true) or left (false) in their KissSpriteIndex. The sprite will be flipped as needed to face the player. Default true.
+Hidden gift log emote
+field effect
+HiddenProfileEmoteSound (Optional) For the hidden gift log emote, the cue ID for the sound played when clicking the sprite. Defaults to drumkit6.
+HiddenProfileEmoteDuration (Optional) For the hidden gift log emote, how long the animation plays measured in milliseconds. Defaults to 4000 (4 seconds).
+HiddenProfileEmoteStartFrame (Optional) For the hidden gift log emote, the index within the NPC's overworld sprite spritesheet at which the animation starts. If omitted for a vanilla NPC, the game plays a default animation specific to that NPC; if omitted for a custom NPC, the game just shows them walking while facing down.
+HiddenProfileEmoteFrameCount (Optional) For the hidden gift log emote, the number of frames in the animation. The first frame corresponds to HiddenProfileEmoteStartFrame, and each subsequent frame will use the next sprite in the spritesheet. Default 1.
+This has no effect if HiddenProfileEmoteStartFrame isn't set.
+HiddenProfileEmoteFrameDuration (Optional) For the hidden gift log emote, how long each animation frame is shown on-screen before switching to the next one, measured in milliseconds. Default 200.
+This has no effect if HiddenProfileEmoteStartFrame isn't set.
+Advanced
+field effect
+CustomFields The custom fields for this entry.
+FormerCharacterNames (Optional) The former NPC names which may appear in save data. If matched, the game will rename the NPC and update related data (e.g. friendship).
+A former name is only applied if:
+it doesn't match a current ID in Data/Characters;
+the save has an NPC with the former name;
+the save doesn't already have an NPC with the new name.
+For example:
+"FormerCharacterNames": [ "SomeOldName" ]
+Former names can have any format, but they must be globally unique. They can't match the ID or FormerCharacterNames of any other NPC in Data/Characters (whether vanilla or custom).
+FestivalVanillaActorIndex (Optional, Specialized) The NPC's index in the Maps/characterSheet tilesheet, if applicable. This is used for placing vanilla NPCs in festivals from the map; custom NPCs should use the <layer>_additionalCharacters field in the festival data instead.
+Gift tastes
+main gift data
+The Data/NPCGiftTastes asset contains their gift preferences (e.g., which gifts they love or hate), and their responses when they receive one. See Modding:Gift taste data for more info.
+The file has one row per NPC like this:
+Abigail: "I seriously love this! You're the best, @!/66 128 220 226 276 611/Hey, how'd you know I was hungry? This looks delicious!//What am I supposed to do with this?/-5 -75 -79 16 245 246/What were you thinking? This is awful!/330/You brought me a present? Thanks.//"
+The line can be broken down into 5 pairs of dialogue + item IDs in this order: Love, Like, Dislike, Hate, Neutral. If a dialogue field is empty, the game will use a generic dialogue text. See Modding:Objects for the object IDs.
+gift dialogue
+When you gift an NPC, they'll show a dialogue dialogue in this order:
+on their birthday, an AcceptBirthdayGift dialogue key, else a default dialogue like NPC.cs.4274 ("You remembered my birthday? I'm impressed. Thanks.$h");
+an AcceptGift_* dialogue;
+else the dialogue in Data/NPCGiftTastes with a default portrait (which can be overridden with portrait commands like $h).
+Overworld sprites
+The sprite sheet for Abigail.
+The overworld sprites are stored in Characters/NpcName, including movement and animation frames. Each frame is exactly 16x32 pixels. Here's an example sprite guide, courtesy of TheLimeyDragon#1993 on Discord. Some positions are reserved for certain actions:
+the first sixteen frames are generic movement (four frames per direction);
+frames 40–47 (female) and 44–47 (male) must be the Flower Dance dance, if they participate;
+frames 36–38 (female) 48–50 (male) are reserved for marriageable NPCs (Contains Wedding sprite);
+and the kissing sprite/direction varies depending on NPC:
+character kissing frame facing direction
+Abigail and Emily 33 left
+Alex 42 right
+Elliott 35 left
+Haley 28 right
+Harvey 31 left
+Leah 25 right
+Maru 28 left
+Penny 35 right
+Sam 36 right
+Sebastian 40 left
+Shane 34 left
+any other NPC 28 right
+Portraits
+Abigail's portrait sprite sheet.
+The dialogue portraits are stored in Portraits/NpcName. Each frame is exactly 64x64 per portrait. The first six represent specific emotions (see Modding:Dialogue#Portrait commands), followed by any number of custom portraits. The first portrait is used when the dialogue doesn't specify one.
+Schedule
+Their schedule file tells the game where the NPC starts and moves based on on the time. You need to add strings to a separate schedules file found in the Strings folder to allow custom dialogue. See Modding:Schedule data for more info.
+Dialogue
+The NPC dialogue and events are stored in several files; see Modding:Dialogue.
+Sleep animation
+When the NPC goes to bed, they'll play the looping sleep animation set via <lowercase NPC name>_sleep in Data/animationDescriptions, if it exists. For example, this content pack adds a sleep animation for an NPC named 'Pufferbob':
+{
+    "Format": "2.5.0",
+    "Changes": [
+        {
+            "Action": "EditData",
+            "Target": "Data/animationDescriptions",
+            "Entries": {
+                "pufferbob_sleep": "50/50/50" // note: make name lowercase
+            }
+        }
+    ]
+}
+Secondary assets
+See event data for the NPC's cutscenes.
+See festival data for an NPC's positions (via the Set-Up_additionalCharacters and MainEvent_additionalCharacters fields) and dialogue in festivals.
+See movie theater data for an NPC's taste in movies and concessions.
+Examples
+Full NPC
+Here's how you'd create an example NPC named Dobson with full social features.
+Note that {{ModId}} is a Content Patcher token, which will be replaced with your mod ID automatically for the unique string ID convention.
+Create an empty Content Patcher content pack. By convention, we'll name the folder [CP] Dobson.
+Create the following files:
+assets/dialogue.json containing the dialogue.
+assets/marriageDialogue.json containing the marriage dialogue (if applicable).
+assets/sprites.png containing their overworld sprites.
+assets/portraits.png containing their portraits.
+assets/schedule.json containing their schedule data.
+Edit the content.json to load the files:
+{
+    "Format": "2.5.0",
+    "Changes": [
+        {
+            "Action": "Load",
+            "Target": "Characters/{{ModId}}_Dobson",
+            "FromFile": "assets/sprites.png"
+        },
+        {
+            "Action": "Load",
+            "Target": "Portraits/{{ModId}}_Dobson",
+            "FromFile": "assets/portraits.png"
+        },
+        {
+            "Action": "Load",
+            "Target": "Characters/Dialogue/{{ModId}}_Dobson",
+            "FromFile": "assets/dialogue.json"
+        },
+        {
+            "Action": "Load",
+            "Target": "Characters/Dialogue/MarriageDialogue{{ModId}}_Dobson",
+            "FromFile": "assets/marriageDialogue.json"
+        },
+        {
+            "Action": "Load",
+            "Target": "Characters/schedules/{{ModId}}_Dobson",
+            "FromFile": "assets/schedule.json"
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/Characters",
+            "Entries": {
+                "{{ModId}}_Dobson": {
+                    "DisplayName": "Dobson", // this can use {{i18n:}} to support translations
+                    "BirthSeason": "Summer",
+                    "BirthDay": 7,
+                    "HomeRegion": "Town",
+                    "Gender": "Male",
+                    "Age": "Adult",
+                    "Manner": "Rude",
+                    "SocialAnxiety": "Neutral",
+                    "Optimism": "Positive",
+
+                    "CanBeRomanced": true,
+
+                    "Home": [
+                        {
+                            "Id": "Default",
+                            "Location": "BusStop",
+                            "Tile": {
+                            "X": 4,
+                            "Y": 5
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/NPCGiftTastes",
+            "Entries": {
+                "{{ModId}}_Dobson": "You're giving this to me? This is amazing!/207 232 233 400/Thank you! This is a very interesting specimen./-5 -79 422/...What is this?/80 330/This is disgusting./2/That was very thoughtful of you./-4/ "
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Data/EngagementDialogue",
+            "Entries": {
+                "{{ModId}}_Dobson0": "I can't believe I am about to be married!$h",
+                "{{ModId}}_Dobson1": "I hope I don't get cold feet"
+            }
+        }
+    ]
+}
+That's it! If you load your game, the NPC should appear. If you want to create events, don't forget to add that file too.
+Dynamic appearances
+The Appearance field in Data/Characters lets NPCs have any number of custom portraits & sprites with arbitrary conditions, without the performance cost of reloading NPCs' textures.
+For example, this adds indoor/outdoor sprites for the previous Dobson example:
+// add base indoor/outdoor sprites
+{
+    "Action": "Load",
+    "Target": "
+        Characters/{{ModId}}_Dobson_Indoor,
+        Characters/{{ModId}}_Dobson_Outdoor,
+        Portraits/{{ModId}}_Dobson_Indoor,
+        Portraits/{{ModId}}_Dobson_Outdoor
+    ",
+    "FromFile": "assets/{{Target}}.png"
+},
+
+// apply any overlays needed
+{
+    "Action": "EditImage",
+    "Target": "Characters/{{ModId}}_Dobson_Indoor, Portraits/{{ModId}}_Dobson_Indoor",
+    "FromFile": "assets/overlays/{{Target}}_married.png",
+    "When": {
+        "Spouse": "Dobson"
+    }
+},
+
+// add appearance to NPC
+{
+    "Action": "EditData",
+    "Target": "Data/Characters",
+    "Entries": {
+        "{{ModId}}_Dobson": {
+            ...,
+            "Appearance": [
+                {
+                    "Id": "Outdoors",
+                    "Indoors": false,
+                    "Portrait": "Portraits/{{ModId}}_Dobson_Outdoor",
+                    "Sprite": "Characters/{{ModId}}_Dobson_Outdoor"
+                },
+                {
+                    "Id": "Default",
+                    "Portrait": "Portraits/{{ModId}}_Dobson_Indoor",
+                    "Sprite": "Characters/{{ModId}}_Dobson_Indoor"
+                }
+            ]
+        }
+    }
+}
+See also
+See Modding:Index#See also for recommended guides on pixel art.
+Category: Modding

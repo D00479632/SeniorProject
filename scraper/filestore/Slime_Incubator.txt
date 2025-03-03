@@ -1,0 +1,40 @@
+Jump to navigation
+Jump to search
+Slime Incubator
+    Hatches slimes eggs into slimes. Allows you to raise slimes outdoors.
+Information
+Source Crafting • Bookseller
+Sell Price Cannot be sold
+Crafting
+Recipe Source
+Combat (Level 8)
+Ingredients
+Iridium Bar (2)
+Slime (100)
+The Slime Incubator is a piece of equipment used to hatch Slime Eggs into actual Slimes. The crafting recipe is unlocked after reaching Combat Level 8. One Slime Incubator comes with each Slime Hutch, and it can be moved. The Bookseller may trade 1 Slime Incubator for 2 Monster Compendiums each, provided the player has already earned the power from that book.
+Slime Eggs take 4,000m (2d 13h 20m) to incubate.[1] The Coopmaster Profession cuts this time in half, but Fairy Dust does not work on Slime Incubators. If an incubator finishes processing during the day, then a Slime will hatch the next morning.[2]
+Since the Slime Incubator can be placed anywhere, Slimes can be hatched in any indoor or outdoor location. The Slime Hutch has a limit of 20 Slimes, but there is no limit in other areas. If the Slime Hutch is at capacity, a Slime will not hatch until space is freed up by killing an existing Slime in the building.
+References
+↑ See Object::performObjectDropInAction in the game code.
+↑ See Data\Machines.xnb in the game files and Object::DayUpdate in the game code.
+History
+1.6: Can now be obtained by trading with the Bookseller. The initial Slime Incubator provided in each Slime Hutch is now removable.
+1.6.4: Fixed slime egg incubators letting players reclaim the egg before it hatches. Slime Incubators now only hatch slimes overnight.
+
+Equipment
+Artisan Bee House • Cask • Cheese Press • Dehydrator • Fish Smoker • Keg • Loom • Mayonnaise Machine • Oil Maker • Preserves Jar
+Refining Bait Maker • Bone Mill • Charcoal Kiln • Crystalarium • Deluxe Worm Bin • Furnace • Geode Crusher • Heavy Furnace • Heavy Tapper • Lightning Rod • Mushroom Log • Ostrich Incubator • Recycling Machine • Seed Maker • Slime Egg-Press • Slime Incubator • Solar Panel • Tapper • Wood Chipper • Worm Bin
+Farming
+Fertilizer Basic Fertilizer • Basic Retaining Soil • Deluxe Fertilizer • Deluxe Retaining Soil • Deluxe Speed-Gro • Hyper Speed-Gro • Quality Fertilizer • Quality Retaining Soil • Speed-Gro • Tree Fertilizer
+Sprinklers Iridium Sprinkler • Quality Sprinkler • Sprinkler
+Other Deluxe Scarecrow • Garden Pot • Rarecrow • Scarecrow
+Fishing
+Bait Bait • Challenge Bait • Deluxe Bait • Magic Bait • Magnet • Targeted Bait • Wild Bait
+Tackle Barbed Hook • Cork Bobber • Curiosity Lure • Dressed Spinner • Lead Bobber • Quality Bobber • Sonar Bobber • Spinner • Trap Bobber • Treasure Hunter
+Other Crab Pot
+Bombs Bomb • Cherry Bomb • Mega Bomb
+Fences Gate • Hardwood Fence • Iron Fence • Stone Fence • Wood Fence
+Storage Big Chest • Big Stone Chest • Chest • Junimo Chest • Mini-Fridge • Stone Chest
+Signs Dark Sign • Stone Sign • Text Sign • Wood Sign
+Misc Anvil • Coffee Maker • Cookout Kit • Deconstructor • Fairy Dust • Farm Computer • Hopper • Mini-Forge • Mini-Jukebox • Mini-Shipping Bin • Sewing Machine • Staircase • Statue Of Blessings • Statue Of The Dwarf King • Telephone • Tent Kit • Tools • Workbench
+Category: Craftable items

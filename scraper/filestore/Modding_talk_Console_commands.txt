@@ -1,0 +1,14 @@
+Jump to navigation
+Jump to search
+This talk page is for discussing Modding:Console commands.
+Sign and date your posts by typing four tildes (~~~~).
+Put new text below old text.
+Be polite.
+Assume good faith.
+Don't delete discussions.
+Added top warning
+Added a stronger warning because people keep on trying to use these. Atravita (talk) 15:15, 16 June 2023 (UTC)
+Commands overhauled in 1.6
+Looks like console commands have changed substantially in 1.6. They have moved to a separate script (DebugCommands.cs). Several commands are working oddly (e.g., itemnamed), others have been deleted (e.g. everythingshop). Page will need a full overhaul. OnionNinja (talk) 08:20, 10 April 2024 (UTC)
+Only one example but befriendpets has been added in 1.6. Clara (talk) 22:25, 15 July 2024 (UTC)
+Category: Talk pages

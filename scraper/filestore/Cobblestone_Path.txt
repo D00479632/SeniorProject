@@ -1,0 +1,28 @@
+Jump to navigation
+Jump to search
+Cobblestone Path
+Place on the ground to create paths or to spruce up your floors.
+Information
+Source Crafting
+Sell Price 1g
+Crafting
+Recipe Source Starter
+Ingredients
+Stone (1)
+The Cobblestone Path is a crafted item used to create decorative paths. It can be displaced by lightning or destroyed by weeds.
+The recipe is already in the player's inventory when the game starts.
+All types of pathing provide a +0.1 boost to Player Speed, but only if it is located outside on The Farm. They also have the indirect benefit of preventing Grass or Trees from growing in heavily used areas, which would otherwise slow down or obstruct movement.
+Gifting
+Villager Reactions
+Dislike  Abigail •  Alex •  Caroline •  Clint •  Demetrius •  Dwarf •  Elliott •  Emily •  Evelyn •  George •  Gus •  Haley •  Harvey •  Jas •  Jodi •  Kent •  Krobus •  Leah •  Leo •  Lewis •  Linus •  Marnie •  Maru •  Pam •  Penny •  Pierre •  Robin •  Sam •  Sandy •  Sebastian •  Shane •  Vincent •  Willy •  Wizard
+Gallery
+Images showing how it appears when placed:
+Spring, Summer, & Fall
+Winter
+History
+1.4: Added unique Winter appearance.
+
+Decor
+Floors Brick Floor • Crystal Floor • Rustic Plank Floor • Stone Floor • Stone Walkway Floor • Straw Floor • Weathered Floor • Wood Floor
+Paths Cobblestone Path • Crystal Path • Gravel Path • Stepping Stone Path • Wood Path
+Category: Decor

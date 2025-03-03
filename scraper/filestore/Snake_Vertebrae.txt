@@ -1,0 +1,40 @@
+Jump to navigation
+Jump to search
+Snake Vertebrae
+It appears this serpent may have been extremely flexible.
+Information
+Source
+Artifact Spots in Ginger Island West (22.5%)
+Mussel Nodes (2.5%)
+Breaking Other Rocks (1%)
+Sell Price 100g
+The Snake Vertebrae can be obtained by digging up Artifact Spots on Ginger Island West (22.5% chance), mining Mussel Nodes on the Ginger Island beach (2.5% chance),[1] or breaking other rocks on Ginger Island West (1% chance).[1]
+Contents
+1 Donation
+2 Gifting
+3 Bone Mill
+4 Tailoring
+5 Quests
+6 Bugs
+7 References
+8 History
+Donation
+Two Snake Vertebrae can be donated to the Island Field Office as part of the Snake specimen, for which the reward is 3 Golden Walnuts and a Mango Sapling.
+Gifting
+Villager Reactions
+Hate  Abigail •  Alex •  Caroline •  Clint •  Demetrius •  Dwarf •  Elliott •  Emily •  Evelyn •  George •  Gus •  Haley •  Harvey •  Jas •  Jodi •  Kent •  Krobus •  Leah •  Leo •  Lewis •  Linus •  Marnie •  Maru •  Pam •  Penny •  Pierre •  Robin •  Sam •  Sandy •  Sebastian •  Shane •  Vincent •  Willy •  Wizard
+Bone Mill
+The Snake Vertebrae can be turned into Quality Fertilizer, Speed-Gro, Deluxe Speed-Gro or Tree Fertilizer in the Bone Mill.
+Tailoring
+Snake Vertebrae can be used in the spool of a Sewing Machine to create the Skeleton Shirt. It can be used in dyeing, serving as a yellow dye at the dye pots, located in Emily's and Haley's house, 2 Willow Lane.
+Quests
+"Fragments of the past": Gunther may make a request on the Special Orders board for 100 of any combination of bone items that must be gathered while the quest is active. You have 7 days to complete the quest. The reward is 3,500g and the Bone Mill recipe.
+Bugs
+The game code stipulates a 1% chance of obtaining a Snake Vertebrae by killing a Tiger Slime in the Tiger Slime Grove. However, the Snake Vertebraes spawn far outside of the map boundaries and thus cannot be collected.[2]
+References
+↑ 1.0 1.1 See IslandWest::breakStone in the game code.
+↑ See IslandWest::monsterDrop and Game1::createObjectDebris in the game code.
+History
+1.5: Introduced.
+1.6: Can now be found by mining Mussel Nodes and breaking stones on Ginger Island West.
+Category: Field Office donations

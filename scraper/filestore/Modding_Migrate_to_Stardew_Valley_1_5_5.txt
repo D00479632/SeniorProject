@@ -1,0 +1,514 @@
+Jump to navigation
+Jump to search
+←Index
+This page is for mod authors. Players: see the mod compatibility list instead.
+
+This page explains how to update your mods for compatibility with Stardew Valley 1.5.5, and documents some of the changes and new functionality.
+Contents
+1 Breaking changes for SMAPI mods
+1.1 64-bit MonoGame and .NET 5
+1.2 Asset name format change
+1.3 Game compatibility branch
+1.4 Game assembly name
+1.5 New assembly reference model
+2 Breaking changes for Content Patcher packs
+2.1 XNB impact
+3 New features for SMAPI mods
+3.1 Scarecrow changes
+3.2 Horse footstep changes
+4 New features for Content Patcher packs
+4.1 Custom farm types
+4.2 Custom languages
+4.3 Custom festival location names
+4.4 Custom spouse rooms
+4.5 Custom spouse outside areas
+4.6 Custom farmhouse renovations
+4.7 Custom floors/walls
+4.7.1 In decoratable locations
+4.7.2 In the furniture catalogue
+4.8 Map property changes
+4.9 Non-Krobus roommates
+4.10 Custom mail formatting
+4.11 Custom scarecrows
+4.12 Improved map seats
+5 See also
+Breaking changes for SMAPI mods
+64-bit MonoGame and .NET 5
+See the updated docs at Modding:Modder Guide/Get Started. The section below focuses on what's new in this version.
+Stardew Valley 1.5.5 migrates to 64-bit MonoGame and .NET 5 on all platforms. SMAPI rewrites mods so they should mostly still work, but posting an update for every C# mod is strongly recommended to avoid edge cases.
+To update your C# mod code:
+Migrate your .csproj files to the new format if you haven't already:
+Replace your mod's .csproj file with this:
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>EXAMPLE_MOD_NAME</AssemblyName>
+    <RootNamespace>EXAMPLE_MOD_NAME</RootNamespace>
+    <Version>1.0.0</Version>
+    <TargetFramework>net5.0</TargetFramework>
+    <LangVersion>Latest</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Pathoschild.Stardew.ModBuildConfig" Version="4.1.1" />
+  </ItemGroup>
+</Project>
+If the mod uses Harmony, add <EnableHarmony>true</EnableHarmony> to the property group.
+Update the AssemblyName, RootNamespace, and Version tags. (You can delete the AssemblyName and RootNamespace tags if they just match the project name.)
+Add any other NuGet packages you used, if any.
+If you're using the simplified format already, you just need to update version numbers in the .csproj file:
+Replace <TargetFramework>net452</TargetFramework> with <TargetFramework>net5.0</TargetFramework>.
+Replace <PackageReference Include="Pathoschild.Stardew.ModBuildConfig" Version="3.3.0" /> with <PackageReference Include="Pathoschild.Stardew.ModBuildConfig" Version="4.1.1" />
+Delete the Properties/AssemblyInfo.cs file, packages folder, and packages.config file (if present).
+Exit Visual Studio.
+Delete your solution's hidden .vs folder, and every project's bin and obj folders.
+Reopen the solution in Visual Studio, click Build > Rebuild Solution, fix any errors, and test the mod in-game.
+Specific things to check for:
+Constants.GameFramework now always returns MonoGame. Any code which checks for Xna can be removed or rewritten.
+If you need help, feel free to ask in #making-mods on the Stardew Valley Discord!
+Asset name format change
+Some background first:
+An asset name identifies an asset you can load through a content API like Game1.content.Load<T>("asset name"). For example: Characters/Abigail.
+A file path identifies a physical file on the computer. For example: C:\Program Files (x86)\Steam\steamapps\common\Stardew Valley\Content\Characters\Abigail.xnb.
+Stardew Valley 1.5.5 makes that distinction more important, since MonoGame uses Linux-style separators in asset names on all platforms. That means asset names no longer match path conventions on Windows.
+You should review all code in your mods that creates/compares paths, check whether it's actually creating/comparing asset names, and if so migrate it to the equivalent methods:
+code for file paths code for asset names
+PathUtilities.NormalizePath("a/b") PathUtilities.NormalizeAssetName("a/b")
+Path.Combine("a", "b") PathUtilities.NormalizeAssetName("a/b")
+Path.DirectorySeparatorChar PathUtilities.AssetDirectorySeparator
+Game compatibility branch
+See the updated docs at Modding:Player Guide/Troubleshooting#SMAPI doesn't work with compatibility branch. The section below focuses on what's new in this version.
+Stardew Valley 1.5.5 is available in two branches on each OS: the main branch which is installed by default, and an optional compatibility branch for older systems. These have identical content for players, but use different frameworks:
+branch OS game framework runtime
+main Linux/macOS MonoGame 3.8 64-bit .NET 5
+Windows MonoGame 3.8 64-bit .NET 5
+compatibility Linux/macOS MonoGame 3.5.1 64-bit Mono 4.5
+Windows XNA Framework 4.0 32-bit .NET Framework 4.5
+Unfortunately SMAPI only supports the main branch of the game currently. There are formidable difficulties across all mods in supporting all three variations, 32-bit imposes significant restrictions on what mods can do, and the Steam hardware stats show that ≈99.69% of players have 64-bit.
+Having two versions of SMAPI (like we do for Linux/macOS vs Windows compatibility) wouldn't be enough in this case. Every C# mod author would need to manually port two versions of every update of every mod forever, which is prohibitively unfeasible. It's possible that in the future we'll either figure out how SMAPI can automatically rewrite mods for the compatibility branch, or some modders may port SMAPI and individual mods to the compatibility branch.
+Game assembly name
+Previously the game assembly was Stardew Valley on Windows, and StardewValley on Linux and macOS. The assembly is now named Stardew Valley on all platforms. Most mods shouldn't be affected once you update the mod build package.
+New assembly reference model
+If your mod references a .dll file manually, note that assembly references are handled differently in .NET 5. Custom assemblies are no longer copied into your mod's folder by default, which may break your mod. In that case you need to explicitly enable assembly bundling in your project file; see BundleExtraAssemblies in the mod build package documentation for details.
+Breaking changes for Content Patcher packs
+XNB impact
+Here's a summary of the XNB files which changed in Stardew Valley 1.5.5.
+Notes:
+This ignores text changes in non-English files for simplicity.
+New content files aren't listed, since they won't impact existing mods.
+XNB mods are disproportionately affected, since they replace the entire file. Content Patcher packs are typically unaffected unless they replace the entire file (in which case see the XNB mod column).
+Shorthand:
+'broken' means removing new content or potentially important changes, or potentially causing significant display bugs. This is a broad category — the game may work fine without it or crash, depending how it uses that specific content.
+'mostly unaffected' means mods will only be affected if they edit specific entries or fields.
+Blank means no expected impact for the vast majority of mods.
+content file changes XNB Content Patcher
+Data/TV/TipChannel fixed typo ✘ will remove changes ✓ mostly unaffected
+Effects/BloomCombine
+Effects/BloomExtract
+Effects/GaussianBlur deleted
+Fonts/* no changes
+(unpacked format may differ on Windows due to MonoGame)
+LooseSprites/Cursors2 new sprite in empty area ✘ broken ✓ mostly unaffected
+Maps/Desert cosmetic fixes ✘ will remove changes ✓ mostly unaffected
+Maps/ElliottHouse minor fixes ✘ will remove changes ✓ mostly unaffected
+Maps/Farm
+Maps/Farm_Combat
+Maps/Farm_Fishing
+Maps/Farm_Foraging
+Maps/Farm_FourCorners
+Maps/Farm_Island
+Maps/Farm_Mining cave and shipping areas now use tile properties to disable building, instead of being hardcoded ✘ will remove those build restrictions ✘ may remove those build restrictions
+Maps/FarmHouse
+Maps/FarmHouse1
+Maps/FarmHouse1_marriage
+Maps/FarmHouse2
+Maps/FarmHouse2_marriage
+Maps/Farmhouse_* renovation maps
+Maps/IslandFarmHouse
+Maps/Shed
+Maps/Shed2 added new wall/flooring properties ✘ broken (will disable most floor/walls when renovations applied) ✘ may disable some floor/walls when renovations applied
+Maps/spouseRooms added spouse standing spots (defaults to old offset if not set) ✓ mostly unaffected ✓ mostly unaffected
+Strings/Locations changed ManorHouse_DivorceBook_* entries to support Non-Krobus roommates ✘ broken ✓ mostly unaffected
+New features for SMAPI mods
+See also new features for Content Patcher packs, which apply for C# mods too.
+Scarecrow changes
+These docs should be merged into Modding:Objects and Modding:Context tags. When copying content, make sure you attribute the original authors.
+You can now patch Object.IsScarecrow() and/or Object.GetRadiusForScarecrow() (or add context tags) to support custom scarecrows or custom ranges.
+Horse footstep changes
+You can now override the footstep logic for a horse by setting its onFootstepAction field. For example:
+Horse horse = ...; // get the horse instance you want to change
+horse.onFootstepAction = (string tileType) =>
+{
+   // play custom audio, etc
+};
+New features for Content Patcher packs
+Stardew Valley 1.5.5 has no known breaking changes for content packs. All content packs should work fine once the framework mod that loads them is updated.
+Custom farm types
+See the updated docs at Modding:Farm data. The section below focuses on what's new in this version.
+You can now add custom farm types by editing the Data/AdditionalFarms asset. Each entry consists of an object with these fields:
+field description
+ID A unique ID value. This must be globally unique across all mods, so you should prefix your mod ID (e.g., Example.PineapplesAnywhere/PineappleFarm). You should avoid commas for compatibility with Content Patcher packs checking the {{FarmType}} token. This is not shown in-game.
+TooltipStringPath Where to get the translatable farm name and description. This must be a key in the form <asset name>:<key>; for example, Strings/UI:Farm_Description will get it from the Farm_Description entry in the Strings/UI file. The translated text must be in the form "<name>_<description>", like "Pineapple Farm_A farm shaped like a pineapple".
+MapName The map asset name relative to the Maps folder. For example, Farm_Pineapple would load Maps/Farm_Pineapple.
+IconTexture (optional) The asset name for a 22x20 pixel icon texture, shown on the 'New Game' and co-op join screens.
+WorldMapTexture (optional) The asset name for a 131x61 pixel texture that's drawn over the farm area in the in-game world map.
+ModData (optional) A string→string dictionary of mod-specific metadata for the farm, which can be accessed in C# code via Game1.GetFarmTypeModData(key).
+For example, this Content Patcher pack would create a 'pineapple' farm:
+{
+    "Format": "2.5.0",
+    "Changes": [
+        // add farm type
+        {
+            "Action": "EditData",
+            "Target": "Data/AdditionalFarms",
+            "Entries": {
+                "{{ModId}}_PineappleFarm": { // for technical reasons, you need to specify the ID here *and* in the "ID" field
+                    "ID": "{{ModId}}_PineappleFarm",
+                    "TooltipStringPath": "Strings/UI:{{ModId}}_PineappleFarm",
+                    "MapName": "{{ModId}}/PineappleFarm",
+                    "IconTexture": "Mods/{{ModId}}/FarmIcon",
+                    "WorldMapTexture": "Mods/{{ModId}}/FarmMap"
+                }
+            }
+        },
+
+        // add farm name + description
+        {
+            "Action": "EditData",
+            "Target": "Strings/UI",
+            "Entries": {
+                "{{ModId}}_PineappleFarm": "Pineapple Farm_A farm shaped like a pineapple!" // tip: use {{i18n}} to translate it
+            }
+        },
+
+        // load map
+        {
+            "Action": "Load",
+            "Target": "Maps/{{ModId}}/PineappleFarm",
+            "FromFile": "assets/map.tmx"
+        },
+
+        // load icon
+        {
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/FarmIcon, Mods/{{ModId}}/FarmMap",
+            "FromFile": "assets/{{TargetWithoutPath}}.png"
+        }
+    ]
+}
+Custom languages
+See the updated docs at Modding:Custom languages. The section below focuses on what's new in this version.
+You can now add custom languages by editing the Data/AdditionalLanguages asset. Each entry consists of an object with these fields:
+field description
+ID A unique ID value. This is not shown in-game.
+LanguageCode The language code for this localization. This should ideally be a ISO 639-1 code. You should avoid commas for compatibility with Content Patcher packs checking the {{Language}} token.
+ButtonTexture The asset name for a 174x78 pixel texture containing the button of the language for language selection menu. The top half of the sprite is the default state, while the bottom half is the hover state.
+UseLatinFont Whether the language uses the same Latin character font as English. If set to false, you must set the FontFile field.
+TimeFormat A string which describes the in-game time format, with tokens replaced by in-game values. For example, [HOURS_12]:[MINUTES] [AM_PM] would show 12:00 PM at noon.
+The valid tokens are:
+[HOURS_12]: hours in 12-hour format, where midnight and noon are both "12".
+[HOURS_12_0]: hours in 12-hour format, where midnight and noon are both "0".
+[HOURS_24]: hours in 24-hour format, where midnight is "0" and noon is "12".
+[HOURS_24_00]: hours in 24-hour format with zero-padding, where midnight is "00" and noon is "12".
+[MINUTES]: minutes with zero-padding.
+[AM_PM]: the localized text for "am" or "pm" (taken from Strings\\StringsFromCSFiles:DayTimeMoneyBox.cs.10370 and DayTimeMoneyBox.cs.10371 respectively). The game shows "pm" between noon and 11:59pm inclusively; it shows "am" otherwise.
+ClockTimeFormat A string which describes the in-game time format. Equivalent to TimeFormat, but used for the in-game clock.
+ClockDateFormat A string which describes the in-game date format as shown in the in-game clock, with tokens replaced by in-game values. For example, [DAY_OF_WEEK]. [DAY_OF_MONTH] would show Mon. 1.
+The valid tokens are:
+[DAY_OF_WEEK]: the abbreviated day of week as returned by Game1.shortDayDisplayNameFromDayOfSeason (like Mon for Monday).
+[DAY_OF_MONTH]: the numerical day of the month.
+FontFile (optional) The asset name for the font file to use (if UseLatinFont is false).
+FontPixelZoom (optional) A factor by while to multiply the font size.
+FontApplyYOffset (optional) Whether to shift the font up by four pixels (multiplied by the FontPixelZoom), to better align languages with larger characters like Chinese and Japanese.
+NumberComma (optional) The string to use as the thousands separator (e.g., "," for 5,000,000). Defaults to a comma.
+SmallFontLineSpacing (optional) The line spacing value used by smallFont. Defaults to 26.
+UseGenderedCharacterTranslations (optional) Whether the social tab and gift log will use gender-specific translations (like the vanilla Portuguese language). Defaults to false.
+Specifically, this affects the Strings\StringsFromCSFiles:SocialPage.cs.11635 translation ("(Single)"). When enabled, it can contain male and female translations separated by /, like the vanilla Portuguese translation: "(solteiro)/(solteira)".
+For example, this Content Patcher pack would add Esperanto to the game:
+{
+    "Format": "2.5.0",
+    "Changes": [
+        // define language
+        {
+            "Action": "EditData",
+            "Target": "Data/AdditionalLanguages",
+            "Entries": {
+                "{{ModId}}_Esperanto": { // for technical reasons, you need to specify the ID here *and* in the "ID" field
+                    "ID": "{{ModId}}_Esperanto",
+                    "LanguageCode": "eo",
+                    "ButtonTexture": "Mods/{{ModId}}/EsperantoButton",
+                    "UseLatinFont": true,
+                    "TimeFormat": "[HOURS_24_00]:[MINUTES]",
+                    "ClockTimeFormat": "[HOURS_24_00]:[MINUTES]",
+                    "ClockDateFormat": "[DAY_OF_WEEK] [DAY_OF_MONTH]"
+                }
+            }
+        },
+
+        // load button texture
+        {
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/EsperantoButton",
+            "FromFile": "assets/button.png"
+        }
+    ]
+}
+Once the language is defined, you can add translations to the game by patching game assets like usual, and use the language code you specified above. For example:
+{
+    "Action": "EditData",
+    "Target": "Strings/StringsFromCSFiles",
+    "Entries": {
+        "Game1.cs.3043": "Lundo",
+        "Game1.cs.3044": "Mardo",
+        ...
+    },
+    "When": {
+        "Language": "eo"
+    }
+}
+Custom festival location names
+These docs should be merged into Modding:Festival data. When copying content, make sure you attribute the original authors.
+The location name in the festival-started message (e.g., "The Luau has begun on the beach") was previously hardcoded, so it would always show the internal name for non-vanilla festival locations. You can now add a locationDisplayName field in the Data/Festivals/* file to set the display name.
+Custom spouse rooms
+See the updated docs at Modding:NPC data. The section below focuses on what's new in this version.
+Adding spouse rooms for custom NPCs is now much easier.
+You can edit the Data/SpouseRooms asset to add the spouse room info in this format: "<NPC name>": "<map name>/<map index>".
+field effect
+<NPC name> The internal name of the NPC (i.e., their key in Data/NPCDispositions).
+<map name> The asset name of the map in the game's Content/Maps folder. This can be a custom map loaded through Content Patcher's Load action or SMAPI's IAssetLoader API.
+<map index> The index of the spouse room within the map file, to allow multiple spouse rooms in the same file. Each spouse room is 6 tiles across by 9 tiles down, starting with index 0 in the top-left corner. You can have any number of rows and columns (the index will wrap at the end of the row), as long as they fit an integer number of spouse rooms.
+You can mark where the spouse stands in their spouse room by placing the red circle path tile (tile index 7) on the Paths layer.
+The spouse room maps are now applied using the game's newer map override system, so tile properties and custom tilesheets in the spouse room map are copied over automatically.
+Some of the game's spouse room code (e.g., positions for Sebastian's 14-heart frog terrarium) was updated to potentially allow moving spouse rooms around. However, some things like event positions are still hardcoded and will need to be fixed to fully support this feature.
+For example, this Content Patcher pack would add a spouse room for a new Akila NPC:
+{
+    "Format": "2.5.0",
+    "Changes": [
+        // register spouse room
+        {
+            "Action": "EditData",
+            "Target": "Data/SpouseRooms",
+            "Entries": {
+                "Akila": "{{ModId}}_SpouseRoom/0"
+            }
+        },
+
+        // load spouse room map
+        {
+            "Action": "Load",
+            "Target": "Maps/{{ModId}}_SpouseRoom",
+            "FromFile": "assets/spouse-room.tmx"
+        }
+    ]
+
+}
+Custom spouse outside areas
+See the updated docs at Modding:NPC data. The section below focuses on what's new in this version.
+You can now customize the spouse outside area for any NPC by editing Data/SpousePatios, which has four slash-delimited fields:
+field effect
+map asset name The asset name relative to the Content/Maps folder which contains the spouse area map. The map must contain one or more 4x4 tile areas, with any number of rows and columns.
+index The index (starting at zero) within the map for the 4x4 area to use as the outdoor area.
+NPC animation frames (Optional) The spouse's animation frames, as a sequence of space-delimited frame indexes in their sprite's spritesheet each lasting 100 milliseconds. If not set, vanilla spouses will use their hardcoded animations and custom spouses won't be animated.
+<NPC offset X> <NPC offset Y> (Optional) A pixel X and Y offset applied to the NPC's position when they're in their outdoor area.
+You can mark where the spouse stands in their spouse area by placing the red circle path tile (tile index 7) on the Paths layer.
+For example, this Content Patcher pack would add the outside area for a new Akila NPC. When in the outside area, their sprite would cycle through spritesheet indexes 16–19 for 300 milliseconds each, and be offset by 1 pixel to the right and 5 pixels down.
+{
+    "Format": "2.5.0",
+    "Changes": [
+        // register outside area
+        {
+            "Action": "EditData",
+            "Target": "Data/SpousePatios",
+            "Entries": {
+                "Akila": "{{ModId}}_OutsideArea/0/16 16 16 17 17 17 18 18 18 19 19 19/1 5"
+            }
+        },
+
+        // load spouse map
+        {
+            "Action": "Load",
+            "Target": "Maps/{{ModId}}_OutsideArea",
+            "FromFile": "assets/outside-area.tmx"
+        }
+    ]
+}
+Custom farmhouse renovations
+These docs should be merged into a new doc page. When copying content, make sure you attribute the original authors.
+You can now add custom farmhouse renovations that will be applied automatically when the specified mail flag is set. This is based on a new map property in the farmhouse map:
+valid in map property usage
+farmhouse AdditionalRenovations <renovation>+ A comma-separated list of renovations to apply, each in the form <map patch ID> <required mail flag> <map asset if active> <map asset if inactive> [area rectangle]. Fields:
+field effect
+map patch ID A unique ID for the patch being applied. This is usually similar to the renovation name, but can be any unique value. If a renovation applies multiple map patches, each one must have unique ID.
+required mail flag The mail flag that is checked on the house's owner to decide whether the patch should be applied.
+map asset if active The asset name for the map applied when the mail flag is set, relative to the Maps folder.
+map asset if inactive The asset name for the map applied when the mail flag is not set, relative to the Maps folder.
+area rectangle (Optional) The tile area in the map to patch, specified as <X> <Y> <width> <height>. If <X> isn't set, this defaults to the top-left corner of the map. If it is, you must specify all four values.
+For example, this Content Patcher pack would add a renovation to the fully-upgraded farmhouse based on a custom ExampleAuthor_PineapplesEverywhere_HasRenovation flag. Note that TextOperations is used to avoid overwriting any renovations added by another mod, and {{ModId}} is automatically replaced by Content Patcher to avoid conflicts with other mods.
+{
+    "Format": "2.5.0",
+    "Changes": [
+        // add renovation
+        {
+            "Action": "EditMap",
+            "Target": "Maps/FarmHouse2, Maps/FarmHouse2_marriage",
+            "TextOperations": [
+                {
+                    "Operation": "Append",
+                    "Target": [ "MapProperties", "AdditionalRenovations" ],
+                    "Value": "{{ModId}}_KitchenUpgrade {{ModId}}_HasRenovation {{ModId}}_Kitchen {{ModId}}_Empty 0 19 3 3",
+                    "Delimiter": "," // if there are already renovations, add a comma before this one
+                }
+            ]
+        },
+
+        // load renovation map patch
+        {
+            "Action": "Load",
+            "Target": "Maps/{{ModId}}_Kitchen",
+            "FromFile": "assets/kitchen-upgrade.tmx"
+        },
+
+        // load empty map (applied if renovation is inactive)
+        {
+            "Action": "Load",
+            "Target": "Maps/{{ModId}}_Empty",
+            "FromFile": "assets/kitchen-upgrade-empty.tmx"
+        }
+    ]
+}
+Custom floors/walls
+These docs should be merged into Modding:Wallpaper and flooring and Modding:Maps. When copying content, make sure you attribute the original authors.
+In decoratable locations
+You can now change the walls/floors for decoratable locations (like farmhouses, cabins, or sheds) for flooring/painting/wallpaper placement just by editing map/tile properties.
+First, you can define distinct areas using two new map properties:
+valid in map property usage
+decoratable locations FloorIDs [area]+
+WallIDs [area]+
+A comma-separated list of the distinct areas which have flooring or walls. The FloorIDs and WallIDs don't need to match. Each area has the form <area ID> [default flooring/wallpaper ID], where:
+<area ID> uniquely identifies the area or room.
+[default flooring/wallpaper ID] (optional) sets the initial flooring/wallpaper ID if that area hasn't been customized by the player yet. This can be defined in three forms:
+<index>: get the floor/wallpaper matching that index in the vanilla Maps/walls_and_floors tilesheet.
+<tilesheet>:<index>: add Maps/<tilesheet> to the map, and match the index in that tilesheet.
+<area ID>: inherit the default floor/wallpaper from the named area. For example, Hallway_Bedroom Bedroom applies the bedroom wallpaper to the hallway between the bedroom and living room when the farmhouse is first upgraded.
+If omitted, the default will be flooring/wallpaper #0.
+For example:
+FloorIDs: Kitchen 22, LivingRoom Bedroom, Hallway_Bedroom Bedroom, Bedroom
+WallIDs: LivingRoom, Hallway_Bedroom Bedroom, Bedroom
+You don't need to add every area to the FloorIDs/WallIDs list; assigning a flooring/wall to an unlisted value will be handled correctly. You only really need to add an area to FloorIDs/WallIDs to set the default flooring/wallpaper value, or for cases where the order of the walls/floors is important (for backwards compatibility with code that sets wallpaper/flooring by an integer room index, as is the case with the floors/walls in the vanilla farmhouse).
+Then you can add individual tiles to each area with two new tile properties:
+layer property effect
+Back WallID <area ID>
+FloorID <area ID> Adds this tile to the given floor/wall area. Each floor tile should have the FloorID property, but only the top edge of the wall should have WallID.
+In the furniture catalogue
+You can also add new flooring/wallpaper options to the furniture catalogue by adding it to Data/AdditionalWallpaperFlooring. Each entry consists of an object with these fields:
+field description
+ID A unique ID value. This is not shown in-game.
+Texture The asset name which contains 32x32 pixel (flooring) or 16x48 pixel (wallpaper) sprites. The tilesheet must be 256 pixels wide, but can have any number of flooring/wallpaper rows.
+IsFlooring Whether this is a flooring tilesheet; else it's a wallpaper tilesheet.
+Count The number of flooring or wallpaper sprites in the tilesheet.
+For example, this Content Patcher pack would add three new wallpapers to the game:
+{
+    "Format": "2.5.0",
+    "Changes": [
+        // define wallpaper
+        {
+            "Action": "EditData",
+            "Target": "Data/AdditionalWallpaperFlooring",
+            "Entries": {
+                "{{ModId}}_Wallpapers": { // for technical reasons, you need to specify the ID here *and* in the "ID" field
+                    "ID": "{{ModId}}_Wallpapers",
+                    "Texture": "Mods/{{ModId}}/Wallpapers",
+                    "IsFlooring": false,
+                    "Count": 3
+                }
+            }
+        },
+
+        // load wallpaper tilesheet
+        {
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/Wallpapers",
+            "FromFile": "assets/wallpapers.png"
+        }
+    ]
+}
+Map property changes
+See the updated docs at Modding:Maps#Known properties. The section below focuses on what's new in this version.
+Stardew Valley 1.5.5 adds several map properties (in addition to those listed in their own sections):
+valid in map property usage
+any AllowGrassGrowInWinter T Allows grass to spread in winter.
+any AllowGrassSurviveInWinter T Allows grass that's alive on the last day of fall to survive through to winter.
+any ClearEmptyDirtOnNewMonth T Destroy most tilled dirt that doesn't contain crops when a new year starts.
+any EnableGrassSpread T Gives grass in the location a chance to spread each day.
+any ForceAllowTreePlanting T Allows planting trees (both wild and fruit) in this location, even if it normally wouldn't be allowed.
+any IsFarm T Marks the location as a farm. This only affects generic location/interaction logic which checks the in-code location.IsFarm property; logic hardcoded into the game's Farm class (e.g., farm animals, pets, crows/scarecrows, greenhouse, farm buildings, etc) is still limited to the actual farm.
+any IsGreenhouse T Marks the location as a greenhouse.
+any SpawnGrassFromPathsOnNewYear T Spawns grass on every tile with index 22 on the Paths layer when a new year starts. See also SpawnRandomGrassOnNewYear.
+any SpawnDebrisOnNewMonth T
+SpawnDebrisOnNewYear T Spawns weeds, stones, or twigs at random positions when a new month/year starts (subject to their usual spawn rules).
+any SpawnRandomGrassOnNewYear T Spawns grass at random positions when a new year starts (subject to its usual spawn rules). See also SpawnGrassFromPathsOnNewYear.
+farm FarmFishLocationOverride <location name> <chance> Adds an alternative location name when catching fish, where the <chance> is a decimal value between 0 (never happens) and 1 (always happens). For example, FarmFishLocationOverride Mountain 0.5 adds a 50% chance of catching mountain fish instead of the normal fish for that location. The location name is case-sensitive, and matches those shown by the Debug Mode mod.
+farm FarmHouseFurniture [<furniture ID> <tile X> <tile Y> <rotations>]+ Spawns initial furniture in the farmhouse when creating a new save. If you add multiple furniture to the same tile, the first one will be placed on the ground and the last one will be placed on the first one.
+This is also required to enable the FarmHouseWallpaper, FarmHouseFlooring, and FarmHouseStarterSeedsPosition properties. You can enable it without spawning any furniture with FarmHouseFurniture -1 0 0 0.
+farm FarmHouseFlooring <flooring id> Sets the initial farmhouse floor to the given ID when creating a new save. These are mapped to the 4x4 tile areas in the Maps/walls_and_floors tilesheet starting at tile index 336 (where index 0 is mapped to the top-left square).
+This is only enabled if FarmHouseFurniture is set.
+farm FarmHouseWallpaper <wallpaper id> Sets the initial farmhouse wallpaper to the given ID when creating a new save. These are mapped to the 1x4 tile areas in the Maps/walls_and_floors tilesheet starting from the top-left.
+This is only enabled if FarmHouseFurniture is set.
+farm FarmHouseStarterSeedsPosition <tile X> <tile Y> Sets the tile position in the farmhouse where the seed package is placed when creating a new save.
+This is only enabled if FarmHouseFurniture is set.
+farm FarmOceanCrabPotOverride T Causes crab pots on the farm should catch ocean fish.
+farm SpawnBeachFarmForage T Randomly spawns beach forage and supply crates on the farm (like the vanilla beach farm). Forage and crates will only appear on tiles which have the BeachSpawn T property on the Back layer, are clear for placement, and don't have a tile on the AlwaysFront layer.
+farm SpawnForestFarmForage T Randomly spawns forest forage on the farm (like the vanilla forest farm). Forage will only spawn on tiles which have the Type Grass tile property, are clear for placement, and don't have a tile on the AlwaysFront layer.
+farm SpawnMountainFarmOreRect <tile X> <tile Y> <tile width> <tile height> The tile area on the farm map where ores should randomly spawn (like the vanilla hilltop farm). Ores will only spawn on tiles which have the Type Dirt tile property and are clear for object placement.
+farmhouse EntryLocation <tile X> <tile Y> Sets the tile on which the player appears when they warp into the farmhouse.
+And one new tile property:
+layer property effect
+Back TouchAction Warp <area> <x> <y> [string prerequisite] Adds a player-only warp on the tile to the specified location name and position. This is exactly equivalent to TouchAction MagicWarp, but without the magic sound/visual effect.
+It also changes one tile property:
+layer property effect
+Back Water Setting the value to I (uppercase i) will make the tile behave like normal water, but won't render the water animation overlay for it.
+Non-Krobus roommates
+These docs should be merged into Modding:NPC data and Modding:Dialogue. When copying content, make sure you attribute the original authors.
+The game's marriage logic previously had hardcoded exceptions to treat Krobus as a roommate instead. That logic has been reworked so it can be applied to any NPC (including custom NPCs).
+Specifically:
+Items with the "propose_roommate_<NPC name>" context tag will trigger a roommate proposal when given to the named NPC. The NPC name must be lowercase with underscores instead of spaces (e.g., propose_roommate_dwarf).
+These dialogue keys apply before they move in:
+content file key effect
+Strings/StringsFromCSFiles <NPC name>_EngagedRoommate The NPC's roommate proposal accept dialogue.
+⚠ Ignored if you don't specify Data/EngagementDialogue:<NPC name>Roommate0.
+For example: A Void Ghost pendant! How did you...?$3#$b#Oh, wow.$7#$b#@... yes, I'll come live with you, if you like. But we have to keep it secret from everyone.#$b#I'll be at your house in a few days... okay?$h
+Strings/Characters MovieInvite_NoTheater The NPC's roommate proposal rejection text when you don't meet the requirements (i.e., min friendship + house upgrade level, and not already having a roommate/spouse). This is the same dialogue used when you can't invite someone to the movies.
+Data/EngagementDialogue <NPC name>Roommate0
+<NPC name>Roommate1 The NPC's normal dialogue after accepting the proposal, but before moving in. The Roommate0 variant is always used on the day the NPC accepted; on subsequent days the NPC randomly chooses Roommate0 or Roommate1. If the Roommate0 variant isn't defined, the NPC will use the normal <NPC Name>0 and <NPC Name>1 keys. If the Roommate0 variant is defined, Roommate1 must be set too to avoid errors.
+For example: @... I'm afraid we'll have to keep this a secret... Neither my people nor yours would accept us living together.
+And after they move in:
+content file key effect
+Characters/Dialogue/MarriageDialogue<NPC name>Roommate all keys Equivalent to Characters/Dialogue/MarriageDialogue<NPC name>, but only applies if the NPC is a roommate. If the file exists, it completely replaces the spouse version; otherwise the game defaults to the spouse version.
+Characters/Dialogue/MarriageDialogue *Roommate Keys with the Roommate suffix take priority if they exist (only in this file, not the MarriageDialogue<NPC name> files).
+Data/Festivals/* <NPC name>_roommate The NPC's normal dialogue at the festival if they're a roommate. If the key isn't defined, they'll use <NPC name>_spouse instead.
+And for other NPCs:
+content file key effect
+Characters/Dialogue/* *_roommate_* Equivalent to the *_inlaw_* infix in generic dialogue, used if you're a roommate with the NPC. If not defined, the game will fallback to the non-infixed dialogue (it won't use the *_inlaw_* variant).
+Roommates will sleep in a Single Bed if one is available and unused in the house; otherwise they'll use a double bed like a normal spouse. (Krobus is an exception, since he doesn't sleep in a bed.)
+Added event preconditions to check whether the local player has a roommate (R) or doesn't have a roommate (Rf). This can be combined with O <NPC name> to check for a specific roommate, like R/O Abigail.
+Custom mail formatting
+See the updated docs at Modding:Mail data. The section below focuses on what's new in this version.
+You can now customize mail and secret notes by including three custom commands in the letter text (including the [] characters):
+command effect
+[letterbg <index>] Changes the default letter background to a vanilla background from LooseSprites/letterBG. The index can be 0 (default letter), 1 (Sandy's lined paper), 2 (Wizard style), or 3 (Krobus style). This will also set the default text color for that style, unless overridden by textcolor.
+[letterbg <asset name> <index>] Changes the default letter background to the given texture. The asset name should match a texture containing two rows: one with 320x180 pixel letter background images, and one with 24x24 pixel button backgrounds shown behind attached items. The index is the sprite to use from those rows, starting at 0 for the first one.
+Only the first 4 letter background images of a row will be properly displayed. Only one row of button may exist. See image below
+[textcolor <color>] Changes the letter text color. The valid colors are black, blue, cyan, gray, green, orange, purple, red, and white.
+
+Example : the letters background images can go on the pale pink, pink and purple spaces, while the buttons can only go on the orange line.
+Custom scarecrows
+See the updated docs at Modding:Context tags. The section below focuses on what's new in this version.
+You can now mark any placeable item as a scarecrow with two new context tags:
+context tag effect
+crow_scare Sets the item as a placeable scarecrow. If not set, the item is considered a scarecrow if its default name contains the substring arecrow (like before).
+crow_scare_radius_<radius> If the item is a scarecrow, sets the radius that it covers. If not set, the scarecrow defaults to 17 if the default name contains the substring Deluxe and 9 otherwise.
+Improved map seats
+See the updated docs at Modding:Maps#Sitting on non-furniture chairs. The section below focuses on what's new in this version.
+When defining map seats via Data\ChairTiles (see docs in the 1.5 migration guide), you can now set the type field to custom <offset_x> <offset_y> <extra_height> to override the hardcoded offset and height values in code. The three values are measured in tiles (e.g., an X offset value of 0.5 would shift the sitting location by half a tile).
+See also
+Modding wishlist items done in Stardew Valley 1.5.5
+Category: Modding

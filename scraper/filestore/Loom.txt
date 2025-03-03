@@ -1,0 +1,46 @@
+Jump to navigation
+Jump to search
+Loom
+    Turns raw wool into fine cloth.
+Information
+Source Crafting
+Sell Price Cannot be sold
+Crafting
+Recipe Source
+Farming (Level 7)
+Ingredients
+Wood (60)
+Fiber (30)
+Pine Tar (1)
+The Loom is a type of Artisan Equipment used to make Artisan Goods. It takes wool and turns it into cloth.
+Placing quality Wool into a Loom gives a chance to produce 2 Cloth. Silver gives a 10% chance, gold gives a 50% chance, and iridium gives a 100% chance. This makes cloth one of the only artisan goods in the game that is actually affected by the quality level of its input.
+Products
+See also: Animal Products Profitability
+Image Name Description Ingredient Processing Time[1] Sell Price
+Cloth A bolt of fine wool cloth.
+Wool (1)
+4 Hours
+470g
+References
+↑ See Object::performObjectDropInAction in the game code.
+History
+1.4: Added chance for double cloth for quality wool. Looms can now be stacked in inventory and chests.
+1.6: Loom now has a higher chance of double cloth when processing quality wool. Fixed being able to place a Yellow Couch in a Loom.
+
+Equipment
+Artisan Bee House • Cask • Cheese Press • Dehydrator • Fish Smoker • Keg • Loom • Mayonnaise Machine • Oil Maker • Preserves Jar
+Refining Bait Maker • Bone Mill • Charcoal Kiln • Crystalarium • Deluxe Worm Bin • Furnace • Geode Crusher • Heavy Furnace • Heavy Tapper • Lightning Rod • Mushroom Log • Ostrich Incubator • Recycling Machine • Seed Maker • Slime Egg-Press • Slime Incubator • Solar Panel • Tapper • Wood Chipper • Worm Bin
+Farming
+Fertilizer Basic Fertilizer • Basic Retaining Soil • Deluxe Fertilizer • Deluxe Retaining Soil • Deluxe Speed-Gro • Hyper Speed-Gro • Quality Fertilizer • Quality Retaining Soil • Speed-Gro • Tree Fertilizer
+Sprinklers Iridium Sprinkler • Quality Sprinkler • Sprinkler
+Other Deluxe Scarecrow • Garden Pot • Rarecrow • Scarecrow
+Fishing
+Bait Bait • Challenge Bait • Deluxe Bait • Magic Bait • Magnet • Targeted Bait • Wild Bait
+Tackle Barbed Hook • Cork Bobber • Curiosity Lure • Dressed Spinner • Lead Bobber • Quality Bobber • Sonar Bobber • Spinner • Trap Bobber • Treasure Hunter
+Other Crab Pot
+Bombs Bomb • Cherry Bomb • Mega Bomb
+Fences Gate • Hardwood Fence • Iron Fence • Stone Fence • Wood Fence
+Storage Big Chest • Big Stone Chest • Chest • Junimo Chest • Mini-Fridge • Stone Chest
+Signs Dark Sign • Stone Sign • Text Sign • Wood Sign
+Misc Anvil • Coffee Maker • Cookout Kit • Deconstructor • Fairy Dust • Farm Computer • Hopper • Mini-Forge • Mini-Jukebox • Mini-Shipping Bin • Sewing Machine • Staircase • Statue Of Blessings • Statue Of The Dwarf King • Telephone • Tent Kit • Tools • Workbench
+Category: Craftable items

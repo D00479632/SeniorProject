@@ -1,0 +1,21 @@
+Jump to navigation
+Jump to search
+Void Ghost Pendant
+It's symbolic to the shadow people. As a gift, it signifies the desire to move in together as friends.
+Information
+Source
+Desert Trader
+Monster drop in Skull Cavern
+Sell Price 4,500g
+The Void Ghost Pendant is an item that can be purchased from the Desert Trader for 200 Void Essence. It can also be dropped by monsters in the Skull Cavern.
+It allows the player to invite Krobus to move into their house as a roommate, similar to how the Mermaid's Pendant is used to propose marriage. Only one can be obtained at a time, similar to the Mermaid's Pendant.
+Notes
+It is possible to obtain multiple Void Ghost Pendants by killing monsters in the Skull Cavern, as having a Pendant in your inventory does not prevent monsters from dropping them.
+It is also possible to trade for as many Void Ghost Pendants as you would like. As long as the Pendant is not in your inventory, you can purchase another one from the Desert Trader.
+It is impossible to obtain if the player is already married or engaged to one of the marriage candidates.
+After purchasing the Pendant and moving Krobus in, the Old Mariner will respond "Glad the Amulet worked out for ye, lad/miss." when spoken to.
+History
+1.4: Introduced.
+1.4.4: Can no longer be gifted at the Feast of the Winter Star.
+1.5: Corrected spelling in description.
+Category: Special items

@@ -1,0 +1,34 @@
+Jump to navigation
+Jump to search
+This talk page is for discussing Fertilizer.
+Sign and date your posts by typing four tildes (~~~~).
+Put new text below old text.
+Be polite.
+Assume good faith.
+Don't delete discussions.
+Contents
+1 Confusing Terms
+2 Tapper Profession?
+3 Fertilizer Lasting Times
+4 Fertilizer and multi-harvest-crops
+Confusing Terms
+Having fertilizer be both the catch all term and the name of the fertilizer that increases crop quality is confusing. I'm not sure how to correct this. BlaDe (talk) 11:40, 19 August 2021 (UTC)
+Check the sentence under "Crop Quality Ratios" -- it mentions Basic Fertilizer and Quality Fertilizer specifically. I suppose Deluxe Fertilizer needs to be added to that list as well. This terminology fixes the problem you mentioned.
+My bigger concern is this: I was under the impression that fertilizers that affect crop quality stopped working after the first harvest for crops like corn. Was I mistaken? There was nothing in the change notes about fertilizer behaving differently outside the greenhouse, so was it always this way? Note that I'm not talking about crops like coffee that give 4 beans at each harvest, I mean subsequent harvests of the same crop. Please advise. Thank you! margotbean (talk) 17:33, 19 August 2021 (UTC)
+The code doesn't differentiate between an initial harvest and regrowth in Crop:harvest. I believe it has always worked this way. If needed I can confirm this - my predictor tells you the quality a crop should be. BlaDe (talk) 19:32, 19 August 2021 (UTC)
+I'm sure you're correct, there were no changes with v1.5 to that mechanic. Thanks for clarifying! margotbean (talk) 19:49, 19 August 2021 (UTC)
+Tapper Profession?
+I've never used the Tapper profession, so I have no experience with it.
+However, re the tables in the "Fertilizer Cost" section: What bearing does the Tapper profession have on the value Clam or Coral? The Professions page lists Tapper as a Foraging bonus, but states that that bonus increases the value of syrups only. Yes, Coral is a forageable, and Clam is also when it is picked up on the beach rather than caught in a crab pot, but neither of their pages mention any benefits from Tapper. Clam doesn't even mention anything related to the Foraging skill, but only that they can "be foraged". Clam does discuss how it receives no benefits from Fishing skills, which doesn't exactly draw attention to foraging.
+So, are these tables bogus, or are they saying something relevant that appears nowhere else on the wiki? In any case, I think the iridium quality should be completely left out of the tables, since they are unobtainable with "no profession", and likewise unobtainable with Tapper. Giles (talk) 15:57, 5 September 2021 (UTC)
+Speed-Gro uses Pine Tar, and Deluxe Speed-Gro uses Oak Resin, so the cost of both is affected by the Tapper profession.
+Before the Statue Of Uncertainty was added, there was no way to have both Tapper and Botanist professions, the game made you choose one or the other. Technically that's still true, you can't have both professions at the same time without mods. You can either have iridium clam/coral or an increased sell price for oak resin/pine tar. The table shows all possibilities. (Even with both professions, it would still be cheaper to craft than to purchase.)
+Hope this helps explain things. --margotbean (talk) 18:59, 5 September 2021 (UTC)
+Fertilizer Lasting Times
+I've noticed that when you put down fertilizers, they will stay in the ground for multiple plantings. I believe they will stay until the land becomes untilled or the crops that are currently on the land die. Can anyone confirm? FireJarkee (talk) 04:30, 19 November 2021 (UTC)
+Correct. Also, in order to keep fertaliser across a season transition, it needs to be under a crop that survive in both seasons, like wheat, or fibre. BlaDe (talk) 04:44, 19 November 2021 (UTC)
+That's written in the Mechanics section of the article already. You can rephrase or complete it if you think you could improve the writing. -- Charly (talk) 05:44, 19 November 2021 (UTC)
+Fertilizer and multi-harvest-crops
+In the "Mechanics" section of the original page, it says "... Quality fertilizers (Basic Fertilizer, Quality Fertilizer, and Deluxe Fertilizer) affect all harvests of a multi-harvest crop. " but in the "Crop Quality Ratios" section it says "... For crops that produce multiples at harvest (i.e., Coffee Bean, Blueberry, Cranberries), Basic and Quality fertilizers affect only the first crop produced. ". To me both statements are contradicting each other. Clarification is welcome. Thanks! Kuasiel (talk) 08:56, 25 May 2023
+If you can harvest the crop more than once (ie, Ancient Fruit), the quality fertilizers apply to EVERY harvest. If you get more than one crop at harvest (ie, potatoes), the quality fertilizers just affect one crop per harvest (the rest are always base quality). Atravita (talk) 13:23, 25 May 2023 (UTC)
+Category: Talk pages

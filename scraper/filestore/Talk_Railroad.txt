@@ -1,0 +1,14 @@
+Jump to navigation
+Jump to search
+This talk page is for discussing Railroad.
+Sign and date your posts by typing four tildes (~~~~).
+Put new text below old text.
+Be polite.
+Assume good faith.
+Don't delete discussions.
+Are we sure that the train can drop items without the player present?
+Is anybody able to actually confirm that this is the case? In my own testing, I've never found items at the railroad if I wasn't there to see them drop, and from looking at the decomp, it seems like it should be impossible. This is because items dropping is tied to the TrainCar::draw function, which *should* only run when the player is actually present at the railroad. As this is frustratingly difficult to test, I'm hoping I can get some actual confirmation from somebody. The only "proof" of this that I've ever been able to find online has alternative plausible explanations (e.g. Sebastian breaking some debris when walking near the rail) - Sicarious (talk) 15:22, 8 October 2024 (UTC)
+I believe you are correct, items cannot drop when the player is not present. I don't know which version changed this behavior, but one of the modders pointed out to me that drops were tied to the "draw" function a while ago. I have not had time to investigate (and apparently they haven't either). I have noticed in gameplay that trains stop dropping items when they move out of frame. That is to say, a particular train car is dropping a ton of wood, but my game is zoomed in so I cannot see the entire railroad. When the car moves off-screen to the right, no more wood is dropped.
+I think I need to report this as a bug, actually. But in the meantime, please feel free to change the page and remove the incorrect information. We cannot add an entry to the history section, since the change happened sometime between 1.3 and 1.6, and we don't know which version.
+Thanks so much for your comment, and your analysis of train mechanics! margotbean (talk) 18:06, 8 October 2024 (UTC)
+Category: Talk pages

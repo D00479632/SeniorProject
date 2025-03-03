@@ -1,0 +1,52 @@
+Jump to navigation
+Jump to search
+Fiber Seeds
+Plant these in any season. Does not require watering. Harvest with the scythe. Takes 7 days to grow.
+Information
+Crop: Fiber
+Growth Time: 7 days
+Season:
+All
+Sell Price: 5g
+Purchase Prices
+General Store: Not sold
+JojaMart: Not sold
+Traveling Cart: Not sold
+Crafting
+Recipe Name: Fiber Seeds
+Recipe Source: "Community Cleanup" Special Order
+Ingredients:
+Mixed Seeds (1)
+Sap (5)
+Clay (1)
+Produces: 4 Fiber Seeds per craft
+Fiber Seeds are a type of crafted seed. They do not require daily watering and can even grow in Winter, but they must still be planted on tilled soil. They can also be eaten by Crows if not protected by a Scarecrow.
+The recipe is obtained from Linus in the mail the day after completing the Special Order "Community Cleanup".
+Each fully-grown plant drops between 4 and 7 Fiber when harvested with a Scythe. There is also a 10% chance to drop 1 Mixed Seeds.[1]
+Contents
+1 Stages
+2 Tips
+3 References
+4 History
+Stages
+Season Stage 1 Stage 2 Stage 3 Stage 4 Harvest
+Spring
+Summer
+Fall
+Winter
+Days: 1 Day 2 Days 2 Days 2 Days Total: 7 Days
+Tips
+Fiber Seeds can be planted during the last week of Fall to prevent fertilizers from disappearing on the first day of Winter.
+Although they are not considered "Crops", Junimos will still harvest them if in range of a Junimo Hut.
+References
+↑ See Crop::harvest in the game code.
+History
+1.5: Introduced.
+1.6: Fixed bug where Farm Computer counted Fiber Seeds as unwatered.
+Seeds, Starters, and Saplings
+Spring Apricot Sapling • Bean Starter • Carrot Seeds • Cauliflower Seeds • Cherry Sapling • Coffee Beans • Garlic Seeds • Jazz Seeds • Kale Seeds • Parsnip Seeds • Potato Seeds • Rice Shoot • Rhubarb Seeds • Spring Seeds • Strawberry Seeds • Tulip Bulb
+Summer Blueberry Seeds • Coffee Beans • Corn Seeds • Hops Starter • Melon Seeds • Orange Sapling • Peach Sapling • Pepper Seeds • Poppy Seeds • Radish Seeds • Red Cabbage Seeds • Spangle Seeds • Summer Seeds • Summer Squash Seeds • Sunflower Seeds • Starfruit Seeds • Tomato Seeds • Wheat Seeds
+Fall Amaranth Seeds • Apple Sapling • Artichoke Seeds • Beet Seeds • Bok Choy Seeds • Broccoli Seeds • Corn Seeds • Cranberry Seeds • Eggplant Seeds • Fairy Seeds • Fall Seeds • Grape Starter • Pomegranate Sapling • Pumpkin Seeds • Rare Seed • Sunflower Seeds • Wheat Seeds • Yam Seeds
+Winter Powdermelon Seeds • Winter Seeds
+Other Acorn • Ancient Seeds • Banana Sapling • Blue Grass Starter • Cactus Seeds • Fiber Seeds • Grass Starter • Mahogany Seed • Mango Sapling • Maple Seed • Mixed Flower Seeds • Mixed Seeds • Mossy Seed • Mushroom Tree Seed • Mystic Tree Seed • Pineapple Seeds • Qi Bean • Tea Sapling • Pine Cone • Taro Tuber
+Categories: Craftable itemsSeeds

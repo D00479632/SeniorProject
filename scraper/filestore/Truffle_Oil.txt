@@ -1,0 +1,70 @@
+Jump to navigation
+Jump to search
+Truffle Oil
+A gourmet cooking ingredient.
+Information
+Source Artisan Goods • Desert Festival • Truffle Crabs • Traveling Cart
+Energy / Health
+38
+17
+Sell Prices
+Base Artisan (+40%)
+1,065g
+1,491g
+Artisan Goods
+Equipment
+Oil Maker
+Processing Time
+360m (6h)
+Ingredients
+Truffle (1)
+Truffle Oil is an Artisan Good made in the Oil Maker from a Truffle, taking 6 hours to produce. It can also be dropped from Truffle Crabs. One may be purchased from Marnie's shop at the Desert Festival for 50 Calico Eggs. Occasionally the Traveling Cart will offer it in her rotating stock.
+Despite being listed as "A gourmet cooking ingredient" there are no cooking recipes that use it, but it is used to make the Rain Totem.
+Contents
+1 Gifting
+2 Bundles
+3 Crafting
+4 Notes
+5 Tailoring
+6 Quests
+7 History
+Gifting
+Villager Reactions
+Love  Harvey
+Like  Abigail •  Alex •  Caroline •  Clint •  Demetrius •  Dwarf •  Elliott •  Emily •  Evelyn •  George •  Gus •  Haley •  Jodi •  Kent •  Krobus •  Leah •  Leo •  Lewis •  Linus •  Marnie •  Maru •  Pam •  Penny •  Pierre •  Robin •  Sam •  Sandy •  Shane •  Willy •  Wizard
+Hate  Jas •  Sebastian •  Vincent
+Bundles
+Truffle Oil is an option for the Artisan Bundle in the Pantry.
+Crafting
+Truffle Oil is used to make the following items:
+Image Name Description Ingredients Recipe Source(s) Sell Price
+Rain Totem Activate to greatly increase the chance for rain tomorrow. Consumed on use.
+Hardwood (1)
+Truffle Oil (1)
+Pine Tar (5)
+Foraging Level 9
+20g
+Notes
+Without the Artisan Profession, iridium quality truffles are worth more to sell outright rather than turn into oil.
+Tailoring
+Truffle Oil can be used in the spool of the Sewing Machine to create the dyeable Dark Bandana Shirt. It can be used in dyeing, serving as a yellow dye at the dye pots, located in Emily's and Haley's house, 2 Willow Lane.
+Quests
+Mayor Lewis requests Truffle Oil by mail on the 21st of Summer (year 2) in the "Mayor's Need" Quest. The reward is 750g and 1 Friendship heart.
+Note that Lewis will send the letter triggering the quest regardless of whether or not the player owns a pig.
+History
+1.0: Introduced.
+1.4: Can now be used in Tailoring.
+1.6: Now dropped by Truffle Crabs. Now purchasable through Desert Festival.
+Artisan Goods
+Bee House Honey
+Cask Beer • Cheese • Goat Cheese • Mead • Pale Ale • Wine
+Cheese Press Cheese • Goat Cheese
+Keg Beer • Coffee • Green Tea • Juice • Mead • Pale Ale • Wine
+Loom Cloth
+Mayonnaise Machine Dinosaur Mayonnaise • Duck Mayonnaise • Mayonnaise • Void Mayonnaise
+Oil Maker Oil • Truffle Oil
+Preserves Jar Aged Roe • Caviar • Jellies and Pickles
+Fish Smoker Smoked Fish
+Dehydrator Dried Mushrooms • Dried Fruit • Raisins
+Misc Maple Syrup • Oak Resin • Pine Tar • Mystic Syrup
+Category: Artisan Goods

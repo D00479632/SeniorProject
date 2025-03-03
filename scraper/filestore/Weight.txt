@@ -1,0 +1,93 @@
+Jump to navigation
+Jump to search
+Weight is a statistic that affects how far an enemy will be knocked back when attacked by the player with a weapon.
+Each weapon type has a default weight: Daggers have a weight of 5, swords 10, and clubs 15. Some weapons have a weight modifier, which is added to or subtracted from the default weight.[1] Forging a weapon with Amethysts will add +10 per amethyst to the weight.
+Amethyst Rings and innate enchantments affect the weight multiplicatively: the multiplier starts out as 1.0. Each Amethyst Ring adds 0.1 to the multiplier, while a "-X Weight" innate enchantment will subtract X/10 from the multiplier. The actual weight value is then the weapon's weight times this multiplier.[2]
+This means 2 Amethyst rings increase the amount of knockback by 1.2x, while a maximum-level innate enchantment (-5 Weight) will halve the knockback amount.
+Weapons
+The following weapons affect Weight. The effect is permanent while using the weapon.
+Image Name Effect
+Crystal Dagger
+Crit. Power (+50)
+Weight (+5)
+Wind Spire
+Crit. Power (+10)
+Weight (+5)
+Claymore
+Speed (−4)
+Defense (+2)
+Weight (+3)
+Dark Sword
+Speed (−5)
+Weight (+5)
+Bone Sword
+Speed (+4)
+Weight (+2)
+Lava Katana
+Defense (+3)
+Crit. Power (+25)
+Weight (+3)
+Wood Mallet
+Speed (+2)
+Weight (+3)
+Iron Edge
+Speed (−2)
+Defense (+1)
+Weight (+3)
+Neptune's Glaive
+Speed (−1)
+Defense (+2)
+Weight (+4)
+Galaxy Dagger
+Speed (+1)
+Weight (+5)
+Galaxy Hammer
+Speed (+2)
+Weight (+5)
+Ossified Blade
+Speed (−2)
+Defense (+1)
+Weight (+2)
+Tempered Broadsword
+Speed (−3)
+Defense (+3)
+Weight (+3)
+Dwarf Dagger
+Speed (+1)
+Defense (+6)
+Crit. Chance (+2)
+Weight (+5)
+Dragontooth Shiv
+Crit. Chance (+3)
+Crit. Power (+100)
+Weight (+5)
+Infinity Dagger
+Speed (+1)
+Defense (+3)
+Crit. Chance (+4)
+Weight (+5)
+Kudgel
+Speed (−1)
+Crit. Power (+4)
+Weight (+2)
+Dwarf Hammer
+Defense (+2)
+Weight (+5)
+Dragontooth Club
+Crit. Power (+50)
+Weight (+3)
+Infinity Gavel
+Speed (+2)
+Defense (+1)
+Weight (+5)
+Rings
+The following rings increase Weight (knockback). The effect is permanent while the ring is equipped.
+Image Name Effect
+Amethyst Ring Increases knockback by 10%.
+References
+↑ See MeleeWeapon::defaultKnockBackForThisType and the places where it's used. Note that Data/Weapons.xnb stores the "modified" weights of each weapon directly, the defaults are only used for displaying.
+↑ See BuffEffects::KnockbackMultiplier and MeleeWeapon::DoDamage.
+Skills & Stats
+Skills Farming • Mining • Foraging • Fishing • Combat
+Stats Attack • Crit. Chance • Crit. Power • Defense • Immunity • Luck • Magnetism • Speed • Weight
+Category: Buffs

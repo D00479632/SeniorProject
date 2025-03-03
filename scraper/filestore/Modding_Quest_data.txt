@@ -1,0 +1,30 @@
+Jump to navigation
+Jump to search
+← Index
+Article Stub
+This article is a stub and is missing information. You can help Stardew Valley Wiki by expanding it!
+This page explains how the game stores and parses quests. This is an advanced guide for mod developers.
+Raw data
+Scripted quests are stored in Content\Data\Quests.xnb, which can be unpacked for editing. Here's the raw data as of 1.5.4 for reference:
+Data 
+Format
+Each quest's key must be a unique positive integer. When adding a custom quest, prefixing the ID with your Nexus ID is recommended to help reduce mod conflicts.
+The entry for each quest contains these slash-delimited quest fields:
+Index Description
+0 Type (e.g., Location, Basic, LostItem, etc)
+1 Title
+2 Quest details/flavor text
+3 Hint/condition
+4 Solution/trigger
+5 Next quest (-1 if none)
+6 Gold (0 if none)
+7 Reward description (Only if Gold is not -1. Apparently unused?)
+8 Cancellable
+9 (Optional) reaction text
+When using the ItemDelivery quest type, you can specify an item quantity after the item ID.
+Ex: "5200": "ItemDelivery/Rock Candy/Abigail wants you to bring her several amethysts./Bring Abigail 10 amethysts./Abigail 66 10/-1/300/-1/true/Thanks, these look delicious!"
+Here is the string in an easy to edit format:
+ID(number): Type/Title/flavor text/Hint/Solution/Next quest (-1 if none)/Gold (0 if none)/Reward Description/Cancellable/Reaction Text(optional)
+See also
+Modding:Special orders
+Categories: Article stubsModding

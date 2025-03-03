@@ -1,0 +1,99 @@
+Jump to navigation
+Jump to search
+This talk page is for discussing Skull Cavern.
+Sign and date your posts by typing four tildes (~~~~).
+Put new text below old text.
+Be polite.
+Assume good faith.
+Don't delete discussions.
+Contents
+1 Shaft Chance
+2 Prehistoric Levels
+3 Dark Cowboy Hat
+4 Rhubarb Pie
+5 Floor layouts and themes
+6 Integer Limit being 120 less
+7 Lava Bat floors
+8 Ore distribution bug?
+9 Chance for a Prismatic Shard from a Treasure Chest
+10 Teasure rooms table broken
+11 Pre historic levels
+12 Trinkets in treasure rooms
+13 Trinket drop rate location/level/monster dependent?
+14 Shrine of Challenge
+15 Iridium Snake Milk
+Shaft Chance
+Is it safe to assume that shafts chance to appear is the same as stair chance. where stairs can appear exposed or under rocks just as much as shafts do? NotJoshuaNotJoshua (talk) 10:11, 24 April 2021 (UTC)
+20% chance that a ladder will become a shaft/chute/hole, so 1 in 5. Not in infested floors. Dubesor (talk) 15:29, 24 April 2021 (UTC)
+Prehistoric Levels
+Are Prehistoric Levels more common in 1.5? The Wiki says the odds are 2.2%. Before the wiki was updated about a month ago, it said nothing about odds. I seem to remember seeing 1% somewhere, which is consistent with my experience with 1.4. I just got three prehistoric levels in a trip to Level 100 with staircases, so I was wondering if I got lucky or if the odds went up. Now I'm wondering, did the odds go up, or was I just unlucky before? There's nothing about it in the Version History. If it did change, it might be worth noting in the History section, but is there any evidence of it? Zendowolf (talk) 07:14, 5 June 2021 (UTC)
+The code from 1.4 and 1.5 is the same, so I think you're a victim of RNG. margotbean (talk) 17:42, 5 June 2021 (UTC)
+Dark Cowboy Hat
+It looks as the Dark Cowboy hat is missing in the treasure room list, so the chance finding the other 1/25 things schould be 1/26 but I'm not sure what with the more rare items or the seeds happens... Botautal (talk) 10:32, 1 August 2021 (UTC)
+I'll fix that asap. It will be a nice break from adding movies & concessions tastes to all 34 villagers in all 12 languages. 😁 Thanks for pointing that out; I actually found one of those in my current playthrough and completely forgot to make a note of it for the wiki! margotbean (talk) 17:33, 1 August 2021 (UTC)
+The Dark Cowboy Hat and the Auto-Petter were the only items added with v1.5. I believe I've adjusted the chances to find them correctly. Thanks again, margotbean (talk) 19:34, 1 August 2021 (UTC)
+Rhubarb Pie
+A monster just dropped a Rhubarb Pie when I killed it in the dangerous Skull Cavern (Skull Cavern Invasion quest active). It was either a Royal Serpent or a Giant Purple Slime (most likely a slime). This is not covered by the special items in The Mines#Special Items, including the "random item from a treasure room". I've checked MineShaft::getTreasureRoomItem, and the possible cooked dishes have not changed.
+I've received a lot of other seemingly strange drops, but they've all been explained by either Special Items or the Pink Cake inside the Giant Slime... this one I can't explain.
+Clearly there's more code-diving to be done on dangerous monster or dangerous Skull Cavern drops. margotbean (talk) 01:00, 28 November 2021 (UTC)
+Could you have destroyed a crate/barrel at the same time? Rhubarb pies can drop from those if in dangerous mines/skull caverns. BlaDe (talk) 07:33, 1 December 2021 (UTC)
+At the time I did not think so, since this is a recurring theme with me... I had cheats on so I was invincible, so I could concentrate on what was dropping what. Still, it doesn't make sense otherwise, so I have to conclude it was a crate or barrel. Assuming I can get the decompiled v1.5.5 code to run, I should be able to investigate these kinds of oddities better myself. 🤞 ;) Thanks, BlaDe! margotbean (talk) 19:21, 1 December 2021 (UTC)
+Floor layouts and themes
+Since The Mines page says the layouts and themes for floors, would it make sense if the Skull Cavern page did also? because I feel a bit empty about it, for example, floors 33, 73, and 113 being a star shape. 9000 (talk) 8:47, 25 July 2022 (UTC)
+If you can find a code reference that shows the layouts aren't completely random, then we can add it to the page. margotbean (talk) 15:11, 25 July 2022 (UTC)
+The code would say otherwise. The only Skull Cavern level with a fixed layout is 100 (coded as 220), using the same layout as level 10 of the Mines. - IBugOne (talk) 18:49, 25 July 2022 (UTC)
+There's a block in MineShaft.loadLevel (starts with if this.getMineArea(level) == 121, which corresponds to the skull cavern) that randomizes the floor layout choice for the skull cavern. --Atravita (talk) 20:57, 25 July 2022 (UTC)
+Since of the floor layouts being randomized every time The Player visits them is not correct per se. It is because the only floors that have matching layouts is floor 100 and treasure rooms, which uses floors 10, 30, 40, 50, 70, 80, 90, 110, and 120 from The Mines. So IBugOne is correct about this research. Here are the floor themes: The floor layouts for floors 1-29 of The Mines has a desert theme, and the last 10 levels theme has an Egyptian tomb theme. 9000 (talk) 9:56, 27 September 2022 (UTC)
+Integer Limit being 120 less
+Since of the bug where placing a fence on floor 120 and blowing it up by a bomb created a ladder going to floor 1 of the Skull Caverns, so that means floor 1 of the Skull Caverns is floor 121 of The Mines, while the wiki page says 2147483647 instead of 2147483527, feel free to check the game code for correction. If it is 120 less, feel free to change the text. 9000 (talk) 9:00, 30 August 2022 (UTC)
+You're right about this. The game code recognizes Skull Cavern floor N as Mines floor N+120, so I wouldn't be surprised to see the SC limit being 120 less than the integer limit. However, the page text says 2147483647 is the integer limit, which is correct per se. Also since this is only a "gotcha"-type of trivia, I'm not sure changing that reflects anything meaningful. - IBugOne (talk) 15:15, 30 August 2022 (UTC)
+Lava Bat floors
+Since of our wiki says that the Lava Bats spawn on the first 50 floors, which is not correct. Each time we play, the only floors we see them on are floors 20 and 40 on non-Mummy levels. 9000 (talk) 8:27, 11 September 2022 (UTC)
+If you can find proof that it's not random in the game code, then we can change the wiki. margotbean (talk) 18:29, 11 September 2022 (UTC)
+In the function to populate the levels (StardewValley.Locations.MineShaft.getMonsterForThisLevel, which in turn is called from StardewValley.Locations.MineShaft.populateLevel), has a few sections to generate a bat.
+The first is for Dino floors, which result in an iridium bat, then there are the options for the mines, then for Skull Cavern, there are 2 options to generate a bat, with the conditions:
+(this.mineLevel % 20 == 0 && distanceFromLadder > 10f) or (this.mineRandom.NextDouble() < 0.33 && distanceFromLadder > 10f && this.mineLevel >= 171)
+The first case matches the claimed behaviour of only seeing them on floors 20 and 40; and the latter case will produce an iridium bat.
+Additionally, before either of these checks, it checks if it is loaded a DarkArea, in which case it will only spawn a ghost or a mummy.
+However, further down in the populateLevel function, it also checks (this.mustKillAllMonstersToAdvance() && this.EnemyCount <= 1), and adds a bat if true. But this doesn't specify the level so it should be a normal bat, not a lava bat.
+The only other location I can find it spawning a bat is in StardewValley.Locations.MineShaft.spawnFlyingMonsterOffScreen
+In this case, for the Skull Cavern, it first checks (this.mineLevel < 171 || Game1.random.NextDouble() < 0.5) and if that is true it will spawn a serpent, if it is false it will spawn a bat.
+So unless I am missing something, the only options for bat spawns are:
+Normal bat spawning if you need to kill all the monsters to advance and no monster spawned.
+Lava bat spawning on level 20 and 40 (given it is not a dark area).
+Iridium bat spawning on level 51 and above, either on screen during the normal population event, or offscreen while still on the floor.
+So Lava bats should only spawn on level 20 and 40. I'll update the main page to say that.JackBlack69 (talk) 07:54, 3 January 2023 (UTC)
+Thank you very much for that thorough analysis!! margotbean (talk) 18:45, 3 January 2023 (UTC)
+Ore distribution bug?
+While looking at the code for ore distribution, I found the ore distribution for iron and copper to be quite strange. The chance for iron is calculated as:
+chanceForIron = Math.Min(0.5, 0.1 + (double)(this.mineLevel - Math.Min(200, skullCavernMineLevel)) * 0.005)
+But as mineLevel is always 120 more than skullCavernMineLevel, this can be rewritten as:
+chanceForIron = Math.Min(0.5, 0.7 + (double)(skullCavernMineLevel - Math.Min(200, skullCavernMineLevel)) * 0.005)
+And as the minimum of skullcavernMineLevel and 200 cannot be larger than skullCavernMineLevel, this latter term will always be greater than 0, so this simplifies to:
+chanceForIron = 0.5
+Practically this means iron and copper are equally rare. (And the check only occurs after passing an ore check and failing an iridium check and a gold check). But if this was intended, it makes much more sense to just use 0.5. This makes me think it is likely a bug, and that both were meant to use mineLevel (or both were meant to use skullCavernMineLevel) JackBlack69 (talk) 11:35, 18 April 2023 (UTC)
+This would be a good candidate to be reported as a bug on the official forums (link in left sidebar); there is a thread specifically for reporting bugs. CA likes to keep the game balanced, so he'd probably like to know if there's a mistake. margotbean (talk) 18:23, 18 April 2023 (UTC)
+Chance for a Prismatic Shard from a Treasure Chest
+Since finding Prismatic Shards is rare enough, it is estimated that Prismatic Shards have a 1/26 chance of spawning inside a Treasure Chest in the Skull Caverns, this is not actually true, it should be a 4% chance of spawning. Refer to the game code for details. 9000 (talk) 9:21, 29 June 2023 (UTC)
+MineShaft::getTreasureRoomItem specifies 26 items that can be obtained; some items contain a range of values (like cooked dishes), so the 1/26 chance has to be multiplied by the number of items. Otherwise, like for the Prismatic Shard, the chance is 1/26. margotbean (talk) 18:43, 29 June 2023 (UTC)
+Teasure rooms table broken
+Hi sorry I didn't know how to report this, but the table under the "Treasure Rooms" section that should display all possible treasures that can be randomly found inside Treasure Chests in the Skull Cavern, is not displaying. Not sure how to fix it. Thanks! Ebi (talk) 05:38, 25 August 2023 (UTC)
+Looks fine to me, you have to hit the link to make it expand though. Atravita (talk) 13:35, 25 August 2023 (UTC)
+Pre historic levels
+According to stardewvalley predictor the prehistoric levels have choosen persistent floors each days and can be re visited again however floor maps that are choosen randomly each time the player uses stairs or shafts to go next next floor can be eligible or not,changing the predictions to find them on those floors Void farmer (talk) 20:17, 9 October 2023 (UTC)
+So basically they may or may not be persistent, from the player's point of view. I'll remove the statement, and please keep in mind that v1.6 is going to change a lot if things that are predictably random to be not predictable. MouseyPounds is not upddating the stardew predictor, so it may become obsolete. margotbean (talk) 20:21, 9 October 2023 (UTC)
+While I do agree that it remains to be seen if they will be fixed per day in 1.6, my understanding was that the main elements targeted were things like clay farming. After the update I will have a look at the code and see what it is like. If it does change in 1.6, it may be good to just have it as a note that prior to 1.6 each day only selected floors could be prehistoric floors. JackBlack69 (talk)
+That's what the "Version History" section is for! margotbean (talk) 00:00, 11 October 2023 (UTC)
+It'll still be predictable just with less of a pattern. Still a seeded random. Atravita (talk) 10:00, 11 October 2023 (UTC)
+Trinkets in treasure rooms
+New contributor so I don't know whether y'all happen to know this already, but at least fairy box (perhaps all trinkets) can be found from Treasure Rooms in Skull Cavern. Found one in a (non-dangerous) Skull Cavern run, so I just thought i'd mention since i didn't see it listed on this page or the pages for trinkets generally. BeanieQueenE (talk) 04:04, 25 March 2024 (UTC)
+Hey, new contributor here too. I also saw that trinkets were dropping from the treasure room chests an didn't see it on the wiki so took it upon myself to take a look. In the decompiled code you can see that all of the trinkets are able to drop IFF the player has the combat mastery unlocked (4.5% chance). Additionally, Golden Animal Cracker's can drop if the player has the farming mastery unlocked. I updated the page earlier today. Gruyere (talk) 19:22, 29 March 2024 (UTC)
+Trinket drop rate location/level/monster dependent?
+I have noticed that i get a LOT of golden spur from mummy level (i think from ghosts), and sometimes my dive will give me duplicates of one or two trinkets. wonder if there's anything to do with the monster slain, lvl i'm on, or just a random daily seed. Jjiang31 (talk) 04:20, 25 March 2024 (UTC)
+Shrine of Challenge
+Is it worth adding some text explaining how the Skull Cavern version of the Shrine of Challenge works? I had some questions about it and had to dig around reddit to find an explanation. Maybe it should be here. E.g., Do both shrines impact both the skull cavers and the mines? Does it take effect immediately? What are the effects of it in the skull caverns? Etc.. All the topics that are included in the wiki for the Mines version of the shrine should probably be covered here too. Or is there some reason for omitting it? Rossc719 (talk) 21:27, 28 September 2024 (UTC)
+Yes, I think it would be worth explaining the specifics in as few words as possible, similar to the Mines page. margotbean (talk) 17:50, 29 September 2024 (UTC)
+Iridium Snake Milk
+On floor 100 of the Skull Cavern, after reading the Secret Note #10, the player meets Mr. Qi and can drink the Iridium Snake Milk if desired. It is not required, but if they do, they will permanently increase the player's max health by 25 points, AND drain 2 energy temporarily. This should be added to the wiki. Players should have food with them to fix it, but this info is nowhere in the wiki. It should be added. Great Game 222 (talk) 8:28, 12 February 2025 (EST)
+Apparently someone tried to add this already but an admin locked the page as a result and reverted the edit. SomeoneIGuess (talk) 04:43, 13 February 2025 (UTC)
+Category: Talk pages

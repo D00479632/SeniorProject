@@ -1,0 +1,90 @@
+Jump to navigation
+Jump to search
+←Index
+A mod is open-source if its code is public and covered by an open-source license. Modders are strongly encouraged to make their mods and content packs open-source.
+Contents
+1 Why is open source important?
+2 Common questions
+3 Make your code open-source
+3.1 If your code is already on GitHub
+3.2 If your code isn't on GitHub
+3.2.1 Via VisualStudio
+3.2.2 Via SourceTree
+4 See also
+Why is open source important?
+Open source is important for the long-term health of the modding community, and helps make the player experience smoother.
+How it benefits others
+Depending on the open-source license you choose, others can...
+see your code;
+make changes to a copy of the code;
+send you proposed updates, changes, and fixes;
+prepare unofficial updates;
+better help users with support questions by looking at the code.
+The effect can be significant: only 1% of open-source mods broke when SMAPI 3.0 released, compared to 51% of closed-source mods (and that doesn't count closed-source mods that were never updated for earlier game/SMAPI releases).
+How it benefits you
+Besides the above benefits, a license is very important if you'll accept contributions from others.
+Without a license, contributors have a copyright for changes they make to your mod (like code, translation, or content changes). By contributing to your mod, they're implicitly giving you permission to use the content/changes in the way they're currently used. But since you no longer own the entire mod, you can't change how they're published (e.g. splitting the mod into smaller components, copying code into another mod, etc) without getting permission from each past contributor. And if some of those contributors can't be reached, you're out of luck unless you strip their contributions out of the mod entirely.
+With a license, any contributions are automatically covered by the license too. That means you can do anything with the contributions that the license allows.
+Common questions
+What if I don't like a proposed change?
+You still have full control of your original code and mod pages; nobody can change those without your approval! You're free to reject a change someone proposes to your mod.
+Does this apply for content packs?
+Yep! Content packs aren't compiled, but other modders can't legally make changes without a code license. Note that 'permissions' options on sites like Nexus are legally iffy (e.g., who has copyright on derivatives? Can derivatives be relicensed?), so it's a good idea to have a code license for content packs too. That also lets other modders contribute pull requests and updates. When this page says 'code', it means everything in your content pack including JSON files, images, maps, etc.
+Can I prevent commercial use?
+A non-commercial license prevents others from profiting from or reselling the content. It's certainly better than no license at all, but it's not open-source. This can have unintended side-effects like preventing streamers from showing your mods because their videos are monetized. Avoiding non-commercial licenses is strongly recommended.
+I already released the mod without a license. Can I add a license now?
+Yes. If you created the entire mod yourself, you can add or change the license anytime. If others contributed to the mod (including code, translations, or images), you'll need to either get permission from each contributor to relicense their contributions, or strip their changes out of the mod.
+What is a Git repository?
+Git is software that helps track changes to your code, and a repository is a folder containing your mod files with Git tracking. You can look up Git tutorials if you want to know more, but don't worry: you don't need to know how it works to use it!
+Make your code open-source
+If your code is already on GitHub
+You're already almost done! You just need to choose an open-source license (MIT License is a good choice if you're undecided), and add a LICENSE file to the repository.
+If your code isn't on GitHub
+This looks like a lot of steps, but don't worry: it's pretty straightforward, and you only need to do it once. If you need help, come ask in #making-mods on the Stardew Valley Discord. :)
+Via VisualStudio
+Visual Studio has a pretty good git integration, documented here: https://learn.microsoft.com/en-us/visualstudio/version-control/git-create-repository?view=vs-2022
+Via SourceTree
+Create a Git repository
+First, let's create the public repository which will contain your code.
+Create a GitHub account.
+Install SourceTree (Mac/Windows) or GitKraken (Linux). When asked, link it to your GitHub account.
+Create the repository on GitHub. Suggested settings (see screenshot):
+Repository name: consider StardewMods if you'll put all your mods in the same repository, otherwise use the name of your mod.
+Description: consider Mods for Stardew Valley.
+Initialize ... with a README: enable this option.
+Add .gitignore: leave this blank; we'll add our own later.
+Add a license: choose a license (MIT License is a good choice if you're undecided), and select it here.
+Click 'Create repository'.
+On the repository page that appears, click the green "Clone or download" button and copy the URL:
+In SourceTree, click File > Clone and paste the URL. Choose a destination path that's easy to access (like C:\source\StardewMods), and click 'Clone'.
+After cloning, navigate to repo settings (gear icon, top right)
+Click "Remotes" section
+Highlight the git path
+Click "edit" button
+Click on the globe icon to the right of the URL/path
+Highlight the project name
+Click "edit accounts" button
+Double-click on the Github account. An auth window will pop up
+The default auth method is set to OAuth. Change to "Personal Access Token."
+Input username and token
+If not already selected, make sure Protocol is set to "HTTPS" and Save.
+That's the hard part done! Now you have a repository on GitHub that's synced with the folder on your computer.
+Add the mod files
+Next, let's add your files to the repository.
+Open the repository folder (the destination path you entered in step 5 above).
+Unzip this zip file into the folder. This will add two files to the root of your folder: .gitattributes (which normalises line endings between Linux/Mac/Windows) and .gitignore (which hides files which shouldn't be committed from Git). You just need to have them in your folder, you won't need to change them.
+Copy your mod files (including the .sln file) into the folder.
+Commit your changes in SourceTree:
+Click Commit at the top.
+Click Stage All to add the files to your commit.
+Enter a human-readable description for you changes in the textbox. The format is up to you, but "add initial mod files" is fine for now.
+Make sure "Push changes immediately" is ticked.
+Click "Commit".
+That's it: all your files will appear on GitHub. Your mod is now open-source!
+Make changes
+The steps above are all first-time setup. When you want to make changes, it's much easier:
+Edit your code in the repository folder.
+In SourceTree, commit and push your changes (see step 4 in the previous section).
+See also
+Modding:Mod compatibility links to the source code for every SMAPI mod, where available.
+Category: Modding

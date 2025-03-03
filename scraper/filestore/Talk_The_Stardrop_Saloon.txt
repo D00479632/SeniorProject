@@ -1,0 +1,64 @@
+Jump to navigation
+Jump to search
+This talk page is for discussing The Stardrop Saloon.
+Sign and date your posts by typing four tildes (~~~~).
+Put new text below old text.
+Be polite.
+Assume good faith.
+Don't delete discussions.
+Rotating Saloon Dish
+Hello there. Some days ago Revision as of 19:43, 16 November 2021 by GamingWithMaxJ said the rotating dish was defined according to the number of step the player has made. Out of curiosity, I wanted to check that. It is a bit (a lot) more complicated than that, but steps count indeed. Investigation.
+The rotating dish is set in Utility::getSaloonStock, using Game1.dishOfTheDay. This variable value is redefined each day at Game1::_newDayAfterFade:
+dishOfTheDay = new Object(Vector2.Zero, num2, initialStack);
+With num2 being defined as such:
+int num2 = random.Next(194, 240);
+while (Utility.getForbiddenDishesOfTheDay().Contains(num2))
+{
+ num2 = random.Next(194, 240);
+}
+So one index is pseudo-randomly picked from 194 (included) to 240 (excluded). Indexes correspond to food as specified in Content\Data\ObjectInformation.xnb. For instance 194 is Fried Egg and 240 is Farmer's Lunch. Utility::getForbiddenDishesOfTheDay is just to exclude dishes that Gus already normally sells, as we can see:
+public static int[] getForbiddenDishesOfTheDay()
+{
+ return new int[7] { 346, 196, 216, 224, 206, 395, 217 };
+}
+This int array refers to Beer, Salad, Bread, Spaghetti, Pizza and Coffee (the 217 is not defined).
+More interestingly for our investigation, random.Next(int minValue, int maxValue) is a base C# function, building pseudo-random numbers from a pseudo-random seed. The function is defined in mscorlib/system/random.cs if you want to dig that.
+The first random seed taken for random functions is a timestamp get at game launch, as we can see in the Game1 constructor:
+public static Random random = new Random(DateTime.Now.Millisecond);
+This is the random seed used for the dish chosen on a new game creation (see Game1::loadForNewGame).
+But the randomness seed is then re-defined each day in the Game1::_newDayAfterFade function:
+random = new Random(num);
+for (int i = 0; i < dayOfMonth; i++)
+{
+ random.Next();
+}
+With num being defined as such:
+num = (int)uniqueIDForThisGame / 100 + (int)(stats.DaysPlayed * 10) + 1 + (int)stats.StepsTaken;
+So stats, including steps taken, are taken into account here to build the new seed that is sent to the random number generator.
+There also is uniqueIDForThisGame. If I'm not mistaken, the value is defined at game launch (Game1 constructor), or when returning to title (Game1::CleanupReturningToTitle), and specified once and for all in the save game if no custom seed is entered (see Game1::loadForNewGame and SaveGame::getSaveEnumerator and SaveGame::getLoadEnumerator), calculated from Utility::NewUniqueIdForThisGame:
+public static ulong NewUniqueIdForThisGame()
+{
+ DateTime dateTime = new DateTime(2012, 6, 22);
+ return (ulong)(long)(DateTime.UtcNow - dateTime).TotalSeconds;
+}
+Finally, calling random.Next() (also from mscorlib/system/random.cs)" moves the cursor" in the random numbers array generated from the seed by the random function (and also recalculate new values for values passed). To put it more simply, calling the function changes the output number obtained the next time a random method will be called, so dayOfMonth also matters.
+To conclude, it would be more accurate to say Gus daily dish is set according to:
+Save game seed (by default, generated from time parameters)
+Steps taken
+Days played
+Day of the month
+Complex calculations from those
+I hope I did not make a mistake in reading the code, and that my writing is not too confusing...!
+- Charly (talk) 04:14, 20 November 2021 (UTC)
+I came across the MouseyPounds's Stardew Predictor. He specifies that Gus dishes cannot be predicted long term because they depend on the number of steps. I presume the GamingWithMaxJ modification was derived from this, as it may be the only rotating stock depending on steps. Even though, looking at the code, several other things depend on the same seed (built upon the number of steps), like at least: random friendship letters, daily luck and weather. There also are wallpaperPrice and floorPrice, but they seem unused in the game code. -- Charly (talk) 14:38, 25 November 2021 (UTC)
+Villager Saloon Schedules
+Any thoughts on adding a section for a Monday-Sunday Schedule of which villagers are around during each hour of operation? I can put together a Mock example but it'd be like
+.......Emily Shane Willy
+12-1.....x......x........
+1-2......................x
+2-3.......x..................
+Spiderkace (talk) 21:36, 11 December 2022 (UTC)
+I think it would probably take up a huge amount of space, and would be duplicate of the schedule info already on villagers' pages. There's also exceptions to consider (rain, Ginger Island visits, Community Center open/closed, etc.), and I have trouble envisioning that all in compact form that's visually appealing and helpful.
+If you want to make a mockup in your user space, it might help give a better idea of how much info there is to present, and how it might look. margotbean (talk) 15:40, 12 December 2022 (UTC)
+Sounds good. I'll see if I can finagle something together. Fridays are a great day to give gifts and it's rather inconvenient to guess if someone is at the saloon while you're at the farm. Guess just stock up on shards eh? I'll follow up once I have a better idea. Spiderkace (talk) 04:13, 13 December 2022 (UTC)
+Category: Talk pages

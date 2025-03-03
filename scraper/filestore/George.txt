@@ -1,0 +1,176 @@
+Jump to navigation
+Jump to search
+George
+Information
+Birthday  Fall 24
+Lives In Pelican Town
+Address 1 River Road
+Family
+Evelyn (Wife)
+Alex (Grandson)
+Marriage No
+Clinic Visit The 23rd of each season
+Loved Gifts
+Fried Mushroom
+Leek
+Contents
+1 Schedule
+2 Relationships
+3 Gifts
+3.1 Love
+3.2 Like
+3.3 Neutral
+3.4 Dislike
+3.5 Hate
+4 Movies & Concessions
+5 Heart Events
+5.1 Anytime
+5.2 Three Hearts
+5.3 Six Hearts
+5.4 Seven Hearts
+6 Quotes
+7 Quests
+8 Trivia
+9 Portraits
+10 History
+“ “My grand-pap was a farmer. It's a respectable profession. If I wasn't so darned old I'd come to your farm and show you a thing or two...”
+— George
+George Mullner is a villager who lives in Pelican Town.
+Schedule
+The 23rd of every season, George has an appointment at Harvey's Clinic, accompanied by Evelyn. George never visits the Beach Resort on Ginger Island.
+Shown below are George's schedules prioritized highest to lowest. For example, if it is raining, that schedule overrides all others below it.
+Spring 17 (Bus Service Restored)
+Desert Festival (As Vendor)
+Winter 17
+Green Rain (Year 1)
+Tuesday the 23rd (All Seasons)
+Rain
+Summer Friday
+Sunday (Alex's 14 heart event seen)
+Sunday
+Regular Schedule
+Relationships
+George is married to Evelyn and lives with his grandson, Alex. Alex's deceased mother Clara was his daughter.
+Gifts
+Main article: Friendship
+See also: List of All Gifts
+You can give George up to two gifts per week (plus one on his birthday), which will raise or lower his friendship with you. Gifts on his birthday ( 24 Fall) will have 8× effect and show a unique dialogue.
+For loved or liked gifts, George responds
+“ “You remembered my birthday? I'm impressed. Thanks.”
+“ “Oh, is it my birthday today? I guess it is. Thanks. This is nice.”
+For neutral gifts, George responds
+“ “For my birthday? Thanks.”
+For disliked or hated gifts, George responds
+“ “It's my birthday and you give me this? Is this some kind of joke?”
+Love
+“ “This is my favorite thing! Thank you.”
+Stardrop Tea
+“ “Hmm... *sip*... ahhh... Tastes just like Mama's tuna casserole! Delicious!”
+Image Name Description Source Ingredients
+All Universal Loves
+Fried Mushroom Earthy and aromatic. Cooking
+Common Mushroom (1)
+Morel (1)
+Oil (1)
+Leek A tasty relative of the onion. Foraging - Spring
+Like
+“ “Thanks.”
+Image Name Description Source
+All Universal Likes (except Flowers)
+Daffodil A traditional spring flower that makes a nice gift. Foraging - Spring
+Neutral
+“ “A gift? Hmm...”
+If you click on George again after giving a Neutral gift, he will say:
+“ “Do you want something in return?”
+Image Name Description Source
+All Universal Neutrals
+All Eggs (except Void Egg)*
+All Fruit (except Fruit Tree Fruit & Salmonberry)
+All Milk
+Chanterelle A tasty mushroom with a fruity smell and slightly peppery flavor. Foraging - Fall
+Common Mushroom Slightly nutty, with good texture. Foraging - Spring
+The Cave
+Ginger This sharp, spicy root is said to increase vitality. Foraging - Ginger Island
+Hazelnut That's one big hazelnut! Foraging - Fall
+Magma Cap A very rare mushroom that lives next to pools of lava. Foraging - Volcano Dungeon
+Morel Sought after for its unique nutty flavor. Foraging - Spring
+Purple Mushroom A rare mushroom found deep in caves. Foraging - The Mines
+Snow Yam This little yam was hiding beneath the snow. Tilling - Winter
+Winter Root A starchy tuber. Tilling - Winter
+*Note that Dinosaur Eggs are considered Artifacts and not Eggs for gifting purposes.
+Dislike
+“ “That's a terrible gift.”
+Image Name Description Source
+All Universal Dislikes (except Clay)
+All Flowers (except Poppy)
+Salmonberry A spring-time berry with the flavor of the forest. Foraging - Spring
+Wild Horseradish A spicy root found in the spring. Foraging - Spring
+Hate
+“ “This is probably the worst gift I've ever seen. Thanks a lot.”
+Image Name Description Source
+All Universal Hates
+Clay Used in crafting and construction. Tilling
+Dandelion Not the prettiest flower, but the leaves make a good salad. Foraging - Spring
+Holly The leaves and bright red berries make a popular winter decoration. Foraging - Winter
+Quartz A clear crystal commonly found in caves and mines. Foraging - The Mines
+Movies & Concessions
+Main article: Movie Theater
+Love
+The Zuzu City Express
+Like
+Natural Wonders: Exploring Our Vibrant World
+The Brave Little Sapling
+The Miracle At Coldstar Ranch
+Wumbus
+Dislike
+It Howls In The Rain
+Journey Of The Prairie King: The Motion Picture
+Mysterium
+Love
+Black Licorice
+Stardrop Sorbet
+Like
+Fries
+Nachos
+Personal Pizza
+Popcorn
+Salmon Burger
+Salted Peanuts
+Sour Slimes
+Truffle Popcorn
+Dislike
+Everything else
+Heart Events
+Anytime
+At any friendship level greater than zero friendship points, you may receive a gift in the mail from George. The chance of receiving a gift in the mail increases as your friendship with George increases.
+Details 
+Three Hearts
+After reaching 3 hearts with George, he will send the player a recipe in the mail.
+Details 
+Six Hearts
+Enter George's house when he is home.
+Details 
+Seven Hearts
+After reaching 7 hearts with George, he will send the player a recipe in the mail.
+Details 
+Quotes
+Regular 
+Events 
+
+Quests
+"Knee Therapy": George will send you a letter on the 25th of Summer requesting a Hot Pepper. The reward is 200g and 1 Friendship heart.
+George may randomly request an item at the "Help Wanted" board outside Pierre's General Store. The reward is 3x the item's base value and 150 Friendship points.
+George is to be gifted the Advanced TV Remote in The Pirate's Wife quest.
+Trivia
+George will send you recipes for Fried Eel and Spicy Eel, which are ironically two of his wife's hated gifts.
+When moving, George will make the footstep noise as if he is walking, despite being in a wheelchair.
+Portraits
+History
+1.4: Fixed bug where all recipes would be sent at 3 friendship hearts.
+1.6: Added custom gift reactions. Added winter portraits.
+Villagers
+Bachelors Alex • Elliott • Harvey • Sam • Sebastian • Shane
+Bachelorettes Abigail • Emily • Haley • Leah • Maru • Penny
+Townspeople Caroline • Clint • Demetrius • Evelyn • George • Gil • Gunther • Gus • Jas • Jodi • Kent • Lewis • Linus • Marlon • Marnie • Morris • Pam • Pierre • Robin • Vincent • Willy
+Other Birdie • Bouncer • Dwarf • Fizz • Governor • Grandpa • Henchman • Junimos • Krobus • Leo • Mr. Qi • Old Mariner • Professor Snail • Sandy • Wizard
+Category: NPCs

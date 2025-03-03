@@ -1,0 +1,57 @@
+Jump to navigation
+Jump to search
+This talk page is for discussing Animals.
+Sign and date your posts by typing four tildes (~~~~).
+Put new text below old text.
+Be polite.
+Assume good faith.
+Don't delete discussions.
+Contents
+1 Crows
+2 Pregnancy
+3 Split page?
+4 Turtles
+5 No heaters in Winter
+6 Pet Bowl
+7 Product quality distribution
+Crows
+Crows will not eat seeds, but are seeds included when determining whether or not a crow will spawn? For example, if I have 15 plants and 15 seeds, am I safe from crows? It is not clear to me from the current description and I have not decompiled the code. I suppose the same question applies to wild seeds/crops. Zendowolf (talk) 00:13, 21 March 2022 (UTC)
+I have no proof of the game code but I know from my own experience that when you plant a long-growing crop (for example: Sweet Gem Berry) and do not put scarecrows, the crop disappears because of the crows. I hope my information is of some use and it would be nice if someone else corroborated my experience or denied it if that is the case. 😋
+┌(・。・)┘♪ Viruz PoP (talk) 00:51, 21 March 2022 (UTC)
+PS: Obviously, if the information is correct, it applies to any crop, except that I gave the example of the Sweet Gem Berry because it is a seed that takes a long time to change its growth stage. ┌(・。・)┘♪ Viruz PoP (talk) 00:56, 21 March 2022 (UTC)
+Viruz PoP is correct. The day after planting, a "crop" is no longer a seed, despite appearances. As the page says "Crows will not eat crops grown from wild seeds, seeds themselves (i.e., crops planted that day)...." 05:10, 21 March 2022 (UTC)
+Okay, now I'm really confused. In my experience, crows show up first thing in the morning. So the only way "planted that day" makes sense is if it applies to the day just past. If I plant Parsnips on Spring 6, aren't I safe from waking up to see them eaten on Spring 7? Zendowolf (talk) 06:50, 21 March 2022 (UTC)
+That's correct, if you plant parsnips on day 6 you will be safe from the crows, the problem comes from the next day (7) where if you have +15 seeds growing without any scarecrows then there is a chance that at least one crop will disappear. This information is also described (albeit in less detail) on the page: "Crops #1.2 - Crows".
+┌(・。・)┘♪ Viruz PoP (talk) 14:52, 21 March 2022 (UTC)
+"seeds themselves (i.e., crops planted that day)" — Seeds that have been planted, but not watered, do not advance for the next stage (Watering Cans and Crops#Grow Times). Aren't these non watered seeds included in that group? Dodgy (talk) 17:27, 21 March 2022 (UTC)
+As far as I know, any seed at the time of planting, the next day ceases to be a seed and is classified as a growth stage 1 crop, even if it is not irrigated. And also the crows can eat those crops. But I can be wrong 😅
+┌(・。・)┘♪ Viruz PoP (talk) 18:26, 21 March 2022 (UTC)
+if I'm wrong then, only the following can apply: "The day after planting, a "crop" is no longer a seed, despite appearances. As the page says "Crows will not eat crops grown from wild seeds, seeds themselves (i.e. crops planted that day)..." 05:10, 21 Mar 2022 (UTC)"
+after having watered the crop.┌(・。・)┘♪ Viruz PoP (talk) 18:41, 21 March 2022 (UTC)
+I tried to research this using the game code, but am having problems with it running, so I tried to research in-game, and went almost an entire season with 335 unwatered parsnip seeds and no crows. My one anecdotal test would seem to indicate that a seed is a seed until it's watered, but further testing is definitely required. I will keep digging, and this is a fascinating question. margotbean (talk) 01:32, 22 March 2022 (UTC)
+I would like to revisit my original question, and ask it a different way to hopefully be more clear. Suppose I start a new farm. On Spring 1, I plant Lewis's 15 Parsnip seeds and nothing else. They are obviously safe on the night of Spring 1. They are also safe on the night of Spring 2, because there are still fewer than 16 crops planted. Now suppose I plant a single Potato seed on Spring 3. What happens on the night of Spring 3? We all agree that the Potato seed won't be eaten because it was just planted, but are the Parsnips still safe? Does it totally ignore the Potato and not spawn a crow, or does it spawn a crow and just not let the crow eat the potato if it happens to select that space to attack? I think both are reasonable interpretations of, "Crows will not eat (seeds just planted)". [For purposes of this question, assume everything is watered every day. The watering question is an interesting one, but not the one I'm asking.] Zendowolf (talk) 18:09, 22 March 2022 (UTC)
+Your potato and all the parsnips are at risk of being eaten by crows on the night of Spring 3/morning of Spring 4 (for the purposes of this question, night and morning are the same thing). The parsnip seeds (and the potato) are safe on Spring 3, because crows only happen overnight. Does that help? margotbean (talk) 18:30, 22 March 2022 (UTC)
+Pregnancy
+My animals refuse to give birth, though for my knowledge all prerequisites are met I've been trying for more than an in-game-year now. I've stumbled upon a comment that says your barn-doors need to be closed for the event to happen. I'll try this out eventually - hope someone can confirm (before I get to it). Kuasiel (talk) 07:35, 6 June 2023
+Barn doors have no effect on animal births, it's just random luck. margotbean (talk) 17:17, 6 June 2023 (UTC)
+Split page?
+Anyone in favor of creating a new page for each different kind of animal (pet, horse, farm animal, environment animals, etc.)? This page is already quite lengthy, especially considering 1.6 additions to pets. Different kinds of animals are unrelated in terms of game mechanics anyway. Ifp (talk) 19:00, 21 March 2024 (UTC)
+I agree that those types of animals all serve different functions within the game, so that they're different topics. I also agree that we now have a sufficient number of animals to dedicate one article to each. Good idea. Giles (talk) 19:43, 21 March 2024 (UTC)
+Okay. I'll wait a bit longer to see if anyone else has anything to say. For now I'm thinking we retain this page but with a shortened summary in place of each section and create new articles at least for pet (cat/dog/turtle), horse, and barn animals (keeping them together since they share mechanics). Ifp (talk) 17:57, 22 March 2024 (UTC)
+No changes until we have a volunteer to change all 12 languages. margotbean (talk) 17:59, 22 March 2024 (UTC)
+Fair enough, especially right now. But I always wonder if there is anyone who can make changes to all languages. I don't mention you because you have enough projects as it is. Giles (talk) 20:32, 22 March 2024 (UTC)
+I was thinking (Once we have volunteers) 1 page for pets (Cat, Dog Turtle) and 1 page for other farm animals (chicken, Pig, Dino, etc.) ItsMe101 (talk) 12:35, 18 April 2024 (UTC)
+Turtles
+Apparently (from InfoBoxes), turtles can give their owner Cave Jelly or Sea Jelly, but not River Jelly. Is that right? Is River Jelly an oversight? And any gifts the pet can give should be mentioned on this page. Giles (talk) 20:03, 15 May 2024 (UTC)
+Pet gifts are on this page! See Pets>Friendship>Pet Gifts. Turtles give Sea Jelly and Cave Jelly, while cats give River Jelly (their pool of items includes basically anything that can be fished from Cindersap river or the Mountain lake, if I recall correctly). Bluestblur (talk) 02:27, 16 May 2024 (UTC)
+No heaters in Winter
+I know from personal experience that animal produce is negatively affected by not having a heater in an animal building in Winter. I assume this is a function of Mood. But I'm not seeing anything that shows any negative effect of lacking heaters in Winter. Is there something that I'm not seeing, or is there just not anything there? Zendowolf (talk) 03:10, 16 June 2024 (UTC)
+It's there, under "Mood". margotbean (talk) 13:35, 16 June 2024 (UTC)
+Pet Bowl
+This page contains information on how to find and fill your pet's bowl. But I think that information would be better suited to the Pet Bowl page. The only reason it's on this page to start with is because a Pet Bowl page didn't exist on this wiki before the release of v1.6. Cheese80 (talk) 08:10, 27 September 2024 (UTC)
+Well, that's not the only reason, you still start out with a pet bowl on the farm on day 1, and cannot buy another until you make enough gold to do so, and then cannot adopt another pet until at least Fall of year 1 (max friendship with first pet, give or take a few days).
+But yes, the wiki is now quite messy on the subject of pet bowls, with information existing under Animals#Additional Pets, Animals#Friendship, and Pet Bowl. I am open to specific suggestions as to how to un-mess-ify this! I think we have already the suggestion to move everything to the Pet Bowl page, but I don't like that idea so much, since that page currently focuses on additional pet bowls rather than the first pet bowl. So, let's keep working at it. Suggestions? margotbean (talk) 18:30, 27 September 2024 (UTC)
+Product quality distribution
+Is my math correct that at max friendship/mood you have a 50/50 chance of iridium, then a 50/50 chance of gold, then guaranteed silver? So .5 iridium,.25 gold,.25 silver?
+I think most readers are interested in maximum potentials, might be good to include. Mood is very easy to keep maxed permanently mid-endgame, and easy to keep at max most days early game. A table with distribution by friendship level assuming max mood would be cool. The random examples seem weird to me. Therealbhop (talk) 05:08, 25 November 2024 (UTC)
+Category: Talk pages

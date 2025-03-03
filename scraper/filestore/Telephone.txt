@@ -1,0 +1,91 @@
+Jump to navigation
+Jump to search
+Telephone
+Can be used to check store hours and inventory.
+Information
+Source Carpenter's Shop for 2,000g
+Sell Price Cannot be sold
+The Telephone is a piece of equipment that allows players to check store hours and inventory.[1] It can be purchased from the Carpenter's Shop for 2,000g. It may be placed anywhere in Stardew Valley, indoors or out.
+Phone calls that can be received include scam phone calls, calls from the bear (from Bear's Knowledge), from Vincent, Lewis, or Pierre, from the hat mouse, or a message in a foreign language.[2]
+Calling a merchant does not affect friendship points and does not count as talking to that villager for the day.
+The Telephone cannot be used during a Green Rain day.
+Contents
+1 Outgoing Calls
+1.1 Robin
+1.2 Clint
+1.3 Pierre
+1.4 Marnie
+1.5 Gus
+1.6 Marlon
+2 Incoming Calls
+3 Bugs
+4 References
+5 History
+Outgoing Calls
+Answering Machine portrait
+Merchants (or their answering machine) will tell the player their hours for the day; the player can then select additional options depending on the shop. Answering machine messages will vary for days when a merchant is busy, festival days, etc.[3]
+Robin
+Call Robin to check the hours and stock at the Carpenter's Shop.
+Check store inventory
+Check house upgrade cost (also applies to cabins)
+Check building upgrade costs
+Quotes 
+Clint
+Call Clint to check the hours at the Blacksmith.
+Check tool upgrade costs
+Note: ore prices cannot be checked by phone.
+Quotes 
+
+Pierre
+Call Pierre to check the hours and stock at Pierre's General Store.
+Check store inventory
+Quotes 
+Marnie
+Call Marnie to check the hours at Marnie's Ranch.
+Check livestock prices
+Note: supply store cannot be accessed by telephone.
+Quotes 
+Gus
+Call Gus to check the hours at the Stardrop Saloon.
+Find out the dish of the day.
+Quotes 
+Marlon
+Call Marlon to use the Item Recovery Service without having to go to the Adventurer's Guild. Marlon's number is only available after completing the Monster Eradication Goal for Magma Sprites and Magma Sparkers.
+Quotes 
+Incoming Calls
+Vincent 
+Robocaller 
+Pierre 
+Lewis 
+Hat Mouse 
+Foreign 
+Bear 
+Secret 
+Bugs
+If the player calls a merchant and checks the store stock while that merchant is away on Ginger Island, the store interface may use the merchant's island portrait.
+It is possible to use the phone to call a merchant while inside their own store. They will have no reaction to this.
+References
+↑ Outgoing call behavior is specified in StardewValley.Game1::ShowTelephoneMenu.
+↑ Incoming call behavior is specified in StardewValley.Objects.Phone::CanHearCall.
+↑ Quotes are specified in Content\Strings\Characters.xnb.
+History
+1.5: Introduced.
+1.6: The Telephone cannot be used during a Green Rain day.
+
+Equipment
+Artisan Bee House • Cask • Cheese Press • Dehydrator • Fish Smoker • Keg • Loom • Mayonnaise Machine • Oil Maker • Preserves Jar
+Refining Bait Maker • Bone Mill • Charcoal Kiln • Crystalarium • Deluxe Worm Bin • Furnace • Geode Crusher • Heavy Furnace • Heavy Tapper • Lightning Rod • Mushroom Log • Ostrich Incubator • Recycling Machine • Seed Maker • Slime Egg-Press • Slime Incubator • Solar Panel • Tapper • Wood Chipper • Worm Bin
+Farming
+Fertilizer Basic Fertilizer • Basic Retaining Soil • Deluxe Fertilizer • Deluxe Retaining Soil • Deluxe Speed-Gro • Hyper Speed-Gro • Quality Fertilizer • Quality Retaining Soil • Speed-Gro • Tree Fertilizer
+Sprinklers Iridium Sprinkler • Quality Sprinkler • Sprinkler
+Other Deluxe Scarecrow • Garden Pot • Rarecrow • Scarecrow
+Fishing
+Bait Bait • Challenge Bait • Deluxe Bait • Magic Bait • Magnet • Targeted Bait • Wild Bait
+Tackle Barbed Hook • Cork Bobber • Curiosity Lure • Dressed Spinner • Lead Bobber • Quality Bobber • Sonar Bobber • Spinner • Trap Bobber • Treasure Hunter
+Other Crab Pot
+Bombs Bomb • Cherry Bomb • Mega Bomb
+Fences Gate • Hardwood Fence • Iron Fence • Stone Fence • Wood Fence
+Storage Big Chest • Big Stone Chest • Chest • Junimo Chest • Mini-Fridge • Stone Chest
+Signs Dark Sign • Stone Sign • Text Sign • Wood Sign
+Misc Anvil • Coffee Maker • Cookout Kit • Deconstructor • Fairy Dust • Farm Computer • Hopper • Mini-Forge • Mini-Jukebox • Mini-Shipping Bin • Sewing Machine • Staircase • Statue Of Blessings • Statue Of The Dwarf King • Telephone • Tent Kit • Tools • Workbench
+Category: Special items

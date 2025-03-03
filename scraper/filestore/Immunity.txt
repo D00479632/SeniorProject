@@ -1,0 +1,67 @@
+Jump to navigation
+Jump to search
+Immunity is a statistic that affects your chance to be afflicted with any debuff. It has no effect on the length of time that you are invulnerable after getting damaged.
+Each point of Immunity reduces the probability of being debuffed by 9.1%, additively.[1] For example, when wearing the Genie Shoes, which provides 6 points of Immunity, the chance of being debuffed is reduced by 55%. If wearing equipment that provide sufficient total Immunity (+11 or more), the player can stay completely free from any debuffs.
+Contents
+1 Equipment
+1.1 Footwear
+1.2 Rings
+2 References
+3 History
+Equipment
+The following equipment affects Immunity.
+Footwear
+Image Name Effect
+Leather Boots
+Defense (+1)
+Immunity (+1)
+Rubber Boots
+Immunity (+1)
+Tundra Boots
+Defense (+2)
+Immunity (+1)
+Thermal Boots
+Defense (+1)
+Immunity (+2)
+Firewalker Boots
+Defense (+3)
+Immunity (+3)
+Space Boots
+Defense (+4)
+Immunity (+4)
+Cowboy Boots
+Defense (+2)
+Immunity (+2)
+Dark Boots
+Defense (+4)
+Immunity (+2)
+Genie Shoes
+Defense (+1)
+Immunity (+6)
+Leprechaun Shoes
+Defense (+2)
+Immunity (+1)
+Emily's Magic Boots
+Defense (+4)
+Immunity (+4)
+Cinderclown Shoes
+Defense (+6)
+Immunity (+5)
+Mermaid Boots
+Defense (+5)
+Immunity (+8)
+Crystal Shoes
+Defense (+3)
+Immunity (+5)
+Rings
+Image Name Effect
+Immunity Band
+Immunity (+4)
+References
+↑ See DebuffingProjectile::behaviorOnCollisionWithPlayer in the game code.
+History
+1.5: Immunity now reduces the chance of any status debuff, instead of only debuffs from projectiles.
+Skills & Stats
+Skills Farming • Mining • Foraging • Fishing • Combat
+Stats Attack • Crit. Chance • Crit. Power • Defense • Immunity • Luck • Magnetism • Speed • Weight
+Category: Buffs

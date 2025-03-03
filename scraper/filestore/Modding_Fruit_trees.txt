@@ -1,0 +1,116 @@
+Jump to navigation
+Jump to search
+← Index
+This page explains how the game stores and parses fruit tree data. This is an advanced guide for mod developers.
+Contents
+1 Raw data
+1.1 Data format
+1.2 Fruit items
+1.3 Spawning fruit trees
+Raw data
+Fruit tree data is stored in Content\Data\FruitTrees.xnb, which can be unpacked for editing. Here's the raw data as of 1.6.8 for reference:
+Expand
+Data 
+Data format
+The Data/FruitTrees asset consists of a string → model lookup, where...
+The key is the unqualified item it for the sapling item in Data/Objects.
+The value is a model with the fields listed below.
+field effect
+DisplayName A tokenizable string for the tree's display name. This should return a display name without 'tree' (like Cherry for a cherry tree). This is used in UI messages like "Your <display name> tree wasn't able to grow last night".
+Seasons The seasons in which the fruit tree bears fruit. This consists of an array of season names (any combination of spring, summer, fall, or winter).
+Note: the previous 'island' season value is no longer valid. Using summer is equivalent to how it worked before (since we now have per-location seasons).
+Fruit The fruit items to add to the tree each day while the tree is in-season. The first matching fruit (if any) is selected each day.
+This consists of a list of models with these fields:
+field effect
+common fields See item spawn fields for the generic item fields supported for fruit items.
+Notes:
+If set to an item query which returns multiple items, one of them will be selected at random.
+Season conditions are ignored in non-seasonal locations like the greenhouse and Ginger Island.
+Season (Optional) If set, the group only applies if the tree's location is in this season. This is ignored in non-seasonal locations like the greenhouse and Ginger Island.
+Chance (Optional) The probability that this entry is selected, as a value between 0 (never drops) and 1 (always drops). Default 1 (100% chance).
+Texture The asset name for the texture under the game's Content folder. Use \ (or \\ in JSON) to separate name segments if needed. For example, vanilla fruit trees use TileSheets\fruitTrees.
+TextureSpriteRow The tree's row index in the Texture spritesheet (e.g. 0 for the first tree, 1 for the second tree, etc).
+PlantableLocationRules (Optional) The rules to decide which locations you can plant the sapling in, if applicable. The first matching rule is used. This can override location checks (e.g. crops being limited to the farm), but not built-in requirements like crops needing dirt.
+This consists of a list of models with these fields:
+field effect
+Id The unique string ID for this entry within the list.
+Result Indicates whether the sapling can be planted in a location if this entry is selected. The possible values are:
+Default: the sapling can be planted if the location normally allows it. This can be used to stop processing further rules, and/or set a custom DeniedMessage.
+Allow: the sapling can be planted here, regardless of whether the location normally allows it.
+Deny: the sapling can't be planted here, regardless of whether the location normally allows it.
+Condition (Optional) A game state query which indicates whether this entry applies. Default true.
+PlantedIn (Optional) The planting context to apply this rule for. The possible values are Ground (planted directly in the ground), GardenPot (planted in a garden pot), or Any. Default Any.
+Note that saplings can't be planted in garden pots.
+DeniedMessage (Optional) If this rule prevents planting the sapling, the tokenizable string to show to the player (or null to default to the normal behavior for the context). This also applies when the Result is Default, if that causes the planting to be denied.
+CustomFields The custom fields for this entry.
+For example, this content pack adds a custom fruit tree, including custom objects for the sapling and fruit:
+{
+    "Format": "2.5.0",
+    "Changes": [
+        // add fruit + sapling items
+        // note: sapling must have an edibility under 0 (usually -300) to be plantable
+        {
+            "Action": "EditData",
+            "Target": "Data/Objects",
+            "Entries": {
+                "{{ModId}}_Pufferfruit": {
+                    "Name": "{{ModId}}_Pufferfruit", // best practice to match the ID, since it's sometimes used as an alternate ID
+                    "DisplayName": "Pufferfruit",
+                    "Description": "An example fruit item.",
+                    "Type": "Basic",
+                    "Category": -6,
+                    "Price": 1200,
+
+                    "Texture": "Mods/{{ModId}}/Objects",
+                    "SpriteIndex": 0
+                },
+                "{{ModId}}_Puffersapling": {
+                    "Name": "{{ModId}}_Puffersapling",
+                    "DisplayName": "Puffersapling",
+                    "Description": "An example tree sapling.",
+                    "Type": "Basic",
+                    "Category": -74,
+                    "Price": 1200,
+
+                    "Texture": "Mods/{{ModId}}/Objects",
+                    "SpriteIndex": 1
+                }
+            }
+        },
+
+        // add fruit tree
+        {
+            "Action": "EditData",
+            "Target": "Data/FruitTrees",
+            "Entries": {
+                "{{ModId}}_Puffersapling": {
+                    "DisplayName": "Pufferfruit",
+                    "Seasons": [ "spring" ],
+                    "Fruit": [
+                        {
+                            "Id": "E{{ModId}}_Pufferfruit",
+                            "ItemId": "{{ModId}}_Pufferfruit"
+                        }
+                    ],
+                    "Texture": "Mods/{{ModId}}/FruitTrees",
+                    "TextureSpriteRow": 0
+                }
+            }
+        },
+
+        // add images
+        {
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/FruitTrees, Mods/{{ModId}}/Objects",
+            "FromFile": "assets/{{TargetWithoutPath}}.png" // assets/FruitTrees.png, assets/Objects.png
+        },
+    ]
+}
+The fruit trees can then be added to the game by giving the player a sapling item in the usual ways (e.g. from a shop).
+Fruit items
+For C# mods, the fruitsOnTree field (number of fruit on the tree) has been replaced by fruit (list of fruit items).
+Spawning fruit trees
+Custom trees can be added to the game in two ways:
+Spawn them on map tiles when the location is created, using the new SpawnTree: fruit <tree ID> [growth stage on location created] [growth stage on day-update regrowth] tile property. This must be added on the Paths layer, which must also have tile index 34 from the paths tilesheet.
+Or give the player a seed item in the usual ways (e.g. from a shop, mail letter, etc).
+Category: Modding

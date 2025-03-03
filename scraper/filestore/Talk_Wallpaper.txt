@@ -1,0 +1,28 @@
+Jump to navigation
+Jump to search
+This talk page is for discussing Wallpaper.
+Sign and date your posts by typing four tildes (~~~~).
+Put new text below old text.
+Be polite.
+Assume good faith.
+Don't delete discussions.
+Separate by Source Obtained?
+Hi, I believe that the regular Catalogue no longer contains every Wallpaper - I just hopped into my game to confirm this, and I've also checked the code. Of the new wallpapers (WP #113-138), only WP #133 was added to the Catalogue. The other sources are:
+WP #113-119 are sold in Villager Shops at the Desert Festival.
+WP #122-123 are in the Wizard Catalogue.
+WP #124 comes from Mystery Boxes/Golden Mystery Boxes.
+WP #125-127 are in the Junimo Catalogue.
+WP #129-131 are in the Retro Catalogue.
+WP #132 is one of the new items sold by Pierre at the Feast of the Winter Star.
+WP #134 has a 0.1% chance to appear overnight in the same room as a Cursed Mannequin [Found this in StardewValley.Mannequins.cs].
+WP #135-136 are in the Trash Catalogue.
+WP #137-138 are sold in the Casino.
+I'd be happy to change/edit the page as needed (I was thinking of subheaders like Catalogue, Other Catalogues, Shops, and Other Sources), but I don't know where WP #120, #121, and #128 are found. Their item IDs are: "MoreWalls:7", "MoreWalls:8", and "MoreWalls:15". Any ideas? Should I just put them in as unobtainable at the moment? Thanks in advance! Bluestblur (talk) 19:20, 29 March 2024 (UTC)
+great idea! seems like #120, #121, and #128 really is unobtainable as an item, however #128 can be seen used as a wallpaper for the new farmhouse's attic room upgrade. RedStone576 (talk) 07:53, 12 April 2024 (UTC)
+I think it should be and almost did it when I did my last minor revision last week. But I previously did that on the Furniture Catalog itself and a prolific editor (admin actually User:Margotbean) undid it. Looking at Furniture Catalog and others have also done it and he's undone it, so. --Emky (talk) 13:24, 12 April 2024 (UTC)
+Thank you for finding wallpaper #128! I didn't even think to check the house renovations. I've added that to the page! Bluestblur (talk) 14:55, 13 April 2024 (UTC)
+Feast of the Winter Star wallpaper
+Hello. Some time ago, I found this wallpaper earlier than intended (late fall or early winter of the first year, my memory's a bit blurry). I believe it was through the Traveling Cart, but, either way, I'm not sure if this is an intended feature or a bug. Anemoia (talk) 12:30, 16 September 2024 (UTC)
+It has two ways to obtain: Pierre`s shop during the Feast of the Winter Star and Traveling Cart during the Festival of Ice.骑凤散人 (talk) 15:54, 16 September 2024 (UTC)
+Wonderful, thanks for clearing this up and adding it to the page! Anemoia (talk) 18:59, 16 September 2024 (UTC)
+Category: Talk pages

@@ -1,0 +1,37 @@
+Jump to navigation
+Jump to search
+Big Chest
+It can store almost twice as much as a regular chest.
+Information
+Source Crafting
+Sell Price Cannot be sold
+Crafting
+Recipe Source Carpenter's Shop (5,000g)
+Ingredients
+Wood (120)
+Copper Bar (2)
+See also: Chest, Stone Chest, Big Stone Chest.
+The Big Chest is a storage item that holds up to 70 different types of items, which is nearly double that of the regular chest which holds 36 different items. Using it on a regular chest or stone chest replaces it, keeping the contents inside and dropping the old chest.
+Coloring
+When opened, chests have a color bar above their inventory window which allows players to select a different color for the chest, the same as the smaller variant. This can be changed at anytime without cost. There are 20 colors available to select in the color picker, plus the original brown color.
+Color Picker
+History
+1.6: Introduced.
+
+Equipment
+Artisan Bee House • Cask • Cheese Press • Dehydrator • Fish Smoker • Keg • Loom • Mayonnaise Machine • Oil Maker • Preserves Jar
+Refining Bait Maker • Bone Mill • Charcoal Kiln • Crystalarium • Deluxe Worm Bin • Furnace • Geode Crusher • Heavy Furnace • Heavy Tapper • Lightning Rod • Mushroom Log • Ostrich Incubator • Recycling Machine • Seed Maker • Slime Egg-Press • Slime Incubator • Solar Panel • Tapper • Wood Chipper • Worm Bin
+Farming
+Fertilizer Basic Fertilizer • Basic Retaining Soil • Deluxe Fertilizer • Deluxe Retaining Soil • Deluxe Speed-Gro • Hyper Speed-Gro • Quality Fertilizer • Quality Retaining Soil • Speed-Gro • Tree Fertilizer
+Sprinklers Iridium Sprinkler • Quality Sprinkler • Sprinkler
+Other Deluxe Scarecrow • Garden Pot • Rarecrow • Scarecrow
+Fishing
+Bait Bait • Challenge Bait • Deluxe Bait • Magic Bait • Magnet • Targeted Bait • Wild Bait
+Tackle Barbed Hook • Cork Bobber • Curiosity Lure • Dressed Spinner • Lead Bobber • Quality Bobber • Sonar Bobber • Spinner • Trap Bobber • Treasure Hunter
+Other Crab Pot
+Bombs Bomb • Cherry Bomb • Mega Bomb
+Fences Gate • Hardwood Fence • Iron Fence • Stone Fence • Wood Fence
+Storage Big Chest • Big Stone Chest • Chest • Junimo Chest • Mini-Fridge • Stone Chest
+Signs Dark Sign • Stone Sign • Text Sign • Wood Sign
+Misc Anvil • Coffee Maker • Cookout Kit • Deconstructor • Fairy Dust • Farm Computer • Hopper • Mini-Forge • Mini-Jukebox • Mini-Shipping Bin • Sewing Machine • Staircase • Statue Of Blessings • Statue Of The Dwarf King • Telephone • Tent Kit • Tools • Workbench
+Category: Craftable items

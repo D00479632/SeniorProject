@@ -1,0 +1,50 @@
+Jump to navigation
+Jump to search
+Mining Monthly
+Read this to gain some mining experience.
+Information
+Source Bookseller • Traveling Cart • Fishing Treasure Chests • Mayor's Manor • Mystery Boxes • Golden Mystery Boxes • Monsters • Crates and Barrels • Trees • Artifact Spots
+Sell Price 500g
+Mining Monthly is a skill book that can be obtained through:
+Purchasing from the Bookseller for 5,000g to 10,000g.
+Purchasing from the Traveling Cart for 6,000g (1% chance to appear).[1]
+Catching regular (0.12% chance) or golden (1.5% chance) Fishing Treasure Chests.[2]
+Using the Prize Machine in the Mayor's Manor (20% chance to be the 15th prize).[3]
+Opening Mystery Boxes or Golden Mystery Boxes.
+Slaying Iridium Golems (0.2% chance).[4]
+Slaying any monster (0.018% chance).[5]
+Breaking crates and barrels in the Mines, Skull Cavern, or Volcano Dungeon (0.024% chance).[5]
+Shaking trees with seeds (0.024% chance) or chopping trees (0.004% chance per hit).[5]
+Digging Artifact Spots (0.11% chance).[5]
+Upon reading the book, players will earn 250 Mining XP.
+Contents
+1 Gifting
+2 Bundles
+3 Tailoring
+4 Quests
+5 Trading
+6 References
+7 History
+Gifting
+Villager Reactions
+Love  Penny
+Like  Clint •  Elliott
+Neutral  Abigail •  Caroline •  Demetrius •  Dwarf •  Emily •  Evelyn •  George •  Gus •  Haley •  Harvey •  Jas •  Jodi •  Kent •  Krobus •  Leah •  Leo •  Lewis •  Linus •  Marnie •  Maru •  Pam •  Pierre •  Robin •  Sam •  Sandy •  Sebastian •  Shane •  Vincent •  Willy •  Wizard
+Dislike  Alex
+Bundles
+Mining Monthly is not used in any bundles.
+Tailoring
+Mining Monthly is not used in any tailoring. It can be used in dyeing, serving as an orange dye at the dye pots located in Emily's and Haley's house, 2 Willow Lane. It can also be used as a brown dye when used in the spool of the Sewing Machine with a dyeable clothing item in the feed.
+Quests
+Mining Monthly is not used in any quests.
+Trading
+One Mining Monthly can be traded to the Bookseller for 20 Coal.
+References
+↑ See Data\Shops.xnb in the game code.
+↑ See FishingRod::openTreasureMenuEndFunction in the game code.
+↑ See PrizeTicketMenu::getPrizeItem in the game code.
+↑ See RockGolem::getExtraDropItems in the game code.
+↑ 5.0 5.1 5.2 5.3 See Utility::trySpawnRareObject in the game code. Chances are determined in GameLocation::monsterDrop, BreakableContainer::releaseContents, Tree::shake, Tree::performToolAction, and GameLocation::digUpArtifactSpot.
+History
+1.6: Introduced.
+Category: Books

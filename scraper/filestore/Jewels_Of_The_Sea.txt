@@ -1,0 +1,41 @@
+Jump to navigation
+Jump to search
+Jewels Of The Sea
+Fishing treasure chests have a chance to yield roe.
+Information
+Source Fishing Treasure Chests • Bookseller
+Sell Price 800g
+Jewels Of The Sea is a power book that can be obtained from Fishing Treasure Chests after reaching Fishing level 5. The chance for a treasure chest to contain the book starts at 2% and increases by 0.1% for each treasure chest opened until it is obtained. Then the chance stays at 2.1% permanently. It cannot appear until the player has opened at least 3 fishing treasure chests.[1]
+It can also be purchased from the Bookseller for 20,000g starting in Year 3 (≈9% chance to appear).[2]
+The first reading grants the player a power that makes all fishing treasure chests have a 25% chance to yield 1-6 Roe.[1] The type of roe obtained is the same as the fish that was caught. Once read, it can be found in the Player's menu on the Special Items & Powers tab. Each subsequent reading gives the player 100 Fishing XP.
+Contents
+1 Gifting
+2 Bundles
+3 Tailoring
+4 Quests
+5 Trading
+6 Trivia
+7 References
+8 History
+Gifting
+Villager Reactions
+Love  Penny •  Willy
+Like  Elliott
+Neutral  Abigail •  Caroline •  Clint •  Demetrius •  Dwarf •  Emily •  Evelyn •  George •  Gus •  Haley •  Harvey •  Jas •  Jodi •  Kent •  Krobus •  Leah •  Leo •  Lewis •  Linus •  Marnie •  Maru •  Pam •  Penny •  Pierre •  Robin •  Sam •  Sandy •  Sebastian •  Shane •  Vincent •  Wizard
+Dislike  Alex
+Bundles
+Jewels Of The Sea is not used in any bundles.
+Tailoring
+Jewels Of The Sea is not used in any tailoring. It can be used in dyeing, serving as an orange dye at the dye pots located in Emily's and Haley's house, 2 Willow Lane. It can also be used as an orange dye when used in the spool of the Sewing Machine with a dyeable clothing item in the feed.
+Quests
+Jewels Of The Sea is not used in any quests.
+Trading
+One Jewels Of The Sea can be traded to the Bookseller for either 3 Cave Jelly, 3 River Jelly, or 3 Sea Jelly, provided the player has already obtained the power from this book.
+Trivia
+The power from this book can result in the player receiving types of roe which are otherwise unobtainable, namely Squid and Midnight Squid roes.
+References
+↑ 1.0 1.1 See FishingRod::openTreasureMenuEndFunction in the game code.
+↑ See Data\Shops.xnb in the game files.
+History
+1.6: Introduced.
+Category: Books

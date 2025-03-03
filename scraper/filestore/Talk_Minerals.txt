@@ -1,0 +1,26 @@
+Jump to navigation
+Jump to search
+This talk page is for discussing Minerals.
+Sign and date your posts by typing four tildes (~~~~).
+Put new text below old text.
+Be polite.
+Assume good faith.
+Don't delete discussions.
+Foraged Minerals
+MineShaft.adjustLevelChances
+else if (this.mineLevel % 5 == 0 && this.getMineArea() != 121)
+  {
+   itemChance = 0.0; // forage chance
+   gemStoneChance = 0.0;
+   if (this.mineLevel % 10 == 0)
+   {
+    monsterChance = 0.0;
+   }
+  }
+so no forage on elevator levels, if I'm reading the code correctly. Atravita (talk) 20:34, 21 November 2023 (UTC)
+Would be better to step through the code, tracing it with ILSpy may or may not account for all variables. Thank you for giving the code indicating where to set a breakpoint, though! margotbean (talk) 22:01, 21 November 2023 (UTC)
+Oddly enough, this seems to be true, unless the level is infested. (Dangerous Mines not included in that statement.) But I would appreciate further research, especially since my time is being spent on v1.6 changes for the most part! Thank you! margotbean (talk) 22:38, 21 November 2023 (UTC)
+Daily Luck and Luck Buffs affecting contents in Geodes
+In the Omni Geode page, it explains that neither Daily Luck nor Buffs affect Omni Geodes, in bold text. Are the other Geodes affected by Luck, or is it just the Omnis and not the others? We can add this text into the other Geode pages, like Geodes, Frozen Geodes, and Magma Geodes if it is true. 9000 (talk) 07:03, 24 January 2024 (UTC)
+The answer to your question is already on the Luck page. It was a common misconception that luck affected omni geodes, which is why the text appears on that page. If you would like to add it to the other geodes' pages, that would be fine, but it doesn't need to be in bold text, since it's not a common misconception. margotbean (talk) 20:22, 24 January 2024 (UTC)
+Category: Talk pages

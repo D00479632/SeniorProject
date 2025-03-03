@@ -1,0 +1,26 @@
+Jump to navigation
+Jump to search
+← Index
+This page documents how the game stores and parses fence data. This is an advanced guide for mod developers.
+Data format
+You can add or customize fences by editing the Data/Fences asset.
+This consists of a string → model lookup, where the key is the unqualified item ID of the fence object, and the value is a model with these fields:
+field effect
+Health The health points for a fence when it's first placed, which affects how quickly it degrades. A fence loses 1/1440 points per in-game minute (roughly 0.04 points per hour or 0.5 points for a 12-hour day).
+Repairing a fence sets its max health to 2 × (base_health + repair_health_adjustment), where base_health is this field's value and repair_health_adjustment is a random value between RepairHealthAdjustmentMinimum and RepairHealthAdjustmentMaximum.
+Texture The asset name for the texture (under the game's Content folder) when the fence is placed. Use \ (or \\ in JSON) to separate name segments if needed. For example, the vanilla fences use individual tilesheets like LooseSprites\Fence1 (wood fence).
+RemovalToolIds
+RemovalToolTypes A list of tool IDs (matching the keys in Data\ToolData) or C# full type names which can be used to break the fence.
+For example, this will let the player break the fence with an iridium axe and any pickaxe:
+"RemovalToolIds": ["IridiumAxe"],
+"RemovalToolTypes": ["StardewValley.Tools.Pickaxe"]
+A tool must match RemovalToolIds or RemovalToolTypes to be a valid removal tool. If both lists are null or empty, all tools can remove the fence.
+PlacementSound The audio cue ID played when the fence is placed or repaired (e.g. axe used by Wood Fence).
+RemovalSound (Optional) The audio cue ID played when the fence is broken or picked up by the player. Defaults to the same sound as PlacementSound.
+RemovalDebrisType (Optional) The type of cosmetic debris particles to 'splash' from the tile when the fence is broken with a tool. The defined values are 0 (copper), 2 (iron), 4 (coal), 6 (gold), 8 (coins), 10 (iridium), 12 (wood), 14 (stone), 32 (big stone), and 34 (big wood). Default 14 (stone).
+RepairHealthAdjustmentMinimum
+RepairHealthAdjustmentMaximum (Optional) A random amount added to the Health when a fence is repaired by a player. See the Health field description. Both default to 0.
+HeldObjectDrawOffset (Optional) When an item like a torch is placed on the fence, the pixel offset to apply to its draw position. Specified as a string in the form "<x>, <y>". Defaults to "0, -20" if omitted.
+LeftEndHeldObjectDrawX
+RightEndHeldObjectDrawX (Optional) The X pixel offset to apply when the fence is oriented horizontally, with only one connected fence on the right (for LeftEndHeldObjectDrawX) or left (for RightEndHeldObjectDrawX). This fully replaces the X value specified by HeldObjectDrawOffset when it's applied. Default 0.
+Category: Modding

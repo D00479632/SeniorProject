@@ -1,0 +1,10 @@
+Jump to navigation
+Jump to search
+Missing Floors
+Needs entries for Floors #57-88 (in-game IDs (FL)56 to (FL)87) in the Catalogue, inserted before the final floor option, as I'm not sure of how the item icons for these were extracted (only the floor textures are in the game files), I cannot finish the page myself. Sicarious (talk) 13:57, 18 April 2024 (UTC)
+New discovery
+Flooring 63 and 65 can obtained from Catalogue after reaching some requirements.(Need someone check the game code.)
+Joja Furniture Catalogue flooring,Junimo Catalogue flooring,Retro Catalogue flooring and Wizard Catalogue flooring can obtained from Catalogue since you get these special catalogues.骑凤散人 (talk) 23:00, 17 August 2024 (UTC)
+As far as I can tell from the code (which is quite hard to follow in this case, so I may be mistaken) and testing in-game, all flooring types are always available from the catalogue. (This is different to wallpapers - see the difference between Utility::isFlooringOffLimitsForSale and Utility::isWallpaperOffLimitsForSale.) Wikonimo (talk) 14:16, 18 August 2024 (UTC)
+I creat a new file and test,it turns out you are correct.No need to get these special catalogues or reach any requirements,you can obtain all flooring from the Catalogue.Haha,why I`m trying so hard in the casino?:(
+Please update this page,bro.You already get the reference!骑凤散人 (talk) 15:28, 18 August 2024 (UTC)

@@ -1,0 +1,155 @@
+Jump to navigation
+Jump to search
+← Index
+This page documents item queries, a built-in way to create one or more items dynamically, instead of specifying a single item ID.
+Contents
+1 Overview
+1.1 Valid fields
+1.2 Query format
+1.3 Argument format
+2 Available queries
+2.1 General use
+2.2 Specific items
+2.3 Specialized
+3 Item spawn fields
+4 For C# mod authors
+4.1 Use queries in custom data assets
+4.2 Add custom item queries
+Overview
+Valid fields
+These are used in various places like machine data and shop data. These can only be used if the field's docs specifically mention that it allows item queries.
+Query format
+An item query consists of a string containing a query name with zero or more arguments. See the list of queries below.
+⚠ Item queries are partly case-sensitive. While some values are case-insensitive, this isn't consistent. Using the exact capitalization is recommended to avoid issues.
+Argument format
+Item queries can take space-delimited arguments. For example, RANDOM_ITEMS (F) 1376 1390 has three arguments: (F), 1376, and 1390.
+If you have spaces within an argument, you can surround it with quotes to keep it together. For example, LOST_BOOK_OR_ITEM "RANDOM_ITEMS (O)" passes RANDOM_ITEMS (O) as one argument. You can escape inner quotes with backslashes if needed.
+Remember that quotes and backslashes inside JSON strings need to be escaped too. For example, "ItemId": "LOST_BOOK_OR_ITEM \"RANDOM_ITEMS (O)\"" will send LOST_BOOK_OR_ITEM "RANDOM_ITEMS (O)" to the game code. Alternatively, you can use single-quotes for the JSON string instead, like "ItemId": 'LOST_BOOK_OR_ITEM "RANDOM_ITEMS (O)"'.
+Available queries
+General use
+query effect
+ALL_ITEMS [type ID] [flags] Every item provided by the item data definitions. If [type ID] is set to an item type identifier (like (O) for object), only returns items from the matching item data definition.
+The [flags] specify options to apply. If specified, they must be at the end of the argument list (with or without [type ID]). The flags can be any combination of:
+flag effect
+@isRandomSale Don't return items marked 'exclude from random sale' in Data/Furniture or Data/Objects.
+@requirePrice Don't return items with a sell-to-player price below 1g.
+For example:
+ALL_ITEMS will return every item in the game.
+ALL_ITEMS @isRandomSale will return every item in the game that's not excluded from random sale.
+ALL_ITEMS (F) @isRandomSale will return every furniture item in the game that's not excluded from random sale.
+FLAVORED_ITEM <type> <ingredient ID> [ingredient flavor ID] A flavored item like Apple Wine. The <type> can be one of Wine, Jelly, Pickle, Juice, Roe, AgedRoe, Honey, Bait, DriedFruit, DriedMushroom, or SmokedFish. The <ingredient ID> is the qualified or unqualified item ID which provides the flavor (like Apple in Apple Wine). For Honey, you can set the <flavor ID> to -1 for Wild Honey.
+For aged roe only, the [ingredient flavor ID] is the flavor of the <ingredient ID>. For example, FLAVORED_ITEM AgedRoe (O)812 128 creates Aged Pufferfish Roe (812 is roe and 128 is pufferfish).
+RANDOM_ITEMS <type definition ID> [min ID] [max ID] [flags] All items from the given type definition ID in randomized order, optionally filtered to those with a numeric ID in the given [min ID] and [max ID] range (inclusive).
+The [flags] specify options to apply. If specified, they must be at the end of the argument list (with or without [min ID] and/or [max ID]). The flags can be any combination of:
+The flags can be any combination of:
+flag effect
+@isRandomSale Don't return items marked 'exclude from random sale' in Data/Furniture or Data/Objects.
+@requirePrice Don't return items with a sell-to-player price below 1g.
+For example, you can sell a random wallpaper for 200g in Data/Shops:
+{
+    "ItemId": "RANDOM_ITEMS (WP)",
+    "MaxItems": 1,
+    "Price": 200
+}
+Or a random house plant:
+{
+    "ItemId": "RANDOM_ITEMS (F) 1376 1390",
+    "MaxItems": 1
+}
+Or a random custom item added by a mod by its item ID prefix:
+{
+    "ItemId": "RANDOM_ITEMS (O)",
+    "MaxItems": 1,
+    "PerItemCondition": "ITEM_ID_PREFIX Target AuthorName_ModName_"
+}
+Or 10 random objects with any category except -13 or -14:
+{
+    "ItemId": "RANDOM_ITEMS (O)",
+    "MaxItems": 10,
+    "PerItemCondition": "ITEM_CATEGORY, !ITEM_CATEGORY Target -13 -14"
+}
+Specific items
+query effect
+DISH_OF_THE_DAY The Saloon's dish of the day.
+LOST_BOOK_OR_ITEM [alternate query] A lost book if the player hasn't found them all yet, else the result of the [alternate query] if specified, else nothing.
+For example, LOST_BOOK_OR_ITEM (O)770 returns mixed seeds if the player found every book already.
+RANDOM_BASE_SEASON_ITEM A random seasonal vanilla item which can be found by searching garbage cans, breaking containers in the mines, etc.
+SECRET_NOTE_OR_ITEM [alternate query] A secret note (or journal scrap on the island) if the player hasn't found them all yet, else the result of the [alternate query] if specified, else nothing.
+For example, SECRET_NOTE_OR_ITEM (O)390 returns clay if the player found every secret note already.
+SHOP_TOWN_KEY The special town key item. This is only valid in shops.
+Specialized
+query effect
+ITEMS_SOLD_BY_PLAYER <shop location> Random items the player has recently sold to the <shop location>, which can be one of SeedShop (Pierre's store) or FishShop (Willy's fish shop).
+LOCATION_FISH <location> <bobber tile> <depth> A random item that can be found by fishing in the given location. The <location> should be the internal name of the location, <bobber tile> is the position of the fishing rod's bobber in the water (in the form <x> <y>), and <depth> is the bobber's distance from the nearest shore measured in tiles (where 0 is directly adjacent to the shore).
+Careful: since the target location might use LOCATION_FISH queries in its list, it's easy to cause a circular reference by mistake (e.g. location A gets fish from B, which gets fish from A). If this happens, the game will log an error and return no item.
+MONSTER_SLAYER_REWARDS All items unlocked by monster eradication goals which have been completed and collected from Gil by the current player at the current time. The list sort order follows the order of monsters in MonsterSlayerQuests.xnb, e.g., Slime Ring, Savage Ring, Burglar Ring, etc.
+MOVIE_CONCESSIONS_FOR_GUEST [NPC name] Get the movie concessions shown when watching a movie with the given [NPC name]. If omitted, the NPC defaults to the one currently invited to watch a movie (or Abigail if none).
+RANDOM_ARTIFACT_FOR_DIG_SPOT A random item which is defined in Data/Objects with the Arch (artifact) type, and whose spawn rules in the Miscellaneous field match the current location and whose random probability passes. This is mainly used by artifact spots.
+TOOL_UPGRADES [tool ID] The tool upgrades listed in Data/Shops whose conditions match the player's inventory (i.e. the same rules as Clint's tool upgrade shop). If [tool ID] is specified, only upgrades which consume that tool ID are shown.
+Item spawn fields
+Item spawn fields are a common set of fields to use item queries in data assets like machines and shops. These are only available for data assets which specifically mention they support item spawn fields in their docs.
+field effect
+ID The unique string ID for this entry (not the item itself) within the current list.
+This is semi-optional — if omitted, it'll be auto-generated from the ItemId, RandomItemId, and IsRecipe fields. However multiple entries with the same ID may cause unintended behavior (e.g. shop items reducing each others' stock limits), so it's often a good idea to set a globally unique ID instead.
+ItemId One of:
+the qualified or unqualified item ID (like (O)128 for a pufferfish);
+or an item query to dynamically choose one or more items.
+RandomItemId (Optional) A list of item IDs to randomly choose from, using the same format as ItemId (including item queries). If set, ItemId is optional and ignored. Each entry in the list has an equal probability of being chosen. For example:
+// wood, stone, or pizza
+"RandomItemId": [ "(O)388", "(O)390", "(O)206" ]
+Condition (Optional) A game state query which indicates whether this entry should be applied. Defaults to always true.
+Note: not supported for weapon projectiles.
+PerItemCondition (Optional) A game state query which indicates whether an item produced from the other fields should be returned. Defaults to always true.
+For example, this can be used to filter queries like RANDOM_ITEMS:
+// random mineral
+"ItemId": "RANDOM_ITEMS (O)",
+"PerItemCondition": "ITEM_CATEGORY Target -12"
+MaxItems (Optional) If this entry produces multiple separate item stacks, the maximum number to return. (This does not affect the size of each stack; see MinStack and MaxStack for that.) Default unlimited.
+IsRecipe (Optional) Whether to get the crafting/cooking recipe for the item, instead of the item itself. Default false.
+The game will unlock the recipe with the ID equal to the item query's ObjectInternalName field, or the target item's internal Name (which defaults to its ID) if not set.
+Quality (Optional) The quality of the item to find. One of 0 (normal), 1 (silver), 2 (gold), or 4 (iridium). Invalid values will snap to the closest valid one (e.g. 7 will become iridium). Default -1, which keeps the value set by the item query (usually 0).
+MinStack (Optional) The item's minimum and default stack size. Default -1, which keeps the value set by the item query (usually 1).
+MaxStack (Optional) If set to a value higher than MinStack, the stack is set to a random value between them (inclusively). Default -1.
+ObjectInternalName (Optional) For objects only, the internal name to use. Defaults to the item's name in Data/Objects.
+ObjectDisplayName (Optional) For objects only, a tokenizable string for the item's display name. Defaults to the item's display name in Data/Objects. This can optionally contain %DISPLAY_NAME (the item's default display name) and %PRESERVED_DISPLAY_NAME (the preserved item's display name if applicable, e.g. if set via PreserveId in machine data).
+Careful: text in this field will be saved permanently in the object's info and won't be updated when the player changes language or the content pack changes. That includes Content Patcher translations (like %DISPLAY_NAME {{i18n: wine}}), which will save the translated text for the current language. Instead, add the text to a strings asset like Strings/Objects and then use the [LocalizedText] token.
+Expand
+For example, here's how you'd create flavored oils with Content Patcher: 
+ToolUpgradeLevel (Optional) For tools only, the initial upgrade level for the tool when created (like Copper vs Gold Axe, or Training Rod vs Iridium Rod). Default -1, which keeps the value set by the item query (usually 0).
+QualityModifiers
+StackModifiers (Optional) Quantity modifiers applied to the Quality or Stack value. Default none.
+The quality modifiers operate on the numeric quality values (i.e. 0 = normal, 1 = silver, 2 = gold, and 4 = iridium). For example, silver × 2 is gold.
+QualityModifierMode
+StackModifierMode (Optional) Quantity modifier modes which indicate what to do if multiple modifiers in the QualityModifiers or StackModifiers field apply at the same time. Default Stack.
+ModData (Optional) The mod data fields to add to created items. Default none.
+For example:
+"ModData": {
+    "Example.ModId_FieldName": "some custom data"
+}
+For C# mod authors
+Use queries in custom data assets
+You can use the ItemQueryResolver class to parse item queries.
+For example, let's say a custom data model uses item spawn fields to choose which gifts are added to the starting gift box:
+public class InitialGiftsModel
+{
+    public List<GenericSpawnItemData> Items = new();
+}
+You can spawn items from it like this:
+ItemQueryContext itemQueryContext = new();
+foreach (GenericSpawnItemData entry in model.Items)
+{
+    Item item = ItemQueryResolver.TryResolveRandomItem(entry, itemQueryContext, logError: (query, message) => this.Monitor.Log($"Failed parsing item query '{query}': {message}", LogLevel.Warn));
+    // or TryResolve to get all items
+}
+You can also use GenericSpawnItemDataWithCondition to combine it with game state queries:
+ItemQueryContext itemQueryContext = new();
+foreach (GenericSpawnItemDataWithCondition entry in model.Items)
+{
+    if (!GameStateQuery.CheckConditions(entry.Condition))
+        continue;
+
+    Item item = ItemQueryResolver.TryResolveRandomItem(entry, itemQueryContext, logError: (query, message) => this.Monitor.Log($"Failed parsing item query '{query}': {message}", LogLevel.Warn));
+}
+Add custom item queries
+You can define new item queries ItemQueryResolver.Register("Example.ModId_QueryName", handleQueryMethod). To avoid conflicts, custom query names should apply the unique string ID conventions.
+Category: Modding

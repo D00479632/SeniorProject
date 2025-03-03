@@ -1,0 +1,62 @@
+Jump to navigation
+Jump to search
+Magic Rock Candy
+A rare and powerful candy infused with the essence of the prismatic shard.
+Information
+Source
+Desert Trader
+Haunted Skull drop (0.13%)
+Desert Festival
+Mystery Box (0.2%)
+Golden Mystery Box (0.4%)
+Raccoon Wife's Shop
+Buff(s)
+Mining (+2)
+Luck (+5)
+Speed (+1)
+Defense (+5)
+Attack (+5)
+Buff Duration
+8m 24s
+Energy / Health
+500
+225
+Sell Price 5,000g
+Magic Rock Candy is a special edible item that can be obtained in variety of ways.
+Contents
+1 Locations
+2 Gifting
+3 Bundles
+4 Tailoring
+5 Quests
+6 Notes
+7 History
+Locations
+Magic Rock Candies can be found in:
+Dropped by Haunted Skulls (0.13% chance).
+Opening Mystery Boxes (0.2% chance) or Golden Mystery Boxes (0.4% chance).
+One can be purchased each Thursday from the Desert Trader for 3 Prismatic Shards.
+Can be purchased from the Raccoon Wife's Shop for 20 Golden Mystery Boxes after the 6th Raccoon family request is completed and Foraging Mastery has been claimed.
+As the reward for donating 90 items to the Museum.
+As the 22nd item received from the prize machine.
+One is sold by the Calico Egg Merchant for 250 Calico Eggs on the last day of the Desert Festival.
+One is sold by Jas for 300 Calico Eggs whenever she is hosting a shop at the Desert Festival.
+One is rewarded for submitting an Egg Rating of 55-999 to Gil during the Desert Festival.
+Gifting
+Villager Reactions
+Love  Abigail •  Alex •  Caroline •  Clint •  Demetrius •  Dwarf •  Elliott •  Emily •  Evelyn •  George •  Gus •  Haley •  Harvey •  Jas •  Jodi •  Kent •  Krobus •  Leah •  Leo •  Lewis •  Linus •  Marnie •  Maru •  Pam •  Penny •  Pierre •  Robin •  Sam •  Sandy •  Sebastian •  Shane •  Vincent •  Willy •  Wizard
+Bundles
+Magic Rock Candy is not used in any bundles.
+Tailoring
+Magic Rock Candy is used in the spool of the Sewing Machine to create the prismatic Magic Sprinkle Shirt.
+Quests
+Magic Rock Candy is not used in any quests.
+Notes
+Though it cannot be cooked, its underlying category in the game's data files is "Cooking", so Magic Rock Candy shows up on the "Cooked Items" tab of the Gift Log on the Social tab in-game after giving it as a gift.
+Because it is a "cooked" item, it cannot be added to the Luau soup.
+History
+1.4: Introduced.
+1.4.1: The Desert Trader now only sells one Magic Rock Candy each Thursday.
+1.6: Now obtainable at the Desert Festival. Added as possible prize from Mystery Boxes and Golden Mystery Boxes.
+1.6.4: Can be obtained by trading Golden Mystery Boxes at the Giant Stump.
+Category: Special items

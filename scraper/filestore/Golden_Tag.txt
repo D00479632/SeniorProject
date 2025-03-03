@@ -1,0 +1,18 @@
+Jump to navigation
+Jump to search
+Golden Tag
+Turn this in to the Trout Derby booth for a reward.
+Information
+Source Rainbow Trout
+Sell Price 0g
+The Golden Tag is a special item that can be obtained by catching a Rainbow Trout during the Trout Derby festival. It can be exchanged for prizes at the derby booth.
+During the festival, each Rainbow Trout catch caught anywhere (with the exception of from a Fish Pond) has a 33% chance to give the player a Golden Tag. This chance is multiplied by the number of Rainbow Trout caught, so it increases to 66% if 2 Rainbow Trout are caught at once and to 99% if 3 are caught at once.[1] Only 1 Golden Tag can be caught per catch even if the player caught multiple Rainbow Trout at once. When a Golden Tag is obtained, if the player did not get a Fishing Treasure Chest it will be caught with the fish itself. Otherwise it will be obtained with the treasure chest that appears while catching the Rainbow Trout.
+Golden Tags carry over from day to day and can be saved for subsequent festivals.
+Gifting
+Villager Reactions
+Hate  Abigail •  Alex •  Caroline •  Clint •  Demetrius •  Dwarf •  Elliott •  Emily •  Evelyn •  George •  Gus •  Haley •  Harvey •  Jas •  Jodi •  Kent •  Krobus •  Leah •  Leo •  Lewis •  Linus •  Marnie •  Maru •  Pam •  Penny •  Pierre •  Robin •  Sam •  Sandy •  Sebastian •  Shane •  Vincent •  Willy •  Wizard
+References
+↑ See FishingRod::tickUpdate in the game code.
+History
+1.6: Introduced.
+Category: Special items

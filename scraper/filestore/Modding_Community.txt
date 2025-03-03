@@ -1,0 +1,800 @@
+Jump to navigation
+Jump to search
+←Index
+Stardew Valley has a very friendly modding community. If you have questions about using or creating mods, come talk!
+Contents
+1 Where to Talk
+1.1 Reddit
+1.2 Discord
+1.3 Official Forums
+1.4 Mod Sites
+2 Modders
+Where to Talk
+Reddit
+r/SMAPI is the official SMAPI subreddit for asking questions, getting help, and discussing SMAPI + mods + content packs.
+Discord
+The Stardew Valley Discord (no microphone, audio, or download needed) has...
+#modded-farmers and #making-mods-general: discuss or ask questions about using or creating mods. Modders also discuss their work, chat, and collaborate here.
+#modded-tech-support: get help with modding issues.
+#vanilla-tech-support: get help for issues with the game itself (like crashes, corrupted saves, or the game not launching).
+General channels to discuss the game and chat with other players.
+Official Forums
+The Stardew Valley Forums have the following sections:
+Modding Discussion & Creation: discuss or ask questions about using or creating mods.
+Mod Support: get help with modding issues.
+Mod Sites
+If you need help with a specific mod, consider asking on the mod page you downloaded it from. (For example, see SMAPI's posts tab on Nexus if you downloaded it from there.)
+Modders
+Here are the users on Discord who have the mod author role. If you created a mod and reached level 25 on Discord, feel free to ask in #making-mods-general, or DM @Bouncer#9811! We'll check if you qualify, help you add yourself to the list, and give you the Mod Author role. (See instructions for adding an entry, but please don't add yourself to the wiki before asking.)
+Modder 3 Notable Mods More Mods Source Code Reddit Mod Types
+4Slice
+sliceeeee on Discord Critters on Artifact Spots, Morris - Trump Recolor Nexus pixels
+6480
+6480 on Discord 6480's Giant Crops, Cornucopia (co-author), Iridium Recolors Nexus GitHub content pixels
+8AwA8
+Nature on Discord Nature In The Valley, Boss Battles, Roses In The Sand Nexus GitHub SMAPI content pixels
+Aaron
+aaron017 on Discord George Loves Hot Peppers Nexus content
+Abagaianye
+Abagaianye on Discord (TDIT) Island Trader Sialia Portrait Nexus GitHub content
+Abs0rbed
+Abs0rbed on Discord UIInfoSuite Nexus GitHub SMAPI
+Acerbicon
+aceavenger on Discord Ace's Expanded Farms, Ace's Evelyn, Ace's Expanded Cellars Nexus GitHub pixels
+aceynk
+aceynk on Discord AdvancedFishingTreasure, Stardew HRT, Custom Moss Nexus GitHub SMAPI pixels
+Advize
+4dv1z3 on Discord Farm Expansion, Get Dressed (co-author), Loved Labels (co-author) Nexus GitHub SMAPI
+aEnigma
+_aenigma on Discord Convenient Chests Nexus GitHub SMAPI
+aedenthorn
+erinthe on Discord Free Love, Custom Ore Nodes, Extra Map Layers Nexus GitHub u/erinthornerin SMAPI content pixels
+Aeolian
+aeolianmode on Discord Toshinori NPC Nexus content pixels
+Aeywoo
+aeywoo on Discord Walk to the Desert Redux Nexus GitHub SMAPI content pixels
+AgentLyoko
+agentlyoko on Discord Part of a Saloon Breakfast, Unique Winter Star, Clint Rewritten Nexus GitHub content
+Aimon111
+simon_k112 on Discord Distant Lands - A Small Witch Swamp Expansion, Aimon's Tidy Cozy Farmhouse, Fancy Crops and Forage Retexture Nexus u/Simon_k112 pixels content
+Airyn
+airyn16 on Discord Diverse Stardew Valley (co-author), Solstice Winter Star, Fourteen Heart Events for All Nexus GitHub u/Airyn16 content pixels
+A Kateful Drama
+kateful on Discord Advanced Farming Nexus GitHub u/trollface939 content pixels
+AlexTof
+alextofanel on Discord talkohlooeys Seasonal Rasmodia Portraits Nexus u/Cucugeniality pixels content
+Alixolotl
+alixolotl on Discord Compatibility Patches for Bog's Forest UI Nexus GitHub u/UBagel pixels
+allanbachti
+lanlyne on Discord Mushroom Tree Re-texture Nexus pixels
+Amaranthacyan
+blueamaranth on Discord Platonic Partners and Friendships Nexus u/CeruleanTresses content
+Amaryn
+m.ara.999 on Discord Yandere Sam Dialogue Expansion, Seasonal Deluxe Scarecrow and Misc Objects Redesigned, Seasonal Flower Sprinklers Nexus u/nyrama512 SMAPI pixels content
+Amu Tsukiyomi
+amutsukiyomi on Discord Chrismas: The Decorating, Dexter's Holiday Decorations, I actually made a thing (eventually) Nexus pixels
+Anaira
+missanaira on Discord Vanilla Cooking Recipes, Retro Spouse Portraits, Joja Hut Nexus GitHub content pixels
+AndrAla
+andralamatrix on Discord Flowery Stone, Flowery Bin Nexus pixels
+AndrewJC
+andrewjamescosgrove on Discord A Pelican Town, Bridge to Blue Moon Vineyard Nexus pixels content
+andyruwruw
+andyruwruw on Discord Water Bot Nexus GitHub SMAPI
+Anette
+itsanette on Discord Simple Foliage Nexus u/azrashar pixels
+Angela Ranna
+angelaranna on Discord Angel's Weapon Rebalance, What Does The Fox Say, More Grass on the Beach Nexus GitHub SMAPI content
+AngelOfStars
+angelofstars on Discord Friendable Mr.Qi, Berry Woods, Blessings of the Valley Nexus u/AngelOfStarss content pixels
+annachibi
+annachibi on Discord Sorren Original NPC Nexus content pixels
+APENAS
+apenas_. on Discord Poifgerfishe Nexus content pixels
+ApryllForever
+apryllforever on Discord Rummage Nexus GitHub SMAPI
+AquilegiaStardew
+aquilnox on Discord Json Assets Sweet Tooth, Aquilegia's Cute Item Retextures Nexus pixels
+AR
+fqte_ on Discord Penny as Alex from Minecraft Content Patcher Edition, Emily grows her hair out, Natural hair Emily Nexus u/ARModding pixels
+Arcane
+arcanedescent on Discord Shouko Nishimiya NPC Nexus GitHub u/ArcaneDescent content pixels
+Arknir27
+arknir27 on Discord Lucikiel - New Custom NPC (King's Raid) Nexus GitHub u/Arknir content pixels
+ArsonistPH
+arsonistph on Discord Luau Soup Nexus content pixels
+Asterisk555
+aster.risk.555 on Discord Asters Fruit Trees as Crops, Dyeable Wedding Dress for farmer, Big Interior Mod Nexus pixels content
+Astraios
+astraios_911 on Discord Spouse Income - SVE, Romantic Revenue Nexus GitHub u/Astraios_911 content SMAPI
+atravita
+atravita on Discord Atra's Interaction Tweaks, More Fertilizers, Pick Your Enchantment Nexus GitHub u/atravita SMAPI
+Aubrianna Shields
+aubriannamooglevillage on Discord Music Mod for the Mines Nexus GitHub content
+Aviroen
+Aviroen on Discord Mycology, Lance Super Sweet Expanded Nexus GitHub content
+AztecViper
+i.am.goat on Discord AztecViper's Fish of Stardew Nexus content
+BarleyZP
+barleyzp on Discord BarleyZP's Allergies, Run In The Bath House (Spa) Nexus GitHub SMAPI content pixels
+barteke22
+barteke22 on Discord Fishing Info Overlays, Fishing Minigames, Custom Spouse Location Nexus GitHub u/barteke22 SMAPI
+BayesianBandit
+bayesian.bandit on Discord Configure Machine Speed, Stone Bridge Over Lower Pond Nexus GitHub SMAPI content
+BeazNees
+cosmicbea on Discord The Sushi Project Nexus content pixels
+BeckyShark
+beckyshark on Discord Monster Shed Nexus content
+Bee
+bumblebeeznuts on Discord Bee Farmer Mod Nexus pixels
+Bennoloth
+Bennoloth on Discord Better Winter Star Gifts, Price Buffs, Simple Weapon Balance Nexus content
+BenTGI
+bentgi on Discord Qi Thesis Quest Nexus SMAPI
+berkayylmao
+berkayylmao on Discord ChestEx, Infinite Zoom, Ship Anything Nexus GitHub SMAPI
+beyondrecovery
+beyondrecovery on Discord Immersive Sandy, Mermaid Pendant for Farmer, Pierre Sells Ginger Island Goods Nexus u/beyondrecovery26 content
+BG
+tyrah. on Discord Pengu Hat, Summer Pack Nexus pixels content
+BikiFae
+bikinavisho on Discord Raincoat When Raining, Craftable Rings, Floor Coverings for DGA and AT Nexus GitHub SMAPI content
+Binx
+xomiamox on Discord Green Retro Couch AT Nexus content
+BlaDe
+bladesdv on Discord Map Predictor, Daily Luck and Weather Predictions, Fishing Practice Nexus GitHub SMAPI
+BlatantDecoy
+blatantdecoy on Discord Bugmeat Recipes, Soda Vine, Nature Furniture Nexus content pixels
+Blossom5280
+Nikki98 on Discord Nyapu Styled Max Portraits, Giant Backpack English Translation, Tractor Seasonal Recolor Template Nexus u/MochaCafe9 content patcher pixels translations
+BluPenDragon
+blupendragon on Discord Galarian Ponyta, Rideable Dragon, JojaMart GreenHouse Nexus content pixels
+BogWyytch
+ellektrikk on Discord Bog's Forest UI Interface, Bog's Krobus Retro Furniture Recolor, Bog's Witchy Tools Nexus content
+Bpendragon
+bpendragon on Discord Dynamic Horses, Greenhouse Sprinklers Nexus GitHub u/PendragonDaGreat SMAPI
+Brokencygnus
+brokencygnus on Discord Fishing Calculator App GitHub u/CelestialSegfault tools
+Cat
+catcattycat on Discord No Fence Decay, Range Display for Sprinklers and Scarecrows, Better Hay Nexus GitHub u/_Cat- SMAPI
+Catman
+_catman on Discord GiftTasteHelper, StackSplitX, CleanFarm Nexus GitHub SMAPI
+cel10e
+cel10e on Discord Seasonal Villager Outfits for Diverse Stardew Valley, Simplified Achievements Nexus content
+Celestia87
+Celestia1987 on Discord Build More Greenhouses, Build More Cellars SMAPI CP
+Challis2070
+Challis2070 on Discord Tasty Treats Nexus Content
+Chaos234
+marcelchaoschaot234 on Discord Community Center Bundle Overhaul (SMAPI Version) Nexus GitHub SMAPI
+CheesySteak
+cheesysteak on Discord More Multiplayer Info Nexus GitHub SMAPI
+ChefRude
+chefrude on Discord Dutch Farm Buildings (contributor) Nexus GitHub pixels
+CherryOtaku
+vcherrykai16 on Discord Team Cherry Blossom's Better Beds (co-author), SVO Moonlight Jellies Expansion Nexus content pixels
+Chirps
+kingmadapples on Discord Strawberry Chirps Plushie, Sennibun Plushies Nexus content pixels
+Chleiya
+chlei on Discord More Cheese, Iconic Jingle in JojaMart, One-Ingredient Meal Nexus content pixels
+ChroniclerCherry
+.chronicler on Discord Shop Tile Framework, Stardew Aquarium, Platonic Relationships Nexus GitHub SMAPI content
+ClairesStoryofSeasons
+CSS on Discord CSS' Sweeter than Pomegranates - An Elliott Marriage Dialogue Expansion Mod, CSS' Good Luck, Haley! A Haley Pre-Marriage Dialogue Expansion Mod Nexus content
+ClefairyKid
+.maluridae on Discord CK's Ducati Motorbike Nexus pixels
+coldazrael
+coldazrael#9787 on Discord Stardew Valley Trophy Overhaul Nexus pixels
+CompSciLauren
+CompSciLauren on Discord Daily Screenshot, Cozy Clothing Nexus GitHub u/CompSciLauren SMAPI
+cosplaywrite
+cosplaywrite on Discord Craftable Auto-Petter, Multi-Modd Add-On for Lemonade Stand Machine, Ethically-Sourced Void Ghost Pendant Nexus content
+CreativeNat
+natanaelrold on Discord Creative Warehouse Shed Nexus pixels
+cryomancer
+cryomancer199x on Discord Dogs of Evermore, Carnivorous Plant Meat Trees, Foraging Walking Mushrooms Nexus GitHub pixels content
+Cylon
+cylon_ on Discord Stardew Brewery Nexus GitHub SMAPI
+Daemon
+daemon_701 on Discord Sliced Fruits, Weapon and Tool Crafting, Food Packaging Nexus content pixels
+DaLion
+Da Lion on Discord Modular Gameplay Overhaul Nexus GitHub u/vonloewe SMAPI
+Damien
+d.a.m.i.e.n on Discord Unlocked Doors Nexus SMAPI
+Darcy91
+darcy2459 on Discord Recipes for Dutch Pancakes Nexus GitHub content pixels
+DecidedlyHuman
+decidedlyhuman on Discord Smart Building, MEEP (Mapping Extensions and Extra Properties), Carry Your Pet (And Farm Animals) Nexus GitHub u/DecidedlyHumanGames SMAPI
+DeLiXx
+delixx on Discord Unlockable Bundles, PIF - Personal Rooms, Custom Farm Loader Nexus GitLab SMAPI content
+Demiacle
+demiacle on Discord UI Mod Suite, Improved Quality of Life, Plant on Grass Nexus GitHub SMAPI
+DestyNova
+destynova on Discord Never Ending Adventure Nexus content SMAPI
+Devin, Unidarkshin
+unidarkshin on Discord Level Extender, Extreme Fishing Overhaul, Sprint Nexus GitHub SMAPI
+Dichotomy
+kelly_j on Discord Rustic Garbage Bins, Wistful Pink Sand Nexus content
+Digus
+digus. on Discord Animal Husbandry Mod, Mail Framework Mod, Everlasting Baits And Unbreakable Tackles Mod Nexus GitHub SMAPI
+Digzol
+platypus on Discord Joja Ghosts Nexus GitHub pixels
+DJStarstryker
+djstarstryker on Discord Sapling GET Nexus GitHub content
+Doge
+x3n0n182 on Discord Dragon of Dojima Suit Nexus GitHub content pixels
+Dolphin Is Not a Fish
+nai.nai.naira on Discord Portraits for Vendors, Mouse Friends in the Forest, Give the Mermaid Her Pendant Back! Nexus content
+Doragoun
+doragoun on Discord Everlasting Flowers, Hat Mouse and Friends, Digimon Survive Attire Nexus content pixels
+Dots
+dotsdillydally on Discord Fairy Wings, Witch Furniture, Fairy Farmhouse Nexus GitHub u/dotsess content pixels
+Dozy
+dozy__ on Discord Lighter Barn and Coop Retextures, Dozy's Retextures: Craftables, Wallpaper, and Flooring Chucklefish pixels
+DraconisLeonidas
+Leonidas on Discord Press to Quack, Less Claustrophobic Tiny Greenhouse Nexus content
+Draylon
+draylon on Discord Marsh Farm, A Larger Hilltop, Meteor Farm Nexus content
+Dr. Birb, M.D.
+drbirbdev on Discord Socializing Skill, Panning Upgrades, Binning Skill Nexus GitHub SMAPI content
+Dream
+dream5846 on Discord Community Bundle Item Tooltip Nexus GitHub SMAPI
+Dreamygloom
+dreamygloom on Discord Cape Stardew Nexus content
+drowsy prince
+drowsyprince on Discord Not a Farmer - Job Title Replacer Nexus content
+DZK312
+dzk312 on Discord DZK312's Fanciful Resources, Crafting Overhaul, Item Ball Dig Spot Nexus pixels content
+ejc5million
+ejc5 on Discord Clover Island, Farm Cave Mine Warp Nexus u/ejc5million content
+elfuun
+elfuun on Discord Flower Dance Fix Nexus GitHub u/elfuun SMAPI
+Elizabeth
+e.l.i.z.a.b.e.t.h on Discord Bonsai Trees for DGA, More Conversation Topics, Glue Your Furniture Down Nexus GitHub content pixels SMAPI
+Elle
+snailshelle on Discord Elle's Seasonal Buildings, Elle's Town Buildings, Elle's Cuter Coop Animals Nexus pixels
+Emirae
+sabrine.flamel on Discord Sabrine's Cottage Nexus u/Emirae Pixels
+Emissary Of Infinity
+voxgray on Discord Summit Reborn Nexus pixels
+Emissaryofwind
+emissaryofwind on Discord Mountain View Redone Nexus u/emissaryofwinds content pixels
+EnderTedi
+endertedi on Discord A Junimo's Sprit's Eve, Cafe and Bakery Set, No Fence Decay Redux Nexus GitHub SMAPI pixels content
+Entoarox
+entoarox on Discord Entoarox Framework, Advanced Location Loader, More Animals Nexus GitHub SMAPI
+Ericlegacy
+ericlegacy on Discord Fishing Made Easy Suite, Farming Made Easy Suite, Combat Made Easy Suite Nexus content
+Eryk601
+eryk601 on Discord Matching Nodes Nexus GitHub u/Eryk601 content
+Esca
+escammc on Discord Farm Type Manager, Custom Tracker, Destroyable Bushes Nexus GitHub SMAPI
+EssGee
+just_sg on Discord Keep Your Partners, NPC Riley Nexus SMAPI content
+EternalWraith
+brawlrounder on Discord Event Generator API Nexus GitHub SMAPI
+eunomicZenith
+harryzap on Discord FS - Harry's Short Hair Nexus GitHub content pixels
+ExnoticTest (now ilyAoiMiyake)
+fruityokuyasu on Discord Custom NPC - Taka (not yet out), Custom NPC - Kim, Wizard Romanceable Portrait - LfL Compatible Nexus content pixels
+Expl0
+expl0 on Discord Cauldron of Chance Nexus GitHub SMAPI
+f4iTh
+f4ith. on Discord Activate Sprinklers, Better Transmutation, Fixed Secret Woods Debris Nexus GitHub SMAPI pixels
+Failsplat
+failsplat on Discord Frozen Yogurt, Popcorn Machine Nexus GitHub SMAPI pixels content
+FallHarvester
+Fall Harvester on Discord The Shipwrecked Farm, Tiny beach farm V2, Beach forest farm V2 Nexus u/Extension_North_946 SMAPI pixels content
+farmerjack
+november_spirit on Discord Shane Dialogue Expansion, Elliott Dialogue Expansion, Haley Dialogue Expansion Nexus content
+Faythe
+Pig Notaro#5514 on Discord 2cute Farm Cave, 2cute Farmhouse Upgrades, 2cute Greenhouse Nexus pixels
+Feenie
+feeni3 on Discord Feenie's Dog Recolor Chucklefish pixels
+fellowclown
+fellowclown on Discord John Standalone NPC, Lyell Standalone NPC Nexus content pixels
+FionaDanger
+FionaDanger on Discord Many Much Trash Nexus GitHub u/lungora content
+Fippsie
+ottercid on Discord Fippsie's Raphtalia (Custom NPC), Fippsie's Animated Lamp Posts, Fippsie's Buildable Arches Nexus u/HowToPetAnOtter content pixels
+fireredlily
+fireredlily on Discord Additional Vanilla Child Beds, Pelican Valley Loft (NPC Apartments), Useable Community Center Nexus u/fireredlily content pixels
+focustense
+focustense on Discord Radial Menu - Better Gamepads, Garbage In Garbage Can - Don't Hoard Trash Nexus GitHub SMAPI
+foggywizard
+foggywizard on Discord Looking for Love, Farm Cave Redo, Craftable Mushroom Boxes Nexus GitHub content
+Forsythia
+forsythia on Discord Tiny Terrariums, Doll Totems, Forsy's Comfort Foods Nexus content pixels
+Froststar11
+froststar11 on Discord Farm Cave Fairy Spring, OCD Farm Map, Tiny Kitchen for First Farmhouse Nexus GitHub content pixels
+funny-snek
+funny-snek#6367 on Discord Always On Server For Multiplayer, Unlimited Cats and Dogs, Cabin Owner Displayed Nexus GitHub SMAPI
+furyx639
+lefauxmatt on Discord Expanded Storage, Better Chests, Toolbar Icons Nexus GitHub u/TheFakeMatt SMAPI
+Fwippy
+fwippy5353 on Discord Fwippy's Subdued Summer Crop Recolor, (PFM) Flower Pack for Artisanal Soda Makers, Brushed Bronze Iridium Sprinkler Nexus GitHub pixels
+Galacticinkpen
+galacticinkpen on Discord Baguette as Galaxy Sword, Snoopy Dog Replacer Nexus pixels
+GaLaxY
+galaxy256 on Discord Industrialization Redux Nexus SMAPI content
+Gathouria
+gathouria on Discord Adopt 'n' Skin (previously Animal Skinner) Nexus GitHub SMAPI
+General Alexis
+alexisbloodwood on Discord Cat Ear Reskins, Less Mushy Trash, Lucky Purple Clothes Nexus u/Bloodwoodsrisen pixels content
+Gervig91
+gervig on Discord Stardew Aquarium, Animated Furniture and Stuff, Animated Fish Nexus u/Gervig91 pixels
+glymr
+glymr on Discord Animal Aging: Animals stay babies longer or grow up faster!, Seasonal Foresty Farm Buildings by Miizuki - Alternative Textures Version Nexus u/SBBC Content
+GodPristine
+godpristine on Discord GodPristines Tool Retextures Nexus content pixels
+Goldenrevolver
+goldenrevolver on Discord Horse Overhaul, Forage Fantasy Nexus GitHub SMAPI
+Goose
+cqtxzs on Discord Junimo Cat, Gooses Guinea Pig Nexus content
+grapefruitcult
+yearns on Discord Seasonal Industrial Mailboxes, Slightly More Interesting Farm Cave Nexus pixels content
+Grubcore
+grubcore on Discord Seb With Swag, Community Center With Swag Nexus GitHub content pixels
+Gweniaczek
+gwen2907 on Discord Way Back Pelican Town, Gwen's Medieval Craftables, Medieval Buildings Nexus u/Gweniaczek pixels content
+Hackswell
+sigs3gv on Discord Giant Qi Plush, Glory Of Efficiency Nexus GitHub SMAPI Content
+Hadi
+hadi2271 on Discord Artisanal Soda Makers, Hadi and Zosa's Custom Meats and Recipes (collaborator), PPJA - Khadija's Recipe Shop (project lead) Nexus GitHub Content pixels
+Hangy
+hangycubed on Discord No Kids Ever, Black Dress Shoes, Medieval Junimo Hut Nexus GitHub SMAPI pixels
+HaPyke
+hapyke on Discord Market Town - Food Store _ Flower Shop _ Fishery and more, Invite Friend Nexus GitHub SMAPI
+hawkfalcon
+hawkfalcon on Discord Custom Quest Expiration, Tillable Ground, Better Junimos Nexus GitHub SMAPI
+hexaby
+saby_feelin_stabby_and_or_grabby on Discord Pretty Cows Nexus GitHub pixels
+heyseth
+sethposeidon on Discord Remember Your Umbrella, Pause While Sitting, Willy's Bedroom Nexus GitHub SMAPI content pixels
+Himetarts
+himetarts on Discord Always Raining in the Valley Nexus GitHub u/Himetarts content pixels
+Huskyn1nja
+Huskyn1nja on Discord Husky's Big Farmhouse, Lunar Cove Nexus SMAPI CP
+ichortower
+ichortower on Discord Hat Mouse Lacey, Nightshade, Ichor's Wobbly Cat Nexus GitHub SMAPI content pixels
+iKeychain
+keychain on Discord Portrait-Accurate Alex, iKeychain's Winter Lychee Plant, iKeychain's Simple Hat Additions Nexus pixels content
+Ilyaki
+ilyaki on Discord Battle Royalley, Split Screen, Artifact System Fixed Nexus GitHub SMAPI
+Ilyeana
+ilyeana on Discord Ilyeana's Bus Stop Fix for CP, (CP) Ilyeanas Siamese Farm Cat Nexus GitHub u/IlyeanaPlus SMAPI CP pixels
+InkubusMods
+theinkubus on Discord Modest Maps Cellar, Modest Maps Forest Farm, Modest Maps Greenhouse Nexus content
+Inspectator
+inspectator on Discord Customised Dialogue Nexus content
+Invatorzen
+bootiusjucious on Discord Custom NPC Aspen, Marnie Sells Animal Produce, Invatorzen's Dialogue Changes Nexus u/buttjuiceYT content
+irocendar
+wopr1234 on Discord Pet Renamer, Light Radius, Map Event Markers Nexus GitHub SMAPI
+ItsBenter
+itsbenter on Discord Shell Collection, Tidal Beach Nexus GitHub pixels content
+Jack (LaFond)
+lafond on Discord stardew.app GitHub u/iJaacks tools
+JareBear
+jarebear1 on Discord Log Menu Nexus GitHub SMAPI
+Jason
+jawsawn on Discord Starbound Valley Nexus pixels
+JazzMinK
+jazzmink on Discord ZeldaMod, Pennys Nightmare, Halloween Feelings Nexus pixels
+Jed
+jed5729 on Discord JA Chimken Nexus GitHub u/Jedlord content
+JefGrizli
+notsemisu on Discord Mixed Bag's Tilesheets, Redraw Pelican Town, Vibrant Pastoral (Co-Author) Nexus GitHub SMAPI pixels
+Jellonip
+youkonos on Discord Romanceable Rasmodius Redux Revamp Nexus content pixels
+Jen
+jenf on Discord Jen's Cozy Cellar, Jen's Simple Greenhouse Nexus content
+Jennifer
+jennifer.3274 on Discord Void Cat, Seasonal Sod Nexus pixels
+JEREMYlSM
+fieldonfire on Discord Sebastian Comes Out, Cuter Chests, Overgrown Fairy Tractor Garage Nexus content pixels
+Jesse
+tempestuous3570 on Discord Sauvignon in Stardew Nexus GitHub SMAPI
+Jessebot
+password.png.exe on Discord Health and Stamina Regeneration, Winter Woods, Secret Gardens Greenhouse Nexus GitHub u/Jessebutt SMAPI content pixels
+JoeStrout
+joestrout on Discord Farmtronics Nexus GitHub u/JoeStrout SMAPI
+Jonqora
+jonqora on Discord Angry Grandpa, Fish Preview, Show Item Quality Nexus GitHub SMAPI content
+Josh
+jishuna on Discord Running Late, Become Ethereal Nexus GitHub SMAPI
+Juice
+var_juice on Discord Stardew Config Menu Nexus GitHub SMAPI
+justastranger
+.justastranger. on Discord Thunderstorm Totem, Radioactive Geodes Nexus GitHub SMAPI
+Kailey
+kaileystardew on Discord Seasonal Wedding Arch, Better Clinic Beds, Clean Bathhouse Nexus GitHub pixels content
+Kamalei
+rebeckaaaaaa on Discord No Raindrops, Ladybug (Custom Critters) Nexus pixels content
+Kanjinuma
+Kanjinuma on Discord PersonalFarmType, Personal Farm Cave, Personal Greenhouse Nexus content
+kari
+kari#5233 on Discord Kari's Delivery Service - A Seasonal Mailbox Mod Nexus content pixels SMAPI
+Karmylla
+karmylla on Discord Karmylla's Immersive Maps, Karmylla's Farm Cellars, Karmylla's Spouse Rooms Nexus content pixels
+KarratKake
+karratkake on Discord Spice of Life, Ferngill Revenue Service, Take It Slow Nexus u/KarratKake SMAPI
+Kat (katrie)
+katrie. on Discord Pride Arches for Solid Foundations, Large Pride Arches for Solid Foundations Nexus content pixels
+Kath
+13midnight on Discord Kitchen Station Sets, Project Danger Weather Nexus content
+KAYA
+kaya0616 on Discord Flower Valley, Korea Blossom, Regional Cuisine Korean Preserve Nexus content pixels
+KediDili
+kedidili4678 on Discord Decorative Eggs, Forest Junimos, Creaturebook ModDrop GitHub content pixels SMAPI
+Khloe Leclair
+khloeleclair on Discord Almanac, Better Crafting Nexus GitHub u/KhloeLeclair SMAPI
+Kisaa
+crystalinerose on Discord crystalinerose Tilesheets, (CR) Kisaa's Blossom Crest Farm, (CR) Kisaa's Tiny Rooms Pack for PIF Nexus u/crystalinerose content pixels
+Lani
+atel2er on Discord True Random Geodes, lilico's Shie Portrait Edits, Sonic Shoes Nexus GitHub pixels SMAPI
+LastLoveToYou
+iteardropi on Discord Seasonal Anime Portraits II Nexus pixels
+Leroymilo
+leroymilo on Discord Furniture Framework, Updated Seasonal Japanese Buildings, Modular Zen Garden Furniture Nexus GitHub u/leroymilo SMAPI content pixels
+Lemurkat
+lemurkat on Discord Mister Ginger (cat NPC), Ranch Expansion, Professor Jasper Thomas Nexus GitHub u/lemurkat content
+LenneDalben
+lennedalben on Discord Townies Need Food, Artisan Equipment for Sale, Pierre Plans Ahead - 1 Day GitHub content
+LennonsLemons
+deep_sea_lily on Discord Modern Glass Fireplace, Plush Snakes, Bunny Decoration Nexus pixels
+LeonBlade
+leonblade on Discord Casks Anywhere, Tree Transplant Nexus GitHub SMAPI
+Lex
+lex343 on Discord Sydney - A Custom NPC Nexus content pixels
+Liliet
+Liliet#1061 on Discord Haley Reads Magazines, Improved Cindersap Forest, Lost in the Mountains Farm Map Nexus u/LilietB content pixels
+lilmarsgirl
+maneheks on Discord Walnut Dining Table Nexus GitHub u/lilmarsgirl pixels content
+Lita
+strangelyliteral on Discord Starblue Valley map recolor, Blossom Trees, Fancy Lamps Nexus pixels
+Loe2run
+Loe on Discord Family Planning, Child To NPC Nexus GitHub SMAPI
+Logophile
+.logophile on Discord SpookyTime Bobbers, More Geometric Rugs, Geometric Rugs Nexus GitHub u/0Logophile0 content pixels
+Lumina
+lumisteria on Discord Toddlers Like Parents, Letters From Parents Nexus GitHub u/lumisteria content pixels
+Lusif1
+lusimorningstar on Discord Beans the Loveable NPC, Inverted Shirts, Inverted Pants Nexus u/Gloomy_Catch_487 content pixels
+Luumi
+.luumi on Discord Luumi's talkohlooeys' Style Portraits for Hat Mouse Lacey Nexus pixels
+M1n3c4rt
+m1n3c4rt on Discord Journey of the Dairy King Nexus GitHub u/M1n3c4rt pixels
+Mabel
+mabel.syrup. on Discord Farmhouse Redone Nexus GitHub SMAPI
+Mae
+Mae on Discord Forage to Farm Nexus content pixels
+malic
+kopato on Discord Jade NPC, Non-Replacing Hair Resource Nexus GitHub content
+MangusuPixel
+mangusupixel on Discord Dialogue Display Framework Continued Nexus GitHub SMAPI
+marksmango
+_jackthestripper on Discord Mulch, Alternate Storage Nexus GitHub pixels
+Marrzie
+eizrram on Discord (Content Patcher) Sakura Cats Nexus pixels content
+MartyrPher
+martyrpher on Discord Android SMAPI, Junimo Kart Anywhere Nexus GitHub u/MartyrPher SMAPI
+MaximillianRW
+maxrw on Discord Night Owl Plus Nexus GitHub u/MaxRW9 SMAPI
+megmom84
+MegaraCassiopeia on Discord Dark Brown Interface, Crop Signs Nexus content pixels
+Memegician
+memegician on Discord Legendary Fish Ponds Nexus SMAPI content
+MercuriusXeno
+mercuriusxeno on Discord Equivalent Exchange Nexus GitHub SMAPI
+Miihau
+miihau on Discord More Penny Heart Events, Crow Curse Mod, Jellyfish Pierre Nexus u/Miihau content pixels
+milosnikwiewiorek
+milosnikwiewiorek on Discord Improved Shops, Boston Cream Pie Nexus content
+mikitakrushev
+midori9621 on Discord Midori's camping set for alternative textures (AT), Custom Furniture Magical Girly Set Nexus content pixels
+Minakie
+minakie on Discord House Remodel, Real Life Horses, Minakie's Dressers Chucklefish GitHub SMAPI content pixels
+MindMeltMax
+mindmeltmax on Discord SP Regen, Multi-User Chests, Better Shipping Bin Nexus GitHub SMAPI content
+minervamaga
+minervamaga#7344 on Discord Faster Animal Products, Harder Community Center Bundles, No Mine Flyers Redux Nexus GitHub u/minervamaga content pixels SMAPI
+MiniKarma
+karma05845 on Discord Marshmallow Junimo Companion, MiniKarma's Seasonal Tent Recolors feat Inerior Nexus content pixels
+MiniPantsu
+Mathias on Discord Bath House Hot Spring, Farmhouse Basement, Babies like Parents Nexus pixels
+Miome
+Miome2106 on Discord Multitool, Crewmate Junimos, One Day At A Time Nexus GitHub pixels SMAPI
+Mipha (MiphasGrace2)
+.miphasgrace on Discord BFAV Snakes, BFAV Alligator, Surprise Pregnancy Nexus content pixels SMAPI
+MissCoriel
+misscoriel on Discord EZ Legendary Fish, Hiroshi (NPC), MissCoriel's Unique Courtship Responses Nexus GitHub u/VGMRMissCoriel content pixels SMAPI
+Mistyspring
+spring_dew on Discord Spouses in Ginger Island, Less Flashy Stardew, Farmhouse Visitors Nexus GitHub SMAPI pixels content
+Mizzion
+Mizzion on Discord Stardew Locations, Wallpaper Recycler, Enhanced Relationships Nexus GitHub SMAPI
+Mo
+enby_mo on Discord It is Pizza Time, Stardrop Flower, Pet Rabbit Nexus GitHub u/ilovekakapos content pixels
+moetrash
+ch20youk on Discord June - Custom NPC for RSV, Ridgeside Village Nexus GitHub u/ch20youk SMAPI content
+Molson
+molson on Discord Deluxe Journal Nexus GitHub SMAPI
+moonSlime
+aavri_ on Discord Archaeology for 1.6, Upgradable Shovel Nexus GitHub SMAPI
+Mopsy
+mpql on Discord Mopsy's Harvest Moon Animals, Mopsy's Ranch Livin' Nexus GitHub SMAPI pixels
+Morgrim
+morgrimmoon on Discord Cat in a Coat, Raptor Chickens Nexus pixels
+MouseyPounds
+mouseypounds on Discord Stardew Checkup App, Stardew Predictor App, Hedge Fences Mod Nexus GitHub u/MouseyPounds SMAPI pixels
+mushymato
+chu2.718281828459045235360287471 on Discord Sprinkler Attachments, Scythe Tool Enchantments, Special Order Notifications Nexus GitHub SMAPI
+mytigio
+mytigio on Discord Dwarven Expansion, Exhaustion Tweaks Nexus GitHub SMAPI content
+Nanogamer7
+nanopenguin on Discord Tunnel System Nexus GitHub content
+Lavliette
+Lavliette on Discord Lavliette's Furniture Dyeworks Series Nexus content pixel
+N3rdGirl64
+N3rdGirl64 on Discord Massive Farm, Super Cellar, N3rd's Pets Nexus GitHub content pixel
+NachOnline
+nachonline on Discord Machine Progression System Nexus content
+Nathan2076
+nathan2076 on Discord Stardew Themes UI Nexus GitHub u/Nathan2076 content
+Nevalia
+nevaliant on Discord Easier Crystalarium Recipe, Truffle Oil Refiner Nexus u/valen814 content
+Neosinf
+neosinf on Discord Stardew Druid Nexus GitHub SMAPI
+nicerogan
+soloratiste on Discord Alex is Troy Bolton, Joja Farmhouse Nexus SMAPI
+NoFogBob
+nofogbob on Discord Cooking and Crafting Recipes for Sale, Animated Inventory Tabs, Wallet Items - Animated and Described Nexus u/NoFogBob SMAPI
+Nomori
+nom0ri on Discord Romanceable Rasmodia, Lannah - Female Lance, Event Lookup Locations Nexus content
+nonparelli
+nomparelli on Discord nonparelli's Hat Mouse Lacey Portraits Nexus pixels content
+NoraCharles
+noracharles_1934 on Discord Better Furniture Catalogue, Map Tweaks for 1.6, (AT) Cats on Cat Trees (Animated) Nexus content
+oomps62
+oomps62 on Discord Garden Grass, Earth and Water Obelisk (Hudson Valley Style), Beehouses (Hudson Valley Style) Nexus pixels
+Pathoschild
+pathoschild on Discord SMAPI, Content Patcher, Lookup Anything Nexus GitHub u/Pathoschild SMAPI
+Pau
+suzukiPC on Discord Starry Ocean Garden UI Theme -Available in Different Languages-, More Dachshund Dogs Nexus pixels content
+PeacefulEnd
+floogen on Discord Greenhouse Gatherers, Fishing Trawler, Multiple Mini-Obelisks Nexus GitHub SMAPI pixels
+pepoluan
+pepoluan on Discord Silo Size, Damage Overlay, 24-Hour Clock Patcher Nexus GitHub u/pepoluan SMAPI content
+petitepaddington
+strawbearycandy on Discord (AT) A Better-Looking Plasma TV for Alternative Textures Nexus GitHub u/petitepaddingtonbear content
+Pillow
+p.llow on Discord Stardew Expansion Redux, TMXL2CP Nexus GitHub u/AnotherPillow content SMAPI
+pneuma163
+pneuma163 on Discord Where the Spreading Weeds Are, Customizable Elevator Bell Ding Sound Replacer, Can The Player Leave Nexus GitHub SMAPI
+Pokky
+pokkky on Discord Fertilizer Visibility Nexus content
+poppy
+patronuses on Discord Wedding Ring Replacement, lilsimsie scarecrow, Ube Ice Cream Nexus content
+Pre
+julespersec on Discord Genshin Valley, Witch's Garden Flowers for AT and DGA Nexus content pixels
+Private Buttface
+privatebuttface on Discord What Are You Missing Nexus GitHub SMAPI
+LifeSureIsSomething
+pseudosquared on Discord Covered Farm Nexus content
+punyo
+punyo on Discord Joys Of Efficiency, Adjustable Stamina Healing, Passable Objects Nexus GitHub SMAPI
+Purppelle
+purppelle on Discord The Gnomiverse Nexus GitHub content pixels
+Raffadax
+raffadax on Discord Raffadax Complete Production Nexus content pixels
+RaffieJohn
+raffiejohn on Discord Over Grown Farm Cave Nexus GitHub u/animeluvzu content
+Rafseazz
+rafseazz on Discord Ridgeside Village, Lunna - Astray in Stardew Valley Nexus GitHub u/Rafseazz content
+ran
+ran on Discord Ran's Harvest Goddess, Shane's New Job, Ran's Hearts Nexus content pixels
+Rasmodius
+ramuuuu on Discord Mighty Pam as a Horse, Clean Resizable Cellar (Content Patcher) Nexus GitHub pixels
+Raven
+Raven on Discord Extended Greenhouse, Super Greenhouse Chucklefish SMAPI
+RedxMoonxRose
+redxmoonxrose on Discord Flower Valley Garage Nexus GitHub u/RedxMoonxRose pixels
+Renny
+_renny on Discord Stardew Void Effects, Infinite Junimo Cart Lives, Prairie King Prizes (Lootboxes) Nexus GitHub SMAPI
+Ria
+1809012601090 on Discord Consistent House Upgrades, Crab Pot Bait Recolor, Rustic Traveling Cart Nexus GitHub pixels
+rikai
+rikai on Discord Grandfather's Heirlooms Nexus GitHub SMAPI
+Riot
+RiotGirl5989 on Discord Lavender Craftables Nexus content SMAPI
+RitzyGen
+SirRitzington on Discord Nonbinary Mr. Qi, Adventurer's Guild Extra Shop Nexus content SMAPI
+rokugin
+rokugin on Discord Better Stardrops, Colorful Fish Ponds Nexus GitHub SMAPI
+Routine
+Routine on Discord Portraiture, No Soil Decay Redux, Seed Bag Nexus GitHub SMAPI
+RuiNtD
+ruintd on Discord Discord Rich Presence Nexus GitHub SMAPI
+S1mmyy
+s1mmyy on Discord Item AutoTrasher, Dwarven Drill, Skull Cavern Drill Nexus GitHub SMAPI
+Sakorona
+kylindra on Discord Climates of Ferngill, Dynamic Night Time, Customisable Cart Redux Nexus GitHub u/KNakamura SMAPI
+Sdvhead
+sdvhead on Discord Law and Order SV Nexus u/sdvhead content
+Selph
+selphers on Discord Extra Machine Config, Machine Terrain Framework Nexus GitHub u/zombifier25 SMAPI
+SevenChords
+sevenchords on Discord Night Shift Nexus GitHub SMAPI
+Shardust
+ladyshardust on Discord Shardust's Animated Hairstyles for Fashion Sense, Shardust's Dynamic Interior, Shardust's Fences Gate Flooring Nexus u/LadyShardust pixels
+shekurika
+shekurika on Discord Event Lookup Nexus GitHub SMAPI content
+ShilohAreles
+shilohareles on Discord EBAGI Fancy CMC, EBAGI Fancy CMF Nexus GitHub u/SweetContext SMAPI
+Shockah
+shockah on Discord Season Affixes, Flexible Sprinklers, XP Display Nexus GitHub u/shockah SMAPI content
+Shyzie
+Shyzie on Discord (SF) Shyzie's String Lights, (AT) Shyzie's Rugs, (SF) Medieval Tiny Greenhouse Nexus u/Shyziie content pixels
+Si
+SiTheGreat on Discord Morris Redeemed, Adventurer Abigail, Sebastian's Frog Sanctuary Nexus GitHub u/SiTheGreat content
+siamece
+ribcages on Discord Vanilla Facelift, Farm Animal Facelift, Pet Facelift Nexus pixels
+silicon
+somesillypenguin on Discord Growing Valley - Child NPCs, NPC Tokens for Content Patcher Nexus content pixels SMAPI
+silvermoonchan
+silvermoonchan92 on Discord Loons, Aviary Nexus u/silvermoonchan content
+SinZ
+sinz163 on Discord Profiler, AutomateChests, MoonMisadventures_BiggerBackpackPatch Nexus GitHub u/SinZ167 SMAPI
+skellady
+skellady on Discord Slightly Recolored Tools, Slightly Recolored Weapons, Skellar Nexus GitHub content pixels
+SkylarkL
+Skylark on Discord Void Pendant Replacer, Cuter Void Chickens, Ducati Flute Nexus pixels
+Slumberwood
+vodci on Discord Rats, Pyschrolutes Nexus content pixels
+Snowlex
+quillex_ on Discord Better Artisan Good Icons - Cometkins Style, Stardew Vineyard Pack for Artisanal Soda Makers Nexus content pixels
+Sonozuki
+sonozuki on Discord Better Rarecrows, More Grass, Better Mixed Seeds Nexus GitHub u/Sonozuki SMAPI pixels
+Soob
+soobbiiee on Discord (FS) Soob's tiny elf ears Nexus Pixels
+sophie
+sophiesalacia on Discord Configurable Bundle Costs, Configurable Special Orders Unlock, Early Community Upgrades Nexus GitHub SMAPI
+Spectrum Collective
+.glitch_ on Discord Earthy Recolour Waterfall Fix For Everfarm, Upgradable Bee Houses Nexus SMAPI content
+SpringsSong
+springssong on Discord Standardize Elliott's Cabin, Fix Those Beds, Once Upon a Winter's Eve (co-author) ModDrop GitHub u/SpringsSong content pixels
+sqbr
+sean3142 on Discord Cuter Mines, Starry Blue UI, Gender Setter Nexus content
+squiddonaut
+squiddonaut on Discord Lance Come Sooner Pls Nexus content
+Stashek
+stashek on Discord Simple Maps - Lakeside, Wine to Juice Nexus content
+strawhatwem
+strawhatwem on Discord Peeta Mellark NPC - Life After Panem Nexus Content Patcher
+stokastic
+stokastic on Discord Prismatic Tools Nexus GitHub SMAPI
+Sweet Panda
+realsweetpanda on Discord Save Anywhere Redux Nexus GitHub SMAPI
+Taco Cat
+taconeko. on Discord Futan Bear and Plush Bunny Retexture - Monokuma and Monomi Nexus pixels
+Taelende
+deertaels on Discord Shellfish Produce Pearls, Void Ranch, Pethouse Nexus pixels content
+TaelFayre
+tael_ on Discord Sussy Garbage Nexus GitHub u/TaelFayre content pixels
+Taiyō
+tytyou on Discord Strange Machines, Taiyo's Seasonal Vanilla Craftables for CP Nexus content pixels
+Tangerine
+tangerine.y on Discord Immersive Festival Dialogue Nexus GitHub content
+Taskmaster
+taskmaster6185 on Discord Junk Mail, Train Whistle, Monthly Mail Nexus SMAPI
+Tea-Loving Lad
+Tea-Loving Lad on Discord Squid-like Squid Kids, Lad's Fishing Trawler Resprites, Tool Reskin - Wrapped Handles Nexus GitHub u/TeaLovingGerman content pixels
+Teaiscoldagain
+Teaiscoldagain on Discord Wood Lattice Wallpapers, Polyculture Needs More Crops Nexus GitHub content pixels
+TehPers
+tehpers on Discord Teh's Fishing Overhaul, Festive Slimes Nexus GitHub u/TehPers SMAPI
+Tenebrous Nova
+tenebrousnova on Discord Eli and Dylan Nexus GitHub u/TenebrousNova Content Pixels
+Teoshen
+.teoshen on Discord Small Glade Farm Nexus GitHub u/Teoshen Content
+theflashgirl20
+theflashgirl20 on Discord Culinary Expansion Nexus GitHub content
+TheFrenchDodo
+thefrenchdodo on Discord Creative Differences - Rodney: a new NPC for East Scarp, Sakura Interface Redux, Horse to Ostrich Nexus content pixels
+TheLimeyDragon
+thelimeydragon on Discord Ayeisha - The Postal Worker (Custom NPC) Nexus content
+TheMadCharles
+h3ocharles on Discord Charles' Colored Cursors, I'm a Hoodie Guy Myself Nexus GitHub pixels
+Thylak
+thylak on Discord Adoptable Joltik Nexus u/ThylakJoy content pixels
+tiakall
+tiakall on Discord Jorts and Jean, the Helper Cats, Realistic Writer Elliott, Host Trees Nexus GitHub content
+Tlitookilakin
+tlitookilakin on Discord Wren's Expanded Greenhouse, Saltcliff Farm, Warp Network Nexus content SMAPI
+toe
+toe#2186 on Discord No More Cat Nexus pixels
+Tondorian
+tondorian on Discord Extended Bus System Chucklefish GitHub SMAPI
+Toni Meloni
+crazy_melon on Discord More Custom Gems and Minerals (Unofficial 1.6 Conversion) Nexus content
+Trent XV
+twistedfreitas on Discord More New Fish, The Perks of Being Married, Fish Breeding Tank Nexus GitHub content pixels
+TwinBuilderOne
+twinbuilderone on Discord More Bundles Nexus GitHub SMAPI content
+Tyler
+tylergibbs on Discord Default Farmer, Stardew Nametags, Battle Royalley - Year 2 Nexus GitHub SMAPI
+Tyrell
+theresagaumond on Discord Pudding Plus Nexus GitHub u/Jixianite SMAPI
+Unicornkitty
+Unicornkitty on Discord Planet Stardrop - Gym Nexus content
+v4vincenzo
+v4vin on Discord Penny Teal hair Pink shirt Recolour Portrait and Character, Siren Head Mod Nexus content pixels
+vadie
+vadie on Discord Nicer Extra Dialogue, BFAV Dragons, BFAV Squirrels Nexus content pixels
+vaindil
+vaindil on Discord MoodFix Nexus GitHub SMAPI
+VENN
+VENN on Discord Giant Crop Furniture (CP) Nexus pixels content
+Vibrant
+Vibrant on Discord Stardew and Chill, MinecartPatcher Nexus GitHub u/viberrant SMAPI
+Vinilla
+vinillavin on Discord Lavender Dreams UI Recolor, Beatles Furniture, Cryptids of Stardew Valley Nexus GitHub pixels content
+Vionai
+vionai on Discord Modest Creative Warehouse Shed, Asunai's Content Pack Nexus content pixels
+VoidWitchCult
+voidwitchcult on Discord The Fishmonger - Custom NPC, Chocobo Ostrich (CP and AT), Void's weird Wonders - Bachelor(ette)s as Goths Nexus GitHub pixels content
+voltaek
+voltaek on Discord Honey Harvest Sync Nexus GitHub SMAPI tools
+Volusa
+Volusa on Discord The Gardens of Athribis, Gingerbears (JA) Nexus u/Volendi content
+VulgaryEgg
+vulgaryegg on Discord Splatoon Fairy Retexture Nexus pixel
+Wabi
+tabbyabi on Discord Fairy Garden Decorations, Sweetheart Furniture Set, Rosy Cottage Nexus pixels
+WakyWaik
+wakywaik on Discord Trainer Hat Nexus pixels
+WatchfulTigerlily
+.lils_ on Discord Herbert - Custom NPC Nexus content pixels
+WidowStar
+widowstar on Discord Forever Winter, Stick Figure Lamps Nexus content pixels
+Wildflourmods
+wildflourmods on Discord Cuter Crops and Foraging, Pixie Fruit Trees, Stardrop Brewing Co Nexus content pixels
+Willow
+tittysprinkles. on Discord Blue Iridium, Better Void Chicken, Artifact Digspot Variations Nexus pixels
+Wingheart/Wingyl
+traehgniw on Discord Quality Artisan Products Nexus content
+WitchWeed
+sour_creamier on Discord Canon Friendly Dialogue, Queerify SDV Nexus content
+Wizadroid
+wizadroid on Discord Craftable Qi Seasoning, Stray Catfe Seasonal Outfits, Crops for Ridgeside Forageables Nexus content pixels
+WoollySheep/Fluff
+woolly.sheep on Discord More Glass Buildable (SF), Modern transparent glass OLED TVs (AT), Curved tanks (CP)(AT) Nexus content pixels
+Wren/raignOWO
+teenacidic on Discord Revamped Dialogues for Alex, Wren's Revamped Cellar Nexus content
+Wumbuzz
+lostmyari on Discord Flirtier Alex Dialogue Overhaul Nexus SMAPI
+xChesirex
+xchesirex on Discord Ace's and Lumisteria's Hairstyles Bundle Nexus GitHub u/_PandorasBox_ content
+xiaoleiwen
+xiaoleiwen on Discord Cinematic Reshade - for Vibrant Pastoral Recolor (VPR) Nexus u/xiaoleiwen reshade
+XxHarvzBackxX
+xxharvzbackxx on Discord Dave the Miner, Crusty Valley, Downtown Zuzu Nexus GitHub u/XxHarvzBackxX content pixels SMAPI
+Xytronix
+xytronix on Discord Fishing Valley Github GitHub content
+YaramyGD
+yaramy on Discord Stardew Bakery, Note Blocks Nexus GitHub u/YaramyGD SMAPI content pixels
+Yariazen
+yariazen on Discord Buildable Greenhouse Updated Nexus GitHub u/Yariazen SMAPI
+Ylgnik
+ylgnik on Discord The Corrupted Garden Nexus Content
+ZarKiiFreeman
+zarkiifreeman on Discord ZarKiiFreeman's Floor Warps, ZarKii's Ruined Farmhouse, Pufferchick Replacement for Pets Nexus u/ZarKiiFreeman content pixels
+Zelda
+hylianprincess on Discord Just Add Whip Nexus content pixels
+Zoe
+cozy.with.zoe on Discord Clothesline Inside Nexus Content
+Zoe
+zoe.txt on Discord Elliott Dialogue Expansion (CP) Nexus Content
+Person
+pondduck on Discord Krobus Knows All, More Secret Notes, Shop In The Woods Nexus GitHub Content
+Category: Modding

@@ -1,0 +1,114 @@
+Jump to navigation
+Jump to search
+← Index
+This page explains how the files associated with the Movie Theater, what each of them do, and how they are formatted. This is an advanced guide for mod developers.
+Contents
+1 Movie data
+1.1 Format
+1.1.1 Scenes
+2 Movie reactions
+2.1 Format
+2.1.1 Special responses
+3 Concession data
+3.1 Format
+4 Concession tastes
+4.1 Format
+Movie data
+Data\Movies.xnb contains the data for all movies, including their names, descriptions, genre tags, scenes, and dialogue and narration spoken within the film. For reference, below is the raw data of "The Brave Little Sapling":
+Expand
+Data 
+Format
+Each movie's specific entry begins with an identifier of the form <season>_movie_<number>, where <season> is the season in which it will be screened, and <number> is either 0 or 1. The movie theater will alternate between screening the #0 movie and #1 movie in the given season each year.
+The main block of movie data contains the following:
+key format description
+ID Always null. Purpose unknown.
+SheetIndex Determines where the game looks for the movie's scene sprites within LooseSprites\Movies.xnb.
+Title The title of the film.
+Description The description of the film, seen when interacting with its poster outside of the theater.
+Tags A list of genres that apply to the movie, used to calculate an NPC's reaction to a movie. Can be any arbitrary string; the ones currently used in the game are: family, comedy, horror, art, action, sci-fi, classic, romance, and documentary.
+Scenes A list of data blocks for the film's scenes. (See below.)
+Scenes
+The Scenes is a list of blocks, each corresponding to a specific scene in the movie. The blocks are listed in chronological order, and the data of each one is as follows:
+key format description
+Image Which image to show within the sequence of the movie's sprites in LooseSprites\Movies.xnb.
+Music The music track to play during the scene. Can be left blank.
+Sound The sound effect to play during the scene. Can be left blank.
+MessageDelay How long to hold the scene before displaying any text.
+Script Used for special visual/auditory effects. Written in the same format as Modding:Event_data#Event_scripts.
+Text The dialogue/narration of the scene.
+Shake A boolean value which, if true, adds screen-shake.
+ResponsePoint If specified, an NPC's reaction data can reference the scene by this name in order to have a specific, timed reaction to it.
+ID An ID for the scene in the format of <season><number>_<index>. <season> and <number> are identical to those values in the ID of the movie itself. <index> is, counting from 0, what number scene this is in the movie.
+Movie reactions
+Data\MoviesReactions.xnb contains every NPC's taste in movies and their dialogue in response to them. For reference, below is the raw data for Penny's reactions:
+Expand
+Data 
+Format
+Each block of data within the file begins with an NPCName key, which is the name of the NPC to whom the rest of the data in the block will apply. This is followed by a list with the key Reactions. Each block within this list is the data for an NPC's response to a specific type of movie.
+The data within each block is formatted as follows:
+key format description
+Tag Which category of movie this response is for. In decreasing order of specificity, this can be:
+*, in which case the response will always be applicable, unless there are other restrictions applied by Whitelist
+a genre of movie, as listed in the Tags field of a film's data
+the NPC's reaction to a movie, one of love, like, or dislike. Can be prefixed with seen_, in which case the reaction will only apply if the NPC has seen the film before.
+a specific movie's identifier, as listed at the header of its block. (i.e. spring_movie_0 for "The Brave Little Sapling")
+Response One of love, like, or dislike. Used to calculate Friendship points gained with the NPC. A loved movie earns 200 Friendship points with the NPC, a liked movie earns 100 Friendship points, and a disliked movie neither earns nor costs friendship points with the NPC.
+Whitelist A list of NPC names. If not empty, the response will only be applicable if, in addition to the movie matching Tag, one of the listed NPCs is also present within the theater. Currently only used for Penny, who has a special reaction to watching a movie if her mother Pam is present.
+SpecialResponses Contains the dialogue spoken by an NPC during the film in a series of blocks. (See below.) Can be left null.
+ID A unique identifier in the form of reaction_<index>, where <index> is, counting from 0, what number block this is within the Reactions list.
+For unknown reasons, in the vanilla game code, when the Tag field is love or dislike, the Responsefield will always be like.
+Special responses
+Each SpecialResponses block contains 3 blocks, beginning with BeforeMovie, DuringMovie, and AfterMovie, in that order. Any of these blocks may be left null. By default, the dialogue within these blocks triggers when talking to the NPC in the movie theater lobby, at a random point during the movie, and after the movie is finished, respectively. The data within each block is as follows:
+key format description
+ResponsePoint If not null, this dialogue will trigger at the given response point instead of its regular timing. See Modding:Movie_theater_data#Scenes for an explanation of response points.
+Script A script which runs prior to Text being displayed. Written in the same format as Modding:Event_data#Event_scripts.
+Text The dialogue spoken by the NPC.
+If multiple response blocks are applicable to the movie, the game uses the first non-null Response, BeforeMovie, DuringMovie, and AfterMovie fields it can find. Said data does not necessarily have to come from the same response block. If the game cannot find applicable DuringMovie dialogue, it will use default text from Strings\Characters.xnb. If the game cannot find applicable BeforeMovie or AfterMovie dialogue, the NPC will show as being able to be spoken to, but interacting with them will have no effect.
+Concession data
+Data\Concessions.xnb contains the data for the food purchased at the concessions stand, stored as a list of blocks. For reference, below is the raw data of the file:
+Expand
+Data 
+Format
+Each block within the list corresponds to a single concession. The data for each block is as follows:
+key format description
+ID A unique string ID to identify this entry.
+Name The internal name of the concession.
+DisplayName The name of the concession which is displayed to the player in-game.
+Description The description of the concession.
+Price The price of the concession in g.
+ItemTags A list of tags which describe the concession, used to determine an NPC's reaction to it. Can be any arbitrary string; the ones currently used in the game are: Sweet, Candy, Drink, Hot, Healthy, Cold, Joja, Sour, Fatty, Salty, Sandwich, Burger, and Gourmet.
+Texture The asset name for the texture containing the concession's sprite.
+SpriteIndex The index within the Texture for the concession sprite, where 0 is the top-left sprite.
+For example, this content pack adds a new 'Pufferchick Pop' concession with a custom image:
+{
+    "Format": "2.5.0",
+    "Changes": [
+        {
+            "Action": "EditData",
+            "Target": "Data/Concessions",
+            "Entries": {
+                "{{ModId}}_PufferchickPop": {
+                    "Id": "{{ModId}}_PufferchickPop",   // must specify ID again when creating a new entry
+                    "Name": "{{ModId}}_PufferchickPop", // best practice to match the ID, since it's sometimes used as an alternate ID
+                    "DisplayName": "Pufferchick Pop",
+                    "Description": "A cute cake pop shaped like a pufferchick.",
+                    "Price": 25,
+                    "Texture": "{{InternalAssetKey: assets/pufferchick-pop.png}}" // an image in your content pack
+                    "SpriteIndex": 0
+                }
+            }
+        }
+    ]
+}
+Concession tastes
+Data\ConcessionTastes.xnb contains the data that determines an NPC's opinion of a concession. For reference, below is the raw data of the file:
+Expand
+Data 
+Format
+Each block within the list has the following data:
+key format description
+Name Who this block should apply to. Can be the name of an NPC or *, in which case the tastes will apply to every NPC.
+LovedTags
+LikedTags
+DislikedTags A list of concession tags that are loved, liked, or disliked. This can be an ItemTag, or the internal name of a specific concession. To determine an NPC's opinion of a concession, the game totals how many tags from each group apply, with LovedTags and LikedTags contributing a positive score and DislikedTags contributing a negative. Purchasing a loved snack earns 50 Friendship points with the NPC, a liked snack earns 25 Friendship points, and a disliked snack neither earns nor costs friendship points with the NPC.
+Category: Modding

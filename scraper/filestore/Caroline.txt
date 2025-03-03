@@ -1,0 +1,203 @@
+Jump to navigation
+Jump to search
+Caroline
+Information
+Birthday  Winter 7
+Lives In Pelican Town
+Address Pierre's General Store
+Family
+Pierre (Husband)
+Abigail (Daughter)
+Marriage No
+Clinic Visit  Fall 25
+Loved Gifts
+Fish Taco
+Green Tea
+Summer Spangle
+Tropical Curry
+Contents
+1 Schedule
+2 Relationships
+3 Gifts
+3.1 Love
+3.2 Like
+3.3 Neutral
+3.4 Dislike
+3.5 Hate
+4 Movies & Concessions
+5 Heart Events
+5.1 Anytime
+5.2 Two Hearts
+5.3 Three Hearts
+5.4 Six Hearts
+5.5 Seven Hearts
+6 Quotes
+7 Quests
+8 Portraits
+9 Trivia
+10 Bugs
+11 History
+“ “My husband runs the general store here. And have you met my daughter, Abigail? She's the pale one with the purple hair.”
+— Caroline
+Caroline is a villager who lives in Pelican Town.
+Schedule
+After the Beach Resort on Ginger Island is unlocked, Caroline may randomly spend the day there. After leaving the Island at 6pm, Caroline will immediately go home to bed. Caroline never visits the Resort on Festival days or her checkup day at Harvey's Clinic.
+Shown below is Caroline's schedule, prioritized from the top down. For example, if it is raining, that schedule overrides all schedules below it.
+Spring 15 (Bus Service Restored)
+Desert Festival (As Vendor)
+Fall 25
+Winter 16
+Green Rain (Year 1)
+Rain
+Tuesday
+Wednesday
+Friday
+Saturday (Community Center Restored)
+Sunday
+Regular Schedule
+Relationships
+Caroline is married to Pierre and they live with their daughter Abigail in Pierre's General Store.
+Jodi mentions that Caroline is her best friend, and that she is able to tell her anything. The two also attend aerobics class on Tuesdays along with Marnie, Emily and Robin.
+Gifts
+Main article: Friendship
+See also: List of All Gifts
+You can give Caroline up to two gifts per week (plus one on her birthday), which will raise or lower her friendship with you. Gifts on her birthday ( 7 Winter) will have 8× effect and show a unique dialogue.
+For loved, liked, or neutral gifts, Caroline responds
+“ “Thanks, sweetie. That's very kind of you to remember my birthday.”
+For disliked or hated gifts, Caroline responds
+“ “Oh... is that... a birthday gift? I see... well, thanks for stopping by.”
+Love
+“ “Oh, (Name)... you're spoiling me! I love it!”
+Stardrop Tea
+“ “Ooohh... this is nice. I'll save it for a quiet day in the sunroom.”
+Image Name Description Source Ingredients
+All Universal Loves
+Fish Taco It smells delicious. Cooking
+Tuna (1)
+Tortilla (1)
+Red Cabbage (1)
+Mayonnaise (1)
+Green Tea A pleasant, energizing beverage made from lightly processed tea leaves. Keg
+Tea Leaves (1)
+Summer Spangle A tropical bloom that thrives in the humid summer air. Has a sweet, tangy aroma. Farming - Summer
+Tropical Curry An exotic, fragrant curry served in a pineapple bowl. Cooking
+Coconut (1)
+Pineapple (1)
+Hot Pepper (1)
+Like
+“ “For me? This is such a thoughtful gift! Thank you!”
+Wild Horseradish
+“ “Oh, you've been foraging! Thank you!
+I'll make a spicy cocktail sauce with this. That'll put some hair on Pierre's chest.”
+Image Name Description Source
+All Universal Likes (except Amaranth, Duck Mayonnaise, & Mayonnaise)
+Daffodil A traditional spring flower that makes a nice gift. Foraging - Spring
+Tea Leaves The young leaves of the tea plant. Can be brewed into the popular, energizing beverage. Tea Bush
+Wild Horseradish A spicy root found in the spring. Foraging - Spring
+Neutral
+“ “Oh, that's sweet. Thank you.”
+Image Name Description Source
+All Universal Neutrals (except Tea Leaves)
+All Eggs (except Void Egg)*
+All Fruit (except pre-1.5 Fruit Tree Fruit & Salmonberry)
+All Milk
+*Note that Dinosaur Eggs are considered Artifacts and not Eggs for gifting purposes.
+Dislike
+“ “Oh... I see. I'll, uh... make sure to put it to good use...”
+Image Name Description Source
+All Universal Dislikes
+Amaranth A purple grain cultivated by an ancient civilization. Farming - Fall
+Chanterelle A tasty mushroom with a fruity smell and slightly peppery flavor. Foraging - Fall
+Common Mushroom Slightly nutty, with good texture. Foraging - Fall
+Dandelion Not the prettiest flower, but the leaves make a good salad. Foraging - Spring
+Duck Mayonnaise It's a rich, yellow mayonnaise. Mayonnaise Machine
+Ginger This sharp, spicy root is said to increase vitality. Foraging - Ginger Island
+Hazelnut That's one big hazelnut! Foraging - Fall
+Holly The leaves and bright red berries make a popular winter decoration. Foraging - Winter
+Leek A tasty relative of the onion. Foraging - Spring
+Magma Cap A very rare mushroom that lives next to pools of lava. Foraging - Volcano Dungeon
+Mayonnaise It looks spreadable. Mayonnaise Machine
+Morel Sought after for its unique nutty flavor. Foraging - Spring
+Purple Mushroom A rare mushroom found deep in caves. Foraging - The Mines
+Snow Yam This little yam was hiding beneath the snow. Foraging - Winter
+Winter Root A starchy tuber. Foraging - Winter
+Hate
+“ “Um... I guess I could use it for compost...”
+Image Name Description Source
+All Universal Hates
+Quartz A clear crystal commonly found in caves and mines. Foraging - The Mines
+Salmonberry A spring-time berry with the flavor of the forest. Foraging - Spring
+Movies & Concessions
+Main article: Movie Theater
+Love
+Journey Of The Prairie King: The Motion Picture
+The Brave Little Sapling
+Like
+It Howls In The Rain
+Mysterium
+Natural Wonders: Exploring Our Vibrant World
+The Miracle At Coldstar Ranch
+The Zuzu City Express
+Dislike
+Wumbus
+Love
+Jasmine Tea
+Stardrop Sorbet
+Truffle Popcorn
+Dislike
+Black Licorice
+Cotton Candy
+Fries
+Jawbreaker
+Joja Cola
+JojaCorn
+Nachos
+Personal Pizza
+Rock Candy
+Sour Slimes
+Like
+Everything else
+Heart Events
+Anytime
+At any friendship level greater than zero friendship points, you may receive a gift in the mail from Caroline. The chance of receiving a gift in the mail increases as your friendship with Caroline increases.
+Details 
+Two Hearts
+Enter the sunroom via the door in Caroline's kitchen between 9am and 5pm on a day when it's not raining.
+Details 
+Three Hearts
+Caroline sends you a recipe in the mail.
+Details 
+Six Hearts
+Enter Pierre's General Store when Caroline and Abigail are there.
+Details 
+Seven Hearts
+Caroline sends you a recipe in the mail.
+Details 
+Quotes
+Regular 
+Events 
+
+Quests
+"Carving Pumpkins": Caroline will send you a letter on the 19th of Fall requesting a Pumpkin. The reward is 500g and 1 Friendship heart.
+Caroline may randomly request an item at the "Help Wanted" board outside Pierre's General Store. The reward is 3x the item's base value and 150 Friendship points.
+"Island Ingredients": On the Special Orders board in front of the Mayor's Manor, Caroline may randomly request that the player grow and ship 100 Ginger, Pineapple, or Taro Root. The reward is gold equivalent to 50% of the crop's base sell price and the Solar Panel recipe. This special order requires Ginger Island to be unlocked.
+Portraits
+Trivia
+Caroline will send you a recipe for Parsnip Soup, which is ironically one of her husband's hated gifts.
+Despite disliking Mayonnaise, Fish Taco is a loved gift.
+Caroline will sometimes say "It's a fine-looking day." followed by "On days like these I like to help Evelyn with the public gardens", regardless of the weather.
+She is never seen actually helping Evelyn with the gardens, no matter what the weather.
+If Caroline's 2-heart event is triggered during the last week of Spring, Summer, or Fall, the player collects one Tea Leaves from the Tea Bush when Caroline harvests it.
+Caroline will compliment Jodi in the aerobics meet-up, even if Jodi is gone visiting the Beach Resort on Ginger Island.
+Bugs
+In Summer, Caroline will sometimes say "On Wednesdays the shop is closed. Keep that in mind if you're going to need anything.", even when the Community Center is complete and Pierre's General Store is open 7 days a week.
+History
+1.4: Added 2-heart event. Added Green Tea as a loved item and Tea Leaves as liked item. Fixed bug where all recipes would be sent at 3 hearts of friendship.
+1.5: Added beach portraits.
+1.6: Gift dialogue changed. Added custom gift reactions. Now likes Wild Horseradish. Added winter portraits.
+Villagers
+Bachelors Alex • Elliott • Harvey • Sam • Sebastian • Shane
+Bachelorettes Abigail • Emily • Haley • Leah • Maru • Penny
+Townspeople Caroline • Clint • Demetrius • Evelyn • George • Gil • Gunther • Gus • Jas • Jodi • Kent • Lewis • Linus • Marlon • Marnie • Morris • Pam • Pierre • Robin • Vincent • Willy
+Other Birdie • Bouncer • Dwarf • Fizz • Governor • Grandpa • Henchman • Junimos • Krobus • Leo • Mr. Qi • Old Mariner • Professor Snail • Sandy • Wizard
+Category: NPCs

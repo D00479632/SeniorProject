@@ -1,0 +1,455 @@
+Jump to navigation
+Jump to search
+No Profession Tiller Artisan
+This page lists the productivity of processing Fruits, Vegetables, Coffee Beans, and Honey into Artisan Goods in a Keg.
+The products produced usually sell for more than the raw input items, so using a Keg is almost always profitable. Items that lose gold are highlighted in red, and items whose net increase in value is zero are highlighted in orange. The profit made from processing items is lowest when using iridium quality and highest when using regular quality items. Beer, Mead, Pale Ale, and Wine can be aged in a Cask to further increase their profit. The table below shows profit for regular quality processed items only.
+This table shows the profitability of processing items when the player has chosen the Tiller Profession (but not the Artisan Profession). To view the profitability for no profession or the Artisan Profession, use the links at the top of the page.
+Note that the processing times for a Keg vary, depending on the item used.
+Beer = 1,750 minutes
+Coffee = 120 minutes
+Green Tea = 180 minutes
+Juice = 6,000 minutes
+Mead = 600 minutes
+Pale Ale = 2,250 minutes
+Wine = 10,000 minutes
+For items that take less than a day to process (e.g., Coffee), the table calculates maximum profit assuming the player continually harvests and refills the keg during a 1600 minute day. [1]
+Productivity (g/minute) = ([Processed Sell Price] - [Input Item Sell Price]) / Processing Time
+Approximate g/day = Productivity (g/minute) * 1600 [1]
+
+Note that you may click on a column header to sort the table by that column, then Shift+Click on a second column to perform a secondary sort.
+Input Item Quality Input Item Sell Price Processed Sell Price
+(Regular Quality) Increase in Value (g) Productivity (g/minute) Approximate g/day [1]
+Amaranth
+Regular 165 337 172 0.029 46
+Amaranth
+Silver 205 337 132 0.022 35
+Amaranth
+Gold 247 337 90 0.015 24
+Amaranth
+Iridium 330 337 7 0.001 2
+Ancient Fruit
+Regular 605 1650 1045 0.105 168
+Ancient Fruit
+Silver 755 1650 895 0.090 144
+Ancient Fruit
+Gold 907 1650 743 0.074 118
+Ancient Fruit
+Iridium 1210 1650 440 0.044 70
+Apple
+Regular 110 300 190 0.019 30
+Apple
+Silver 137 300 163 0.016 26
+Apple
+Gold 165 300 135 0.014 22
+Apple
+Iridium 220 300 80 0.008 13
+Apricot
+Regular 55 150 95 0.010 16
+Apricot
+Silver 68 150 82 0.008 13
+Apricot
+Gold 82 150 68 0.007 11
+Apricot
+Iridium 110 150 40 0.004 6
+Artichoke
+Regular 176 360 184 0.031 50
+Artichoke
+Silver 220 360 140 0.023 37
+Artichoke
+Gold 264 360 96 0.016 26
+Artichoke
+Iridium 352 360 8 0.001 2
+Banana
+Regular 165 450 285 0.029 46
+Banana
+Silver 205 450 245 0.025 40
+Banana
+Gold 247 450 203 0.020 32
+Banana
+Iridium 330 450 120 0.012 19
+Beet
+Regular 110 225 115 0.019 30
+Beet
+Silver 137 225 88 0.015 24
+Beet
+Gold 165 225 60 0.010 16
+Beet
+Iridium 220 225 5 0.001 2
+Blackberry [2] Regular 20 60 40 0.004 6
+Blackberry [2] Silver 25 60 35 0.004 6
+Blackberry [2] Gold 30 60 30 0.003 5
+Blackberry [2] Iridium 40 60 20 0.002 3
+Blackberry
+Regular 22 60 38 0.004 6
+Blackberry
+Iridium 44 60 16 0.002 3
+Blackberry [2] with
+Bear's Knowledge
+Regular 60 60 0 0 0
+Blackberry [2] with
+Bear's Knowledge
+Silver 75 60 -15 -0.002 -3
+Blackberry [2] with
+Bear's Knowledge
+Gold 90 60 -30 -0.003 -5
+Blackberry [2] with
+Bear's Knowledge
+Iridium 120 60 -60 -0.006 -10
+Blackberry with
+Bear's Knowledge
+Regular 66 60 -6 -0.001 -2
+Blackberry with
+Bear's Knowledge
+Iridium 132 60 -72 -0.007 -11
+Blueberry
+Regular 55 150 95 0.010 16
+Blueberry
+Silver 68 150 82 0.008 13
+Blueberry
+Gold 82 150 68 0.007 11
+Blueberry
+Iridium 110 150 40 0.004 6
+Bok Choy
+Regular 88 180 92 0.015 24
+Bok Choy
+Silver 110 180 70 0.012 19
+Bok Choy
+Gold 132 180 48 0.008 13
+Bok Choy
+Iridium 176 180 4 0.001 2
+Cactus Fruit [2] Regular 75 225 150 0.015 24
+Cactus Fruit [2] Silver 93 225 132 0.013 21
+Cactus Fruit [2] Gold 112 225 113 0.011 18
+Cactus Fruit [2] Iridium 150 225 75 0.008 13
+Cactus Fruit
+Regular 82 225 143 0.014 22
+Cactus Fruit
+Silver 102 225 123 0.012 19
+Cactus Fruit
+Gold 123 225 102 0.010 16
+Cactus Fruit
+Iridium 165 225 60 0.006 10
+Carrot
+Regular 38 78 40 0.007 11
+Carrot
+Silver 47 78 31 0.005 8
+Carrot
+Gold 57 78 21 0.004 6
+Carrot
+Iridium 77 78 1 0 0
+Cauliflower
+Regular 192 393 201 0.034 54
+Cauliflower
+Silver 239 393 154 0.026 42
+Cauliflower
+Gold 288 393 105 0.018 29
+Cauliflower
+Iridium 385 393 8 0.001 2
+Cherry
+Regular 88 240 152 0.015 24
+Cherry
+Silver 110 240 130 0.013 21
+Cherry
+Gold 132 240 108 0.011 18
+Cherry
+Iridium 176 240 64 0.006 10
+Coconut [2] Regular 100 300 200 0.020 32
+Coconut [2] Silver 125 300 175 0.018 29
+Coconut [2] Gold 150 300 150 0.015 24
+Coconut [2] Iridium 200 300 100 0.010 16
+Coffee Bean[3] Regular 75 [4] 150 75 0.625 1000
+Coffee Bean[3] Silver 90 [4] 150 60 0.500 800
+Coffee Bean[3] Gold 110 [4] 150 40 0.333 533
+Coffee Bean[3] Iridium 150 [4] 150 0 0 0
+Corn
+Regular 55 112 57 0.010 16
+Corn
+Silver 68 112 44 0.007 11
+Corn
+Gold 82 112 30 0.005 8
+Corn
+Iridium 110 112 2 0 0
+Cranberries
+Regular 82 225 143 0.014 22
+Cranberries
+Silver 102 225 123 0.012 19
+Cranberries
+Gold 123 225 102 0.010 16
+Cranberries
+Iridium 165 225 60 0.006 10
+Crystal Fruit [2] Regular 150 450 300 0.030 48
+Crystal Fruit [2] Silver 187 450 263 0.026 42
+Crystal Fruit [2] Gold 225 450 225 0.023 37
+Crystal Fruit [2] Iridium 300 450 150 0.015 24
+Eggplant
+Regular 66 135 69 0.012 19
+Eggplant
+Silver 82 135 53 0.009 14
+Eggplant
+Gold 99 135 36 0.006 10
+Eggplant
+Iridium 132 135 3 0.001 2
+Fiddlehead Fern
+Regular 99 202 103 0.017 27
+Fiddlehead Fern
+Silver 123 202 79 0.013 21
+Fiddlehead Fern
+Gold 148 202 54 0.009 14
+Fiddlehead Fern
+Iridium 198 202 4 0.001 2
+Garlic
+Regular 66 135 69 0.012 19
+Garlic
+Silver 82 135 53 0.009 14
+Garlic
+Gold 99 135 36 0.006 10
+Garlic
+Iridium 132 135 3 0.001 2
+Grape [2] Regular 80 240 160 0.016 26
+Grape [2] Silver 100 240 140 0.014 22
+Grape [2] Gold 120 240 120 0.012 19
+Grape [2] Iridium 160 240 80 0.008 13
+Grape
+Regular 88 240 152 0.015 24
+Grape
+Silver 110 240 130 0.013 21
+Grape
+Gold 132 240 108 0.011 18
+Grape
+Iridium 176 240 64 0.006 10
+Green Bean
+Regular 44 90 46 0.008 13
+Green Bean
+Silver 55 90 35 0.006 10
+Green Bean
+Gold 66 90 24 0.004 6
+Green Bean
+Iridium 88 90 2 0 0
+Honey - Blue Jazz [3] Regular 200 300 100 0.167 267
+Honey - Fairy Rose [3] Regular 680 300 -380 -0.633 -1013
+Honey - Poppy [3] Regular 380 300 -80 -0.133 -213
+Honey - Summer Spangle [3] Regular 280 300 20 0.033 53
+Honey - Sunflower [3] Regular 260 300 40 0.067 106
+Honey - Tulip [3] Regular 160 300 140 0.233 373
+Honey - Wild [3] Regular 100 300 200 0.333 533
+Hops
+Regular 27 300 273 0.121 194
+Hops
+Silver 34 300 266 0.118 189
+Hops
+Gold 40 300 260 0.116 186
+Hops
+Iridium 55 300 245 0.109 174
+Hot Pepper
+Regular 44 120 76 0.008 13
+Hot Pepper
+Silver 55 120 65 0.007 11
+Hot Pepper
+Gold 66 120 54 0.005 8
+Hot Pepper
+Iridium 88 120 32 0.003 5
+Kale
+Regular 121 247 126 0.021 34
+Kale
+Silver 150 247 97 0.016 26
+Kale
+Gold 181 247 66 0.011 18
+Kale
+Iridium 242 247 5 0.001 2
+Mango
+Regular 143 390 247 0.025 40
+Mango
+Silver 178 390 212 0.021 34
+Mango
+Gold 214 390 176 0.018 29
+Mango
+Iridium 286 390 104 0.010 16
+Melon
+Regular 275 750 475 0.048 77
+Melon
+Silver 343 750 407 0.041 66
+Melon
+Gold 412 750 338 0.034 54
+Melon
+Iridium 550 750 200 0.020 32
+Orange
+Regular 110 300 190 0.019 30
+Orange
+Silver 137 300 163 0.016 26
+Orange
+Gold 165 300 135 0.014 22
+Orange
+Iridium 220 300 80 0.008 13
+Parsnip
+Regular 38 78 40 0.007 11
+Parsnip
+Silver 47 78 31 0.005 8
+Parsnip
+Gold 57 78 21 0.004 6
+Parsnip
+Iridium 77 78 1 0 0
+Peach
+Regular 154 420 266 0.027 43
+Peach
+Silver 192 420 228 0.023 37
+Peach
+Gold 231 420 189 0.019 30
+Peach
+Iridium 308 420 112 0.011 18
+Pineapple
+Regular 330 900 570 0.057 91
+Pineapple
+Silver 412 900 488 0.049 78
+Pineapple
+Gold 495 900 405 0.041 66
+Pineapple
+Iridium 660 900 240 0.024 38
+Pomegranate
+Regular 154 420 266 0.027 43
+Pomegranate
+Silver 192 420 228 0.023 37
+Pomegranate
+Gold 231 420 189 0.019 30
+Pomegranate
+Iridium 308 420 112 0.011 18
+Potato
+Regular 88 180 92 0.015 24
+Potato
+Silver 110 180 70 0.012 19
+Potato
+Gold 132 180 48 0.008 13
+Potato
+Iridium 176 180 4 0.001 2
+Pumpkin
+Regular 352 720 368 0.061 98
+Pumpkin
+Silver 440 720 280 0.047 75
+Pumpkin
+Gold 528 720 192 0.032 51
+Pumpkin
+Iridium 704 720 16 0.003 5
+Qi Fruit
+Regular 1 3 2 0 0
+Radish
+Regular 99 202 103 0.017 27
+Radish
+Silver 123 202 79 0.013 21
+Radish
+Gold 148 202 54 0.009 14
+Radish
+Iridium 198 202 4 0.001 2
+Red Cabbage
+Regular 286 585 299 0.050 80
+Red Cabbage
+Silver 357 585 228 0.038 61
+Red Cabbage
+Gold 429 585 156 0.026 42
+Red Cabbage
+Iridium 572 585 13 0.002 3
+Rhubarb
+Regular 242 660 418 0.042 67
+Rhubarb
+Silver 302 660 358 0.036 58
+Rhubarb
+Gold 363 660 297 0.030 48
+Rhubarb
+Iridium 484 660 176 0.018 29
+Salmonberry [2] Regular 5 15 10 0.001 2
+Salmonberry [2] Silver 6 15 9 0.001 2
+Salmonberry [2] Gold 7 15 8 0.001 2
+Salmonberry [2] Iridium 10 15 5 0.001 2
+Salmonberry
+Regular 5 15 10 0.001 2
+Salmonberry
+Iridium 11 15 4 0 0
+Salmonberry [2] with
+Bear's Knowledge
+Regular 15 15 0 0 0
+Salmonberry [2] with
+Bear's Knowledge
+Silver 18 15 -3 0 0
+Salmonberry [2] with
+Bear's Knowledge
+Gold 21 15 -6 -0.001 -2
+Salmonberry [2] with
+Bear's Knowledge
+Iridium 30 15 -15 -0.002 -3
+Salmonberry with
+Bear's Knowledge
+Regular 16 15 -1 0 0
+Salmonberry with
+Bear's Knowledge
+Iridium 33 15 -18 -0.002 -3
+Spice Berry [2] Regular 80 240 160 0.016 26
+Spice Berry [2] Silver 100 240 140 0.014 22
+Spice Berry [2] Gold 120 240 120 0.012 19
+Spice Berry [2] Iridium 160 240 80 0.008 13
+Starfruit
+Regular 825 2250 1425 0.143 229
+Starfruit
+Silver 1030 2250 1220 0.122 195
+Starfruit
+Gold 1237 2250 1013 0.101 162
+Starfruit
+Iridium 1650 2250 600 0.060 96
+Strawberry
+Regular 132 360 228 0.023 37
+Strawberry
+Silver 165 360 195 0.020 32
+Strawberry
+Gold 198 360 162 0.016 26
+Strawberry
+Iridium 264 360 96 0.010 16
+Taro Root
+Regular 110 225 115 0.019 30
+Taro Root
+Silver 137 225 88 0.015 24
+Taro Root
+Gold 165 225 60 0.010 16
+Taro Root
+Iridium 220 225 5 0.001 2
+Tea Leaves
+Regular 55 100 45 0.250 400
+Tomato
+Regular 66 135 69 0.012 19
+Tomato
+Silver 82 135 53 0.009 14
+Tomato
+Gold 99 135 36 0.006 10
+Tomato
+Iridium 132 135 3 0.001 2
+Unmilled Rice
+Regular 33 67 34 0.006 10
+Unmilled Rice
+Silver 40 67 27 0.005 8
+Unmilled Rice
+Gold 49 67 18 0.003 5
+Unmilled Rice
+Iridium 66 67 1 0 0
+Wheat
+Regular 27 200 173 0.099 158
+Wheat
+Silver 34 200 166 0.095 152
+Wheat
+Gold 40 200 160 0.091 146
+Wheat
+Iridium 55 200 145 0.083 133
+Wild Plum [2] Regular 80 240 160 0.016 26
+Wild Plum [2] Silver 100 240 140 0.014 22
+Wild Plum [2] Gold 120 240 120 0.012 19
+Wild Plum [2] Iridium 160 240 80 0.008 13
+Yam
+Regular 176 360 184 0.031 50
+Yam
+Silver 220 360 140 0.023 37
+Yam
+Gold 264 360 96 0.016 26
+Yam
+Iridium 352 360 8 0.001 2
+Notes
+Each day has 1600 minutes of processing time. From 2am to 6am, machines process at 100 minutes per hour. For the rest of the day, machines process at 60 minutes per hour.
+So, (4 × 100) + (20 × 60) = 1600 minutes of processing time per day.
+Foraged item that does not benefit from the Tiller Profession
+Does not benefit from the Tiller Profession
+Making coffee requires 5 beans
+Category: Artisan Goods

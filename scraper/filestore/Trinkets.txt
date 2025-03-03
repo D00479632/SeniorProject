@@ -1,0 +1,89 @@
+Jump to navigation
+Jump to search
+Trinkets are equippable clothing items. Each one of them gives the Player unique benefits. They can be found after Combat Mastery is claimed. Most trinkets can be dropped by monsters, found in crates and barrels in the Mines, Skull Cavern, and Quarry Mine, or obtained in Skull Cavern treasure rooms. The Magic Hair Gel is the exception, as it can only be purchased from Alex's shop in the Desert Festival.
+The player can obtain the same trinket multiple times. Trinkets do not stack. They can be sold at the Adventurer's Guild for 1,000g each.
+All Trinkets, with the exceptions of the Basilisk Paw and the Magic Hair Gel, can be re-forged on an Anvil. This randomizes their stats and costs 3 Iridium Bars per re-roll.
+Contents
+1 Trinket List
+2 Drop Chances
+2.1 Monsters
+2.2 Crates and Barrels
+3 Bugs
+4 References
+5 History
+Trinket List
+Image Name Re-Forged Stat Max Stat Description Source Sell Price
+Basilisk Paw N/A N/A You are immune to debuffs.
+Monster drops
+Crates and barrels
+Skull Cavern treasure rooms
+1,000g
+Fairy Box Level 5 Summons a level X fairy companion that heals you in combat situations.
+Monster drops
+Crates and barrels
+Skull Cavern treasure rooms
+1,000g
+Frog Egg Color N/A Summons a hungry frog companion.
+Monster drops
+Crates and barrels
+Skull Cavern treasure rooms
+1,000g
+Golden Spur Duration 10 Seconds Critical strikes give you a speed boost for X seconds.
+Monster drops
+Crates and barrels
+Skull Cavern treasure rooms
+1,000g
+Ice Rod Frequency;
+Duration 3 Seconds (min);
+4 Seconds Shoots an orb of ice every X seconds, freezing any enemies in its path for Y seconds.
+Monster drops
+Crates and barrels
+Skull Cavern treasure rooms
+1,000g
+Magic Hair Gel N/A N/A Your hair shimmers with all the colors of a prismatic shard.
+Purchased from Alex's shop during the Desert Festival
+1,000g
+Magic Quiver Type: (None), Perfect, Rapid, Heavy Varies by Type Shoots a magic arrow at nearby enemies every X seconds, dealing Y-Z damage.
+Monster drops
+Crates and barrels
+Skull Cavern treasure rooms
+1,000g
+Parrot Egg Level 4 Summons a level X parrot companion, who grants you a Y chance to find gold coins when slaying monsters.
+Monster drops
+Crates and barrels
+Skull Cavern treasure rooms
+1,000g
+Drop Chances
+All trinkets, other than the Magic Hair Gel, have a ≈0.63% chance to be found in a Skull Cavern treasure chest.[1] Calculations for the drop rates from monsters and containers are more complex and depend on several factors.[2]
+Monsters
+When slain, all monsters have a chance to drop a random trinket that is not the Magic Hair Gel. This is calculated as follows:
+chance = Min ( 0.4% + 0.001% × monster maxhealth + y, 2.5% ) + DailyLuck / 25.0 + LuckBuffs × 0.133% [3]
+The value of y in the formula depends on the monster killed:
+y = 0.2% if the monster is classified as a "Glider" (flying enemy) and its max health ≥ 150. This condition is applied to Iridium Bats, Bats (dangerous), Lava Bats (dangerous), Haunted Skulls, Haunted Skulls (dangerous), Cave Flies (dangerous), Carbon Ghosts, Putrid Ghosts, Squid Kids (dangerous), Bugs (dangerous), Armored Bugs (dangerous), Serpents, Royal Serpents, Magma Sprites, Magma Sparkers, Dwarvish Sentries, and Blue Squids.[4]
+y = -0.5% if the monster is classified as a "Leaper." This condition is only applied to Spiders.
+y = 0 for all other monsters.
+Note that the calculated chance for the first part of the formula ranges from 0.1% (Spider) to 1.65% (Royal Serpent with 18 tail segments), so forcing the maximum to be 2.5% has no effect.
+Trinkets are not directly added to a monster's drop pool; they are spawned separately. This means that the Burglar's Ring and Monster Compendium do not affect the chance for or number of trinkets dropped.
+Crates and Barrels
+Breakable containers in the Mines, Skull Cavern, and Quarry Mine have a chance to drop a random trinket that is not the Magic Hair Gel. This is calculated as follows:
+chance = ( 0.4% + DailyLuck / 25.0 + LuckBuffs × 0.133% ) × ( 1.0 + effectiveMineLevel * 0.001 ) × 0.8
+In the Mines, effectiveMineLevel = the level.
+In the Skull Cavern, effectiveMineLevel = level + 120.
+In the Quarry Mine, effectiveMineLevel = 5000.
+The difficulty levels of the Mines and Skull Cavern do not affect the drop rates from containers in each location.
+Bugs
+Although trinkets can be gifted, they do not appear in the Gift Log.
+References
+↑ See MineShaft::getTreasureRoomItem in the game code.
+↑ See Trinket::TrySpawnTrinket in the game code. Chances are determined in GameLocation::monsterDrop and BreakableContainer::releaseContents.
+↑ Base health and glider categorization can be found in Data\Monsters.xnb.
+↑ Ghosts are coded as gliders in Ghost.cs.
+History
+1.6: Introduced.
+Clothing
+Footwear Cinderclown Shoes • Combat Boots • Cowboy Boots • Crystal Shoes • Dark Boots • Dragonscale Boots • Emily's Magic Boots • Firewalker Boots • Genie Shoes • Leather Boots • Leprechaun Shoes • Mermaid Boots • Rubber Boots • Sneakers • Space Boots • Thermal Boots • Tundra Boots • Work Boots
+Hats ??? • Abigail's Bow • Arcane Hat • Archer's Cap • Beanie • Blobfish Mask • Blue Bonnet • Blue Bow • Blue Cowboy Hat • Blue Ribbon • Bluebird Mask • Bowler Hat • Bridal Veil • Bucket Hat • Butterfly Bow • Cat Ears • Chef Hat • Chicken Mask • Cone Hat • Cool Cap • Copper Pan (hat) • Cowboy Hat • Cowgal Hat • Cowpoke Hat • Daisy • Dark Ballcap • Dark Cowboy Hat • Dark Velvet Bow • Delicate Bow • Deluxe Cowboy Hat • Deluxe Pirate Hat • Dinosaur Hat • Earmuffs • Elegant Turban • Emily's Magic Hat • Eye Patch • Fashion Hat • Fedora • Fishing Hat • Flat Topped Hat • Floppy Beanie • Forager's Hat • Frog Hat • Garbage Hat • Gil's Hat • Gnome's Cap • Goblin Mask • Goggles • Gold Pan (hat) • Golden Helmet • Golden Mask • Good Ol' Cap • Governor's Hat • Green Turban • Hair Bone • Hard Hat • Hunter's Cap • Infinity Crown • Iridium Pan (hat) • Jester Hat • Joja Cap • Junimo Hat • Knight's Helmet • Laurel Wreath Crown • Leprechaun Hat • Living Hat • Logo Cap • Lucky Bow • Magic Cowboy Hat • Magic Turban • Mouse Ears • Mr. Qi's Hat • Mummy Mask • Mushroom Cap • Mystery Hat • Official Cap • Pageboy Cap • Panda Hat • Paper Hat • Party Hat (blue • green • red) • Pink Bow • Pirate Hat • Plum Chapeau • Polka Bow • Propeller Hat • Pumpkin Mask • Qi Mask • Raccoon Hat • Radioactive Goggles • Red Cowboy Hat • Red Fez • Sailor's Cap • Santa Hat • Skeleton Mask • Small Cap • Sombrero • Sou'wester • Space Helmet • Sports Cap • Spotted Headscarf • Squid Hat • Squire's Helmet • Star Helmet • Steel Pan (hat) • Straw Hat • Sunglasses • Swashbuckler Hat • Tiara • Tiger Hat • Top Hat • Totem Mask • Tricorn Hat • Tropiclip • Trucker Hat • Warrior Helmet • Watermelon Band • Wearable Dwarf Helm • White Bow • White Turban • Witch Hat
+Rings Amethyst Ring • Aquamarine Ring • Burglar's Ring • Crabshell Ring • Emerald Ring • Glow Ring • Glowstone Ring • Hot Java Ring • Immunity Band • Iridium Band • Jade Ring • Jukebox Ring • Lucky Ring • Magnet Ring • Napalm Ring • Phoenix Ring • Protection Ring • Ring of Yoba • Ruby Ring • Savage Ring • Slime Charmer Ring • Small Glow Ring • Small Magnet Ring • Soul Sapper Ring • Sturdy Ring • Thorns Ring • Topaz Ring • Vampire Ring • Warrior Ring • Wedding Ring
+Trinkets Basilisk Paw • Fairy Box • Frog Egg • Golden Spur • Ice Rod • Magic Hair Gel • Magic Quiver • Parrot Egg
+Other Dyeing • Tailoring • Emily's Magic Shirt • Luau Skirt • Mystery Shirt • Tight Pants
+Category: Trinkets

@@ -1,0 +1,624 @@
+Jump to navigation
+Jump to search
+←Index
+This page is for mod authors. Players: see the mod compatibility list instead.
+This page explains how to update your mods for compatibility with Stardew Valley 1.5, and documents some of the changes and new functionality.
+Contents
+1 For SMAPI mods
+1.1 Split-screen mode
+1.2 Custom mod data
+1.3 UI scale changes
+1.4 Chest inventory
+1.5 Paint buildings
+1.6 Other breaking changes
+1.7 Other notable changes
+1.8 Debug command changes
+2 For Content Patcher packs
+2.1 Possible breaking changes
+2.2 Home renovations
+2.3 Special orders
+2.4 Dialogue changes
+2.5 Event changes
+2.6 Festival changes
+2.7 Schedule changes
+2.8 New map properties
+2.9 Greenhouse building
+2.10 Bed changes
+2.11 Sitting on non-furniture chairs
+2.12 Custom hairstyles
+2.13 Other notable changes
+2.14 Update impact
+For SMAPI mods
+Split-screen mode
+Stardew Valley 1.5 adds split-screen local multiplayer. Most mods aren't affected in non-split-screen mode, and will work the same as before.
+In split-screen mode…
+Each screen runs within the same game instance. The game automatically swaps the game state for the current player, but in-memory data from mods will be shared between all screens. You can wrap fields with SMAPI's PerScreen<T> to have separate values for each player.
+Each screen has its own events (except GameLoop.GameLaunched). For example, with two active screens the GameLoop.UpdateTicked event happens twice per tick (120/second instead of 60/second). You can use Context fields if you need to check which player it is (like IsMainPlayer, IsSplitScreen, IsOnHostComputer, or PlayerIndex).
+Multiplayer limitations still apply for split-screen farmhands, since split-screen is just normal multiplayer under the hood. For example, even though they're running on the host computer, split-screen farmhands can only access synced locations (unless you manually access the host's stashed state). The exception is SMAPI's save data API, which does work for farmhands on the host computer (but not remote farmhands).
+Context.IsMultiplayer returns true for split-screen multiplayer. You can use more specific fields like IsSplitScreen, HasRemotePlayers, or IsOnHostComputer if needed.
+Custom mod data
+Each Character, GameLocation, Item, and TerrainFeature instance now has a modData dictionary field, which is persisted to the save file and synchronized in multiplayer. This can be used to store arbitrary mod data, including on the player itself via Game1.player.modData.
+When you split an item stack, the new stack copies the previous one's mod data; when merged into another stack, the merged items adopt the target stack's mod data. Otherwise mod data has no effect on item split/merge logic (e.g., you can still merge items with different mod data), unless overridden by a Harmony patch.
+Note: to avoid mod conflicts, prefixing data fields with your mod ID is strongly recommended:
+item.modData[$"{this.ModManifest.UniqueID}/item-age"] = "30";
+UI scale changes
+Main article: Modding:Modder Guide/Game Fundamentals#UI scaling.
+Stardew Valley 1.5 lets players change the UI scaling separate from the zoom level. What this means for mods depends on what they're doing.
+Which mods are affected?
+This affects code which draws or checks positions in…
+menus;
+HUD elements;
+SMAPI's RenderingActiveMenu and RenderedActiveMenu events;
+SMAPI's Rendering and Rendered events in some contexts (check Game1.uiMode).
+This does not affect…
+the draw method for map objects, furniture, crops, etc placed in the world;
+code which only uses tile coordinates (not pixel coordinates).
+You can test your mod by setting the zoom to maximum and the UI scale to minimum (i.e., have them at different values) or vice versa; in particular check any logic which handles pixel positions, like menus clicking. If everything looks fine, you can skip the rest of this section.
+What does this mean for affected mods?
+This introduces two UI-adjusted pixel coordinate systems, one for absolute positions (relative to the top-left corner of the map) and one for screen positions (relative to the top-left corner of the screen). You should be careful not to mix them to avoid tricky calculations; for example, do all your work in one coordinate system and then convert them once.
+The game now has two distinct draw modes depending on the context: UI mode and non-UI mode. You can check Game1.uiMode to know which mode is active. This affects which of the coordinate systems should be used to draw to the screen.
+When drawing UI, you can indicate to the game that you want to use UI scaling. This has minimal performance impact if the game is already in UI mode, but you should avoid doing it unnecessarily if you know the code will always run in non-UI mode.
+Game1.game1.InUIMode(() =>
+{
+   // your UI draw code here
+});
+How do I update affected code?
+Drawing something into the game world (e.g., a tile overlay) in UI mode will make things much more difficult. Consider drawing outside UI mode instead, e.g., by switching from SMAPI's Rendered event to RenderedWorld.
+Be very careful about mixed coordinate systems. For example, a menu constructed outside the draw loop may initialize coordinates in non-UI mode, then handle clicks in UI mode. You may need to convert values to non-UI coordinates to check them in that case (see conversions below).
+When drawing UI, in most cases you should replace Game1.viewport with Game1.uiViewport. These provide UI-adjusted pixel positions. Don't do this if you'll be adjusting the positions for UI scaling separately (see below), since double-conversion will give you incorrect results.
+If you adjust pixel positions manually, see conversions below.
+How do I convert between UI and non-UI coordinates?
+conversion code
+pixel → UI-adjusted pixel Utility.ModifyCoordinatesForUIScale(position)
+UI-adjusted pixel → pixel Utility.ModifyCoordinatesFromUIScale(position)
+UI-adjusted pixel → tile First convert to non-UI-adjusted pixel, then see pixel → tile conversion.
+Chest inventory
+Using chest.items and Chest.capacity to access chest inventory won't handle special cases like the Junimo Chest or Mini-Shipping Bin. Instead you should use chest.GetItemsForPlayer to get the item list, and chest.GetActualCapacity() to get the max capacity.
+Paint buildings
+You can now paint fully-upgraded buildings through Robin's menu, which fills predefined groups with that color. This applies to the farmhouse, cabins, barn, coop, shed, and stable. This has no effect on most mods, but mods which customize building appearances will need an update to be paintable.
+Each building has three distinct groups: roof, walls, and trim. When you apply paint to part of a building, it applies to every part of the building that's in the same group.
+The feature is based on two files:
+Data/PaintData lists the buildings which can be painted, the group names shown in the UI, and the relative ranges for the brightness slider. More info from the game developers:
+“ “To explain: the hue and saturation values are applied as is, but the brightness value is actually tracked as a "relative" brightness, i.e., a value halfway through the slider bar actually corresponds to a value that's lerped halfway between the lowest acceptable brightness and highest acceptable brightness.
+This is so that a single paint color will look generally the same when applied across multiple buildings, and is also used to ensure brightness values that are overbright or too dark aren't usable as they generally look bad. This is also used to prevent values that shade in weird ways.”
+Each paintable building also has a separate mask texture, like Buildings/Stable_PaintMask for the stable. The masks use three predefined colors: green (roof), blue (trim), and red (walls) matching the order in Data/PaintData (other colors are ignored). Groups don't need to be contiguous (e.g., you can have separate red areas).
+Other breaking changes
+The game's NetCollection<T> enumerator changed in a way that SMAPI can't easily rewrite. Affected mods only need to be recompiled to fix it.
+The IsTileLocationOpen and isTileLocationOpenIgnoreFrontLayers methods now take tile coordinates instead of pixel coordinates.
+Bundles can now be randomized, so you should read data from Game1.netWorldState.Value.BundleData instead of loading the Data\Bundles asset.
+The game now has per-location seasons/weather to support the Fern Islands. In many cases you may need to use methods like Game1.GetSeasonForLocation, Game1.IsRainingHere, etc instead of accessing the values like Game1.currentSeason directly.
+Other notable changes
+These are changes which might be of interest to modders, but shouldn't break any mods.
+See Modding wishlist#Done in Stardew Valley 1.5.
+See For Content Patcher packs for content changes.
+Location changes:
+All locations can now have furniture, resource clumps, and getWalls().
+The greenhouse is now always synced to farmhands in multiplayer.
+Some furniture can now be placed outdoors or outside the farm (based on furniture.placementRestriction).
+Added location.treatAsOutdoors field.
+Added LightSource.fishTankLight light source type, matching LooseSprites\Lighting\fishTankLight.
+New Utility methods:
+ModifyTime: perform simple time calculations like ModifyTime(1250, 10) == 1300;
+AOrAn;
+ConvertMinutesToTime;
+forAllLocations;
+getNumObjectsOfIndexWithinRectangle;
+fuzzyAnimalSearch;
+getRandomBasicSeasonalForageItem;
+HasAnyPlayerSeenSecretNote;
+RGBtoHSL, HSLtoRGB, QQHtoRGB;
+ModifyCoordinateFromUIScale, ModifyCoordinatesFromUIScale, ModifyCoordinateForUIScale, ModifyCoordinatesForUIScale;
+IsHospitalVisitDay.
+New Farm methods:
+doesFarmCaveNeedHarvesting;
+getTotalCrops;
+getTotalCropsReadyforHarvest;
+getTotalGreenouseCropsReadyForHarvest;
+getGreenhouseBuilding;
+getTotalOpenHoeDirt;
+getTotalForageItems;
+getNumberOfMachinesReadyForHarvest.
+New Furniture.GetFurnitureInstance method to create furniture without needing to hardcode the separate types for TVs, etc.
+Farmer changes:
+Farmer.addItemToInventory now returns a list of item stacks in the player's inventory to which items were added.
+Game1 changes:
+Added Game1.setMousePosition.
+Changed Utility.GetPrismaticColor to take an optional speed multiplier.
+Added Farmer.IsBusyDoingSomething() method.
+Added a new LikeLevel enum for gift tastes.
+Dialogue changes:
+You can now specify a custom portrait texture when calling Game1.drawDialogue.
+You can now set dialogue.onFinish to do something when the dialogue closes.
+Added object.isEssentialItem(), which prevents the item from sinking and considers the player always in range for magnetism.
+Added Debris.DebrisType field (ARCHAEOLOGY or OBJECT).
+Added Event.eventPositionTileOffset field, which adjusts any tile positions referenced by event by the specified amount. For example, this is used to offset farm events to match the farmhouse position. This is ignored if the event has the ignoreEventTileOffset command. (Some hardcoded sprite positions aren't adjusted.)
+Debug command changes
+This section is mainly intended for wiki maintainers; see Modding:Console commands for the general documentation.
+Added commands:
+boatjourney: start the BoatJourney minigame.
+bpm: show the building painting menu for the building immediately north of the player, or for the farmhouse if no such building is found.
+broadcastMailbox: send a given letter ID to all players and adds it retroactively to any players who join the game afterwards.
+completespecialorders / cso: marks every objective for every open special order complete.
+crib: change crib style in the farmhouse.
+darts: start the darts minigame.
+forge: show the forge menu.
+gem: add the specified number of Qi gems to the player.
+language: show the language selection screen.
+minedifficulty / md and skullcavedifficulty / scd: change the mine or skull cavern difficulty level.
+ordersboard: show the special orders board.
+pathspousetome / pstm: warp or path the player's spouse spouse to the player.
+perfection: makes changes needed for 100% game completion (e.g., max all friendships, mark all fish caught, etc).
+pgb: prints the solution to the island gem bird shrine puzzle.
+phone: show the telephone menu.
+printPlayerPosition / ppp:
+qiboard / qi: show a special orders board for Mr. Qi.
+recountnuts: resets the player’s walnut count to its expected value given walnuts found and spent. Will likely be removed on launch.
+renovate: show the house renovation menu.
+returneddonations: open the returned donations UI.
+runtestevent / rte: read an event from a test_event.txt file in the game folder, and start the event. The first line of the file is the location the event takes place, and the rest of the contents of the file are the same as a normal event file, except line breaks will be treated as ‘\’ delimiters.
+showplurals: prints a list of the plural forms for each item name and lexicon term.
+shufflebundles: randomise bundles.
+specialorder: adds the special order with the matching ID to the active special orders list.
+split: start split-screen mode or add players.
+testnut: spawn a golden walnut at (0, 0)?
+tls: toggle between scaled and unscaled lighting.
+townkey: give the current player the Key To The Town.
+uiscale / us: set a new UI scale.
+volcano: warp player to specified level of the volcano dungeon.
+walnut: add a specified number of golden walnuts for the player team.
+warpanimaltome / watm: find a named animal and warp it to player.
+warpcharactertome / wctm: find a named character and warp them to the player.
+Command changes:
+marry: fixed issue when NPC hasn't been met?
+minigame: added 'fishing' option.
+invincible: added 'gm' and 'inv' aliases.
+For Content Patcher packs
+Possible breaking changes
+Notable changes which may break Content Patcher packs (and XNB mods):
+See update impact below.
+Home renovations
+Stardew Valley 1.5 adds house renovations. Mods can add or change removations by editing the Data/HomeRenovations asset. This consists of a string → model lookup, where the asset key is a unique renovation ID. The asset value is a model with these fields:
+field effect
+TextStrings A translation key in the form <asset name>:<key> (like Strings\\Locations:ScienceHouse_Renovation_BuildCrib). The translation text should contain three slash-delimited fields:
+index effect
+0 The translated display name shown in the renovation menu.
+1 The translated description shown in the renovation menu.
+2 The message shown to ask the player which area to renovate.
+For example, the vanilla 'remove crib' matches a translation in this format:
+"Remove Crib/Remove the crib from your home./Select a crib to remove."
+Requirements The criteria that must match for the renovation to appear as an option. This consists of a list of models with these fields:
+field effect
+Type The requirement type. This can be Mail (check if the player has the given mail flag) or Value (check the value of a C# NetInt field on the farmhouse instance). Any other type always returns true.
+Key
+For a Mail requirement, the mail flag.
+For a Value requirement, the C# NetInt field name.
+Value
+For a Mail requirement, "0" (player must not have the flag) or "1" (player must have it).
+For a Value requirement, the required field value. The value can be prefixed with ! to require any value except this one.
+For example, "Key": "renovation_bedroom_open", "Value": "1" matches if the player has the renovation_bedroom_open mail flag.
+RenovateActions The actions to perform after the renovation is applied. This consists of a list of models with these fields:
+field effect
+Type The action type. This can be Mail (add or remove a mail flag) or Value (set the value of a C# field on the farmhouse instance). Any other type is ignored.
+Key
+For a Mail requirement, the mail flag to add or remove.
+For a Value requirement, the C# NetInt field name.
+Value
+For a Mail requirement, either "0" (remove the mail flag) or "1" (add it).
+For a Value requirement, either the integer value to set, or the exact string "selected" to set it to the index of the applied renovation.
+RectGroups The tile areas within the farmhouse where the renovation can be placed.
+AnimationType (Optional) The animation to play when the renovation is applied. The possible values are destroy or build. Any other value defaults to build.
+CheckForObstructions (Optional) Whether to prevent the player from applying the renovations if there are any players, NPCs, items, etc within the target area. Default false.
+SpecialRect (Optional) A dynamic area to add to the RectGroups field. The only supported value is crib, which is the farmhouse area containing the cribs.
+For example, this content pack redefines one of the vanilla home renovations:
+{
+    "Format": "2.5.0",
+    "Changes": [
+        {
+            "Action": "EditData",
+            "Target": "Data/HomeRenovations",
+            "Entries": {
+                "open_bedroom": {
+                    "TextStrings": "Strings\\Locations:ScienceHouse_Renovation_OpenBedroom",
+                    "AnimationType": "destroy",
+                    "CheckForObstructions": true,
+                    "Requirements": [
+                        {
+                            "Type": "Mail",
+                            "Key": "renovation_bedroom_open",
+                            "Value": "0"
+                        }
+                    ],
+                    "RenovateActions": [
+                        {
+                            "Type": "Mail",
+                            "Key": "renovation_bedroom_open",
+                            "Value": "1"
+                        }
+                    ],
+                    "RectGroups": [
+                        {
+                            "Rects": [
+                                { "X": 21, "Y": 10, "Width": 2, "Height": 8 },
+                                { "X": 21, "Y": 19, "Width": 2, "Height": 1 }
+                            ]
+                        }
+                    ]
+                }
+        }
+    ]
+}
+Special orders
+1.5 adds a new 'special orders' quest system which is much more flexible and supports custom quests. You can add special orders to Data/SpecialOrders with options like duration, repeatability, objectives, and rewards etc. Each order can have any number of objectives of predefined types (Collect, Deliver, Fish, Gift, JKScore, ReachMineFloor, Ship, Slay) and rewards (Friendship, Gems, Mail, Money, ResetEvent). The Mail reward sets a mail flag, which can be used to trigger custom events, dialogue, or other changes.
+Dialogue changes
+Added dialogue keys related to the resort area on the islands (keys starting with Resort).
+Added %year placeholder.
+Event changes
+Tile positions in farm events are now offset to match the farmhouse position automatically. If an event shouldn't be based on the farmhouse position, add an ignoreEventTileOffset command to disable the offset for that event. (Some hardcoded sprite positions aren't adjusted.)
+NPCs and players in events now walk through obstacles by default, instead of getting stuck.
+New event commands:
+animateHeight: something about jumping.
+changeName: change the display name for an actor.
+drawOffset: set the draw offset for a farmer or named NPC.
+hideShadow: hide the shadow for a named NPC.
+ignoreEventTileOffset: disables event tile offsets for the remainder of the event.
+ignoreMovementAnimation. Toggles a flag that allows NPCs to move without animating their walk animations (?).
+hostMail option: add mail for tomorrow.
+locationSpecificCommand. used for some events, used just to call some location specific logic that’s hardcoded into some of the GameLocations.
+playFramesAhead: skips specified number of commands.
+showKissFrame;
+unskippable: marks the event unskippable. This is used in conjunction with the skippable command for cases where the event should no longer be skippable after a certain point.
+Changed event commands:
+addTemporaryActor can now set the actor's display name at the 8th index ("Character", "Animal", or "Monster").
+awardFestivalPrize: added _birdiereward_ and _memento_ as options.
+fork: args changed somehow?
+Other command changes:
+Commands which start with -- are now skipped. This is mainly meant for the runTestEvent command, to act as a comment.
+When an event fails to parse a command, it now shows an error box and skips the rest of the event instead of crashing.
+New preconditions:
+N <count>: player has collected at least this many Golden Walnuts.
+B: the player's home has a spouse bed.
+New event options (editable by SMAPI mods):
+ignoreObjectCollisions: whether NPCs/players should walk through obstacles instead of getting stuck. Default true.
+showWorldCharacters: whether to draw NPCs which are in the same location as the event, even if they're not part of the event script. Default false.
+New specific temporary sprites: doneWithSlideShow + getEndSlideshow, georgeLeekGift, grandpaThumbsUp, krobusraven, islandFishSplash, parrotHutSquawk, parrotPerchHut, staticSprite, WillyWad.
+Festival changes
+Main article: Modding:Festival data.
+Festivals can now have different versions per year. This works by adding a new set-up_y<year> field in the festival data (modulo with the current year), and/or <npc>_y<year> dialogue keys for each NPC (like Abigail_y2).
+Custom NPCs can now be added to festivals by editing the festival data file (instead of patching them into the character sheet which is conflict-prone). The key is "Set-Up_additionalCharacters" (with that exact capitalization), and the value format is "NpcName X Y Direction" (where direction can be up/down/left/right or an integer code) delimited by "/".
+For example, this safely adds a custom NPC to the Stardew Valley Fair using Content Patcher:
+{
+    "Action": "EditData",
+    "Target": "Data/Festivals/fall16",
+    "TextOperations": [
+        {
+            "Operation": "Append",
+            "Target": ["Entries", "Set-Up_additionalCharacters"],
+            "Value": "Jasper 43 87 down",
+            "Delimiter": "/"
+        }
+    ]
+}
+Shops can now sell furniture via the shop field in the festival data file. The format is identical to the existing field, but with a F item type code.
+Schedule changes
+Main article: Modding:Schedule data.
+Added a marriage_<season>_<day of month> key used by spouse NPCs to enable schedules for specific days. This has a higher priority than the existing marriage keys.
+New map properties
+Main article: Modding:Maps
+Stardew Valley 1.5 adds several map properties.
+For the farm only:
+GrandpaShrineLocation, GreenhouseLocation, MailboxLocation, ShippingBinLocation, SpouseAreaLocation: the top-left tile at which to place the target by default.
+BackwoodsEntry, BusStopEntry, FarmCaveEntry, FarmHouseEntry, ForestEntry, WarpTotemEntry: when the player enters the farm from the named location, the position to which to move them instead of the default position. The FarmhouseEntry map property also affects other house-related logic such as the house sprite draw location, the location where events on the farm take place, etc.
+For the farmhouse only:
+KitchenStandingLocation: the position where the player's spouse stands while in the kitchen. If omitted, the spouse will stand in front of the oven.
+For indoor locations:
+ForceSpawnForageables: causes forage to spawn in the location.
+indoorWater: enables water tiles in the location (e.g., for fishing).
+For all locations:
+CanCaskHere: if set to any value, casks will work in this location regardless of whether it's a cellar.
+LocationContext: the general world area (possible values: Default and Island). This affects which area's weather is used, whether you hear the train whistle when it's passing, etc.
+NPCWarp: equivalent to Warp, but only usable by NPCs.
+SeasonOverride: assumes the given season for many checks in that location (such as crop growing season, tilesheet appearance, etc). Some game checks still use the global season where it makes sense to do so.
+skipWeedGrowth: skip spawning/spreading weeds in this location.
+The various tiles/properties that accompany these features (e.g., door tiles, mailbox tile action, etc) still need to be added to the map file. These aren't added/moved automatically by the map properties.
+Greenhouse building
+Stardew Valley 1.5 changes the greenhouse into its own building that can be moved, and moves the greenhouse texture out of Buildings/House into a new Buildings/Greenhouse asset.
+To update an older custom farm map:
+Make sure all custom tilesheet IDs have a z_ prefix.
+Make sure your farm has these tilesheets before any custom tilesheets, with the exact same IDs and order:
+tilesheet ID file in Contents/Maps
+Paths paths
+untitled tile sheet spring_outdoorsTileSheet
+untitled tile sheet2 spring_island_tilesheet_1 * in Farm_Island only
+Remove all tiles on the building layer where the greenhouse was.
+Remove the Action: WarpGreenhouse tile property from the building layer where the greenhouse door was.
+Add a GreenhouseLocation map property, with the value set to the top-left tile of your greenhouse position (like 24 9).
+In rare cases, you may want to edit Maps/Farm_Greenhouse_Dirt or Maps/Farm_Greenhouse_Dirt_FourCorners. They patch the area where the greenhouse was originally when the save was created (even if using the new property to set greenhouse location, in this case the patch will patch the related area). This affects all vanilla farm map type except Beach map.
+Bed changes
+Stardew Valley 1.5 changes beds into furniture that can be picked up and moved. The bed sprites are now in Tilesheets/furniture.
+Sitting on non-furniture chairs
+Main article: Modding:Maps#Sitting on non-furniture chairs
+Players can sit on chairs that are part of the map. This works by checking the tile on the Buildings layer, and comparing its tilesheet and tilesheet index to the data in Data\ChairTiles.
+Each entry has a key in the form sheet filename/tile X/tile Y:
+field description
+sheet filename The file name of the tilesheet, without the file extension. For example, for a tilesheet loaded from assets/some-tilesheet.png, this should be some-tilesheet.
+tile X
+tile Y The tile's X and Y position in the map tilesheet, starting at zero.
+And a value in the form width in tiles/height in tiles/direction/type/draw tile X/draw tile Y/is seasonal/alternate tilesheet:
+field description
+width in tiles
+height in tiles The size of the seat in tiles. For example, a width of 2 lets the player sit on the next tile to the right of it too.
+direction The direction the player should face when sitting. The possible values are down, left, right, up, or opposite. Any other value defaults to up.
+type An arbitrary seat code (like playground or ccdesk), which affects hardcoded game logic for specific seats in the game. You can specify an invalid value like default to ignore this.
+draw tile X
+draw tile Y The X and Y position in TileSheets\ChairTiles (or the custom tilesheet) to draw when the player is sitting, starting at 0. If the width and/or height are more than 1, this is the position of the top-left tile.
+is seasonal Whether to draw seasonal variants when sitting. If enabled, the <draw tile X> and <draw tile Y> are offset by one width for each season. In other words, the spring/summer/fall/winter sprites should appear in the draw tilesheet directly adjacent, moving rightward in that order.
+alternate tilesheet The tilesheet from which to get the draw tiles, instead of TileSheets\ChairTiles.
+Custom hairstyles
+You can now define custom hairstyles by editing the Data/HairData asset. Each line consists of a unique numeric ID, and a slash-delimited sequence of these fields:
+index syntax example description
+0 <spritesheet> hairstyles2 The filename of the texture containing the hairstyle sprites within Characters/Farmer/.
+1
+2 <x>
+<y> 0
+0
+The tile position of the top hair sprite within the spritesheet, starting from 0, where each tile is 16 by 16 pixels.
+For example, the second sprite would have tile coordinate (1, 0): one tile across, zero down.
+Each hairstyle should have three to four sprites stacked vertically. Starting from the top sprite, they represent the hairstyle when the player is facing down, right, up, and (if <unique left sprite> is true) left.
+3 <unique left sprite> true When the player is facing left, whether to draw the hair in the fourth sprite slot instead of flipping the right-facing sprite.
+4 <covered index> -1 The unique ID of the separate hairstyle to display when the player is wearing a hat, or -1 to hide the hair in that case.
+5 <is bald style> false TODO
+6
+7
+8 <overlay spritesheet>
+<overlay x>
+<overlay y> Not used, can be omitted.
+Other notable changes
+These are changes which might be of interest to modders, but shouldn't break any mods.
+Some assets were duplicated between Content/Maps and Content, but the ones directly under Content were unused by the game and no longer exist in 1.5.
+Farmhouse bed changes:
+The Bed and TouchAction Sleep properties are no longer required in farmhouses, since placed beds transparently add it to their current position. They can still be added to have static beds that are part of the map.
+The new DefaultBedPosition property on the Back layer can be added to spawn a bed furniture on that spot.
+Mail changes:
+%item tools can now be used to give furniture too.
+Furniture data has a new 'placement restrictions' field at index 6. This overrides the default restrictions. The possible values are 1 (outdoors only), 2 (placed as decoration?), or any other value for inside-farmhouse-only. Certain furniture types programmatically have different default values set by default, but these can be overridden by specifying a value.
+New map properties: see _new map properties_ above.
+New map tile properties:
+Back > BeachSpawn: affects beach forage spawning on the beach farm;
+Back > NoPath: prevent NPCs from pathing through the tile;
+Buildings > NPCPassable: equivalent to Passable, but only for NPCs;
+Buildings > ProjectilePassable: allows projectiles to cross tiles that would normally block them (e.g., to allow shooting into lava pools).
+Update impact
+Here's a summary of the XNB files which changed in Stardew Valley 1.5.
+Notes:
+This ignores text changes in non-English files for simplicity.
+New content files aren't listed, since they won't impact existing mods.
+XNB mods are disproportionately affected, since they replace the entire file. Content Patcher packs are typically unaffected (unless they replace the entire file, in which case see the XNB mod column).
+It's more difficult to determine what changed in map files, so they're often just marked 'unknown' if they changed.
+Shorthand:
+'broken' means removing new content or potentially important changes, or potentially causing significant display bugs. This is a broad category — the game may work fine without it or crash, depending how it uses that specific content.
+'mostly unaffected' means mods will only be affected if they edit specific entries or fields.
+Blank means no expected impact for the vast majority of mods.
+content file changes XNB Content Patcher
+Animals/BabyWhite Chicken new sprites in new area ✘ broken
+Animals/Dinosaur cosmetic changes ✘ will remove changes ✓ mostly unaffected
+Animals/Duck new sprites in new area ✘ broken
+Buildings/houses See Greenhouse building. ✘ greenhouse edits ignored silently ✘ greenhouse edits ignored with an error
+Characters/Abigail new sitting sprite in empty area ✘ broken
+Characters/Caroline new sitting sprite in new area ✘ broken
+Characters/Demetrius cosmetic tweaks ✘ will remove changes ✘ may remove changes
+Characters/Dialogue/Abigail new content ✘ broken
+Characters/Dialogue/Alex new content ✘ broken
+Characters/Dialogue/Caroline new content ✘ broken
+Characters/Dialogue/Clint new content ✘ broken
+Characters/Dialogue/Demetrius new content ✘ broken
+Characters/Dialogue/Elliott new content ✘ broken
+Characters/Dialogue/Emily new content ✘ broken
+Characters/Dialogue/Evelyn new content ✘ broken
+Characters/Dialogue/George new content ✘ broken
+Characters/Dialogue/Gus new content, fixed typos ✘ broken
+Characters/Dialogue/Haley new content ✘ broken
+Characters/Dialogue/Harvey new content ✘ broken
+Characters/Dialogue/Jas new content ✘ broken
+Characters/Dialogue/Jodi new content ✘ broken
+Characters/Dialogue/Kent new content ✘ broken
+Characters/Dialogue/Leah new content ✘ broken
+Characters/Dialogue/Lewis new content ✘ broken
+Characters/Dialogue/Linus new content ✘ broken
+Characters/Dialogue/Marnie new content ✘ broken
+Characters/Dialogue/MarriageDialogue new content ✘ broken
+Characters/Dialogue/Maru new content, fixed typo ✘ broken ✓ mostly unaffected
+Characters/Dialogue/Mister Qi new content ✘ broken
+Characters/Dialogue/Pam new content ✘ broken
+Characters/Dialogue/Penny new content, fixed typos ✘ broken
+Characters/Dialogue/Pierre new content ✘ broken
+Characters/Dialogue/rainy new content ✘ broken
+Characters/Dialogue/Robin new content, fixed typo ✘ broken ✓ mostly unaffected
+Characters/Dialogue/Sam new content, fixed typo ✘ broken ✓ mostly unaffected
+Characters/Dialogue/Sandy new content ✘ broken
+Characters/Dialogue/Sebastian new content ✘ broken
+Characters/Dialogue/Shane new content, fixed typo ✘ broken ✓ mostly unaffected
+Characters/Dialogue/Vincent new content ✘ broken
+Characters/Dialogue/Willy new content ✘ broken
+Characters/Dialogue/Wizard new content ✘ broken
+Characters/Farmer/Farmer_base
+Characters/Farmer/Farmer_base_bald
+Characters/Farmer/Farmer_girl_base
+Characters/Farmer/Farmer_girl_base_bald new sprite in empty area
+(arm sprites when sitting on a chair that's facing down and when using the horse flute) ✘ broken
+Characters/Farmer/hats new sprites in empty area, new area ✘ broken
+Characters/Farmer/shoeColors new sprites in empty area ✘ broken
+Characters/George new sprites in new area ✘ broken
+Characters/Haley new sprite in empty area ✘ broken
+Characters/Lewis new sprite in new area ✘ broken
+Characters/Linus new sprites in new area ✘ broken
+Characters/Marnie new sprite in empty area ✘ broken
+Characters/Pam new sprites in new area ✘ broken
+Characters/Robin new sprites in empty area ✘ broken
+Characters/Willy new sprites in new area ✘ broken
+Characters/schedules/Linus tweaked schedule position ✘ will remove changes ✓ mostly unaffected
+Characters/schedules/Willy tweaked schedule positions ✘ will remove changes ✘ may remove changes
+Data/animationDescriptions new content ✘ broken
+Data/BigCraftablesInformation new content, deleted broken item, tweaked Workbench price ✘ broken ✓ mostly unaffected
+Data/Blueprints replaced Greenhouse entry, tweaked Mill description ✘ broken ✓ mostly unaffected
+Data/Boots new content ✘ broken
+Data/ClothingInformation fixed typo ✘ will remove changes ✓ mostly unaffected
+Data/CookingRecipes new content ✘ broken
+Data/CraftingRecipes new content, changed Skull Brazier recipe ✘ broken ✓ mostly unaffected
+Data/Crops new content ✘ broken
+Data/Events/Beach new content ✘ broken
+Data/Events/Farm new content ✘ broken
+Data/Events/FarmHouse tweaked precondition ✘ will remove changes ✓ mostly unaffected
+Data/Events/Forest fixed typo ✘ will remove changes ✓ mostly unaffected
+Data/Events/HaleyHouse new content, tweaked event ✘ broken ✓ mostly unaffected
+Data/Events/JoshHouse new content ✘ broken
+Data/Events/Mountain new content ✘ broken
+Data/Events/Railroad fixes to Harvey's 10-heart event ✘ will remove changes ✓ mostly unaffected
+Data/Events/Saloon new content ✘ broken
+Data/Events/ScienceHouse new content, fixed typo ✘ broken ✓ mostly unaffected
+Data/Events/SeedShop new content ✘ broken
+Data/Events/Town new content ✘ broken
+Data/Events/Trailer new content ✘ broken
+Data/ExtraDialogue new content ✘ broken
+Data/FarmAnimals new content ✘ broken
+Data/Festivals/fall16 new content ✘ broken
+Data/Festivals/fall27 new content, added new items to shop field ✘ broken
+Data/Festivals/spring13 new content, changed 'set-up' and 'mainEvent' fields to add Leo, added new item to shop field ✘ broken ✓ mostly unaffected
+Data/Festivals/spring24 new content, added new items to shop field ✘ broken
+Data/Festivals/summer11 new content, added shop field ✘ broken
+Data/Festivals/summer28 new content, added shop field ✘ broken
+Data/Festivals/winter8 new content, added new items to shop field ✘ broken
+Data/Festivals/winter25 new content, added new items to shop field ✘ broken
+Data/Fish new content ✘ broken
+Data/FishPondData new content ✘ broken
+Data/fruitTrees new content ✘ broken
+Data/Furniture new content, tweaked Butterfly Hutch ✘ broken ✓ mostly unaffected
+Data/hats new content ✘ broken
+Data/Locations new content ✘ broken
+Data/mail new content, added item to 'georgeGifts' entry, changed 'foundLostTools' entry, fixed typo ✘ broken ✓ mostly unaffected
+Data/Monsters new content; tweaked Mummy, Skeleton, and Spiker entries ✘ broken ✓ mostly unaffected
+Data/MoviesReactions new content ✘ broken
+Data/NPCDispositions new content ✘ broken
+Data/NPCGiftTastes new content, added new item to several entries, tidying ✘ broken ✘ may remove changes
+Data/ObjectContextTags new content, added tags for ring items, added tag for Lionfish entry ✘ broken ✓ mostly unaffected
+Data/ObjectInformation new content, edited a few descriptions, changed duck feather price ✘ broken ✓ mostly unaffected
+Data/SecretNotes new content ✘ broken
+Data/TailoringRecipes new content ✘ broken
+Data/weapons new content ✘ broken
+LooseSprites/Cursors new sprites in empty areas, replaced unused sprites, repositioned fertilized dirt overlay ✘ broken ✓ mostly unaffected
+LooseSprites/Cursors2 new sprites in empty areas + new areas ✘ broken
+LooseSprites/letterBG new sprite in empty area ✘ broken
+LooseSprites/map new sprites in new area ✘ broken
+LooseSprites/temporary_sprites_1 new sprites in empty area ✘ broken
+Maps/* All tilesheet paths now have "Maps/" prefixed. ? ?
+Maps/ArchaeologyHouse unknown changes ? ?
+Maps/Backwoods unknown changes ? ?
+Maps/Backwoods-GraveSite unknown changes ? ?
+Maps/Barn
+Maps/Barn2
+Maps/Barn3
+unknown changes ? ?
+Maps/Beach unknown changes ? ?
+Maps/Beach-Jellies unknown changes ? ?
+Maps/Beach-Luau unknown changes ? ?
+Maps/Beach-NightMarket unknown changes ? ?
+Maps/BusStop unknown changes ? ?
+Maps/Cabin
+Maps/Cabin1
+Maps/Cabin1_marriage
+Maps/Cabin2
+Maps/Cabin2_marriage unknown changes ? ?
+Maps/cave overhauled spritesheet ✘ broken ✘ broken
+Maps/characterSheet new sprites in new area ✘ broken
+Maps/Coop
+Maps/Coop2
+Maps/Coop3
+unknown changes ? ?
+Maps/desert unknown changes ? ?
+Maps/fall_outdoorsTileSheet2
+Maps/spring_outdoorsTileSheet2
+Maps/summer_outdoorsTileSheet2
+Maps/winter_outdoorsTileSheet2 new sprites in empty + new areas; replaced unused sprites ✘ broken
+Maps/fall_town
+Maps/spring_town
+Maps/summer_town
+Maps/winter_town new sprites in empty areas; tweaked winter fountain sprites ✘ broken
+Maps/Farm
+Maps/Farm_Combat
+Maps/Farm_Fishing
+Maps/Farm_Foraging
+Maps/Farm_FourCorners
+Maps/Farm_Mining unknown changes ? ?
+Maps/farmhouse_tiles new sprites in empty + new areas, cosmetic tweaks ✘ broken ✓ mostly unaffected
+Maps/FarmHouse
+Maps/FarmHouse1
+Maps/FarmHouse1_marriage
+Maps/FarmHouse2
+Maps/FarmHouse2_marriage unknown changes ? ?
+Maps/Festivals new sprites in empty area ✘ broken ✓ mostly unaffected
+Maps/FishingGame unknown changes ? ?
+Maps/FishShop unknown changes ? ?
+Maps/Forest-FlowerFestival unknown changes ? ?
+Maps/Forest-IceFestival unknown changes ? ?
+Maps/Forest-SewerClean unknown changes ? ?
+Maps/Greenhouse unknown changes ? ?
+Maps/JoshHouse unknown changes ? ?
+Maps/ManorHouse unknown changes ? ?
+Maps/Mines/mine_lava
+mine_lava new sprites in new area ✘ broken
+Maps/Mountain unknown changes ? ?
+Maps/Mountain-BridgeFixed unknown changes ? ?
+Maps/paths deleted unused area and sprites
+Maps/Railroad unknown changes ? ?
+Maps/Saloon unknown changes ? ?
+Maps/SamHouse unknown changes ? ?
+Maps/ScienceHouse unknown changes ? ?
+Maps/SeedShop unknown changes ? ?
+Maps/Sewer unknown changes ? ?
+Maps/Shed
+Maps/Shed2 unknown changes ? ?
+Maps/SkullCave unknown changes ? ?
+Maps/Submarine unknown changes ? ?
+Maps/Summit The Summit was added as an accessible location in 1.5, which includes major changes to the map to make it work. ? ?
+Maps/springobjects new sprites in empty + new areas; replaced unused sprites; cosmetic changes; tweaked all ring positions so they align for combined rings ✘ broken ✓ mostly unaffected
+Maps/Town unknown changes ? ?
+Maps/Town-Christmas unknown changes ? ?
+Maps/Town-DogHouse unknown changes ? ?
+Maps/Town-EggFestival unknown changes ? ?
+Maps/Town-Fair unknown changes ? ?
+Maps/Town-Halloween unknown changes ? ?
+Maps/Town-Theater unknown changes ? ?
+Maps/Town-TheaterCC unknown changes ? ?
+Maps/Town-TrashGone unknown changes ? ?
+Maps/townInterior cosmetic changes ✘ will remove changes ✓ mostly unaffected
+Maps/townInterior2 new sprites in empty area ✘ broken
+Maps/Trailer unknown changes ? ?
+Maps/Trailer_big unknown changes ? ?
+Maps/Woods unknown changes ? ?
+Minigames/Clouds new sprites in new area ✘ broken
+Portraits/Grandpa new sprites in new area ✘ broken
+Portraits/Kent new sprites in new area ✘ broken
+Portraits/Leah new sprite in empty area ✘ broken
+Portraits/Linus new sprites in new area ✘ broken
+Portraits/Robin new sprite in new area ✘ broken
+Strings/Buildings new content ✘ broken
+Strings/Characters new content ✘ broken
+Strings/Lexicon new content ✘ broken
+Strings/Locations new content ✘ broken
+Strings/StringsFromCSFiles new content, fixed typo, tweaked some entries ✘ broken ✓ mostly unaffected
+Strings/StringsFromMaps new content ✘ broken
+Strings/UI new content, tweaked Desperado description ✘ broken
+TerrainFeatures/Flooring
+TerrainFeatures/Flooring_winter new sprites in empty areas ✘ broken
+TerrainFeatures/grass new sprites in new areas ✘ broken
+TerrainFeatures/upperCavePlants overhauled spritesheet ✘ broken ✘ broken
+TileSheets/BuffsIcons new sprite in new area ✘ broken
+TileSheets/bushes new sprites in new area ✘ broken
+TileSheets/Craftables new sprites in empty + new areas, replaced unused sprites ✘ broken
+TileSheets/critters new sprites in empty + new areas ✘ broken
+TileSheets/crops new sprites in new area ✘ broken
+TileSheets/fruitTrees new sprites in new area ✘ broken
+TileSheets/furniture new sprites in empty + new areas; cosmetic changes ✘ broken ✓ mostly unaffected
+TileSheets/Projectiles new sprite in empty area, cosmetic changes ✘ broken ✓ mostly unaffected
+TileSheets/SecretNoteImages new sprites in new area ✘ broken
+TileSheets/weapons new sprites in empty + new areas ✘ broken
+Category: Modding

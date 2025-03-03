@@ -1,0 +1,23 @@
+Jump to navigation
+Jump to search
+This talk page is for discussing Achievements.
+Sign and date your posts by typing four tildes (~~~~).
+Put new text below old text.
+Be polite.
+Assume good faith.
+Don't delete discussions.
+Local Legend
+While attending the ceremony for completion of the Community Center, Mayor Lewis announces that the player has won the Stardew Hero award, and the player receives the trophy. However, no achievement is added to the list shown in the inventory, and no Local Legend achievement is in evidence in the game files, as described in this article and in the lead to Bundles. I do not recall ever actually seeing that achievement, but it may have once been present in an old version of the game. If so, it has been removed. The articles need revision, perhaps mentioning the Stardew Hero trophy instead.
+Do not confuse "Local Legend" with the secret "Legend" achievement given after earning 10 million gold. Giles (talk) 22:08, 25 July 2021 (UTC)
+It's a Steam achievement, you won't see it if you have the GOG version of the game. margotbean (talk) 00:13, 26 July 2021 (UTC)
+I'm on Steam and I still don't see it. Again. Never have. Files check out ok. But if they're corrupt, they have been so repeatedly across all the versions since the end of 2016. Giles (talk) 02:57, 26 July 2021 (UTC)
+I don't know. Do you think mention should be made of its platform? I am always disconcerted when I see things happen differently than stated. Nerves, I suppose, left over from the days I was an engineer. Like how I'd never be able to trust to an autonomous car. Giles (talk) 03:05, 26 July 2021 (UTC)
+The achievement does not appear in game. It appears in Steam. The article seems clear to me on this point. Is there a way you think it could be more clear? Zendowolf (talk) 19:38, 27 July 2021 (UTC)
+Well-Read
+The Books article claims that none of the books it lists apply to the Well-Read Achievement. By default, that implies that it must be the Lost Books, found by the player by digging up artifact spots and placed automatically in the library, that must be read for this achievement. My edit is in error if this deduction is not true, but then there is an error in the Books article. Giles (talk) 23:42, 3 April 2024 (UTC)
+The paragraph says the books only apply to skill books. I'll edit it to make it more clear. User314159 (talk) 23:48, 3 April 2024 (UTC)
+Thanks for making the changes! I would claim, however, that the paragraph did not refer only to skill books, whatever the intent. I can see now that one might have inferred that, but it was a hidden enough meaning that I missed it entirely. Glad to have it sorted out. :) Giles (talk) 18:34, 4 April 2024 (UTC)
+After looking this over again, I think there's still a problem. I do understand what is intended, and I do agree that one can get that understanding from reading all the words of the article. But both the interplay between the articles and the Books article itself are still misleading. The Achievement description says only "read every book". Follow the link, and you find the Books article, with the complete list of books. The impression is very strong that every Book must be read, and only the full article text can correct that mis-impression. Furthermore, the article does not clearly define "skill books" as a whole set. You can extract the basic meaning well enough, but then you are faced with having to sort through the whole single! list to identify which book belongs to which subset. The article needs two tables, one for each subset, or at least a single table clearly subdivided into two lists. In addition, the text about skill books should be moved out of the are that is supposedly describing all books, and be clearly associate with the skill book list. Finally, the Achievement description should say "read every non-skill book" (or something to that effect), regardless of what the Steam description might be, because that description is simply false. The Wiki should reflect the game, and that achievement is notably outside the base game, so its terminology or descriptions should not be held sacrosanct. Anyone have any thoughts about such a re-organization? Giles (talk) 19:25, 4 April 2024 (UTC)
+BTW, it appears that Talk:Books was deleted earlier due to some vandalizing. I didn't want to re-create that page to provide a pointer to this discussion, which must apparently go unreferenced there. But I regard that as unfortunate. Giles (talk) 19:30, 4 April 2024 (UTC)
+Recreate the page, Giles! margotbean (talk) 16:57, 5 April 2024 (UTC)
+Category: Talk pages

@@ -1,0 +1,55 @@
+Jump to navigation
+Jump to search
+Trap Bobber
+Causes fish to escape slower when you aren't reeling them in.
+Information
+Source Fish Shop • Crafting • SquidFest festival
+Sell Price 200g
+Crafting
+Recipe Source
+Fishing (Level 6)
+Ingredients
+Copper Bar (1)
+Sap (10)
+The Trap Bobber is a tackle that helps fishing by causing the progress bar to decrease 33% slower (50% if the player is using an Advanced Iridium Rod with 2 Trap Bobbers) when the fish isn't within the fishing bar, reducing a fish's ability to escape.[1] It can be crafted or purchased from Willy's Fish Shop for 500g after reaching Fishing level 6. It may also randomly appear at the Traveling Cart for 600–1,000g. One Trap Bobber is the copper tier reward on the 13th for the SquidFest festival.
+Only the Iridium Rod or the Advanced Iridium Rod can equip tackle. The Iridium Rod can only attach one tackle at a time, while the Advanced Iridium Rod can attach two. To attach tackle, left-click on the tackle, then right-click on the rod. To remove tackle, first right-click to remove any bait, then right-click to remove the tackle. For an Advanced Iridium Rod, the left tackle will be the first one removed.
+Tackle does not stack in inventory or chests; each tackle takes up one inventory slot.
+Contents
+1 Gifting
+2 Bundles
+3 Quests
+4 Notes
+5 References
+6 History
+Gifting
+Villager Reactions
+Dislike  Abigail •  Alex •  Caroline •  Clint •  Demetrius •  Dwarf •  Elliott •  Emily •  Evelyn •  George •  Gus •  Haley •  Harvey •  Jas •  Jodi •  Kent •  Krobus •  Leah •  Leo •  Lewis •  Linus •  Marnie •  Maru •  Pam •  Penny •  Pierre •  Robin •  Sam •  Sandy •  Sebastian •  Shane •  Vincent •  Willy •  Wizard
+Bundles
+The Trap Bobber is not used in any bundles.
+Quests
+The Trap Bobber is not used in any quests.
+Notes
+This recipe is profitable. It will result in a profit of 120g, or 90g with the Blacksmith profession.
+References
+↑ See BobberBar::update in the game code.
+History
+1.07: Fixed bug where the Trap Bobber could be incorrectly "consumed" by clicking it.
+1.6: Now a prize for the SquidFest festival. Slows bar depletion by 50% when two Trap Bobbers are equipped at once.
+
+Equipment
+Artisan Bee House • Cask • Cheese Press • Dehydrator • Fish Smoker • Keg • Loom • Mayonnaise Machine • Oil Maker • Preserves Jar
+Refining Bait Maker • Bone Mill • Charcoal Kiln • Crystalarium • Deluxe Worm Bin • Furnace • Geode Crusher • Heavy Furnace • Heavy Tapper • Lightning Rod • Mushroom Log • Ostrich Incubator • Recycling Machine • Seed Maker • Slime Egg-Press • Slime Incubator • Solar Panel • Tapper • Wood Chipper • Worm Bin
+Farming
+Fertilizer Basic Fertilizer • Basic Retaining Soil • Deluxe Fertilizer • Deluxe Retaining Soil • Deluxe Speed-Gro • Hyper Speed-Gro • Quality Fertilizer • Quality Retaining Soil • Speed-Gro • Tree Fertilizer
+Sprinklers Iridium Sprinkler • Quality Sprinkler • Sprinkler
+Other Deluxe Scarecrow • Garden Pot • Rarecrow • Scarecrow
+Fishing
+Bait Bait • Challenge Bait • Deluxe Bait • Magic Bait • Magnet • Targeted Bait • Wild Bait
+Tackle Barbed Hook • Cork Bobber • Curiosity Lure • Dressed Spinner • Lead Bobber • Quality Bobber • Sonar Bobber • Spinner • Trap Bobber • Treasure Hunter
+Other Crab Pot
+Bombs Bomb • Cherry Bomb • Mega Bomb
+Fences Gate • Hardwood Fence • Iron Fence • Stone Fence • Wood Fence
+Storage Big Chest • Big Stone Chest • Chest • Junimo Chest • Mini-Fridge • Stone Chest
+Signs Dark Sign • Stone Sign • Text Sign • Wood Sign
+Misc Anvil • Coffee Maker • Cookout Kit • Deconstructor • Fairy Dust • Farm Computer • Hopper • Mini-Forge • Mini-Jukebox • Mini-Shipping Bin • Sewing Machine • Staircase • Statue Of Blessings • Statue Of The Dwarf King • Telephone • Tent Kit • Tools • Workbench
+Categories: Fishing TackleCraftable items

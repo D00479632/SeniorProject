@@ -1,0 +1,67 @@
+Jump to navigation
+Jump to search
+This talk page is for discussing Grandpa.
+Sign and date your posts by typing four tildes (~~~~).
+Put new text below old text.
+Be polite.
+Assume good faith.
+Don't delete discussions.
+Contents
+1 Abigail
+2 Evaluation dialogue
+2.1 Evaluation
+2.2 Reevaluation
+3 Notes
+4 Suggestion
+Abigail
+Under Notes - When you talk to Abigail if you are married to her, before the evaluation, she might tell you to keep the foliage around grandpa’s shrine clean, mentioning that it “feels important”.
+This happens if marrying Abigail after the 3-year eval, too. Married her Spring 15, Year 3 and she gave the advice the morning of the Flower Dance (Spring 24, Year 3). I had already received eval and claimed reward prior to her mentioning it. Porcupain (talk) 13:31 15 August 2021
+It took me some time to find the quote, but it's in her marriage dialogue for any day she's outside. I've updated the page. Thanks! margotbean (talk) 18:29, 15 August 2021 (UTC)
+Evaluation dialogue
+Evaluation
+1 candle
+“ “The farm hasn't changed much in these past few years... but that's okay.
+If you're enjoying your new life, that's all that matters to me...”
+2 candles
+“ “You've done a good job with the place.
+It seems you've tried your best... that's all I can ask for. I'm proud of you.”
+3 candles
+“ “(male) You've done well, my boy.
+(female) You've done well, my dear.
+<FARM NAME> Farm has never looked better. It's an honor to the family name.
+Grandpa is pleased.”
+4 candles
+“ “(male) I'm so proud of you, my boy!
+(female) I'm so proud of you, my dear!
+You're a better farmer than I ever was, and you've brought great honor to the family name.
+I can feel it now... My spirit is finally put to rest. Bless you.”
+Reevaluation
+1 candle
+“ “The farm hasn't changed much all that much since we last spoke... but that's okay.
+If you're enjoying your new life, that's all that matters to me...
+I must return to the other world, now... but feel free to call on me again when you're ready.”
+2 candles
+“ “You've done a good job improving the place since we last spoke.
+It seems you've tried your best... that's all I can ask for. I'm proud of you.
+I must return to the other world, now... but feel free to call on me again when you're ready.”
+3 candles
+“ “(male) You've done well, my boy.
+(female) You've done well, my dear.
+<FARM NAME> Farm has never looked better. It's an honor to the family name.
+Grandpa is pleased.
+I must return to the other world, now... but feel free to call on me again when you're ready.”
+4 candles
+“ “(male) I'm so proud of you, my boy!
+(female) I'm so proud of you, my dear!
+You've really turned the place around since we last spoke!
+You're a better farmer than I ever was, and you've brought great honor to the family name.
+I can feel it now... My spirit is finally put to rest. Bless you.”
+--Spaceeinstein (talk) 18:54, 9 October 2021 (UTC)
+Notes
+1.6 added the 'animals' tab, allowing you to check friendship with your pet, so this section of the Notes may need to be updated/removed?
+There is currently no in-game way to view the relationship score with the pet. Only one notification pops up at maximum friendship with the pet which says: "<Animal Name> loves you ♡". The value can only be observed by checking within the save file.
+obvs with 1.6 im sure articles are flooded with tiny things like this, but i'm a little worried about editing it myself in case i miss some guidelines (^^') Frogsfoot (talk) 13:18, 20 March 2024
+Flooded is a very good word for it. Please, make the changes, add the changes to the history section, and take my thanks! (Also, please remember to sign your posts with 4 tildes) margotbean (talk) 17:31, 20 March 2024 (UTC)
+Suggestion
+Add a link to Spring in the phrase: 1st of Spring, Year 3 - Caviar (talk) 23:02, 8 October 2024 (UTC)
+Category: Talk pages

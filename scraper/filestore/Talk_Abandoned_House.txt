@@ -1,0 +1,13 @@
+Jump to navigation
+Jump to search
+This talk page is for discussing Abandoned House.
+Sign and date your posts by typing four tildes (~~~~).
+Put new text below old text.
+Be polite.
+Assume good faith.
+Don't delete discussions.
+Article name
+If "Abandoned House" is conjectural (ie non canonical), then surely the name used in-game (ie "Ruined House" as on the map) should be used? I suggest moving it there. Techhead7890 (talk) 02:04, 3 October 2021 (UTC)
+I thought the same thing myself, about 2 years after the game released. At this point, the page has been called "Abandoned House" for 5 years, and there's a redirect from "Ruined House" to it, so I don't think moving it is really necessary. margotbean (talk) 13:26, 3 October 2021 (UTC)
+If you go to the house without any achievements, you get text saying: "It looks abandoned...". The entry in the files that has this string is called: "Forest_HatMouseStore_Abandoned". BlaDe (talk) 00:49, 4 October 2021 (UTC)
+Category: Talk pages

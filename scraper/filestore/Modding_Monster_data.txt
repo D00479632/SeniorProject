@@ -1,0 +1,72 @@
+Jump to navigation
+Jump to search
+←Index
+This page explains how the game stores and parses monster data. This is an advanced guide for mod developers.
+Contents
+1 Raw data
+2 Format
+3 Monster-specific notes
+3.1 Slime sprites
+4 Monster IDs
+Raw data
+Monster data is stored in Content\Data\Monsters.xnb, which can be unpacked for editing. Here's the raw data as of 1.5.1 for reference:
+Data 
+Format
+Index Field Example Value
+0 health (hit points) 24
+1 damage (attack) 5
+2 minimum coins to drop (unimplemented) 0
+3 maximum coins to drop (unimplemented) 0
+4 whether a "glider" (flying) false
+5 duration of random movements 1000
+6 objects to drop 766 .75 766 .05 153 .1 66 .015 92 .15 96 .005 99 .001
+7 resilience (defense) 1
+8 jitteriness .01
+9 distance threshold for moving towards player 4
+10 speed 2
+11 chance of attacks missing .00
+12 whether a "mine monster" true
+13 experience gained 3
+14 display name Green Slime
+Index 4 designates "gliders": monsters that fly above the ground. Although Ghosts are not listed as gliders in the data, they are overridden to be gliders in the game code.
+Index 6 contains a list of object ID numbers, each followed by the probability of that object being chosen. Multiple objects can be chosen from the list. "Extra drop items" in the game code supplement this list for several monster types.
+Index 12 designates "mine monsters": monsters whose stats and drops are buffed for players who have reached the bottom of the mines. These include the Wilderness Golem and other monsters that do not actually occur in the mines. This field is false only for non-monsters that use the monster data file, such as the fireball projectile launched by the Squid Kid.
+Note that many of the values stored in the monster data are altered by the game code under specific circumstances. These include being in different parts of the mines, having reached the bottom of the mines, and having a higher combat skill level.
+Monster-specific notes
+Slime sprites
+Slime sprites are entirely modular, with the associated parts spread out across the sprite sheet. Every slime uses the same grey sprite, coloring it with a tint mask based on the type of slime, along with a random transparency value. Row 1 is used for the idle state and normal movement. Rows 2 through 4, while apparently identical, appear unused in most cases (row 2 appears sporadically at the end of certain attacks, but further testing is needed for exact conditions). Row 5 is used for the attack animation.
+Area 6 on the sprite sheet contains assets for the "mating ritual" slimes can go through, as well as their death particles. The mating particles (going clockwise) are used for seeking a mate, rejecting a mate, and receiving a rejection.
+Area 7 contains the assets for the eyes. Slime eyes are placed dynamically on their sprite based on their current action. When the slime is facing down, the eyes are placed directly on top of the sprite; when facing left, only the right eye is rendered, and moved slightly left; when facing right, only the left eye is rendered and moved slightly right; when facing up, the eyes are rendered directly behind the slime. The eyes, going clockwise, are used for their idle state, during attacks, during the "evil" state (each slime has a chance to turn "evil" when first hit, and gains a stat boost), and taking damage.
+Area 8 is the antenna attached to "male" slimes. It appears to animate independently of the slime itself, rocking back and forth somewhat at random. As with the main sprite, this uses a tint mask to take on the color of the slime variant.
+Area 9 is the antenna attached to "special" slimes, and animates in the same way as the "male" antenna. However, this one doesn't use the tint mask, instead using whatever raw color is on the sprite sheet.
+Monster IDs
+Each monster type has a unique ID (stored in the Name field) which can be used to spawn it (e.g. via console commands), and is used to track kills for the Adventurer's Guild monster eradication goals. These are the IDs for vanilla monsters:
+monster ID
+Bat Bat
+Big Slime BigSlime
+Blue Squid Blue Squid
+Bug Bug
+Cave Fly Fly
+Duggy Duggy
+Dust Sprite Dust Spirit
+Dwarvish Sentry Dwarvish Sentry
+Ghost Ghost
+Grub Grub
+Lava Crab Lava Crab
+Lava Lurk Lava Lurk
+Metal Head Metal Head
+Mummy Mummy
+Pepper Rex Pepper Rex
+Rock Crab Rock Crab
+Serpent Serpent
+Shadow Brute Shadow Brute
+Shadow Shaman Shadow Shaman
+Shadow Sniper Shadow Sniper
+Slime Green Slime
+Spider Spider
+Spiker Spiker
+Squid Kid Squid Kid
+Stone Golem Stone Golem
+Wilderness Golem Wilderness Golem
+Note that many other monsters are variants of the above (e.g. Haunted Skull is a variant of Bat), and have the same ID.
+Category: Modding

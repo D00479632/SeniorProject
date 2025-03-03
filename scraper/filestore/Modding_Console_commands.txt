@@ -1,0 +1,1818 @@
+Jump to navigation
+Jump to search
+←Index
+⚠
+Console commands aren't meant for general use. Be very careful using them.
+They can have permanent side-effects on your save data, break your save, or have other unintended effects. If you don't understand the command, don't use it on a save you care about.
+SMAPI provides access to hundreds of console commands with a wide variety of effects, ranging from useful tools to cheats to specialized test commands. These are documented on this page.
+Contents
+1 Format used on this page
+2 Console commands
+2.1 How to enter console commands
+2.2 Items & money
+2.3 Player
+2.4 World
+2.5 Other
+2.6 Advanced
+3 Debug commands
+3.1 How to enter debug commands
+3.2 Macros
+3.3 Actions and queries
+3.4 Items and inventory
+3.4.1 General item search and spawning
+3.4.2 Backpack and inventory
+3.4.3 Clothing and tailoring
+3.4.4 Tools and weapons
+3.4.5 Wallet items
+3.4.6 Miscellaneous items
+3.5 Player
+3.5.1 Appearance
+3.5.2 Health, stamina, buffs, and currency
+3.5.3 Movement and warping
+3.5.4 Skills and XP
+3.5.5 Statistics and achievements
+3.6 Collections and quests
+3.6.1 Cooking and crafting
+3.6.2 Fishing, museum, and secret notes
+3.6.3 Mail
+3.6.4 Quests and Special Orders
+3.7 NPCs
+3.7.1 Children
+3.7.2 Spawning and removal
+3.7.3 Relationships
+3.7.4 Dialogue
+3.7.5 Movement and warping
+3.7.6 Farm animals
+3.7.7 Pets, horses, and monsters
+3.8 Festivals and events
+3.9 Minigames and cutscenes
+3.10 Shops
+3.11 Locations
+3.11.1 Terrain, trees, and crops
+3.11.2 Objects and lights
+3.11.3 Farm buildings
+3.11.4 Farmhouse
+3.11.5 Special farm setups
+3.11.6 Community center and bundles
+3.11.7 Other location-specific functions
+3.12 World
+3.12.1 Date and time
+3.12.2 Weather and world state
+3.13 Game settings and meta info
+3.14 Multiplayer
+3.14.1 General multiplayer
+3.14.2 Logging
+3.14.3 Player relationships
+3.14.4 Shared/split money
+3.15 Audio and visual effects
+3.15.1 Animations
+3.15.2 Camera, lighting, and effects
+3.15.3 Audio
+3.16 Outdated, unimplemented, or unknown
+4 See also
+Format used on this page
+To avoid repeating text, this page uses a few conventions to convey common information:
+Required parameters are listed in angle brackets, and optional parameters are listed in square brackets. For example, speed <I:value> [I:duration] means the command requires an integer value parameter and has an optional integer duration parameter. Details such as default values should be listed in the description.
+The command names are case-insensitive, but their parameters might be case-sensitive.
+If a command description says that a parameter uses "fuzzy" match, that means that it can match on a case-insensitive partial name. For example, abi would match Abigail if it's fuzzy.
+Console commands
+How to enter console commands
+You can enter console commands directly into the SMAPI console window. You can type help to get a list of console commands (including commands added by other mods).
+Items & money
+command description  
+list_items
+Syntax: list_items [S:search text]
+Shows a list of every item in the game (including those added by mods). The optional search text limits results to those which have all of the search words somewhere in their ID + type + name.
+Example:
+> list_items iridium
+
+                name |                    id
+-------------------- | ---------------------
+   Iridium Fireplace |               (F)1796
+      Iridium Krobus |               (F)2396
+         Iridium Pan |      (H)IridiumPanHat
+        Iridium Band |                (O)527
+         Iridium Bar |                (O)337
+...
+#
+player_add name
+Syntax: player_add name <S:item name> [I:count] [I:quality]
+Adds an item to your inventory based on its name. Parameters:
+<S:item name> is the default or translated item name to spawn.
+[I:count] is how many items to add to your inventory (defaults to 1).
+[I:quality] is the quality of the item to create (defaults to normal). This can be one of 0 (normal), 1 (silver), 2 (gold), or 4 (iridium).
+Examples:
+player_add name "Galaxy Sword" will create a Galaxy Sword.
+player_add name "Stir Fry" 10 4 will create 10 iridium-quality stir fry dishes.
+#
+player_add
+Syntax: player_add <I:item ID> [I:count] [I:quality]
+Adds an item to your inventory based on its item ID. Parameters:
+<I:item ID> is the unique ID for the item to add (as shown by the list_items command).
+[I:count] is how many items to add to your inventory (defaults to 1).
+[I:quality] is the quality of the item to create (defaults to normal). This can be one of 0 (normal), 1 (silver), 2 (gold), or 4 (iridium).
+Examples:
+player_add (O)246 will create a wheat flour item.
+player_add (O)128 10 4 would create 10 iridium-quality pufferfish.
+#
+player_setmoney
+Syntax: player_setmoney <I:amount>
+Changes the player's total money to the given amount of gold.
+Example: player_setmoney 5000 will change your total money to 5000g.
+#
+Player
+command description  
+player_changecolor
+Syntax: player_changecolor <S:feature> <S:color>
+Sets a color for your character's sprite. Parameters:
+<S:feature> is one of hair, eyes, or pants.
+<S:color> is an RGB color, specified as three comma-separated channels from 0 (no color) to 255 (max color).
+Example: player_changecolor eyes 255,0,0 would make your character's eyes red.
+#
+player_changestyle
+Syntax: player_changestyle <S:target> <I:style ID>
+Sets a style for your character's sprite. Parameters:
+<S:target> is the part of the player's style to change. This is one of hair, shirt, skin, acc (accessory), shoe, swim (whether the player is wearing a swim suit), or gender.
+<I:style ID> is the integer ID for the style to use. For swim, this can be 0 (not in a swim suit) or 1 (in a swim suit). For gender, this can be 0 (male) or 1 (female).
+Example: player_setstyle swim 1 would change the player into their swim suit.
+#
+player_sethealth
+Syntax: player_sethealth <I:amount>
+Sets the player's current health.
+Example: player_sethealth 200 would set you to 200 health points.
+#
+player_setimmunity
+Syntax: player_setimmunity <I:amount>
+Sets the player's total immunity. This is permanent and is affected by immunity buffs. For example, if you set immunity 10 while Genie Shoes (+6 immunity) are equipped, removing the shoes would set your immunity to 4 (10 - 6). You can reset immunity to normal by removing everything that improves immunity, then entering player_setimmunity 0.
+Example: player_setimmunity 10 would give you 10 immunity points, or a 100% chance of avoiding buff effects.
+#
+player_setmaxhealth
+Syntax: player_setmaxhealth <I:amount>
+Sets the player's maximum health. This permanently changes the baseline; for example, if you set your max health to 500 and then drink Iridium Snake Milk, your max health will increase to 525.
+Example: player_setmaxhealth 500 would give you a maximum of 500 health points.
+#
+player_setmaxstamina
+Syntax: player_setmaxstamina <I:amount>
+Sets the player's maximum stamina. This permanently changes the baseline; for example, if you set your max stamina to 300 and then collect a Stardrop, your max stamina will increase to 334.
+Example: player_setmaxstamina 500 would give you a maximum of 500 stamina points.
+#
+player_setname
+Syntax: player_setname <S:target> <S:name>
+Sets the name of the current player or their farm, depending on the <S:target> value (player or farm).
+Examples:
+player_setname player Malon would change your player name to Malon.
+player_setname farm "Lon Lon" would change your farm name to Lon Lon Farm.
+#
+player_setstamina
+Syntax: player_setstamina <I:amount>
+Sets the player's current stamina.
+Example: player_setstamina 200 would give you 200 stamina points.
+#
+World
+command description  
+hurry_all
+Immediately warps all NPCs to their scheduled positions. (To hurry a single NPC, use debug hurry npc-name instead.)
+#
+set_farm_type list
+Shows a list of farm types you can use with the set_farm_type command.
+#
+set_farm_type
+Syntax: set_farm_type <S:farm type>
+Sets the player's current farm type, where <I:farm type> is one of 0 (Standard), 1 (Riverlands), 2 (forest), 3 (Hilltop), 4 (Combat), 5 (Four Corners), 6 (Beach), 7 (Meadowlands) or a custom farm type ID. You can enter set_farm_type list for a list of valid farm type IDs.
+Example: set_farm_type 1 will set the farm type to riverlands.
+#
+world_clear
+Syntax: world_clear <S:location> <S:entity type>
+Removes all entities of the given type from a location. Parameters:
+<S:location> is the internal name for a location, or current for the one you're in.
+<S:entity type> is one of crops, debris, fruit-trees, furniture, grass, trees, removable (everything that can be removed or destroyed during normal gameplay), or everything (everything including permanent bushes).
+Example: world_clear current debris will remove all debris (sticks, stones, and small plants).
+#
+world_downminelevel
+Goes down one mine level. If you're not in the mines, warps you to the first mine level.
+#
+world_freezetime
+Syntax: world_freezetime <I:action>
+Freezes or resumes the time. The [I:action] can be 0 (resume time) or 1 (freeze time); if omitted, time is toggled.
+#
+world_setday
+Syntax: world_setday <I:day>
+Sets the day of month.
+Example: world_setday 30 will set the date to the 30th of the current season.
+#
+world_setminelevel
+Syntax: world_setminelevel <I:mine level>
+Warps you to the given mine level. This can be the regular mines (levels 1–120), Skull Cavern (121+), or Quarry Mine (77377).
+Example: world_setminelevel 80 warps to mine level 80.
+#
+world_setseason
+Syntax: world_setseason <S:season>
+Sets the season (one of spring, summer, fall, or winter).
+Example: world_setseason spring will set the season to spring.
+#
+world_settime
+Syntax: world_settime <I:time>
+Sets the time of day, using the game's 26-hour time format (from 0600 for 6am at the start of day, to 2600 for 2am at the end of day).
+Example: world_settime 1430 will set time to 2:30pm.
+#
+world_setyear
+Syntax: world_setyear <I:year>
+Sets the year number.
+Example: world_setyear 10 will set the the game to the 10th year.
+#
+Other
+command description  
+harmony_summary
+Syntax: harmony_summary [S:search]
+Lists the Harmony patches added by SMAPI and other mods. If [S:search] is given, only patched method names matching any of the search terms will be listed.
+Example: harmony_summary MeleeWeapon will list patches which affect the MeleeWeapon class in the game code.
+#
+help
+Syntax: help [S:command name]
+Provides documentation for console commands. If called without an argument, shows general help text and a list of available commands. If called with a command name, shows the documentation for that command.
+#
+log_context
+Enables logging more contextual info like buttons pressed, menus changed, etc. For example, it can be used to get key binding codes or to simplify troubleshooting. This is enabled until you restart the game, or run the command again to disable it.
+#
+reload_i18n
+Reload translation files for all mods. This is mainly useful when translating mods. (Note that if a mod caches the text, it may show the old version until it updates.)
+#
+show_data_files
+Opens the folder containing the save and log files.
+#
+show_game_files
+Opens the game folder.
+#
+Mods may also add their own commands. For example, Content Patcher adds the patch command, documented here.
+Advanced
+⚠️ These may corrupt or make permanent changes to your save. DO NOT USE THESE unless you're absolutely sure.
+command description  
+apply_save_fix
+Syntax: apply_save_fix <S:fix ID>
+Applies one of the game's save migrations to the currently loaded save. Parameters:
+<s:fix ID> is the unique identifier for the save fix to apply. You can specify list to show a list of save fix IDs.
+Examples:
+apply_save_fix list would show a list of save fixes.
+apply_save_fix AddCampfireKit would add Cookout Kit to the player's crafting recipes if they meet the requirements for it.
+#
+debug
+Syntax: debug <*:command text>
+Executes one of the game's debug commands. See debug commands below for more info.
+#
+regenerate_bundles
+Syntax: regenerate_bundles [S:type] [*:flags]
+Regenerates your community center bundle data. This will reset all bundle progress, and may have unintended effects if you've already completed bundles. Parameters:
+[S:type]: the bundle type that will be generated (defaults to the current bundle type). Possible values: Default or Remixed.
+confirm: confirms that you're aware of the potential consequences. Running regenerate_bundles without this option will show a warning message instead.
+ignore_seed (optional): if the type is Remixed, causes remixed bundles to be re-randomized without using the save seed.
+Examples:
+regenerate_bundles confirm will regenerate bundles using the save's current settings.
+regenerate_bundles remixed ignore_seed confirm will regenerate using randomized remixed bundles.
+#
+Debug commands
+🅧
+Don't use these commands unless you're aware of the possible consequences.
+These are meant for the game developers, not players. They may crash your game, permanently corrupt or break your save, or cause other problems. Using these in a save you care about is not recommended.
+How to enter debug commands
+The game itself has hundreds of hidden debug commands used to test the game. These require the Console Commands mod too, but every command should be prefixed with debug like this:
+debug where Robin
+> Robin is at Farm, 21,4
+The example above returned output, but many commands don't. If there's no output, SMAPI will say Sent debug command to the game, but there was no output.
+Macros
+Instead of entering each command directly into the SMAPI console, you can also use the debug runmacro command to a list of debug commands from a text file. (This doesn't work with the non-debug commands.) Here's how to use it:
+Create a text file in your game folder (with a .txt extension).
+Type commands in this file, one command per line. Each command should start with a slash character (/), but should not include debug .
+To run the macro, type debug runmacro <filename> in the SMAPI console, replacing <filename> with the name of your command file without the .txt extension.
+For example, let's say you have a quickstart.txt file with these commands:
+/backpack 12
+/Money 10000
+/levelup 0 1
+/weapon 5
+Entering debug runmacro quickstart in the SMAPI console will execute all the commands, resulting in a backpack upgrade, money set to 10000g, farming skill set to level 1, and a Bone Sword added to the player's inventory. (Note: Money is capitalized in this example because if it is all lowercase it triggers a special chat response instead of executing the command.)
+Actions and queries
+command description  
+action
+Syntax: action <S:action>
+Run a trigger action string.
+Example: action AddMoney 500 will add 500 g to the current player.
+#
+gamequery,
+gq
+Syntax: gamequery <S:query>
+Check whether the given game state query matches in the current context.
+Example:
+gq !SEASON Spring, WEATHER Here Sun
+> Result: true.
+#
+itemquery,
+iq
+Syntax: itemquery <S:query>
+Open a shop menu with all the items matching an item query (all items free).
+Examples:
+debug iq ALL_ITEMS shows all items
+debug iq ALL_ITEMS (W) shows all weapons
+debug iq (O)128 shows a pufferfish (object 128)
+debug iq FLAVORED_ITEM Wine (O)128 shows Pufferfish Wine.
+#
+search
+Syntax: search [S:term]
+List all debug commands that match the given search term (or all debug commands if the search term is omitted).
+Example:
+debug search backpack
+> Found 2 debug commands matching search term 'backpack':
+    - Backpack
+    - FillBackpack (fbp, fill, fillbp)
+#
+tokens
+Syntax: tokens <S:tokenizedString>
+Parses a tokenizable string and prints its output.
+Example:
+tokens [LocalizedText Strings\StringsFromCSFiles:MapPage.cs.11064 [EscapedText [FarmName]]]
+> Result: "Lon Lon Farm"
+#
+Items and inventory
+General item search and spawning
+command description  
+createdebris,
+mainmenu
+Syntax: createdebris <I:itemID>
+Spawns the specified object at your position. See object data for a list of base game IDs. The object will initially be laying on the ground and will be picked up if you have room once the game regains focus.
+Example: debug createdebris 24 would spawn a parsnip.
+#
+furniture,
+ff
+Syntax: furniture [itemID]
+Adds the specified piece of furniture to your inventory. See furniture data for a list of base game IDs. If the itemID is not supplied, a random piece of furniture (ID 0 - 1612) will be given.
+Example: debug furniture 704 would give you an Oak Dresser.
+#
+fuzzyitemnamed,
+fin,
+f
+Syntax: fuzzyitemnamed <S:itemName> [I:amount] [I:quality]
+Adds the specified item to your inventory. This is a fuzzy search and the game will look through objects, craftables, furniture, weapons, boots, hats, and clothes to match it. There is no reliable way to use names with spaces or differentiate items with the same name, so not all items can be accessed with this command. The optional parameters are for stack amount (defaults is 1) and quality (default is 0.)
+Examples:
+debug fuzzyitemnamed sturg 5 4 would give you a stack of five Iridium-quality Sturgeon.
+debug fin galaxy would give you a Galaxy Sword.
+debug f grief would give you a "Good Grief" Shirt.
+#
+getindex
+Syntax: getindex <S:itemName>
+Outputs the parent sheet index (i.e., ID) of the specified item to the SMAPI console. This is a fuzzy search with similar behavior to the fuzzyitemnamed command. Weapons, Boots, and Hats are recognized but will not return the correct ID.
+Examples:
+debug getindex prisma would output Prismatic Shard's index is 74.
+debug getindex grief would output "Good Grief" Shirt's index is 1008.
+#
+item,
+i
+Syntax: item <I:itemID> [I:amount] [I:quality]
+Adds the specified object to your inventory. Despite the generic name, this accepts object IDs only. The optional parameters are for stack amount (default is 1) and quality (default is 0.)
+Example: debug item 74 would give you a Prismatic Shard.
+#
+itemnamed,
+in
+Syntax: itemnamed <S:itemName> [I:amount] [I:quality]
+Adds the specified object to your inventory. Accepts only object names; this is not a fuzzy match but is case-insensitive. Punctuation should be included, and arguments with spaces should be quoted. If the requested name is not unique, all matching objects will be added. The optional parameters are for stack amount (default is 1) and quality (default is 0.)
+Examples:
+debug itemnamed "miner's treat" would give you Miner's Treat.
+debug in "strange doll" 3 would give you 3 of each of the Strange Doll artifacts.
+#
+lookup,
+lu
+Syntax: lookup <S:itemName>
+Outputs the parent sheet index (i.e., ID) of the specified object to the SMAPI console. Accepts only object names; this is not a fuzzy match but is case-insensitive and spaces should still be included (see examples below). If the requested name is not unique, all matching objects will be included in the output.
+Examples:
+debug lookup diamond would output diamond 72.
+debug lu strange doll would output strange 126 and strange 127.
+#
+qualifiedid
+Print the held item's display name and qualified item ID.
+#
+tv
+Adds a TV furniture item to your inventory; this will be either a Budget TV or Plasma TV, randomly chosen with equal chances.
+#
+wallpaper,
+wp
+Syntax: wallpaper [I:itemID]
+Adds specified wallpaper item to inventory. If no ID is specified, this will randomly pick from any floor (ID 0-39) or wallpaper (ID 0-111). IDs over 111 do give items, but these will be either a combination of two different floor textures or a warped single floor texture.
+#
+whereIsItem,
+whereItem
+List all items matching the given item ID or name in the save. For example:
+> debug whereItem "Watering Can"
+
+Found 1 item matching name 'Watering Can':
+- Farm > Shed at 50, 14 > Shed149bae63-2add-4ab6-a5aa-b3bd76372004 > Chest at 4, 4 > Watering Can ((T)CopperWateringCan)
+#
+Backpack and inventory
+command description  
+backpack
+Syntax: backpack <I:amount>
+Increases your inventory space by the specified amount; capped at 36 slots.
+#
+clear,
+ci
+Removes all items currently in your inventory.
+#
+doesitemexist
+Syntax: doesitemexist <I:itemID> [S:isCraftable]
+Checks all locations and all player inventories to see if the specified item exists anywhere. If the isCraftable argument is present (no matter what it is), the search will look for big craftables with the specified ID; if the isCraftable argument is absent, the search will instead look for Objects with the specified ID. A global message saying Yes or No will be displayed, but there is no indication of where the item is located if it is found.
+Examples:
+debug doesitemexist 24 will search for Parsnips
+debug doesitemexist 12 t will search for Kegs.
+#
+fillbackpack,
+fillbp,
+fill,
+fbp
+Fills all empty spaces in your inventory with random Objects. Any objects spawned by this command will not be marked as found on the collections tab.
+#
+sl,
+shiftToolbarLeft
+Shifts inventory rows down, looping previous bottom row to top; similar to using Control-Tab with default keyboard controls. Will work with larger-than-normal inventories.
+#
+sr,
+shiftToolbarRight
+Shifts inventory rows up, looping previous top row to bottom; similar to using Tab with default keyboard controls. Will work with larger-than-normal inventories.
+#
+Clothing and tailoring
+command description  
+dye
+Syntax: dye <S:itemType> <S:color> <F:strength>
+Dyes the specified (currently equipped) item the specified color. Item type can be shirt or pants and valid colors are black, blue, green, red, white, and yellow. Strength is a float between 0 and 1 inclusive; the higher the number, the more vibrant the color. The dye will mix with the current color so it is sometimes necessary to "reset" the item by dyeing first with white strength 1.
+Examples:
+debug dye shirt red 0.33 would dye your current shirt a shade of pink.
+debug dye pants blue 1 would dye your current pants bright blue.
+#
+dyeAll
+Seems to be intended to bring up a character customization menu with HSV sliders for both shirt and pants, but it does not function because all entered commands are forced to lower case. The two individual commands dyepants and dyeshirt can be used instead.
+#
+dyemenu
+Brings up the same dyeing menu you get by interacting with the dye pots in Emily's house. Filling all six pots with appropriate items will bring up a character customization menu with HSV sliders for dyeing both your currently-equipped shirt and pants.
+#
+dyepants
+Brings up a character customization menu with HSV sliders for dyeing your currently-equipped pants.
+#
+dyeshirt
+Brings up a character customization menu with HSV sliders for dyeing your currently-equipped shirt.
+#
+hat
+Syntax: hat <I:itemID>
+Gives and automatically equips the specified hat to your farmer; any currently equipped hat will be destroyed. See hat data for a list of base game IDs.
+Example: debug hat 3 would give you a Sombrero and automatically equip it.
+#
+tailor
+Brings up the same tailoring menu you get by interacting with the sewing machine in Emily's house.
+#
+tailorrecipelisttool,
+trlt
+Brings up a special menu listing most Objects, what color they will dye an item, and what clothing item they can make when used in the sewing machine. The menu can be scrolled with the mouse wheel, hovering the mouse over the object will show the tooltip for the clothing it makes, and clicking on the object will add the clothing it makes to your inventory.
+#
+Tools and weapons
+command description  
+forge
+Shows the Forge menu.
+#
+pole
+Syntax: pole [I:type]
+Adds a Fishing Pole of the specified type to your inventory. Valid types are 0 (Bamboo Pole; the default), 1 (Training Rod), 2 (Fiberglass Rod), or 3 (Iridium Rod).
+#
+trashcan
+Syntax: trashcan <I:level>
+Changes the upgrade level of your inventory Trash Can. Upgrade levels are 0 (basic), 1 (copper), 2 (steel), 3 (gold), or 4 (iridium). The can sprite may not fully update until the inventory is closed and reopened.
+#
+Wallet items
+command description  
+clearspecials
+Removes most special items from your Wallet. The Rusty Key, Skull Key, Special Charm, Dark Talisman, Magic Ink, Club Card, Dwarven Translation Guide, and Magnifying Glass will all be removed, but Bear's Knowledge and Spring Onion Mastery will remain.
+#
+darktalisman
+Adds the Dark Talisman to (and removes the Magic Ink from) your wallet; also removes the magic artifact blocking access to the Witch's Swamp.
+Warning: This command will also clear all received mail and hidden mail flags.
+#
+skullkey
+Adds the Skull Key to your wallet.
+#
+specialitem
+Syntax: specialitem <I:itemID>
+Adds the specified special item to your wallet. Which ID values are useful is currently unknown.
+#
+specials
+Adds all special items to your wallet, including Bear's Knowledge and Spring Onion Mastery. The associated events for these two are also marked as seen.
+#
+townkey
+Adds the Key To The Town to your wallet.
+#
+Miscellaneous items
+command description  
+fillbin,
+fb
+Adds a Parsnip, Fire Quartz, LargeMouth Bass, Wild Horseradish, and Wood to the shipping bin.
+#
+listtags
+Outputs all object context tags associated with the currently-held item to the console.
+Example: debug listtags while holding an Acorn would output Tags on Acorn: id_o_309 color_brown tree_seed_item item_acorn category_seeds.
+#
+makeinedible
+Makes the currently-held item inedible by setting its edibility value to -300; does not affect other instances of the same item.
+#
+skullgear
+Sets your current backpack size to 36 slots, equips a Savage Ring and Iridium Band, equips Space Boots, and clears inventory except for an Iridium Pickaxe, a Galaxy Sword, a stack of 20 Spicy Eels, and a stack of 20 Mega Bombs. Also sets your maximum health to 75 and gives you the Fighter profession. Any previously equipped boots and rings and all previous inventory items are lost.
+#
+Player
+Appearance
+command description  
+customizemenu,
+customize,
+cmenu
+Opens the full character customization menu seen at the start of a new game which includes gender options and player/farm names. Changing the player name will cause the save file to change as well.
+#
+haircolor
+Syntax: haircolor <I:R> <I:G> <I:B>
+Sets the player's hair color to the specified RGB values. Each has a range of 0-255.
+#
+hairstyle
+Syntax: hairstyle <I:ID>
+Sets the player's hair style to the specified ID. Note that these IDs are one less than the values shown in the character customization menu and have a range of 0-55 in the base game.
+#
+pants
+Syntax: pants <I:R> <I:G> <I:B>
+Sets the player's pants color to the specified RGB values. Each has a range of 0-255. This no longer has a noticeable effect since pants are now a clothing item; the dyepants command should be used instead.
+#
+shirtcolor
+Syntax: shirtcolor <I:ID>
+Sets the player's shirt choice to the specified ID. This no longer has a noticeable effect since shirts are now a clothing item; the clothes or dyeshirt commands should be used instead.
+#
+skincolor
+Syntax: skincolor <I:ID>
+Sets the player's skin color to the specified ID. Note that these IDs are one less than the values shown in the character customization menu and have a range of 0-23 in the base game.
+#
+Health, stamina, buffs, and currency
+command description  
+buff
+Syntax: buff <I:buffID>
+Adds the specified buff to the player. Useful ID values are listed below. Also see the speed command.
+6 - Full (prevents eating) for 3 min 18 - Spooked (-8 attack) for 8 sec
+7 - Quenched (prevents drinking) for 1 min 19 - Frozen (-8 speed) for 2 sec
+12 - Goblin's Curse (-3 spd/def/att) for 6 sec 20 - Warrior Energy (+10 attack) for 5 sec
+13 - Slimed (-4 speed) for 2.5-3 sec 21 - Yoba's Blessing (Invincibility) for 5 sec
+14 - Jinxed (-8 defense) for 8 sec 22 - Adrenaline Rush (+2 speed) for 3 sec
+17 - Tipsy (-1 speed) for 30 sec 23 - Oil of Garlic (prevents swarms) for 10 min
+#
+clearbuffs
+Removes all active buffs (both positive and negative.)
+#
+die
+Sets your health to zero, resulting in passing out and awakening in the Clinic.
+#
+energize
+Syntax: energize [I:amount]
+Sets your energy to the specified amount. If no amount is specified, it will be set to maximum.
+#
+exhaust
+Sets your energy to -15, resulting in passing out and ending the day.
+#
+gem
+Syntax: gem <I:amount>
+Gives you the specified number of Qi Gems.
+#
+gold
+Gives you one million (1,000,000) gold.
+#
+heal
+Sets your health to maximum.
+#
+invincible,
+inv,
+gm
+Toggles invincibility. When on, you will not take any damage.
+#
+money
+Syntax: money <I:amount>
+Sets your money to the specified amount. To use in a macro, make sure one or more of the letters in the command is capitalized.
+#
+testnut
+Spawns a Golden Walnut at the upper left corner of the current map which will immediately start moving towards a player for collection.
+#
+walnut
+Syntax: walnut <I:amount>
+Gives your team the specified number of Golden Walnuts.
+#
+Movement and warping
+command description  
+canmove,
+cm,
+c
+Attempts to force-enable player movement by resetting animations and dismounting the horse. Sometimes useful when the player becomes "stuck."
+#
+minelevel
+Syntax: minelevel <I:level> [I:layout]
+Warps you to the specified level of the Mines using the specified layout in Content/Maps/Mines. Use level 77377 to warp to the Quarry Mine, and to warp to a level in the Skull Cavern, add 120 to your target level.
+Example: debug mineLevel 101 47 warps to mine level 101 using layout 47.
+#
+printplayerpos,
+ppp
+Prints the player's current position in both tile and pixel coordinates to the console.
+#
+speed
+Syntax: speed <I:value> [I:duration]
+Gives the player a speed buff of the specified amount for the specified duration. The duration is interpreted as in-game minutes and defaults to 30; multiplying this value by 0.7 will convert to real-time seconds. This buff has a unique source of "Debug Speed" and will stack with both food and drink speed buffs.
+Example: debug speed 5 600 will give you a +5 speed buff which lasts for 7 minutes (10 game hours).
+#
+volcano
+Syntax: volcano <I:level>
+Warps you to the specified level of the Volcano Dungeon.
+#
+warp
+Syntax: warp <S:locationName> [I:X] [I:Y]
+Warps you to the specified location at the given coordinates. The location name is a fuzzy match, and if the coordinates are not supplied the game has a list of hardcoded defaults it will use for many locations (see Utility.getDefaultWarpLocation() for details.)
+Examples:
+debug warp forest 33 99 will warp you near Hat Mouse's shop in the forest.
+debug warp sci will warp you to Robin's House (internally ScienceHouse) just in front of where Robin tends the shop.
+#
+warphome,
+wh
+Warps you directly to your bed in your farmhouse/cabin.
+#
+warpshop,
+ws
+Syntax: warpshop <S:npcName>
+Warps you to the shop run by the specified NPC; if necessary will also warp the NPC to the shop location. NPC names are case-insensitive and can be one of the following: pierre, robin, krobus, sandy, marnie, clint, gus, willy, pam, dwarf, and wizard. The wizard option will also add Magic Ink to your wallet and mark the event where the ink is returned as already seen.
+Example: debug warpshop marnie will warp both you and Marnie to her animal shop.
+#
+warptocharacter,
+wtc
+Syntax: warptocharacter <S:npcName>
+Warps you to the specified character, wherever they are. This is a fuzzy match.
+#
+warptoplayer,
+wtp
+Syntax: warptoplayer <S:playerName>
+Warps you to the specified player, wherever they are. The match is case-insensitive and names with spaces should be surrounded by double quotes.
+#
+Skills and XP
+command description  
+experience
+Syntax: experience <I:skillID> <I:xpAmount>
+Adds the specified amount of experience to the specified skill. Valid skill IDs are 0 (Farming), 1 (Fishing), 2 (Foraging), 3 (Mining), 4 (Combat), and 5 (Luck).
+#
+fishing
+Syntax: fishing <I:level>
+Sets your fishing skill to the specified level. This does not unlock crafting recipes or allow profession choice, nor does it change the underlying experience amount. However it does count in terms of unlocking what Willy sells and enabling legendary fish to be hooked.
+#
+levelup
+Syntax: levelup <I:skillID> <I:level>
+Shows the appropriate levelup window for the specified skill and level. This unlocks any associated crafting recipes and (if applicable) lets you choose a profession, but does not actually change the skill level or underlying experience amount. Valid skill IDs are 0 (Farming), 1 (Fishing), 2 (Foraging), 3 (Mining), 4 (Combat), and 5 (Luck).
+#
+profession
+Syntax: profession <I:ID>
+Gives you the specified profession. Note that this just hard adds the profession, it's not a way to switch skill trees. Valid profession IDs from the base game are shown below.
+Farming Fishing Foraging Mining Combat
+0 - Rancher 6 - Fisher 12 - Forester 18 - Miner 24 - Fighter
+1 - Tiller 7 - Trapper 13 - Gatherer 19 - Geologist 25 - Scout
+2 - Coopmaster 8 - Angler 14 - Lumberjack 20 - Blacksmith 26 - Brute
+3 - Shepherd 9 - Pirate 15 - Tapper 21 - Prospector 27 - Defender
+4 - Artisan 10 - Mariner 16 - Botanist 22 - Excavator 28 - Acrobat
+5 - Agriculturist 11 - Luremaster 17 - Tracker 23 - Gemologist 29 - Desperado
+#
+showexperience
+Syntax: showexperience <I:skillID>
+Outputs your total experience amount for the specified skill in the SMAPI console. Valid skill IDs are 0 (Farming), 1 (Fishing), 2 (Foraging), 3 (Mining), 4 (Combat), and 5 (Luck).
+#
+Statistics and achievements
+command description  
+achieve
+Syntax: achieve <S:steamAchieveID>
+Awards the specified Steam achievement. Steam achievements which correspond to in-game achievements use the same numeric ID as listed in Achievement data with one exception: the ID for Greenhorn is a0 instead of just 0. Steam-only achievements have a much longer string ID; these are listed below.
+Achievement_SingularTalent - Singular Talent Achievement_MasterOfTheFiveWays - Master Of The Five Ways
+Achievement_LocalLegend - Local Legend Achievement_Joja - Joja Co. Member Of The Year
+Achievement_FullHouse - Full House Achievement_Stardrop - Mystery Of The Stardrops
+Achievement_TheBottom - The Bottom Achievement_KeeperOfTheMysticRings - Protector Of The Valley
+Achievement_PrairieKing - Prairie King Achievement_FectorsChallenge - Fector's Challenge
+Examples:
+debug achieve 17 will award the Steam achievement for Gourmet Chef.
+debug achieve Achievement_Stardrop will award the Steam achievement for Mystery of the Stardrops.
+#
+achievement
+Syntax: achievement <I:achieveID>
+Awards the specified in-game achievement. See Achievement data for a list of IDs. This will also award the associated Steam achievement if you don't have it.
+#
+caughtfish,
+fishcaught
+Syntax: caughtfish <I:value>
+Sets the FishCaught stat to the specified amount.
+#
+daysplayed,
+dap
+Shows a global message with the current value of the daysPlayed stat.
+#
+dp
+Syntax: dp <I:value>
+Sets the daysPlayed stat to the specified amount.
+#
+getstat
+Syntax: getstat <S:statID>
+Outputs value of specified stat to the SMAPI console. Some of these values are also accessible in-game by interacting with a machine in the Casino. Stat IDs are case-sensitive (Technical note: they are the properties for the StardewValley.Stats class, but not all of them are actually tracked by the game.) Known IDs as of version 1.4.3 are: AverageBedtime, BarsSmelted, BeveragesMade, BouldersCracked, CaveCarrotsFound, CheeseMade, ChickenEggsLayed, CoalFound, CoinsFound, CopperFound, CowMilkProduced, CropsShipped, DaysPlayed, DiamondsFound, DirtHoed, DuckEggsLayed, FishCaught, GeodesCracked, GiftsGiven, GoatCheeseMade, GoatMilkProduced, GoldFound, GoodFriends, IndividualMoneyEarned, IridiumFound, IronFound, ItemsCooked, ItemsCrafted, ItemsForaged, ItemsShipped, MonstersKilled, MysticStonesCrushed, NotesFound, OtherPreciousGemsFound, PiecesOfTrashRecycled, PreservesMade, PrismaticShardsFound, QuestsCompleted, RabbitWoolProduced, RocksCrushed, SeedsSown, SheepWoolProduced, SlimesKilled, StarLevelCropsShipped, StepsTaken, SticksChopped, StoneGathered, StumpsChopped, TimesFished, TimesUnconscious, TrufflesFound, and WeedsEliminated.
+#
+killmonsterstat,
+kms
+Syntax: killmonsterstat <S:monsterName> <I:value>
+Sets the kill stats for the specified monster to the specified value. The monster name should be the same as the keys in Data/Monsters and names with spaces should be in double quotes; it is case-sensitive. The command will output a buggy response to the console due to referencing the wrong string key, but the stats are correctly set.
+Example: debug kms "Dust Spirit" 499 will set the monster kill stats for Dust Sprites to 499 and output Drink Dust Spirit?
+#
+mineinfo
+Outputs two mine-related stats to the SMAPI Console: MineShaft.lowestLevelReached and player.deepestMineLevel
+#
+perfection
+Makes a variety of changes to qualify for Perfection. These include maxing all friendships, marking all fish as caught, awarding and marking complete all cooking and crafting recipes, marking all items as shipped, setting the flags for all stardrops, setting all skill levels to 10, awarding 500 kills for all monsters, forcibly placing all 4 obelisks and the gold clock in the upper left corner of the farm, and giving 130 walnuts.
+#
+resetachievements
+Resets the Steam achievements.
+#
+setstat
+Syntax: setstat <S:statID> <I:value>
+Sets the specified stat to the specified value. Stat IDs are case-sensitive; see getstat more information.
+Example: debug setstat StepsTaken 99999 would set the Number of Steps Taken stat to 99999.
+#
+Collections and quests
+Cooking and crafting
+command description  
+addallcrafting
+Teaches you all crafting recipes. Basically the same as crafting, but this one does not check if you already know the recipe before adding so it may output some error messages to the console about duplicate keys.
+#
+cooking
+Teaches you all cooking recipes.
+#
+cookingrecipe
+Syntax: cookingrecipe <S:recipeName>
+Teaches you the specified cooking recipe. Names are case-sensitive and may contain spaces.
+Example: debug cookingrecipe Seafoam Pudding will give you the recipe to cook Seafoam Pudding.
+#
+crafting
+Teaches you all crafting recipes.
+#
+craftingrecipe,
+addCraftingRecipe
+Syntax: craftingrecipe <S:recipeName>
+Teaches you the specified crafting recipe. Names are case-sensitive and may contain spaces.
+Example: debug craftingrecipe Ancient Seeds will give you the recipe to craft plantable ancient seeds from the artifact.
+#
+slimecraft
+Teaches you the crafting recipes for Slime Incubator and Slime Egg-Press.
+#
+Fishing, museum, and secret notes
+command description  
+clearfishcaught
+Clears all records of which fish you have caught, resetting the collection. To also change the stat which tracks how many total fish have been caught, see caughtfish.
+#
+clearmuseum
+Removes all donated items from the museum, emptying the museum displays and causing all artifacts and minerals to have the Gunther can tell you more about this... description. Does not affect the records of which artifacts and minerals have been found (i.e., the collection pages).
+#
+deletearch
+Clears all records of which artifacts and minerals you have found.
+Warning: Also clears all record of which fish you have caught and clears all received mail (including hidden progress flags).
+#
+museumloot
+Adds unfound artifacts and minerals to your inventory until it is full. Items added by this command will now be marked "found" on the collection pages.
+#
+newmuseumloot
+Adds undonated artifacts and minerals to your inventory until it is full. Items added by this command increment the "Total found" count on the collection pages.
+#
+note
+Syntax: note <I:bookID>
+Sets the count of Lost Books recovered to 18, even if you previously had found more, and brings up a window with the contents of the specified book. Book IDs above 18 will show the message There's a book missing here.
+#
+sn,
+secretNote
+Syntax: sn [I:noteID]
+Adds specified secret note to your inventory. If no ID is specified, a random unseen note will be added. See Data/SecretNotes for a list of IDs.
+#
+Mail
+command description  
+allmail
+Queues every letter defined in Data/mail for delivery tomorrow.
+#
+allmailread
+Marks every letter defined in Data/mail as already read. They will all be accessible in the letters tab of the collections menu.
+#
+broadcastmail
+Syntax: broadcastmail <S:mailID>
+Queues specified mail for delivery tomorrow for all players. The ID is case-sensitive; see Data/mail for valid IDs in the base game.
+#
+broadcastmailbox
+Syntax: broadcastmailbox <S:mailID>
+Immediately adds specified mail to all players' mailboxes. The ID is case-sensitive; see Data/mail for valid IDs in the base game.
+#
+clearmail
+Clears records of all received mail (including hidden progress flags). This also clears the letters tab in the collections menu.
+#
+mailfortomorrow,
+mft
+Syntax: mailfortomorrow <S:mailID> [noletter]
+Queues specified mail for delivery tomorrow. The ID is case-sensitive, and any zeros in the given ID will be replaced with underscores. See Data/mail for valid IDs (after replacement) in the base game. Because of the zero replacement, some letters (e.g., quest10) are inaccessible with this command; broadcastmail may be a useful alternative in those cases. If the second parameter is present (with any value), the "noletter" flag is set, which will add the mail to your mail received list without showing a "new mail" indicator.
+#
+seenmail
+Syntax: seenmail <S:mailID> [B:addOrRemove]
+Marks specified mail as already received. The ID is case-sensitive; see Data/mail for valid IDs in the base game. You can remove a mail received (instead of adding it) by setting the second argument to false, like seenMail <id> false.
+#
+showmail
+Syntax: showmail <S:mailID>
+Brings up the letter-reading window with the specified mail. The ID is case-sensitive; see Data/mail for valid IDs in the base game. If a match cannot be found, a blank window will briefly display and an ArgumentOutOfRange error will be triggered. Does not set the letter as received or cause it to show in the letter tab of the collections menu.
+Example: debug showmail SeaAmulet will show the letter Lewis sends about Mermaid's Pendants.
+#
+Quests and Special Orders
+command description  
+clearquests
+Removes all quests from your journal/quest log.
+#
+collectquest
+Starts a new random resource Gathering quest. If used multiple times on the same game day, the quest will always be the same.
+#
+completespecialorder,
+cso
+Completes all objectives for all currently active Special Orders and Qi Challenges.
+#
+completequest
+Syntax: completequest <I:questID>
+Completes specified quest and removes it from your journal. See Data/Quests for a list of IDs.
+#
+deliveryquest
+Starts a new random item Delivery quest. If used multiple times on the same game day, the quest will always be the same.
+#
+getallquests
+Starts every quest from Data/Quests that you don't already have.
+#
+ordersboard
+Shows the Special Orders quest board.
+#
+qiboard
+Shows the Qi Challenges quest board.
+#
+quest
+Syntax: quest <I:questID>
+Starts the specified quest. See Data/Quests for a list of IDs.
+#
+quests
+Starts every quest from Data/Quests that you don't already have as well as a random item Delivery quest and a random Slay Monster quest.
+#
+removequest
+Syntax: removequest <I:questID>
+Silently removes specified quest from your journal. See Data/Quests for a list of IDs.
+#
+slayquest
+Starts a new random Slay Monster quest. If used multiple times on the same game day, the quest will always be the same.
+#
+specialorder
+Syntax: specialorder <S:questID>
+Starts the Special Order (either town or Qi Challenge) with the specified ID. See Data/SpecialOrders for a list of IDs.
+#
+NPCs
+Children
+command description  
+child,
+kid
+If you have children, advances the age of the first child to the next stage. Otherwise, spawns a new child named "Baby" with gender and skin tone randomly chosen; the child will start at stage 3 (crawling) and may initially spawn out of bounds. You do not need to be married or have an upgraded house to use this command.
+#
+child2
+If you have multiple children, advances the age of the second child to the next stage. Otherwise, spawns a new child named "Baby2" with gender and skin tone randomly chosen; the child will start at stage 3 (crawling) and may initially spawn out of bounds. You do not need to be married or have an upgraded house to use this command.
+#
+clearchildren
+Removes all your children.
+#
+pregnant
+Sets a new baby to be born/adopted the next day. You may need to be already married (and have a house with a nursery) for this to work.
+#
+Spawning and removal
+command description  
+addkent
+Spawns Kent if after year 1.
+#
+characterinfo
+Displays a global message listing how many NPCs are in the current location.
+#
+clearcharacters
+Removes all NPCs who are in the current location.
+#
+clone
+Syntax: clone <S:npcName>
+Clones specified NPC and places the copy in the current location. Name is a fuzzy match.
+Warning: cloning farmer will crash the game.
+#
+killall
+Syntax: killall <S:npcName>
+Removes all NPCs except for the specified character. Name is an exact match, and they are only spared from removal if they are in the current location. Will also remove NPCs inside constructed buildings.
+#
+killnpc,
+removenpc
+Syntax: killnpc <S:npcName>
+Removes specified NPC from the game, checking all game locations and buildings. Name is an exact match. Command will output a message to the console stating whether or not the NPC was found and removed.
+#
+Relationships
+command description  
+dating
+Syntax: dating <S:npcName>
+Sets your relationship status with specified NPC to Dating; i.e., marks them as having been given a bouquet. Name is an exact match.
+#
+divorce
+Queues your farmer to divorce their spouse overnight. The spouse room may not be fully removed until you have slept and/or returned to title.
+#
+engaged
+Syntax: engaged <S:npcName>
+Increases your friendship with specified NPC by 2500 points (10 hearts) and sets relationship status to Engaged with a wedding for the next day. Name is an exact match.
+#
+friendall
+Syntax: friendall [I:value]
+Increases friendship with all socializable NPCs by the specified amount. If no amount is given, the increase will be 2500 points (10 hearts). All normal point caps are in place, so a bachelor you aren't dating will not increase past 8 hearts. Previously unmet NPCs will also be marked as met and have friendship increased with the following exceptions:
+Dwarf will be marked as met but not change friendship if you don't have the Dwarven Translation Guide.
+Kent will not be included if you are still in year 1.
+Krobus will not be included if they have not yet been met in game.
+#
+friendship,
+friend
+Syntax: friendship <S:npcName> <I:value>
+Sets friendship with specified NPC to specified value. This is a fuzzy match, and they will be marked as met if previously unmet.
+#
+invitemovie
+Syntax: invitemovie <S:npcName>
+Invites specified NPC to see a movie today. This is a fuzzy match and you will still need your own ticket to enter the theatre.
+#
+makeex
+Syntax: makeex <S:npcName>
+Sets your relationship status with specified NPC to Divorced, removing any marriage or bouquet flag and listing them as ex-husband or ex-wife. Name is an exact match.
+#
+marry
+Syntax: marry <S:npcName>
+Increases your friendship with the specified NPC by 2500 points (10 hearts), and sets your relationship status to Married with an anniversary of today. Name is a fuzzy match.
+Notes:
+If you haven't upgraded your farmhouse, also run debug houseUpgrade 1 to avoid errors.
+The spouse room generally appears empty on the first day and you'll need to sleep for it and your spouse to spawn properly.
+For non-vanilla marriage candidates:
+Trying to debug marry Krobus will work, but will set him as a spouse rather than a roommate. Most of his dialogue and actions remain the same, but he will use some hardcoded spouse lines where he would otherwise have his own version, have a heart instead of a smiley face for his hug/kiss sprite, and the social menu will list him as your spouse. It's unclear if you're able to have children this way.
+For other non-marriageable villagers, an empty spouse room will spawn and the NPC will move in. They will follow a basic hardcoded spouse schedule and can be kissed (although they won't have a kiss sprite), but they will rarely have dialogue.
+#
+wedding
+Syntax: wedding <S:npcName>
+Sets the specified NPC as your spouse and queues a wedding for today. Name is an exact match. If the specified NPC is not normally marriageable, the wedding will still occur but they will be invisible on the wedding day.
+Tip: if you want to test a normal wedding, you can run these commands and then give them the pendant (replacing Abigail with the NPC's internal name):
+debug houseUpgrade 2
+debug friendship Abigail 2500
+debug item (O)460
+debug warpToCharacter Abigail
+#
+Dialogue
+command description  
+db,
+speakTo
+Syntax: db <S:npcName>
+Shows a dialogue box with the current dialogue for the specified NPC. Name is a fuzzy match and will default to Pierre if not supplied. This does count as having spoken to that NPC today, and if they don't have any more dialogue right now, the message Stack empty will be output to the console.
+#
+dialogue,
+addDialogue
+Syntax: dialogue <S:npcName> <S:dialogueString>
+Sets the dialogue for the specified character to the specified string. Name is a fuzzy match, and NPC names containing spaces should be quoted (e.g. debug dialogue "Some NPC" Some dialgoue text$h. The dialogue string should start with a zero and everything after will be parsed. It can include tokens such as @ for the farmer name and portrait commands; see Dialogue for format specifics.
+Example: debug dialogue Abi 0Hi @! Modding is fun!$h would set Abigail's next dialogue to be Hi (FarmerName)! Modding is fun! with her happy portrait.
+#
+loaddialogue
+Syntax: loaddialogue <S:npcName> <S:dialogueKey>
+Sets the dialogue for the specified character using the specified asset key. Name is a fuzzy match. Key format appears to be file:key but exact specifics are unknown. Curly braces in the key ({, }) will be converted to angle brackets (<, >).
+#
+phone
+Brings up the Telephone menu.
+#
+question
+Syntax: question <I:questionID> [B:answerOrForget]
+Marks the specified dialogue question as answered. You can forget a selected answer (instead of adding it) by setting the second argument to false, like question <id> false.
+#
+sb
+Syntax: sb <S:npcName> showTextAboveHead
+Shows a speech bubble saying "Hello! This is a test" above the specified NPC's head. Name is a fuzzy match.
+#
+speech
+Syntax: speech <S:npcName> <S:dialogueKey>
+Displays a dialogue box for the specified character saying the specified string. Name is a fuzzy match and names with spaces should be in double quotes. The dialogue string should start with a zero and everything after will be parsed. It can include tokens such as @ for the farmer name and portrait commands; see Dialogue for format specifics. Useful for testing dialogue changes.
+Example: debug speech Abi 0Hi @! Modding is fun!$h would open a dialogue box of Abigail saying Hi (FarmerName)! Modding is fun! with her happy portrait.
+#
+Movement and warping
+command description  
+facedirection,
+face,
+fd
+Syntax: facedirection <S:npcName> <I:direction>
+Sets specified character to face the specified direction. Name is a fuzzy match and also accepts farmer. See Event data for the valid directions.
+#
+faceplayer
+Syntax: faceplayer <S:npcName>
+Sets specified character to face towards the player. Name is a fuzzy match.
+#
+hurry
+Syntax: hurry <S:npcName>
+Warps specified character to the endpoint of their current schedule entry. Name is a fuzzy match.
+Example: debug hurry pam would cause Pam to immediately warp to the bus if entered during her morning walk after the bus has been repaired.
+#
+jump
+Syntax: jump <S:npcName> [F:velocity]
+Makes specified character jump with the specified velocity. Name is a fuzzy match and also accepts farmer. Velocity is a float and defaults to 8.0 if not supplied, which results in a jump of about half the height of the player character.
+#
+warpcharacter,
+wc
+Syntax: warpcharacter <S:npcName> <I:X> <I:Y> [I:facingDirection]
+Warps specified character to the given coordinates on the current map. Name is a fuzzy match. See Event data for the valid directions; the default is 2. Note: if you do not include enough parameters, an error message will be printed to the console which incorrectly states the default facing direction is 1.
+#
+warpcharacterto,
+wct
+Syntax: warpcharacterto <S:npcName> <S:locationName> <I:X> <I:Y> [I:facingDirection]
+Warps specified character to the given coordinates on the specified map. Character name is a fuzzy match, but location is exact. See Event data for the valid directions; the default is 2. Note: if you do not include enough parameters, an error message will be printed to the console which incorrectly states the default facing direction is 1.
+Example: debug wct robin Farm 69 16 would warp Robin to just right of the mailbox on the Farm map, facing downwards.
+#
+warpcharactertome,
+wctm
+Syntax: warpcharactertome <S:npcName>
+Warps the specified character directly to you; name is a fuzzy match.
+#
+whereis,
+where
+Syntax: whereis <S:npcName>
+Outputs the location and coordinates of the specified character to the SMAPI console. Name is a fuzzy match, so the command will return all matching NPCs.
+#
+Farm animals
+command description  
+animal
+Syntax: animal <S:type>
+Adds a new baby animal of the specified type to the Farm. The animal will have a random name and be assigned to the correct type of building (if there is room). Type is a case-sensitive match with spaces allowed. Valid types for the base game are listed below.
+Chicken - Randomly chooses between white, brown, and blue (if unlocked). Brown Chicken can be explicitly specified, but the result will still be random if trying to specify other colors.
+Cow - Randomly chooses between white and brown. Colors can be explicitly specified by using Brown Cow or White Cow.
+Dinosaur
+Duck
+Goat
+Pig
+Rabbit
+Sheep
+Void Chicken
+Ostrich
+#
+animalinfo
+Displays a global message with the count of the total number of farm animals.
+#
+befriendanimals
+Syntax: befriendanimals [I:amount]
+Sets friendship of all animals who live (and are currently present) in the current location to the given amount. Default is 1000 (max).
+#
+fixanimals
+Goes through all Farm buildings and removes entries for animals which no longer live in that building.
+#
+growanimals
+Sets all animals who live in the current location to day 1 of adulthood, unless they are already adults. May cause each of them to eat hay.
+#
+pauseanimals
+Pauses all farm animals in the current location indefinitely. Exiting and re-entering may cause them to be randomly moved to a new spot, but they will remain paused.
+#
+unpauseanimals
+Unpauses all farm animals in the current location.
+#
+warpanimaltome,
+watm
+Syntax: warpanimaltome <S:animalName>
+Warps the specified farm animal to you; name is a case-insensitive fuzzy search but will only work in a location that allows animals.
+#
+Pets, horses, and monsters
+command description  
+cat
+Syntax: cat <I:X> <I:Y> [I:breed]
+Spawns a new Cat at the given coordinates of the current location. Breed can be 0, 1, or 2 and determines which texture to use. This is an additional pet and does not replace any current pet(s).
+#
+createdino
+Spawns a Pepper Rex just to the right of your farmer.
+#
+dog
+Syntax: dog <I:X> <I:Y> [I:breed]
+Spawns a new Dog at the given coordinates of the current location. Breed can be 0, 1, or 2 and determines which texture to use. This is an additional pet and does not replace any current pet(s).
+#
+horse
+Syntax: horse <I:X> <I:Y>
+Spawns a new Horse at the given coordinates of the current location. Horse may disappear after dismounting if there is no stable for it.
+#
+killallhorses
+Removes all horses from all locations.
+#
+monster
+Syntax: monster <S:type> <I:X> <I:Y> [I:facingDirection]
+Spawns a monster of the specified type at the given coordinates of the current location. Only certain monster types seem to work. Known valid types include Bat, DinoMonster, DustSpirit, Fly, Ghost, GreenSlime, Grub, LavaCrab, Mummy, RockCrab, RockGolem, Serpent, ShadowBrute, ShadowShaman, Skeleton, and SquidKid. Duggy may also work depending on the terrain.
+#
+owl
+Spawns an Owl in the current location.
+#
+pettofarm
+If it is not raining, warps your pet to the pet bowl location on the Farm (Tech note: Location is initially set by checking for tile 1938 on Building layer). If it is raining, warps pet to the FarmHouse. Only works for host in multiplayer.
+#
+togglecatperson
+Toggles your farmer's chosen pet preference between cat and dog. If you already have a pet, the inventory graphic will switch but the pet themselves will not be affected.
+#
+Festivals and events
+command description  
+endevent
+Immediately end the current event or festival, applying the event's skip logic (if any). The event is marked seen, but you can rewatch it using the eventById command if needed.
+#
+event
+Syntax: event <S:locationName> <I:index> [S:clearEventsSeen]
+Starts the specified event in the specified location. The location name is a fuzzy match, but the second parameter is an index rather than an ID. This is basically a zero-based count of the item definitions in the appropriate data file, and since these definitions can be altered by mods this a difficult command to use. Because of this and the warning below, ebi is often the better choice.
+Warning: The third parameter is default to true so this will clear the eventsSeen list unless a third parameter is specified.
+#
+eventbyid,
+ebi
+Syntax: eventbyid <I:eventID>
+Starts the specified event. This does take an event ID; events which have prerequisites of other events might not start if those prerequisites have not been seen.
+Example: debug ebi 992559 would trigger the event where Emily visits the farm and gives you access to her sewing machine.
+#
+eventover
+Ends (and restarts) the current event. Seems to be essentially equivalent to ee.
+#
+eventseen,
+seenevent
+Syntax: eventseen <I:eventID> [B:seeOrForget]
+Marks specifid event as seen by your farmer. Useful for enabling access to event-dependent areas or events. You can forget an event (instead of adding it) by setting the second argument to false, like seenEvent <id> false.
+#
+eventtest
+Syntax: eventtest <S:locationName> <I:eventIndex>
+Calls Util.EventTest() with the specified arguments. Defaults are "" and 0 respectively. Actual details unknown.
+#
+eventtestspecific
+Syntax: eventtestspecific <S:whichEvents> [...]
+Calls Util.EventTest() with the specified arguments. Arguments are interpreted as an array of strings. Actual details unknown.
+#
+festival
+Syntax: festival <S:festivalID>
+Starts the specified festival ID. The season, day, and time will be set to match the starting time, and you will be warped to the correct location. Valid IDs are listed below.
+spring13 - Egg Festival fall16 - Stardew Valley Fair
+spring24 - Flower Dance fall27 - Spirit's Eve
+summer11 - Luau winter8 - Festival of Ice
+summer28 - Moonlight Jellies winter25 - Winter Star
+#
+festivalscore
+Syntax: festivalscore <I:value>
+Adds the specified value to the festival score. The festival score has different meanings depending on which festival is active and includes the egg count at the Egg Hunt, number of fish caught at the Ice Festival, and star token count at the fall Fair.
+#
+runtestevent,
+rte
+Runs an event from the file test_event.txt in the root game folder. The first line of the file should specify the location where the event takes place, and the rest of the file should be the same as a normal event script except that line breaks will be treated as / delimiters.
+Note: this file must use CRLF (Windows-style) line breaks, or it will fail to parse. If you are on Mac or Linux, make sure you convert when saving (any text editor should be able to do this).
+#
+setFarmEvent,
+sfe
+Syntax: setFarmEvent <S:eventID>
+Queue an overnight farm event if one doesn't plan naturally instead. The <event id> can be one of...
+dogs;
+earthquake;
+fairy;
+meteorite;
+owl;
+ufo;
+witch.
+Note that even if the farm event runs, it may exit without doing anything (e.g. rare events like ufo have extra condition checks when the start). #
+Minigames and cutscenes
+command description  
+boatjourney
+Plays the extended cutscene of the first boat trip to Ginger Island. The player will be warped to the Island Docks when the cutscene ends.
+#
+crane
+Starts the Crane Game minigame from the Movie Theater populated with prizes based on which movie is (or would be) showing for the current month.
+#
+darts
+Starts the Darts minigame from the Pirate Cove.
+#
+fish
+Syntax: fish <I:fishID>
+Starts the fishing minigame with the specified fish hooked and a treasure chest available. You must have a fishing line already cast into the water before entering the command in order to actually receive the fish after completing the minigame. Additional "hits" may trigger during the game, and none of the fishing pole animations will play. See object data for a list of valid IDs; non-fish objects can be used and caught.
+#
+minegame
+Syntax: minegame [S:mode]
+Starts the Junimo Kart minigame. If the second argument is infinite the game will play Endless mode; if it is anything else (or missing), the game will play Progress mode.
+#
+minigame
+Syntax: minigame <S:which>
+Starts the specified minigame or cutscene. Valid choices are listed below.
+blastoff - starts the Robot Blastoff cutscene which plays during Maru's 10-heart event.
+cowboy - starts the Journey of the Prairie King minigame.
+fishing - starts the fishing minigame from the Stardew Valley Fair. Score does not seem to be kept although the timer does count down; once the timer runs out the farmer will be warped to coordinates (24, 71) on the current map.
+grandpa - starts the Grandpa Story cutscene of which plays at the start of a new game.
+haleyCows - starts the Haley Cow Pictures cutscene which plays during Haley's 8-heart event.
+marucomet - starts the Maru Comet cutscene which plays during Maru's 14-heart event.
+minecart - starts the Junimo Kart minigame in Progress mode.
+plane - starts the Plane Fly-by cutscene which plays during Harvey's 8-heart event.
+slots - starts the Calico Spin Slot Machine minigame.
+target - starts the Slingshot minigame from the Stardew Valley Fair. When the game is over the farmer will be warped to coordinates (24, 63) on the current map.
+#
+movieSchedule
+Syntax: movieSchedule [I:year]
+Lists the movies that will play in the given year (default this year), with the dates they'll play.
+#
+test
+Starts the Test minigame. This brings up a window showing a variety of flooring textures; left-click closes the window.
+#
+Shops
+command description  
+exportShops
+Export a summary of what's in every shop in the game, taking into account their current conditions. This is saved to a file on disk, and the file path shown in the console.
+#
+shop
+Syntax: shop <shopID> [ownerName]
+Open a shop defined in Data/Shops, regardless of whether one of the owners is nearby. Specifying [ownerName] will use that NPC, otherwise the command will find the closest valid NPC if possible (else open with no NPC).
+#
+Locations
+Terrain, trees, and crops
+command description  
+artifactSpots
+Spawn an artifact spot in each empty tile around the player.
+#
+clearfarm
+Removes nearly everything from the Farm map such as grass, trees, debris, paths, and placed objects (including working machines and filled chests.)
+#
+dayupdate
+Syntax: dayupdate [I:number]
+Runs the DayUpdate for the current location the specified number of times. If the number of updates is not specified, it will default to 1. This simulates days passing for some things such as grass and fruit trees growing or fish reproducing in ponds. Other things may not progress the full amount; for example crop growth only advances one day because sprinklers will not be triggered and the growcrops command should be used for that instead.
+#
+fruittrees
+Adds a month of growth to all fruit trees in the current location, causing even newly-planted saplings to instantly mature.
+#
+grass
+Spawns long grass on all available tiles in the current location.
+#
+growcrops
+Syntax: growcrops <I:number>
+Grows all crops in the current location the specified number of days.
+#
+growgrass
+Syntax: growgrass <I:number>
+Grows long grass the specified number of times in the current location. This will cause already-placed grass to spread but will not necessarily create grass in clear areas.
+#
+growwildtrees
+Grows all wild trees (such as Oak) in the current location to maturity.
+#
+localinfo
+Outputs counts of grass, trees, other terrain features, objects, and temporary sprites for the current location. May be broken.
+#
+mushroomtrees
+Turns all wild trees in the current location into mushroom trees.
+#
+r,
+resetForPlayerEntry
+Resets current location which essentially simulates the player leaving and reentering. Most noticeable effect is the restarting of music tracks.
+#
+removedebris
+Removes all dropped items from the current location.
+#
+removedirt
+Removes (i.e., untills) all tilled dirt in the current location.
+Warning: this includes removing any currently-planted crops (including fully-grown ones).
+#
+removelargetf,
+removeLargeTerrainFeature
+Removes all large terrain features (such as bushes) from the current location.
+#
+removeterrainfeatures,
+removetf
+Removes all (small) terrain features such as grass and tilled dirt from the current location.
+Warning: this includes removing any currently-planted crops (including fully-grown ones).
+#
+spawnweeds
+Syntax: spawnweeds <I:number>
+Spawns weeds the specified number of times. This will cause already-placed weeds to spread but will not necessarily create new weeds in clear areas.
+#
+spreaddirt
+Tills all unoccupied diggable tiles in the current location.
+#
+spreadseeds
+Syntax: spreadseeds <I:seedID>
+Plants specified seed in all tilled dirt in the current location. The argument is the object ID for the seed item. Out of season crops can be planted this way but will not survive outside of the greenhouse.
+Warning: this will replace any currently-planted crops (including fully-grown ones) with the new seeds.
+Example: debug spreadseeds 472 would plant parsnips on all hoed dirt tiles.
+#
+water
+Waters all tilled soil on the current map.
+#
+watercolor
+Syntax: watercolor <I:R> <I:G> <I:B>
+Tints the water color for the current location. The parameters are red, green, and blue components and the actual RGBA color used will be (R/2, G/2, B/2, 127). This affects fishing ponds as well as lakes, rivers, etc., but the effect is temporary and the color will reset to normal if you leave and re-enter the map.
+#
+whereore
+Outputs (to the SMAPI console) the coordinates of any "shiny spots" suitable for panning on the current map. Will output {X:0 Y:0} if there are no active panning spots.
+#
+Objects and lights
+command description  
+clearfurniture
+Removes all furniture from the current location. Can be used in a farmhouse/cabin, or outside the farmhouse as well.
+#
+clearlightglows
+Removes all light glows from the current location.
+#
+fencedecay
+Syntax: fencedecay <I:amount>
+Ages all fences in the current location the specified amount of days.
+Example: debug fencedecay 60 would age all fences by 60 days which would break any basic Wood Fences (their base health is 54-58 days).
+#
+fillwithobject
+Syntax: fillwithobject <I:itemID> [S:isBigCraftable]
+Places the specified item on all open tiles in the current location. The first argument is the object or big craftable ID. If the second argument is "true", the ID will be interpreted as a craftable, but if it is anything else (or missing) the ID will be interpreted as an object. Note that many objects spawned this way cannot be easily removed.
+Example: debug fillwithobject 13 true would fill the map with furnaces.
+#
+readyforharvest,
+rfh
+Syntax: readyforharvest <I:X> <I:Y>
+Sets the machine at the specified coordinates to finish processing at the next clock update. If used to target a rock in the mine, quarry, etc. the rock's health will be reduced such that it only needs 1 more hit to break. A mod such as Debug Mode may be useful for getting coordinates.
+#
+listLights
+Show debug info about all currently active light sources.
+#
+removefurniture
+Removes all furniture from the current location. Similar to clearfurniture but will also work in other decoratable locations such as sheds.
+#
+removelights
+Removes all light sources from the current location. This is temporary and they will be restored if the location is reset or re-entered.
+#
+removeobjects
+Removes all placed objects from the current location. This includes things like fences, machines, and chests, but does not include flooring or long grass.
+#
+Farm buildings
+command description  
+build
+Syntax: build <S:Name> [I:X] [I:Y]
+Builds the specified building at the given coordinates. Names are case-insensitive, and will list fuzzy matches if an exact match isn't found. If the name includes spaces, quote them (e.g. "Junimo Hut"). If the coordinates are not specified, it will build just to the right of your farmer. While higher-level farm buildings such as Deluxe Barns can be immediately built this way, the incubator will be missing from Big or Deluxe Coops.
+Example: debug build "Stone Cabin" would build a new Stone Cabin next to the player.
+#
+forcebuild
+Syntax: forcebuild <S:Name> [I:X] [I:Y]
+Equivalent to build, but disables all safety checks so you can build in a location that wouldn't normally allow buildings, build on top of farm animals or placed objects, etc.
+Example: debug build "Stone Cabin" would build a new Stone Cabin next to the player.
+#
+movebuilding
+Syntax: movebuilding <I:sourceX> <I:sourceY> <I:destX> <I:destY>
+Moves building in the current location from specified source coordinates to specified destination coordinates. The coordinates are the upper-left corner of the building's footprint. The Lookup Anything mod is one of the easier ways to get the source coordinates of a building; they are listed under tileX and tileY in the debug info (needs ShowDataMiningFields enabled.)
+#
+paintBuilding,
+bpm
+Gets the building the player is standing in front of and opens a paint menu for that building if it can be painted. If the player is not standing in front of a building, defaults to the main farmhouse.
+#
+removebuildings
+Destroys all farm buildings. Animals within any of the buildings will also be removed, but animals which are outside will not be.
+#
+skinbuilding,
+bsm
+If the player is standing right under a building, open a menu to change the building appearance.
+#
+spawncoopsandbarns
+Syntax: spawncoopsandbarns <I:number>
+Spawns the specified number of buildings. The game will randomly choose either a Deluxe Barn full of cows or a Deluxe Coop full of chickens for each (equal chance). Their locaions are also randomly chosen and the game will try 20 times to find a spot for each before giving up. The coops created by this command will not have incubators.
+#
+Farmhouse
+command description  
+crib
+Syntax: crib <I:mapID>
+Sets the current crib style to the specified value. In the base game, valid values are 0 (no crib) or 1 (default crib). Additional styles may be possible through modding as the ID is appended to the map filename. For example, crib style 1 is specified by the file Maps/FarmHouse_Crib_1.
+#
+floor
+Syntax: floor [I:textureID]
+Sets all floors of your farmhouse to the specified texture. Valid texture numbers are 0 - 55; see Flooring for previews but note that the IDs used by the game are 1 less than the numbers used for the wiki filenames. If no texture is specified, the game will use the next ID after the current floor texture without checking for overflow which can create bugged textures.
+Example: debug floor 22 would set all flooring in the house to the white and grey checkerboard style.
+#
+houseupgrade,
+house,
+hu
+Syntax: houseupgrade <I:upgradeLevel>
+Sets upgrade level of your farmhouse/cabin to the specified value. Valid values are 0 - 3. Furniture and placed items will not be automatically moved and may wind up out of bounds. If done while the player is inside the house, warp points may not immediately update.
+#
+logWallAndFloorWarnings
+Enable debug logs when applying wallpaper and flooring to a farmhouse (or other decoratable location) to help troubleshoot cases where they don't work with a custom map. You'd usually enable this before loading the save.
+#
+renovate
+Opens the farmhouse renovation menu.
+#
+thishouseupgrade,
+thishouse,
+thu
+Syntax: thishouseupgrade <I:upgradeLevel>
+Equivalent to houseupgrade, but can be used to upgrade another player's house by running it from inside or just south of its exterior.
+#
+upgradehouse
+Increases the upgrade level of your farmhouse/cabin to the next level (max 3). Furniture and placed items will not be automatically moved and may wind up out of bounds. If done while the player is inside the house, warp points may not immediately update.
+#
+wall,
+w
+Syntax: wall [I:textureID]
+Sets all walls of your farmhouse to the specified texture. Valid texture numbers are 0 - 111; see Wallpaper for previews but note that the IDs used by the game are 1 less than the numbers used for the wiki filenames. If no texture is specified, the game will use the next ID after the current wallpaper texture without checking for overflow which can create bugged textures.
+Example: debug wall 21 would set all wallpaper in the house to the Joja style.
+#
+Special farm setups
+command description  
+farmmap
+Syntax: farmmap [I:mapID]
+Removes the current farm map and farmhouse from the game and creates a new farm of the specified type. The farm will be named after the type (e.g., "Standard Farm"). Valid types are: 0 (Standard), 1 (Riverland), 2 (Forest), 3 (Hilltop), 4 (Wilderness), 5 (Four Corners), 6 (Beach), and 7 (Meadowlands)
+#
+setupbigfarm
+Clears the farm and then does the following:
+Spawns 3 Deluxe Coops full of chickens, 2 Deluxe Barns full of cows, a mill, a stable, and a silo in specific spots.
+Spawns a large field of random spring crops (force-grown for 8 days) with a wooden path through it and 4 junimo huts to the south.
+Spawns two large patches of grass and 18 random fruit trees (cherry and apricot)
+Spawns large groups of torches, furnaces, preserves jars, cheese presses, and kegs; the kegs are full of ancient fruit to make wine
+#
+setupfarm
+Syntax: setupfarm [S:clearMore]
+Removes all farm buildings and completely clears large areas of the current farm. After this, the following things are done:
+Spawns a coop, barn, and silo in specific spots
+Your money is increased by 20000
+All tools are upgraded to Iridium quality
+Shears, a milk pail, and full stacks of wood, stone, wood fence, parsnip seeds, and bean starter are added to your inventory
+#
+setupfishpondfarm
+Syntax: setupfishpondfarm [I:population]
+Clears farm and then builds up to 96 fish ponds randomly filled with various types of fish. The population of each of the ponds will be set to the specified value and defaults to 10. The ponds are built in a large 12 x 8 grid but will not be placed in a spot blocked by other buildings, animals, or map features.
+#
+Community center and bundles
+command description  
+addjunimo,
+aj,
+j
+Syntax: addjunimo <I:X> <I:Y> <I:area>
+Adds a junimo at the specified coordinates and assigned to the given Community Center area. Valid areas are 0 (Pantry), 1 (Crafts Room), 2 (Fish Tank), 3 (Boiler Room), 4 (Vault), or 5 (Bulletin Board).
+#
+allbundles
+Marks all bundles complete.
+#
+bundle
+Syntax: bundle <I:ID>
+Marks the specified bundle as complete. Valid IDs are listed below.
+Pantry Fish Tank Crafts Room Boiler Room Vault Bulletin Board Joja Ruins
+0 - Spring Crops 6 - River Fish 13 - Spring Foraging 20 - Blacksmith's 23 - 2,500g 31 - Chef's 36 - Missing
+1 - Summer Crops 7 - Lake Fish 14 - Summer Foraging 21 - Geologist's 24 - 5,000g 32 - Field Research
+2 - Fall Crops 8 - Ocean Fish 15 - Fall Foraging 22 - Adventurer's 25 - 10,000g 33 - Enchanter's
+3 - Quality Crops 9 - Night Fishing 16 - Winter Foraging 26 - 25,000g 34 - Dye
+4 - Animal 10 - Specialty Fish 17 - Construction 35 - Fodder
+5 - Artisan 11 - Crab Pot 19 - Exotic Foraging
+#
+ccload
+Syntax: ccload <I:area>
+Removes the junimo note from and restores the specified area. Valid areas are 0 (Pantry), 1 (Crafts Room), 2 (Fish Tank), 3 (Boiler Room), 4 (Vault), or 5 (Bulletin Board).
+#
+ccloadcutscene
+Syntax: ccloadcutscene <I:area>
+Plays the full restoration cutscene for the specified area including junimo dance and star retrieval. Valid areas are 0 (Pantry), 1 (Crafts Room), 2 (Fish Tank), 3 (Boiler Room), 4 (Vault), or 5 (Bulletin Board).
+#
+completecc
+Adds all of the appropriate flags for Community Center completion and restores all areas.
+#
+completejoja
+Adds all of the appropriate flags for Joja membership and Community Development purchases.
+#
+junimogoodbye
+Plays the animation where 6 junimos wave goodbye in front of the hut in the Community Center and then that corner of the Community Center gets restored.
+#
+junimonote,
+jn
+Syntax: junimonote <I:area>
+Adds a junimo note (bundle scroll) for the specified area. Valid areas are 0 (Pantry), 1 (Crafts Room), 2 (Fish Tank), 3 (Boiler Room), 4 (Vault), or 5 (Bulletin Board).
+#
+junimostar
+Causes a junimo to run to the hut and retrieve a star which is then placed on the plaque above the fireplace. Must be done in the Community Center.
+#
+plaque
+Adds a star to the plaque above the Community Center fireplace.
+#
+resetjunimonotes
+Resets all bundles.
+#
+shufflebundles
+Regenerates bundles using remixed bundle logic and without a specific random seed.
+#
+Other location-specific functions
+command description  
+beachbridge
+Toggles the state of the beach bridge between fixed and not fixed.
+#
+ladder,
+shaft
+Syntax: ladder [I:X] [I:Y]
+Creates a ladder or mineshaft at the specified coordinates. If no coordinates are given, it will spawn 1 tile north of the player. In the regular mines, both versions of the command will create a ladder. In the Skull Caverns, ladder will randomly spawn either a ladder or mineshaft while shaft will always spawn a mineshaft.
+#
+minedifficulty,
+md
+Syntax: minedifficulty [I:difficultyLevel]
+Sets the difficulty of the mines to the specified level. In the base game, normal difficulty is 0 and the harder difficulty corresponding to the "Danger in the Deep" quest or Shrine of Challenge activation is 1. Higher numbers can be used. If no difficulty level is specified, command will simply print the current difficulty level to the console.
+#
+movie
+Syntax: movie [S:movieID] [S:inviteNpcName]
+Starts a movie. The movie ID defaults to today's movie, and the NPC name can be omitted to watch the movie without an invitee. Specifying current as the movie defaults to today's movie. Note that this command can create a group with up to 3 guests instead of just the single guest allowed in normal play. Valid movie IDs are listed below.
+spring_movie_0 - The Brave Little Sapling spring_movie_1 - Natural Wonders
+summer_movie_0 - Journey of the Prairie King summer_movie_1 - Wumbus
+fall_movie_0 - Mysterium fall_movie_1 - It Howls in the Rain
+winter_movie_0 - Miracle at Coldstar Ranch winter_movie_1 - The Zuzu City Express
+Warning: This command also increases the save's uniqueID by 1 each time it is used, which will cause the save filename to change and impact some random events.
+Examples:
+debug movie would show It Howls in the Rain with random NPC guests.
+debug movie spring_movie_1 would show Natural Wonders with random NPC guests.
+debug movie summer_movie_0 Abi would show Journey of the Prairie King with Abigail and possibly 1 or 2 additional random NPC guests.
+#
+pgb,
+printGemBirds
+Prints the Gem Bird Puzzle solution to the console.
+#
+resetmines
+Resets "permanent mine changes" such as coal carts and treasure chests. Does not affect mines level progress or monster eradication goals.
+#
+returneddonations
+Opens the "returned donations" menu of the Lost and Found box from the Mayor's Manor.
+#
+skullcavedifficulty,
+scd
+Syntax: skullcavedifficulty [I:difficultyLevel]
+Sets the difficulty of the Skull Cavern to the specified level. In the base game, normal difficulty is 0 and the harder difficulty corresponding to the "Skull Cavern Invasion" quest is 1. Higher numbers can be used. If no difficulty level is specified, command will simply print the current difficulty level to the console.
+Example: debug scd 1 would activate hard mode Skull Cavern outside of the "Skull Cavern Invasion" quest.
+#
+train
+Causes a train to spawn at the Railroad.
+#
+World
+Date and time
+command description  
+addhour
+Increases time by 1 hour.
+#
+addminute
+Increases time by 10 minutes.
+#
+day
+Syntax: day <I:value>
+Changes day of the month to the specified value; stays in current season and adjusts daysPlayed statistic appropriately.
+#
+pausetime
+Toggles game pause state. This is different from the normal chat /pause command in that the player still has free movement during the pause.
+#
+season
+Syntax: season <S:name>
+Sets season to the specified value. The season name is case-insensitive; valid names are spring, summer, fall, and winter.
+#
+sleep,
+newday,
+nd
+Forces end of day.
+#
+time
+Syntax: time <I:value>
+Sets current time to the specified value. This is essentially 24-hour time without a colon, although the stardew clock keeps running until 2600. See examples.
+Examples:
+debug time 2040 would set the time to 20:40 or 8:40pm.
+debug time 2550 would set the time to 1:50am.
+#
+year
+Syntax: year <I:value>
+Sets the current year to the specified value.
+#
+Weather and world state
+command description  
+debrisweather
+Toggles "debris" weather (i.e., windy weather with floating leaves) on and off. Does not change the weather icon on the HUD.
+#
+morepollen
+Syntax: morepollen <I:amount>
+Increases the amount of leaves flying around if in debris/windy weather.
+#
+rain
+Toggles rainy weather on and off. Will turn off debris/windy weather. Does not change the weather icon on the HUD.
+#
+resetworldstate
+Clears all world state IDs which track map changes such as whether the beach bridge is fixed, whether Trash Bear has done his thing and various small changes from heart events.
+Warning: Also clears records of found artifacts and minerals, fish caught, events seen, and mail received (including hidden progress flags.)
+#
+Game settings and meta info
+command description  
+conventionmode
+Toggles convention mode on and off. When on, disables the resolution and window mode options as well as both "Exit to Title" and "Exit to Desktop" buttons.
+#
+filterLoadMenu
+Syntax: filterLoadMenu <searchText>
+Filter the current list of saves to those whose player name or farm name contains the given text.
+#
+gamemode
+Syntax: gamemode <I:mode>
+Sets the game mode to the specified value. Details unknown.
+#
+gamepad
+Toggles gamepad control options and displays a global message about whether they are being used or not.
+#
+inputsim,
+is
+Syntax: inputsim <S:type>
+Sets input simulator to the specified type. Valid types are spamtool and spamlr. Details unknown.
+#
+language
+Brings up the language selection menu.
+#
+musicvolume,
+mv,
+m
+Syntax: musicvolume <D:value>
+Sets music volume to the specified value. This is a double-precision float in the range of 0 - 1.
+#
+nosave,
+ns
+Toggles end of day saving on or off. Outputs a message to the console with the current saving status.
+#
+performTitleAction,
+pta
+Syntax: performTitleAction <button>
+While on the title screen, jump to a given title submenu.
+#
+showplurals
+Prints (to the console) the plural forms of all items listed in Data/ObjectInformation and Data/BigCraftablesInformation.
+#
+toggleCheats
+Enable or disable entering debug commands into the in-game chat (prefixed with /).
+#
+toggleNetCompression
+Disable (or re-enable) multiplayer compression
+#
+toggletimingoverlay,
+tto
+Show an on-screen overlay with basic timing info (e.g. draw loop times) to help with performance profiling.
+#
+steaminfo,
+sdkinfo
+Outputs information about whether Steam is running and if a user is logged in.
+#
+version
+Outputs the assembly version number to the console. Note this is different from the more user-friendly version that can be accessed from the credits screen. For example, running this command on Stardew Valley 1.4.3 for Windows will output 1.3.7286.33936
+#
+worldMapLines
+Toggles the world map's debug view.
+#
+worldMapPosition
+Syntax: worldMapPosition [includeLog]
+Show detailed info to help troubleshoot world map positioning data. If [includeLog] is true, it will print a detailed log of how the current position was determined based on the Data/WorldMap entries.
+#
+Multiplayer
+General multiplayer
+command description  
+addotherfarmer
+Creates an additional new male farmer with randomized name and appearance which spawns 1 tile to the left of your farmer. Unsure of what situation this can be used in.
+#
+nethost
+Starts a new LAN server. Details unknown.
+#
+netjoin
+Syntax: netjoin <IP>
+Connect to a given IP address.
+#
+split
+Syntax: split [I:playerIndex]
+Adds another split-screen multiplayer instance for the specified player index or starts split-screen mode otherwise.
+#
+Logging
+command description  
+logbandwidth
+Toggles bandwidth logging on and off. Can be used on either host or client.
+#
+logFile
+Begin writing debug messages to a log file at %appdata%/StardewValley/ErrorLogs/game-latest.txt to simplify troubleshooting. You can also enter /logtext into the in-game chatbox to enable it. This does nothing if SMAPI is installed, since the debug messages are already saved to SMAPI's log.
+#
+logSounds
+Log info about each sound effect played to the SMAPI console window.
+#
+netclear
+Clears network message log.
+#
+netdump
+Outputs network message log to a file.
+#
+netlog
+Toggles network message logging on and off.
+#
+Player relationships
+command description  
+dateplayer
+Checks all other farmers and sets the first one found as dating the player.
+#
+engageplayer
+Checks all other farmers and sets the first one found as engaged to the player with a wedding date of the next game day.
+#
+testwedding
+Immediately play the wedding event. This requires the player to be married first - to test specific NPCs, debug marry the NPC followed by this command.
+#
+marryplayer
+Checks all online farmers and sets the first one found as married to the player with a wedding date of the current game day.
+#
+Shared/split money
+command description  
+changewallet
+Sets the game to toggle between shared or split money overnight. Host only.
+#
+mergewallets
+Immediately switches to shared money, merging all player wallets. Host only.
+#
+separatewallets
+Immediately switches to split money, separating all player wallets. Host only.
+#
+Audio and visual effects
+Animations
+command description  
+animationpreviewtool,
+apt
+Opens a menu allowing you to preview different farmer animations and change some appearance options. Useful for event modding. Warning: previewing the "passOutTired" animation will make your farmer pass out as if it's 2 am and start a new day.
+#
+busdriveback
+Plays the animation of the bus returning from the desert. Must be done on the Bus Stop map.
+#
+busdriveoff
+Plays the animation of the bus leaving the Bus Stop and driving to the desert. Will warp the player to the desert. Must be done on the Bus Stop map.
+#
+createsplash
+Creates a fish "bubble" spot in front of the player. Seems inconsistent.
+#
+framebyframe,
+fbf
+Turns on "frame-by-frame" mode which pauses the game and allows you to advance time/animations one frame at a time by hitting the G key. Hit Escape key to exit.
+#
+frameoffset,
+fo
+Syntax: frameoffset <I:frameID> <S:X> <S:Y> <S:??>
+Sets frame offset for specified frame and specified X & Y values. The X and Y can be made negative to flip the direction. Details unknown; reference FarmerRenderer.featureXOffsetPerFrame() and FarmerRenderer.featureYOffsetPerFrame().
+#
+setframe,
+sf
+Syntax: setframe <I:frameID>
+Sets farmer sprite to the given animation frame. Probably best used in conjunction with frame-by-frame mode.
+#
+sprinkle
+Shows an animation of a sprinkle effect around the farmer. (It's the animation used while fairy-dusting a machine).
+#
+toss
+Shows an animation of a spinning vial/beaker which rises and then falls. Likely used in one of Maru's heart events.
+#
+Camera, lighting, and effects
+command description  
+ambientlight,
+al
+Syntax: ambientlight <I:R> <I:G> <I:B>
+Sets the ambient light of the current location to the inverse of the specified RGB values. This is a temporary change and the light will revert if the location is reset or re-entered. Ex. inputting 255 0 0 will set the lighting to aqua blue, 0 255 255, rather than red.
+#
+bloom
+Syntax: bloom <D:BloomThreshold> <D:BlurAmount> <D:BloomIntensity> <D:BaseIntensity> <D:BloomSaturation> <D:BaseSaturation> [S:brightWhiteOnly]
+Changes the bloom settings to the specified parameters. Most are double-precision floats which are divided by 10. The last parameter will set the brightWhiteOnly flag to true if it is present and false if it is absent. Also sets the bloomDay flag.
+#
+bloomday
+Toggles the bloomDay flag on and off, essentially turning the bloom effects themselves on or off.
+#
+drawbounds
+Toggles the drawbounds flag on and off. Details unknown.
+#
+lsd
+Syntax: lsd <D:howLongMilliseconds> <D:shiftRate> <D:shiftFade> <D:globalIntensityMax> <D:blurShiftLevel> <D:saturationShiftLevel> <D:contrastShiftLevel> <D:bloomIntensityShift> <D:brightnessShift> <D:globalIntensityStart> <D:offsetShift>
+Starts a bloom shifting animation with the specified values. All parameters are double-precision floats; the third parameter is divided by 1000 and the fourth through tenth parameters are divided by 100. Details unknown; reference BloomComponent.startShifting(). Use caution when testing this command if you're photosensitive, as it triggers very intense screen flashes.
+#
+panmode,
+pm
+Turns on panmode. During panmode the screen can be panned with movement keys or mouse movements and debug panmode or debug exit will turn panmode off. You can also clear with <sampe>debug panMode clear or set a time with debug panMode {time}.
+#
+tls,
+toggleLightingScale
+Toggles between scaled and unscaled lighting.
+#
+viewport
+Syntax: viewport <I:X> <I:Y>
+Sets the viewport to the given values. Details unknown.
+#
+uiscale,
+us
+Syntax: uiscale <I:value>
+Sets the UI Scale level to the specified value. This is an integer interpreted as the scale percent. Can be used to go beyond the normal limits of 75 - 125 percent.
+Example: debug us 60 would set the UI scale level to 60%.
+#
+zoomlevel,
+zl
+Syntax: zoomlevel <I:value>
+Sets the game zoom level to the specified value. This is an integer interpreted as the zoom percent. Can be used to go beyond the normal limits of 75 - 125 percent.
+Example: debug zl 60 would set the zoom level to 60%.
+#
+Audio
+command description  
+playmusic
+Syntax: playmusic <s:cueID>
+Plays the specified music track. May not be able to play tracks which have a space in the cue name. Tracks played this way will be added to the songsHeard list and be available to play on the Jukebox afterwards. See the modder's resource spreadsheet (Music Bank IDs tab) for a list of valid cue IDs.
+Example: debug playmusic spring2 would play the track Spring (The Valley Comes Alive).
+#
+playsound,
+ps
+Syntax: playsound <s:cueID> <I:pitch>
+Playes the specified sound effect. The pitch argument is optional and can take values from 1 (low pitch) to 2400 (high pitch) inclusively. See the modder's resource spreadsheet (Sound Bank IDs tab) for a list of valid cue IDs.
+Example: debug ps purchase would make the coin clink sound heard when buying and selling items.
+#
+Outdated, unimplemented, or unknown
+command description  
+lantern
+Adds a lantern to your inventory which looks like an axe and will softlock the player when trying to use it; canmove can be used to fix the soft lock.
+#
+refuel
+Sets lantern fuel to maximum. As the lantern was not fully implemented, this doesn't do much.
+#
+stoprafting
+Sets an internal isRafting flag to false. As rafting was not fully implemented, this doesn't do much.
+#
+See also
+Chat commands
+Modding:Modder Guide/APIs/Console to add custom commands from a SMAPI mod.
+Category: Modding

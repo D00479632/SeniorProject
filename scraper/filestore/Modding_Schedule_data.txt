@@ -1,0 +1,121 @@
+Jump to navigation
+Jump to search
+← Index
+This page explains how the game stores and parses NPC schedule data, which determines where NPCs go and what they do when they get there. This is an advanced guide for mod developers.
+Contents
+1 Raw data
+2 Schedule key
+2.1 Special schedules
+2.2 Marriage schedules
+2.3 Normal schedules
+3 Schedule script
+3.1 Format
+3.2 Initial commands
+3.3 Schedule points
+4 Potential issues
+Raw data
+Schedule data is stored in Content/Characters/schedules/*.xnb files (one per character), which can be unpacked for editing. Here's the raw data for Abigail as of 1.5.1 for reference:
+Expand
+Data 
+Schedule key
+Each schedule has a key which is used to decide when it applies. The key must be one of the exact formats below (it's not dynamic). If multiple schedules apply, the first match in the order listed here is used.
+Notes:
+Schedule keys are not case-sensitive.
+The game's logic for schedule keys is in NPC::TryLoadSchedule().
+Special schedules
+These are checked first, regardless of marriage status.
+syntax summary
+GreenRain Applies on green rain days in year 1.
+Marriage schedules
+These apply if the NPC is married to a player (not necessarily the main player). Married NPCs don't use any other schedule keys. If the marriage keys don't match, they won't have a schedule for that day.
+syntax summary
+marriage_<festival ID>_<festival day>
+marriage_<festival ID> Applies when a passive festival like the Night Market is active. The <festival ID> is the key from Data/PassiveFestivals, and <festival day> is the number of days since the passive festival started (where the first day is 1).
+marriage_<season>_<day of month> Applies on the given date.
+Example: marriage_spring_26
+marriageJob Used by Harvey on Tuesday/Thursday, Maru on Tuesday/Thursday, Penny on Tuesday/Wednesday/Friday. No other NPC can use marriageJob without C# to change the game code.
+marriage_<day of week> Applies on the given day of week when not raining.
+Example: marriage_Mon
+Normal schedules
+These schedules apply to any non-marriage NPC. If none of these keys match, they won't have a schedule for that day.
+syntax summary
+<festival ID>_<festival day>
+<festival ID> Applies when a passive festival like the Night Market is active. The <festival ID> is the key from Data/PassiveFestivals, and <festival day> is the number of days since the passive festival started (where the first day is 1).
+<season>_<day of month> Applies on the given date.
+Example: spring_15
+<day of month>_<hearts> Applies on the given day of month if any player has at least that many hearts with the NPC. If multiple schedules apply, the one with the highest heart number is used.
+Example: 11_6
+<day of month> Applies on the given day of month.
+Example: 16
+bus For Pam only, applies if the bus is repaired.
+rain2 50% chance of applying on rainy days.
+rain Applies on rainy days.
+<season>_<day of week>_<hearts> Applies in the given season and day of week, if any player has at least that many hearts with the NPC. If multiple schedules apply, the one with the highest heart number is used.
+Example: spring_Mon_6
+<season>_<day of week> Applies in the given season and day of week.
+Example: spring_Mon
+<day of week>_<hearts> Applies on the given day of week, if any player has at least that many hearts with the NPC. If multiple schedules apply, the one with the highest heart number is used.
+Example: Mon_6
+<day of week> Applies in the given day of week.
+Example: Mon
+<season> Applies in the given season.
+Example: spring
+spring_<day of week> Applies (in any season) on the given day of week.
+Example: spring_Mon
+spring Always applies. This schedule is also used as a default in some cases.
+DO NOT REMOVE THIS ENTRY. THAT WILL BREAK THE GAME.
+default Also used as a default sometimes. It's okay for this one to not exist, spring will be used instead.
+Schedule script
+Format
+Each schedule entry has a key, and a value containing an arbitrary number of the slash-delimited commands listed below.
+These can be on a single line like this:
+"Wed": "1000 ArchaeologyHouse 11 9 0/1800 Town 47 87 0/2200 SeedShop 1 9 3 abigail_sleep"
+Or you can add whitespace before or after commands for readability:
+"Wed": "
+    1000 ArchaeologyHouse 11 9 0/
+    1800 Town 47 87 0/
+    2200 SeedShop 1 9 3 abigail_sleep
+"
+Initial commands
+A script may have one initial command as the first field in the script, before the first / character. The GOTO command can also appear in the next two fields after MAIL, or the next field after NOT.
+command description
+GOTO <key> (Note: this line only applies if GOTO is the first command. If it's not, see GOTO below.)
+End the current script and load the schedule with the given key instead. The key does not need to be one of the standard keys and can be any arbitrary string. If the key is "season", the current season name is used instead. If the schedule doesn't exist or can't be parsed, the spring schedule will be used instead.
+Example: GOTO spring
+NOT friendship <npc name> <hearts> End the current script if any player does have at least that many hearts with any of the named NPCs (can list multiple). If the script is ended, the spring schedule is used instead.
+Example: NOT friendship Sebastian 6 Abigail 3 (script ends if any player has 6+ hearts with Sebastian and/or 3+ hearts with Abigail).
+NOT Command ignored if the next word is not friendship.
+MAIL <letter ID> Runs the next command if the player did not receive the given letter ID or world state ID (see HasFlag in the Content Patcher documentation); else continues from the command after that.
+Example: MAIL ccVault/GOTO spring/GOTO summer (runs GOTO summer if the bus is repaired, or GOTO spring if it isn't; not limited to GOTO commands).
+GOTO <key> (Note: this line only applies if GOTO is after NOT or MAIL. If it's not, see GOTO above.)
+End the current script and load the schedule with the given key instead. If the key is "season", the current season name is used instead. If the key is "NO_SCHEDULE", the NPC has no schedule for the day. If the schedule doesn't exist or can't be parsed, the game crashes (or shows an error if playing with SMAPI).
+Example: GOTO NO_SCHEDULE
+Schedule points
+The rest of the schedule script consists of slash-delimited entries, each containing space-separated fields which specify a start time, destination, and what to do when the NPC reaches it:
+<time> [location] <tileX> <tileY> [facingDirection] [animation] [dialogue]
+If the location field is omitted, the rest of the fields are parsed as normal. The other optional fields must be in sequential order (e.g., you can skip animation and dialogue, but you can't skip facingDirection and then specify animation and dialogue). The exception is dialogue. The dialogue can be specified without the animation.
+field description
+time The time at which the schedule event begins, in military time (24 hour format, no colon). The time may be preceded with the single character 'a' to indicate that the event should end (that is, the NPC should arrive at the destination) at the given time. In this case, the game will calculate when the event needs to begin. However, the event will never begin before the time specified for the previous event.
+In the unmodified game, this is only used to synchronise Emily's and Sandy's schedules on Fall 15.
+location
+(optional) The location name the NPC should walk towards. If omitted, defaults to the previous map, or if it's the first, it defaults to the bus stop (if married to a player) or their default location.
+Note: the game has special logic for unlockable locations. If this is JojaMart/Railroad and it's not available yet, the game gets the replacement destination from the first entry in the <location>_Replacement schedule if available; otherwise it switches to the default schedule if available, else spring. If this is CommunityCenter and it's not available yet, the game switches to the default schedule if available, else spring.
+Note also: if the location is bed, the game will ignore the remaining parameters from this schedule point and attempt to load a "home" destination (map and coordinates): the warp out of BusStop back to the Farm for married NPCs, or for unmarried ones, the last schedule entry from the default or spring schedule (or the NPC's default location, if neither schedule can be loaded or parsed correctly). The NPC's sleeping animation (<lowercase name>_sleep) from Data/animationDescriptions will be set to play on arrival if it is defined.
+tileX
+tileY The X and Y tile coordinates the NPC should walk towards.
+facingDirection (optional) The direction to face after reaching the destination. The possible values are 0 (up), 1 (right), 2 (down), and 3 (left). Defaults to down.
+animation (optional) The animation to play when the NPC reaches the destination. This must be a key that appears in the Content/Data/animationDescriptions.xnb file. Each key entry has three required parts: entry frames/repeat frames/leaving frames. The numbers on them refer to the overworld sprite frame. The entry frames will play after arriving at the schedule point. Then the repeat frames will loop until the end of schedule time. Finally, the leaving frames will play before moving on to the next schedule point. Note that each frame is around 120ms so duplicates of frame is used to get desired looking animation.
+
+The full format is entry frames/repeat frames/leaving frames/message key/offset X Y/laying_down. If a message key is given, the NPC will repeat that message if you talk to them while they are performing the animation. (TODO: this is likely a "busy chat", which has fewer heart points, crosscheck.) offset X Y lets you offset their sprite (in pixels). laying_down will hide the shadow. If you want to use offset or laying_down without a message, leave that spot empty. Example: offset/laying down without message: "haley_beach_towel": "20 20 21 21 21 21 21/22/21 21 20//laying_down/offset 0 16"
+
+Additionally, there are a few special animations. sleep anywhere in an animation name causes the NPC to go to sleep (which, among other things, prevents players from gifting or talking to the NPC while the animation is active.) The specific animation NPCName_sleep (with the NPCName fully lowercased) automatically used by spouses when they turn in for the night, and by NPCs coming home from Ginger Island. square_X_Y_facing causes NPCs to make random movements in a rectangle of at most X by Y (it can be less), centered at the schedule point. They will occasionally pause and face the facing direction. change_beach and change_normal cause NPCs to change into and out of their beach outfits, and is used by Ginger Island resort schedules.
+dialogue
+(optional) The dialogue the NPC should use when they reach their destination. This must be an asset name and entry key in this exact format (including quotes): "assetName:key". Any slashes in the asset name should be double backslashes (\\). The format of the entry key doesn't matter, it just needs to match one in the file.
+For example, "Strings\\schedules\\Abigail:Sun.000" means "open the file at Strings\schedules\Abigail.xnb and get the text of the Sun.000 key".
+Tip: If you want schedule dialogue in marriage schedules, include the exact string marriage somewhere in the key, that will only show it to the npc's spouse.
+For example, consider this schedule entry in Abigail's schedule:
+1300 Town 47 87 0 "Strings\\schedules\\Abigail:marriage_Mon.001"
+At 13:00 (1pm), Abigail will begin walking to tile (47, 87) in the Town location. When she reaches it, she'll face direction 0 (up) and say "Hey, @. I like to relax here... it's so peaceful."
+Potential issues
+Using a time of 600 (when the day starts) for an event may not work. Try using 610 if you want an event early in the morning and the NPC doesn't move if you use 600.
+Category: Modding

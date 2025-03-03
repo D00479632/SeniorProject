@@ -1,0 +1,40 @@
+Jump to navigation
+Jump to search
+Ice Rod
+Shoots an orb of ice every X seconds, freezing any enemies in its path for Y seconds.
+Information
+Source: Monsters • Crates and Barrels • Skull Cavern Treasure Rooms
+Adventurer's Guild
+Purchase Price: N/A
+Sell Price: 1,000g
+The Ice Rod is a trinket item obtainable after claiming Combat Mastery. It can be obtained by slaying monsters or breaking crates and barrels in the Mines, Skull Cavern, or Quarry Mine. Drop chances from both methods are affected by daily luck and luck buffs, among other factors. The Burglar's Ring and Monster Compendium do not impact the chance to obtain it from monsters.[1] There is also a ≈0.6% chance to obtain an Ice Rod from a treasure chest in the Skull Cavern.[2]
+While the Ice Rod is equipped in the trinket slot, the player occasionally shoots an ice orb that briefly freezes all monsters in its path. When enemies are within 9-10 tiles of the player, an ice orb is automatically shot straight towards the nearest enemy. Ice orbs do not cause damage and pass through all environmental objects (like mining nodes or weeds).[3]
+The time between shots (X) ranges from 3 to 5 seconds, and the freeze duration (Y) ranges from 2 to 4 seconds. These times are determined to the millisecond, and all possible values are equally likely when the Ice Rod is dropped. The trinket description will round these values to the nearest tenth of a second (i.e., a freeze duration of 2.367 seconds will be displayed as 2.4 seconds).[4] Both stats can be changed if the trinket is re-forged on an Anvil.
+When dropped or re-forged, the Ice Rod has a 5% chance to become "Perfect" and change its name to the "Perfect Ice Rod". This variant fires every 3 seconds and freezes for 4 seconds.[4]
+Contents
+1 Gifting
+2 Trivia
+3 References
+4 History
+Gifting
+Villager Reactions
+Like  Wizard
+Dislike  Abigail •  Alex •  Caroline •  Clint •  Demetrius •  Dwarf •  Elliott •  Emily •  Evelyn •  George •  Gus •  Haley •  Harvey •  Jas •  Jodi •  Kent •  Krobus •  Leah •  Leo •  Lewis •  Linus •  Marnie •  Maru •  Pam •  Penny •  Pierre •  Robin •  Sam •  Sandy •  Sebastian •  Shane •  Vincent •  Willy
+Trivia
+It is technically possible, although extremely unlikely (less than a 1-in-4.2-million chance) to receive an Ice Rod with perfect stats - i.e. a 3000 millisecond delay between shots, and a freeze duration of 4000 milliseconds, without it being a "Perfect Ice Rod".
+Note that because the game rounds the values to the nearest tenth of a second, it is possible for a non-perfect Ice Rod to show a 3 second delay between shots and a freeze duration of 4 seconds but not have perfect stats.
+References
+↑ See Trinket::TrySpawnTrinket, GameLocation::monsterDrop, and BreakableContainer::releaseContents in the game code.
+↑ See MineShaft::getTreasureRoomItem in the game code.
+↑ See IceOrbTrinketEffect::Update in the game code.
+↑ 4.0 4.1 See IceOrbTrinketEffect::GenerateRandomStats in the game code.
+History
+1.6: Introduced.
+1.6.4: Can no longer freeze spiders while they are jumping in mid-air.
+Clothing
+Footwear Cinderclown Shoes • Combat Boots • Cowboy Boots • Crystal Shoes • Dark Boots • Dragonscale Boots • Emily's Magic Boots • Firewalker Boots • Genie Shoes • Leather Boots • Leprechaun Shoes • Mermaid Boots • Rubber Boots • Sneakers • Space Boots • Thermal Boots • Tundra Boots • Work Boots
+Hats ??? • Abigail's Bow • Arcane Hat • Archer's Cap • Beanie • Blobfish Mask • Blue Bonnet • Blue Bow • Blue Cowboy Hat • Blue Ribbon • Bluebird Mask • Bowler Hat • Bridal Veil • Bucket Hat • Butterfly Bow • Cat Ears • Chef Hat • Chicken Mask • Cone Hat • Cool Cap • Copper Pan (hat) • Cowboy Hat • Cowgal Hat • Cowpoke Hat • Daisy • Dark Ballcap • Dark Cowboy Hat • Dark Velvet Bow • Delicate Bow • Deluxe Cowboy Hat • Deluxe Pirate Hat • Dinosaur Hat • Earmuffs • Elegant Turban • Emily's Magic Hat • Eye Patch • Fashion Hat • Fedora • Fishing Hat • Flat Topped Hat • Floppy Beanie • Forager's Hat • Frog Hat • Garbage Hat • Gil's Hat • Gnome's Cap • Goblin Mask • Goggles • Gold Pan (hat) • Golden Helmet • Golden Mask • Good Ol' Cap • Governor's Hat • Green Turban • Hair Bone • Hard Hat • Hunter's Cap • Infinity Crown • Iridium Pan (hat) • Jester Hat • Joja Cap • Junimo Hat • Knight's Helmet • Laurel Wreath Crown • Leprechaun Hat • Living Hat • Logo Cap • Lucky Bow • Magic Cowboy Hat • Magic Turban • Mouse Ears • Mr. Qi's Hat • Mummy Mask • Mushroom Cap • Mystery Hat • Official Cap • Pageboy Cap • Panda Hat • Paper Hat • Party Hat (blue • green • red) • Pink Bow • Pirate Hat • Plum Chapeau • Polka Bow • Propeller Hat • Pumpkin Mask • Qi Mask • Raccoon Hat • Radioactive Goggles • Red Cowboy Hat • Red Fez • Sailor's Cap • Santa Hat • Skeleton Mask • Small Cap • Sombrero • Sou'wester • Space Helmet • Sports Cap • Spotted Headscarf • Squid Hat • Squire's Helmet • Star Helmet • Steel Pan (hat) • Straw Hat • Sunglasses • Swashbuckler Hat • Tiara • Tiger Hat • Top Hat • Totem Mask • Tricorn Hat • Tropiclip • Trucker Hat • Warrior Helmet • Watermelon Band • Wearable Dwarf Helm • White Bow • White Turban • Witch Hat
+Rings Amethyst Ring • Aquamarine Ring • Burglar's Ring • Crabshell Ring • Emerald Ring • Glow Ring • Glowstone Ring • Hot Java Ring • Immunity Band • Iridium Band • Jade Ring • Jukebox Ring • Lucky Ring • Magnet Ring • Napalm Ring • Phoenix Ring • Protection Ring • Ring of Yoba • Ruby Ring • Savage Ring • Slime Charmer Ring • Small Glow Ring • Small Magnet Ring • Soul Sapper Ring • Sturdy Ring • Thorns Ring • Topaz Ring • Vampire Ring • Warrior Ring • Wedding Ring
+Trinkets Basilisk Paw • Fairy Box • Frog Egg • Golden Spur • Ice Rod • Magic Hair Gel • Magic Quiver • Parrot Egg
+Other Dyeing • Tailoring • Emily's Magic Shirt • Luau Skirt • Mystery Shirt • Tight Pants
+Category: Trinkets

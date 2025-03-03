@@ -1,0 +1,153 @@
+Jump to navigation
+Jump to search
+Coal
+A combustible rock that is useful for crafting and smelting.
+Information
+Source Mining • Dust Sprite • Blacksmith • Charcoal Kiln • Panning • Recycling Machine • Artifact Spot • Fishing Treasure Chest • Geodes • Bookseller
+Sell Price 15g
+Coal is a basic resource. It can be obtained primarily from mining rocks, killing Dust Sprites, purchasing from the Blacksmith, using a Charcoal Kiln, or panning. Coal may also be obtained in a number of other ways.
+Coal is used in some crafting recipes. It is also necessary for smelting items in a Furnace or Heavy Furnace and smoking fish in a Fish Smoker.
+Contents
+1 Locations
+2 Crafting
+3 Gifting
+4 Bundles
+5 Tailoring
+6 Quests
+7 Trading
+8 References
+9 History
+Locations
+Mining rocks — both in the Mines and anywhere else on the map. The chance to obtain Coal from most rocks is affected by daily luck, luck buffs, Mining level, the Prospector Profession, and one of the powers from the Statue Of The Dwarf King.[1]
+Mining Coal Nodes, which can be found in the Quarry, Quarry Mine, and Volcano Dungeon.
+Opening coal-filled minecarts and brown miner's bags on certain floors of the Mines and random floors in the Skull Cavern. Each minecart or bag contains 6 Coal. Minecarts in the Mines refresh their contents each year, while bags do not.
+Breaking crates and barrels in the Mines, Quarry Mine, Skull Cavern, and Volcano Dungeon.
+Using Charcoal Kilns to convert 10 Wood into 1 Coal.
+Recycling Trash (30% chance) or Driftwood (25% chance) in a Recycling Machine.
+Killing Dust Sprites between Floors 41-79 of the Mines (50% chance of dropping Coal).
+Players may use the elevator to quickly and repeatedly travel between floors ending in 0 or 5 to spawn more Dust Sprites.
+Using Monster Musk and wearing a Burglar's Ring may be helpful as well.
+Killing Red, Purple, and Black Slimes, Stone Golems, Wilderness Golems, Iridium Golems, Metal Heads, Shadow Brutes, and Shadow Shamans. Each monster has a 10% chance to drop Coal.
+Digging up Artifact Spots in the Backwoods, the Mountains, or the Farm.
+Panning in any area.
+Opening regular or golden Fishing Treasure Chests.
+Opening any of the 4 types of geodes.
+The Blacksmith sells Coal for 150g during Year 1 or 250g from Year 2 onwards.
+The Bookseller trades 20 Coal for 1 Mining Monthly.
+The Traveling Cart may sell Coal for 100–1,000g.
+Up to 50 Coal may be purchased from Clint's shop at the Desert Festival for 5 Calico Eggs each.
+The Garbage Can outside of the Blacksmith may contain Coal.
+If a Fruit Tree is struck by lightning, it will produce Coal instead of fruit for 4 days before returning to normal.
+Trains may randomly drop Coal.
+Coal purchased at the Blacksmith costs 150g during Year 1, so it is cheaper in Year 1 to buy 10 wood for 100g from Robin at the Carpenter's Shop and convert that wood into coal in the Charcoal Kiln. After Year 1, wood pricing increases to 50g per piece but coal increases to only 250g, so it is cheaper to purchase coal directly.
+Crafting
+Image Name Description Ingredients Recipe Source
+Bee House Place outside and wait for delicious honey! (Except in Winter).
+Coal (8)
+Wood (40)
+Iron Bar (1)
+Maple Syrup (1)
+Farming Level 3
+Preserves Jar Turns vegetables into pickles and fruit into jam.
+Coal (8)
+Wood (50)
+Stone (40)
+Farming Level 4
+Warrior Ring Occasionally infuses the wearer with "warrior energy" after slaying a monster.
+Coal (25)
+Iron Bar (10)
+Frozen Tear (10)
+Combat Level 4
+Cherry Bomb Generates a small explosion. Stand back!
+Coal (1)
+Copper Ore (4)
+Mining Level 1
+Bomb Generates an explosion. Watch out!
+Coal (1)
+Iron Ore (4)
+Mining Level 6
+Explosive Ammo Fire this with the slingshot.
+Coal (2)
+Iron Bar (1)
+Combat Level 8
+Wicked Statue There's something unsettling about the looks of this statue.
+Coal (5)
+Stone (25)
+Krobus (1,000g)
+Wooden Brazier Provides a moderate amount of light.
+Coal (1)
+Wood (10)
+Fiber (5)
+Carpenter's Shop (250g)
+Stone Brazier Provides a moderate amount of light.
+Coal (1)
+Stone (10)
+Fiber (5)
+Carpenter's Shop (400g)
+Barrel Brazier Provides a moderate amount of light.
+Coal (1)
+Wood (50)
+Solar Essence (1)
+Carpenter's Shop (800g)
+Stump Brazier Provides a moderate amount of light.
+Coal (1)
+Hardwood (5)
+Carpenter's Shop (800g)
+Gold Brazier Provides a moderate amount of light.
+Coal (1)
+Gold Bar (10)
+Fiber (5)
+Carpenter's Shop (1,000g)
+Carved Brazier Provides a moderate amount of light.
+Coal (1)
+Hardwood (10)
+Carpenter's Shop (2,000g)
+Scarecrow Prevents crows from attacking your crops. Has a limited radius (about 8 "tiles").
+Coal (1)
+Wood (50)
+Fiber (20)
+Farming Level 1
+Seed Maker Place crops inside to produce a varying amount of seeds. Doesn't work with fruit tree crops.
+Coal (10)
+Wood (25)
+Gold Bar (1)
+Farming Level 9
+Slime Egg-Press Compresses 100 pieces of slime into a slime egg. It's a miracle of science!
+Coal (25)
+Fire Quartz (1)
+Battery Pack (1)
+Combat Level 6
+Cookout Kit Use this to create a cooking campfire, allowing you to cook on-the-go!
+Coal (3)
+Wood (15)
+Fiber (10)
+Foraging Level 3
+Gifting
+Villager Reactions
+Neutral  Clint
+Dislike  Abigail •  Alex •  Caroline •  Demetrius •  Dwarf •  Elliott •  Emily •  Evelyn •  George •  Gus •  Haley •  Harvey •  Jas •  Jodi •  Kent •  Krobus •  Leah •  Leo •  Lewis •  Linus •  Marnie •  Maru •  Pam •  Penny •  Pierre •  Robin •  Sandy •  Sebastian •  Shane •  Vincent •  Willy •  Wizard
+Hate  Sam
+Bundles
+Coal is not used in any bundles.
+Tailoring
+Coal is used in the spool of the Sewing Machine with Cloth in the feed to create a Shirt. It is a black dye when used in the spool of the Sewing Machine with a dyeable clothing item in the feed.
+Quests
+Ten Coal may be requested by Ice Pip or Stonefish in a Fish Pond quest to increase the capacity of the pond from 5 to 7.
+Ten Coal are requested by Midnight Carp in a Fish Pond quest to increase the capacity of the pond from 3 to 5.
+Trading
+20 Coal can be traded at the Raccoon Wife's Shop for 1 Mahogany Seed.
+999 Coal can be traded at the Desert Trader for the Dark Piano.
+References
+↑ See MineShaft::checkStoneForItems, GameLocation::breakStone, and GameLocation::OnStoneDestroyed in the game code.
+History
+1.3.27: Increased price from 150g in Year 1 to 250g in Year 2+.
+1.4: Can now be used in Tailoring and to create a Wilted Bouquet. Can be requested in Fish Pond quests.
+1.5: Used to operate the Geode Crusher. Used as an ingredient to the Cookout Kit recipe. No longer used as an ingredient to the Skull Brazier recipe.
+1.6: Used to operate the Fish Smoker and Heavy Furnace. Can be obtained from Iridium Golems and Coal Nodes. Can be purchased from Clint at the Desert Festival. Geode Crushers no longer require coal to operate. Can now be traded for the Dark Piano. Is now requested by Midnight Carp in a Fish Pond quest. Powers from the Statue Of The Dwarf King may now affect coal drops.
+1.6.4: Coal carts in the Mines now "refresh" at the start of each year.
+1.6.6: Added Coal for Mahogany Seed trade at the Giant Stump.
+Resources
+Basic Battery Pack • Bone Fragment • Cinder Shard • Clay • Coal • Fiber • Hardwood • Moss • Stone • Wood
+Ore Copper Ore • Iron Ore • Gold Ore • Iridium Ore • Radioactive Ore
+Bars Copper Bar • Iron Bar • Gold Bar • Iridium Bar • Radioactive Bar • Refined Quartz
+Category: Resources

@@ -1,0 +1,20 @@
+Jump to navigation
+Jump to search
+This talk page is for discussing Hats.
+Sign and date your posts by typing four tildes (~~~~).
+Put new text below old text.
+Be polite.
+Assume good faith.
+Don't delete discussions.
+Hat table
+The hat table sure shows signs that it was edited by multiple editors over a long period of time. I wish I had the time and energy right now to clean it up, but the best I can do right now is post this comment in case someone else is so inclined.
+Related items are not together, but are scattered throughout the list. The list can be sorted, but there's no way to sort related items together and that seems like something that would be valuable to people.
+The Hat Mouse (or Abandoned House) is not mentioned even though it's an inherent part of obtaining achievement-related hats. A similar issue exists with the Guild rewards and Gil.
+The "Achievement" column should probably be removed in favor of integrating that information into the "How to Obtain" column. It's really just an artifact of the fact that the table (and presumably the game) started out only containing achievement-based hats.
+For the items that can be purchased, "you can buy this" is expressed in at least four different ways.
+The links to the Tailoring page should go straight to the Hats section of the page and not to the top of the page. I'm kind of annoyed that the table does not indicate the ingredients necessary to tailor, although I could see an argument for keeping it only on the Tailoring page to avoid duplication.
+Zendowolf (talk) 06:40, 31 March 2023 (UTC)
+Well, I certainly don't have time to change the format in 12 languages right now, but you make some good points. I definitely think ingredients required to tailor hats does not belong on the "Hats" page. margotbean (talk) 19:59, 31 March 2023 (UTC)
+Adding a Price Column?
+Hello! Would it be okay for me to add a "Price" column to the end of the table? 1.6 changed the prices of a lot of Hat Mouse hats, and since that page transcludes data from this page, I figured that this one should be edited to reflect those changes. I'm not sure if that would be too difficult to implement across all 12 languages. Also, on that note, would it be possible to change Template:Infobox mousehat to not automatically populate 1,000g for every achievement hat? Again, I'm not sure if that's too much work to do at this time. I'd be happy to contribute for the different languages if that'd be helpful! Bluestblur (talk) 05:22, 31 March 2024 (UTC)
+Category: Talk pages

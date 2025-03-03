@@ -1,0 +1,7 @@
+< User:Pathoschild
+Jump to navigation
+Jump to search
+← Modding:Index
+SMAPI Contributor's Guide
+Philosophy & Conventions Architecture Mod Lifecycle Web API Development
+Category: Modding

@@ -1,0 +1,41 @@
+Jump to navigation
+Jump to search
+Monster Musk
+Spray this on to draw more monsters out of hiding.
+Information
+Source Crafting • Bookseller
+Buff(s) Monster Musk Buff
+Buff Duration
+10m
+Sell Price 50g
+Crafting
+Recipe Source "Prismatic Jelly" Special Order
+Ingredients
+Slime (30)
+Bat Wing (30)
+Monster Musk is a crafted item used to encounter more monsters. The recipe is earned after completing the Wizard's Special Order "Prismatic Jelly". It can also be obtained by trading a Combat Quarterly with the Bookseller.
+Monster Musk has a duration of 10 minutes. If any player has the Monster Musk buff, the number of enemies on a given floor of the Mines or Skull Cavern when entering the floor is doubled.[1] It doesn't have an effect in areas resetting at the end of the day like the Volcano Dungeon, the Quarry Mine or the Mutant Bug Lair. However, it will still affect the number of off map spawns.
+It is a special-effect buff, meaning that using Monster Musk will not remove any buffs from consumed drinks or food, or vice-versa.
+Contents
+1 Gifting
+2 Bundles
+3 Tailoring
+4 Quests
+5 References
+6 History
+Gifting
+Villager Reactions
+Love  Krobus
+Hate  Abigail •  Alex •  Caroline •  Clint •  Demetrius •  Dwarf •  Elliott •  Emily •  Evelyn •  George •  Gus •  Haley •  Harvey •  Jas •  Jodi •  Kent •  Leah •  Leo •  Lewis •  Linus •  Marnie •  Maru •  Pam •  Penny •  Pierre •  Robin •  Sam •  Sandy •  Sebastian •  Shane •  Vincent •  Willy •  Wizard
+Bundles
+Monster Musk is not used in any bundles.
+Tailoring
+Monster Musk can be used in the spool of the Sewing Machine to create the dyeable Dark Highlight Shirt. It can be used in dyeing, serving as a purple dye at the dye pots located in Emily's and Haley's house, 2 Willow Lane. It can also be used as a purple dye when used in the spool of the Sewing Machine with a dyeable clothing item in the feed.
+Quests
+Monster Musk is not used in any quests.
+References
+↑ See StardewValley.Locations.MineShaft::adjustLevelChances in the game code.
+History
+1.5: Introduced.
+1.6: Monster Musk can now be obtained via the Bookseller. Krobus now loves Monster Musk.
+Category: Craftable items

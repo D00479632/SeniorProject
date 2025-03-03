@@ -1,0 +1,16 @@
+Jump to navigation
+Jump to search
+Bear's Knowledge
+Information
+Source Secret Note #23
+Sell Price Cannot be sold
+Bear's Knowledge permanently increases the sell price of blackberries and salmonberries by 3x. The sell price of Artisan Goods made from blackberries or salmonberries is not affected.
+To obtain Bear's Knowledge, the player must find Secret Note #23, then go to the Secret Woods between 6am and 7pm with Maple Syrup in inventory. A cutscene ensues, in which a bear takes the maple syrup, and thanks the player by giving his special knowledge of berries.
+Once obtained, it can be found in the Special Items & Powers tab in the the Player's Menu.
+Trivia
+If the player has obtained Bear's Knowledge and also has a telephone, they may receive a phone call from the bear.
+History
+1.3.27: Introduced.
+1.5: Phone call from bear added.
+1.6: Now located in the new Special Items & Powers tab instead of the player's wallet.
+Category: Special items

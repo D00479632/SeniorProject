@@ -1,0 +1,13 @@
+Jump to navigation
+Jump to search
+Track list export
+The initial track list was exported with this code, which can be run as a C# mod in Stardew Valley 1.5.5+:
+source code 
+The game data only has the numerical category IDs, but I confirmed the internal category names with one of the game developers:
+id name my notes
+1 Default seems to be unused.
+2 Music
+3 Sound
+4 Ambient listed on the wiki as "Music (ambient)" just to group the music tracks.
+5 Footsteps
+—Pathoschild (talk) 05:21, 17 October 2021 (UTC) (updated 00:12, 20 October 2021 (UTC))

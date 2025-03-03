@@ -1,0 +1,392 @@
+Jump to navigation
+Jump to search
+← Index
+This page explains how the game stores and parses event data. This is an advanced guide for mod developers.
+Contents
+1 Raw data
+2 Event preconditions
+2.1 Format
+2.2 Short aliases
+2.3 Built-in preconditions
+2.3.1 Game state queries
+2.3.2 World/Context
+2.3.3 Current player
+2.3.4 Host player
+2.3.5 Deprecated
+3 Event scripts
+3.1 Basic format
+3.2 Comments
+3.3 Multilining
+3.4 Optional NPCs
+3.5 Directions
+3.6 Cutscenes
+3.7 Dialogue format
+4 Common values
+4.1 Emotes
+5 Using C#
+6 See also
+Raw data
+Events are stored according to the location they occur in, in the asset Data/Events/<LocationName>. You can unpack your XNB files for reference.
+For example, here's the raw data (in English) for events in Pam's trailer (Data/Events/Trailer) as of 1.6.14:
+Data 
+Event preconditions
+Format
+Each event has a key in the form <event ID>/[preconditions], which has two components:
+field usage
+event ID A unique string ID which identifies the event. Older vanilla events use a number for legacy reasons, but mod events are strongly encouraged to follow the unique string ID format (including the mod ID prefix) to prevent conflicts between mods.
+preconditions
+A slash (/)-delimited list of the preconditions listed in the sections below. You can prefix any precondition with ! to negate it (e.g. !Season Winter for any season except winter). If an event has no preconditions, it must have a trailing slash to distinguish it from forks.
+Precondition keys are case-insensitive, but their arguments may not be. Using the exact capitalization shown is recommended to avoid issues.
+You can escape spaces and slashes in arguments using quotes like this: /GameStateQuery "SEASON Spring"/.
+For example (assuming you use Content Patcher with its {{ModId}} token):
+{{ModId}}_EventId/: event ID is {{ModId}}_EventId with no preconditions.
+{{ModId}}_EventId/Time 1900 2300/Friendship Clint 750: event ID is {{ModId}}_EventId; the event only happens between 7pm and 11pm when you have 3 hearts (750 points) with Clint.
+Short aliases
+Some older preconditions have a short-form alias, like j for DaysPlayed. These are deprecated, case-sensitive, and shouldn't be used in new events.
+Built-in preconditions
+Game state queries
+This lets you check arbitrary conditions not covered by another precondition.
+name and arguments alias description
+GameStateQuery <query> G A game state query matches, like G !WEATHER Here Sun for 'not sunny in this location'.
+World/Context
+These check the current time, date, weather, etc. They're not player-specific.
+name and arguments alias description
+ActiveDialogueEvent <ID> The special dialogue event with the given ID (including Conversation Topics) is in progress.
+DayOfMonth <number>+ u Today is one of the specified days of the month (may specify multiple days). Days should be integers (e.g., 12).
+DayOfWeek <day>+ Today is one of the specified days (may specify multiple days). This can be a case-insensitive three-letter abbreviation (like Mon) or full name (like Monday).
+FestivalDay Today is a festival day.
+GoldenWalnuts <number> N The players in total have found at least this many golden walnuts, including spent walnuts.
+InUpgradedHouse [level] L The current location is a farmhouse or cabin, and it has been upgraded at least [level] times. Default value: 2.
+NPCVisible <name> v The NPC with that internal name is present and visible in any location.
+NpcVisibleHere <name> p The NPC with that internal name is present and visible in the current location.
+Random <number> r Matches randomly, where <number> is the probability between 0 and 1 of permitting the event (e.g., 0.2 for a 20% chance).
+Season <season>+ The current season is one of the given values (may specify multiple seasons).
+Time <min> <max> t The current time of day is between the given values, inclusive. Values use the 26-hour clock (600 to 2600).
+UpcomingFestival <number> A festival day will occur within the given number of days.
+Weather <weather> w The weather in the current location's context matches <weather>. Valid values: rainy, sunny, or a specific weather ID.
+WorldState <ID> * The given world state ID is active anywhere.
+Year <year> y If <year> is 1, must be in the first year. Otherwise, year must be at least this value.
+Current player
+These check the current player (the one playing this instance of the game).
+name and arguments alias description
+ChoseDialogueAnswers <dialogue ID>+ q Current player has chosen all of the given dialogue answer IDs (can specify multiple IDs).
+Dating <name> D Current player is dating the NPC with that internal name.
+EarnedMoney <number> m Current player has earned at least this much money (including spent money).
+FreeInventorySlots <number> c Current player has at least this many free inventory slots.
+Friendship <name> <number>+ f Current player has at least this many friendship points with all of the NPCs with those internal names (can specify multiple name/number pairs).
+Gender <gender> g Current player is male (if <gender> is male, case-insensitive) or not male (if <gender> is anything else).
+HasItem <item ID> i Current player has the given item in their inventory.
+HasMoney <number> M Current player has at least this much money on hand (does not include spent money).
+LocalMail <letter ID> n Current player has received the given mail.
+MissingPet [pet] h Current player has not yet received a pet, and their preference matches [pet] (can be any pet type). Default: matches any preference.
+ReachedMineBottom [number] b Current player has reached the bottom floor of the Mines at least this many times. Default value: 1.
+Roommate R Current player is roommates with any NPC.
+SawEvent <event ID>+ e Current player has seen any of the given events (may specify multiple IDs).
+To check whether the player has seen all of several events, use this precondition multiple times.
+SawSecretNote <number> S Current player has seen the Secret Note with the given (integer) ID.
+Shipped <item ID> <number>+ s Current player has shipped at least this many of each specified item (can specify multiple item/number pairs). This only works for the items tracked by the game for shipping stats (shown in the shipping collections menu).
+Skill <name> <level> Current player has reached at least this level in the given skill (one of Combat, Farming, Fishing, Foraging, Luck, or Mining)
+Spouse <name> O Current player is married to the NPC with that internal name.
+SpouseBed B Current player has a double bed in their house (or, if they have a roommate, a single bed). But if the roommate is Krobus, will never match.
+Tile <x> <y>+ a Current player is standing on one of the given tile positions (can specify multiple x/y positions). This works even if the player is not currently warping.
+Host player
+These check the host player (the one running a multiplayer farm, not necessarily the current player). If single-player, this is always the current player.
+name and arguments alias description
+CommunityCenterOrWarehouseDone C The Community Center or Joja Warehouse has been completed.
+DaysPlayed <number> j Host player has played at least this many days.
+HostMail <letter ID> Hn Host player has received the indicated mail.
+HostOrLocalMail <letter ID> *n Either the host or the current player has received the indicated mail.
+IsHost H Current player is the host player.
+JojaBundlesDone J All Joja bundles have been completed.
+Deprecated
+These are deprecated and should no longer be used in newer events.
+deprecated preconditions 
+Event scripts
+Basic format
+Each event has a value which is the event script. This specifies what happens in the event — everything from lighting and music to NPC movement and dialogue. The script consists of multiple commands separated by forward slash (/) characters. Event commands are quote-aware, so you can use spaces and slashes in arguments like speak Penny \"I'm running A/B tests\" without needing to escape them (the quote marks themselves do need to be escaped).
+Every script must start with three commands in this exact order:
+index syntax description
+0 <music ID> The background music or ambient sounds to play during the event. This can be...
+an audio track ID to play;
+or none to stop any existing music and use the default ambient background noise for the location;
+or continue to keep playing the current background music.
+This can be changed later using the playMusic or stopMusic event commands.
+1 <x> <y> The tile coordinates the camera should center on at the start of the event.
+2 [<character ID> <x> <y> <direction>]+ Initialises one or more characters' starting tile positions and directions. The character ID can be farmer or an NPC name like Abigail.
+Those three commands may be followed by any sequence of the following commands:
+command description
+action <action> Run a trigger action string, like action AddMoney 500 to add 500g to the current player.
+addBigProp <x> <y> <object ID> Adds an object at the specified tile from the TileSheets\Craftables.png sprite sheet.
+addConversationTopic <ID> [length] Starts a conversation topic with the given ID and day length (or 4 days if no length given). Setting length as 0 will have the topic last only for the current day.
+addCookingRecipe <recipe> Adds the specified cooking recipe to the player.
+addCraftingRecipe <recipe> Adds the specified crafting recipe to the player.
+addFloorProp <prop index> <x> <y> [solid width] [solid height] [display height] Add a non-solid prop from the current festival texture. Default solid width/height is 1. Default display height is solid height.
+addItem <item ID> [count] [quality] Add an item to the player inventory (or open a grab menu if their inventory is full). The <item ID> is the qualified or unqualified item ID, and [quality] is a numeric quality value.
+addLantern <row in texture> <x> <y> <light radius> Adds a glowing temporary sprite at the specified tile from the Maps\springobjects.png sprite sheet. A light radius of 0 just places the sprite.
+addObject <x> <y> <sprite index> [layer] Adds a temporary sprite at the specified tile from the Maps\springobjects.png sprite sheet.
+addProp <prop index> <x> <y> [solid width] [solid height] [display height] Add a solid prop from the current festival texture. Default solid width/height is 1. Default display height is solid height.
+addQuest <quest ID> Add the specified quest to the quest log.
+addSpecialOrder <order ID> Add a special order to the player team. This affects all players, since special orders are shared.
+addTemporaryActor <spriteAssetName> <sprite width> <sprite height> <tile x> <tile y> <direction> [breather] [Character|Animal|Monster] [override name] Add a temporary actor. spriteAssetName is the name of the sprite to add (e.g., Ghost). Underscores in the asset name are now only replaced with spaces if an exact match wasn't found. You should quote arguments containing spaces instead, like addTemporaryActor "White Chicken" ….
+[breather] is boolean (default true).
+[Character|Animal|Monster] (default Character) determines whether the sprite will be loaded from "Characters/", "Animals/", or "Characters/Monsters/".
+[override name] can be used to give the temporary actor a different name.
+advancedMove <actor> <loop> <x y>... OR <direction duration> Set multiple movements for an actor. You can set True to have the actor walk the path continuously. Example: /advancedMove Robin false 0 3 2 0 0 2 -2 0 0 -2 2 0/
+To make the actor move along the x axis (left/right), use the number of tiles to move and 0. For example, -3 0 will cause the actor to walk three tiles to the left while facing left. 2 0 will cause the actor to walk two tiles to the right while facing right.
+To make the actor move along the y axis (up/down), use 0 and the number of tiles to move. For example, 0 1 will cause the actor to walk one tile down while facing down. 0 -5 will cause the actor to walk five tiles up while facing up.
+To make an actor pause, use the direction to face and the number of milliseconds to pause. 1 is right, 2 is down, 3 is left, and 4 is up. The reason 4 is up and not 0 is so that advancedMove can tell the difference between a pause command and a move up/down command.
+The code can tell the difference between a move command and a pause command because a move command must have 0 for either x or y. A pause command must have non-zero numbers for both numbers in the pair.
+Example: /advancedMove Clint true 4 0 2 5000 -4 0 1 3000/ Clint will have continuous movement moving 4 tiles to the right, facing down upon arriving, waiting for 5 seconds, then moving 4 tiles to the left, facing right upon arriving, then waiting for 3 seconds, then loops because the loop was set to true(see above).
+Example: /advancedMove Pam true 5 0 0 3 3 5000 -6 0 0 -4/ Pam first moves 5 tiles to the right, then directly moves 3 tiles downward, faces the to the left upon arriving then waits 5 seconds before moving 6 tiles to the left then moves up 4 tiles directly.
+ambientLight <r> <g> <b> Modifies the ambient light level, with RGB values from 0 to 255.
+animalNaming Show the animal naming menu if no other menu is open. Uses the current location as Coop. Appears to only work for 'hatched' animals.
+animate <actor> <flip> <loop> <frame duration> <frames...> Animate a named actor, using one or more <frames> from their sprite sheet, for <frame duration> milliseconds per frame. <frames> are indexed numerically, based on 16x32 pieces of the image. This index increases as you go from left to right, starting from 0. <flip> indicates whether to flip the sprites along the Y axis; <loop> indicates whether to repeat the animation until stopAnimation is used. If you're animating the farmer, it may be helpful to reference Modding:Farmer_sprite#Sprite_Index_Breakdown
+attachCharacterToTempSprite <actor> Attach an actor to the most recent temporary sprite.
+awardFestivalPrize Awards the festival prize to the winner for the easter egg hunt and ice fishing contest. Will not do anything outside those festivals; see the awardFestivalPrize entry with arguments just below for how to use it in events.
+awardFestivalPrize <item type|item id> Awards the specified item to the player (shows a HUD message and adds the item to the player's inventory). Possible item types are "pan", "sculpture", "rod", "sword", "hero", "joja", "slimeegg", "emilyClothes", and "jukebox". item id can be any qualified item id. This command causes an event to skip the next command that comes after it, so it's recommended to add a pause command to stop it skipping anything important.
+beginSimultaneousCommand This command states that the next event commands will all be done at the same time. Must also have endSimultaneousCommand after the commands needed to execute at the same time.
+broadcastEvent [bool useLocalFarmer] Makes the event a "broadcast event", forcing others players connected to also see it. Any players connected will be forced to warp to this event. This is used in some vanilla events like when Lewis shows the farmer the abandoned Community Center.
+If true, useLocalFarmer will make the Farmer actor in the event the individual player's Farmer, otherwise if omitted or false it will be the host's Farmer. The useLocalFarmer option isn't used anywhere in the vanilla game.
+catQuestion Trigger question about adopting your pet.
+cave Trigger the question for the farm cave type. This will work again later, however changing from bats to mushrooms will not remove the mushroom spawning objects.
+changeLocation <location> Change to another location and run the remaining event script there.
+changeMapTile <layer> <x> <y> <tile index> Change the specified tile to a particular value.
+changeName <actor> <displayName> Sets the display name of the actor to displayName. Quote arguments containing spaces, like changeName Leo "Neo Leo".
+changePortrait <npc> [portrait] Change the portrait asset for specified NPC's portrait to one matching the form "Portraits/<actor>_[portrait]". For example, changePortrait Shane JojaMart would make Shane use his JojaMart portrait. Repeat the command without the [portrait] argument to change the NPC back to their normal portrait.
+changeSprite <actor> [sprite] Change the sprite asset for specified NPC's portrait to one matching the form "Characters/<actor>_[sprite]". For example, changeSprite Shane JojaMart would make Shane use his JojaMart sprite. Repeat the command without the [sprite] argument to change the NPC back to their normal sprite.
+changeToTemporaryMap <map> [pan] Change the location to a temporary one loaded from the map file specified by <map>. The [pan] argument is broken — the screen will not pan regardless of what value it is given.
+changeYSourceRectOffset <npc> <offset> Changes the NPC's vertical texture offset. Example: changeYSourceRectOffset Abigail 96 will offset her sprite sheet, showing her looking left instead of down. This persists for the rest of the event. This is only used in Emily's Clothing Therapy event to display the various outfits properly.
+characterSelect Seemingly unused. Sets Game1.gameMode to 5 and Game1.menuChoice = 0.
+cutscene <cutscene> Activate a cutscene. See cutscene list.
+doAction <x> <y> Acts as if the player had clicked the specified x/y coordinate and triggers any relevant action. It is commonly used to open doors from inside events, but it can be used for other purposes. If you use it on an NPC you will talk to them, and if the player is holding an item they will give that item as a gift. doAction activates objects in the main game world (their actual location outside of the event), so activating NPCs like this is very tricky, and their reaction varies depending on what the player is holding.
+dump <group> Starts the special "cold shoulder" and "second chance" dialogue events for the given group (women if group is girls and men if it is anything else.) The cold shoulder event has an id of dumped_Girls or dumped_Guys and lasts 7 days; the second chance event has an id of secondChance_Girls or secondChance_Guys and lasts 14 days. During open beta testing of version 1.3 there was a second parameter which determined the amount of hearts lost, but support for that parameter was removed before release.
+endSimultaneousCommand Sets the end of all commands that are to be done simultaneously. Format: beginSimultaneousCommand/<Event Commands>.../endSimultaneousCommand
+elliotbooktalk Elliot book talk.
+emote <actor> <emote ID> [continue] Make the given NPC name perform an emote, which is a little icon shown above the NPC's head. If continue is specified, the next command will play out immediately. Emotes are stored in Content\TileSheets\emotes.xnb; see list of emotes.
+end Ends the current event by fading out, then resumes the game world and places the player on the square where they entered the zone. All end parameters do this by default unless otherwise stated.
+end bed Same as end, but warps the player to the x/y coordinate of their most recent bed. This does not warp them to the farmhouse, only to the x/y coordinate of the bed regardless of map.
+end beginGame Used only during the introduction sequence in the bus stop event. It sets the game mode to playingGameMode, warps the player to the farmhouse (9, 9), ends the current event, and starts a new day.
+end credits Not used in any normal events. Clears debris weather, changes the music to wedding music, sets game mode to creditsMode and ends the current event.
+end dialogue <NPC> <"Text for next chat"> Same as end, and additionally clears the existing NPC dialogue for the day and replaces it with the line(s) specified at the end of the command. Example usage: end dialogue Abigail "It was fun talking to you today.$h"
+end dialogueWarpOut <NPC> <"Text for next chat"> See end dialogue and end warpOut.
+end invisible <NPC> Same as end, and additionally turns the specified NPC invisible (cannot be interacted with until the next day).
+end invisibleWarpOut <NPC> See end invisible and end warpOut.
+end newDay Ends both the event and the day (warping player to their bed, saving the game, selling everything in the shipping box, etc).
+end position <x> <y> Same as end, and additionally warps the player to the map coordinates specified in x y.
+end warpOut Same as end, and additionally finds the first warp out of the current location (second warp if male and in the bathhouse), and warps the player to its endpoint.
+end wedding Used only in the hardcoded wedding event. Changes the character's clothes back to normal, sets Lewis' post-event chat to "That was a beautiful ceremony. Congratulations!$h", and warps the player to their farm.
+eventSeen <event ID> [seen] Add or remove an event ID from the player's list of seen events, based on [seen] (default true to add).
+Can be used to prevent a mutually exclusive event from being seen by setting it to true.
+An event can mark itself unseen using eventSeen <event ID> false. This takes effect immediately (i.e. the event won't be added to the list when it completes), but the game will prevent the event from playing again until the player changes location to avoid event loops. The event will still replay when re-entering the location, making it useful for creating repeatable events.
+extendSourceRect <actor> reset Resets the actors sprite.
+extendSourceRect <actor> <horizontal> <vertical> [ignoreUpdates] TODO: Explain Character.extendSourceRect
+eyes <eyes> <blink> Change the player's eyes. Eyes is represented by and Integer from 0 - 5 (open, closed, right, left, half closed, wide open). Blink is a timer that is represented with a negative number. -1000 is the default timer.
+faceDirection <actor> <direction> [continue] Make a named NPC face a direction. If [continue] is false (default) the game will pause while the NPC changes their direction.
+fade [unfade] Fades out to black if no parameter is supplied. If the parameter is unfade (not true), fades in from black.
+farmerAnimation <anim> Briefly sets the farmer's sprite to <anim> for a variable (depending on sprite) interval. Only used once in vanilla events. Using showFrame farmer <sprite> twice (to set a new frame and back) is more powerful as it lets you control the interval using pause n.
+farmerEat <object ID> Make the player eat an object. (The farmer actually does eat the object, so buffs will apply, healing will occur, etc.)
+fork [req] <event ID> End the current command script and starts a different script with the given ID, but only if the [req] condition is met. (Example: /fork choseWizard finalBossWizard in the "Necromancer" script of Sebastian's 6-heart event.) The [req] condition can be a mail ID or dialogue answer ID; if not specified, it checks if the specialEventVariable1 variable was set (e.g., by a question event command or %fork dialogue command). The new script should have the same format as a normal event script, but without the mandatory three start fields.
+friendship <npc> <amount> Add the given number of friendship points with the named NPC. (There are 250 points per heart.)
+globalFade [speed] [continue] Fade to black at a particular speed (default 0.007). If [continue] is false (default) the event pauses during the fade, otherwise the event continues as the screen fades to black. The fade effect disappears when this command is done; to avoid that, use the viewport command to move the camera off-screen.
+globalFadeToClear [speed] [continue] Fade in from black at a particular speed (default 0.007). If [continue] is false (default) the event pauses during the fade, otherwise the event continues as the screen fades in. If the screen is not already black when this command starts it will abruptly set it to black before fading back in.
+glow <r> <g> <b> <hold> Make the screen glow once, fading into and out of the <r> <g> <b> values over the course of a second. If <hold> is true it will fade to and hold that color until stopGlowing is used.
+grandpaCandles Do grandpa candles
+grandpaEvaluation Do grandpa evaluation
+grandpaEvaluation2 Do grandpa evaluation (manually resummoned)
+halt Make everyone stop.
+hideShadow <actor> <true/false> Hide the shadow of the named actor. False unhides it.
+hospitaldeath Forces you to lose money and items, pulls up the dialogue box with Harvey. IS NOT THE SAME AS ANY OF THE END COMMANDS.
+ignoreCollisions <character ID> Make a character ignore collisions when moving for the remainder of the event. For example, they'll walk through walls if needed to reach their destination. The character ID can be farmer or an NPC name like Abigail.
+ignoreEventTileOffset Tile positions in farm events are offset to match the farmhouse position. If an event shouldn't be based on the farmhouse position, add an ignoreEventTileOffset command to disable the offset for that event. This must be the 4th command (after the 3 initial setup ones) to take effect.
+ignoreMovementAnimation <actor> [ignore] Causes the specified NPC to move without their walk animations, based on [ignore] (default true to ignore animation).
+itemAboveHead [type|item id] Show an item above the player's head and displays a message about it. The [type] can be "pan", "hero", "sculpture", "joja", "slimeEgg", "rod", "sword", or "ore". [item id] can be any qualified item id. If no item is specified, then they will hold the furnace blueprint and no message will be displayed. item id can be any qualified item id. This command does not add the item to the player's inventory (except when used with "slimeEgg").
+The message box from itemAboveHead will cancel dialogue from commands that come after it unless at least 1,200ms has passed, so it is recommended to use a pause command after itemAboveHead.
+jump <actor> [intensity] Make a the named NPC jump. The default intensity is 8.
+loadActors <layer> Load the actors from a layer in the map file.
+makeInvisible <x> <y> [x-dimension] [y-dimension] Temporarily hides selected objects or terrain features: the tile(s) will become passable for the duration of the event. Useful for clearing a walking area during events, especially in the FarmHouse. (Example: /makeInvisible 8 14 hides any object or terrain feature at tile 8, 14 in the current map.) The optional [x-dimension] and [y-dimension] arguments allow you to specify a larger area to be cleared. (Example: /makeInvisible 68 36 13 7 in Leah's 14-heart event clears a 13 × 7 tile rectangular area with the top-left corner at coordinate 68, 36.). Known bugs: some furniture may not re-appear immediately?
+mail <letter ID> Queue a letter to be received tomorrow (see Content\Data\mail.xnb for available mail).
+mailReceived <letter ID> [add] Add or remove a letter to the player's received list (bypassing the mailbox), based on [add] (default true to add). Useful for setting mail flags.
+Its old name is addMailReceived which can still be used as an alias.
+mailToday <letter ID> Adds a letter to the mailbox immediately, given the <letter ID> in Data/Mail.
+message "<text>" Show a dialogue box (no speaker). See dialogue format for the <text> format.
+minedeath Forces you to lose money and items, pulls up the dialogue box with Harvey. IS NOT THE SAME AS ANY OF THE END COMMANDS.
+money <amount> Adds/removes the specified amount of money.
+move <actor> <x> <y> <direction> [continue] Make a named NPC move by the given tile offset from their current position (along one axis only), and face the given direction when they're done. To move along multiple axes, you must specify multiple move commands. By default the event pauses while a move command is occurring, but if [continue] (default false) is set to true the movement is asynchronous and will run simultaneously with other event commands. You can also move multiple people at a time in a single event command with move - an example of /move Abigail 1 0 1 Sam 0 1 1 Sebastian 2 0 1/ will have Abigail, Sam, and Sebastian all move at the same time in their respective directions.
+pause <duration> Pause the game for the given number of milliseconds.
+playMusic <track> Play the specified music track ID. If the track is 'samBand', the track played will change depend on certain dialogue answers (76-79).
+playSound <sound> Play a given sound ID from the game's sound bank.
+playerControl Give the player control back.
+positionOffset <actor> <x> <y> [continue] Offset the position of the named NPC by the given number of pixels. This happens instantly, with no walking animation. If [continue] is false (default) the event will pause while the NPC's position is being offset.
+proceedPosition <actor> Waits for the specified actor to stop moving before executing the next command.
+question null "<question>#<answer1>#<answer2>" Show a dialogue box with some answers and an optional question. When the player chooses an answer, the event script continues with no other effect.
+question fork<answer index> "<question>#<answer 0>#<answer 1>#..." Show a dialogue with some answers and an optional question. When the player chooses the answer matching the fork<answer index> (like fork0 for the first answer), the specialEventVariable1 variable is set. Usually followed by a fork command. Example:
+.../question fork0 \"#answer0#answer1#answer3\"/fork eventidhere/..."
+questionAnswered <answer ID> [answered] Add or remove an answer ID from the player's list of chosen dialogue answers, based on [answered] (default true to add).
+quickQuestion <question>#<answer1>#<answer2>#<answer3>(break)<answer1 script>(break)<answer2 script>(break)<answer3 script> Show a dialogue box with an optional question and some answers. The answer scripts are sequences of commands separated by \\. When the player chooses an answer, the relevant answer script is executed and then the event continues. Usually used when an NPC's response will depend on the answer chosen but nothing else in the event has to depend on it.
+Note: If quickQuestion is used immediately at the start of an event block (Example: "ExampleEvent": "quickQuestion [rest of the event]"), it will cause a dialogue loop. Adding another command in front of quickQuestion resolves this issue (Example: "ExampleEvent": "pause 1/quickQuestion [rest of the event]").
+removeItem <object ID> [count] Remove one instance of an item from a player's inventory. Use [count] to specify the number to be removed.
+removeObject <x> <y> Remove the prop at a position.
+removeQuest <quest ID> Remove the specified quest from the quest log.
+removeSpecialOrder <order ID> Remove a special order from the player team. This affects all players, since special orders are shared.
+removeSprite <x> <y> Remove the temporary sprite at a position.
+removeTemporarySprites Remove all temporary sprites.
+removeTile <x> <y> <layer> Remove a tile from the specified layer.
+replaceWithClone <NPC name> Replace an NPC already in the event with a temporary copy. This allows changing the NPC for the event without affecting the real NPC.
+For example, this event changes Marnie's name/portrait only within the event:
+"Some.ModId_ExampleEvent/": "continue/64 15/farmer 64 15 2 Marnie 64 17 0/replaceWithClone Marnie/changeName Marnie Pufferchick/changePortrait Marnie Pufferchick/[...]/end"
+resetVariable Set the specialEventVariable1 to false.
+rustyKey Gives the player the rusty key. (Sewer key)
+screenFlash <alpha> Flashes the screen white for an instant. An alpha value from 0 to 1 adjusts the brightness, and values from 1 and out flashes pure white for x seconds.
+setRunning Set the player as running.
+setSkipActions [actions] Set trigger actions that should run if the player skips the event. You can list multiple actions delimited with #, or omit [actions] so no actions are run. When the player skips, the last setSkipActions before that point is applied.
+For example, this adds the garden pot recipe and item to the player if the event is skipped, but avoids adding the item if the event already did it:
+/setSkipActions AddCraftingRecipe Current "Garden Pot"#AddItem (BC)62
+/skippable
+/...
+/addItem (BC)62
+/setSkipActions AddCraftingRecipe Current "Garden Pot"
+Skip actions aren't applied if the event completes normally without being skipped.
+shake <actor> <duration> Shake the named NPC for the given number of milliseconds.
+showFrame farmer <frame> <flip> Flip the farmer's current sprite along the Y axis. Farmer looks strange if not facing the correct direction prior to 1.6. Flip is a true/false value.
+showFrame <actor> <frame ID> Set the named NPC's current frame in their Content\Characters\*.xnb spritesheet. Note that setting the farmer's sprite only changes parts of the sprite (some times arms, some times arms and legs and torso but not the head, etc). To rotate the whole sprite, use faceDirection farmer <0/1/2/3> first before modifying the sprite with showFrame. Frame ID starts from 0. If farmer is the one whose frame is being set, "farmer" can be eliminated, i.e., both showFrame farmer <frame ID> and showFrame <frame ID> would work.
+skippable Allow skipping this event.
+speak <character> "<text>" Show dialogue text from a named NPC; see dialogue format. The quote marks need to be escaped (\") when events are written in JSON as with Content Patcher. For example speak Leah \" My dialogue has been escaped! \".
+specificTemporarySprite <sprite> [other params] Shows the given temporary sprite. Parameters change depending on the sprite. These are quite hardcoded and probably not easily reusable, other than the little heart.
+speed farmer <modifier> Add a speed modifier to the farmer. Is persistent and you will have to use the command again to return to normal speed.
+speed <actor> <speed> Sets the named NPC's speed (default speed is 3). Not applicable to the farmer. Applies only through the end of the next movement or animation on that NPC.
+splitSpeak <actor> "<text>" Dialogue, but chosen based on previous answer. ('~' is the separator used.)
+startJittering Make the player start jittering.
+stopAdvancedMoves Stop movement from advancedMove.
+stopAnimation farmer Stop the farmer's current animation.
+stopAnimation <actor> [end frame] Stop the named NPC's current animation. Not applicable to the farmer.
+stopGlowing Make the screen stop glowing.
+stopJittering Make the player stop jittering.
+stopMusic Stop any currently playing music.
+stopRunning Make the farmer stop running.
+stopSound <sound ID> [immediate] Stop a sound started with the startSound command. This has no effect if the sound has already stopped playing on its own (or hasn't been started). If you started multiple sounds with the same ID, this will stop all of them (e.g. startSound fuse/startSound fuse/stopSound fuse).
+By default the sound will stop immediately. For looping sounds, you can pass false to the [immediate] argument to stop the sound when it finishes playing the current iteration instead (e.g. stopSound fuse false).
+stopSwimming <actor> Make an actor stop swimming.
+swimming <actor> Make an actor start swimming.
+switchEvent <event ID> Changes the current event (ie. event commands) to another event in the same location.
+temporarySprite <x> <y> <row in texture> <animation length> <animation interval> <flipped> <layer depth> Create a temporary sprite with the given parameters, from the resource TileSheets/animations.
+temporaryAnimatedSprite ... Add a temporary animated sprite to the event, using these space-delimited fields:
+index field effect
+0 texture The asset name for texture to draw.
+1–4 rectangle The pixel area within the texture to draw, in the form <x> <y> <width> <height>.
+5 interval The millisecond duration for each frame in the animation.
+6 frames The number of frames in the animation.
+7 loops The number of times to repeat the animation.
+8–9 tile The tile position at which to draw the sprite, in the form <x> <y>.
+10 flicker Causes the sprite to flicker in and out of view repeatedly. (one of true or false).
+11 flip Whether to flip the sprite horizontally when it's drawn (one of true or false).
+12 sort tile Y The tile Y position to use in the layer depth calculation, which affects which sprite is drawn on top if two sprites overlap. The larger the number, the higher layer the sprite is on.
+13 alpha fade Fades out the sprite based on alpha set. The larger the number, the faster the fade out. 1 is instant.
+14 scale A multiplier applied to the sprite size (in addition to the normal 4× pixel zoom).
+15 scale change Changes the scale based on the multiplier applied on top of the normal zoom. Continues endlessly.
+16 rotation The rotation to apply to the sprite, measured in radians.
+17 rotation change Continuously rotates the sprite, causing it to spin. The speed is determined by input value.
+18+ flags Any combination of these space-delimited flags:
+color <color>: apply a standard color to the sprite.
+hold_last_frame: after playing the animation once, freeze the last frame as long as the sprite is shown.
+ping_pong: Causes the animation frames to play forwards and backwards alternatingly. Example: An animation with the frames 0, 1, 2 will play "0 1 2 0 1 2" without the ping_pong flag and play "0 1 2 1 0" with the ping_pong flag.
+motion <x> <y>: Sprite moves based on the values set. Numbers can be decimals or negative.
+acceleration <x> <y>: [TODO: document what this does]
+acceleration_change <x> <y>: [TODO: document what this does]
+textAboveHead <actor> \"<text>\" Show a small text bubble over the named NPC's head with the given text; see dialogue format.
+tossConcession <actor> <concessionId> Causes an NPC to throw their concession in the air. concessionId is from Data/Concessions.
+translateName <actor> <translation key> Set the display name for an NPC in the event to match the given translation key.
+tutorialMenu Show the tutorial menu if no other menu is open.
+updateMinigame <event data> Send an event to the current minigame.
+viewport move <x> <y> <duration> Pan the the camera in the direction (and with the velocity) defined by x/y for the given duration in milliseconds. Example: "viewport move 2 -1 5000" moves the camera 2 pixels right and 1 pixel up for 5 seconds. The total distance moved is based on framerate, rather than time, and may be inconsistent.
+viewport <x> <y> [true [unfreeze]|clamp [true|unfreeze]] Instantly reposition the camera to center on the given X, Y tile position. TODO: explain other parameters.
+waitForAllStationary Waits for all actors to stop moving before executing the next command.
+waitForOtherPlayers Wait for other players (vanilla MP).
+warp <actor> <x> <y> [continue] Warp the named NPC to a position to the given X, Y tile coordinate. This can be used to warp characters off-screen. If [continue] is false (default) the event will pause while the NPC is being warped.
+warpFarmers [<x> <y> <direction>]+ <default offset> <default x> <default y> <direction> Warps connected players to the given tile coordinates and numeric directions. The <x> <y> <direction> triplet is repeated for each connected player (e.g. the first triplet is for the main player, second triplet is for the first farmhand, etc). The triplets are followed by an offset direction (one of up, down, left, or right), and a final triplet which defines the default values used by any other player.
+Some commands are broken or unusable:
+command description
+end busIntro Supposed to start the bus intro scene, presumably the one that was cut before release.
+Comments
+A command which begins with -- is ignored. This can be used to insert comments or to disable commands temporarily while debugging an event. The comment ends at the next slash delimiter (/), so it can't contain slashes. Comments cannot be added between the first three commands (music, viewport coordinates, character setup). This means you can't add a comment after the music or viewport coordinates commands, but you can add a comment after character setup.
+For example:
+"666/": "none/-1000 -1000/farmer 5 7 0/--you can add comments from here/skippable/viewport 5 7 10/--set viewport near door/pause 2000/end"
+Multilining
+Event commands trim surrounding whitespace, so they can be multilined for readability. Line breaks must be before or after the / delimiter. For example:
+"SomeEventId/": "
+    none/
+    -1000 -1000/
+    farmer 5 7 0/
+    ...
+"
+This can be also combined with the comment syntax to add notes. (Reminder: comments can't be used between the first three commands). For example:
+"SomeEventId/": "
+    none/            
+    -1000 -1000/     
+    farmer 5 7 0/    -- actor positions/
+    ...
+"
+Optional NPCs
+You can mark NPCs optional in event commands by suffixing their name with ?. For example, jump Kent? won't log an error if Kent is missing. When used in the initial event positions, the NPC is only added if they exist in Data/Characters and their UnlockConditions match.
+Directions
+When using an event command with a direction argument, use one of these numeric values or case-insensitive names:
+Numeric Value Name Meaning
+0 up looking up
+1 right looking right
+2 down looking down
+3 left looking left
+Cutscenes
+The cutscene command will accept the following values:
+Value In-game scene
+AbigailGame Sets up Journey of the Prairie King mini-game with Abigail
+addSecretSantaItem Feast of the Winter Star gift scene
+balloonChangeMap Changes to the "in the balloon" map for Harvey's 10 heart event
+balloonDepart Balloon taking off in Harvey's 10 heart event
+bandFork Plays correct scene for Sam's 8 heart event, based on response given in 2 heart event
+boardGame Sets up Solarion Chronicles mini-game
+clearTempSprites Removes all temporary sprites from map
+eggHuntWinner Egg Hunt winner scene
+governorTaste Luau soup scene
+greenTea Caroline sunroom scene from her 2 heart event
+haleyCows Haley meeting the cows from her 8 heart event
+iceFishingWinner Festival of Ice fishing contest winner scene
+iceFishingWinnerMP Sets up text message displayed when leaving Festival of Ice
+linusMoneyGone ??? (seems to be unused)
+marucomet Maru Comet scene from her 14 heart event
+plane Plane flying by from Harvey's 8 heart scene
+robot MarILDA taking off from Maru's 10 heart scene
+Dialogue format
+See Modding:Dialogue#Format.
+Common values
+Emotes
+An emote is an animated icon bubble shown above an NPC's head to indicate a mood or reaction. Emote icons are stored in the TileSheets\emotes asset.
+ID Character constant
+4 emptyCanEmote
+8 questionMarkEmote
+12 angryEmote
+16 exclamationEmote
+20 heartEmote
+24 sleepEmote
+28 sadEmote
+32 happyEmote
+36 xEmote
+40 pauseEmote
+44 unused
+48 unused
+52 videoGameEmote
+56 musicNoteEmote
+60 blushEmote
+Using C#
+You can add custom event preconditions & commands using new Event methods.
+Method
+RegisterPrecondition
+RegisterPreconditionAlias
+RegisterCommand
+RegisterCommandAlias
+These are some useful fields:
+Field Usage
+Event.fromAssetName Indicates which data asset (if any) the event was loaded from.
+Game1.eventsSeenSinceLastLocationChange Tracks the events that played since the player arrived in their current location.
+See also
+JavaScript to parse an event precondition string
+LINQ script to format an event for translations (i18n)
+Category: Modding

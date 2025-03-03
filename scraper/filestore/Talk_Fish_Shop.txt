@@ -1,0 +1,38 @@
+Jump to navigation
+Jump to search
+This talk page is for discussing Fish Shop.
+Sign and date your posts by typing four tildes (~~~~).
+Put new text below old text.
+Be polite.
+Assume good faith.
+Don't delete discussions.
+Timing of Change to the Opening of Shop Doors
+The article states that the Fish Shop doors open at 8am rather than 9am once Willy's boat to Ginger Island is repaired. Has this been verified when the cutscene is delayed due to another overnight event? In that case, the opening hours should change before the cutscene has happened, because the repair is still done. Or is it really the cutscene that both triggers the change and registers that the repair is done? And if so, the article should be clarified as to what constitutes the repair as being "done". Giles (talk) 22:12, 27 January 2022 (UTC)
+In the recent edit, I fixed wording that could be interpreted multiple ways, causing lack of clarity. The cutscene can be delayed as described before. Its relation to boat repairs should now be quite clear. But verification revealed a bug as to the shop hours change that I was unaware of before. I verified by fulfilling the donations for the Missing Bundle the same day as providing the boat repair materials. The Movie Theater was fixed first, the boat one day later, and shop hours never changed. Giles (talk) 04:20, 31 January 2022 (UTC)
+Thanks so much for verifying that. The times I had it happen I never bothered to verify exactly when the shop hours changed, if it did. User314159 (talk) 06:01, 31 January 2022 (UTC)
+You're welcome! I found a time in game play when it mattered to me, so I watched for it when testing. Thought it might matter to others too. Giles (talk) 16:46, 31 January 2022 (UTC)
+Ginger Island Teaser Event
+The preconditions are: 16253595/j 29/X where X is
+if (split[i][0] == 'X')
+  {
+   if (Game1.MasterPlayer.eventsSeen.Contains(191393) || Game1.MasterPlayer.eventsSeen.Contains(502261) || Game1.MasterPlayer.hasCompletedCommunityCenter())
+   {
+    return -1;
+   }
+   continue;
+  }
+Atravita (talk) 12:56, 27 July 2023 (UTC)
+Thank you Atravita! Translation: 16253595 is the Ginger Island teaser event number, which requires:
+j 29 = 29 days played in game (so not before Summer 1 of year 1); and one of 3 previous events has occured:
+191393 = The community center completion ceremony has been seen; or
+502261 = The Joja warehouse completion ceremony has been seen; or
+hasCompletedCommunityCenter = The player has completed the community center
+in order to return -1 to the calling function, GameLocaion::checkForEvents. Returning -1 seems to allow the event to start. margotbean (talk) 18:35, 27 July 2023 (UTC)
+I have updated the page, but now we need the preconditions for the invitation to arrive in the mail. The page reads pretty funky, with preconditions listed for both the "teaser" event and the actual boat reveal event. I can't find the boat reveal event in the files... margotbean (talk) 18:57, 27 July 2023 (UTC)
+The letter: "3872126/C/x willyBackRoomInvitation": "null". (on Data/Events/Farm) I think the X precondition is "CC/Joja not complete" (it returns -1 for "fail" and the event number for success). "C" is "CC/Joja complete". To be honest, I don't remember this part of the game much at all. (Modders don't play, lol.) Atravita (talk) 21:07, 27 July 2023 (UTC)
+Ah yes, modders don't play, I remember hearing that somewhere before... 😂
+Well, I have done as much research as I can do in data files and game code, and have reworded the section. Both the teaser cutscene and sending the invitation to the back room have the same preconditions, so I didn't repeat them on the page. I also checked the page history about the "2-day delay", and it may or may not be true, so I removed it. There could have been another cutscene that caused the delay in mail, or it could be a mystery, like when the game decides to have Evelyn visit after you finish the Greenhouse. 👀
+Just fyi, I have found inconsistency in when the game generates mail before. I was testing a FR player's save, adding the missing rarecrows that would trigger the Deluxe Rarecrow recipe in the mail, and 8/10 times the mail came the next day. 2/10 times it took 2 days to generate the letter. On the exact same save file, with the exact same conditions. I have no idea why.
+Thanks for your help!!! margotbean (talk) 20:15, 28 July 2023 (UTC)
+Ahh, Evelyn has a conversation topic that delays her for three days if you go CC, but that conversation topic isn't set if you go Joja. Atravita (talk) 00:38, 29 July 2023 (UTC)
+Category: Talk pages

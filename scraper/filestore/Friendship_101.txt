@@ -1,0 +1,34 @@
+Jump to navigation
+Jump to search
+Friendship 101
+You become friends with people a little faster.
+Information
+Source Mayor's Manor • Bookseller
+Sell Price 3,000g
+Friendship 101 is a power book that can be obtained as the 9th prize from the prize machine inside the Mayor's Manor. It can also be purchased from the Bookseller for 20,000g starting in Year 3 (≈9% chance to appear).[1]
+The first reading grants the player a power that increases any friendship gained by 10%. Friendship decreases are unaffected.[2] Once read, it can be found in the Player's Menu on the Special Items & Powers tab. Each subsequent reading gives the player 20 XP in each of the 5 skills.
+Contents
+1 Gifting
+2 Bundles
+3 Tailoring
+4 Quests
+5 References
+6 History
+Gifting
+Villager Reactions
+Love  Penny
+Like  Elliott
+Neutral  Abigail •  Caroline •  Clint •  Demetrius •  Dwarf •  Emily •  Evelyn •  George •  Gus •  Haley •  Harvey •  Jas •  Jodi •  Kent •  Krobus •  Leah •  Leo •  Lewis •  Linus •  Marnie •  Maru •  Pam •  Pierre •  Robin •  Sam •  Sandy •  Sebastian •  Shane •  Vincent •  Willy •  Wizard
+Dislike  Alex
+Bundles
+Friendship 101 is not used in any bundles.
+Tailoring
+Friendship 101 is not used in any tailoring. It can be used in dyeing, serving as a red dye at the dye pots located in Emily's and Haley's house, 2 Willow Lane. It can also be used as a pink dye when used in the spool of the Sewing Machine with a dyeable clothing item in the feed.
+Quests
+Friendship 101 is not used in any quests.
+References
+↑ See Data\Shops.xnb in the game files.
+↑ See Farmer::changeFriendship in the game code.
+History
+1.6: Introduced.
+Category: Books

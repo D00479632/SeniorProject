@@ -1,0 +1,32 @@
+Jump to navigation
+Jump to search
+The Summit
+The Summit is an exterior region located north of the Railroad. The path to it is initially blocked by a boulder and becomes accessible the day after Perfection is achieved. The weather here is always sunny.
+Contents
+1 Cutscene
+2 Illegitimate access
+3 Trivia
+4 History
+Cutscene
+Entering the Summit for the first time causes a special cutscene to play. The player will sit on the left side of the bench at the top of the summit, and the player's spouse will occupy the right side. If the player is not married, the spot will be occupied by Lewis if the Community Center was restored or Morris if the Joja Warehouse was built. The player will then chat with them.
+Details 
+Afterwards, the scene continues with Krobus, Dwarf, and Wizard flying through the air followed by the Witch, crop fairies, UFOs, and if the player has earned at least 100,000,000g, the traveling merchant's pig. Then, a credits-like sequence plays, which scrolls through every villager (including Dusty), farm animal (except the brown cow), fish, and monster. If the player did not use any Joja services (i.e. they restored the Community Center, did not use the Golden Joja Parrot, and did not purchase any Perfection Waivers), the end of the credits will say "No Joja services used!" with an animation of Morris flying.
+The cutscene ends with the player's Grandpa and Mr. Qi congratulating the player on their accomplishment.
+Details 
+Assuming the player reads all the dialogue at the beginning of the cutscene and plays through it entirely, the entire cutscene lasts for approximately five minutes.
+Illegitimate access
+If the player manages to access the Summit before achieving Perfection via the sword swing glitch, the normal summit background will be replaced with a blank screen full of glitched sprites and a cutscene with Mr. Qi will play instead.
+Details 
+Afterwards Mr. Qi rushes at the player, causing the player to pass out and wake up in Harvey's Clinic. Further attempts result in the player passing out immediately after entering the map.
+Trivia
+Despite the Summit being an exterior region, it is not visible on the map. Entering the region will automatically hide the player's HUD.
+The cutscene is the only part of the game that hints at a relationship between the player's Grandpa and Mr. Qi.
+If the player has met certain criteria, some secret objects may fly past.
+Prior to version 1.5, the Summit existed as an unimplemented area of the game with broken sprites. It was reachable using the "Sword swing glitch".
+History
+1.5: Introduced.
+1.5.3: Fixed summit cutscene not triggering in Multiplayer if a player was married to another player. Fixed summit cutscene being repeatable if its music wasn't marked as heard.
+1.6: Added a new cutscene if the player enters illegitimately. Perfection cutscene now says "No Joja services used!" if the player did not use any Joja services.
+Locations
+Locations Backwoods • Beach • Bus Stop • Calico Desert • Cindersap Forest • Farm • Farm Cave • Farm Pond • Graveyard • Ginger Island • Mastery Cave • Minecart • Mines • Mountain • Mutant Bug Lair • Pelican Town • Quarry • Quarry Mine • Railroad • Secret Woods • Sewers • Skull Cavern • Summit • Tunnel • Volcano Dungeon • Witch's Swamp
+Category: Mountain Locations

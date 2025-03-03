@@ -1,0 +1,692 @@
+Jump to navigation
+Jump to search
+←Index
+XNB mods are an older type of mod and are no longer recommended. SMAPI can't validate them for compatibility. Use XNB mods at your own risk, or see alternatives using Content Patcher.
+An XNB mod replaces some of your game's .xnb files to change the game (unlike newer mods that go in your Mods folder).
+Contents
+1 FAQs
+1.1 What are XNB mods?
+1.2 Why are they discouraged?
+1.3 Do they work on Linux, Mac, Windows, or consoles?
+1.4 Can they corrupt my save?
+1.5 Do they disable Steam achievements?
+2 Alternatives using Content Patcher
+3 Using XNB mods
+3.1 Find mods
+3.2 Install mods
+3.3 Uninstall mods
+4 Troubleshooting
+4.1 Reset content files
+4.2 Other issues
+FAQs
+What are XNB mods?
+XNB mods work by replacing your game's data files (which have a .xnb extension). For example, let's say you want to change Abigail's portraits; you can replace Content/Portraits/Abigail.xnb with a modded version to do it. (See editing XNB files for more info on the XNB format.)
+Why are they discouraged?
+XNB mods have a lot of limitations, often conflict with each other, usually break when the game updates, are hard to install and remove, etc.
+Consider only using SMAPI mods and content packs. These have several benefits over XNB mods:
+feature XNB mods SMAPI mods SMAPI content packs
+ease of installation ✘ different for every mod ✓ drop into Mods
+ease of uninstallation ✘ manually restore original files ✓ remove from Mods
+update checks ✘ none ✓ automatic alert in SMAPI console
+compatibility checks ✘ none ✓ incompatible mods are disabled before they cause problems
+✓ compatibility list is regularly updated with updates and workarounds
+mod compatibility ✘ each file can only be replaced once ✓ almost universal ✓ high
+translation support ✘ difficult to translate ✓ built-in translation API (depends on the content pack)
+game compatibility ✘ broken by most game updates ✓ SMAPI automatically rewrites many mods for compatibility
+✓ open-source mods are updated quickly
+Do they work on Linux, Mac, Windows, or consoles?
+XNB mods work equally on Linux, Mac, Windows, and Android. Consoles aren't supported.
+Can they corrupt my save?
+Yes, but it's uncommon. Make sure you back up your save files occasionally, and remove any custom content before uninstalling an XNB mod. In most cases, you can fix save corruption by undoing the last save.
+Do they disable Steam achievements?
+Nope.
+Alternatives using Content Patcher
+Content Patcher is a SMAPI mod that makes XNB-like changes with all the benefits of SMAPI content packs. Many XNB mods have a Content Patcher equivalent, or have been updated unofficially to use it. Consider using these instead where available.
+Modders:
+When migrating XNB mods, only use Action: Load if you actually need to replace the whole file (e.g., portrait mods). Don't use Action: Load for dialogue mods or to change a small part of a file!
+See Migrating XNB mods to Content Patcher packs on the official forums for more info about creating conversions.
+Mod Name Original Author Content Patcher Equivalent Links
+15x15 Greenhouse mmanlapat unofficial update by ChiiBee (1.0) # original
+19th Century Elliott Messias Mummo unofficial update by Marigolden (1.0-unofficial.1-Marigolden) # original
+2CUTE FarmCave taintedwheat unofficial update by Opalie (2.0.1-unofficial.1-opalie) # original
+3D NPC Houses anjarpsx unofficial update by Allayna (1.0) # original
+3D-Slime Hutch anjarpsx unofficial update by coldazrael (1.0) # original
+5 New Hair Styles for Penny SarahKik unofficial update by paradigmnomad (1.0) # original
+A Different Outfit for Shane AnticAssassin unofficial update by D.Grey (1.0) # original
+A House for Linus bluestarkiller unofficial update by coldazrael (1.1) # original
+A Less Yellow Stardew 19062scott and Lark the Brave unofficial update by minervamaga (1.4.1-unofficial.minervamaga) # original
+Newly Added Sebastian Cutscene GiosaurusStardew unofficial update by LenneDalben (1.0) # original
+A More Interesting Sam ssr66 unofficial update by flameofthenight (1.0) # original
+A Shane Brown Jacket and Pants GeminiBird unofficial update by D.Grey (1.0) # original
+A Toned Down Stardew Valley LavendarLight official update by minervamaga (4.0.0) # original
+Abigail Centaur Horse Replacement zcsnightmare unofficial update by Kreeate (1.0) # original
+Abigail Hair Dye Mod prettykiller unofficial update by Marigolden (0.1-unofficial.1-Marigolden) # original
+Abigail Lewd Dialogue Entity2004 unofficial update by squitz (1.0) # original
+Abigail to Lucina (Sprite only) wolffang719 unofficial update by Dayashi (1.0) # original
+Abigail Portrait With Subtle Bow and More Accurate Bow Sprites Androxilogin unofficial update by MouseyPounds (1.1) # original
+Ace's Evelyn Acerbicon unofficial update by Aquilegia (1.0) # original
+ACNL Mermaid Set Tanilon & Nini unofficial update by coldazrael (1.0) # original
+Agumon - Dinosaur Replacer Dragonyck official update by UlyanaLeyana (1.0.0) # original
+Alex Reborn Overhaul Harzelora unofficial update by macaro0n (1.0) # original
+Alicedafox's New Shirts and New Skirts (Shirts Only) Alicedafox unofficial update by coldazrael (1.0) # original
+Ali's Enchanted Garden Buildings strawberrymilk95 unofficial update by acornfaerie (1.0) # original
+Ali's Flower Farm Map strawberrymilk95 unofficial update by coldazrael (1.0) # original
+Ali's Flower Grass strawberrymilk95 official update by minervamga (1.0) # original
+Ali's Foraging Farm Map strawberrymilk95 unofficial update by ChiiBee (1.0) # original
+Ali's Lattice Fence strawberrymilk95 unofficial update by Allayna (1.0) # original
+Ali's Modern Farm Buildings strawberrymilk95 unofficial update by coldazrael (1.0) # original
+Ali's Mountain Farm strawberrymilk95 unofficial update by Allayna (1.0) # original
+Ali's Overgrown Fairy Buildings strawberrymilk95 unofficial update by acornfaerie (1.0) # original
+Ali's Overgrown Fairy Buildings RECOLOR Kasuralixa unofficial update by pepoluan (1.0.0-unofficial2.pepoluan) # original
+Ali's Picket Fence strawberrymilk95 unofficial update by Allayna (2.0) # original
+Ali's Secret Forest Map strawberrymilk95 unofficial update by Techonrye (1.0) # original
+All About Maru Maiz unofficial update by Marigolden (1.1.0-unofficial.1-Marigolden) # original
+Altaria (Pokemon) (horse replacer) Zhuria unofficial update by Allayna (1.0) # original
+Alternative Evelyn StaticOpium unofficial update by NeutronPong (1.1.0) # original
+AlterOphelie's Character Overhaul AlterOphelie unofficial update by Fyn (1.0) # original
+Alternate Chicken Colors DarkKassanova unofficial update by coldazrael (1.0) # original
+Alternate Dino Colors DarkKassanova unofficial update by coldazrael (1.0) # original
+Alternate Fences and Gates spartangerousia unofficial update by coldazrael, SuperElement & Allayna (3.0) # original
+Alternate Sheep Colors DarkKassanova unofficial update by Marigolden (1.1-unofficial.1-Marigolden) # original
+Amaterasu Dog Replacement carnage157 unofficial update by Reppamon (1.0) # original
+Animal Crossing Digspot - Worm Replacement yuiidragon unofficial update by MouseyPounds (1.1) # original
+Animal Onesies for Toddlers pizza margherita unofficial update by DamnedxAngel (1.0) # original
+Anime Villagers (Portraits) LumpySpace unofficial update by coldazrael & Fyn (1.0) # original
+Anthro Children- Cats ninjakaami unofficial update by SpringsSong (1.0.1) # original
+Artifact Digspot Variations vvillow unofficial update by Allayna (1.0) # original
+Arvak - Horse Replacer R99AZM unofficial update by coldazrael (1.0) # original
+Baby Deer swiftfrost unofficial update by D.Grey (1.0) # original
+Backwoods and Bus Stop Tweaks Zander unofficial update by Shalassa (1.1.1) # original
+Badass Sam Apogirl02 unofficial update by paradigmnomad (1.0) # original
+Baechu's Portraits Baechu unofficial update by coldazrael (1.0) # original
+Baechu's Portraits Baechu unofficial update by orientalmelon (1.0.1) # original
+Baechu's Portraits Seasonal SVO Baechu unofficial update by bunwangji (1.0.0) # original
+Barfy's Furniture Replacements barfyscorpion Barfy's Home Decor by sylveonne (1.1.0) # original
+Bath House Hot Spring MiniPantsu unofficial update by paradigmnomad (1.0) # original
+Bath House Hot Spring Mod MiniPantsu Bathhouse Hot Spring - Content Patcher by Nanogamer7 (1.0.0) # original
+Bathhouse Shortcut Plutey unofficial update by Seyph (1.0.1) # original
+Bathroom After 2nd House Upgrade DevilBro unofficial update by mouse (1.0.1) # original
+Bearded D'uccle - Chaos's Chicken Breed Replacer kichigaikikyokagome unofficial update by D.Grey (1.0) # original
+Beach and Desert Recolors - combined hojichas unofficial update by waftwaffle (1.0) # original
+Bearish Harvey Quart de Carton Official update by annachibi (1.0) # original
+Bearish Harvey Untamed unofficial update by Allayna (1.0) # original
+Bearded Clint Portrait Cathysaurusrex unofficial update by coldazrael (1.0) # original
+Bearded Clint Sprite Cathysaurusrex unofficial update by coldazrael (1.0) # original
+Beds Recolor Lumisteria official update by coldazrael (0.1) # original
+Befriend Marlon and Gunther Yoshimax unofficial update by Pathoschild (1.05) # original
+Bernese Mountain Dog Gweniaczek official update by Gweniacsek (1.0) # original
+Better Artifact Digspots joyous1ariella Bouncy Chests by ShneekeyTheLost (1.0) # original
+Better Crop Visibility Kona Better Crop Visibility by UlyanaLeyana (2.1.0) # original
+Better Dying Grandpa MattytheMouse Better Dying Grandpa Redux - CP by Faedelity (1.0) # original
+Better Grass Visibility mmanlapat unofficial update by MouseyPounds (1.1) # original
+Better Harvey Character Sprite Plutey/Androxilogin unofficial update by Kreeate (1.0) # original
+Better Horses SerialDollface unofficial update by Jnuchi & imany (1.0) # original
+Better Pigs & Recolours (v1.0) Zhuria unofficial update by Farilar (1.0) # original
+Better Pigs & Recolours (v2.1) Zhuria unofficial update by twixstix (1.0) # original
+Better Rain Omnicorn unofficial update by Marigolden (1.0.5-unofficial.1-Marigolden) # original
+Better Void Chicken vvillow unofficial update by paradigmnomad (1.0) # original
+Big Garage HopeWasHere unofficial update by Allayna (1.0) # original
+BigCola's Better Hats Big Cola official update by minervamaga (1.0) # original
+Bigger Cave KingJoey unofficial update by XiNaru (1.0.1) # original
+Bigger Farm (Carpenter compatible) KingJoey unofficial update by coldazrael (1.0) # original
+Biker Jacket Sebastian TheMainFlamingoose unofficial update by Techy-Jaden (1.0.0) # original
+Bird Replacments for Babies and Toddlers Ankokou unofficial update by paradigmnomad (1.0) # original
+Biped Dinosaur CaveSalamander unofficial update by Pak_RT & paradigmnomad (1.0) # original
+Black Cat casildak unofficial update by winterykite (1.0) # original
+Black Dog Wernt0 unofficial update by ColossusX13 (0.1) # original
+Black Fire-Mane Horse DarkKassanova unofficial update by Allayna (1.0) # original
+Black Goat Loo unofficial update by coldazrael (1.0) # original
+Black Sheep Serpentwined unofficial update by coldazrael (2.0) # original
+Black-White-Tuxedo Cat Recolors beachhotdog unofficial update by D.Grey (1.0) # original
+Blonde or Brunette Leah with Blue Shirt Fabledx unofficial update by D.Grey (1.0) # original
+Blooming trees in spring with flowers hisameartwork unofficial update by Allayna (Corrected by SheiFoxy) (1.0) # original
+Blue Community Center Sabrina Pegasigh unofficial update by ExnoticE (1.0) # original
+Blue Iridium Willow unofficial update by Shalassa (1.0) # original
+Bondage Wooden Horse 2tentacles unofficial update by coldazrael (1.0) # original
+Bootleg NES Chrono Trigger Frog Plutey unofficial update by Marigolden (1.1-unofficial.1-Marigolden) # original
+Bregs Goats Bregodon unofficial update by D.Grey (1.0) # original
+Brown and White Turkeys Eemie unofficial update by coldazrael (1.0) # original
+Brown Haired Jas and blonde Vincent Update forrpa unofficial update by D.Grey (1.0) # original
+Brunette Penny Lechet unofficial update by coldazrael (1.0) # original
+Bufflehead Ducks Esodra unofficial update by D.Grey (1.0) # original
+Bunnies that actually hop Feathercatch unofficial update by Ensifera (1.0) # original
+Cactuar Pet Replace DarkKassanova unofficial update by coldazrael (1.0) # original
+Capsule Slime Incubator hassan94935 unofficial update by coldazrael (1.0) # original
+Carbuncle Cats Cal unofficial update by Allayna (1.2) # original
+Cardcaptor Sakura Collection walpi unofficial update by Allayna (1.6) # original
+Cardcaptor Sakura Collection (Configureable Hats) walpi unofficial update by coldazrael (1.0) # original
+Caroline with Brown Hair abra700 unofficial update by coldazrael (1.0) # original
+Carpenter Family Portrait Overhaul Harzelora unofficial update by D.Grey (1.0) # original
+Cat Recolor Mod Rietaflame unofficial update by D.Grey (1.0) # original
+Cat to Rooster Mod onlyhereforpendor unofficial update by Ensifera (1.0) # original
+Catcrows DocSaturn unofficial update by arkoiris (1.0) # original
+Catsine's Victorian Beehouses Ernest/Catsine unofficial mod by xbukimina (1.0) # original
+Cel's Sheep Celesty unofficial update by coldazrael (1.0) # original
+Cerri's Walls and Floors CerridwynMorgana unofficial update by coldazrael (1.0) # original
+Chaba's Portrait Chaba unofficial update by coldazrael (1.0) # original
+Chaos's Blue Whio Duck kichigaikikyokagome unofficial update by D.Grey (1.0) # original
+Character Portrait Overhaul Kamirose unofficial update by pepoluan (1.0) # original
+Chest Digspot (Natural Color) MissMochi unofficial update by Allayna (1.0) # original
+Chicken Overhaul Minakie unofficial update by D.Grey (1.0) # original
+Chickens to Parrots gizomo unofficial update by paradigmnomad (1.0) # original
+Chickens to Parrots v2 gizomo Tropical Birds by Allayna (1.2) # original
+Child Clothing Rework earthdeep unofficial update by coldazrael (1.0) # original
+Clean Shane's Room pandapants87 aka Ora Official update by pandapants87 and minervamaga (2.0.1) # original
+Clean Shave Harvey Gemma unofficial update by Marigolden (1.1-unofficial.1-Marigolden) # original
+Cleaner Barns and Coops Fuse unofficial update by stevanihalim (1.2) # original
+Cobblestone Path to Dark Grey Stone GoddessOfThieves unofficial update by Marigolden (1.0-unofficial.1-Marigolden) # original
+Cockatiel Chickens VanillaTiel unofficial update by Marigolden (1.1-unofficial.1-Marigolden) # original
+Coii's Hair Sets Pack Coii unofficial update by UlyanaLeyana (1.4.0-unofficial.3) # original
+Cold Weather Haley Sessurea Cold Weather Haley - Content Patcher by Nanogamer7 (1.0) # original
+Colorful Crystal Paths FoxyFullmoon unofficial update by k10_ftw/krissymarie (1.0) # original
+Community Center Bundle Overhauls 7Yrs unofficial update by Allayna (1.4.1) # original
+Compact Bathroom for your Farmhouse Prismuth unofficial update by Rmdhn (1.0.0) # original
+Coordinated Crafting Bars yifalchunbee unofficial update by Shalassa & arkoiris (1.0) # original
+Cozy Fishing Farm opalie unofficial update by coldazrael (1.0) # original
+CRABBIT's new hair - combined CRABBIT unofficial update by Kuriiyo (1.0) # original
+Crimson's Rock Crab Recolors nekoCrimson unofficial update by TheTearer (1.0) # original
+Crioulo horse Loo unofficial update by Amx (1.0) # original
+Custom Farm Buildings (Non-Seasonal) Billy0815 unofficial update by D.Grey (1.0) # original
+Custom Farm Buildings (Seasonal) billy0815 unofficial update by hatmouse (1.0) # original
+Cute Cursor MissMochi unofficial update by kngermanotta (1.0) # original
+Cute Pink Albino Bunny Recolor Jirachi unofficial update by netish (1.0) # original
+Cute Shirts Mod tacodevourer unofficial update by macaro0n (1.0) # original
+Cuter Fatter Cows IdentityPollution official update by SoulOfSorin (1.0) # original
+dabsihao's bb GenderSwap dabsihao unofficial update by Flyff (1.0) # original
+Dae's Marnie and Jas Character Redesgins daeranilen unofficial update by Ensifera (1.0) # original
+Daisen Mod - Replacement saturn unofficial update by coldazrael (1.0) # original
+Dangan Ronpa Trigger Happy Havoc Female Hair and Shirts ZeiaZeh unofficial update by coldazrael (1.0) # original
+Dark Buildings StaticOpium unofficial update by coldazrael (1.0) # original
+Dark-Haired Leah Jokerine unofficial update by Marigolden (2.1-unofficial.1-Marigolden) # original
+Dark Red Haired Leah Satadoros unofficial update by D.Grey (1.0) # original
+Darker Watered Soil Shardust unofficial update by pandachinoman (1.0) # original
+Darker Wood and Gold Craftables Eemie unofficial update by Allayna (2.1) # original
+Dachshund (Dog Replacer) DarkKassanova unofficial update by tera415 (1.0) # original
+DCBurger's Portraits (Hi-Res Only) DCBurger unofficial update by coldazrael (1.0) # original
+DD's Handsome Harvey DewdropDewdrop unofficial update by Marigolden (1.1.0-unofficial.1-Marigolden) # original
+Deluxe Barn Fix and more Space dizarus unofficial update by Allayna (1.0) # original
+Derpy Pugs Slimberton unofficial update by jenf (1.0) # original
+Dialogue Expansion - Eilliot (Doki Doki Compatible) Sabreene unofficial update by ayahimew (1.0) # original
+Dino Velociraptor Reskin Zynonia unofficial update by Sparrows (1.1) # original
+Dirty Talking Sam (18+) Kagurahime unofficial update by paradigmnomad (1.0) # original
+Diverse Stardew Valley nonsnufffie & SarahSyna official update by SarahSyna & Fyn (1.0) # original
+Dizor's Character Redraws Dizor unofficial update by minervamaga (1.0.0-unofficial.1-minervamaga) # original
+Dizor's Wizard Redraw Dizor unofficial update by Pak_RT (1.0) # original
+Dog Reskins Mod magimatica unofficial update by D.Grey (1.0) # original
+Dog Bandana JamieDepledge unofficial update by farmerjack (1.0) # original
+Doki Doki Dialogue - Elliot Alistairweekend unofficial update by ayahimew (1.0) # original
+Dratini Shiny and Dratini Cat and Dog Replacement linasouls9 unofficial update by Allayna (1.1.0) # original
+Drapper Krobus ProbablyAnonymous unofficial update by coldazrael (1.0) # original
+DreamBurrow's Elliott Portrait DreamBurrow unofficial update by waftwaffle (1.0) # original
+Dust Spirit Recolor- Susuwatari FinalMantasyX unofficial update by Shaymin (1.0) # original
+DW3 Agumon Dinosaur Replacer boofdawg official update by UlyanaLeyana (1.0.0) # original
+Dwarf Jawa GreaterPorpoise unofficial update by mouse (1.0) # original
+Early Open Shops v1.2 mmanlapat unofficial update by Allayna (2.0) # original
+Easy Bundles Siddybear unofficial update by Allayna (1.0) # original
+Easy Fishing mmanlapat Lazy Fish by ShneekeyTheLost (1.1 or 1.2) # original
+Eemie Animal Collection Eemie unofficial update by D.Grey & paradigmnomad (1.0) # original
+Eemie's Classy New Interior Eemie unofficial update by coldazrael, littlesin21, Asher404, acornfaerie (1.0) # original
+Eemie's Cute Long Hairstyles Eemie unofficial update by minervamaga (2.0.0) # original
+Eemie Dutch Farm Buildings Eemie unofficial update by hatmouse (1.0) # original
+Eemie Iron Stone Cemetery Fence Eemie unofficial update by Fyn (1.0) # original
+Eemie Just Another Map Recolour Eemie official update by minervamaga (1.1) # original
+Eemie's English Lamp Posts Eemie unofficial update by coldazrael, Kuriiyo & Pathoschild (1.0) # original
+Eemie Medieval Modern Buildings Eemie unofficial update by minervamaga (2.0.0) # original
+Eemie New paths Eemie unofficial update by Fyn (1.0) # original
+Eemie Seasonal Victorian Buildings Eemie unofficial update by hatmouse (1.0) # original
+Eemie's Squirrel Eemie unofficial update by coldazrael (1.0) # original
+Eemie Victorian Buildings (Non-seasonal) Eemie Official update by minervamaga (1.0) # original
+Eemie Victorian Mailbox mmanlapat unofficial update by .Lavender. (1.1) # original
+Eemie Wildflowers Eemie unofficial update by Seyph (1.0) # original
+Eggplant Horse (Toumato - Obon Horse) Toumato/kyubey777 unofficial update by hatmouse (1.0) # original
+Elle's Barn and Coop Animal Replacements junimods unofficial update by coldazrael (1.0) # original
+Elle's Pig Replacements junimods unofficial update by Ensifera (1.0) # original
+Elle's Verata (Goat Replacement) junimods unofficial update by Ches713 (1.0) # original
+Elle's White Rabbit junimods unofficial update by Ensifera (1.0) # original
+Elliott Girl Portrait Ver EX renkon unofficial update by coldazrael (1.0) # original
+Elliott Portrait Mod Lo0bo0 unofficial update by coldazrael (1.0) # original
+Elliot Replacer - Earlier Development Version Thoroughly unofficial update by coldazrael (1.0) # original
+Elliott Revised Saltnburn unofficial update by coldazrael (1.0) # original
+Elliott Refined Chrysanthe unofficial update by coldazrael (1.0) # original
+Elliot Spruced Up BlazingPug unofficial update by coldazrael (1.0) # original
+Emily Dialogue Reworked Scrambled1432 unofficial update by flameofthenight (1.0) # original
+Emily Reimagined Chisami unofficial update by paradigmnomad (1.0) # original
+Emily Sprite and Portrait Overhaul tolerdesigns unofficial update by MouseyPounds (1.0) # original
+Emily Sprite Redux The Mighty Palm unofficial update by coldazrael (1.0) # original
+Emily Sprites Remastered Shadowfire1223 unofficial update by coldazrael (1.1) # original
+Enari's Portraits Enari unofficial update by Techonrye (1.0) # original
+Enhanced Dialogue Updated (not complete) joykiller91 unofficial update by flameofthenight (1.0) # original
+Epona Horse Edit Zhuria unofficial update by Reppamon (1.0) # original
+Espeon Cat CassandraRose unofficial update by Allayna (2.0) # original
+Everyone Likes Joja Cola malcheese unofficial update by Allayna (1.0) # original
+Expanded Access Maps Allayna official update by Allayna (16.1) # original
+Expanded Woods Cylesburk unofficial update by Techonrye (1.0) # original
+Explorer Timmy Made A Shane explorer_timmy unofficial update by paradigmnomad (1.0) # original
+Extended Dialogue for Jodi and Kent Seismothesaurus unofficial update by flameofthenight (1.0) # original
+Extended Slime Hutch QuantumConcious unofficial update by Jhoulana (1.1) # original
+Fall Heirloom Crops Overlay makoace unofficial update by minervamaga (1.0.0) # original
+Fancy Lamps Lita unofficial update by kaitekat (1.0) # original
+Farmer's Water Pipe Nectrus unofficial update by nocato (1.0) # original
+Farmhouse Basement Mod MiniPantsu unofficial update by Moragaine, destroyerofsocks & Oak (2.0) # original
+Farmhouse Extended QuantumConcious unofficial update by Allayna (1.7) # original
+Fastoso's Qute Animals Fastoso unofficial update by Pak_RT (1.0) # original
+Fat Pony Jeiel Aranal/ChemiKhazi unofficial update by annachibi (1.0) # original
+Female Bachelors Dialogue Overhaul Valoodx official update by Valoodx (0.3) # original
+Female Duck CaveSalamander unofficial update by twixstix (1.0) # original
+Female Wizard - Sprite and Portrait CreepyKat unofficial update by Allayna and paradigmnomad (1.0) # original
+Feminine Female Farmer HyperChicken01 unofficial update by tenthousandcats (1.0) # original
+Fence by Eemie Eemie unofficial update by junali (1.0) # original
+Fish Tank Table DarkKassanova unofficial update by coldazrael (1.0) # original
+Fix Desert Bus Stop DevilBro unofficial update by Ensifera (1.1) # original
+Flame Horses - 5 Colors CreepyKat unofficial update by UlyanaLeyana (1.0.0) # original
+Flo - New Custom NPC (Florence) randomAnon123 unofficial update by HeyItsDuke (1.0.0) # original
+Flower Valley KAYA/jina2ya official update by paradigmnomad (2.2) # original
+Flowery Fences Maromidew unofficial update by Shalassa (1.0) # original
+Flowery Fences Recolored MixedBabe unofficial update by Shalassa (1.0) # original
+Fluffy Cows Maromidew unofficial update by Shalassa (1.0) # original
+Fluffy Dogs & Other Alternative Dog Sprites! (Shiba Inu & Pomeranian) Dawn unofficial update by twixstix (1.0) # original
+Fluffy Tuxedo Cat osmiacyril unofficial update by coldazrael (1.0) # original
+Fluffykins' Furniture - Paintings Statues and Rugs Fluffykins unofficial update by coldazrael (1.1) # original
+Four Crystal Paths Retextures stupiddullahans unofficial update by Allayna (2.0) # original
+Fruit Trees Reshaped Chisami unofficial update by paradigmnomad (1.0) # original
+Fruit Trees with Signs Develsaa unofficial update by Marigolden (1.0-unofficial.1-Marigolden) # original
+Furniture Redone peachitto unofficial update by Allayna (2.0) # original
+F-SV No Bowlegs Flumme unofficial update by coldazrael (1.0) # original
+F-SV Stable - Seasonal and White Flumme unofficial update by minervamaga (1.0) # original
+Garden Hedge ohrabbit unofficial update by Kuriiyo (1.0) # original
+Genderbent Bachelorettes Lechet AKA yuiidragon unofficial update by Marigolden (1.1-unofficial.1-Marigolden) # original
+German Shepard Bundle Mod (No Cursors) Beroin/deadduch unofficial update by D.Grey (1.0) # original
+GhostyTea's Cute Hats GhostyTea unofficial update by Allayna (1.0) # original
+Gift of Gab - Marriage Candidate Edition SunnyBird unofficial update by uwuchiha (1.1) # original
+Glaceon Cat Halfwheat unofficial update by Allayna (2.0) # original
+Glitched Burger - Furniture Overhaul Boneberry unofficial update by coldazrael (1.0) # original
+Gnarly's Farm Expansion GnarlyJaspian unofficial update by minervamaga (1.3.2-unofficial.minervamaga) # original
+Gnome Hat's Recolor Oak official update by Oak (1.0) # original
+Goat Replacement ApproachCautiously unofficial update by Marigolden (1.0.1-unofficial.1-Marigolden) # original
+Goat with Horns Develsaa unofficial update by Marigolden (1.0-unofficial.1-Marigolden) # original
+Gold Star Portrait Overhaul Lorshar unofficial update by coldazrael (1.1) # original
+gotama portraits gotama unofficial update by Rubecula (1.2) # original
+gotama's Portraits MOD 2 gotama unofficial update by netish (1.0) # original
+Gotama's Scarecrow and Hats Mod gomatamanyann unofficial update by coldazrael (1.0) # original
+Gothish Hat Recolors GoddessOfThieves unofficial update by Dede_Bug (1.0) # original
+Grass Path for Every Season MiaEmilia unofficial update by D.Grey (1.0) # original
+Gravel Path Fix Mod Yunix unofficial update by Marigolden (1.0-unofficial.1-Marigolden) # original
+Green Community Center Opalie unofficial update by Ensifera (1.0) # original
+Grumpy Cat DarkKassanova unofficial update by Marigolden (1.0-unofficial.1-Marigolden) # original
+Gunther Recolour Ylrien unofficial update by coldazrael (1.0) # original
+Gus into Wendy bajel unofficial update by coldazrael (1.3) # original
+Gus Refined saturn unofficial update by coldazrael (1.0) # original
+Hairstyles recolored and a new Hairstyle Update Alicedafox unofficial update by ayahimew & Kuriiyo (1.0) # original
+Haley/Penny/Leah Expanded Dialogue KThxBye910 unofficial update by flameofthenight (1.0) # original
+Haley and Penny Universal Love LisaWolf unofficial update by Dede_Bug (1.0) # original
+Haley as Vampire Revamp SextingWithSirens unofficial update by Allayna (1.1) # original
+Haley Off-The-Shoulder Dress Ahrimhan unofficial update by Amx (1.0) # original
+Haley Reskin magimatica unofficial update by paradigmnomad (1.0) # original
+Haley Skirt Recolour Nyxcat unofficial update by Dede_Bug (1.1) # original
+Handsome Mr. Qi MomiChan unofficial update by paradigmnomad (1.1) # original
+Happier Pig with New Eyes Develsaa unofficial update by Allayna (1.0) # original
+Hardmode RamenYum unofficial update by Dede_Bug (2.0) # original
+Harvest Moon Wizard Replacement TheMainFlamingoose unofficial update by art17 (1.0) # original
+Harvey Personality Mod (full) woosh0 unofficial update by uwuchiha (2.2) # original
+Harvey Refined Chrysanthe unofficial update by AquilegiaStardew (1.0) # original
+Harvey Revised Saltnburn unofficial update by coldazrael (1.0) # original
+Hay Silo Flor3nce2456 unofficial update by Allayna (1.0) # original
+Heyo! No Mayo! ProperPunctuation unofficial update by coldazrael (1.0) # original
+Highland Cattle ClockworkZombe unofficial update by coldazrael (1.0) # original
+Hill-Top Forest Map Minnue unofficial update by ChiiBee (1.0) # original
+Hispanic Alex AllegedMexican unofficial update by coldazrael (1.0) # original
+Hispanic George AllegedMexican unofficial update by coldazrael (1.0) # original
+Hobbit Hole LemonEX unofficial update by Pathoschild (1.0-unofficial.1-pathoschild) # original
+hojichas' Wallpaper and Flooring hojichas unofficial update by Allayna & Mitchell (1.0) # original
+hojichas' Seaside Interior hojichas unofficial update by dreamsicl (1.0) # original
+Holsteins (White Cow) Zhuria unofficial update by D.Grey (1.0) # original
+Hope's Farmer Customization Mods HopeWasHere unofficial update by D.Grey (2.0) # original
+Hope's Farmer Customization Mods (hairstyles) HopeWasHere Hope's Hair Pack by just-sora (1.0) # original
+Hope's Secret Springs Cave HopeWasHere unofficial update by coldazrael (3.0) # original
+(NSFW) Horny Bachelors Girafarig official update # original
+Horse Edits & Recolours Zhuria unofficial update by twixstix (1.0) # original
+Horses to Dragons/Pegasi Aternova unofficial update by Allayna & brybryj (1.0) # original
+Horse to Mule magimatica unofficial update by paradigmnomad (1.0) # original
+Horse to Vespa Scooter + Garage Pi.Curious unofficial update by phomaique (1.0) # original
+House (Final Upgrade) Color Mod MrMcK unofficial update by Marigolden (0.2-unofficial.1-Marigolden) # original
+House Remodel - Interior Design Minakie unofficial update by coldazrael (1.0) # original
+Hudson Valley Buildings oomps62, magimatica and endohare official update by oomps62 (1.0) # original
+Huge Sheds Redux Boldrin unofficial update by coldazrael (1.3) # original
+Immersive (F) Marriage Candidate Overhaul Chickenkila unofficial update by Marigolden (1.0-unofficial.1-Marigolden) # original
+Immersive Marriage - Abigail robolink unofficial update by D.Grey (1.0) # original
+Improved Dirt and Recolored Grass for Fall (English Only) Relenanator unofficial update by coldazrael (1.0) # original
+Improved Penny Vanilla Portrait G The Generous unofficial update by coldazrael (1.1) # original
+Improved Shed Mod wintrparkgrl unofficial update by ShneekeyTheLost (1.0) # original
+Introducing JojaMart and Shane: A Custom Cutscene Mod IronZelly unofficial update by springacres (1.0) # original
+Ira Yume100 - Harvey Minrisa unofficial update by MouseyPounds (1.0) # original
+Iridium Ore Galaxy Horse PecuniamArt unofficial update by Ches713 (1.1) # original
+Item Overhaul Boneberry unofficial update by Allayna & paradigmnomad (1.0) # original
+JAC'd Greenhouse Extended Plutey/Androxilogin unofficial update by D.Grey (1.0) # original
+JAC'd Sheds Plutey/Androxilogin unofficial update by coldazrael (1.0) # original
+Jamie's Balanced Greenhouse JamieMage2005 unofficial update by Shalassa (1.0) # original
+JG Demitrus in shipping box Jeremiah Gottwald AKA JGottwald unofficial update by Marigolden (1.0-unofficial.1-Marigolden) # original
+Jersey Cow magimatica unofficial update by Ches713 (1.0) # original
+Jodi and Vincent - Sprites and Portraits Remastered Mod Shadowfire1223 unofficial update by D.Grey (1.0) # original
+JumJum Jr. ProJared unofficial update by Marigolden (1.1-unofficial.1-Marigolden) # original
+Jungle Temple UlithiumDragon unofficial update by Allayna (1.0) # original
+Junimo Artifact Digspots Seismothesaurus unofficial update by Allayna (1.0) # original
+Junimo Horse monteso unofficial update by coldazrael (1.0) # original
+Junimos to Totoros magimatica unofficial update by coldazrael (1.0) # original
+Kal's Marriage Candidates Portraits kal621owo621_Snakebite unofficial update by Flyff (1.0) # original
+Karina's Long Hair Karina unofficial update by coldazrael (1.0) # original
+Karmylla's Cellar Edit Karmylla official update by Karmylla (1.1) # original
+Karmylla's Spouse Room Edits Karmylla official update by karmylla (3.0) # original
+Karna Fate - Sebastian Minrisa unofficial update by MouseyPounds (1.0) # original
+Kawaii Hats yuikami unofficial update by coldazrael (0.1) # original
+Kero Cat Replacement - Cardcaptor Sakura Walpi-chan unofficial update by coldazrael (1.0) # original
+Kimberly's witch kitchen.Bed.Bathroom.Crib. Kimberly unofficial update by mouseypounds (1.0) # original
+Kitchen Nook for 1st Farmhouse Allayna official update by Allayna (2.6) # original
+Kitty Scarecrow Replacments jinxiewinxie unofficial update by Allayna (1.0) # original
+Kingdom Hearts Sea Salt Ice Cream Dom AKA domfred908 unofficial update by Marigolden (0.9.2-unofficial.1-Marigolden) # original
+Korea Retro standlaid1 unofficial update by Allayna (1.0.1) # original
+Leafeon Retexture for Cat ImXTooNinjaxX unofficial update by Allayna (1.3) # original
+Leah New Hair CoffeeBuns unofficial update by Aquilegia (1.0) # original
+Less Creepy Marnie Sprite CassandraRose unofficial update by D.Grey (1.0) # original
+let 's cafe momoki unofficial update by Allayna (1.0) # original
+Lewd Bachelorettes (Buxom) AirplaneRandy unofficial update by UberMann (1.0) # original
+Lewis to Mayor Thomas Character Overhaul Budzilla unofficial update by Marigolden (1.0-unofficial.1-Marigolden) # original
+Linus is a potato From minecraft laser5mw unofficial update by phomaique (1.0-unofficial.1-phomaique) # original
+Linus With Clothes Goodledoodoo unofficial update by paradigmnomad (1.0) # original
+Lolia Fashion Bachelorettes Royalyspooky unofficial update by paradigmnomad (1.0) # original
+Longhair Cat Replacement Korokos unofficial update by paradigmnomad (1.0) # original
+Long Elf Ears Recolours ScalesofGrey unofficial update by staarfruit (1.0) # original
+Luna Cat PoshPossum unofficial update by kngermanotta (1.0) # original
+Lunatic Farm Map Lunatic unofficial update by SuperElement & Allayna (1.0) # original
+LTTPBuildingsreplacer JazzMinK unofficial update by m2pt5/Emtu (1.0) # original
+Madeline's Farmhouse and Farm Building Recolors Madeline unofficial update by coldazrael & Allayna (5.0) # original
+Magica Trees ERRORcauser unofficial update by D.Grey (1.0) # original
+Make Krobus Gaster DiStri unofficial update by Techy-Jaden (1.0) # original
+Makeup as Accessories Jinxiewinxie unofficial update by junali (1.1) # original
+Make Love With Shane (Works with Co-op Mode) Kagurahime unofficial update by SamelaG (1.0.2) # original
+Marnie Edit pipmimi unofficial update by Ches713 (1.2) # original
+Marnie Romance MrValuable unofficial update by vadie (1.1) # original
+Marriage Dialogue Expansion - Eilliot Sabreene unofficial update by ayahimew (1.0) # original
+Marriage Dialogue Mod for Haley shann713 unofficial update by flameofthenight (1.0) # original
+Marshmallow Unicorn jigajang unofficial update by Ches713 (1.0) # original
+Marshmallow Unicorn (Alternative) summonercat unofficial update by paradigmnomad (1.0) # original
+Maru Replacer - earlier development version Thoroughly unofficial update by coldazrael & Allayna (1.2) # original
+Maru Portrait's Retexture HarinBAE unofficial update by coldazrael (1.0) # original
+Matching Maru Sprite (Villager Anime Portraits) CassandraRose unofficial update by D.Grey (1.0) # original
+Matching Slime Hutch SlushieSlowpoke unofficial update by MouseyPounds (1.0-Final) # original
+MCMC's Portrait Mod MCMC unofficial update by keodau27 (1.0) # original
+Medieval Traditional Hats LemonEX unofficial update by Mopsy (1.0) # original
+Melons to Watermelons zynonia unofficial update by Ensifera (1.0) # original
+Memory Farm - Farm Map Layouts Attitude Rains unofficial update by coldazrael (2.0) # original
+Metal Worm Bin vkunicorn unofficial update by phomaique (1.0) # original
+Mew - Cat Replacer 00Strange00 unofficial update by Allayna (2.0) # original
+Mimikyu - Cat Dog Replacer ChiChain and SihaRakhet unofficial update by Allayna (2.0) # original
+Minecraft Sword Styles DarkKassanova unofficial update by Marigolden (1.1-unofficial.1-Marigolden) # original
+Mint Kiss Furniture Ribbonain unofficial update by coldazrael (1.3) # original
+Missy's Shirts MissyDiabolical unofficial update by Kuriiyo & mukamii (1.0) # original
+Missy's Walls and Floors MissyDiabolical unofficial update by coldazrael (1.0) # original
+Mi's and Eemie's Butterflies (1.3) Mi/Campanulamis & Eemie unofficial update by Oak (1.0) # original
+Mi's Bathroom Recolours Mi/Campanulamis unofficial update by mouse (1.0.1) # original
+Mi's Classy Victorian interior set inspired by eemie Mi/Campanulamis unofficial update by hwayunhae (1.0) # original
+Mi's Elegant Victorian interior Mi/Campanulamis unofficial update by mouse (1.3) # original
+Mi's Fireplace (1.3) Mi/Campanulamis unofficial update by Seyph (1.0) # original
+Mi's Framed Butterfly and Insect Displays Mi/Campanulamis unofficial update by Allayna (1.3) # original
+Modern kitchen Static Opium unofficial update by Sofi52 (1.0) # original
+Monster Valley Blizzriel unofficial update by Allayna (1.0) # original
+Moogle Cat Replacement Cal unofficial update by coldazrael (1.0) # original
+Moon Meteor 달 운석 리텍스쳐 이얏호 ssm4031 unofficial update by Allayna (1.0) # original
+More Accessible Wilderness Farm gobbldygook unofficial update by junali (1.0) # original
+More Accurate Dwarf spacedoggity unofficial update by MouseyPounds (1.0) # original
+More Emo Sebastian Vienix unofficial update by coldazrael (1.0) # original
+More Galactic Galaxy Swords Alliehxxx unofficial update by Arkanto (1.0) # original
+Morst-CERBERUS and SUPI QuQii/songaoyuan unofficial update by marshallharck (1.5.4) # original
+Mumps Mod KiraraLala unofficial update by coldazrael (1.0) # original
+MunchItValency's Starter Pokemon MunchItValency unofficial update by Allayna (2.0) # original
+Munchkin Kitten Cat Replacement DaleighChronicle unofficial update by coldazrael (1.0) # original
+Mushroom Tree Growth Re-Texture burtron unofficial update by D.Grey (1.0) # original
+Mushroom Tree Re-Texture allanbachti unofficial update by D.Grey (1.0) # original
+Mutated Cows with 2 Heads StaticOpium unofficial update by coldazrael (1.0) # original
+My Little Valley - Farming is Magic - Mane Six Ponies Salendola unofficial update by Marigolden (1.1-unofficial.1-Marigolden) # original
+MysticTempest's Furniture Mod MysticTempest official update by MysticTempest (1.3.0) # original
+MysticTempest's Tea Mod MysticTempest official update by MysticTempest (1.0.1) # original
+Mythological Creatures: Horses MysticTempest unofficial update by pepoluan (1.0.0) # original
+Nerdy Hot Maru tolerdesigns unofficial update by MouseyPounds (1.2) # original
+New and Improved Hairstyles Chrysanthe unofficial update by D.Grey (1.0) # original
+New Cow Breeds Zhuria unofficial update by coldazrael (1.0) # original
+New Dogs Zhuria unofficial update by coldazrael (1.0) # original
+New Handsome Elliott Portrait and Sprite sabreene unofficial update by Allayna (1.0) # original
+New Portraits Mod aka 微调立绘美化2.0 (Portrait Mod) ??? unofficial update by Pak_RT & D.Grey (1.0) # original
+New Rabbit Sprites and Recolours Zhuria unofficial update by D.Grey (1.0) # original
+New Shirts FANTUANTAIKA BAIRE unofficial update by coldazrael (3.1.3) # original
+New Skintones prettypinktardis unofficial update by tenthousandcats (1.0) # original
+New Spouse Rooms abra700 unofficial update by Allayna (1.0) # original
+Nicer Villagers, Flirty Bachelors Kagurahime unofficial update by paradigmnomad (1.0) # original
+Nightmare's Additional Weaponry zcsnightmare unofficial update by D.Grey (1.0) # original
+Nightmare's Raptors zcsnightmare unofficial update by minervamaga (1.0) # original
+Nightmare's Tools Retextured zcsnightmare official update by RedxMoonxRose (1.3) # original
+Nightmare's Weapon Retextures zcsnightmare official update by RedxMoonxRose (1.2) # original
+Nintendo Furniture - Furniture Only MrFox420 unofficial update by coldazrael (1.0.1) # original
+No Emo Hair Sebastian hybridrainbow unofficial update by Ensifera (1.0) # original
+No Glasses and Mustache Harvey Sprite BraveLittleTuna unofficial update by coldazrael (1.0) # original
+No Kids Room Decor Plutey unofficial update by mouseypounds (1.12.1) # original
+No More Bowlegs Chrysanthe unofficial update by pepoluan (1.0.0-unofficial.2-pepoluan) # original
+Non-Default Replacement Chickens Lavapulse unofficial update by paradigmnomad (1.0) # original
+Norisu's Cuter Goats Mod norisu unofficial update by Oak (1.0) # original
+Norisu's Fire Chickens Mod norisu unofficial update by Bondzgurl (1.0) # original
+Nostalgia Abigail Cilbas unofficial update by Aquilegia (1.0) # original
+NongDarn Mods Portraits NongDarn unofficial update by netish (1.1) # original
+NukaCola GameVogue unofficial update by a2937 (1.0) # original
+Okami Chibiterasu Pet Dibjib unofficial update by Heroic Onion (1.0) # original
+Ori's Portraits(High resolution version) Ori unofficial update by coldazrael (1.0) # original
+Original Portraits ULTIMATE FIX Popori unofficial update by springacres (1.1) # original
+Owl Scarecrows Ankokou unofficial update by Kuriiyo (1.0) # original
+Pam's Recolored Buildings Add-Ons Pam Collins AKA MatrexsVigil unofficial update by Marigolden (0.2-unofficial.1-Marigolden) # original
+Pastel Furniture BloodyJinxii unofficial update by Allayna (2.0.1) # original
+Pastel Pink Farmhouse midnightroar unofficial update by Marigolden (1.2-unofficial.1-Marigolden) # original
+Peacocks StarDoodle unofficial update by coldazrael (2.0) # original
+Pencilstab's Portraits (ALL PORTRAITS COMPLETED) Pencilstab official update by Pencilstab (1.0) # original
+Penny Expanded Wolvenlight unofficial update by uwuchiha (2.0) # original
+Penny Expanded Marriage Dialogue catacoon unofficial update by flameofthenight (1.0) # original
+Penny Relationship and Dialogue Overhaul NicolasNSane unofficial update by NicolaiB92 (1.0) # original
+Penny Sprite Alternate Hairstyle Kuujho unofficial update by coldazrael (1.0) # original
+Penny to Pryce Personality Overhaul (Gender Swap) Meevers unofficial update by coldazrael (1.0) # original
+Penny's New Look ARModding unofficial update by coldazrael (1.0) # original
+Pet Raven hassan94935 unofficial update by Ensifera (1.0) # original
+Pet Totoro magimatica unofficial update by coldazrael (1.0) # original
+Piano Jokerine unofficial update by pepoluan (1.0) # original
+Piebald horse MysticJumbles unofficial update by cat9412 (2.0) # original
+Pink Chickens bubblestormx unofficial update by acornfaerie (1.0) # original
+Plastic Surgery for Your Goats Eemie unofficial update by coldazrael (1.0) # original
+Player Home Detailed PandoWooSetti AKA TheGeekyDead unofficial update by Marigolden (1.3-unofficial.1-Marigolden) # original
+Plump Abigail Dizor unofficial update by cat9412 (1.0) # original
+Pochi's Portraits Mod Pochi unofficial update by pepoluan (1.1.1-unofficial.1-pepoluan) # original
+Porcelaine's Wizard - Portrait and Sprite Porcelaine unofficial update by Mukamii (1.0) # original
+Portrait Accurate Alex iKeychain unofficial update by Allayna & Amx (1.2) # original
+Portraits 42 people Fastoso unofficial update by helenaneedshugs (1.1) # original
+Prettier Small Farm E_Wang aka Flor3nce2456 unofficial update by minervamaga (1.0.0-unofficial.1-minervamaga) # original
+Primitive Artisan Equipment Ankokou official update by tlitookilakin (1.0.0) # original
+Purple Museum Reward Furniture Ariella unofficial update by coldazrael (1.0) # original
+Rabbit In A Hat PixelatedPicasso unofficial update by mouse (0.0.2-unofficial.1-mouse) # original
+Rabbit's Foot to Usagi Mochi gelatinveins unofficial update by Allayna (1.0) # original
+Ragdoll Cat Replacements peroxidewren unofficial update by Kuriiyo (1.0) # original
+Rainbow Galaxy Sword Sirenity unofficial update by UlyanaLeyana (2.0) # original
+Ran's Fancy Farmer Ran unofficial update by wally32 (1.0) # original
+Realistic Animal Replacements Crucifigo unofficial update by paradigmnomad (1.0) # original
+Realistic Cellar Size Cylesburk unofficial update by grapefruitcult (1.0) # original
+Real Life Horses Minakie unofficial update by jhunichi (1.0) # original
+Recolored Buildings - Smaller Silos - Alt Brick House - Rainbow colors Develsaa unofficial update by Marigolden (0.1-unofficial.1-Marigolden) # original
+Recolored Luau and Moonlight Jellies Candle Boats to match the Beach and Desert Recolors Mod - combined Sabreene unofficial update by waftwaffle (1.0) # original
+Recolored stone paths taintedwheat unofficial update by Kreeate (1.0) # original
+Redesigned Horse Running Animation avalitor unofficial update by Ensifera (1.0) # original
+Red Holsteins (Brown Cow) Zhuria unofficial update by D.Grey (1.0) # original
+Redone Dialogue prettypinktardis unofficial update by .Lavender. (1.0) # original
+Refined Bachelors Portrait Mod Chrysanthe unofficial update by paradigmnomad & D.Grey (1.0) # original
+Refined Abigail, Emily and Maru Portraits Chrysanthe unofficial update by Amx (1.0) # original
+Remove That Damn Rock Androxilogin unofficial update by minervamaga (1.1.1-unofficial.1-minervamaga) # original
+Revised Alex Cutscene IronZelly unofficial update by Allayna (1.2) # original
+Ride Bear PenguinTuxedo unofficial update by coldazrael (1.1) # original
+Ride-able Chocobo (FF14 style!) Kitsutsune unofficial update by Kuriiyo (1.0) # original
+Rikuo's Character Portrait Rikuo unofficial update by paradigmnomad (4.0) # original
+Rocky Junimo Hut Gweniaczek unofficial update by paradigmnomad (1.0) # original
+Roman Bath House Retexture Rauchschwalbe unofficial update by Marigolden (1.1-unofficial.1-Marigolden) # original
+Roosters (Blue Chicken Replacement) Zhuria unofficial update by paradigmnomad (1.0) # original
+Rose's Interior Roserish unofficial update by coldazrael (1.0) # original
+Rue's Creepy Curios and Spooky Aesthetics (Trees Only) Ruevian unofficial update by sunnrock (1.1) # original
+Rue's Creepy Curios and Spooky Aesthetics (Fences and Craftables) Ruevian unofficial update by coldazrael (1.0) # original
+Rusty Trough Fix Zhuria unofficial update by Ensifera (1.0) # original
+Safety Net Slime Hutch Plutey unofficial update by Jhoulana (1.2) # original
+Sailor Moon Wands kumarisuchan unofficial update by Allayna (1.1) # original
+Sakamoto san - Cat Replacer RedHunter unofficial update by ravenrakkuas (1.0) # original
+Sakura's Cat Girls Sakurasflavor unofficial update by coldazrael (1.0) # original
+Sam - New Hair and Jacket ktruong unofficial update by D.Grey (1.0) # original
+Sam Gets a Makeover Tyrian unofficial update by Mukamii (1.0) # original
+Sam's Hair Makeover Chrysanthe unofficial update by Ensifera (1.0) # original
+Sam Short Hair jessicasoosh unofficial update by Seyph (1.0.1) # original
+Sam/Sebastian Romance Mod Sambastian Pixelated Farmhouse unofficial update by Allayna (1.4) # original
+Saturnspace's All Villagers Portraits Mod Saturnspace unofficial update by aaronson2012 (1.0.0) # original
+Sebastian - New Hair and Moto Jacket ktruong unofficial update by paradigmnomad (1.0) # original
+Sebastian is a Ginger - All Edits melkat7 unofficial update by minervamaga (1.0.0-unofficial.1-minervamaga) # original
+Sebastian's Bong Restored lakoria unofficial update by Marigolden (0.1.-unofficial.1-Marigolden) # original
+Seasonal Foresty Farm Buildings miizuki1512 unofficial update by hatmouse (1.0) # original
+Seasonal Vanilla Buildings magimatica unofficial update by D.Grey (1.0) # original
+Seasonal Gold Clock Endohare unofficial update by pepoluan (1.1) # original
+Sebastian Dialogue Overhaul casualkira unofficial update by paradigmnomad (1.0) # original
+Secret of Evermore Prehistoric Dog Skyhacker unofficial update by Allayna (2.0) # original
+Shane - But with Pants Gabreallia unofficial update by Seyph (1.0.1) # original
+Shaney-er Marriage Dialogue Seismothesaurus unofficial update by Ensifera (1.1) # original
+Shiny Grandpa Shrines Schrodingers Kit unofficial update by pepoluan (1.0.0) # original
+Shirtless Alex bluestarkiller unofficial update by Ensifera (1.0) # original
+Shoe Color Replacement irowirow unofficial update by D.Grey, Oak (1.0) # original
+Short Haired Haley Zoragonn101 unofficial update by D.Grey (1.0) # original
+Shorter Haired Sebastian Chrysanthe unofficial update by Ensifera (1.0) # original
+Shorts for Ladies Meevers unofficial update by junali (1.0) # original
+Siv's Marriage Mod sivolobwho Looking for Love by foggywizard (1.1) # original
+Siberian Husky Pet Joules unofficial update by Techy-Jaden (1.0.0) # original
+Skater Sam hot-fish unofficial update by MouseyPounds (1.0) # original
+Slate Shed Recolor Asunai unofficial update by Arkanto (1.0) # original
+Siberian Huskey Dog Replacement Joules unofficial update by TimeWandrer (1.0) # original
+Silo Replacement ??? unofficial update by twixstix (1.0) # [??? original]
+Skitty Cat Replacement Kiakakash unofficial update by coldazrael (1.0) # original
+Slightly Cuter Character Sprites Poltergeister unofficial update by HanFox (1.8) # original
+Slime-Animals Sabishi1985 Slime Rancher by Eldritchdraaks (1.0) # original
+Slime Cute Kitty Cat Retexture hisameartwork unofficial update by Kuriiyo (1.0) # original
+Skeletal-Undead Horse zcsnightmare unofficial update by Marigolden (2.1-unofficial.1-Marigolden) # original
+Skin Colours Tweaked MissyDiabolical unofficial update by Isalami (1.0) # original
+Small Farm HelleboreHel unofficial update by Allayna (1.2) # original
+Smiling Krobus UpsetSaturn unofficial update by coldazrael (1.0) # original
+Smoking BadAss Kittycat Overhaul Mod V1.0 LuvRam unofficial update by Marigolden (1.1-unofficial.1-Marigolden) # original
+Some Building Edits... MourningStar unofficial update by coldazrael (2.0) # original
+Some Portraits and Character Sprites Amhara Dracul unofficial update by pepoluan (1.0.0) # original
+Spooky Gothic Furniture Serpentwined unofficial update by coldazrael (1.0) # original
+Spooky Gothic Kitchen, Bed and Fireplace Serpentwined unofficial update by coldazrael (1.0) # original
+Spooky Gothic Wallpapers and Floorings Serpentwined unofficial update by coldazrael (1.0) # original
+Spooky Scary Creatures Petulinda unofficial update by coldazrael (1.0) # original
+Spouse Room Redesign casualkira unofficial update by coldazrael (1.0) # original
+Spouse Rooms Redesigned endermaryn unofficial update by Fyn (6.0) # original
+Stable Replacement FrauHaselmaus unofficial update by kngermanotta (1.0) # original
+Standard Farm Map - South Pond Deleted XaqNautilus unofficial update by Allayna (1.0) # original
+Stardew Lottery Letters Jokerine unofficial update by brybryj (2.0) # original
+Stardew Shortcuts - Saloon and Hospital Bypass scrptrx unofficial update by Ensifera (1.0) # original
+Stardew Valley Ranch Lord Wind Portraits MOD MAKIKO unofficial update by coldazrael (1.11) # original
+Stardew Valley Senbby and Sam Kikii_Saam unofficial update by coldazrael (1.3) # original
+Stargrime - Visual Overhaul mudpuppy8 unofficial update by coldazrael (1.0) # original
+StardewValley Anime Mods OhoDavi unofficial update by coldazrael (0.3) # original
+StardewValley Anime Mods - Robin Portrait with Robin Romance Support OhoDavi unofficial update by coldazrael (0.3) # original
+StardewValley_Girl-byAdarin AdarinSinner unofficial update by ZidanReign (1.0) # original
+Starry Sky Interface Walpi-chan unofficial update by Rosalie (1.0) # original
+Studio Ghibli Re-Textures (Scarecrows) Crazy_Leen unofficial update by MitcheII (1.0) # original
+Suffolk Sheep Recolor The13thBlackCat unofficial update by D.Grey (1.0) # original
+Super Short Grass joyous1ariella unofficial update by Ensifera (1.0) # original
+Swans and Dodos (excludes Aptonoth) Kitsutsune unofficial update by paradigmnomad (1.0) # original
+Sweet Greenhouse Various unofficial update by Oak (1.0) # original
+Sweet Talking Sam Kagurahime unofficial update by paradigmnomad (1.0) # original
+Sweet Talking Sebastian Kagurahime unofficial update by paradigmnomad (1.0) # original
+Swimsuits to Towel or Robes Little Tea unofficial update by coldazrael (1.0) # original
+Taco Bones: Item+Crop graphics Boneberry unofficial update by acornfaerie (1.0) # original
+Tan and Green Velociraptor zcsnightmare unofficial update by brybryj & Allayna (1.0) # original
+Tank Mod AllyJamy unofficial update by coldazrael (1.1) # original
+Teal Sebastian xhotfish unofficial update by Fippsie (1.0) # original
+Teens to Mid Late 20's elyneara unofficial update by coldazrael (1.0) # original
+Tego's Better Harvey tegobash unofficial update by Marigolden (0.3.0-unofficial.1-Marigolden) # original
+Texas Longhorn rlgenung unofficial update by coldazrael (1.0) # original
+Tiny Tree Tappers kallisto unofficial update by coldazrael (1.0) # original
+Togepi Cat Replacement CrimsonY _Alreadytaken on this site apparently_ unofficial update by Allayna (2.0) # original
+Tokiri's Pet Replacements - Cat (Red Panda) Tokiri unofficial update by Astartez (1.0) # original
+Tokiri's Pet Replacements - Dog (Fox) Tokiri unofficial update by magicalgirl44 (1.0) # original
+Tokiri's Pet Replacements - Horse (Ridable wolf) Tokiri unofficial update by magicalgirl44 (1.0) # original
+Tool Icon Replacement workingorder unofficial update by D.Grey (1.0) # original
+Tortoiseshell Cat magemeows unofficial update by corrin/catstar8 (1.0) # original
+Totoro Ghibli Anime Water Obelisk retexture hisameartwork unofficial update by coldazrael (1.0) # original
+Traditional Japanese Homes honochan unofficial update by f4iTh (1.0.0) # original
+Truffle Fox Hazelnut Truffle Fox - Content Patcher by Nanogamer7 (1.0) # original
+Trump Lewis Skullshades unofficial update by coldazrael (1.0) # original
+Turn Abigail into chicken zeroford unofficial update by phomaique (1.0) # original
+Tweaked Penny Portrait magimatica unofficial update by Amx (1.0) # original
+Umbreon Cat Replacer VDotV unofficial update by Heroic Onion (1.0) # original
+Vanilla Child Recolors bitcrushpupp unofficial update by Aquilegia (1.0) # original
+Vaporeon Normal and Vaporeon Shiny Cat and Dog Replacement linasouls9 unofficial update by winterykite (1.0) # original
+Variant Anime Portraits Bunnihime unofficial update by coldazrael (3.5) # original
+Velverette's Anime Portrait and Sprite Mod Velverette unofficial update by pepoluan (0.1.0) # original
+Villagers Anime Portrait Bunnihime unofficial update by coldazrael, Fyn & f4iTh (2.0) # original
+Vintage Menu Interface Mana unofficial update by dreamsicl (1.4) # original
+Visual Crossing Sprite Overhaul k2sync unofficial update by paradigmnomad (1.0) # original
+Vivi from FF9 as Dwarf clementckm92 unofficial update by ravenrakkuas (1.0) # original
+Vixxi's Mounts (Wolf) Vixxi unofficial update by SpringsSong (1.0) # original
+Void Dog JertsukkaTheMan unofficial update by winterykite (1.0) # original
+Vulpix as Cat (Alolan) Alola Vulpix Is Life unofficial update by Allayna (2.0) # original
+Vulpix Pokemon as Cat Halfwheat unofficial update by Allayna (2.0) # original
+Warm Cozy Fireplace Mioudew unofficial update by UlyanaLeyana (2.0) # original
+Wee Highland Coos telekineticyeti unofficial update by coldazrael & D.Grey (1.0) # original
+Wedding Dresses and Red Shirts! Hitgirl911 unofficial update by coldazrael (1.0) # original
+White-Grey Bee House Naru The Weirdo unofficial update by cat9412 (1.0) # original
+WhiteBorder (only white border) xblaid unofficial update by hatmouse (1.0) # original
+White Ducks Merc931 unofficial update by D.Grey (1.0) # original
+White Water Farm Meevers unofficial update by Pathoschild (1.1.1-unofficial.3-pathoschild) # original
+Wild Doves - Brown Bird Replacement Ebenaceae unofficial update by coldazrael (1.0) # original
+Wilderness Farm No Lake hazel214 unofficial update by Jessebot (1.0) # original
+WildSpirits Pet Replacements WildSpirits unofficial update by Azrax (1.0) # original
+Winery/Brewery Retexture Mod Dentrala & sheetcakeghost unofficial update by andiluxe (1.0) # original
+Witch Broom and Hat strawberrymilk95 unofficial update by junali (1.0) # original
+Witch Hats 7yrsofbadluck unofficial update by mukamii (1.0) # original
+Witch Stuff Pack addy468 unofficial update by coldazrael (1.0) # original
+Witchy Decorations ManaKirel unofficial update by Allayna (1.0) # original
+Witchy-Gothic Buildings strawberrymilk95 unofficial update by acornfaerie (1.0) # original
+Witchy-Gothic Interior strawberrymilk95 unofficial update by acornfaerie (1.0) # original
+World Map for Eemie's Map Recolour zanderb14 Official update by minervamaga (1.3.0) # original
+Yellog's Dark Brown and Cream Colored Furniture Yewon_Nam unofficial update by coldazrael, Kuriiyo & acornfaerie (1.0) # original
+Yellog's Pink Colored Furniture Yewon_Nam unofficial update by coldazrael (1.0) # original
+Yellog's Soft Colored Furniture Yewon_Nam unofficial update by coldazrael (1.0) # original
+Yellow Dirt Removal Ebeths unofficial update by Allayna (1.2) # original
+Yoshi StarDoodle unofficial update by coldazrael (2.0) # original
+Young Doctor OLothoriaScrolls unofficial update by coldazrael (1.2) # original
+Younger Linus without Beard StaticOpium unofficial update by coldazrael (1.0) # original
+Yuki's Expanded Greenhouse YukiTsukihana unofficial update by staarfruit (1.0) # original
+Yet Another Crystal Path Recolor Lavendarjosh Yet Another Crystal Path Recolor (CP) by UlyanaLeyana (2.1.0) # original
+Yet Another Dog Mod captain kaltz+/spacesheepcaptain official update by Marilyst (1.3.1) # original
+ZeldaLTTPLifestockAnimals JazzMinK unofficial update by m2pt5/Emtu (1.0) # original
+Zero from the Nightmare Before Christmas JamieDepledge unofficial update by coldazrael (1.0) # original
+Zen Garden Obelisk Replacer monteso unofficial update by Ensifera (0.1) # original
+Zhuria's Horse Edits Zhuria unofficial update by Allayna (1.0) # original
+Zombie Cows DarkKassanova unofficial update by Dayashi (1.0) # original
+코이 Girls Set (coII's Farmer Retexture) s2co2 unofficial update by coldazrael (1.0) # original
+코이 hatSET s2co2 unofficial update by Chill-T (1.0) # original
+Using XNB mods
+Find mods
+See Find mods on the Getting Started page.
+Install mods
+Installation is different for each mod; check its mod description for details. But in general:
+Download the XNB mod and unzip it somewhere (not in your game folder!).
+It should contain some .xnb files.
+Find your game folder.
+Replace the existing .xnb files under Content with the ones from the mod. Make sure you replace the correct files! There are different files with the same name (like Content/Data/hats.xnb and Content/Characters/hats.xnb), and replacing the wrong file will cause in-game errors or crashes.
+Uninstall mods
+Either restore the original files that mod replaced (hope you kept track!), or reset your game files.
+Troubleshooting
+Reset content files
+If you know which mod caused the problem, uninstall it.
+If you're not sure, the simplest option is:
+reset your game files;
+reinstall each XNB mod one by one;
+test after each install to make sure it didn't cause problems.
+Other issues
+See Modding:Player Guide/Troubleshooting for more suggestions.
+Category: Modding

@@ -1,0 +1,42 @@
+Jump to navigation
+Jump to search
+This talk page is for discussing Skills.
+Sign and date your posts by typing four tildes (~~~~).
+Put new text below old text.
+Be polite.
+Assume good faith.
+Don't delete discussions.
+Contents
+1 Profession Codes
+2 A note on gemologist
+3 Skill-Based Title
+4 Fishing has different thresholds?
+Profession Codes
+These are copied from https://stardewcommunitywiki.com/Talk:Skills
+FARMING: 0 - Rancher | 1 - Tiller | 2 - Coopmaster | 3 - Shepherd | 4 - Artisan | 5 - Agriculturalist
+FISHING: 6 - Fisher | 7 - Trapper | 8 - Angler | 9 - Pirate | 10 - Mariner | 11 - Luremaster
+FORAGING: 12 - Forester | 13 - Gatherer | 14 - Lumberjack | 15 - Tapper | 16 - Botonist | 17 - Tracker
+MINING: 18 - Miner | 19 - Geologist | 20 - Blacksmith | 21 - Prospector | 22 - Escavator | 23 - Gemologist
+COMBAT: 24 - Fighter | 25 - Scout | 26 - Brute | 27 - Defender | 28 - Acrobat | 29 - Desperado
+-- margotbean (talk) 18:28, 25 November 2021 (UTC)
+Archangel (talk) 17:59, 1 May 2023 (UTC) Hey, can you take multiple professions from different skills? Like say, you could take Geologist and Rancher?
+A note on gemologist
+Gemologist says it's a +30% increase (that is then floored) but since it's a floating point number, it's actually something like a +29.999995% increase, so it should be fairly likely to get a few values that are one less than expected. Atravita (talk) 11:13, 9 July 2023 (UTC)
+I added a parameter to Template:Infobox mineral called correctedprice that can be used in these situations. It's in use on Diamond already, as an example.
+It seems I tested the sell prices of every item in-game (in every quality) except minerals for v1.5. I still have 1GB of screenshots saved on my hard drive from testing. All I can say is thank goodness minerals don't come in quality stars anymore! 😬 margotbean (talk) 17:55, 9 July 2023 (UTC)
+p.s. If there is a change in sell price that moves a mineral into a different level for the Stardew Valley Fair#Sell Price & Quality, then we'll (meaning probably I'll) have to remember to update that as well. FYI. margotbean (talk) 19:56, 9 July 2023 (UTC)
+It should take a set of at least 10 items to apply the increase to in order for the floored percentage to make a difference. I scarcely think that's likely. 30% of any integer smaller than 10 has a non-zero residual fraction which will decrease slightly at +29.999995%, but will easily cover the floor operation. Giles (talk) 21:35, 7 June 2024 (UTC)
+Skill-Based Title
+This section appears not to be correct in v1.6.8, despite its long-standing on the Wiki. I expect the listed code is still fine. It's the table relating the level to the title that appears to be off. Once I earned my fourth skill level in a new game, the inventory tab tells me I am at level 2. Both inventory tab and player (skills) tab tell me I have the title Greenhorn, not Newcomer. Once I earned the sixth skill level, they tell me I am at level 3, title Bumpkin. According to the Wiki table, I should not rise to Greenhorn until level 3, nor to Bumpkin until level 5. The entire table appears to be off by one.
+I've tracked this (automated records) for years of playing other games and never noticed a discrepancy until v1.6, although it's so unimportant, I only read results closely when first figuring what they should be. Still, I'm sure this table was right sometime in the past, and is not now. My last game of v1.5 maxed out long ago and did indeed reach "Farmer", which should be possible at the 58th skill level if this new trend continues. My best guess is that it changed in v1.6 somewhere. I haven't wanted to change the Wiki until someone else confirmed what I'm seeing. I also cannot return to earlier versions to compare what they once said. Giles (talk) 22:59, 5 June 2024 (UTC)
+Ok, perhaps there's just not much interest in this topic (which I can understand). I'll go ahead and change the article and let objectors react. Giles (talk) 03:37, 7 June 2024 (UTC)
+I've written a bug report, because this seems like an unintended change, but like you said, I don't know if anyone will object to the new levels.
+I did take a look at the code when you commented originally, but couldn't see why anything would change. Too much going on in my mind.
+The code seems to have changed from an if statement to a switch case, and that changed the levels a bit. Thanks so much for looking out!! margotbean (talk) 19:59, 7 June 2024 (UTC)
+You're welcome! I do seem to look at things that escape common notice, which makes me a positive nit-picker, I guess! But I'm also very aware of how little changes in code can affect things in subtle ways, and can cause real headaches in debugging. I would think any engineer would rather discover the hidden things than not to. One never knows what one little thing will lead to another, perhaps more important effect. Giles (talk) 21:18, 7 June 2024 (UTC)
+Fishing has different thresholds?
+My character currently has 7828 fishing experience points (from save file), yet displays fishing level 9 instead of level 8 like expected. It seems that fishing has different thresholds for levelups in 1.6. I'll check the code later and see if I can find anything, but does anybody else notice this? Subby (talk) 14:02, 30 June 2024 (UTC)
+They should be the same as in 1.5. Perhaps you have mods and/or a buff? User314159 (talk) 15:11, 30 June 2024 (UTC)
+I have no mods, sure of that, and definitely don't have any buffs. Nothing in the code points to fishing using different thresholds either. Farmer.gainExperience() always calls Farmer.checkForLevelGain(), which uses the same values from Farmer.getBaseExperienceForLevel() no matter in which skill experience is gained. Subby (talk) 15:15, 30 June 2024 (UTC)
+Could it be possible that you read books? I don't know if those are counted as XP points in save file (they should be though). Otherwise, I'm not sure. I've played enough 1.6 where I would know if the level thresholds have changed compared to 1.5, so they definitely haven't changed. User314159 (talk) 16:59, 30 June 2024 (UTC)
+Category: Talk pages

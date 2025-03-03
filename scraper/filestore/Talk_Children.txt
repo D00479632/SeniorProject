@@ -1,0 +1,28 @@
+Jump to navigation
+Jump to search
+This talk page is for discussing Children.
+Sign and date your posts by typing four tildes (~~~~).
+Put new text below old text.
+Be polite.
+Assume good faith.
+Don't delete discussions.
+Contents
+1 Child Beds
+2 Farmhouse upgrade
+3 Help
+4 Statue Blessing Effect
+Child Beds
+Haven't found this on the wiki. Anybody know what happens if you remove the child beds and never replace them? Does the toddler continue to sleep in the crib forever? I can test this out, but if someone knows, it would save the time. Bigfarma (talk) 20:35, 5 November 2022 (UTC)
+The toddlers freeze in place when it gets dark if the beds are removed. You can still interact with them and get a heart bubble, but otherwise, they stay in place. margotbean (talk) 20:55, 5 November 2022 (UTC)
+Ok thanks. So I imagine it's the same when the baby turns old enough for the bed, but it isn't there. Their newly-assigned sleeping place is not present as a toddler, and so their script doesnt know what to do. Interesting. Bigfarma (talk) 21:48, 5 November 2022 (UTC)
+How long did it take yall for your spouse to ask for a baby? Aepace000 (talk) 00:09, 26 May 2023 (UTC)
+Farmhouse upgrade
+I have been waiting almost 2 years now for my wife to ask for adoption and while I was reading the page it says extra room is it talking about the cellar? I don't think it is but she just won't ask! Aepace000 (talk) 00:08, 26 May 2023 (UTC)
+It's random, so there's no way to say when it will happen. A cellar isn't required. margotbean (talk) 05:58, 26 May 2023 (UTC)
+Considering that there is a 95% chance of it not happening, the probability of it not happening for 224 days (2 years) is =0.95224, which is around 0.001%. So, you have been extremely unlucky, or you are not fulfilling some condition. About the extra room, it is the empty one besides the child room. You can check it in Farmhouse, the Upgrade number 2. --User8841 (talk) 00:52, 18 October 2023 (UTC)
+Help
+I have been trying to get children in my game but have had no luck. I am wondering if I have to sleep while my spouse is in bed with me for them to ask for a child or if I have just been unlucky. Eggman17 (talk) 00:24, 30 July 2023 (UTC)
+The chance of this happening is only 1/20 and you have to be very lucky that one night your spouse will apply and you will approve. Alyasinsalehi7 (talk) 13:51, 30 July 2023 (UTC)
+Statue Blessing Effect
+Does the Blessing of Friendship (From the Statue of Blessing) affect the friendship gained upon interacting with a child? TehEpicDan (talk) 16:25, 15 January 2025 (UTC)
+Category: Talk pages

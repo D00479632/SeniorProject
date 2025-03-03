@@ -1,0 +1,190 @@
+Jump to navigation
+Jump to search
+←Index
+This page explains how to create and edit in-game farm animals.
+Contents
+1 Data format
+1.1 Main info
+1.2 Animal shop
+1.3 Hatching
+1.4 Growth
+1.5 Produce
+1.6 Audio & Sprite
+1.7 Player profession effects
+1.8 Behavior
+1.9 Other
+2 Spritesheet layout
+Data format
+You can add or edit farm animals by editing the Data/FarmAnimals asset.
+This consists of a string → model lookup, where...
+The key is a unique string ID for the farm animal type.
+The value is a model with the fields listed below.
+Main info
+field effect
+DisplayName A tokenizable string for the animal type's display name.
+House The building ID for the main building type that houses this animal. The animal will also be placeable in buildings whose ValidOccupantTypes field contains this value.
+Gender (Optional) The possible genders for the animal type. Currently this only affects the text shown after purchasing the animal, like "Great! I'll send little <name> to [his/her] new home right away". Default Female.
+The possible values are:
+value effect
+Male
+Female Farm animals of this type are always male or always female.
+MaleOrFemale The gender of each animal is randomized based on its internal unique ID.
+Animal shop
+These fields affect how this farm animal type is shown in Marnie's animal shop. Animals are automatically listed if they have a valid PurchasePrice value.
+field effect
+PurchasePrice (Optional if not purchaseable) Half the cost to purchase the animal (the actual price is double this value), or a negative value to disable purchasing this animal type. Default -1.
+ShopTexture (Optional if not purchaseable) The asset name for the icon texture to show in shops. Defaults to LooseSprites/Cursors or LooseSprites/Cursors2 based on the animal's position within the loaded data (but using the default isn't recommended if it's purchaseable).
+ShopSourceRect (Optional if not purchaseable) The pixel area within the ShopTexture to draw, specified as an object with X, Y, Width, and Height fields. This should be 32 pixels wide and 16 high. Ignored if ShopTexture isn't set.
+RequiredBuilding (Optional) The building that needs to be built on the farm for this animal to be available to purchase. Buildings that are upgraded from this building are valid too. Default none.
+UnlockCondition (Optional) A game state query which indicates whether the farm animal is available in the shop menu. Default always unlocked.
+ShopDisplayName (Optional) A tokenizable string for the display name shown in the shop menu. Defaults to the DisplayName field.
+ShopDescription (Optional) A tokenizable string for the tooltip description shown in the shop menu. Defaults to none.
+ShopMissingBuildingDescription (Optional) A tokenizable string which overrides ShopDescription if the RequiredBuilding isn't built. Defaults to none.
+AlternatePurchaseTypes (Optional) The possible variants for this farm animal (e.g. chickens can be Brown Chicken, Blue Chicken, or White Chicken). This consists of a list of models with these fields:
+field effect
+ID The unique string ID for is purchase type within the current list.
+AnimalIDs A list of animal IDs to spawn instead of the main ID field. If multiple are listed, one is chosen at random on purchase.
+Condition (Optional) A game state query which indicates whether this variant entry is available. Default always enabled.
+If multiple are listed, the first available variant is returned. Default none.
+Hatching
+field effect
+EggItemIds (Optional) A list of the object IDs that can be placed in the incubator or ostrich incubator to hatch this animal. If the animal's House field doesn't match the current building, the entry will be ignored. Default none.
+IncubationTime (Optional) How long eggs incubate before they hatch. Default 9000 minutes.
+IncubatorParentSheetOffset (Optional) An offset applied to the incubator's sprite index when it's holding an egg. Default 1.
+The vanilla values are:
+offset incubator ostrich incubator
+0 empty incubator empty incubator
+1 small white egg large brown egg
+2 small brown egg invalid (will show Junimo chest sprite)
+BirthText (Optional) A tokenizable string for the message shown when entering the building after the egg hatched. Defaults to the text "???".
+Growth
+field effect
+DaysToMature (Optional) The number of days until a freshly purchased/born animal becomes an adult and begins producing items. Default 1.
+CanGetPregnant (Optional) Whether an animal can produce a child (regardless of gender). Default false.
+Produce
+field effect
+ProduceItemIds
+DeluxeProduceItemIds (Optional) The items produced by the animal when it's an adult. The DeluxeProduceItemIds field only applies if the Deluxe* fields match. Both default to none.
+This consists of a list of models with these fields:
+field effect
+ItemId The unqualified object ID of the item to produce.
+Condition (Optional) A game state query which indicates whether this item can be produced now. Defaults to always true.
+MinimumFriendship (Optional) The minimum friendship points with the animal needed to produce this item. Default 0.
+If multiple items can be produced, one is chosen at random (with deluxe items taking priority if applicable).
+DaysToProduce (Optional) The number of days between item productions. For example, setting 1 will produce an item every day. Default 1.
+ProduceOnMature (Optional) Whether an item is produced on the day the animal becomes an adult. Default false.
+FriendshipForFasterProduce (Optional) The minimum friendship points needed to reduce the DaysToProduce by one. Defaults to no reduction based on friendship.
+DeluxeProduceMinimumFriendship (Optional) The minimum friendship points needed to produce the DeluxeProduceItemId. Default 200.
+DeluxeProduceCareDivisor
+DeluxeProduceLuckMultiplier (Optional) Quantity modifiers which change the probability of producing the DeluxeProduceItemId, based on this formula:
+if happiness > 200:
+   happiness_modifier = happiness * 1.5
+else if happiness > 100:
+   happiness_modifier = 0
+else
+   happiness_modifier = happiness - 100
+
+((friendship + happiness_modifier) / DeluxeProduceCareDivisor) + (daily_luck * DeluxeProduceLuckMultiplier)
+Specifically:
+DeluxeProduceCareDivisor reduces the bonus from friendship and happiness, so a lower value increases the probability of producing the deluxe item. Default 1200.
+DeluxeProduceLuckMultiplier increases the effect of daily luck. Default 0.
+For example, given a friendship of 102 and happiness of 150, the probability with the default field values will be ((102 + 0) / 1200) + (daily_luck * 0) = (102 / 1200) = 0.085 or 8.5%.
+See Animal Produce for more info on the calculation.
+HarvestType (Optional) How produced items are collected from the animal. The valid values are:
+value effect
+DropOvernight The item is placed on the ground in the animal's home building overnight.
+HarvestWithTool The item is collected from the animal directly based on the HarvestTool field.
+DigUp The farm animal will dig it up randomly throughout the day. This applies the same logic as pigs finding truffles, but for the current item to produce via ProduceItemIds and DeluxeProduceItemIds.
+Default DropOvernight.
+HarvestTool (Optional) The tool ID with which produced items can be collected from the animal, if the HarvestType is set to HarvestWithTool. The values recognized by the vanilla tools are Milk Pail and Shears. Default none.
+CanEatGoldenCrackers (Optional) Whether players can feed this animal a golden cracker to double its normal output. Default true.
+Audio & Sprite
+field effect
+Sound (Optional) The audio cue ID for the sound produced by the animal (e.g. when pet). Default none.
+BabySound (Optional) Overrides Sound field when the animal is a baby. Has no effect if Sound isn't specified. Default none.
+Texture (Optional) The asset name for the animal's spritesheet. Defaults to Animals/<ID> (like Animals/Goat for a goat). This asset must exist even if you use Skins below, since the default appearance is automatically an available skin. See spritesheet layout.
+HarvestedTexture (Optional) Overrides Texture if the animal doesn't currently have an item ready to collect (like the sheep's sheared sprite). Default none.
+BabyTexture (Optional) Overrides Texture and HarvestedTexture when the animal is a baby. Default none.
+UseFlippedRightForLeft (Optional) When the animal is facing left, whether to use a flipped version of their right-facing sprite. See spritesheet layout for more info. Default false.
+SpriteWidth
+SpriteHeight (Optional) The pixel height & width of the animal's sprite (before the in-game pixel zoom). Both default to 16.
+EmoteOffset (Optional) A pixel offset to apply to emotes from the farm animal, specified as an object with X and Y. Default zero.
+SwimOffset (Optional) A pixel offset to apply to the farm animal's sprite while it's swimming, specified as an object with X and Y. Default "X": 0, "Y": 112.
+Skins (Optional) A list of alternate appearances. If specified, a skin is chosen at random when the animal is purchased or hatched based on the Weight field. The default appearance (e.g. using Texture) is automatically an available skin with a weight of 1.
+This consists of a list of models with these fields:
+field effect
+ID The unique string ID for the skin within the current list.
+Weight (Optional) A multiplier for the probability to choose this skin when an animal is purchased. For example, 2.0 will double the chance this skin is selected relative to the other skins. Default 1.0.
+Texture
+HarvestedTexture
+BabyTexture (Optional) Overrides the equivalent main field when this skin is selected. Defaults to the main field's value.
+SleepFrame (Optional) The sprite index in the texture to display when sleeping. Default 12.
+UseDoubleUniqueAnimationFrames (Optional) Whether the texture has two frames for the randomized 'unique' animation instead of one. See spritesheet layout for more info. Default false.
+The unique animation sprite indexes are:
+If false: 13 (down), 14 (right), 12 (left if UseFlippedRightForLeft is false), and 15 (up).
+If true: 16 (down), 18 (right), 22 (left), and 20 (up).
+ShadowWhenBaby
+ShadowWhenBabySwims
+ShadowWhenAdult
+ShadowWhenAdultSwims
+Shadow (Optional) The shadow to draw under the farm animal.
+The fields are checked in this order, and the first existing one which matches the animal is used:
+ShadowWhenBabySwims or ShadowWhenAdultSwims when the animal is swimming;
+ShadowWhenBaby or ShadowWhenAdult in general;
+else Shadow.
+These consist of a model with these fields:
+field effect
+Visible (Optional) Whether the shadow should be drawn. Default true.
+Offset (Optional) A pixel offset applied to the shadow position, specified as an object with X and Y fields. Default zero.
+Scale (Optional) The scale at which to draw the shadow. Default 2.5 (swimming baby), 3 (baby), 3.5 (swimming adult), or 4 (adult).
+Player profession effects
+field effect
+ProfessionForFasterProduce (Optional) The internal ID of a profession which reduces the DaysToProduce by one. Default none.
+ProfessionForHappinessBoost (Optional) The internal ID of a profession which makes it easier to befriend this animal. Default none.
+ProfessionForQualityBoost (Optional) The internal ID of a profession which increases the chance of higher-quality produce. Default none.
+Behavior
+field effect
+CanSwim (Optional) Whether animals on the farm can swim in water once they've been pet. Default false.
+BabiesFollowAdults (Optional) Whether baby animals can follow nearby adults. Default false.
+GrassEatAmount (Optional) The amount of grass eaten by this animal each day. Setting it to 0 will disable the farm animal's hunger. Default 2.
+HappinessDrain (Optional) An amount which affects the daily reduction in happiness if the animal wasn't pet, or didn't have a heater in winter. Default none.
+SellPrice (Optional) The price when the player sells the animal, before it's adjusted for the animal's friendship towards the player. Default 0.
+The actual sell price will be this value multiplied by a number between 0.3 (zero friendship) and 1.3 (max friendship).
+CustomFields The custom fields for this entry.
+Other
+field effect
+ShowInSummitCredits (Optional) Whether to show the farm animal in the credit scene on the summit after the player achieves perfection. Default false.
+StatToIncrementOnProduce (Optional) The game stat counters to increment when the animal produces an item. Default none. This consists of a list of models with these fields:
+field effect
+ID The unique string ID for this entry within the current list.
+StatName The name of the stat counter field on Game1.stats.
+RequiredTags (Optional) A comma-delimited list of context tags required on the main input item. The stat is only incremented if the item has all of these. You can negate a tag with ! (like bone_item,!fossil_item for bone items that aren't fossils). Defaults to always enabled.
+UpDownPetHitboxTileSize
+LeftRightPetHitboxTileSize (Optional) The animal sprite's tile size in the world when the player is clicking to pet them, specified in the form <width>, <height>. The UpDownPetHitboxTileSize applies when the animal is facing up or down, and LeftRightPetHitboxTileSize applies when facing left or right. The values can be fractional (e.g. cows have a width of 1.75). Both default to a 1×1 tile.
+BabyUpDownPetHitboxTileSize
+BabyLeftRightPetHitboxTileSize (Optional) Overrides UpDownPetHitboxTileSize and LeftRightPetHitboxTileSize respectively before the animal is an adult. Both default to 1×1 tile.
+Spritesheet layout
+Each farm animal's spritesheet must have exactly 4 columns, and at least 5–7 rows (depending on the data fields). The sprite size depends on the SpriteWidth and SpriteHeight fields; for example, the default sprite width of 16 pixels means the spritesheet must be exactly 4 × 16 = 64 pixels wide.
+The expected rows are:
+move down;
+move right;
+move up;
+move left (only if UseFlippedRightForLeft is false);
+unique animations 1;
+unique animations 2 (only if UseDoubleUniqueAnimationFrames is true);
+eat.
+For example, the default layout (with UseFlippedRightForLeft and UseDoubleUniqueAnimationFrames both false) is:
+0 (move down 1) 1 (move down 2) 2 (move down 3) 3 (move down 4)
+4 (move right 1) 5 (move right 2) 6 (move right 3) 7 (move right 4)
+8 (move up) 9 (move up) 10 (move up) 11 (move up)
+12 (unused) 13 (unique down) 14 (unique right) 15 (unique up)
+16 (eat 1) 17 (eat 1) 18 (eat 1) 19 (eat 1)
+When both are true, that becomes:
+0 (move down 1) 1 (move down 2) 2 (move down 3) 3 (move down 4)
+4 (move right 1) 5 (move right 2) 6 (move right 3) 7 (move right 4)
+8 (move up) 9 (move up) 10 (move up) 11 (move up)
+12 (move left) 13 (move left) 14 (move left) 15 (move left)
+16 (unique down 1) 17 (unique down 2) 18 (unique right 1) 19 (unique right 2)
+20 (unique up 1) 21 (unique up 2) 22 (unique left 1) 23 (unique left 2)
+24 (eat 1) 25 (eat 1) 26 (eat 1) 27 (eat 1)
+Category: Modding

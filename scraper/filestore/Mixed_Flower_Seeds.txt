@@ -1,0 +1,51 @@
+Jump to navigation
+Jump to search
+Mixed Flower Seeds
+An assortment of flower seeds. Plant them and see what grows!
+Information
+Crop: Varies
+Growth Time: Varies
+Season:
+ Spring  Summer  Fall
+Sell Price: 0g
+Purchase Prices
+General Store: Not Sold
+JojaMart: Not Sold
+Traveling Cart: Not Sold
+Mixed Flower Seeds are seeds capable of producing a specific set of crops (listed below). The specific crop that grows from one Mixed Flower Seed is randomly chosen when it is planted. The choice is normally limited to crops of the current season, even indoors in the Greenhouse and in the Garden Pot. Mixed Flower Seeds cannot be planted outside in winter. If they are planted indoors in winter, then the type of crop is randomly chosen from crops of all seasons. Mixed Flower Seeds planted on Ginger Island will always produce summer crops.
+Contents
+1 Sources
+2 List of Seeds
+3 Gifting
+4 References
+5 History
+Sources
+Harvesting Weeds in the Summer with a Scythe, Axe, Pickaxe, Hoe, Sword, or bomb, if no Fiber or Mixed Seeds drop (9% chance if Raccoon Journal has been read, otherwise 5%)[1]
+Sold by Emily's ( 8 for 5), Evelyn's ( 2 each), and Jodi's ( 2 each) shops at the Desert Festival
+4-5 may occasionally be found in Supply Crates on the Beach Farm
+10 from Mystery Boxes (≈5.9% chance)[2]
+15 from the prize machine in the Mayor's Manor (50% chance to be the 3rd prize)[3]
+List of Seeds
+Mixed Flower Seeds will turn into the following seeds upon planting.
+Season Seeds
+Spring Tulip Bulb • Jazz Seeds
+Summer Sunflower Seeds • Spangle Seeds • Poppy Seeds
+Fall Sunflower Seeds • Fairy Seeds
+Winter Any of the above (Greenhouse and indoor Garden Pot only).
+Ginger Island Sunflower Seeds • Spangle Seeds • Poppy Seeds
+Gifting
+Villager Reactions
+Dislike  Abigail •  Alex •  Caroline •  Clint •  Demetrius •  Dwarf •  Elliott •  Emily •  Evelyn •  George •  Gus •  Haley •  Harvey •  Jas •  Jodi •  Kent •  Krobus •  Leah •  Leo •  Lewis •  Linus •  Marnie •  Maru •  Pam •  Penny •  Pierre •  Robin •  Sam •  Sandy •  Sebastian •  Shane •  Vincent •  Willy •  Wizard
+References
+↑ See Object::cutWeed in the game code.
+↑ See Utility::getTreasureFromGeode in the game code.
+↑ See PrizeTicketMenu::getPrizeItem in the game code.
+History
+1.6: Introduced.
+Seeds, Starters, and Saplings
+Spring Apricot Sapling • Bean Starter • Carrot Seeds • Cauliflower Seeds • Cherry Sapling • Coffee Beans • Garlic Seeds • Jazz Seeds • Kale Seeds • Parsnip Seeds • Potato Seeds • Rice Shoot • Rhubarb Seeds • Spring Seeds • Strawberry Seeds • Tulip Bulb
+Summer Blueberry Seeds • Coffee Beans • Corn Seeds • Hops Starter • Melon Seeds • Orange Sapling • Peach Sapling • Pepper Seeds • Poppy Seeds • Radish Seeds • Red Cabbage Seeds • Spangle Seeds • Summer Seeds • Summer Squash Seeds • Sunflower Seeds • Starfruit Seeds • Tomato Seeds • Wheat Seeds
+Fall Amaranth Seeds • Apple Sapling • Artichoke Seeds • Beet Seeds • Bok Choy Seeds • Broccoli Seeds • Corn Seeds • Cranberry Seeds • Eggplant Seeds • Fairy Seeds • Fall Seeds • Grape Starter • Pomegranate Sapling • Pumpkin Seeds • Rare Seed • Sunflower Seeds • Wheat Seeds • Yam Seeds
+Winter Powdermelon Seeds • Winter Seeds
+Other Acorn • Ancient Seeds • Banana Sapling • Blue Grass Starter • Cactus Seeds • Fiber Seeds • Grass Starter • Mahogany Seed • Mango Sapling • Maple Seed • Mixed Flower Seeds • Mixed Seeds • Mossy Seed • Mushroom Tree Seed • Mystic Tree Seed • Pineapple Seeds • Qi Bean • Tea Sapling • Pine Cone • Taro Tuber
+Category: Seeds

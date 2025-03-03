@@ -1,0 +1,72 @@
+Jump to navigation
+Jump to search
+Heavy Furnace
+    It's more efficient than a regular furnace. Requires 25 pieces of ore and 3 coal per use.
+Information
+Source Crafting
+Sell Price Cannot be sold
+Crafting
+Recipe Source Mining Mastery
+Ingredients
+Furnace (2)
+Iron Bar (3)
+Stone (50)
+The Heavy Furnace is an improved version of the Furnace. It can be crafted after claiming Mining Mastery. It takes 25 ores (or 5 quartz or fire quartz) and 3 Coal to run.
+Smelting
+To smelt any ore, equip it and activate the furnace while there is Coal in inventory. Three units of Coal are required for each smelting operation, regardless of the material or duration. Each possible output stack size is equally likely, i.e. ores have a 50% chance of yielding 5 bars and a 50% chance of yielding 6 bars.[1]
+When smelting bars, on average, 9% of the ore and 45% of the Coal is saved in comparison to normal Furnaces.
+Input Output Time to smelt Sells For (Unit) Sells For (Average total)
+Bouquet (1)
+Wilted Bouquet (1)
+≤10m
+100g
+Copper Ore (25)
+Copper Bar (5-6)
+30m
+60g 330g
+Quartz (5)
+Refined Quartz (5-6)
+90m (1h 30m)
+50g 275g
+Fire Quartz (5)
+Refined Quartz (15-20)
+90m (1h 30m)
+50g 875g
+Iron Ore (25)
+Iron Bar (5-6)
+120m (2h)
+120g 660g
+Gold Ore (25)
+Gold Bar (5-6)
+300m (5h)
+250g 1,375g
+Iridium Ore (25)
+Iridium Bar (5-6)
+480m (8h)
+1,000g 5,500g
+Radioactive Ore (25)
+Radioactive Bar (5-6)
+560m (9h 20m)
+3,000g 16,500g
+References
+↑ See Data\Machines.xnb in the game files. The output size is chosen using MinStack and MaxStack, which are not affected by any modifiers.
+History
+1.6: Introduced.
+
+Equipment
+Artisan Bee House • Cask • Cheese Press • Dehydrator • Fish Smoker • Keg • Loom • Mayonnaise Machine • Oil Maker • Preserves Jar
+Refining Bait Maker • Bone Mill • Charcoal Kiln • Crystalarium • Deluxe Worm Bin • Furnace • Geode Crusher • Heavy Furnace • Heavy Tapper • Lightning Rod • Mushroom Log • Ostrich Incubator • Recycling Machine • Seed Maker • Slime Egg-Press • Slime Incubator • Solar Panel • Tapper • Wood Chipper • Worm Bin
+Farming
+Fertilizer Basic Fertilizer • Basic Retaining Soil • Deluxe Fertilizer • Deluxe Retaining Soil • Deluxe Speed-Gro • Hyper Speed-Gro • Quality Fertilizer • Quality Retaining Soil • Speed-Gro • Tree Fertilizer
+Sprinklers Iridium Sprinkler • Quality Sprinkler • Sprinkler
+Other Deluxe Scarecrow • Garden Pot • Rarecrow • Scarecrow
+Fishing
+Bait Bait • Challenge Bait • Deluxe Bait • Magic Bait • Magnet • Targeted Bait • Wild Bait
+Tackle Barbed Hook • Cork Bobber • Curiosity Lure • Dressed Spinner • Lead Bobber • Quality Bobber • Sonar Bobber • Spinner • Trap Bobber • Treasure Hunter
+Other Crab Pot
+Bombs Bomb • Cherry Bomb • Mega Bomb
+Fences Gate • Hardwood Fence • Iron Fence • Stone Fence • Wood Fence
+Storage Big Chest • Big Stone Chest • Chest • Junimo Chest • Mini-Fridge • Stone Chest
+Signs Dark Sign • Stone Sign • Text Sign • Wood Sign
+Misc Anvil • Coffee Maker • Cookout Kit • Deconstructor • Fairy Dust • Farm Computer • Hopper • Mini-Forge • Mini-Jukebox • Mini-Shipping Bin • Sewing Machine • Staircase • Statue Of Blessings • Statue Of The Dwarf King • Telephone • Tent Kit • Tools • Workbench
+Category: Craftable items

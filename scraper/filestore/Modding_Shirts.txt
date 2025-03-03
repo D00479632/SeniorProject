@@ -1,0 +1,50 @@
+Jump to navigation
+Jump to search
+← Items
+This page explains how the game stores and parses shirt-type item data. For items in general, see Modding:Items.
+Contents
+1 Overview
+2 Data format
+2.1 Basic data
+2.2 Appearance
+2.3 Other
+3 See also
+Overview
+Shirts are items that can be equipped in the player's shirt slot. These change the player sprite.
+They have item type (S) (or ItemRegistry.type_shirt in C# code), their data in Data/Shirts, their icon sprites in Characters/Farmer/shirts by default, and their code in StardewValley.Objects.Clothing.
+Data format
+The shirt data in Data/Shirts consists of a string → model lookup, where...
+The key is the unqualified item ID.
+The value is a model with the fields listed below.
+Basic data
+field purpose
+Name (Optional) The internal name for the item. Default Shirt.
+DisplayName
+Description (Optional) A tokenizable string for the item's in-game display name and description. Defaults to the generic shirt text (Shirt and A wearable shirt).
+Price (Optional) The default price when the item is sold to the player in a shop. Default 50.
+Appearance
+field purpose
+Texture The asset name for the texture containing the shirt's sprite. Defaults to Characters/Farmer/shirts.
+Shirt textures must be exactly 256 pixels wide, divided into two halves: the left half for the shirt sprites, and the right half for any dye masks. The remaining space can be left blank if needed. They can have any number of rows.
+      sprites       dye masks
+   /-----------\  /-----------\
+┌────────────────────────────────┐
+│ ┌───┐┌───┐┌───┐┌───┐┌───┐┌───┐ │
+│ │ 0 ││ 1 ││ 2 ││ a ││ b ││ c │ │
+│ └───┘└───┘└───┘└───┘└───┘└───┘ │
+│ ┌───┐┌───┐┌───┐┌───┐┌───┐┌───┐ │
+│ │ 3 ││ 4 ││ 5 ││ d ││ e ││ f │ │
+│ └───┘└───┘└───┘└───┘└───┘└───┘ │
+└────────────────────────────────┘
+SpriteIndex The shirt's sprite index within the Texture, where 0 is the top-left set.
+DefaultColor (Optional) The dye color to apply to the sprite when the player hasn't dyed it yet, if any. See color format. Default none.
+CanBeDyed (Optional) Whether the player can dye this shirt. Default false.
+IsPrismatic (Optional) Whether the shirt continuously shifts colors. This overrides DefaultColor and CanBeDyed if set. Default false.
+HasSleeves (Optional) Whether to draw shirt sleeves. Default true.
+Other
+field purpose
+CanChooseDuringCharacterCustomization (Optional) Whether this shirt can be selected on the character customization screen (e.g. when creating a character). Default false.
+CustomFields The custom fields for this entry.
+See also
+Modding:Items for item data in general
+Category: Modding

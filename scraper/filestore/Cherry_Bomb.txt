@@ -1,0 +1,70 @@
+Jump to navigation
+Jump to search
+Cherry Bomb
+Generates a small explosion. Stand back!
+Information
+Source
+Crafting
+Dwarf
+Volcano Dungeon shop
+Rock Crab (40%)
+Duggy (25%)
+Sell Price 50g
+Crafting
+Recipe Source Mining Level 1
+Ingredients
+Copper Ore (4)
+Coal (1)
+The Cherry Bomb is a one-time use explosive item. It damages certain items within its radius. Other items are impervious to its effects.
+Cherry Bombs can be crafted or purchased from the Dwarf (both in the Volcano Dungeon and The Mines) for 450g. They can also be dropped by Rock Crabs or Duggies when slain. Fifteen Cherry Bombs may occasionally be found in treasure rooms in the Skull Cavern. Crates and barrels in the "dangerous" Mines or Skull Cavern can drop one. 3-5 Cherry Bombs may occasionally be found in Supply Crates on the Beach Farm if the player has not upgraded the Farmhouse yet. A Cherry Bomb may occasionally be purchased from the Traveling Cart for 150–1,000g. Twenty Cherry Bombs can be given as the 10th prize from the prize machine in the Mayor's Manor (33% chance). Kent may randomly send one in the mail as a gift.
+If a player has read the Dwarvish Safety Manual, they will take 25% less damage from a Cherry Bomb.
+Contents
+1 Effects
+2 Radius
+3 Gifting
+4 Bundles
+5 Tailoring
+6 Quests
+7 History
+Effects
+Note that the following is not an exhaustive list:
+Rocks and ore/gem nodes will drop their respective ores, gems, etc.
+Mushrooms, Artifact Spots, and foraged minerals will be destroyed.
+Any untilled dirt tiles within a significantly smaller radius will become tilled. In The Mines and Skull Cavern, any items (e.g., clay, artifacts) will be dropped at the same rate as a player using a hoe; elsewhere, nothing will drop (unless the spot in question is the subject of a Secret Note).
+Crafted artisan and refining equipment will be destroyed.
+Heaters will be destroyed.
+Auto-Grabbers will not be destroyed, whether empty or containing items.
+Trees will be destroyed when their health reaches zero (ten Cherry Bombs will knock down a fully grown tree, and five more will destroy the stump). Trees will drop wood, sap, and any seeds they contained.
+Radius
+The Cherry Bomb has a radius of 3 (diameter of 7) tiles.
+Gifting
+Villager Reactions
+Dislike  Abigail •  Alex •  Caroline •  Clint •  Demetrius •  Dwarf •  Elliott •  Emily •  Evelyn •  George •  Gus •  Haley •  Harvey •  Jas •  Jodi •  Kent •  Krobus •  Leah •  Leo •  Lewis •  Linus •  Marnie •  Maru •  Pam •  Penny •  Pierre •  Robin •  Sam •  Sandy •  Sebastian •  Shane •  Vincent •  Willy •  Wizard
+Bundles
+Cherry Bomb is not used in any bundles.
+Tailoring
+A Cherry Bomb can be used in the spool of the Sewing Machine to create the Bomber Jacket. It can be used in dyeing, serving as a red dye at the dye pots located in Emily's and Haley's house, 2 Willow Lane. It can also be used as a red dye when used in the spool of the Sewing Machine with a dyeable clothing item in the feed.
+Quests
+Cherry Bomb is not used in any quests.
+History
+1.4: Ore nodes in the Quarry now drop ore instead of stone. Gem Nodes in the Quarry are now destroyed by cherry bombs. Can now be used in Tailoring.
+1.5: Now sold at the shop in the Volcano Dungeon. Can now be found in Supply Crates on the Beach Farm.
+1.6: Cherry Bomb price from the Dwarf increased from 300g to 450g. Reading the Dwarvish Safety Manual will reduce damage to players. Can obtain from the Prize Machine.
+
+Equipment
+Artisan Bee House • Cask • Cheese Press • Dehydrator • Fish Smoker • Keg • Loom • Mayonnaise Machine • Oil Maker • Preserves Jar
+Refining Bait Maker • Bone Mill • Charcoal Kiln • Crystalarium • Deluxe Worm Bin • Furnace • Geode Crusher • Heavy Furnace • Heavy Tapper • Lightning Rod • Mushroom Log • Ostrich Incubator • Recycling Machine • Seed Maker • Slime Egg-Press • Slime Incubator • Solar Panel • Tapper • Wood Chipper • Worm Bin
+Farming
+Fertilizer Basic Fertilizer • Basic Retaining Soil • Deluxe Fertilizer • Deluxe Retaining Soil • Deluxe Speed-Gro • Hyper Speed-Gro • Quality Fertilizer • Quality Retaining Soil • Speed-Gro • Tree Fertilizer
+Sprinklers Iridium Sprinkler • Quality Sprinkler • Sprinkler
+Other Deluxe Scarecrow • Garden Pot • Rarecrow • Scarecrow
+Fishing
+Bait Bait • Challenge Bait • Deluxe Bait • Magic Bait • Magnet • Targeted Bait • Wild Bait
+Tackle Barbed Hook • Cork Bobber • Curiosity Lure • Dressed Spinner • Lead Bobber • Quality Bobber • Sonar Bobber • Spinner • Trap Bobber • Treasure Hunter
+Other Crab Pot
+Bombs Bomb • Cherry Bomb • Mega Bomb
+Fences Gate • Hardwood Fence • Iron Fence • Stone Fence • Wood Fence
+Storage Big Chest • Big Stone Chest • Chest • Junimo Chest • Mini-Fridge • Stone Chest
+Signs Dark Sign • Stone Sign • Text Sign • Wood Sign
+Misc Anvil • Coffee Maker • Cookout Kit • Deconstructor • Fairy Dust • Farm Computer • Hopper • Mini-Forge • Mini-Jukebox • Mini-Shipping Bin • Sewing Machine • Staircase • Statue Of Blessings • Statue Of The Dwarf King • Telephone • Tent Kit • Tools • Workbench
+Category: Craftable items

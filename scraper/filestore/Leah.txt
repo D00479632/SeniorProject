@@ -1,0 +1,286 @@
+Jump to navigation
+Jump to search
+Leah
+Information
+Birthday  Winter 23
+Lives In Cindersap Forest
+Address Leah's Cottage
+Marriage Yes
+Clinic Visit  Spring 16
+Loved Gifts
+Goat Cheese
+Poppyseed Muffin
+Salad
+Stir Fry
+Truffle
+Vegetable Medley
+Wine
+Contents
+1 Schedule
+2 Relationships
+3 Gifts
+3.1 Love
+3.2 Like
+3.3 Neutral
+3.4 Dislike
+3.5 Hate
+4 Movies & Concessions
+5 Heart Events
+5.1 Two Hearts
+5.2 Four Hearts
+5.3 Six Hearts I
+5.4 Six Hearts II
+5.5 Eight Hearts
+5.5.1 Art Show
+5.5.2 Art Website
+5.6 Ten Hearts
+5.7 Group Ten-Heart Event
+5.8 Fourteen Hearts
+6 Marriage
+7 Quotes
+8 Questions
+9 Quests
+10 Portraits
+11 Timeline
+12 Trivia
+13 History
+“ “Leah lives alone in a small cabin just outside of town. She loves to spend time outside, foraging for a wild meal or simply enjoying the gifts of the season. She’s a talented artist with a large portfolio of work… yet she’s too nervous to display it to the public. Maybe you can give her a little confidence boost?”
+— Dev Update #12
+Leah is a villager who lives in a small cottage outside Pelican Town. She's one of the twelve characters available to marry.
+She spends each morning sculpting inside her cottage. Her home opens at 10am and closes at 6pm, but during Spring, Summer, or Fall, players must first acquire two hearts of friendship before being allowed inside. Players at any friendship level may enter during Winter between 10am and 6pm.
+Schedule
+After the Beach Resort on Ginger Island is unlocked, Leah may randomly spend the day there. After leaving the Island at 6pm, Leah will immediately go home to bed. Leah never visits the Resort on Festival days or her checkup day at Harvey's Clinic.
+Shown below are Leah's schedules prioritized highest to lowest. For example, if it is raining, that schedule overrides all others below it.
+ Spring
+ Summer
+
+ Fall
+
+ Winter
+ Marriage
+Relationships
+Leah lives alone on the outskirts of Pelican Town. She thinks she doesn't have many friends in town. She moved from the city to Stardew Valley to pursue her dream of being an artist. She has an ex-partner, Kel, who will be mentioned in several Heart Events.
+She is friends with Elliott, and will dance with him at the Flower Dance if neither of them are dancing with the player.
+Gifts
+Main article: Friendship
+See also: List of All Gifts
+You can give Leah up to two gifts per week (plus one on her birthday), which will raise or lower her friendship with you. Gifts on her birthday ( 23 Winter) will have 8× effect and show a unique dialogue.
+For loved, liked, or neutral gifts, Leah responds
+“ “Hey, thanks a bunch, <player>! This makes my birthday feel special.”
+For disliked or hated gifts, Leah responds
+“ “Oh... It's for my birthday? ... Thanks.”
+Love
+“ “Oh! This is exactly what I wanted! Thank you!”
+Salad
+“ “ This looks delicious... Thank you! There's nothing quite like a fresh, wild salad.”
+“ “ Oh, wow (Name)! This is exactly what I was craving! How'd you know?”
+Stardrop Tea
+“ “ Oh, wow... I had a sip of this stuff when I was a kid, and I've never forgotten the taste.”
+Truffle
+“ “ Hey, where'd you find that? *sniff*... Mmm... This will be perfect, grated over a fresh pasta! Thank you!”
+Vegetable Medley
+“ “ Mmm... Back in the city, the veggies never tasted this fresh. I love it!”
+Image Name Description Source Ingredients
+All Universal Loves
+Goat Cheese Soft cheese made from goat's milk. Cheese Press
+Poppyseed Muffin It has a soothing effect. Cooking
+Poppy (1)
+Wheat Flour (1)
+Sugar (1)
+Salad A healthy garden salad. Cooking, The Stardrop Saloon
+Leek (1)
+Dandelion (1)
+Vinegar (1)
+Stir Fry Julienned vegetables on a bed of rice. Cooking
+Cave Carrot (1)
+Common Mushroom (1)
+Kale (1)
+Oil (1)
+Truffle A gourmet type of mushroom with a unique taste. Pigs
+Vegetable Medley This is very nutritious. Cooking
+Tomato (1)
+Beet (1)
+Wine Drink in moderation. Keg Any fruit (1)
+Like
+“ “This is a really nice gift! Thank you!”
+Driftwood
+“ “Oh! Thank you! This one has an interesting shape...”
+Image Name Description Source
+All Universal Likes (except:
+Foraged Minerals other than Earth Crystal
+Gems other than Diamond & Prismatic Shard
+Carp Surprise, Cookie, Hashbrowns, Ice Cream, Pancakes, Pink Cake, Pizza, Rice Pudding, Survival Burger, & Tortilla)
+All Eggs (except Void Egg)*
+All Fruit
+All Milk
+Chanterelle A tasty mushroom with a fruity smell and slightly peppery flavor. Foraging - Fall
+Common Mushroom Slightly nutty, with good texture. Foraging - Fall
+Daffodil A traditional spring flower that makes a nice gift. Foraging - Spring
+Dandelion Not the prettiest flower, but the leaves make a good salad. Foraging - Spring
+Driftwood A piece of wood from the sea. Trash
+Ginger This sharp, spicy root is said to increase vitality. Foraging - Ginger Island
+Hazelnut That's one big hazelnut! Foraging - Fall
+Holly The leaves and bright red berries make a popular winter decoration. Foraging - Winter
+Leek A tasty relative of the onion. Foraging - Spring
+Magma Cap A very rare mushroom that lives next to pools of lava. Foraging - Volcano Dungeon
+Morel Sought after for its unique nutty flavor. Foraging - Spring
+Purple Mushroom A rare mushroom found deep in caves. Foraging - The Mines
+Snow Yam This little yam was hiding beneath the snow. Foraging - Winter
+Spring Onion These grow wild during the spring. Foraging - Spring
+Wild Horseradish A spicy root found in the spring. Foraging - Spring
+Winter Root A starchy tuber. Foraging - Winter
+*Note that Dinosaur Eggs are considered Artifacts and not Eggs for gifting purposes.
+Neutral
+“ “Thank you.”
+Image Name Description Source
+All Universal Neutrals (except Bread, Fried Egg, & Truffle)
+Dislike
+“ “Hmm... I guess everyone has different tastes.”
+Image Name Description Source Ingredients
+All Universal Dislikes (except Driftwood, Spring Onion, & Void Egg)
+All Foraged Minerals (except Earth Crystal)
+All Gems (except Diamond & Prismatic Shard)
+Carp Surprise It's bland and oily. Cooking
+Carp (4)
+Cookie Very chewy. Cooking
+Wheat Flour (1)
+Sugar (1)
+Egg (1)
+Fried Egg Sunny-side up. Cooking
+Egg (1)
+Ice Cream It's hard to find someone who doesn't like this. Cooking
+Milk (1)
+Sugar (1)
+Pink Cake There's little heart candies on top. Cooking
+Melon (1)
+Wheat Flour (1)
+Sugar (1)
+Egg (1)
+Rice Pudding It's creamy, sweet, and fun to eat. Cooking
+Milk (1)
+Sugar (1)
+Rice (1)
+Seaweed It can be used in cooking. Fishing
+Survival Burger A convenient snack for the explorer. Cooking
+Bread (1)
+Cave Carrot (1)
+Eggplant (1)
+Tortilla Can be used as a vessel for food or eaten by itself. Cooking
+Corn (1)
+Hate
+“ “This is a pretty terrible gift, isn't it?”
+Image Name Description Source Ingredients
+All Universal Hates (except Seaweed)
+Bread A crusty baguette. Cooking
+Wheat Flour (1)
+Hashbrowns Crispy and golden-brown! Cooking
+Potato (1)
+Oil (1)
+Pancakes A double stack of fluffy, soft pancakes. Cooking
+Wheat Flour (1)
+Egg (1)
+Pizza It's popular for all the right reasons. Cooking
+Wheat Flour (1)
+Tomato (1)
+Cheese (1)
+Void Egg A jet-black egg with red flecks. It's warm to the touch. Void Chicken
+Movies & Concessions
+Main article: Movie Theater
+Love
+Mysterium
+Like
+Natural Wonders: Exploring Our Vibrant World
+The Brave Little Sapling
+The Miracle At Coldstar Ranch
+The Zuzu City Express
+Wumbus
+Dislike
+It Howls In The Rain
+Journey Of The Prairie King: The Motion Picture
+Love
+Panzanella Salad
+Stardrop Sorbet
+Dislike
+Black Licorice
+Fries
+Joja Cola
+JojaCorn
+Nachos
+Personal Pizza
+Popcorn
+Salted Peanuts
+Like
+Everything else
+Heart Events
+Two Hearts
+Enter Leah's Cottage when she's there.
+Details 
+Four Hearts
+Enter Leah's Cottage when she's there.
+Details 
+Six Hearts I
+Leah is at your farmhouse door on any day but rainy between 6 AM and 11:30 AM.
+Details 
+Six Hearts II
+Enter Cindersap Forest when Leah is there, in any season except winter.
+Details 
+Eight Hearts
+Art Show
+If you suggested an art show in her two-heart event, Leah is at your farmhouse door between 6 AM and 8 AM (except in winter) to invite you to her art show. Enter Pelican Town between 3 PM and 5 PM (not necessarily the same day).
+Details 
+Art Website
+If you suggested an art website in her two-heart event, enter Leah's Cottage when she's there.
+Details 
+Ten Hearts
+Enter Cindersap Forest between 11 AM and 4 PM on a sunny day, in any season except winter.
+Details 
+Group Ten-Heart Event
+If the player is unmarried and has given a bouquet to all available bachelorettes, raised friendship with each bachelorette to 10 hearts, and seen each bachelorette's 10-heart event, then entering Haley/Emily's House will trigger a cutscene. If Haley is the final bachelorette you share a Ten-Heart Event with, the Group Ten-Heart Event will be unavoidable as it is triggered immediately afterwards.
+Details 
+This event will trigger only one time per save file. This event will not trigger if you are married or have given a Wilted Bouquet or Mermaid's Pendant to one of the marriage candidates.
+Fourteen Hearts
+Exit the farmhouse between 6am and 8:20am on a sunny day that isn't Sunday and isn't in winter.
+Details 
+Marriage
+Main article: Marriage
+Once married, Leah will move into the farmhouse. Like other marriage candidates, she will add her own room to the right of the bedroom. She'll also set up a small area behind the farmhouse where she'll sometimes go to work on a sculpture.
+On rainy mornings, Leah may offer you a gift she found while "mushroom-hunting": Chanterelle, Common Mushroom, Red Mushroom, or Morel. On mornings when Leah stays indoors all day, she may offer you Coffee or a gift grown in "a little pot out back": Wild Horseradish, Daffodil, Leek, Dandelion, Cactus Fruit, Fiddlehead Fern, Spice Berry, or Sweet Pea. She may also offer you a Salad on days when she stays indoors all day. On New Years' Eve (Winter 28), she'll give you a bottle of Wine.
+Leah's room
+Leah's sculpture
+Quotes
+Regular 
+Events 
+
+
+After Marriage 
+Questions
+Monday
+“ “So why did you become a farmer?”
+I want to make tons of money. (-5 friendship.)
+Leah responds: "Hmm. That seems kind of shallow, doesn't it?"
+It's more "real" than living in the city. (+5 friendship.)
+Leah responds: "That's pretty much the reason I came here, too!"
+To follow in Grandpa’s footsteps (+5 friendship.)
+Leah responds: "That's very sweet to honor your grandfather like that."
+I wanted to escape my old life (+5 friendship.)
+Leah responds: "That's pretty much the reason I came here, too!"
+Quests
+Leah may randomly request an item at the "Help Wanted" board outside Pierre's General Store. The reward is 3x the item's base value and 150 Friendship points.
+Portraits
+Timeline
+Leah's look evolved over the years the game was in development. Here's a timeline showing how ConcernedApe's art and Leah's style changed over the years before the game was launched.
+Trivia
+Leah is left-handed. This can be seen during her animations, such as sculpting or drawing.
+History
+1.0: Introduced.
+1.1: Added sculpture area behind farmhouse if married.
+1.3.27: Added group 10-heart event.
+1.4: Added 14 heart event.
+1.5: Added beach portraits.
+1.6: Added custom gift reactions. Her 10-heart event now only triggers on sunny days. Added winter portraits and more beach portraits. Added Leah Portrait. Fixed bug where player would become stuck if viewing the Six Heart event after entering the Farm from the south.
+Villagers
+Bachelors Alex • Elliott • Harvey • Sam • Sebastian • Shane
+Bachelorettes Abigail • Emily • Haley • Leah • Maru • Penny
+Townspeople Caroline • Clint • Demetrius • Evelyn • George • Gil • Gunther • Gus • Jas • Jodi • Kent • Lewis • Linus • Marlon • Marnie • Morris • Pam • Pierre • Robin • Vincent • Willy
+Other Birdie • Bouncer • Dwarf • Fizz • Governor • Grandpa • Henchman • Junimos • Krobus • Leo • Mr. Qi • Old Mariner • Professor Snail • Sandy • Wizard
+Category: Marriage candidates

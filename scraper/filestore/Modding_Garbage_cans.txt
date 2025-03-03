@@ -1,0 +1,113 @@
+Jump to navigation
+Jump to search
+← Index
+This page explains garbage cans. This is an advanced guide for mod developers.
+Contents
+1 Format
+2 Example new garbage can
+3 Example change for existing garbage can
+4 Changes for C# mods
+Format
+You can add or edit garbage cans on any map by editing the new Data/GarbageCans asset (see examples below).
+The asset consists of a data model with these fields:
+field effect
+DefaultBaseChance The probability that an item will be found when searching garbage cans, as a value between 0 (never) and 1 (always). If the probability check fails, only items that set IgnoreBaseChance can spawn. This can be overridden by the per-garbage-can BaseChance field. Default 0.2.
+BeforeAll
+AfterAll The items to prepend (BeforeAll) or append (AfterAll) to the GarbageCans → Items field for all garbage cans. These work exactly like the items in that field (e.g. subject to the garbage can's base chance).
+GarbageCans The data for individual garbage cans. This consists of a string → model lookup with these fields:
+field effect
+entry key The unique string ID for this garbage can.
+BaseChance (Optional) If set, overrides the root DefaultBaseChance field for this garbage can. Defaults to DefaultBaseChance.
+Items (Optional) The items to try spawning when the player searches the garbage can. The first matching item in BeforeAll + Items + AfterAll will be spawned, and any further items will be ignored. Defaults to none.
+This consists of a list of models with these fields:
+field effect
+common fields See item spawn fields for the generic item fields supported by garbage cans.
+If set to an item query which returns multiple items, one of them will be selected at random.
+IgnoreBaseChance (Optional) Whether this item can spawn even if the BaseChance probability check didn't pass. Default false.
+IsMegaSuccess (Optional) Whether to treat this item as a 'mega success' if it's selected, which plays a special crit sound and bigger animation. Default false.
+IsDoubleMegaSuccess (Optional) Whether to treat this item as an 'double mega success' if it's selected, which plays an explosion sound and dramatic animation. Default false.
+AddToInventoryDirectly (Optional) Whether to add the item to the player's inventory directly, opening an item grab menu if they don't have room in their inventory. If false, the item will be dropped on the ground next to the garbage can instead. Default false.
+CreateMultipleDebris (Optional) Whether to split the spawned item into multiple stacks which each have a stack size of one. This has no effect if AddToInventoryDirectly is enabled. Default false.
+If the garbage can being searched doesn't have its own entry under GarbageCans, the game will just use the BeforeAll and AfterAll fields.
+CustomFields The custom fields for this entry.
+Example new garbage can
+You can add garbage cans using only Content Patcher or SMAPI's content API. For example, this content pack adds a new garbage can entry with the ID Example.ModId_Carpenter:
+{
+    "Format": "2.5.0",
+    "Changes": [
+        {
+            "Action": "EditData",
+            "Target": "Data/GarbageCans",
+            "TargetField": [ "GarbageCans" ],
+            "Entries": {
+                "{{ModId}}_Carpenter": {
+                    "Items": [
+                        // 25% chance of pufferfish
+                        {
+                            "ID": "{{ModId}}_Pufferfish",
+                            "Condition": "RANDOM 0.25",
+                            "ItemId": "(O)128"
+                        },
+
+                        // else guaranteed random House Plant item
+                        {
+                            "ID": "{{ModId}}_RandomHousePlant",
+                            "ItemID": "RANDOM_ITEMS (F) 1376 1390"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}
+Then you'd place an Action: Garbage Example.ModId_Carpenter map tile property to mark a tile as a garbage can using this data.
+Example change for existing garbage can
+You can edit an existing garbage cans using only Content Patcher or SMAPI's content API. For example, this content pack adds pufferfish to the Saloon garbage can, and moves it above the dish of the day.
+Note that this uses TargetField to 'move into' the item list for the saloon, and then treat those items as the entry list being edited. Specifying an ID which isn't in the list will add a new entry, just like when editing a regular list asset.
+{
+    "Format": "2.5.0",
+    "Changes": [
+        {
+            "Action": "EditData",
+            "Target": "Data/GarbageCans",
+            "TargetField": [ "GarbageCans", "Saloon", "Items" ],
+            "Entries": {
+                // 25% chance of pufferfish
+                
+                "{{ModId}}_Pufferfish":{
+                    "ID": "{{ModId}}_Pufferfish",
+                    "Condition": "RANDOM 0.25",
+                    "ItemId": "(O)128"
+                }
+            },
+            "MoveEntries": [
+                { "ID": "{{ModId}}_Pufferfish", "BeforeId": "Base_DishOfTheDay" }
+            ]
+        }
+    ]
+}
+Changes for C# mods
+Previously garbage cans were tracked by Town.garbageChecked, an array of boolean fields. That approach doesn't work in Stardew Valley 1.6, since we're no longer limited to a specific set of garbage cans in the town map. This has been replaced by Game1.netWorldState.Value.CheckedGarbage, which is a hash set of garbage can IDs.
+To migrate code:
+action code in 1.5.6 code in 1.6
+check if a garbage can was searched
+Town town = (Town)Game1.getLocationFromName("Town");
+if (town.garbageChecked[5])
+   ...
+if (Game1.netWorldState.Value.CheckedGarbage.Contains("Saloon"))
+   ...
+mark a garbage can searched
+Town town = (Town)Game1.getLocationFromName("Town");
+town.garbageChecked[5] = true;
+Game1.netWorldState.Value.CheckedGarbage.Add("Saloon");
+To migrate former vanilla trash can IDs:
+position ID in 1.5.6 ID in 1.6
+Near Jodi and Kent's house 0 JodiAndKent
+Near Emily and Haley's house 1 EmilyAndHaley
+Near Lewis' house 2 Mayor
+Near Museum 3 Museum
+Near Clint's blacksmith 4 Blacksmith
+Near the Saloon 5 Saloon
+Near Evelyn and George's house 6 Evelyn
+Near JojaMart 7 JojaMart
+Category: Modding

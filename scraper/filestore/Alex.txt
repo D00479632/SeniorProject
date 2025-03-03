@@ -1,0 +1,270 @@
+Jump to navigation
+Jump to search
+Alex
+Information
+Birthday  Summer 13
+Lives In Pelican Town
+Address 1 River Road
+Family
+Evelyn (Grandmother)
+George (Grandfather)
+Marriage Yes
+Clinic Visit  Summer 16
+Loved Gifts
+Complete Breakfast
+Jack Be Nimble, Jack Be Thick
+Salmon Dinner
+Contents
+1 Schedule
+2 Relationships
+3 Gifts
+3.1 Love
+3.2 Like
+3.3 Neutral
+3.4 Dislike
+3.5 Hate
+4 Movies & Concessions
+5 Heart Events
+5.1 Two Hearts
+5.2 Four Hearts
+5.3 Five Hearts
+5.4 Six Hearts
+5.5 Eight Hearts
+5.6 Ten Hearts
+5.7 Group Ten-Heart Event
+5.8 Fourteen Hearts
+6 Marriage
+7 Quotes
+8 Questions
+9 Quests
+10 Portraits
+11 Timeline
+12 Trivia
+13 History
+“ “Alex loves sports and hanging out at the beach. He is quite arrogant and brags to everyone that he is going to be a professional athlete. Is his cockiness just a facade to mask his crushing self-doubt? Is he using his sports dream to fill the void left by the disappearance of his parents? Or is he just a brazen youth trying to 'look cool?'”
+— Dev Update #12
+Alex is a villager who lives in the house southeast of Pierre's General Store. He's one of the twelve characters available to marry.
+Schedule
+During Spring and Fall, Alex exits his home at 8am unless it is raining. He stands by the tree to the right of his house, playing with his gridball, and he moves towards the left of the fenced-in area in the afternoon.
+During Summer, he can be found on the beach in the morning and running the Ice Cream Stand to the left of the museum in the afternoon. On the 16th of Summer, he has an appointment at the clinic.
+During Winter, he works out at the Spa almost every day. When he is not there, he will be at his house.
+After the Beach Resort on Ginger Island is unlocked, Alex may randomly spend the day there. After leaving the Island at 6pm, Alex will immediately go home to bed. Alex never visits the Resort on Festival days or his checkup day at Harvey's Clinic.
+Shown below are Alex's schedules prioritized highest to lowest. For example, if it is raining, that schedule overrides all others below it.
+ Spring
+ Summer
+ Fall
+ Winter
+ Marriage
+Relationships
+Alex lives with his grandparents, George and Evelyn. He is friends with Haley, and will dance with her at the Flower Dance if neither of them are dancing with the player. He also has a dog named Dusty. You can find Dusty's name from Pam or from Alex in a cutscene.
+Parents 
+Gifts
+Main article: Friendship
+See also: List of All Gifts
+You can give Alex up to two gifts per week (plus one on his birthday), which will raise or lower his friendship with you. Gifts on his birthday ( 13 Summer) will have 8× effect and show a unique dialogue.
+For loved gifts, Alex responds
+“ “Aw yeah, that's the good stuff... Thanks for the birthday gift, <player>.”
+For liked gifts, Alex responds
+“ “You remembered my birthday? I'm impressed. Thanks.”
+“ “Oh, is it my birthday today? I guess it is. Thanks. This is nice.”
+For neutral gifts, Alex responds
+“ “For my birthday? Thanks.”
+For disliked or hated gifts, Alex responds
+“ “What the...? Uh, I dunno what it's like where you grew up, but to me, this is trash.”
+Love
+“ “Hey, awesome! I love this stuff!”
+Jack Be Nimble, Jack Be Thick
+“ “Aw, yeah... I've been looking for this one. It's supposed to be full of tips for bulking up. Rule number one... Eat a ton of eggs! Hah, no problem! Thanks!”
+Stardrop Tea
+“ “Whoa... this is great. Thanks!”
+Image Name Description Source Ingredients
+All Universal Loves
+Complete Breakfast You'll feel ready to take on the world! Cooking
+Fried Egg (1)
+Milk (1)
+Hashbrowns (1)
+Pancakes (1)
+Jack Be Nimble, Jack Be Thick Gain +1 Defense. Books
+Salmon Dinner The lemon spritz makes it special. Cooking
+Salmon (1)
+Amaranth (1)
+Kale (1)
+Like
+“ “This is cool! Thanks.”
+Any Egg (from Chickens)
+“ “Hey, thanks. Eggs are great for bulking up. *crack*... *sluuurp*... Mmmm. Now that's what I call a snack.”
+Dinosaur Egg
+“ “Now that's what I call an egg! Imagine the size of the omelet...”
+Duck Egg
+“ “Mmm... Duck egg... Rich and creamy. *crack*... *slurp*. Ahhhh...”
+Field Snack
+“ “*crunch*... Mmm... Nuts. That hits the spot. Thanks, (Name)!”
+Golden Egg
+“ “Hehe... Keep giving me these every day, and I'll be able to retire at thirty!”
+Ostrich Egg
+“ “Whoaa... It's so heavy I could use it for bicep curls. I'll be slurping on this for a week! Hah hah!”
+Parrot Egg
+“ “Can you eat this? I guess there's only one way to find out...”
+Image Name Description Source Ingredients
+All Universal Likes
+All Eggs (except Void Egg)*
+Dinosaur Egg A giant dino egg... The entire shell is still intact! Artifacts
+Field Snack A quick snack to fuel the hungry forager. Crafting
+Acorn (1)
+Maple Seed (1)
+Pine Cone (1)
+Parrot Egg Summons a level X parrot companion, who grants you a Y chance to find gold coins when slaying monsters. Trinkets
+*Note that Dinosaur Eggs are considered Artifacts and not Eggs for gifting purposes.
+Neutral
+“ “Thanks!”
+Frog Egg
+“ “Umm... I know I'm pretty big on eggs... But this isn't what I meant... Oh well... Down the hatch! *gulp*”
+Image Name Description Source
+All Universal Neutrals (except Books)
+All Fruit (except Fruit Tree Fruit & Salmonberry)
+All Milk
+Chanterelle A tasty mushroom with a fruity smell and slightly peppery flavor. Foraging - Fall
+Common Mushroom Slightly nutty, with good texture. Foraging - Fall
+Daffodil A traditional spring flower that makes a nice gift. Foraging - Spring
+Dandelion Not the prettiest flower, but the leaves make a good salad. Foraging - Spring
+Frog Egg Summons a hungry frog companion. Trinkets
+Ginger This sharp, spicy root is said to increase vitality. Foraging - Ginger Island
+Hazelnut That's one big hazelnut! Foraging - Fall
+Leek A tasty relative of the onion. Foraging - Spring
+Magma Cap A very rare mushroom that lives next to pools of lava. Foraging - Volcano Dungeon
+Morel Sought after for its unique nutty flavor. Foraging - Spring
+Purple Mushroom A rare mushroom found deep in caves. Foraging - The Mines
+Snow Yam This little yam was hiding beneath the snow. Tilling - Winter
+Winter Root A starchy tuber. Tilling - Winter
+Dislike
+“ “Um... Okay. Thanks.”
+Any Book (except Jack Be Nimble, Jack Be Thick)
+“ “Uhhh... Reading? Yeah, um... I guess I can give it a try.”
+Void Egg
+“ “Oh... um... I usually like eggs, but this one looks evil.”
+Image Name Description Source
+All Universal Dislikes (except Dinosaur Egg, Field Snack, Frog Egg, & Parrot Egg)
+All Books (except Jack Be Nimble, Jack Be Thick)
+Salmonberry A spring-time berry with the flavor of the forest. Foraging - Spring
+Wild Horseradish A spicy root found in the spring. Foraging - Spring
+Hate
+“ “Are you serious? This is garbage.”
+Image Name Description Source
+All Universal Hates
+Holly The leaves and bright red berries make a popular winter decoration. Foraging - Winter
+Quartz A clear crystal commonly found in caves and mines. Foraging - The Mines
+Movies & Concessions
+Main article: Movie Theater
+Love
+It Howls In The Rain
+Wumbus
+Like
+Journey Of The Prairie King: The Motion Picture
+Mysterium
+The Brave Little Sapling
+The Miracle At Coldstar Ranch
+The Zuzu City Express
+Dislike
+Natural Wonders: Exploring Our Vibrant World
+Love
+Salmon Burger
+Stardrop Sorbet
+Dislike
+Black Licorice
+Cotton Candy
+Jawbreaker
+Joja Cola
+JojaCorn
+Rock Candy
+Sour Slimes
+Like
+Everything else
+Heart Events
+Two Hearts
+On a sunny Summer day, visit the Beach when Alex is there.
+Details 
+Four Hearts
+Enter town between 9am and 4pm.
+Details 
+Five Hearts
+Enter Alex's house when he's there.
+Details 
+Six Hearts
+Enter Alex's house when he's there.
+Details 
+Eight Hearts
+On a sunny day, visit the Beach when Alex is there. He is only scheduled to go to the beach in Summer, but may pass by on the way to the Ginger Island resort in any season after it is completed.
+Details 
+Ten Hearts
+Alex will send you a letter to meet him at the Saloon after dark. After receiving the letter, enter the Saloon between 7pm and 10pm.
+Details 
+Group Ten-Heart Event
+If the player is unmarried and has given a bouquet to all available bachelors, raised friendship with each bachelor to 10 hearts, and seen each bachelor's 10-heart event, then entering The Stardrop Saloon will trigger a cutscene. If Alex is the final bachelor you share a Ten-Heart Event with, the Group Ten-Heart Event will be unavoidable as it is triggered immediately afterwards.
+Details 
+This event will trigger only one time per save file. This event will not trigger if you are married or have given a Wilted Bouquet or Mermaid's Pendant to one of the marriage candidates.
+Fourteen Hearts
+Exit the Farmhouse in year 2+ between 6am and 8:20am on any day other than Sunday. You must have 5,000g available.
+Details 
+Marriage
+Main article: Marriage
+Once married, Alex will move into the farmhouse. Like other marriage candidates, he will add his own room to the right of the bedroom. He'll also setup a workout space behind the farmhouse where he'll sometimes go to lift weights.
+On rainy nights, Alex may offer you dinner: Survival Burger, Dish O' The Sea, Fried Eel, Crispy Bass, or Baked Fish. On days when he stays inside the farmhouse all day, he may make you breakfast: Omelet, Hashbrowns, or Pancakes.
+Alex's room
+Alex lifts weights in his outdoor space
+Quotes
+Regular 
+Events 
+After Marriage 
+Questions
+Wednesday
+Male players:
+"I'd ask you to throw the ball around, but you don't really seem like the sports type."
+Female players:
+“If you weren’t a girl I’d ask you to play catch.”
+I'm fine just watching you from a distance. (No effect on friendship.)
+Alex responds: "Yeah, some people just aren't made for sports."
+I want to play catch with you! (+15 friendship.)
+Alex responds: "Really? I guess I underestimated you. My arm's a little sore, but maybe next time."
+(angry) What's that supposed to mean? (No effect on friendship.)
+Alex responds: "Uh...Nevermind."
+
+Summer, Wednesday
+Male players:
+"Hey farm guy, I've got a question for you. Do you think I'll ever turn pro?"
+Female players:
+"Hey farm girl, I've got a question for you. Do you think I'll ever turn pro?"
+You're destined to be a sports legend (+30 friendship.)
+Alex responds: "Hey, Now that's what I'm talking about!"
+Maybe if you practice a lot (No effect on friendship.)
+Alex responds: "Yeah, well I'm so good I'm not going to have to practice all that much."
+No, you'll most likely fail and become a salesman (-30 friendship.)
+Alex responds: "That's insane. You're just jealous that I'm talented and popular and you're not. Get away from me."
+
+Fall, Wednesday
+"Do you think ladies like my haircut? / What do you think about my haircut?"
+It looks very fashionable. (+30 friendship.)
+Alex responds: "Yeah, I know. That's why I have it like this."
+It looks like some kind of fungal growth. (-30 friendship.)
+Alex responds: "Yeah, right. You're just jealous that I look so good."
+Quests
+Alex may randomly request an item at the "Help Wanted" board outside Pierre's General Store. The reward is 3x the item's base value and 150 Friendship points.
+Portraits
+Timeline
+Alex's look evolved over the years the game was in development. Here's a timeline showing how ConcernedApe's art and Alex's style changed over the years before the game was launched.
+Trivia
+At one point before the game was released, Alex was named "Josh".
+It is possible to trigger Alex's eight-heart event in any season after repairing Willy's Boat if you follow him on his way to Ginger Island.
+History
+1.0: Introduced.
+1.1: Added workout area behind farmhouse if married.
+1.3.27: Added group 10-heart event.
+1.4: Added 14 heart event.
+1.5: Added beach portraits. Eight-heart event can now be triggered on Ginger Island.
+1.6: Added custom gift reactions. Now likes Dinosaur Egg and Field Snack. Added winter portraits and more beach portraits. Added Alex Portrait.
+1.6.15: Updated gridball portrait to have 5 fingers instead of 4.
+Villagers
+Bachelors Alex • Elliott • Harvey • Sam • Sebastian • Shane
+Bachelorettes Abigail • Emily • Haley • Leah • Maru • Penny
+Townspeople Caroline • Clint • Demetrius • Evelyn • George • Gil • Gunther • Gus • Jas • Jodi • Kent • Lewis • Linus • Marlon • Marnie • Morris • Pam • Pierre • Robin • Vincent • Willy
+Other Birdie • Bouncer • Dwarf • Fizz • Governor • Grandpa • Henchman • Junimos • Krobus • Leo • Mr. Qi • Old Mariner • Professor Snail • Sandy • Wizard
+Category: Marriage candidates

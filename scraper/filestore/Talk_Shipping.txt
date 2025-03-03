@@ -1,0 +1,17 @@
+Jump to navigation
+Jump to search
+This talk page is for discussing Shipping.
+Sign and date your posts by typing four tildes (~~~~).
+Put new text below old text.
+Be polite.
+Assume good faith.
+Don't delete discussions.
+Update
+Hey! I don't really know how to edit very well, but after the 1.6 update several items have been added to the items shipped collection that this page hasn't been updated to reflect yet. The new items, in order, are smoked fish, mystic syrup, raisins, dried fruit, dried mushroom, carrot, summer squash, broccoli, and powder melon. Hopefully someone more experienced at editing these pages can help update this because even after reading through the help editing page I'm pretty clueless about what to do. PastelPillBottle (talk) 01:13, 13 May 2024 (UTC)
+Clam
+In v1.6, Clam is officially considered by the game to be a fish, which it was not earlier. The savefiles have always registered as shipped all items needed for the "shipped" collection, which must be fulfilled before the Full Shipment achievement is given. But that "shipped" list has also always included all shipped fish, which were not needed for the collection. Why? I expect Concerned Ape knows, but it's never seemed too important. With the reclassification of Clam in v1.6, there is now a question of the game's intent. Clam always was required for the shipping collection before, not being a fish. But in V1.6, it is now the only fish that is required. Full Shipment will not be given without it. However, the website has removed Clam from the "shipped" collection, probably because it is now a fish, and fish were never required before. This leaves 154 items for the collection. But MouseyPounds' Stardew Checkup aid correctly lists Clam as needed.
+I say "correct" only to confirm current v1.6.8 game behavior. I can't tell if this is a bug or an intention. But the article does not match game behavior right now, and some checking up needs to be done. Sorry, I don't have the means. Giles (talk) 00:54, 12 October 2024 (UTC)
+Clam is not required in v1.6. I guess it's possible if you shipped it in a savefile before the 1.6 release that it stays there. But on a new playthrough, it doesn't appear there. User314159 (talk) 03:29, 12 October 2024 (UTC)
+No, sorry. I'm on a playthrough that's created new in v1.6.8. One of us has misfigured. Let me see if it was me, but this will take some time, because I won't be doing it except as part of a reset I'm planning for a little later. Giles (talk) 20:48, 12 October 2024 (UTC)
+Bingo! I misfigured while correcting other matters in my tracking system. That means there's a bug in MouseyPounds' Stardew Checkup aid, which I often use for reference. (He still counts Clam for the achievement.) If you know him, please let him know. I don't use the forums. Giles (talk) 22:45, 12 October 2024 (UTC)
+Category: Talk pages

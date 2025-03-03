@@ -1,0 +1,36 @@
+Jump to navigation
+Jump to search
+Stardrop Tea
+A very special gift that would delight anyone.
+Information
+Source Mayor's Manor • Golden Fishing Treasure Chests • Raccoon
+Energy Inedible
+Sell Price 77g
+Stardrop Tea is an item that can be obtained from the Prize Machine in the Mayor's Manor or randomly found in Golden Fishing Treasure Chests (7% chance).[1] It is also a possible reward for quests beyond the 5th one from the Raccoon. One Stardrop Tea is the reward for completing the Helper's Bundle on the Bulletin Board (Remixed).
+Stardrop Tea can be gifted for 250 friendship points (1 heart). If given as a birthday gift or during the Feast of the Winter Star, it is worth 750 friendship points (3 hearts). Stardrop Tea does not count towards the daily or weekly gift limits, and can be freely gifted even if the limits have been reached. Players can also give multiple Stardrop Teas to the same person on a single day.[2]
+Stardrop Tea does not count as a loved gift for the Qi's Kindness quest.
+Contents
+1 Gifting
+2 Bundles
+3 Tailoring
+4 Quests
+5 Tips
+6 References
+7 History
+Gifting
+Villager Reactions
+Love  Abigail •  Alex •  Caroline •  Clint •  Demetrius •  Dwarf •  Elliott •  Emily •  Evelyn •  George •  Gus •  Haley •  Harvey •  Jas •  Jodi •  Kent •  Krobus •  Leah •  Leo •  Lewis •  Linus •  Marnie •  Maru •  Pam •  Penny •  Pierre •  Robin •  Sam •  Sandy •  Sebastian •  Shane •  Vincent •  Willy •  Wizard
+Bundles
+Stardrop Tea is not used in any bundles.
+Tailoring
+Stardrop Tea is not used in any tailoring. It can be used in dyeing, serving as a purple dye at the dye pots, located in Emily's and Haley's house, 2 Willow Lane. It can also be used as an iridium dye when used in the spool of the Sewing Machine with a dyeable clothing item in the feed.
+Quests
+Stardrop Tea is not used in any quests.
+Tips
+Stardrop Tea can be gifted alongside another item on a villager's birthday. Both will benefit from the increased friendship point gain.
+References
+↑ See FishingRod::openTreasureMenuEndFunction in the game code.
+↑ See NPC::receiveGift in the game code.
+History
+1.6: Introduced.
+Category: Special items

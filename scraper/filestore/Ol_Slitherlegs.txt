@@ -1,0 +1,33 @@
+Jump to navigation
+Jump to search
+Ol' Slitherlegs
+You will now run a lot faster through grass and crops.
+Information
+Source Bookseller
+Sell Price 1,000g
+Ol' Slitherlegs is a power book that can be purchased from the Bookseller for 25,000g.
+The first reading grants the player a power that reduces their speed penalty while moving through grass and crops by ≈67%.[1] Once read, it can be found in the Player's Menu on the Special Items & Powers tab. Each subsequent reading gives the player 20 XP in each of the 5 skills.
+Contents
+1 Gifting
+2 Bundles
+3 Tailoring
+4 Quests
+5 References
+6 History
+Gifting
+Villager Reactions
+Love  Penny
+Like  Elliott
+Neutral  Abigail •  Caroline •  Clint •  Demetrius •  Dwarf •  Emily •  Evelyn •  George •  Gus •  Haley •  Harvey •  Jas •  Jodi •  Kent •  Krobus •  Leah •  Leo •  Lewis •  Linus •  Marnie •  Maru •  Pam •  Pierre •  Robin •  Sam •  Sandy •  Sebastian •  Shane •  Vincent •  Willy •  Wizard
+Dislike  Alex
+Bundles
+Ol' Slitherlegs is not used in any bundles.
+Tailoring
+Ol' Slitherlegs is not used in any tailoring. It can be used in dyeing, serving as a green dye at the dye pots located in Emily's and Haley's house, 2 Willow Lane. It can also be used as a green dye when used in the spool of the Sewing Machine with a dyeable clothing item in the feed.
+Quests
+Ol' Slitherlegs is not used in any quests.
+References
+↑ See Grass::doCollisionAction and HoeDirt::doCollisionAction in the game code.
+History
+1.6: Introduced.
+Category: Books

@@ -1,0 +1,40 @@
+Jump to navigation
+Jump to search
+This talk page is for discussing Farm Maps.
+Sign and date your posts by typing four tildes (~~~~).
+Put new text below old text.
+Be polite.
+Assume good faith.
+Don't delete discussions.
+Contents
+1 Correction needed on farm page
+2 Issue with images
+3 Unused images
+4 update in 1.6.9
+5 Tillable and buildable tiles
+Correction needed on farm page
+Sorry this is my first time ever "contributing" on a wiki, in the end I just wanted to report an error:
+On the [Forest map](https://stardewvalleywiki.com/Farm_Maps#Forest) it is written the following:
+> The number of tillable tiles on this map is 1413, with 1490 non-tillable but build-able tiles.
+I think there is a need for a recount.
+Hideman (talk) 07:49, 6 June 2022 (UTC)
+Issue with images
+When I try to bring up the image for the Hilltop Farm or the Beach Farm, I only see part of the image. The thumbnail is fine, it's only when I click through that I have a problem. And the images for the other farm types are fine. Anybody else seeing this? Zendowolf (talk) 00:46, 5 July 2022 (UTC)
+Yes, I've told the server people about it. Still waiting for some action, I'm afraid. margotbean (talk) 14:58, 5 July 2022 (UTC)
+Any new info or action? Some of the images are still broken in that regard, and they don't load properly in the viewer. Seem to be corruped. Blushock (talk) 06:07, 17 January 2023 (UTC)
+Yes, I pester the server people regularly about it. They've applied some fixes, but finding the root cause seems to be elusive. margotbean (talk) 07:48, 17 January 2023 (UTC)
+Unused images
+For whatever reason, when I click on the files Standard Farm, Riverland Farm, Forest Farm, Hill-top Farm, or Wilderness Farm, it does not say that any pages use this file when they actually are in a page. 9000 (talk) 8:40, 14 July 2022 (UTC)
+update in 1.6.9
+Sorry I’m non-native in English, so l can’t determine what this sentence exactly means;
+In version history on 1.6.9
+Fixed forest fish no longer catchable on the four corners farm
+Which this means, “now we can catch forest fish correctly in 4 corners farm” or “now we become not be able to catch forest fish in 4 corners farm”? Mmtraa7 (talk) 13:46, 15 November 2024 (UTC)
+It means "now we can catch forest fish correctly on the 4-corners farm" margotbean (talk) 14:33, 15 November 2024 (UTC)
+Thank you very much! Mmtraa7 (talk) 17:43, 15 November 2024 (UTC)
+Tillable and buildable tiles
+Hello, obligatory apologies for being a first time wiki-editor, but I have taken it upon myself to recalculate the number of tillable tiles as well as non-tillable-but-buildable tiles for all of the maps, seeing as the numerical information provided on the wiki is mostly unsubstantiated. I have come to two conclusions in this regard:
+94 buildable tiles on every map are always going to be occupied by the starter buildings which cannot be removed, but can be moved around freely
+A farm's total tilled soil can easily be displayed, thus calculated, using the Farm Computer
+Could this be relevant information to add under a potential "Notes" heading? SwagChild (talk) 14:27, 10 January 2025 (UTC)
+Category: Talk pages

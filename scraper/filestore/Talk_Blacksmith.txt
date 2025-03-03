@@ -1,0 +1,13 @@
+Jump to navigation
+Jump to search
+This talk page is for discussing Blacksmith.
+Sign and date your posts by typing four tildes (~~~~).
+Put new text below old text.
+Be polite.
+Assume good faith.
+Don't delete discussions.
+Version 1.6.3?
+A history note was added almost 24 hours ago referring to a change in v1.6.3 but so far the version history page has no such listing. It currently ends with v1.6.2. So, is there a 1.6.3 coming, and was the behavior change in that revision, or in an earlier revision? Giles (talk) 19:57, 24 March 2024 (UTC)
+Disclaimer: wasn't me who added it, I did read that ConcernedApe tweeted that "You can now access Clint’s shop and geode service while your tool is being upgraded" will be included in an upcoming 1.6.3 patch.
+I believe it was an official tweet from ConcernedApe, mentioning that it will be possible to purchase from the Blacksmith and process geodes (and now mystery boxes) while a tool is being upgraded. I think this comes in version 1.6.3. Brandon Echols (talk) 05:30, 26 March 2024 (UTC)
+Category: Talk pages

@@ -1,0 +1,46 @@
+Jump to navigation
+Jump to search
+Weeds
+...
+Information
+Location The Farm • Pelican Town • Cindersap Forest • The Mines • Railroad • Mutant Bug Lair • Ginger Island
+Season  Spring •  Summer •  Fall
+Energy Inedible
+Sell Price Cannot be sold
+Weeds are wild plants which are spawned randomly and may spread if not cleared. Weeds have a 50% chance to drop 1 Fiber when cut with a Scythe, Axe, Pickaxe, Hoe, Dagger or Sword, or blown up by a bomb. If a weed does not drop Fiber, there is a 5% chance it will drop Mixed Seeds. If a weed drops neither Fiber nor Mixed Seeds during Summer, there is a 5% chance it will drop Mixed Flower Seeds.[1] Both the Mixed Seeds and Mixed Flower Seeds chances are increased to 9% if the player has read the Raccoon Journal.
+Weeds in the Ginger Island Jungle have an 8% chance to drop Taro Tubers and a 1% chance to drop a Mummified Frog. These weeds also appear rarely in the Dangerous mines.
+Cutting weeds with weapons enchanted with "Haymaker" has an extra 50% chance of dropping a fiber, and 33% chance of hay.
+There's also a 0.001% chance to find a Living Hat when cutting weeds.
+Any weeds above ground disappear in Winter.
+Contents
+1 Spawning and Spreading
+2 Special Weeds
+3 Trivia
+4 References
+5 History
+Spawning and Spreading
+Lone weeds will spawn randomly on The Farm and on Ginger Island West. They can appear on any tillable tile. On The Farm, this only occurs on day 1 of each season (except Winter)[2]. On Ginger Island, this only occurs on Mondays[3]. When the Gold Clock is placed, it prevents weeds from appearing on the farm and the Ginger Island farm.
+Besides the farms, other areas in the game will also spawn weeds without being restricted by the Gold Clock. Weeds will spawn in specific areas of Pelican Town, Cindersap Forest and the Railroad at the start of the game, and each Spring 1. Weeds may spawn everyday in the Mutant Bug Lair and Ginger Island jungle, but in very limited quantities. Weeds in The Mines respawn when the player returns to the top of the mines (i.e., floor 0, where the Dwarf is).
+If weeds aren't cleared, they may multiply and spread to an adjacent tillable tile[4]. This can happen on any day, but especially on day 1 of each season, when it is raining, and during the Summer. Spreading weeds can destroy items placed by the player, including crafted items and furniture – Fences and Chests are the only items placed by the player that cannot be destroyed. If an item was destroyed, a pop-up message will be displayed at the lower left of the screen when the player wakes up the next morning; the message will not say exactly which item was destroyed.
+Weeds prevent the growth of Fruit Trees if they spawn or spread to the 3x3 grid around the tree. If this occurs, a pop-up message will be displayed at the lower left of the screen when the player wakes up the next morning indicating which type of fruit tree couldn't grow.
+Only fences, chests, grass, and fixed objects such as buildings and trees stop the natural spread of weeds. Flooring/paths and tilled soil do not stop the spread.
+Special Weeds
+The weed shown below, which can be found only on the Forest and Four Corners maps, will always drop 1 Mixed Seeds when cut. Each night, six random objects on the farm are chosen. Any of them that are weeds (and are in the upper-left quadrant if in the Four Corners map), are replaced by these special weeds.[2]
+Special Weed
+(Spring, Summer, Fall)
+During the Green Rain event, special weeds are spawned and have a 10% chance to drop Moss when cut.[1] The event also spawns Large Weeds that drop 2-3 Moss and 2-3 Fiber when destroyed. Large Weeds have a 5% chance to drop a Mossy Seed as well.[5]
+Green Rain Weed variants
+Large Weed variant 1
+Large Weed variant 2
+Trivia
+There's an unimplemented quest in the game code to destroy all weeds in Pelican Town.
+References
+↑ 1.0 1.1 See StardewValley.Object::cutWeed
+↑ 2.0 2.1 See StardewValley.Farm::DayUpdate
+↑ See StardewValley.IslandWest::DayUpdate
+↑ See StardewValley.GameLocation::spawnWeedsAndStones
+↑ See ResourceClump::destroy in the game code.
+History
+1.4: Added Living Hat to drop pool. Removed bug that caused a weeds item to spawn when breaking a Mushroom Tree seed. Weeds (and other debris) now spawn in Cindersap Forest & Pelican Town each Spring 1.
+1.6: During the Green Rain event, Moss can now be dropped from some weeds. During the summer, Mixed Flower Seeds can be dropped. The Raccoon Journal increases drop chance for Mixed Seeds and Mixed Flower Seeds by 4%. There is now a chance for weeds to become Large Weeds.
+Category: Foraging

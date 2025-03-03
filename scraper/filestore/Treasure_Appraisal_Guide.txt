@@ -1,0 +1,38 @@
+Jump to navigation
+Jump to search
+Treasure Appraisal Guide
+You will fetch a better price when selling artifacts.
+Information
+Source Artifact Troves • Bookseller
+Sell Price 500g
+The Treasure Appraisal Guide is a power book that can be obtained by opening Artifact Troves (≈3.57% chance).[1] It can also be purchased from the Bookseller for 20,000g starting in Year 3 (≈9% chance to appear).[2]
+The first reading grants the player a power that triples the sell price of all artifacts.[3] Once read, it can be found in the Player's Menu on the Special Items & Powers tab. Each subsequent reading gives the player 20 XP in each of the 5 skills.
+Contents
+1 Gifting
+2 Bundles
+3 Tailoring
+4 Quests
+5 Trading
+6 References
+7 History
+Gifting
+Villager Reactions
+Love  Penny
+Like  Elliott
+Neutral  Abigail •  Caroline •  Clint •  Demetrius •  Dwarf •  Emily •  Evelyn •  George •  Gus •  Haley •  Harvey •  Jas •  Jodi •  Kent •  Krobus •  Leah •  Leo •  Lewis •  Linus •  Marnie •  Maru •  Pam •  Pierre •  Robin •  Sam •  Sandy •  Sebastian •  Shane •  Vincent •  Willy •  Wizard
+Dislike  Alex
+Bundles
+Treasure Appraisal Guide is not used in any bundles.
+Tailoring
+Treasure Appraisal Guide is not used in any tailoring. It can be used in dyeing, serving as an orange dye at the dye pots located in Emily's and Haley's house, 2 Willow Lane. It can also be used as a brown dye when used in the spool of the Sewing Machine with a dyeable clothing item in the feed.
+Quests
+Treasure Appraisal Guide is not used in any quests.
+Trading
+One Treasure Appraisal Guide can be traded to the Bookseller for either 3 Spicy Eel or 3 Artifact Troves, provided the player has already obtained the power from this book.
+References
+↑ See Data\Objects.xnb in the game files.
+↑ See Data\Shops.xnb in the game files.
+↑ See Object::getPriceAfterMultipliers in the game code.
+History
+1.6: Introduced.
+Category: Books

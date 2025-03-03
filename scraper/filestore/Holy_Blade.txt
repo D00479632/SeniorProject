@@ -1,0 +1,33 @@
+Jump to navigation
+Jump to search
+Holy Blade
+It feels hopeful to wield.
+Information
+Type: Sword
+Level: 7
+Source: The Mines (level 80+)
+Damage: 20-27
+Critical Strike Chance: .02
+Stats:
+Speed (+4)
+Defense (+2)
+Crusader
+Adventurer's Guild
+Purchase Price: Not Sold
+Sell Price: 350g
+The Holy Blade is a sword, obtained from the Mines. When wielded, it grants +4 Speed and +2 Defense and is enchanted with Crusader.
+Trivia
+The Holy Blade was thought to be unobtainable until several years after the game's release.[1] Since 1.6, the Holy Blade may be found on the Mines starting from level 80.
+References
+↑ ConcernedApe's reddit post
+History
+1.0: Existed in the game's code, but unobtainable.
+1.6: Officially introduced in-game.
+
+Weapons
+Swords Bone Sword • Claymore • Cutlass • Dark Sword • Dragontooth Cutlass • Dwarf Sword • Forest Sword • Galaxy Sword • Haley's Iron • Holy Blade • Infinity Blade • Insect Head • Iron Edge • Lava Katana • Leah's Whittler • Meowmere • Neptune's Glaive • Obsidian Edge • Ossified Blade • Pirate's Sword • Rusty Sword • Silver Saber • Steel Falchion • Steel Smallsword • Tempered Broadsword • Templar's Blade • Wooden Blade • Yeti Tooth
+Daggers Abby's Planchette • Broken Trident • Burglar's Shank • Carving Knife • Crystal Dagger • Dragontooth Shiv • Dwarf Dagger • Elf Blade • Elliott's Pencil • Galaxy Dagger • Infinity Dagger • Iridium Needle • Iron Dirk • Shadow Dagger • Wicked Kris • Wind Spire
+Clubs Alex's Bat • Dragontooth Club • Dwarf Hammer • Femur • Galaxy Hammer • Harvey's Mallet • Infinity Gavel • Kudgel • Lead Rod • Maru's Wrench • Penny's Fryer • Seb's Lost Mace • Sam's Old Guitar • The Slammer • Wood Club • Wood Mallet
+Slingshots Slingshot • Master Slingshot • Explosive Ammo
+Unobtainable Weapons Galaxy Slingshot • Rapier
+Category: Swords

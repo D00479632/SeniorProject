@@ -1,0 +1,41 @@
+Jump to navigation
+Jump to search
+Treasure Totem
+Use on diggable terrain to summon a ring of treasure spots.
+Information
+Source Crafting
+Sell Price 20g
+Recipe
+Recipe Source(s)
+Foraging Mastery
+Ingredients
+Hardwood (5)
+Mystic Syrup (1)
+Moss (10)
+The Treasure Totem is a crafted item that spawns up to 16 Artifact Spots in a circle surrounding the player when used on tillable ground outdoors. The circle spawns 3 spaces each to the north, east, south, and west, as well as 1 space each to the northeast, southeast, southwest, and northwest. If an obstacle blocks any of the 16 tiles, that Artifact Spot will not appear. The crafting recipe is obtained from claiming Foraging Mastery.
+Contents
+1 Gifting
+2 Bundles
+3 Tailoring
+4 Quests
+5 Tips
+6 History
+Gifting
+Villager Reactions
+Hate  Abigail •  Alex •  Caroline •  Clint •  Demetrius •  Dwarf •  Elliott •  Emily •  Evelyn •  George •  Gus •  Haley •  Harvey •  Jas •  Jodi •  Kent •  Krobus •  Leah •  Leo •  Lewis •  Linus •  Marnie •  Maru •  Pam •  Penny •  Pierre •  Robin •  Sam •  Sandy •  Sebastian •  Shane •  Vincent •  Willy •  Wizard
+Bundles
+Treasure Totem is not used in any bundles.
+Tailoring
+A Treasure Totem can be used in the spool of the Sewing Machine with Cloth in the feed to create the Totem Mask. It can be used in dyeing, serving as an orange dye at the dye pots located in Emily's and Haley's house, 2 Willow Lane. It can also be used as a brown dye when used in the spool of the Sewing Machine with a dyeable clothing item in the feed.
+Quests
+Treasure Totem is not used in any quests.
+Tips
+Using a Treasure Totem in the Ginger Island Dig Site with a Generous Hoe Enchantment can yield 3000g of treasure on average. This is done by converting 5x Omni Geode to an Artifact Trove at the Desert Trader and opening them at the blacksmith.
+History
+1.6: Introduced.
+1.6.4: Can no longer use indoors.
+Totems
+Warp Totems Warp Totem: Beach • Warp Totem: Desert • Warp Totem: Farm • Warp Totem: Island • Warp Totem: Mountains
+Permanent Teleporters Desert Obelisk • Earth Obelisk • Farm Obelisk • Island Obelisk • Return Scepter • Water Obelisk
+Other Totems Mini-Obelisk • Rain Totem • Treasure Totem
+Category: Craftable items

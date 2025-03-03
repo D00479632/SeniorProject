@@ -1,0 +1,25 @@
+Jump to navigation
+Jump to search
+This talk page is for discussing Tackle.
+Sign and date your posts by typing four tildes (~~~~).
+Put new text below old text.
+Be polite.
+Assume good faith.
+Don't delete discussions.
+Tackle Behavior
+This could be something that changed in the 1.5 update, but according to FishingRod::calculateTimeUntilFishingBite in the game code, the maximum amount of time before a bite is actually lowered by 5 seconds for the Spinner and 10 for the Dressed Spinner, not 3.75 and 7.5 like the page claims. Also, the behavior of how long it takes for a fish to bite might be useful information to put on the main Fishing page as well. User314159 (talk) 04:31, 24 February 2022 (UTC)
+So the "first bite" per cast gets a bonus time decrease, and if you factor that in that's where the 3.75/7.5 comes from. --Atravita (talk) 17:45, 24 February 2022 (UTC)
+So all the edits made late yesterday to the tackle, bait, and fishing pages need to be changed back? margotbean (talk) 18:13, 24 February 2022 (UTC)
+Can you confirm if it's per cast? Because if that's true then I should probably factor that in. From the way it looked I was pretty sure it's only for the first cast of the rod (similar to how the first cast guarantees a Sunfish if a harder fish or trash was caught). User314159 (talk) 18:16, 24 February 2022 (UTC)
+Now that I think about it, probably listing any number would be misleading, because adding bait or putting the rod in bubbles would divide all the numbers by a certain amount (bait reduces max/min times by 2, so the actual effect of the tackles is decreased by a factor of 2). In addition, even if the bonus is per cast, if someone misses the first bite they would have to wait for the second one, which definitely doesn't have a bonus. I think it would be most effective to say that the Dressed Spinner has double the effects of the Spinner. Although the main Fishing page would have to be changed. User314159 (talk) 18:29, 24 February 2022 (UTC)
+The changes are already being copied into other languages; I'm going to revert them for now. If we could come up with an accurate statement that uses numbers (specifying bubbles/no bubbles, etc.) in the fewest amount of words, that would be great. margotbean (talk) 18:51, 24 February 2022 (UTC)
+This is not a short statement at all, but here's my spreadsheet (which doesn't include Wild Bait I just realized). https://files.catbox.moe/0dxp5s.pdf . I was going to clean it up :P --Atravita (talk) 20:26, 24 February 2022 (UTC)
+You should answer my question of how you know the 25% bonus in the game code refers to the first bite per cast, instead of just the first cast. The boolean in question says "isFirstCast", not "isFirstBite" or something else, which is why I'm pretty sure it's just until you hook a fish, and then this no longer applies. Thanks. User314159 (talk) 20:43, 24 February 2022 (UTC)
+StardewValley.Tools.FishingRod.DoFunction always passes true for isFirstCast (StardewValley.Tools.FishingRod.tickUpdate handles misses and passes in false). Honestly, the variable/function names are usually not to be relied upon. --Atravita (talk) 22:50, 24 February 2022 (UTC)
+Thank you. You probably know more about this than I do, so I will take your word for it. I know they aren't to be relied upon but I couldn't figure out what it was referencing so that's why I asked. User314159 (talk) 23:25, 24 February 2022 (UTC)
+Lucky Purple Shorts
+Should this go into the tackle list? I reviewed the game code and it actually has a hidden function on the advanced iridium rod - if placed in the first tackle slot it prevents the second slot of tackle from taking durability damage. CinderGarde (talk) 00:54, 12 June 2024 (UTC)
+What movie was it where someone said "Just because the cat gave birth in the oven, it doesn't make the kittens biscuits"?
+Joking aside, just because the shorts can go into the tackle slot doesn't make them tackle. You can put a note about the secret in a "Notes" or "Secrets" section, though. And I see that you already added the info to the Secrets page, where it belongs, so well done!
+Thanks for your comment, and for discovering the secret! margotbean (talk) 01:48, 13 June 2024 (UTC)
+Category: Talk pages

@@ -1,0 +1,38 @@
+Jump to navigation
+Jump to search
+Book of Mysteries
+You have a slightly greater chance to find Mystery Boxes.
+Information
+Source Mystery Box • Golden Mystery Box
+Sell Price 3,000g
+The Book of Mysteries is a power book that can be obtained by opening either Mystery Boxes or Golden Mystery Boxes. The chance to drop the book starts at ≈1% for Mystery Boxes and ≈2% for Golden Mystery Boxes, and it increases by 0.04% for each of either box opened until it is dropped. Then, the chance stays at ≈0.5% for Mystery Boxes and ≈1% for Golden Mystery Boxes. It cannot drop from Mystery Boxes until the player has opened more than 10 of either type of box.[1]
+The first reading grants the player a power that increases the chance to get Mystery Boxes or Golden Mystery Boxes (after claiming Foraging Mastery) by 33.3% in all situations with a random chance of earning a mystery box.[2] Once read, it can be found in the Player's Menu on the Special Items & Powers tab. Each subsequent reading gives the player 20 XP in each of the 5 skills.
+Contents
+1 Gifting
+2 Bundles
+3 Tailoring
+4 Quests
+5 Trading
+6 References
+7 History
+Gifting
+Villager Reactions
+Love  Penny •  Wizard
+Like  Elliott
+Neutral  Abigail •  Caroline •  Clint •  Demetrius •  Dwarf •  Emily •  Evelyn •  George •  Gus •  Haley •  Harvey •  Jas •  Jodi •  Kent •  Krobus •  Leah •  Leo •  Lewis •  Linus •  Marnie •  Maru •  Pam •  Pierre •  Robin •  Sam •  Sandy •  Sebastian •  Shane •  Vincent •  Willy
+Dislike  Alex
+Bundles
+Book of Mysteries is not used in any bundles.
+Tailoring
+Book of Mysteries is not used in any tailoring. It can be used in dyeing, serving as a blue dye at the dye pots located in Emily's and Haley's house, 2 Willow Lane. It can also be used as a blue dye when used in the spool of the Sewing Machine with a dyeable clothing item in the feed.
+Quests
+Book of Mysteries is not used in any quests.
+Trading
+One Book of Mysteries can be traded to the Bookseller for 7 Mystery Boxes, provided the player has already obtained the power from this book.
+References
+↑ See Utility::getTreasureFromGeode in the game code.
+↑ See Utility::tryRollMysteryBox in the game code.
+History
+1.6: Introduced.
+1.6.4: Slightly reduced chance to find mystery boxes.
+Category: Books

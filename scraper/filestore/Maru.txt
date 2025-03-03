@@ -1,0 +1,253 @@
+Jump to navigation
+Jump to search
+Maru
+Information
+Birthday  Summer 10
+Lives In The Mountain
+Address 24 Mountain Road
+Family
+Demetrius (Father)
+Robin (Mother)
+Sebastian (Half-Brother)
+Marriage Yes
+Loved Gifts
+Battery Pack
+Cauliflower
+Cheese Cauliflower
+Diamond
+Dwarf Gadget
+Gold Bar
+Iridium Bar
+Miner's Treat
+Pepper Poppers
+Radioactive Bar
+Rhubarb Pie
+Strawberry
+Contents
+1 Schedule
+2 Relationships
+3 Gifts
+3.1 Love
+3.2 Like
+3.3 Neutral
+3.4 Dislike
+3.5 Hate
+4 Movies & Concessions
+5 Heart Events
+5.1 Two Hearts
+5.2 Four Hearts
+5.3 Six Hearts
+5.4 Eight Hearts
+5.5 Ten Hearts
+5.6 Group Ten-Heart Event
+5.7 Fourteen Hearts
+6 Marriage
+7 Quotes
+8 Questions
+9 Quests
+10 Portraits
+11 Trivia
+12 Timeline
+13 History
+“ “Growing up with a carpenter and a scientist for parents, Maru acquired a passion for creating gadgets at a young age. When she isn’t in her room, fiddling with tools and machinery, she sometimes does odd jobs at the local clinic. Friendly, outgoing, and ambitious, Maru would be quite a lucky match for a lowly newcomer such as yourself… Can you win her heart, or will she slip through your fingers and disappear from your life forever?”
+— Dev Update #12
+Maru is a villager who lives in The Mountains north of Pelican Town. She's one of the twelve characters available to marry.
+She lives north of town with her family in a house attached to Robin's carpenter shop.
+In the Social Status menu, Maru's outfit will change to a nursing uniform when she is at her job at the clinic.
+Schedule
+After the Beach Resort on Ginger Island is unlocked, Maru may randomly spend the day there. After leaving the Island at 6pm, Maru will immediately go home to bed. Maru never visits the Resort on Tuesdays, Thursdays, or Festival days.
+Shown below are Maru's schedules prioritized highest to lowest within each season. For example, if it is raining, that schedule overrides all others below it.
+ Spring
+ Summer
+ Fall
+ Winter
+ Marriage
+Relationships
+Maru lives with her parents Demetrius and Robin, as well as her half-brother Sebastian who is Robin's son. She has a strained relationship with Sebastian and wishes they were closer.
+Maru works for Harvey at the clinic, and both worry that it doesn't receive enough patients. Maru dances with Harvey at the Flower dance if neither is dancing with the player. She is also friends with Penny, and can frequently be seen sitting down with her at the bench south of the Saloon.
+Gifts
+Main article: Friendship
+See also: List of All Gifts
+You can give Maru up to two gifts per week (plus one on her birthday), which will raise or lower her friendship with you. Gifts on her birthday ( 10 Summer) will have 8× effect and show a unique dialogue.
+For loved, liked, or neutral gifts, Maru responds
+“ “Hey, what's this, a birthday gift? It's great! Thanks for remembering me!”
+For disliked or hated gifts, Maru responds
+“ “Hey, what's this, a birthday gift? It's... uh, well, it's a gift! Thanks for remembering me, anyway.”
+Love
+“ “Is that...? Oh wow, (Name)! This is spectacular!”
+Battery Pack
+“ “This will be perfect for powering my latest project! Thanks, (Name)!”
+Dwarf Gadget
+“ “Ooh, this is exciting! I’ll deconstruct it and see if I can reverse-engineer the technology.”
+Gold Bar
+“ “Ah, pure gold... It's not the strongest material, but it has some really useful properties!”
+Iridium Bar
+“ “Oh, wow! That's a rare element. It's theorized that all the iridium in our world comes from meteorites...”
+Radioactive Bar
+“ “Ahh! Be careful with that! Are you touching it with your bare hands? ... Sorry... hehe... With proper handling, this will be perfect for an exotic machine I'm building.”
+Stardrop Tea
+“ “Mmm... How does it taste so good? This is a really great gift.”
+Image Name Description Source Ingredients
+All Universal Loves
+Battery Pack It's fully charged with precious energy. Lightning Rod, Solar Panel
+Cauliflower Valuable, but slow-growing. Despite its pale color, the florets are packed with nutrients. Farming - Spring
+Cheese Cauliflower It smells great! Cooking
+Cauliflower (1)
+Cheese (1)
+Diamond A rare and valuable gem. Mining
+Dwarf Gadget It's a piece of the advanced technology once known to the dwarves. It's still glowing and humming, but you're unable to understand how it works. Artifacts
+Gold Bar A bar of pure gold. Furnace
+Iridium Bar A bar of pure iridium. Furnace
+Miner's Treat This should keep your energy up. Cooking
+Cave Carrot (2)
+Sugar (1)
+Milk (1)
+Pepper Poppers Spicy breaded peppers filled with cheese. Cooking
+Hot Pepper (1)
+Cheese (1)
+Radioactive Bar Known by the Zuzu City Safety Commission to cause irreversible bodily harm. Furnace
+Rhubarb Pie Mmm, tangy and sweet! Cooking
+Rhubarb (1)
+Wheat Flour (1)
+Sugar (1)
+Strawberry A sweet, juicy favorite with an appealing red color. Farming - Spring
+Like
+“ “This is a super gift! Thank you!”
+Image Name Description Source
+All Universal Likes (except Honey, Maple Syrup, & Pickles)
+Chanterelle A tasty mushroom with a fruity smell and slightly peppery flavor. Foraging - Fall
+Copper Bar A bar of pure copper. Furnace
+Iron Bar A bar of pure iron. Furnace
+Magma Cap A very rare mushroom that lives next to pools of lava. Foraging - Volcano Dungeon
+Morel Sought after for its unique nutty flavor. Foraging - Spring
+Oak Resin A sticky, fragrant substance derived from oak sap. Tapper
+Pine Tar A pungent substance derived from pine sap. Tapper
+Purple Mushroom A rare mushroom found deep in caves. Foraging - The Mines
+Quartz A clear crystal commonly found in caves and mines. Foraging - Mines
+Radioactive Ore It's glowing with dangerous energy... Can be smelted into bars. Mining
+Neutral
+“ “Thanks.”
+Image Name Description Source
+All Universal Neutrals (except Truffle)
+All Eggs (except Void Egg)*
+All Fruit (except Blackberry, Crystal Fruit, Fruit Tree Fruit, Salmonberry, & Strawberry)
+All Milk
+Daffodil A traditional spring flower that makes a nice gift. Foraging - Spring
+Dandelion Not the prettiest flower, but the leaves make a good salad. Foraging - Spring
+Ginger This sharp, spicy root is said to increase vitality. Foraging - Ginger Island
+Hazelnut That's one big hazelnut! Foraging - Fall
+Leek A tasty relative of the onion. Foraging - Spring
+Wild Horseradish A spicy root found in the spring. Foraging - Spring
+Winter Root A starchy tuber. Tilling - Winter
+*Note that Dinosaur Eggs are considered Artifacts and not Eggs for gifting purposes.
+Dislike
+“ “Oh... That's for me? I'll just put it over here...”
+Image Name Description Source
+All Universal Dislikes (except Battery Pack, Copper Bar, Dwarf Gadget, Gold Bar, Iridium Bar, Iron Bar, Oak Resin, & Pine Tar)
+Blackberry An early-fall treat. Foraging - Fall
+Common Mushroom Slightly nutty, with good texture. Foraging - Fall
+Crystal Fruit A delicate fruit that pops up from the snow. Foraging - Winter
+Maple Syrup A sweet syrup with a unique flavor. Tapper
+Salmonberry A spring-time berry with the flavor of the forest. Foraging - Spring
+Hate
+“ “Yuck! You thought I would like this?”
+Image Name Description Source
+All Universal Hates (except Radioactive Bar & Radioactive Ore)
+Holly The leaves and bright red berries make a popular winter decoration. Foraging - Winter
+Honey It's a sweet syrup produced by bees. Bee House
+Pickles A jar of your home-made pickles. Preserves Jar
+Snow Yam This little yam was hiding beneath the snow. Tilling - Winter
+Truffle A gourmet type of mushroom with a unique taste. Pigs
+Movies & Concessions
+Main article: Movie Theater
+Love
+Natural Wonders: Exploring Our Vibrant World
+Wumbus
+Like
+It Howls In The Rain
+Journey Of The Prairie King: The Motion Picture
+Mysterium
+The Brave Little Sapling
+The Miracle At Coldstar Ranch
+The Zuzu City Express
+Dislike
+N/A
+Love
+Star Cookie
+Stardrop Sorbet
+Dislike
+Black Licorice
+Joja Cola
+JojaCorn
+Like
+Everything else
+Heart Events
+Two Hearts
+Enter the Carpenter's Shop when Maru is there.
+Details 
+Four Hearts
+Enter the clinic when Maru is there.
+Details 
+Six Hearts
+Enter the mountain on a sunny day, between 9pm and 11:40pm.
+Details 
+Eight Hearts
+Enter the Carpenter's Shop when Maru is there.
+Details 
+Ten Hearts
+Enter the Carpenter's Shop between 9am and 4pm.
+Details 
+Group Ten-Heart Event
+If the player is unmarried and has given a bouquet to all available bachelorettes, raised friendship with each bachelorette to 10 hearts, and seen each bachelorette's 10-heart event, then entering Haley/Emily's House will trigger a cutscene. If Haley is the final bachelorette you share a Ten-Heart Event with, the Group Ten-Heart Event will be unavoidable as it is triggered immediately afterwards.
+Details 
+This event will trigger only one time per save file. This event will not trigger if you are married or have given a Wilted Bouquet or Mermaid's Pendant to one of the marriage candidates.
+Fourteen Hearts
+Part 1: Enter the Farmhouse between 6:10am and 5pm on a non-Sunday non-winter day.
+Part 2: Enter the Mountains between 10:00pm and 1:00am on a sunny day.
+Details 
+Marriage
+Main article: Marriage
+Once married, Maru will move into the farmhouse. Like other marriage candidates, she will add her own room to the right of the bedroom. She'll also set up a small area behind the farmhouse where she'll sometimes go to work on her gadgets. She will continue to work at the clinic and travel to town to work there on Tuesdays and Thursdays.
+On rainy mornings, Maru may offer you a gift she made in her workshop: Warp Totem: Farm, Quality Fertilizer, Refined Quartz, a Gate, or a Bomb. On rainy nights she may offer you dessert: Rice Pudding, Blueberry Tart, Cookies, or Chocolate Cake. On days when Maru stays indoors all day, she may offer you a Cherry Bomb, a Bomb, Fried Mushroom, or Crab Cakes, saying she found it in her "scrap pile".
+Maru's room
+Maru works on a gadget
+Quotes
+Regular 
+Events 
+After Marriage 
+Questions
+“ “Hi! Do you have fun working on the farm?”
+Yes (No effect on friendship.)
+"Well that's good, isn't it?"
+No (No effect on friendship.)
+"Yikes! I'm sorry. Have you ever thought of doing something different...?"
+“ “Sorry, I was just thinking about some gadgets I'm making. I've decided I'm going to build a robot someday.”
+That should be very easy for you (+30 friendship.)
+"Really? Are you sure you're not just trying to flatter me?"
+You should be more realistic (-50 friendship.)
+"You don't think I could do it?"
+It sounds challenging (+40 friendship.)
+"You're right, but I love a challenge!"
+Quests
+Maru may randomly request an item at the "Help Wanted" board outside Pierre's General Store. The reward is 3x the item's base value and 150 Friendship points.
+Portraits
+Trivia
+Maru's portrait displays her with glasses, however there are no visible glasses on her sprite.
+Maru has three portraits that do not have a nurse uniform equivalent. If her dialogue would normally call for one of these portraits, she will default to the surprised portrait.
+Timeline
+Maru's look evolved over the years the game was in development. Here's a timeline showing how ConcernedApe's art and Maru's style changed over the years before the game was launched.
+History
+1.0: Introduced.
+1.1: Added work area behind farmhouse if married.
+1.3.27: Added group 10-heart event.
+1.3.32: Removed red color from plus sign on nursing hat.
+1.4: Added 14-heart event. Fixed glitch where Maru would wear her work uniform after-hours on festival days. Fixed bug causing Maru to wear normal clothes inside the clinic after one of her heart events.
+1.5: Added beach portraits.
+1.6: Added winter portraits and more beach portraits. Added Maru Portrait. Now loves Dwarf Gadget. Now likes Chanterelle, Magma Cap, Morel, and Purple Mushroom.
+1.6.4: Removed eyeglasses from beach portraits.
+Villagers
+Bachelors Alex • Elliott • Harvey • Sam • Sebastian • Shane
+Bachelorettes Abigail • Emily • Haley • Leah • Maru • Penny
+Townspeople Caroline • Clint • Demetrius • Evelyn • George • Gil • Gunther • Gus • Jas • Jodi • Kent • Lewis • Linus • Marlon • Marnie • Morris • Pam • Pierre • Robin • Vincent • Willy
+Other Birdie • Bouncer • Dwarf • Fizz • Governor • Grandpa • Henchman • Junimos • Krobus • Leo • Mr. Qi • Old Mariner • Professor Snail • Sandy • Wizard
+Category: Marriage candidates

@@ -1,0 +1,270 @@
+Jump to navigation
+Jump to search
+Penny
+Information
+Birthday  Fall 2
+Lives In Pelican Town
+Address Trailer
+Family
+Pam (Mother)
+Marriage Yes
+Clinic Visit  Winter 4
+Loved Gifts
+All Books
+Diamond
+Emerald
+Melon
+Poppy
+Poppyseed Muffin
+Red Plate
+Roots Platter
+Sandfish
+Tom Kha Soup
+Contents
+1 Schedule
+2 Relationships
+3 Gifts
+3.1 Love
+3.2 Like
+3.3 Neutral
+3.4 Dislike
+3.5 Hate
+4 Movies & Concessions
+5 Heart Events
+5.1 Two Hearts
+5.2 Four Hearts
+5.3 Six Hearts
+5.4 Eight Hearts
+5.5 Ten Hearts
+5.6 Group Ten-Heart Event
+5.7 Fourteen Hearts
+6 Marriage
+7 Quotes
+8 Questions
+9 Quests
+10 Portraits
+11 Timeline
+12 Trivia
+13 Bugs
+14 References
+15 History
+“ “Penny lives with her mom, Pam, in a little trailer by the river. While Pam is out carousing at the saloon, Penny quietly tends to her chores in the dim, stuffy room she is forced to call home. She is shy and modest, without any grand ambitions for life other than settling in and starting a family. She likes to cook (although her skills are questionable) and read books from the local library.”
+— Dev Update #12
+Penny is a villager who lives in Pelican Town. She's one of the twelve characters available to marry. Her trailer is just east of the center of town, west of the river. She tutors Vincent and Jas at the library.
+Schedule
+Penny can usually be found in town reading or cleaning up at the trailer. On Tuesday, Wednesday, and Friday she tutors Jas and Vincent at the museum, walking them both home afterwards. On Saturdays she'll take them to the town playground.
+When it's raining Penny can either be found inside her trailer or visiting the museum looking at the selection of books.
+After the Beach Resort on Ginger Island is unlocked, Penny may randomly spend the day there. After leaving the Island at 6pm, Penny will immediately go home to bed. Penny never visits the Resort on Tuesday, Wednesday, Friday, Festival days, or her checkup day at Harvey's Clinic.
+ Spring
+ Summer
+ Fall
+ Winter
+ Marriage
+Relationships
+Penny lives with her mother Pam, and she is friends with Maru and Sam. Penny dances with Sam at the Flower Dance if neither are dancing with the player.
+She also teaches the local children, Jas, Vincent and when he moves to Pelican Town also Leo, at the museum a few days a week and accompanies them to the playground once in a while.
+During the eight-heart cutscene, Vincent remarks that he once saw Sam and Penny climbing trees, at which Penny becomes visibly startled and scolds Vincent for gossiping. ConcernedApe has explained that he "wasn't trying to imply anything serious" with the scene regarding a continuation of Penny's interest in Sam. "[A]t 8 hearts...she's not actually interested in Sam anymore."[1]
+Gifts
+Main article: Friendship
+See also: List of All Gifts
+You can give Penny up to two gifts per week (plus one on her birthday), which will raise or lower her friendship with you. Gifts on her birthday ( 2 Fall) will have 8× effect and show a unique dialogue.
+For loved gifts, Penny responds
+“ “Oh! Is this for me? For... for my birthday?
+*sniff*... Sorry.
+I'm... just not used to such kindness...
+... I love it, though. It's perfect. Thank you so much.”
+For liked or neutral gifts, Penny responds
+“ “For my birthday? That's so nice of you! It's a great gift.”
+For disliked or hated gifts, Penny responds
+“ “For my birthday? That's so kind of you! Let me unwrap it...
+...What!?
+...Oh, I see. It's a cruel joke.
+Silly me, I should've known better...”
+Love
+“ “Thank you! I really love this!”
+Any Book
+“ “Thank you! I'm almost finished with a book right now, but I'll read this one next!”
+Stardrop Tea
+“ “Mmm... it's so fragrant. I'm going to love this.”
+Image Name Description Source Ingredients
+All Universal Loves (except Rabbit's Foot)
+All Books
+Diamond A rare and valuable gem. Mining
+Emerald A precious stone with a brilliant green color. Mining
+Melon A cool, sweet summer treat. Farming - Summer
+Poppy In addition to its colorful flower, the Poppy has culinary and medicinal uses. Farming - Summer
+Poppyseed Muffin It has a soothing effect. Cooking
+Poppy (1)
+Wheat Flour (1)
+Sugar (1)
+Red Plate Full of antioxidants. Cooking
+Red Cabbage (1)
+Radish (1)
+Roots Platter This'll get you digging for more. Cooking
+Cave Carrot (1)
+Winter Root (1)
+Sandfish It tries to hide using camouflage. Fishing
+Tom Kha Soup These flavors are incredible! Cooking
+Coconut (1)
+Shrimp (1)
+Common Mushroom (1)
+Like
+“ “Thank you! This looks special.”
+Ancient Drum, Ancient Sword, Chewing Stick, or Chipped Amphora
+“ “Wow... this looks really old. I'll have to ask Gunther about it. Thank you!”
+Image Name Description Source
+All Universal Likes (except Algae Soup, Beer, Mead, Pale Ale, Pale Broth, Piña Colada, & Wine)
+All Artifacts
+All Milk
+Dandelion Not the prettiest flower, but the leaves make a good salad. Foraging - Spring
+Leek A tasty relative of the onion. Foraging - Spring
+Neutral
+“ “Thanks, this looks nice.”
+Image Name Description Source
+All Universal Neutrals (except Books, Duck Feather, Hops, & Wool)
+All Eggs (except Void Egg)*
+All Fruit (except Fruit Tree Fruit, Grape, Melon, & Salmonberry)
+Chanterelle A tasty mushroom with a fruity smell and slightly peppery flavor. Foraging - Fall
+Common Mushroom Slightly nutty, with good texture. Foraging - Fall
+Daffodil A traditional spring flower that makes a nice gift. Foraging - Spring
+Ginger This sharp, spicy root is said to increase vitality. Foraging - Ginger Island
+Hazelnut That's one big hazelnut! Foraging - Fall
+Magma Cap A very rare mushroom that lives next to pools of lava. Foraging - Volcano Dungeon
+Morel Sought after for its unique nutty flavor. Foraging - Spring
+Snow Yam This little yam was hiding beneath the snow. Foraging - Winter
+Wild Horseradish A spicy root found in the spring. Foraging - Spring
+Winter Root A starchy tuber. Foraging - Winter
+*Note that Dinosaur Eggs are considered Artifacts and not Eggs for gifting purposes.
+Dislike
+“ “Uh, it's for me? ...Thanks.”
+Image Name Description Source Ingredients
+All Universal Dislikes (except Artifacts, Price Catalogue, & Sandfish)
+Algae Soup It's a little slimy. Cooking
+Green Algae (4)
+Duck Feather It's so colorful. Ducks
+Pale Broth A delicate broth with a hint of sulfur. Cooking
+White Algae (2)
+Purple Mushroom A rare mushroom found deep in caves. Foraging - The Mines
+Quartz A clear crystal commonly found in caves and mines. Foraging - Mines
+Red Mushroom A spotted mushroom sometimes found in caves. Foraging
+Salmonberry A spring-time berry with the flavor of the forest. Foraging - Spring
+Wool Soft, fluffy wool. Rabbits, Sheep
+Hate
+“ “Ugh...I'm sorry, but I absolutely hate this.”
+Image Name Description Source Ingredients
+All Universal Hates (except Poppy and Red Mushroom)
+Beer Drink in moderation. Keg
+The Stardrop Saloon
+Wheat (1)
+Grape A sweet cluster of fruit. Farming, Foraging
+Holly The leaves and bright red berries make a popular winter decoration. Foraging - Winter
+Hops A bitter, tangy flower used to flavor beer. Farming
+Mead A fermented beverage made from honey. Drink in moderation. Keg
+Honey (1)
+Pale Ale Drink in moderation. Keg
+Hops (1)
+Piña Colada Drink in moderation. The Beach Resort on Ginger Island
+Rabbit's Foot Some say it's lucky. Rabbits
+Wine Drink in moderation. Keg Any Fruit (1)
+Movies & Concessions
+Main article: Movie Theater
+Love
+Any movie if Pam is also present
+The Brave Little Sapling
+Like
+Journey Of The Prairie King: The Motion Picture
+Natural Wonders: Exploring Our Vibrant World
+The Miracle At Coldstar Ranch
+The Zuzu City Express
+Wumbus
+Dislike
+It Howls In The Rain
+Mysterium
+Love
+Cotton Candy
+Stardrop Sorbet
+Dislike
+Black Licorice
+Joja Cola
+JojaCorn
+Sour Slimes
+Like
+Everything else
+Heart Events
+Two Hearts
+Enter Pelican Town on a sunny day between 9am and 2pm.
+Details 
+Four Hearts
+Enter the trailer when she's home.
+Details 
+Six Hearts
+Enter the trailer when she's home.
+Details 
+Eight Hearts
+Enter Cindersap Forest on a sunny day between 9am and 4pm.
+Details 
+Ten Hearts
+You receive a letter from Penny. After receiving the letter, enter the pool area of the spa between 7pm and midnight.
+Details 
+Group Ten-Heart Event
+If the player is unmarried and has given a bouquet to all available bachelorettes, raised friendship with each bachelorette to 10 hearts, and seen each bachelorette's 10-heart event, then entering Haley/Emily's House will trigger a cutscene. If Haley is the final bachelorette you share a Ten-Heart Event with, the Group Ten-Heart Event will be unavoidable as it is triggered immediately afterwards.
+Details 
+This event will trigger only one time per save file. This event will not trigger if you are married or have given a Wilted Bouquet or Mermaid's Pendant to one of the marriage candidates.
+Fourteen Hearts
+Enter the farm house between 3pm and 7pm when she's home.
+Details 
+Marriage
+Main article: Marriage
+Once married, Penny will move into the farmhouse. Like other marriage candidates, she will add her own room to the right of the bedroom. She'll also set up a small garden behind the farmhouse where she'll sometimes go to read. She will continue to work at the Museum and travel to town to work there on Tuesdays, Wednesdays, and Fridays.
+On rainy mornings, Penny may offer you Large Milk, Egg, Mixed Seeds, or a Geode. On mornings when Penny stays inside all day, she may offer you Omelet, Hashbrowns, or Pancakes for breakfast. On rainy nights she may offer you dinner: Salmon Dinner, Crispy Bass, Fried Eel, Carp Surprise, or Vegetable Medley.
+Penny's room
+Penny's garden
+Quotes
+Regular 
+
+
+
+
+Events 
+
+
+
+After Marriage 
+Questions
+4 Hearts, Monday:
+“ “*sigh*... My mother definitely has a problem with going to the saloon too much. But it's best not to dwell on bad things, right?”
+Right. It's best to be positive! (+50 friendship.)
+"That's how I feel. I'm just going to focus on making the future better."
+I think it's good to be realistic. (+10 friendship.)
+"Maybe you're right. It's better to cope with reality."
+Quests
+Penny may randomly request an item at the "Help Wanted" board outside Pierre's General Store. The reward is 3x the item's base value and 150 Friendship points.
+Portraits
+Timeline
+Penny's look evolved over the years the game was in development. Here's a timeline showing how ConcernedApe's art and Penny's style changed over the years before the game was launched.
+Trivia
+At one point before the game was released, Penny was named "Dana".
+The dialogue choices for the player in Penny's 8-Heart and 10-Heart Events have the most punitive possible effect on friendship in the game, with each event having an option that will decrease friendship with her by 1500 points (equivalent to six hearts).
+The dish Penny cooks during her six heart event can be seen briefly when you eat it. It appears to be a Vegetable Medley, sharing the same sprite and restoring the same amount of energy as one.
+Penny's 14-heart event can occur one time only. It will not reoccur if the player divorces her, erases her memories, and then re-marries her.
+Bugs
+If Penny's 10-heart event is seen before her other heart events, occasionally the bachelorette Group Ten-Heart Event will not trigger when entering Haley & Emily's house.
+Penny's marriage schedule overrides any deviations. This means Penny will still walk home the children even if it is raining, even though the children are not there.
+References
+↑ https://www.reddit.com/r/StardewValley/comments/4b8s7v/comment/d16zqdf
+History
+1.0: Introduced.
+1.1: Added reading garden area behind farmhouse if married.
+1.3.27: Added group 10-heart event.
+1.4: Added 14 heart event. Changed 2 heart event dialogue. 6 heart event can now trigger after purchasing the Community Upgrade. Removed dialogue referencing the trailer after the community upgrade is complete.
+1.4.1: Placed dressers will no longer be removed during 14 heart event.
+1.4.4: Garden pots will no longer be moved during 14 heart event.
+1.5: Added beach portraits. Penny now likes all artifacts. Fixed bug where 4 heart event could not be triggered after purchasing the Community Upgrade.
+1.5.3: Existing bed will now be placed in a chest instead of being outright replaced during the redecoration in the 14 heart event.
+1.6: Added custom gift reactions. Added winter portraits and more beach and regular portraits. Added Penny Portrait. Penny's 8-heart event cannot happen on rainy days, Trout Derby days, or Summer 17, 18, or 19. Fourteen-heart event decorations can now be purchased at Penny's shop during the Desert Festival.
+Villagers
+Bachelors Alex • Elliott • Harvey • Sam • Sebastian • Shane
+Bachelorettes Abigail • Emily • Haley • Leah • Maru • Penny
+Townspeople Caroline • Clint • Demetrius • Evelyn • George • Gil • Gunther • Gus • Jas • Jodi • Kent • Lewis • Linus • Marlon • Marnie • Morris • Pam • Pierre • Robin • Vincent • Willy
+Other Birdie • Bouncer • Dwarf • Fizz • Governor • Grandpa • Henchman • Junimos • Krobus • Leo • Mr. Qi • Old Mariner • Professor Snail • Sandy • Wizard
+Category: Marriage candidates

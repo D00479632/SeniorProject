@@ -1,0 +1,33 @@
+Jump to navigation
+Jump to search
+Way Of The Wind pt. 2
+You run a little bit faster.
+Information
+Source Bookseller
+Sell Price 10,000g
+The Way Of The Wind pt. 2 is a power book that can be purchased from the Bookseller for 35,000g, provided the player has already read Way Of The Wind pt. 1.
+The first reading grants the player a power that gives them a permanent +0.25 Speed buff.[1] The speed increase from this book stacks with that of Way Of The Wind pt. 1 (which is needed to acquire it), totaling to a permanent speed bonus of +0.5. Once read, it can be found in the Player's Menu on the Special Items & Powers tab. Each subsequent reading gives the player 20 XP in each of the 5 skills.
+Contents
+1 Gifting
+2 Bundles
+3 Tailoring
+4 Quests
+5 References
+6 History
+Gifting
+Villager Reactions
+Love  Penny
+Like  Elliott
+Neutral  Abigail •  Caroline •  Clint •  Demetrius •  Dwarf •  Emily •  Evelyn •  George •  Gus •  Haley •  Harvey •  Jas •  Jodi •  Kent •  Krobus •  Leah •  Leo •  Lewis •  Linus •  Marnie •  Maru •  Pam •  Pierre •  Robin •  Sam •  Sandy •  Sebastian •  Shane •  Vincent •  Willy •  Wizard
+Dislike  Alex
+Bundles
+Way Of The Wind pt. 2 is not used in any bundles.
+Tailoring
+Way Of The Wind pt. 2 is not used in any tailoring. It can be used in dyeing, serving as a blue dye at the dye pots located in Emily's and Haley's house, 2 Willow Lane. It can also be used as a cyan dye when used in the spool of the Sewing Machine with a dyeable clothing item in the feed.
+Quests
+Way Of The Wind pt. 2 is not used in any quests.
+References
+↑ See Farmer::addedSpeed in the game code.
+History
+1.6: Introduced.
+Category: Books

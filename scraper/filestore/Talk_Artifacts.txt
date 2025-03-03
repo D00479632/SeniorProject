@@ -1,0 +1,19 @@
+Jump to navigation
+Jump to search
+This talk page is for discussing Artifacts.
+Sign and date your posts by typing four tildes (~~~~).
+Put new text below old text.
+Be polite.
+Assume good faith.
+Don't delete discussions.
+Fixing some off-by-1 floor inaccuracies
+I recently made some edits to several specific artifact pages (such as Dwarvish Helm) to fix what I believe to be inaccuracies in the mine floors they can found on when tilling (for example, it should say floors 1-39 rather than floors 1-40, because the item cannot be found on floor 40 even if the soil were tillable).
+The edits were reverted with no explanation, so I'd like to add more context here and get feedback from Margotbean on whether it's enough to justify making the changes. I now realize this Artifacts page also has the same inaccuracies, so if approved, I'll make the edits here along with the specific item pages.
+The relevant source code is here for the item with item code 96 (Dwarf Scroll I) which does not depend on floor number; and here for items 97 (Dwarf Scroll II), 99 (Dwarf Scroll IV), 121 (Dwarvish Helm), 122 (Dwarf Gadget), etc. which do depend on floor number: case 40: is code for changing the type of item which is possible to receive upon entering floor 40.
+Similarly, as described in The_Mines#Floors, the environment drastically changes on floors 40, 70, 80, 110, etc. so my proposed fix seems to align with the existing Mines wiki too: things are different between floor 39 and 40, rather than being different between floor 40 and 41.
+Is this enough to justify my changes, or are you looking for something else? Thanks! Cooperka (talk) 15:56, 11 April 2023 (UTC)
+Hello Cooperka! Yes, it's enough, so, yes, you can make the changes. The changes were, in fact, fine, but I need all pages to agree with each other. So, if you could make the Artifacts page read the same as the individual pages, I wouldn't have any problems with the changes. You could also add code references (if they're not already on the page), but link to the actual code, not the github source. Anyone can decompile the game code with ILSpy, so referring to a class::method in the game code is better than a link to github.
+I believe all required references are on the Artifacts page already, so adding to the individual pages is what I'd be looking for.
+Hope this helps! Thanks!! margotbean (talk) 19:36, 11 April 2023 (UTC)
+Yes, perfect -- will do it all at once sometime in the next few days/weeks! Cheers. Cooperka (talk)
+Category: Talk pages

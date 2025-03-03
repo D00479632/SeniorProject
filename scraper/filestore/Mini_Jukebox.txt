@@ -1,0 +1,36 @@
+Jump to navigation
+Jump to search
+Mini-Jukebox
+    Allows you to play your favorite tunes.
+Information
+Source Crafting
+Crafting
+Recipe Source
+Gus (5-heart event)
+Ingredients
+Iron Bar (2)
+Battery Pack (1)
+The Mini-Jukebox is a piece of craftable equipment which allows players to select and play in-game music tracks. The Mini-Jukebox and its crafting recipe are given by Gus in a cutscene outside the farmhouse. To trigger the cutscene players must have 5 hearts with Gus, and exit the farmhouse between 6am - 11:30am on a non-rainy day.
+Once placed, the Mini-Jukebox works just like the full sized Jukebox inside The Stardrop Saloon does. Mini-Jukeboxes placed outside will not work on a rainy day. When interacting with one outside on a rainy day, it will display the message: "The Mini-Jukebox cannot be played in the rain!"
+Mini-Jukeboxes can be placed and used anywhere on the farm including inside the farmhouse, the cellar, the farm cave, the greenhouse, and any barn or coop, as well as the Ginger Island farm, farmhouse, and The Gourmand's Cave. When interacting with one outside of these locations, it will display the message: "The Mini-Jukebox can only be played on your farm!"
+History
+1.4: Introduced.
+1.6: Can now be used on the Ginger Island farm.
+
+Equipment
+Artisan Bee House • Cask • Cheese Press • Dehydrator • Fish Smoker • Keg • Loom • Mayonnaise Machine • Oil Maker • Preserves Jar
+Refining Bait Maker • Bone Mill • Charcoal Kiln • Crystalarium • Deluxe Worm Bin • Furnace • Geode Crusher • Heavy Furnace • Heavy Tapper • Lightning Rod • Mushroom Log • Ostrich Incubator • Recycling Machine • Seed Maker • Slime Egg-Press • Slime Incubator • Solar Panel • Tapper • Wood Chipper • Worm Bin
+Farming
+Fertilizer Basic Fertilizer • Basic Retaining Soil • Deluxe Fertilizer • Deluxe Retaining Soil • Deluxe Speed-Gro • Hyper Speed-Gro • Quality Fertilizer • Quality Retaining Soil • Speed-Gro • Tree Fertilizer
+Sprinklers Iridium Sprinkler • Quality Sprinkler • Sprinkler
+Other Deluxe Scarecrow • Garden Pot • Rarecrow • Scarecrow
+Fishing
+Bait Bait • Challenge Bait • Deluxe Bait • Magic Bait • Magnet • Targeted Bait • Wild Bait
+Tackle Barbed Hook • Cork Bobber • Curiosity Lure • Dressed Spinner • Lead Bobber • Quality Bobber • Sonar Bobber • Spinner • Trap Bobber • Treasure Hunter
+Other Crab Pot
+Bombs Bomb • Cherry Bomb • Mega Bomb
+Fences Gate • Hardwood Fence • Iron Fence • Stone Fence • Wood Fence
+Storage Big Chest • Big Stone Chest • Chest • Junimo Chest • Mini-Fridge • Stone Chest
+Signs Dark Sign • Stone Sign • Text Sign • Wood Sign
+Misc Anvil • Coffee Maker • Cookout Kit • Deconstructor • Fairy Dust • Farm Computer • Hopper • Mini-Forge • Mini-Jukebox • Mini-Shipping Bin • Sewing Machine • Staircase • Statue Of Blessings • Statue Of The Dwarf King • Telephone • Tent Kit • Tools • Workbench
+Category: Craftable items

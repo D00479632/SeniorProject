@@ -1,0 +1,38 @@
+Jump to navigation
+Jump to search
+This talk page is for discussing Marriage.
+Sign and date your posts by typing four tildes (~~~~).
+Put new text below old text.
+Be polite.
+Assume good faith.
+Don't delete discussions.
+Contents
+1 Wedding outfits now added on the day of the ceremony?
+2 Glitch??
+3 Giving gifts to other Villagers
+4 Can you marry the same gender?
+5 Spouse glitch?
+Wedding outfits now added on the day of the ceremony?
+My character's outfit was changed to this on his wedding day. It (that is, the shirt and pants) was not what he went to bed in. I'm uncertain if this image is helpful, but I felt I should include it. Cheetospotato (talk) 14:28, 15 November 2021
+You bring up an interesting point: the only images we have of wedding ceremonies are from v1.2 and before (mostly before), and the female players are wearing their chosen outfits for the ceremony. (There is only one image of a male player, and he's wearing the suit top and black pants, which doesn't tell us anything.)
+My advice is to report this on the official forums, either as a bug or a suggestion (a bug report will probably get more visibility), so we can see if this is intended behavior.
+You can include links to these images, if you like:
+https://stardewvalleywiki.com/File:Marriage_abigail.png
+https://stardewvalleywiki.com/File:Sebastian_marriage_ceremony.jpg
+https://stardewvalleywiki.com/File:Harvey_Marriage_Ceremony_2.jpg
+https://stardewvalleywiki.com/File:Elliot_Wedding.jpg
+Since the image you uploaded isn't particularly useful (given that we know female characters wear a white dress and male characters wear a suit top & black pants), I'm going to delete it.
+Best of luck in getting to the bottom of this potentially undesirable behavior! Thank you, margotbean (talk) 20:26, 15 November 2021 (UTC)
+Playing v1.5.6 (Steam), this no longer happens; the player's character wears their chosen outfit when marrying bachelors & bachelorettes. Going to remove it from the page, and the best I can figure, the fix happened in v1.5.6, although it's not specifically in the change notes. margotbean (talk) 15:54, 23 April 2022 (UTC)
+Glitch??
+I was just playing the game and am at full hearts with the person I married (Shane) but when I talked to him he gave me neutral heart dialogue. Is this just some glitch? I checked and I have full hearts with him. Strawberry Shortcake (talk) 21:04, 25 September 2022 (UTC)
+I don't know. Dialogues are complex, and may change if the spouse runs into an obstacle in the house, for example. If you're playing v1.5, it's not a bad idea to post in the official forums about it. You can post it as a potential bug in the "Help & Bug Reports" section. Give as much detail as possible, including the specific dialog. margotbean (talk) 21:38, 25 September 2022 (UTC)
+Giving gifts to other Villagers
+Since of us playing and us giving gifts to a Villager makes us suspicious because when we give gifts to other Villagers, our spouses like to say that they heard that we gave Villagers a gift today and they get jealous at us. Do you know the exact reason why this happens because the wiki does not say this, unless if I am looking at it on the page without noticing. Feel free to check the game code about what is going on. 9000 (talk) 8:06, 29 September 2022 (UTC)
+It's already on the page, see: Marriage#Jealousy. margotbean (talk) 17:52, 29 September 2022 (UTC)
+Can you marry the same gender?
+I want to know so I can marry a specific person. Vøid202 (talk) 05:07, 28 December 2023 (UTC)
+Yeah, you can marry villagers of your gender. - Insanity (talk) 14:21, 29 September 2024 (UTC)
+Spouse glitch?
+Sometimes when I try to kiss my spouse, it doesn't let me. Is this a glitch or something purposeful in the code?
+Category: Talk pages

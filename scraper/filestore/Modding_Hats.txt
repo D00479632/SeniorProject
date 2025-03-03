@@ -1,0 +1,25 @@
+Jump to navigation
+Jump to search
+← Items
+This page explains how the game stores and parses hat-type item data. For items in general, see Modding:Items.
+Overview
+Hats are items that can be equipped in the player's hat slot. These change the player sprite.
+They have item type (H) (or ItemRegistry.type_hat in C# code), their data in Data/Hats, their in-game sprites in Characters/Farmer/hats by default, and their code in StardewValley.Objects.Hat.
+Data format
+The hat data in Data/Hats consists of a string → string lookup, where...
+The key is the unqualified item ID.
+The value is a slash-delimited strings with the fields listed below.
+index field effect
+0 name The internal item name.
+1 description The translated item description shown in-game.
+2 show real hair Whether to show the player's hairstyle as-is when the hat is worn (true), change the hairstyle to fit the hat (false), or hide their hair completely (hide).
+3 skip hairstyle offset Whether to ignore the current style when positioning the hat (one of true or false). For example, the eye patch sets true since its position isn't affected by the hair, but the butterfly bow sets false to adjust its position on top of your hair.
+4 tags A space-separated list of "tags". These are separate from context tags, and used to contain miscellaneous information. Currently, the only tag used by the game is Prismatic, which marks a hat as prismatic and causes it to cycle through colors.
+5 display name The translated item name shown in-game.
+6 sprite index The index in the hat spritesheet used to display this hat (see field 7 for the texture layout).
+7 texture name The name of the game texture to use for the hat. If empty, the game will use the default hat sheet Characters/Farmer/hats.
+Each hat in the texture should have a 20x80 pixel area, consisting of four 20x20 hat sprites from top to bottom: facing down, right, left, and up. The texture can have any width and height that's evenly divisible by 20 and 80 respectively.
+Hats have a hardcoded category of -95 (see HatDataDefinition.GetData in the game code).
+See also
+Modding:Items for item data in general
+Category: Modding

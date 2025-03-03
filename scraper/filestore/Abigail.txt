@@ -1,0 +1,253 @@
+Jump to navigation
+Jump to search
+Abigail
+Information
+Birthday  Fall 13
+Lives In Pelican Town
+Address Pierre's General Store
+Family
+Pierre (Father)
+Caroline (Mother)
+Marriage Yes
+Clinic Visit  Spring 4
+Loved Gifts
+Amethyst
+Banana Pudding
+Blackberry Cobbler
+Chocolate Cake
+Monster Compendium
+Pufferfish
+Pumpkin
+Spicy Eel
+Contents
+1 Schedule
+2 Relationships
+3 Gifts
+3.1 Love
+3.2 Like
+3.3 Neutral
+3.4 Dislike
+3.5 Hate
+4 Movies & Concessions
+5 Heart Events
+5.1 Two Hearts
+5.2 Four Hearts
+5.3 Six Hearts
+5.4 Eight Hearts
+5.5 Ten Hearts
+5.5.1 After the 10-Heart Event
+5.6 Group Ten-Heart Event
+5.7 Fourteen Hearts
+6 Marriage
+7 Quotes
+8 Questions
+9 Quests
+10 Portraits
+11 Timeline
+12 Gallery
+13 Trivia
+14 History
+“ “Abigail lives at the general store with her parents. She sometimes fights with her mom, who worries about Abigail's "alternative lifestyle". Her mom has the following to say: "I wish Abby would dress more appropriately and stop dyeing her hair blue. She has such a wonderful natural hair color, just like her grandmother did. Oh, and I wish she’d find some wholesome interests instead of this occult nonsense she's into." You might find Abigail alone in the graveyard, or maybe out in a rainstorm looking for frogs.”
+— Dev Update #12
+Abigail is a villager who lives at Pierre's General Store in Pelican Town. She's one of the twelve characters available to marry.
+Schedule
+After the Beach Resort on Ginger Island is unlocked, Abigail may randomly spend the day there. After leaving the Island at 6pm, Abigail will immediately go home to bed. Abigail never visits the Resort on Festival days or her checkup day at Harvey's Clinic.
+Shown below are Abigail's schedules prioritized highest to lowest within each season. For example, if it is raining, that schedule overrides all others below it.
+ Spring
+ Summer
+ Fall
+ Winter
+ Marriage
+Relationships
+Abigail lives with her parents, Pierre and Caroline, in the apartment behind her father's shop. Her mother will comment that she is concerned about Abigail's interests and hobbies.
+Abigail is friends with Sam and Sebastian, and will dance with Sebastian at the Flower Dance if the player doesn't ask her or Sebastian to dance.
+Gifts
+Main article: Friendship
+See also: List of All Gifts
+You can give Abigail up to two gifts per week (plus one on her birthday), which will raise or lower her friendship with you. Gifts on her birthday ( 13 Fall) will have 8× effect and show a unique dialogue.
+For loved, liked, or neutral gifts, Abigail responds
+“ “Hey, you remembered my birthday... Thanks, <player>! This is really nice!”
+For disliked or hated gifts, Abigail responds
+“ “Hey, you remembered my birthday... Thanks, <player>!
+Oh, it's, uh... *sniff*... what is it?”
+Love
+“ “I seriously love this! You're the best, (Name)!”
+Amethyst
+“ “Wow... it's just my color! Thanks, (Name)!”
+“ “Thank you! This is my favorite stone. It's so pretty.”
+Magic Rock Candy
+“ “Oh, wow... (Name)! Are you sure you want to give this to me? It's so rare!
+I'll admit, my mouth is watering already...”
+Monster Compendium
+“ “Whoa, that's a creepy looking book... I love it!
+*Flip* *flip* *flip*... Ooh... It's full of monsters...
+I'll have to study this before going into the caves... Thanks!”
+Stardrop Tea
+“ “Wow... the color is so beautiful, like an amethyst. Thanks!”
+Image Name Description Source Ingredients
+All Universal Loves
+Amethyst A purple variant of quartz. Mining
+Banana Pudding A creamy dessert with a wonderful tropical flavor. Cooking
+Banana (1)
+Milk (1)
+Sugar (1)
+Blackberry Cobbler There's nothing quite like it. Cooking
+Blackberry (2)
+Sugar (1)
+Wheat Flour (1)
+Chocolate Cake Rich and moist with a thick fudge icing. Cooking
+Wheat Flour (1)
+Sugar (1)
+Egg (1)
+Monster Compendium Monsters have a small chance to drop double loot. Books
+Pufferfish Inflates when threatened. Fishing
+Pumpkin A fall favorite, grown for its crunchy seeds and delicately flavored flesh. As a bonus, the hollow shell can be carved into a festive decoration. Farming
+Spicy Eel It's really spicy! Be careful. Cooking
+Eel (1)
+Hot Pepper (1)
+Like
+“ “Hey, how'd you know I was hungry? This looks delicious!”
+Note that Abigail will say this even when given a liked gift that is not a Food item.
+Ancient Sword
+“ “Whoa... Where'd you find this? The workmanship is fascinating...
+It's a little too rusty to use, but I'll add it to my collection.”
+Basilisk Paw
+“ “Disgusting... I love it!”
+Bone Flute
+“ “This makes you wonder... Thousands of years ago, there was probably a little purple-haired cavewoman who played this flute, just like me.
+...I'll have to wash it before pressing it to my lips, though.”
+Combat Quarterly
+“ “Hey, this is my favorite magazine! My Dad won't let me have a subscription, so I have to get it on the black market like this...”
+Image Name Description Source
+All Universal Likes (except Vegetables)
+Ancient Sword It's the remains of an ancient sword. Most of the blade has turned to rust, but the hilt is very finely crafted. Artifacts
+Basilisk Paw You are immune to debuffs. Trinkets
+Bone Flute It's a prehistoric wind instrument carved from an animal's bone. It produces an eerie tone. Artifacts
+Combat Quarterly Read this to gain some combat experience. Books
+Quartz A clear crystal commonly found in caves and mines. Foraging - The Mines
+Neutral
+“ “You brought me a present? Thanks.”
+Image Name Description Source
+All Universal Neutrals (except Combat Quarterly & Monster Compendium)
+All Milk
+Chanterelle A tasty mushroom with a fruity smell and slightly peppery flavor. Foraging - Fall
+Common Mushroom Slightly nutty, with good texture. Foraging - Fall
+Daffodil A traditional spring flower that makes a nice gift. Foraging - Spring
+Dandelion Not the prettiest flower, but the leaves make a good salad. Foraging - Spring
+Ginger This sharp, spicy root is said to increase vitality. Foraging - Ginger Island
+Hazelnut That's one big hazelnut! Foraging - Fall
+Leek A tasty relative of the onion. Foraging - Spring
+Magma Cap A very rare mushroom that lives next to pools of lava. Foraging - Volcano Dungeon
+Morel Sought after for its unique nutty flavor. Foraging - Spring
+Purple Mushroom A rare mushroom found deep in caves. Foraging - The Mines
+Snow Yam This little yam was hiding beneath the snow. Foraging - Winter
+Winter Root A starchy tuber. Foraging - Winter
+Dislike
+“ “What am I supposed to do with this?”
+Image Name Description Source
+All Universal Dislikes (except Ancient Sword, Basilisk Paw, Bone Flute, Clay & Pufferfish)
+All Eggs*
+All Fruit (except Fruit Tree Fruit)
+All Vegetables (except Hops, Pumpkin, Tea Leaves, & Wheat)
+Sugar Adds sweetness to pastries and candies. Too much can be unhealthy. Pierre's General Store, Mill
+Wild Horseradish A spicy root found in the spring. Foraging - Spring
+*Note that Dinosaur Eggs are considered Artifacts and not Eggs for gifting purposes.
+Hate
+“ “What were you thinking? This is awful!”
+Image Name Description Source
+All Universal Hates (except Sugar)
+Clay Used in crafting and construction. Tilling
+Holly The leaves and bright red berries make a popular winter decoration. Foraging - Winter
+Movies & Concessions
+Main article: Movie Theater
+Love
+It Howls In The Rain
+Mysterium
+Like
+Journey Of The Prairie King: The Motion Picture
+Natural Wonders: Exploring Our Vibrant World
+The Brave Little Sapling
+Wumbus
+Dislike
+The Miracle At Coldstar Ranch
+The Zuzu City Express
+Love
+Rock Candy
+Stardrop Sorbet
+Dislike
+Black Licorice
+Hummus Snack Pack
+Jasmine Tea
+Joja Cola
+JojaCorn
+Kale Smoothie
+Panzanella Salad
+Like
+Everything else
+Heart Events
+Two Hearts
+Enter Pierre's General Store when Abigail is there, any day except Saturday.
+Details 
+Four Hearts
+Visit the mountain between noon and 7pm on a rainy day, any season except Winter.
+Details 
+Six Hearts
+Between 9pm and midnight on a day when it is not raining, enter Pelican Town from any direction. (This includes exiting homes or shops in Town.)
+Details 
+Eight Hearts
+After receiving a letter from Abigail, enter Pierre's General Store between 8pm and 10pm when she's there. (Note that, unless you have the Key To The Town, you cannot enter the store from outside after 9pm, but you can wait in Caroline's greenhouse and trigger the event by exiting to the kitchen.)
+Details 
+Ten Hearts
+Enter the mines or the Quarry Mine (or ascend from a lower floor of the mines) between 5pm and midnight. The event won't trigger if you've already given her the Mermaid's Pendant.
+Details 
+After the 10-Heart Event
+After viewing Abigail's 10-heart event, she will appear in the Mines on level 20 on days when it is raining. She will not appear in a Multiplayer game, only in single-player mode.
+The first time the player encounters Abigail in the Mines, she has unique dialogue. Thereafter, there is a 15% chance to find her playing the flute, and an 85% chance of finding her walking in place. If she is not playing the flute, she will speak to the player.
+Group Ten-Heart Event
+If the player is unmarried and has given a bouquet to all available bachelorettes, raised friendship with each bachelorette to 10 hearts, and seen each bachelorette's 10-heart event, then entering Haley/Emily's House will trigger a cutscene. If Haley is the final bachelorette you share a Ten-Heart Event with, the Group Ten-Heart Event will be unavoidable as it is triggered immediately afterwards.
+Details 
+This event will trigger only one time per save file. This event will not trigger if you are married or have given a Wilted Bouquet or Mermaid's Pendant to one of the marriage candidates.
+Fourteen Hearts
+Enter the Backwoods between 6:10am and 5pm.
+Details 
+Marriage
+Main article: Marriage
+Once married, Abigail will move into the farmhouse. Like other marriage candidates, she will add her own room to the right of the bedroom. She'll also set up a small area behind the farmhouse where she'll sometimes go to practice her flute.
+On rainy days, Abigail may offer you Solar Essence, Bat Wing, Void Essence, Amethyst, or Fire Quartz. On rainy nights, she may offer you soup: Parsnip Soup, Tom Kha Soup, Trout Soup, Chowder, or Lobster Bisque. On days when Abigail stays inside the farmhouse all day, she may offer you a Cherry Bomb, a Bomb, Fried Mushroom, or Crab Cakes to assist with your adventuring in the Mines.
+Marriage ceremony
+Abigail's room
+Abigail plays her flute
+Quotes
+Regular 
+Events 
+After Marriage 
+Questions
+Details 
+Quests
+Abigail may randomly request an item at the "Help Wanted" board outside Pierre's General Store. The reward is 3x the item's base value and 150 Friendship points. Note that Abigail cannot be given this item while she is in the Mines.
+Portraits
+Timeline
+Abigail's look evolved over the years the game was in development. Here's a timeline showing how ConcernedApe's art and Abigail's style changed over the years before the game was launched.
+Gallery
+Gif from Dev Update #12
+Trivia
+Giving her something she likes will result in her implying that she is going to eat the gift, regardless of what it is. This includes diamond, an item that is the hardest mineral on the Mohs hardness scale.
+Abigail's top can be tailored using 1 Cloth and 1 Bone Flute, creating the Blue Long Vest.
+Abigail has a pet guinea pig named "David". If Abigail moves in with the player, another guinea pig named "David Jr." will be present in her farmhouse room, while "David" stays behind in her original room at Pierre's General Store.
+After a sufficient relationship is built up, Pierre will confess that he worries that Abigail is not his biological daughter. Later, the Wizard will mention that he has reason to believe one of the townsfolk is his daughter. At one point Caroline will mention that she used to take secret walks to the Wizard’s tower. Abigail will also stand outside the Wizard’s Tower sometimes. Some of Caroline's dialogue claims that Abigail's natural hair color is a light brown, as opposed to the purple color she dyes it, but with high relationship Abigail confides to the player that she can't remember the last time she dyed her hair and it never fades from purple.
+Abigail has a poster of Crono hanging above her TV; Crono is a character from the Super Nintendo game "Chrono Trigger."
+Abigail has a bow in her hair on her sprite, but no bow is shown on her portraits. This bow can, however, be seen in early versions of her portraits.
+After the 10 heart cutscene, during rainy days in floor 20 of the Mines, Abigail will say [player name] (85% chance), which is helpful when using the item ID glitch. Floor 20 can be exited and reentered repeatedly, with an 85% chance of Abigail saying [player name] each time.
+History
+1.0: Introduced.
+1.1: Added flute practice area behind farmhouse if married.
+1.3.27: Added appearance in the Mines after viewing 10-heart event. Added group 10-heart event.
+1.4: Added 14 heart event. Changed festival dialogue from "halloween" to "Spirit's Eve" in English.
+1.5: Added beach portraits.
+1.6: Added custom gift reactions. Ancient Sword and Bone Flute are now liked gifts. Added winter portraits and more beach portraits. Added Abigail Portrait.
+Villagers
+Bachelors Alex • Elliott • Harvey • Sam • Sebastian • Shane
+Bachelorettes Abigail • Emily • Haley • Leah • Maru • Penny
+Townspeople Caroline • Clint • Demetrius • Evelyn • George • Gil • Gunther • Gus • Jas • Jodi • Kent • Lewis • Linus • Marlon • Marnie • Morris • Pam • Pierre • Robin • Vincent • Willy
+Other Birdie • Bouncer • Dwarf • Fizz • Governor • Grandpa • Henchman • Junimos • Krobus • Leo • Mr. Qi • Old Mariner • Professor Snail • Sandy • Wizard
+Category: Marriage candidates

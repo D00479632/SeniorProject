@@ -1,0 +1,150 @@
+Jump to navigation
+Jump to search
+Bookseller
+Address: Across the town's river, above JojaMart
+The Bookseller is a shop that sells books. It appears twice every season on random dates marked by a balloon on the calendar. The shop sells a random assortment of books each time. The player can also trade in their books here. The Bookseller is located above the JojaMart/Movie Theater.
+On the days the Bookseller visits, at the start of the day there will be a message saying "The Bookseller is in town today". The Bookseller is open all day.
+Contents
+1 Visiting Days
+2 Shop Stock
+3 Trading Stock
+4 Trivia
+5 References
+6 History
+Visiting Days
+The Bookseller visits twice every season randomly on the following possible dates:[1]
+Season Possible days
+ Spring 11, 12, 21, 22, 25
+ Summer 9, 12, 18, 25, 27
+ Fall 4, 7, 8, 9, 12, 19, 22, 25
+ Winter 5, 11, 12, 19, 22, 24
+Shop Stock
+Name Description Price Availability Notes
+Book Of Stars
+Read this to gain some experience in all skills. 15,000g 25% chance to appear
+Stardew Valley Almanac
+Read this to gain some farming experience. 10,000g One of these books has a 60% chance to appear in the stock for 10,000g, selected at random.
+Bait And Bobber
+Read this to gain some fishing experience.
+Mining Monthly
+Read this to gain some mining experience.
+Combat Quarterly
+Read this to gain some combat experience.
+Woodcutter's Weekly
+Read this to gain some foraging experience.
+Stardew Valley Almanac
+Read this to gain some farming experience. 8,000g One of these books has an 80% chance to appear in the stock for 8,000g, selected at random.
+Bait And Bobber
+Read this to gain some fishing experience.
+Mining Monthly
+Read this to gain some mining experience.
+Combat Quarterly
+Read this to gain some combat experience.
+Woodcutter's Weekly
+Read this to gain some foraging experience.
+Stardew Valley Almanac
+Read this to gain some farming experience. 5,000g One of these books will appear in the stock for 5,000g, selected at random.
+Bait And Bobber
+Read this to gain some fishing experience.
+Mining Monthly
+Read this to gain some mining experience.
+Combat Quarterly
+Read this to gain some combat experience.
+Woodcutter's Weekly
+Read this to gain some foraging experience.
+The Alleyway Buffet
+You have a greater chance to find items in the trash. 20,000g One of these books will appear in the stock for 20,000g, selected at random, starting in Year 3
+The Art O' Crabbing
+Crab pots have a 25% chance to yield double.
+Dwarvish Safety Manual
+Bombs deal 25% less damage to you.
+Jewels Of The Sea
+Fishing treasure chests have a chance to yield roe.
+Raccoon Journal
+Weeds have a greater chance to yield mixed seeds.
+Woody's Secret
+Felled trees have a 5% chance to yield double the wood.
+Jack Be Nimble, Jack Be Thick
+Gain +1 Defense.
+Friendship 101
+You become friends with people a little faster.
+Monster Compendium
+Monsters have a small chance to drop double loot.
+Mapping Cave Systems
+You get a 50% discount on Marlon's item retrieval service.
+Treasure Appraisal Guide
+You will fetch a better price when selling artifacts.
+Way Of The Wind pt. 1
+You run a little bit faster. 15,000g Will always appear
+Way Of The Wind pt. 2
+You run a little bit faster. 35,000g Will always appear after receiving the power from Way Of The Wind pt. 1
+Horse: The Book
+You gain a little extra speed when riding a horse. 25,000g Will always appear
+Ol' Slitherlegs
+You will now run a lot faster through grass and crops. 25,000g Will always appear
+Queen Of Sauce Cookbook
+Learn any Queen Of Sauce recipes that you don't already know. 50,000g Will always appear after finding 100 Golden Walnuts
+Woodcutter's Weekly
+Read this to gain some foraging experience. 8,000g 33% chance to appear
+Price Catalogue
+You can now see the value of your items. 3,000g Will always appear
+Trading Stock
+Trading books granting powers will only appear if the player has already obtained the power from that book. Also, for books with multiple items that can be obtained, only one of the items will be available to earn when trading.
+Name Description Price
+Cave Jelly (3)
+A rare jelly found in underground lakes.
+Jewels Of The Sea (1)
+River Jelly (3)
+A rare jelly found in freshwater.
+Sea Jelly (3)
+A rare jelly found in the ocean.
+Hardwood (20)
+A special kind of wood with superior strength and beauty.
+Woody's Secret (1)
+Stuffing (3)
+Ahh... the smell of warm bread and sage.
+Jack Be Nimble, Jack Be Thick (1)
+Slime Egg-Press (1)
+Compresses 100 pieces of slime into a slime egg. It's a miracle of science!
+Monster Compendium (2)
+Slime Incubator (1)
+Hatches slimes eggs into slimes. Allows you to raise slimes outdoors.
+Mystery Box (7)
+A blacksmith can open this for you. Who knows what might be inside?
+Book of Mysteries (1)
+Spicy Eel (3)
+It's really spicy! Be careful.
+Treasure Appraisal Guide (1)
+Artifact Trove (3)
+A blacksmith can open this for you. These troves often contain ancient relics and curiosities.
+Fairy Dust (8)
+Sprinkle on kegs, furnaces, and other refining equipment to instantly receive their product.
+Book Of Stars (1)
+Pepper Poppers (2)
+Spicy breaded peppers filled with cheese.
+Stardew Valley Almanac (1)
+Deluxe Bait (30)
+Causes fish to bite even faster and increases size of the "fishing bar".
+Bait And Bobber (1)
+Wood (100)
+A sturdy, yet flexible plant material with a wide variety of uses.
+Woodcutter's Weekly (1)
+Coal (20)
+A combustible rock that is useful for crafting and smelting.
+Mining Monthly (1)
+Monster Musk (1)
+Spray this on to draw more monsters out of hiding.
+Combat Quarterly (1)
+Trivia
+The shopkeeper, Marcello, is the hot air balloon pilot from Harvey's Ten heart event.
+References
+↑ See Utility::getDaysOfBooksellerThisSeason in the game code.
+History
+1.6: Introduced.
+Buildings
+Merchants Abandoned House • Adventurer's Guild • Blacksmith • Bookseller • Carpenter's Shop • Casino • Desert Trader • Fish Shop • Giant Stump • Harvey's Clinic • Ice Cream Stand • Island Trader • JojaMart • Marnie's Ranch • Oasis • Pierre's General Store • Qi's Walnut Room • The Stardrop Saloon • Traveling Cart • Volcano Dwarf • Wizard's Tower
+Houses 1 River Road • 2 River Road • 1 Willow Lane • 2 Willow Lane • 24 Mountain Road • Elliott's Cabin • Farmhouse • Island Farmhouse • Leah's Cottage • Mayor's Manor • Tent • Trailer • Treehouse
+Farm Buildings Farming Barn • Cabin • Coop • Fish Pond • Greenhouse • Mill • Pet Bowl • Shed • Silo • Slime Hutch • Stable • Well
+Special Desert Obelisk • Earth Obelisk • Farm Obelisk • Gold Clock • Island Obelisk • Junimo Hut • Water Obelisk
+Other Buildings Community Center • Dog Pen • Island Field Office • Joja Warehouse • Movie Theater • Museum • Spa • Witch's Hut
+Category: Stores

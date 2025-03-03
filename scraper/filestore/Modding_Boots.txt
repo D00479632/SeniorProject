@@ -1,0 +1,52 @@
+Jump to navigation
+Jump to search
+← Items
+This page explains how the game stores and parses boots-type item data. For items in general, see Modding:Items.
+Contents
+1 Overview
+2 Data format
+3 Example
+4 See also
+Overview
+Boots are items which can be equipped in the player's boots slot. These change the player sprite and may provide buffs.
+They have item type (B) (or ItemRegistry.type_boots in C# code), their data in Data/Boots, their sprites in Maps/springobjects (item) and Characters/Farmer/shoeColors (shoe color) by default, and their code in StardewValley.Objects.Boots.
+Data format
+The boots data in Data/Boots consists of a string → string dictionary, where...
+The key is the unqualified item ID.
+The value is a slash-delimited string with the fields listed below.
+index field effect
+0 Name The internal item name (and display name in English).
+1 Description The translated item description shown in-game.
+2 Price Unused. The actual price is calculated as (added defence × 100) + (added immunity × 100).
+3 Added Defense A defense bonus applied to the player while equipped.
+4 Added Immunity An immunity bonus applied to the player while equipped.
+5 Color Index The boots color index within the Color Texture, where 0 is the top-left set, if present, otherwise the Characters/Farmer/shoeColors spritesheet.
+6 Display Name The translated item name shown in-game (for non-English assets only).
+7 Color Texture The asset name for the texture containing the boots color sprite.
+8 Sprite Index The boots sprite index within the Texture, where 0 is the top-left set.
+9 Texture The asset name for the texture containing the boots sprite.
+Example
+You can add a custom boots item using Content Patcher like this:
+{
+    "Format": "2.5.0",
+    "Changes": [
+        // load textures
+        {
+            "Action": "Load",
+            "Target": "{{ModId}}/Boots, {{ModId}}/BootsColor",
+            "FromFile": "assets/{{TargetWithoutPath}}.png" // `assets/Boots.png` and `assets/BootsColor.png`
+        },
+
+        // add data
+        {
+            "Action": "EditData",
+            "Target": "Data/Boots",
+            "Entries": {
+                "{{ModId}}_OverpoweredBoots": "Overpowered Boots/These boots are totally overpowered!/1000000/100/100/8/Overpowered Boots/{{ModId}}\\BootsColor/0/{{ModId}}\\Boots"
+            }
+        }
+    ]
+}
+See also
+Modding:Items for item data in general
+Category: Modding

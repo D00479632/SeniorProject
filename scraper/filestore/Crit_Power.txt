@@ -1,0 +1,74 @@
+Jump to navigation
+Jump to search
+Crit. Power (short for Critical Power) is a Combat statistic. When you hit a critical strike, this stat will deal additional damage to your enemy.
+A critical strike in itself does additional damage to an enemy. A special sound plays when hitting a critical strike, and the damage numbers that pop up show the greater damage amount. Bonus damage done by critical strikes is equal to base damage × (3 + Crit. Power / 50).
+Critical strike damage can further be increased by the Jade Ring and by innate enchantments. This "extra multiplier" starts out as 1. Each Jade Ring adds 0.1 to this multiplier, and an innate enchantment adds 0.5 to 1.5, depending on level. This means that two Jade Rings and a +75 Crit. Power innate enchantment will multiply the damage by 2.7.
+The Desperado Profession will further multiply this damage by 2.
+Example:
+A normal attack using the Lava Katana can do 55-64 damage.
+Assuming a normal attack has a base damage value of 60 on a bat with a defense value of 1 would result in 59 damage.
+As the Lava Katana has 25 crit power, this would result in 60×(3+25/50) bonus damage which would make the final damage 60×(3+25/50)=210 damage.
+If the Lava Katana was forged with 3 Jades, its crit power would be increased by 15, for a total of 40 (though it shows up as +39 ingame due to rounding errors). This means the damage would instead be 60 × (3+40/50) = 228.
+With 2 Jade Rings and a +75 Crit. Power innate enchantment, this would become 228 × (1+0.1+0.1+1.5) = 615.6.
+With Desperado, this becomes 615.6 × 2 = 1231.2.
+How the critical hit chance works is discussed in Critical hit chance.
+Increasing Crit. Power
+The following items increase Crit. Power. The effect is permanent when the item is equipped. Forging a weapon with Jades will increase its natural Crit. Power stat by 5 per Jade.
+Image Name Effect Crit
+multiplier
+Obsidian Edge
+Speed (−1)
+Crit. Power (+10)
+3.2
+Yeti Tooth
+Defense (+4)
+Crit. Power (+10)
+3.2
+Steel Falchion
+Speed (+4)
+Crit. Power (+20)
+3.4
+Lava Katana
+Defense (+3)
+Crit. Power (+25)
+3.5
+Dragontooth Cutlass
+Crit. Power (+50)
+4
+Wind Spire
+Crit. Power (+10)
+Weight (+5)
+3.2
+Crystal Dagger
+Crit. Power (+50)
+Weight (+5)
+4
+Burglar's Shank
+Crit. Power (+25)
+3.5
+Dragontooth Shiv
+Crit. Chance (+3)
+Crit. Power (+100)
+Weight (+5)
+5
+Iridium Needle
+Crit. Chance (+6)
+Crit. Power (+200)
+7
+Kudgel
+Speed (−1)
+Crit. Power (+50)
+Weight (+2)
+4
+Dragontooth Club
+Crit. Power (+50)
+Weight (+3)
+4
+Jade Ring
+Crit. Power (+10%)
+History
+1.6: Raised Kudgel's critical attack power from +4 to +50.
+Skills & Stats
+Skills Farming • Mining • Foraging • Fishing • Combat
+Stats Attack • Crit. Chance • Crit. Power • Defense • Immunity • Luck • Magnetism • Speed • Weight
+Category: Buffs

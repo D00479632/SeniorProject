@@ -1,0 +1,12 @@
+Jump to navigation
+Jump to search
+Dark Talisman
+Information
+Source Mutant Bug Lair
+Sell Price Cannot be sold
+The Dark Talisman can be found in a chest in the Mutant Bug Lair. Obtaining it is part of the Dark Talisman quest. It is used to open the passage at the northeast end of the Railroad.
+Once obtained, it can be found in the Special Items & Powers tab in the Player's Menu. Oddly enough, it remains there even after using it.
+History
+1.1: Introduced.
+1.6: Now located in the new Special Items & Powers tab instead of the player's wallet.
+Category: Special items

@@ -1,0 +1,34 @@
+Jump to navigation
+Jump to search
+← Index
+This page covers the data format for craftable floors & paths. This is an advanced guide for mod developers
+Data Format
+You can add or customize craftable floors & paths by editing the Data/FloorsAndPaths asset.
+This consists of a string → model lookup, where the key matches the ID field and the value is a model with these fields:
+field effect
+ID The unique string ID for this floor/path.
+ItemId The unqualified item ID for the corresponding object-type item.
+Texture The asset name for the texture (under the game's Content folder) when the flooring is applied or the path is placed. Use \ (or \\ in JSON) to separate name segments if needed. For example, the vanilla tilesheet is TerrainFeatures\Flooring.
+Corner The top-left pixel position for the sprite within the Texture spritesheet, specified as a model with X and Y fields.
+PlacementSound The audio cue ID played when the item is applied/placed (e.g. axchop used by Wood Floor).
+FootstepSound The audio cue ID played when the player steps on the tile (e.g. woodyStep used by Wood Floor).
+WinterTexture
+Corner (Optional) Equivalent to Texture and Corner, but applied if the current location is in winter.
+RemovalSound (Optional) The audio cue ID played when the item is unapplied or picked up. Defaults to the same sound as PlacementSound.
+RemovalDebrisType (Optional) The type of cosmetic debris particles to 'splash' from the tile when the item is unapplied or picked up. The defined values are 0 (copper), 2 (iron), 4 (coal), 6 (gold), 8 (coins), 10 (iridium), 12 (wood), 14 (stone), 32 (big stone), and 34 (big wood). Default 14 (stone).
+ShadowType (Optional) The type of shadow to draw under the tile sprite. Default None.
+The possible values are:
+value effect
+None Don't draw a shadow.
+Square Draw a shadow under the entire tile.
+Contoured raw a shadow that follows the lines of the path sprite.
+ConnectType (Optional) When drawing the flooring across multiple tiles, how the flooring sprite for each tile is selected. Defaults to Default.
+The possible values are:
+value usage
+Default For normal floors, intended to cover large square areas. This uses some logic to draw inner corners.
+Path For floors intended to be drawn as narrow paths. These are drawn without any consideration for inner corners.
+CornerDecorated For floors that have a decorative corner. Use CornerSize to change the size of this corner.
+Random For floors that don't connect. When placed, one of the tiles is randomly selected.
+CornerSize (Optional) The pixel size of the decorative border when the ConnectType field is set to CornerDecorated or Default.
+FarmSpeedBuff (Optional) The speed boost applied to the player, on the farm only, when they're walking on paths of this type. Negative values are ignored. Default 0.1.
+Category: Modding

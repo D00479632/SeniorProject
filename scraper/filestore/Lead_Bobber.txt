@@ -1,0 +1,44 @@
+Jump to navigation
+Jump to search
+Lead Bobber
+Adds weight to your "fishing bar", preventing it from bouncing along the bottom.
+Information
+Source Fish Shop • Traveling Cart
+Sell Price 150g
+The Lead Bobber is a tackle that helps fishing by preventing the bar from bouncing. It can be purchased from Willy's Fish Shop for 200g after reaching Fishing level 6. It may also randomly appear at the Traveling Cart for 450–1,000g. It is one of two fishing tackle that cannot be crafted, along with the Curiosity Lure.
+Using two Lead Bobbers on an Advanced Iridium Rod prevents the fishing bar from bouncing even more compared to using one.
+Only the Iridium Rod or the Advanced Iridium Rod can equip tackle. The Iridium Rod can only attach one tackle at a time, while the Advanced Iridium Rod can attach two. To attach tackle, left-click on the tackle, then right-click on the rod. To remove tackle, first right-click to remove any bait, then right-click to remove the tackle. For an Advanced Iridium Rod, the left tackle will be the first one removed.
+Tackle does not stack in inventory or chests; each tackle takes up one inventory slot.
+Contents
+1 Gifting
+2 Bundles
+3 Quests
+4 History
+Gifting
+Villager Reactions
+Dislike  Abigail •  Alex •  Caroline •  Clint •  Demetrius •  Dwarf •  Elliott •  Emily •  Evelyn •  George •  Gus •  Haley •  Harvey •  Jas •  Jodi •  Kent •  Krobus •  Leah •  Leo •  Lewis •  Linus •  Marnie •  Maru •  Pam •  Penny •  Pierre •  Robin •  Sam •  Sandy •  Sebastian •  Shane •  Vincent •  Willy •  Wizard
+Bundles
+The Lead Bobber is not used in any bundles.
+Quests
+The Lead Bobber is not used in any quests.
+History
+1.0: Introduced.
+1.6: Using two Lead Bobbers prevents the fishing bar from bouncing even more.
+
+Equipment
+Artisan Bee House • Cask • Cheese Press • Dehydrator • Fish Smoker • Keg • Loom • Mayonnaise Machine • Oil Maker • Preserves Jar
+Refining Bait Maker • Bone Mill • Charcoal Kiln • Crystalarium • Deluxe Worm Bin • Furnace • Geode Crusher • Heavy Furnace • Heavy Tapper • Lightning Rod • Mushroom Log • Ostrich Incubator • Recycling Machine • Seed Maker • Slime Egg-Press • Slime Incubator • Solar Panel • Tapper • Wood Chipper • Worm Bin
+Farming
+Fertilizer Basic Fertilizer • Basic Retaining Soil • Deluxe Fertilizer • Deluxe Retaining Soil • Deluxe Speed-Gro • Hyper Speed-Gro • Quality Fertilizer • Quality Retaining Soil • Speed-Gro • Tree Fertilizer
+Sprinklers Iridium Sprinkler • Quality Sprinkler • Sprinkler
+Other Deluxe Scarecrow • Garden Pot • Rarecrow • Scarecrow
+Fishing
+Bait Bait • Challenge Bait • Deluxe Bait • Magic Bait • Magnet • Targeted Bait • Wild Bait
+Tackle Barbed Hook • Cork Bobber • Curiosity Lure • Dressed Spinner • Lead Bobber • Quality Bobber • Sonar Bobber • Spinner • Trap Bobber • Treasure Hunter
+Other Crab Pot
+Bombs Bomb • Cherry Bomb • Mega Bomb
+Fences Gate • Hardwood Fence • Iron Fence • Stone Fence • Wood Fence
+Storage Big Chest • Big Stone Chest • Chest • Junimo Chest • Mini-Fridge • Stone Chest
+Signs Dark Sign • Stone Sign • Text Sign • Wood Sign
+Misc Anvil • Coffee Maker • Cookout Kit • Deconstructor • Fairy Dust • Farm Computer • Hopper • Mini-Forge • Mini-Jukebox • Mini-Shipping Bin • Sewing Machine • Staircase • Statue Of Blessings • Statue Of The Dwarf King • Telephone • Tent Kit • Tools • Workbench
+Category: Fishing Tackle

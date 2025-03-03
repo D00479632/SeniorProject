@@ -1,0 +1,19 @@
+Jump to navigation
+Jump to search
+When choosing to play Multiplayer from the main menu, or choosing "Multiplayer Options" from the Advanced Options menu, cabins will spawn at different locations depending on choice of Farm Map and choice of "Close" or "Separate" option in the menu.
+The table below shows the placement of cabins when choosing 3 or 7 cabins respectively, for "Close" and "Separate" options.
+Farm Map 4 Player Close 4 Player Separate 8 Player Close 8 Player Separate
+Standard
+Riverland
+Forest
+Hill-top
+Wilderness
+Four Corners
+Beach
+Meadowlands
+History
+1.3.27: Introduced.
+1.4: Added Four Corners Farm Map.
+1.5: Added Beach Farm Map.
+1.6: Added Meadowlands Farm Map, and option for 8 starting cabins.
+Category: Farm buildings

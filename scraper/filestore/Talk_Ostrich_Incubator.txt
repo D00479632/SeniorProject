@@ -1,0 +1,41 @@
+Jump to navigation
+Jump to search
+This talk page is for discussing Ostrich Incubator.
+Sign and date your posts by typing four tildes (~~~~).
+Put new text below old text.
+Be polite.
+Assume good faith.
+Don't delete discussions.
+Profession Affecting the Incubation Time
+I think the correct profession is Coopmaster, in the game code the same profession index is used for "Incubator" and "Ostrich Incubator" (I check the code before modifying).
+Object::performObjectDropInAction
+if (name.Equals("Incubator"))
+{
+ (...)
+ if (((NetList<int, NetInt>)(object)who.professions).Contains(2))
+ {
+  NetIntDelta obj = minutesUntilReady;
+  ((NetFieldBase<int, NetIntDelta>)(object)obj).set_Value(((NetFieldBase<int, NetIntDelta>)(object)obj).get_Value() / 2);
+ }
+ (...)
+}
+
+else if (name.Equals("Ostrich Incubator"))
+{
+ (...)
+ if (((NetList<int, NetInt>)(object)who.professions).Contains(2))
+ {
+  NetIntDelta obj2 = minutesUntilReady;
+  ((NetFieldBase<int, NetIntDelta>)(object)obj2).set_Value(((NetFieldBase<int, NetIntDelta>)(object)obj2).get_Value() / 2);
+ }
+ (...)
+}
+Btw, is there a index list of professions somewhere?
+-- Charly (talk) 18:20, 25 November 2021 (UTC)
+There was a list on the old wiki, I'll move it to the Talk:Skills page. Also, mea culpa (my fault), you checked the code and I didn't. This is turning out to be a busy Thanksgiving. Cheers, margotbean (talk) 18:25, 25 November 2021 (UTC)
+Dimittuntur tibi (np), thanks for the list! and happy Thanksgiving out there :-) Since we're here, is there an history of the wiki(s) somewhere? I've never known why there is an "old wiki", there isn't much on Stardew Valley Wiki:About. -- Charly (talk) 18:41, 25 November 2021 (UTC)
+Chucklefish used to publish the game and host the wiki. When ConcernedApe took over publishing the game, he also took over the wiki. Chucklefish is kind enough to keep a copy of the "old" wiki online for us, for reference (and ad revenue?), and they've said they plan to keep it up indefinitely. So, it could (or could not) disappear someday. (Although I hope the internet archive has most of it already.) Thanks for the good wishes, same back to you (holiday or not)! margotbean (talk) 18:58, 25 November 2021 (UTC)
+Okay, thanks for the explanation and the wishes! -- Charly (talk) 19:57, 25 November 2021 (UTC)
+Suggestion
+Add a link to the main incubator page. --Unsigned post by Insanity Studios 19:23, 7 October 2024
+Category: Talk pages

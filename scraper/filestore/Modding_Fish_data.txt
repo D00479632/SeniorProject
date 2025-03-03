@@ -1,0 +1,85 @@
+Jump to navigation
+Jump to search
+← Modding:Index
+This page explains how the game stores and parses fish data, including spawning mechanics. This is an advanced guide for mod developers.
+Contents
+1 Parsing fish spawn conditions
+1.1 Spawn locations
+1.2 Fish data and spawn criteria
+1.3 Spawn rate
+2 Aquarium fish
+Parsing fish spawn conditions
+The game checks two places to determine which fish to spawn when the player is fishing. This only applies to normal fish; the chance of spawning a legendary fish is calculated separately by the location code, before following the rules below. (Reverse engineered from BobberBar and GameLocation::getFish.)
+Spawn locations
+Each fish is assigned to an area within the location, and will only spawn if the player is within that area. The tile coordinates for each area is defined by GameLocation::getFishingLocation, which can be overridden for each game location. The following areas are defined:
+Cindersap Forest:
+pond (area #1 for tiles (0, 0) through (52, 42) inclusively);
+river (area #0 matching any other part of the forest).
+Ginger Island West
+Freshwater (area #2 for tiles (36, 0) through (36, 80) inclusively);
+Ocean (area #1 matching any other location)
+All other locations only have area -1, so where you fish from has no impact.
+The fish that can be spawned in a given location are defined in the slash-delimited data from Data\Locations.xnb (see also: Modding:Location data) specifically field indexes 4 (spring), 5 (summer), 6 (fall), and 7 (winter). Each field contains any number of <int fishID> (matching Data\Fish.xnb) + <int areaID> (or -1 for any area) pairs. For example, Cindersap Forest has this fish data for summer: 153 -1 145 0 144 -1 138 0 132 0 706 0 704 0 702 0. That can be parsed as:
+value fish area
+153 -1 Green Algae any (pond or river)
+145 0 Sunfish river
+144 -1 Pike any (pond or river)
+138 0 Rainbow Trout river
+132 0 Bream river
+706 0 Shad river
+704 0 Dorado river
+702 0 Chub river
+Fish data and spawn criteria
+The fish data and spawn criteria is stored as fields in Data\Fish.xnb. This consists of two different formats.
+If the second field is trap, the fish can only be caught using a crab pot and it uses this format:
+index syntax example content
+0 <name> Lobster The fish name.
+1 <type> trap Must be trap to indicate a crab pot catch.
+2 <chance> .05 The percentage chance that this fish will be caught as a value between 0 and 1. Only applies if a fish listed earlier in the file isn't selected first.
+3 688 .45 689 .35 690 .35 Unused.
+4 <location> ocean The type of water body where the fish can be caught. The vanilla values are freshwater or ocean; mods may add their own region.
+5 <min size> 2 The minimum and maximum size of the caught fish in inches for fishing stats. In non-English languages, this is converted to centimetres by multiplying by 2.54.
+6 <max size> 20
+Otherwise it's a fish that can be caught while fishing and uses this format:
+index syntax example content
+0 <name> Pufferfish The fish name.
+1 <chance to dart> 80 How often the fish darts in the fishing minigame; between 15 (carp) and 100 (glacierfish).
+2 <darting randomness> floater How the bobber behaves during the fishing minigame; one of mixed, smooth, floater, sinker, or dart.
+3 <min size> 1 The minimum and maximum size of the caught fish in inches for fishing stats. In non-English languages, this is converted to centimetres by multiplying by 2.54.
+4 <max size> 36
+5 [<min time> <max time>]+ 1200 1600 The time of day when they spawn. The min time is inclusive, max time is exclusive. May specify multiple ranges.
+6 [<season>]+ summer Unused; seasons are taken from Data/Locations instead.
+7 <weather> sunny The weather when they spawn; one of sunny, rainy, or both.
+8 <locations> 690 .4 685 .1 Unused; locations are taken from Data/Locations instead.
+9 <max depth> 4 The minimum water depth to cast to for maximizing the chance of catching a type of fish; used in the spawn rate calculation (see below).
+10 <spawn multiplier> .3 The spawn multiplier used in the spawn rate calculation (see below).
+11 <depth multiplier> .5 The depth multiplier used in the spawn rate calculation (see below).
+12 <fishing level> 0 The minimum fishing level needed for this fish to appear.
+13 <first-catch tutorial eligible> true Indicates whether the fish can be selected for the first-catch tutorial.
+Spawn rate
+Section Stub
+This section is marked as a stub for the following reason:
+This information is based on version 1.3 of the game. It has not been updated.
+Every time the player casts with their fishing rod, a new spawning queue is created containing every available type of fish (including algae and seaweed) which meets the criteria based on location, season, time, and weather. The spawning queue is then shuffled so that the available types of fish are listed in a random order. A skill check with a random component is performed on each type of fish, in the order in which it is currently in the spawning queue. Success results in a bite ("HIT!") and failure results in the skill check being repeated with the next fish in the queue. If all fish in the queue fail the skill check, a random trash item is caught instead.
+If a fish matches the spawning criteria, the probability that it will succeed in spawning is: {base spawn probability} = {spawn multiplier} - max(0, {minimum depth} - {actual depth}) × {depth multiplier} × {spawn multiplier} + {fishing level} / 50, up to a maximum of 90%. The actual depth is the bobber's tile distance from land.
+A fish can therefore spawn at a depth less than its minimum depth, but the odds of doing so decreases for most fish. A higher spawn multiplier and depth multiplier will result in a greater decrease in the odds of a fish spawning at a distance that is closer to shore than its minimum depth. The odds of fish spawning never increases when casting to a depth greater than 4, except for with the Octopus which reaches its maximum spawning rate at a depth of 5 or higher.
+The relative probability that a specific type of fish (including algae and seaweed) in a location will spawn during a specific time and weather is: {relative spawn probability} = {base spawn probability} * POWER( ({all fish failure rate} - {this fish failure rate}) / ({number of fish} - 1}), ({fish queue position} - 1)), where all fish and number of fish are all other fish present at the same location during the same time and weather conditions. This calculation is repeated for each possible position in the spawning order (fish queue position) for a type of fish, and then averaged. The total added relative spawn probability for all fish at a location at a certain time and weather will always be under 100%, with any remaining difference under 100% being the relative probability of catching trash: {trash probability} = 100% - {total relative spawn probability}.
+Aquarium fish
+Fish in fish tanks can be edited via the Data/AquariumFish asset:
+index field purpose
+0 sprite index The index of the sprite in the LooseSprites/AquariumFish spritesheet, starting at 0 for the top-left sprite. The fish sprites are 24x24px.
+1 type The fish type, which influences their behavior. Possible values:
+value notes
+eel
+cephalopod
+crawl
+ground
+fish
+front_crawl Used for crawling fish whose sprites extend past the floor. They are always closest to the glass and sort above other fish to avoid sorting issues.
+2
+3–5 idle animation
+dart animation The animation used by the fish when it's idling (2) or darting (3–5). This is specified as a list of space-delimited frames, where each frame is the sprite index in the LooseSprites/AquariumFish spritesheet to display. Each frame is displayed for 125ms. For example, Stingrays have their idle animation set to 70 70 70 71 71 72.
+The dart animation is split into three fields: start (3), hold (4), and end (5).
+6 texture The asset name for the texture containing the fish's sprite. Defaults to LooseSprites/AquariumFish.
+7 hat position The pixel position of the hat on the sprite, specified as an object with X and Y values. Custom fish in aquariums can wear hats, just like vanilla sea urchins.
+Categories: Article stubsModding

@@ -1,0 +1,60 @@
+Jump to navigation
+Jump to search
+← Index
+This page documents tokenizable strings, a built-in way to build display text which can contain any combination of literal text, translations, and placeholder values.
+Contents
+1 Format
+1.1 Overview
+1.2 Token format
+1.3 Token argument format
+2 Tokens
+3 Extensibility for C# mods
+Format
+Overview
+You can only use tokenizable strings in data fields that specifically allow them (which will be indicated in the wiki docs).
+A tokenizable string can contain any combination of literal text and tokens (listed below). For example:
+"Dialogue": "Welcome to Pierre's! How is [FarmName] doing?"
+When using Content Patcher, you can use its tokens anywhere in the string (including within square brackets); they'll be expanded before the game parses the string. For example, "{{Spouse}} would love [ArticleFor [SuggestedItem]] [SuggestedItem]!" would output something like "Abigail would love an Apple!".
+Token format
+A token is a predefined placeholder which produces text, wrapped in square brackets. Token names are not case-sensitive, so [LocalizedText] and [LOCALIZEDTEXT] are equivalent.
+For example, this will show a message like "Welcome to Pierre's! This is raw text":
+"Dialogue": "[LocalizedText Strings\StringsFromCSFiles:ShopMenu.cs.11488] {{i18n: some-translation}}"
+Token argument format
+A token can optionally have arguments (which can in turn contain tokens). In the above example, the LocalizedText takes one argument (the translation key to display). Arguments are space-delimited, so you need to use EscapedText to pass an argument containing spaces:
+"Dialogue": "[LocalizedText [EscapedText Strings\BundleNames:Quality Fish]]"
+Tokens
+Here are the tokens provided by the base game:
+token format output
+[AchievementName <id>] The translated display name for an achievement from Data/Achievements. For example, [AchievementName 5] will output A Complete Collection in English.
+[ArticleFor <word>] The grammatical article (a or an) for the given word when playing in English, else blank. For example, [ArticleFor apple] apple will output an apple.
+[CharacterName <name>] The translated display name for an NPC, given their internal name.
+[DayOfMonth] The numeric day of month, like 5 on spring 5.
+[EscapedText]
+[EscapedText <text>] Marks a snippet of text as a single argument, so it can be safely passed into another token's space-delimited arguments even if it's empty or contains spaces.
+For example, the SpouseFarmerText expects two arguments separated by spaces. This passes an empty string for the first one, and text containing spaces for the second:
+[SpouseFarmerText [EscapedText] [EscapedText spouse 28 63 2]]
+[FarmerUniqueID] The target player's unique internal multiplayer ID
+[FarmName] The farm name for the current save (without the injected "Farm" text).
+[FarmerStat <key>] The value of a tracked stat for the current player. See the PLAYER_STAT game state query for a list of useful stats.
+For example:
+"You've walked [FarmerStat stepsTaken] so far."
+[GenderedText <male text> <female text> Depending on the target player's gender, show either the male text or female text. If the text contains spaces, you'll need to escape them using EscapedText.
+[ItemName <id> [fallback text]] The translated display name for an item based on its qualified or unqualified item ID. For example, [ItemName (O)128] will output Pufferfish in English.
+If the item doesn't exist, it'll output [fallback text] if specified, else Error Item (<id>).
+[LocalizedText <string key>]
+[LocalizedText <string key> <token values>+] Translation text loaded from the given translation key. If the translation has placeholder tokens like {0}, you can add the values after the string key.
+[LocationName <location ID>] The translated display name for a location given its ID in Data/Locations.
+[MovieName <id>] The translated display name for a movie from Data/Movies. For example, [MovieName spring_movie_0] will output The Brave Little Sapling in English.
+[NumberWithSeparators <number>] Format a number with thousands separators based on the current language. For example, [NumberWithSeparators 5000000] will output 5,000,000 in English.
+[PositiveAdjective] A random adjective from the Strings\Lexicon data asset's RandomPositiveAdjective_PlaceOrEvent entry.
+[Season] The current season name, like spring.
+[SpecialOrderName <id>] The translated display name for a special order from Data/SpecialOrders. If the special order is currently active, it'll show the same name shown in the quest log. For example, [SpecialOrder Caroline] will output Island Ingredients in English.
+[SpouseFarmerText <spouse is farmer text> <spouse is NPC text> Show a different text depending on whether the target player's spouse is a player or NPC. If the text contains spaces, you'll need to escape them using EscapedText.
+[SpouseGenderedText <male text> <female text>] Equivalent to GenderedText, but based on the gender of the player's NPC or player spouse instead.
+[SuggestedItem [interval] [sync key]] (For shops only.) The name of a random item currently available in the shop stock.
+The result will be identical for all queries with the same [sync key] during the given [interval] (one of tick, day, season, year), including between players in multiplayer mode. If omitted, they default to day and the shop ID respectively.
+[ToolName <id> [upgrade level]] The translated display name for a tool, including its upgrade level if specified. For example, [ToolName (T)IridiumAxe] will output Iridium Axe in English.
+Extensibility for C# mods
+C# mods can define custom tokens by calling TokenParser.RegisterParser("tokenName", ...). To avoid conflicts, custom token names should apply the unique string ID conventions.
+The TokenStringBuilder class provides methods for creating token strings. For example, TokenStringBuilder.ItemNameFor(item) will produce a string like [ItemName (O)128] or [ItemNameWithFlavor SmokedFish (O)128].
+Category: Modding

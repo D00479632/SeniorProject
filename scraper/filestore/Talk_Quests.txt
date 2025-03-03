@@ -1,0 +1,111 @@
+Jump to navigation
+Jump to search
+This talk page is for discussing Quests.
+Sign and date your posts by typing four tildes (~~~~).
+Put new text below old text.
+Be polite.
+Assume good faith.
+Don't delete discussions.
+Contents
+1 Gathering Quests
+2 Fishing Quests
+3 Aquatic Overpopulation
+4 Special Orders Friendship Reward
+5 Crop Order Quest Reward
+6 Qi's Kindness
+7 Anchor link behind sticky header
+8 Repeatable Special Orders and unclaimed rewards
+9 Bug Meat
+10 Initiation
+11 Gus' Famous Omelet bug
+12 prize tickets
+13 The sentence about being able to ship special requests on the last day is WRONG. (False Flag)
+Gathering Quests
+I think it's worth mentioning, that at least wood(don't know about rocks, but I assume they do the same) counts towards the quest's goal only if collected after taking the quest. Precollected wood doesn't work, sadly. I've found it the hard way. Blackraven6 (talk) 21:11, 4 May 2021 (UTC)
+Done! Thanks for pointing that out, since all the exploits were removed, it's an important thing to mention. margotbean (talk) 21:42, 4 May 2021 (UTC)
+Fishing Quests
+I don't know if this is worth mentioning, but for the quests Biome Balance and Aquatic Overpopulation, if Demetrius requests a "basic" fish like Sardines, then switching to the training rod for the duration of the quest makes it go much, much faster.
+Thanks for your effort to improve the Wiki. Please sign your comment using four tildes as shown in the header of this page.
+For catching the less difficult fish, I've had success using Wild Bait and Dressed Spinner and casting into shallower water. I think the player's circumstances in the game affects how they go about any particular task, so specific "do this" can be misplaced. And it's only tangentially related to Quests. Perhaps there might be a place for something like this on the Fishing Strategy page, which tends to focus on hard to catch fish. Zendowolf (talk) 18:34, 12 June 2021 (UTC)
+Aquatic Overpopulation
+I think the Carp is missing in Quests#Aquatic Overpopulation (the fish is here in three other langages at least) but I don't know in which season it should go. Momoche (talk) 17:16, 4 July 2021 (UTC)
+The data file SpecialOrders.xnb does not include Carp, so it should not show up in the quest. It should be removed from the other languages. Thanks for updating these pages, btw! margotbean (talk) 18:41, 4 July 2021 (UTC)
+Here is the relevant portion of the data file, it specifies which fish can be chosen in which season:
+          {
+            "RequiredTags": "season_spring",
+            "Value": "PICK_ITEM Sunfish, Sardine, Flounder, Largemouth Bass, Halibut"
+          },
+          {
+            "RequiredTags": "season_summer",
+            "Value": "PICK_ITEM Rainbow Trout, Dorado, Tilapia, Tuna, Red Mullet"
+          },
+          {
+            "RequiredTags": "season_fall",
+            "Value": "PICK_ITEM Tiger Trout, Albacore, Midnight Carp, Salmon"
+          },
+          {
+            "RequiredTags": "season_winter",
+            "Value": "PICK_ITEM Squid, Perch, Lingcod"
+          }
+-- margotbean (talk) 19:27, 4 July 2021 (UTC)
+Special Orders Friendship Reward
+I was unable to find the friendship reward amount in data files or game code for 4 special orders that specify "friendship" as a reward in the data file SpecialOrders.xnb. I was able to test 3 out of the 4 of them by comparing save files, and they each gave 250 friendship points. I was unable to test Pam's "The Strong Stuff" order (my current save is at the end of Summer), but it's fairly safe to assume the reward will be 250 friendship points with her as well. If anyone finds a different result, please edit the page or comment here! ...And if anyone knows where that value is set in game code or data files, please definitely leave a comment! Thanks, margotbean (talk) 20:05, 28 October 2021 (UTC)
+I'm not an expert but if we check the FriendshipReward.cs:34 file (line 34) from the decompiled Stardew Valley.exe, 250 seems to be the default friendship reward amount. Since the data is left blank on the friendship reward field in the SpecialOrders.xnb file, it would make sense.
+Related code:
+public override void Load(SpecialOrder order, Dictionary<string, string> data)
+{
+  string data2 = NetFieldBase<string, NetString>.op_Implicit((NetFieldBase<string, NetString>)(object)order.requester);
+  if (data.ContainsKey("TargetName"))
+  {
+    data2 = data["TargetName"];
+  }
+  data2 = order.Parse(data2);
+  ((NetFieldBase<string, NetString>)(object)targetName).set_Value(data2);
+  string data3 = "250";
+  if (data.ContainsKey("Amount"))
+  {
+    data3 = data["Amount"];
+  }
+  data3 = order.Parse(data3);
+  ((NetFieldBase<int, NetInt>)(object)amount).set_Value(int.Parse(data3));
+}
+-- Charly (talk) 23:09, 28 October 2021 (UTC)
+There it is, thank you! margotbean (talk) 23:11, 28 October 2021 (UTC)
+Crop Order Quest Reward
+In the table, what does "base crop price" mean? Clearly, it is meant to include profession bonuses. But is it the sell price of regular quality crops, or of gold quality? When I see "base", I figure that means "fundamental", the price from which other prices are calculated. As such, I think it also rules out profession bonuses. So here, terminology clashes.
+I would suggest using "sell price" in place of "base price", for that term already includes profession bonuses. But it would also imply the price for gold quality, and I'm unclear if that is what is intended here. Giles (talk) 16:51, 8 March 2022 (UTC)
+For whatever reason, the game uses the basic no-star quality price. It also adds Tiller, if the player has chosen it. It doesn't include prices for silver, gold, or iridium crops. I made a change that hopefully makes that clearer. margotbean (talk) 17:48, 8 March 2022 (UTC)
+I thought that might be the case. It seems better, but what do you think of this change? "Base" now refers to the quality, not to the price, and the Tiller involvement now refers to the bonus rather than the price. Giles (talk) 01:12, 9 March 2022 (UTC)
+Well, at first I didn't like "tiller prof. bonuses" (plural), because there's only 1 Tiller bonus. BUT, then I realized that there are multiple crops listed, so it might make sense. I dunno, but if you're happy with it, I'm happy with it. margotbean (talk) 01:42, 9 March 2022 (UTC)
+Qi's Kindness
+I've tidied up the collapsible box of tips to include all the items that are (1) relatively easily acquired and (2) loved by at least three villagers. Three villagers seems like it strikes a good balance between being usefulness without just becoming a list, but it seemed somewhat arbitrary for the entry to include some gems but not others, and to include Cactus Fruit (loved by 3) but not Pink Cake (loved by 4). One More Day (talk) 11:01, 9 March 2022 (UTC)
+Anchor link behind sticky header
+I noticed that direct quest links always seem to link to the quest below, due to the sticky header, and the actual anchored row being obscured. Example: Jodi's Request seems to link to Mayor's "Shorts" instead. Crop Research to Knee Therapy or even Robin's Request, and so on. Either the sticky header needs to be removed or all anchor ids need to move 1 row up and be placed on the previous quest. Both solutions aren't ideal but current links aren't functional I feel thus the topic.Dubesor (talk) 06:20, 27 May 2022 (UTC)
+Moving the id's to a different quest isn't an option. I think the functionality of the page is better with sticky headers than without, so we'll have to make do with the page as it is. margotbean (talk) 09:00, 27 May 2022 (UTC)
+Repeatable Special Orders and unclaimed rewards
+I sure hope I'm doing this right, and I apologize if I'm not, but there is a very niche issue with repeatable special orders, wherein if one does not claim the rewards from them they will not appear again on the board until claimed [Hope I did this right! --Shazbaz (talk) 00:35, 21 June 2022 (UTC)
+Edit - I just confirmed that new quests do not show up until the next week. That is to say, in order for a special order to be available next week, at least one special order reward must be claimed in the current week. Note that this could potentially be taken advantage of in order to control which repeatable special orders are offered.--Shazbaz (talk) 02:38, 21 June 2022 (UTC)
+That seems ~right to me - orders aren't removed from Game1.player.team.specialOrders until their rewards are claimed, and the code that prevents you from getting duplicate orders just checks for the presence of the order in Game1.player.team.specialOrders. In random trivia, nothing breaks if you add the same order two your journal twice (ie via debug command) except the the Donate Objectives, since dropboxes can't be shared among orders. Atravita (talk) 09:54, 21 June 2022 (UTC)
+Bug Meat
+I feel like Willys quest where you have to get 100 bug meat should have a tip to go between mine levels 15-30. That quest seems really hard otherwise (at least to me). Those levels are best because there are three enemies that drop bug meat there. Kayheyday (talk) 19:55, 4 August 2022 (UTC)
+Added! margotbean (talk) 18:30, 5 August 2022 (UTC)
+I recently attempted to complete this quest while the Night Market was in town. The bin on the right side of Willy's shop where you are supposed to deposit the bug meat is not visible, nor can it be interacted with during the Night Market, either in the daytime or the night. This is probably not going to happen for anyone else, but I noticed it's not mentioned in the Bugs or Trivia section, and I think it would be nice to include it. Thanks! Soap-the-gamer (talk) 18:57, 10 February 2024 (UTC)
+This behavior may or may not change with v1.6, so let's wait for that and see what happens. If the bin disappears, it's definitely worth noting on the page. margotbean (talk) 16:45, 25 February 2024 (UTC)
+Initiation
+I found through experience that green slimes in the Secret Woods do count toward this quest. Also, only green slimes count - blue or red slimes in levels 40+ of the mines do not count. The page currently says Secret Woods doesn't count. I play on Switch, so I wondered if there was a difference between versions, if anyone can attest? Pigtesting123 (talk) 06:15, 30 December 2022 (UTC)
+I tested, and found that it works the same on the PC/Steam version. In fact, I found that blue slimes in the Secret Woods did not count towards the quest, but green ones did. I've updated the page accordingly.
+Unfortunately, I don't have a working copy of v1.4 to test with, so I don't know if the change happened with v1.4 or v1.5. In either case, the page should now be correct. Thanks for pointing this out!! margotbean (talk) 18:09, 30 December 2022 (UTC)
+Gus' Famous Omelet bug
+It's even worse than stated, but I'm not sure how far to go in spelling it all out in the article. Suffice it to say that I had a stack of 6 regular-quality small white eggs in the autograbber. I can open the autograbber, remove 5 from the stack, and close again. 5 eggs register as counted. Open the autograbber again, put the 5 eggs back in, and close. Still 5 eggs are counted. Open the autograbber again and remove the same 5 eggs again, and close. Now 10 eggs are counted. Repeat as desired, and the count keeps going up. Giles (talk) 20:02, 23 June 2023 (UTC)
+None of this is happening for me with Steam v1.5.6 (Hotfix #3). I'm at a loss. margotbean (talk) 20:05, 23 June 2023 (UTC)
+Ok, thanks. I'm at a loss also. But it's truly strange behavior, and oddly incoherent. Almost like there's a different cause than the code. But it's not random, and repeats itself on repeat tries. Once it misbehaves, it may continue to misbehave in additional odd ways that it doesn't do if I don't trigger problems somehow. I can't sort it out, and haven't much interest in trying. I have the player's workaround to get it to register my eggs adequately, and I'll just use that. I'll also delete the bug from the article. It seems to be my unique problem. Giles (talk) 22:12, 23 June 2023 (UTC)
+prize tickets
+i have made some research about the prizes you can get from the prize machine and from what i discover the order is the same in all seeds. the first will always be 12 of this season tileable seeds (not sure what they count as i am talking about the carrot, the summer squash, the broccoli and the powdermelon) depend of what season you use your first ticket. then the order is (from what i seen its might not be all the options but some or most of them): 1, either orange or peach sapling aka the summer fruit trees, 2, either 15 mixed flower seeds or 10 mixed seeds, 3, always 3 mystery boxes even if the cutscene that show mr Qi with his mystery boxes has not been seen yet, 4, always the stardrop tea, 5, either double or regular blue pinstripes bed, 6, i always got here 4 presserve jars so either its the only option or im very lucky/unlucky, 7, either pomogrante or apple sapling aka the fall fruit seeds, 8, always the book friendship 101, 9, always 12 bombs, 10, always sports cap, 11, either a dehydrater or a fish smoker, 12, either 4 treasure troves or 4 mystery boxes, 13, always house plant, 14, always the book woodcutter weekly, 15, alwyas magic tea, 16, always cow decal, 17, always 8 omni geodes, 18, either 4 kegs or 4 bee houses (might be more options there but thats the only two i found), 19, always 5 diamonds, 20, always 5 mystery boxes, 21, always magic rock candy. from then on it kind of loops with sometimes items have varients. 1 stardrop tea, 2 treasure chest, 3 iridium sprinkler, 4 either fancy house plant or pig painting, 5 either 15 bombs or 8 mega bombs 6 5 mystery box, 7 either 1 or 2 fairy dust, 8 one of the following: 5 iridium bar, 5 spicy eal, 5 crab cake, 5 treasure trove or 5 tripel shot espresso, 9 house plant. and from then on the last 9 items repeate for what it seems like forever. i dont know if its ok to write all this in the actual wiki page or if i need to talk about it before so here im telling whoever sees it what i know Bugo17 (talk) 11:22, 5 April 2024 (UTC)
+All of this information you're describing is already listed on the Prize Ticket page. User314159 (talk) 21:27, 5 April 2024 (UTC)
+The sentence about being able to ship special requests on the last day is WRONG. (False Flag)
+This line below in the "Quests" article is blatantly wrong! "When doing a special order that requires shipping items, the player can ship the remaining items on the final day. The progress bar only tracks items shipped on previous days and this can create the impression that items shipped need to be shipped before the last day, but they do not."
+I had a "Crop Order" quest that I shipped on the quest's final day, which also happened to be the last day of Spring, and I did not get anything, the quest just disappeared into thin air, no gold, no ticket.
+The problem now is that after discovering that this won't work (currently 1st Summer), thanks to this misleading article I can only go back to the previous day save 29th of Spring which wont do anything, now I have to probably cheat to get the ticket and the quest reward which will break immersion, this whole situation sucks. Ahmadlm (talk) 13:27, 23 February 2025 (UTC)
+Are you sure that you shipped enough items on the final day to complete the quest? This behavior would happen if you didn't. Plus, I don't think this is wrong considering I probably would've noticed since it's been on the page for years. User314159 (talk) 05:14, 24 February 2025 (UTC)
+You are absolutely right, I went back and counted my crops turns out I shipped 99 out of a 100, I managed to misplace one of the required crops in a different chest Ahmadlm (talk) 08:12, 24 February 2025 (UTC)
+Category: Talk pages

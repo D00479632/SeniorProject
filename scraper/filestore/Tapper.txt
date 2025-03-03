@@ -1,0 +1,101 @@
+Jump to navigation
+Jump to search
+Tapper
+Place on a maple, oak, or pine tree and wait for the reservoir to fill with product!
+Information
+Source Crafting
+Season  All
+Sell Price Cannot be sold
+Crafting
+Recipe Source
+Foraging (Level 4)
+Ingredients
+Wood (40)
+Copper Bar (2)
+This article is about the item. For the profession, see Skills#Foraging.
+The Tapper is a type of Refining Equipment that can be placed on a tree to produce Maple Syrup, Oak Resin, Pine Tar, Sap, or Mystic Syrup. It can also be placed on a Mushroom Tree to produce different mushrooms. It can also be placed on a Green Rain Tree (Type 3) to produce Fiddlehead Ferns. Other types of Green Rain Tree cannot be tapped.
+When a tree has a Tapper on it, the tree is unable to be directly shaken (by interacting with it). However, if the tree is moss-covered, it will be shaken when the player swings a scythe or weapon on the tree to remove the moss.
+The Tapper can be removed from a tree by hitting it once with an axe or pickaxe. This leaves the Tapper intact and able to be reused. If the Tapper is on a tree when it is struck by lightning or hit by an exploding bomb, both the Tapper and its contents are destroyed.
+During Winter, tappers placed on Maple Trees, Oak Trees, Pine Trees, Mahogany Trees, or Mystic Trees continue to produce; however since Mushroom Trees and Green Rain Trees (Type 3) turn to stumps in Winter, tappers placed on them produce nothing during that season.
+The Tapper cannot be placed on Fruit Trees.
+Three Tappers are the reward for completing the Forager's Bundle on the Bulletin Board (Remixed).
+Contents
+1 Products
+2 Types
+3 References
+4 History
+Products
+Image Name Description Source Time[1] Sell Price Energy / Health
+Maple Syrup A sweet syrup with a unique flavor. Maple Tree
+9 Nights
+200g
+50
+22
+Oak Resin A sticky, fragrant substance derived from oak sap. Oak Tree
+7 Nights
+150g Inedible
+Pine Tar A pungent substance derived from pine sap. Pine Tree
+5 Nights
+100g Inedible
+3 - 8 Sap A fluid obtained from trees. Mahogany Tree
+1 Night
+2g
+ −2
+Common Mushroom Slightly nutty, with good texture. Mushroom Tree
+Varies
+40g
+38
+17
+Red Mushroom A spotted mushroom sometimes found in caves. Mushroom Tree
+Varies
+75g
+ −50
+Purple Mushroom A rare mushroom found deep in caves. Mushroom Tree
+Varies
+250g
+125
+56
+Mystic Syrup A very rare syrup that is said to have magic properties. Mystic Tree
+7 Nights
+1,000g
+500
+225
+Fiddlehead Fern The young shoots are an edible specialty. Green Rain Tree (Type 3)
+2 Nights
+90g
+25
+11
+Types
+Image Name Description Ingredients Recipe Source
+Tapper Place on a maple, oak, or pine tree and wait for the reservoir to fill with product!
+Wood (40)
+Copper Bar (2)
+Foraging Level 4
+Heavy Tapper Place on a maple, oak, or pine tree and wait for the reservoir to fill with product! Works twice as fast as a normal tapper.
+Hardwood (30)
+Radioactive Bar (1)
+Qi's Walnut Room for 20
+References
+↑ See Tree::UpdateTapperProduct in the game code. Tree type indexes can be deduced by looking at Tree::loadTexture and the Content\TerrainFeatures\ folder.
+History
+1.4: Fixed issue that could leave trees unchoppable if tapper was removed in unusual fashion. Tappers can now be stacked in a player's inventory and in chests.
+1.5: Added the Heavy Tapper. Fixed bug where processing time was affected by the time of day. Can now be obtained from the Forager's Bundle.
+1.6: Recipe is now learned at Foraging Level 4 instead of Level 3. Mystic Syrup and Fiddlehead Fern are now possible products.
+
+Equipment
+Artisan Bee House • Cask • Cheese Press • Dehydrator • Fish Smoker • Keg • Loom • Mayonnaise Machine • Oil Maker • Preserves Jar
+Refining Bait Maker • Bone Mill • Charcoal Kiln • Crystalarium • Deluxe Worm Bin • Furnace • Geode Crusher • Heavy Furnace • Heavy Tapper • Lightning Rod • Mushroom Log • Ostrich Incubator • Recycling Machine • Seed Maker • Slime Egg-Press • Slime Incubator • Solar Panel • Tapper • Wood Chipper • Worm Bin
+Farming
+Fertilizer Basic Fertilizer • Basic Retaining Soil • Deluxe Fertilizer • Deluxe Retaining Soil • Deluxe Speed-Gro • Hyper Speed-Gro • Quality Fertilizer • Quality Retaining Soil • Speed-Gro • Tree Fertilizer
+Sprinklers Iridium Sprinkler • Quality Sprinkler • Sprinkler
+Other Deluxe Scarecrow • Garden Pot • Rarecrow • Scarecrow
+Fishing
+Bait Bait • Challenge Bait • Deluxe Bait • Magic Bait • Magnet • Targeted Bait • Wild Bait
+Tackle Barbed Hook • Cork Bobber • Curiosity Lure • Dressed Spinner • Lead Bobber • Quality Bobber • Sonar Bobber • Spinner • Trap Bobber • Treasure Hunter
+Other Crab Pot
+Bombs Bomb • Cherry Bomb • Mega Bomb
+Fences Gate • Hardwood Fence • Iron Fence • Stone Fence • Wood Fence
+Storage Big Chest • Big Stone Chest • Chest • Junimo Chest • Mini-Fridge • Stone Chest
+Signs Dark Sign • Stone Sign • Text Sign • Wood Sign
+Misc Anvil • Coffee Maker • Cookout Kit • Deconstructor • Fairy Dust • Farm Computer • Hopper • Mini-Forge • Mini-Jukebox • Mini-Shipping Bin • Sewing Machine • Staircase • Statue Of Blessings • Statue Of The Dwarf King • Telephone • Tent Kit • Tools • Workbench
+Categories: Craftable itemsBugs fixed in 1.5

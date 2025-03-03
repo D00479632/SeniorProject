@@ -1,0 +1,198 @@
+Jump to navigation
+Jump to search
+← Index
+This page explains how to add/edit machines in the game data. This is an advanced guide for modders.
+Contents
+1 Definitions
+2 Data format
+2.1 Item processing rules
+2.2 Behavior tweaks
+2.3 Audio & visuals
+2.4 Player interaction messages
+2.5 Advanced logic
+3 For C# mods
+3.1 Interacting with machines
+Definitions
+A "machine" is a placeable object which takes input and/or produces output based on the rules in Data/Machines. A machine doesn't need to do both (e.g. solar panels produce output without accepting input), and it's not necessarily something players would intuitively consider a machine (e.g. incubators and mushroom logs are machines).
+Data format
+You can add/edit machine logic by editing the Data/Machines asset.
+This consists of a string → model lookup, where...
+The key is the qualified item ID for the item which acts as a machine (like (BC)127 for mushroom boxes).
+The value is a model with the fields listed below.
+Item processing rules
+field effect
+OutputRules The output produced by this machine. If multiple output rules can be produced, the first available one is selected. This consists of a list of models with these fields:
+field effect
+Id The unique string ID for this rule within the current machine (it doesn't need to be unique between machines).
+Triggers When to apply this output rule. This can list any number of triggers; the output will apply if any of them match.
+This consists of a list of models with these fields:
+field effect
+Id The unique string ID for this trigger within the current rule.
+Trigger (Optional) When this output rule applies. Defaults to ItemPlacedInMachine. The possible values are...
+ItemPlacedInMachine: apply this rule when an item is placed into the machine. This is the most common machine behavior.
+OutputCollected: apply this rule when the machine's previous output is collected. An output-collected rule won't require or consume the input items, and the input item will be the previous output. For example, this is used to reload the crystalarium.
+MachinePutDown: apply this rule when the machine is put down. For example, this is used to start the worm bin.
+DayUpdate: apply this rule when a new day starts, if it isn't already processing output. For example, this is used for the soda machine.
+You can specify multiple values, like "Trigger": "DayUpdate, MachinePutDown, OutputCollected".
+RequiredItemId (Optional) The qualified or unqualified item ID for the item to match, if the trigger is ItemPlacedInMachine or OutputCollected. Defaults to allowing any item ID.
+RequiredTags (Optional) The context tags to match against input items, if the trigger is ItemPlacedInMachine or OutputCollected. An item must have all of the listed tags to select this rule. You can negate a tag with ! (like "RequiredTags": [ "bone_item", "!fossil_item" ] for bone items that aren't fossils).
+RequiredCount (Optional) The required stack size for the input item, if the trigger is ItemPlacedInMachine or OutputCollected. Default 1.
+Condition (Optional) A game state query which indicates whether this trigger should be checked. Item-only tokens are valid for this check if the trigger is ItemPlacedInMachine or OutputCollected. Defaults to always true.
+OutputItem The items produced by this machine. If multiple output entries match, one will be selected randomly unless you specify UseFirstValidOutput. This consists of a list of models with these fields:
+field effect
+common fields See item spawn fields for the generic item fields supported by machine output.
+Notes:
+If ItemId or RandomItemId is set to an item query which returns multiple items, one item will be selected at random.
+The ItemId and RandomItemId can optionally contain special tokens, which will be replaced before the item ID is parsed. For example, you can use FLAVORED_ITEM Wine DROP_IN_ID to create a wine for whatever item was placed in the machine.
+token replaced with
+DROP_IN_ID The qualified item ID for the item placed in the machine.
+DROP_IN_PRESERVE If the item placed into the machine is a flavored item like Apple Juice or Tuna Roe, the unqualified item ID for the flavor item (e.g. the apple in Apple Wine). Otherwise 0.
+NEARBY_FLOWER_ID The item ID for a flower within 5 tiles of the machine, or -1 if no flower is found. For example, bee houses produce FLAVORED_ITEM Honey NEARBY_FLOWER_ID.
+The ObjectInternalName can optionally contain {0}, which will be replaced with the input item's internal name. This is used to prevent flavored items from stacking (e.g. apple wine and blueberry wine).
+The Condition field will check the input (not output) item for item-related conditions.
+PreserveType (Optional) The produced item's preserved item type, if applicable. This sets the equivalent flag on the output item. The valid values are Jelly, Juice, Pickle, Roe or AgedRoe, and Wine. Defaults to none.
+PreserveId (Optional) The produced item's preserved unqualified item ID, if applicable. For example, blueberry wine has its preserved item ID set to the blueberry ID. This can be set to DROP_IN to use the input item's ID, or DROP_IN_PRESERVE to use the input item's flavor, if it's a flavored item. Default none.
+CopyColor (Optional) Whether to inherit the color of the input item. If the input is a ColoredObject the output will inherit its exact color; otherwise it will use the dye color from the input item's context tags. Default false.
+CopyPrice (Optional) Whether to inherit the base price of the input item (before PriceModifiers are applied). This is ignored if the input or output aren't both object ((O))-type.
+CopyQuality (Optional) Whether to inherit the quality of the input item (before QualityModifiers are applied).
+PriceModifiers
+PriceModifiers (Optional) Quantity modifiers applied to the output item's price. Default none.
+IncrementMachineParentSheetIndex (Optional) An amount by which to increment the machine's spritesheet index while it's processing this output. This stacks with the ShowNextIndexWhenLoaded or ShowNextIndexWhileWorking field. Default 0.
+OutputMethod (Optional, specialized) A C# method which decides which item to produce. If set, the ItemId field is optional and ignored.
+This must be specified in the form <full type name>: <method name> (like StardewValley.Object, Stardew Valley: OutputSolarPanel). The method must be static and match the game's MachineOutputDelegate method signature:
+/// <summary>Get the output item to produce.</summary>
+/// <param name="machine">The machine instance for which to produce output.</param>
+/// <param name="inputItem">The item being dropped into the machine, if applicable.</param>
+/// <param name="probe">Whether the machine is only checking whether the input is valid. If so, the input/machine shouldn't be changed and no animations/sounds should play.</param>
+/// <param name="outputData">The item output data from <c>Data/Machines</c> for which output is being created, if applicable.</param>
+/// <param name="overrideMinutesUntilReady">The in-game minutes until the item will be ready to collect, if set. This overrides the equivalent fields in the machine data if set.</param>
+/// <returns>Returns the item to produce, or <c>null</c> if none should be produced.</returns>
+public static Item GetOutput(Object machine, Item inputItem, bool probe, MachineItemOutput outputData, Farmer player, out int? overrideMinutesUntilReady)
+If this method returns null, the machine won't output anything.
+CustomData Machine-specific data provided to the machine logic, if applicable.
+For example, the cask uses this to set the aging rate for each item:
+"OutputItem": {
+    "OutputMethod": "StardewValley.Objects.Cask, Stardew Valley: OutputCask",
+    "CustomData": {
+        "AgingMultiplier": 4
+    }
+}
+UseFirstValidOutput (Optional) If multiple OutputItem entries match, whether to use the first match instead of choosing one randomly. Default false.
+MinutesUntilReady
+DaysUntilReady (Optional) The number of in-game minutes or days until the output is ready to collect. If both days and minutes are specified, days are used. If none are specified, the item will be ready instantly.
+InvalidCountMessage (Optional) If set, overrides the machine's main InvalidCountMessage field.
+RecalculateOnCollect (Optional) Whether to regenerate the output right before the player collects it, similar to bee houses. If the new item is null, the original output is returned instead.
+AdditionalConsumedItems (Optional) A list of extra items required before OutputRules will be checked. If specified, every listed item must be present in the player, hopper, or chest inventory (depending how the machine is being loaded).
+This consists of a list of models with these fields:
+field effect
+ItemId The qualified or unqualified item ID for the required item.
+RequiredCount (Optional) The required stack size for the item matching ItemId. Default 1.
+InvalidCountMessage (Optional) If set, overrides the machine's main InvalidCountMessage field.
+AllowFairyDust (Optional) Whether the player can add fairy dust to speed up the machine. Default true.
+ReadyTimeModifiers (Optional) Quantity modifiers applied to the produced item's processing time. The modifier conditions can use item-only tokens, which will check the input (not output) item.
+ReadyTimeModifierMode (Optional) A quantity modifier mode which indicates what to do if multiple modifiers apply at the same time. Default Stack.
+Behavior tweaks
+field effect
+OnlyCompleteOvernight (Optional) Whether the machine should only produce output overnight. If enabled and it finishes processing during the day, it'll pause until its next day update. Default false.
+PreventTimePass (Optional) A list of cases when the machine should be paused, so the timer on any item being produced doesn't decrement. Possible values:
+value effect
+Outside
+Inside Pause when placed in an outside or inside location. For example, bee houses don't work inside.
+Spring
+Summer
+Fall
+Winter Pause in the given season. For example, bee houses don't work in winter.
+Sun
+Rain Pause on days with the given weather.
+Always Always pause the machine. This is used in specialized cases where the timer is handled by advanced machine logic.
+AllowLoadWhenFull (Optional) Whether the player can drop a new item into the machine before it's done processing the last one (like the crystalarium). The previous item will be lost. Default false.
+ClearContentsOvernightCondition (Optional) A game state query which indicates whether the machine should be emptied overnight, so any current output will be lost. Defaults to always false.
+Audio & visuals
+field effect
+LoadEffects
+WorkingEffects (Optional) The cosmetic effects shown when an item is loaded into the machine (for LoadEffects), or while it's processing the item (for WorkingEffects, based on the WorkingEffectChance probability). Both default to none. These consist of a list of models with these fields:
+field effect
+Condition (Optional) A game state query which indicates whether this effect should be played. For item queries, you can check the input item (Input</samp) or output item (Target). Defaults to always true.
+Sounds (Optional) The audio to play. This consists of a list of models with these fields:
+field effect
+Id The audio cue ID to play.
+Delay (Optional) The number of milliseconds until the sound should play. Default 0.
+Defaults to no sound.
+ShakeDuration (Optional) A duration in milliseconds during which the machine sprite should shake. Default none.
+Frames (Optional) The animation to apply to the machine sprite, specified as a list of offsets relative to the base sprite index. Default none.
+Interval (Optional) The number of milliseconds for which each frame in Frames is kept on-screen. Default 100.
+TemporarySprites (Optional) The temporary animated sprites to show. This consists of a list of models with these fields:
+field effect
+Id The unique string ID for this rule within the current machine (it doesn't need to be unique between machines).
+Texture The asset name for the texture (under the game's Content folder) for the animated sprite.
+SourceRect The pixel area for the first animated frame within the Texture, specified as an object with X, Y, Width, and Height fields.
+Condition (Optional) A game state query which indicates whether to add this temporary sprite.
+PositionOffset (Optional) A pixel offset applied to the sprite, relative to the top-left corner of the machine's collision box, specified as an object with X and Y fields. Defaults to (0, 0).
+Color (Optional) A tint color to apply to the sprite. See color format. Default White (no tint).
+AlphaFade
+Loops
+Rotation
+RotationChange
+ScaleChange
+SortOffset (Optional) See equivalent fields in the temporaryAnimatedSprite event command. Default 0.
+Frames
+Scale (Optional) See equivalent fields in the temporaryAnimatedSprite event command. Default 1.
+Interval (Optional) See equivalent fields in the temporaryAnimatedSprite event command. Default 100.
+Flicker
+Flip (Optional) See equivalent fields in the temporaryAnimatedSprite event command. Default false.
+WorkingEffectChance (Optional) The percentage chance to apply WorkingEffects each time the day starts or the in-game clock changes, as a value between 0 (never) and 1 (always). Default 0.33.
+LightWhileWorking (Optional) The light emitted by the machine while it's processing an item. Default none.
+This consists of a list of models with these fields:
+field effect
+Radius (Optional) The size of the area covered by the light effect, as a multiplier of the default radius (like 1.5 for an area 50% wider than the default). Default 1.
+Color (Optional) A tint color to apply to the light. See color format. Default White (no tint).
+WobbleWhileWorking (Optional) Whether the machine sprite should bulge in & out while it's processing an item. Default false.
+ShowNextIndexWhileWorking
+ShowNextIndexWhenReady (Optional) Whether to show the next sprite in the machine's spritesheet while it's processing an item (ShowNextIndexWhileWorking) or ready (ShowNextIndexWhenReady). Default false.
+Player interaction messages
+These only apply when the player interacts with a chest directly, instead of using a hopper or mod like Automate.
+field effect
+InvalidItemMessage (Optional) A tokenizable string for the message shown in a toaster notification if the player tries to input an item that isn't accepted by the machine.
+InvalidItemMessageCondition (Optional) A game state query which indicates whether InvalidItemMessage should be shown. This can use item-related queries like ITEM_TYPE. Defaults to always true.
+InvalidCountMessage (Optional) A tokenizable string for the message shown in a toaster notification if the input inventory doesn't contain this item, unless overridden by InvalidCountMessage under OutputRules.
+This can use extra custom tokens:
+[ItemCount]: the number of remaining items needed. For example, if you're holding three and need five, [ItemCount] will be replaced with 2.
+Advanced logic
+field effect
+InteractMethod (Optional) A C# method invoked when the player interacts with the machine when it doesn't have output ready to harvest.
+This must be specified in the form <full type name>: <method name> (like StardewValley.Object, Stardew Valley: SomeInteractMethod). The method must be static and match the game's MachineInteractDelegate method signature:
+/// <summary>The method signature for a custom <see cref="MachineData.InteractMethod"/> method.</summary>
+/// <param name="machine">The machine instance for which to produce output.</param>
+/// <param name="location">The location containing the machine.</param>
+/// <param name="player">The player using the machine.</param>
+/// <returns>Returns whether the interaction was handled.</returns>
+public static bool InteractWithMachine(Object machine, GameLocation location, Farmer player);
+HasInput
+HasOutput (Optional) Whether to force adding the machine_input or machine_output context tags respectively. This isn't needed for most machines, since they'll be set based on the OutputRules field. Default false.
+IsIncubator (Optional) Whether this machine acts as an incubator when placed in a building, so players can incubate eggs in it. Default false.
+This is used by the incubator and ostrich incubator. The game logic assumes there's only one such machine in each building, so this generally shouldn't be used by custom machines that can be built in a vanilla barn or coop.
+StatsToIncrementWhenLoaded
+StatsToIncrementWhenHarvested (Optional) The game stat counters to increment when an item is placed in the machine (StatsToIncrementWhenLoaded) or when the processed output is collected (StatsToIncrementWhenHarvested). Default none. This consists of a list of models with these fields:
+field effect
+Id The unique string ID for this entry within the current list.
+StatName The name of the stat counter field in Game1.stats. Stat names are case-insensitive.
+RequiredItemId (Optional) If set, only increment the stat if the main input item has this qualified or unqualified item ID.
+RequiredTags (Optional) If set, only increment the stat if the main input item has all of these context tags. You can negate a tag with ! (like "RequiredTags": [ "bone_item", "!fossil_item" ] for bone items that aren't fossils).
+This can be used to increment both built-in stats (like GeodesCracked for the geode crusher) and custom stats. Using a unique string ID is strongly recommended for custom stats to avoid conflicts.
+ExperienceGainOnHarvest (Optional) Experience points to grant on harvesting from this machine. For example, set to "Farming 7 Fishing 5" to grant 7 Farming and 5 Fishing xp.
+CustomFields The custom fields for this entry.
+For C# mods
+Interacting with machines
+Stardew Valley 1.6 adds two Object fields for reference:
+field effect
+lastOutputRuleId If this is a machine, the output rule ID for the rule being processed by the machine (if any).
+lastInputItem If this is a machine, the item that was dropped into the machine to start the current output (if any).
+And a few methods for processing items:
+field effect
+IsMachineWorking() Get whether the machine is currently processing an item.
+ShouldTimePassForMachine(location) Get whether the machine should be updated in the given location. For example, this will return false for solar panels placed indoors, or outdoors on a cloudy day.
+GetMachineData() Get the underlying machine data from Data/Machines.
+PlaceInMachine(…) Try to place an item in the machine using the rules from Data/Machines. This returns a boolean which indicates whether the machine was successfully started.
+OutputMachine(…) Try to set the machine output given the input item and an optional output rule to apply. Most code should call PlaceInMachine instead.
+A lot of the generic machine logic is also handled by a new MachineDataUtility class, which lets C# mods interact with machine data more directly. For example, you can check which output a machine would produce without actually updating the machine.
+Category: Modding

@@ -1,0 +1,18 @@
+Jump to navigation
+Jump to search
+This talk page is for discussing Rings.
+Sign and date your posts by typing four tildes (~~~~).
+Put new text below old text.
+Be polite.
+Assume good faith.
+Don't delete discussions.
+Rings sell price
+It appears that some rings had their selling prices changed after the update 1.5, similar to what happened with the weapons, because the rings added in the update 1.5 had their selling prices cut in half and the Wedding Ring. But I don't know in which version it happened to inform in the history section.
+I compared ObjectInformation.xnb across v1.3.36, v1.4.5, and v1.5.4. None of the rings' sell prices changed there, so it must be in the code. It will require some digging to find it. I've put it on my "to do" list. In the meantime, it's good that you corrected the prices, thank you! The history section will have to wait, but the pages are accurate now. margotbean (talk) 17:32, 10 April 2021 (UTC)
+I looked if rings had a calculation similar to weapon points or anything of that sort but nope, looks like it's literally just taken from ObjectInformation.xnb. (rings.cs:salePrice - return this.price)(price - public readonly NetInt price = new NetInt();) and the same is the case in 1.4 and what I think happened was just someone took the saleprice out of the .xnb file for the 1.5 rings and added it to the wiki without realizing that real ingame sellprice is (and was before) (toSell.salePrice() / 2) * this.sellPercentage) (Shopmenu.cs). For the 1.4 rings for example the ObjectInformation.xnb listed price was also already twice as high as real sellprice, but they got added with this in mind. All the rings that got an "updated" price, were introduced in 1.5 and they had correct listed wiki price until they got replaced on january 1st from real sell value to listed entry in ObjectInformation.xnb without adjusting with the /2. tldr; no changes for rings from the looks of it just an editor forgetting to divide by 2 Dubesor (talk) 18:40, 10 April 2021 (UTC)
+A plausable theory, except that the Wedding Ring sale price in ObjectInformation.xnb is 2000 (and was 2000g in v1.3.36 and v1.4.5), and apparently that is its correct sale price in v1.5. So, something changed, if only with the Wedding Ring. 🤔 margotbean (talk) 19:00, 10 April 2021 (UTC)
+Can wedding rings even be sold at all? I don't play multiplayer so I never tried, but that would explain why it never even reaches the "divide by 2" stage, which happens upon selling. I can only test with a cheated wedding ring (due to solo player) and that is the only ring I can't sell. If a legit wedding ring can be sold in multiplayer then I don't know either! Dubesor (talk) 19:16, 10 April 2021 (UTC)
+You can simulate multiplayer on one machine by running the game with SMAPI. I just did so, and the Wedding Ring sell price at the Adventurer's Guild is 1000g. I'm going to change the page, and maybe Jaks can explain how they sold the ring for 2000g (singleplayer, multiplayer, spawned ring??) Thanks! margotbean (talk) 19:46, 10 April 2021 (UTC)
+Jukebox ring
+What's the deal with the jukebox ring that can't be taken at all? Will it be added to the game in future updates? If it wants to come in the next update, then why is it in the game codes? Maybe it's a secret that can be obtained by doing something special. Alyasinsalehi7 (talk) 12:44, 29 July 2023 (UTC)
+Category: Talk pages

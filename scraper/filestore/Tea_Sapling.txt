@@ -1,0 +1,56 @@
+Jump to navigation
+Jump to search
+Tea Sapling
+Takes 20 days to mature. Produces tea leaves during the final week of each season, except winter. No watering necessary!
+Information
+Crop:
+Tea Leaves
+Growth Time: 20 days
+Season:
+All
+Sell Price: 250g
+Purchase Prices
+General Store: Not sold
+JojaMart: Not sold
+Traveling Cart: 750–1,250g
+Crafting
+Recipe Name: Tea Sapling
+Recipe Source: Mail the day after Caroline's 2-heart event.
+Ingredients: Wild Seeds (Any) (2)
+Fiber (5)
+Wood (5)
+Produces:
+Tea Sapling (1)
+The Tea Sapling is a seed that takes 20 days to grow into a Tea Bush. A Tea Bush produces one Tea Leaves item each day of the final week (days 22-28) of spring, summer, and fall (and winter if indoors).
+Tea Saplings are planted like Trees by placing them onto untilled soil or into Garden Pots. They do not need to be watered in order to grow. Tea Saplings will not die and will even grow if planted outside in winter.
+A Tea Sapling can be purchased from the Traveling Cart, though not often. Up to 10 Tea Saplings may be purchased from Caroline's shop at the Desert Festival for 10 Calico Eggs. Otherwise, it must be crafted. The crafting recipe is received via mail the day after Caroline's 2-Heart event.
+Contents
+1 Stages
+2 Gifting
+3 Notes
+4 History
+Stages
+Stage 1 Stage 2 Stage 3 Harvest After-Harvest
+10 Days 10 Days Up to and including
+21st of the season Total: 20 Days Regrowth: 1 Day
+
+Gifting
+Villager Reactions
+Dislike  Abigail •  Alex •  Caroline •  Clint •  Demetrius •  Dwarf •  Elliott •  Emily •  Evelyn •  George •  Gus •  Haley •  Harvey •  Jas •  Jodi •  Kent •  Krobus •  Leah •  Leo •  Lewis •  Linus •  Marnie •  Maru •  Pam •  Penny •  Pierre •  Robin •  Sam •  Sandy •  Sebastian •  Shane •  Vincent •  Willy •  Wizard
+Notes
+Crafting and selling a Tea Sapling is always more profitable than selling its ingredients. The exact profit depends on the source of the Wild Seeds but is typically between 75g and 200g. Using less profitable forage is more profitable for making Tea Saplings.
+The Wild Seeds used for crafting do not have to be from the same season.
+It is possible to use tea bushes as permanent fences, to help contain farm animals within a barnyard.
+History
+1.4: Introduced.
+1.5: Added to the rotating stock at the Stardew Valley Fair.
+1.5.4: Is no longer in the rotating stock at the Stardew Valley Fair.
+1.5.6: Fixed bug where Tea Saplings could not be harvested from Garden Pots on Ginger Island.
+1.6: Reduced sell price from 500g to 250g. Chopping down a tea bush now gives back a tea sapling. Can now be purchased from Caroline at the Desert Festival.
+Seeds, Starters, and Saplings
+Spring Apricot Sapling • Bean Starter • Carrot Seeds • Cauliflower Seeds • Cherry Sapling • Coffee Beans • Garlic Seeds • Jazz Seeds • Kale Seeds • Parsnip Seeds • Potato Seeds • Rice Shoot • Rhubarb Seeds • Spring Seeds • Strawberry Seeds • Tulip Bulb
+Summer Blueberry Seeds • Coffee Beans • Corn Seeds • Hops Starter • Melon Seeds • Orange Sapling • Peach Sapling • Pepper Seeds • Poppy Seeds • Radish Seeds • Red Cabbage Seeds • Spangle Seeds • Summer Seeds • Summer Squash Seeds • Sunflower Seeds • Starfruit Seeds • Tomato Seeds • Wheat Seeds
+Fall Amaranth Seeds • Apple Sapling • Artichoke Seeds • Beet Seeds • Bok Choy Seeds • Broccoli Seeds • Corn Seeds • Cranberry Seeds • Eggplant Seeds • Fairy Seeds • Fall Seeds • Grape Starter • Pomegranate Sapling • Pumpkin Seeds • Rare Seed • Sunflower Seeds • Wheat Seeds • Yam Seeds
+Winter Powdermelon Seeds • Winter Seeds
+Other Acorn • Ancient Seeds • Banana Sapling • Blue Grass Starter • Cactus Seeds • Fiber Seeds • Grass Starter • Mahogany Seed • Mango Sapling • Maple Seed • Mixed Flower Seeds • Mixed Seeds • Mossy Seed • Mushroom Tree Seed • Mystic Tree Seed • Pineapple Seeds • Qi Bean • Tea Sapling • Pine Cone • Taro Tuber
+Category: Seeds

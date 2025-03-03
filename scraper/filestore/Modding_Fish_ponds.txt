@@ -1,0 +1,49 @@
+Jump to navigation
+Jump to search
+← Index
+This page explains how the game stores and parses Fish Pond data. This is an advanced guide for mod developers.
+Format
+The fish pond data in Data/FishPondData consists of a list of elements with these fields.
+field purpose
+Id The unique string ID for this entry.
+RequiredTags The context tags for fish which should use this entry. A tag can be prefixed with ! to require that the fish not have that tag.
+For example, ["fish_ocean", "fish_crab_pot", "!fish_carnivorous"] will match ocean fish that can be caught in crab pots and aren't carnivorous.
+The first matching entry based on the Precedence field is used. If no other entries match, Data/FishPondData has a default entry with the required tags category_fish as a catch-all for any fish without their own entry.
+ProducedItems The items that can be produced by the selected fish.
+When a fish pond is ready to produce output (based on a hardcoded (15 + 8 * population of pond)% chance), it checks each entry in the list and takes the first one that matches. If no entry matches, no output is produced.
+This consists of a list of models with these fields:
+field purpose
+Id The unique string ID for this entry.
+common fields See item spawn fields for the generic item fields supported by fish pond rewards.
+Notes:
+If ItemId or RandomItemId is set to an item query which returns multiple items, one item will be selected at random.
+If ItemId and RandomItemId is set to the exact string (O)812 (roe), it will produce roe for the current fish.
+For the Condition field, the input item matches the fish living in the pond.
+RequiredPopulation (Optional) The minimum number of fish in the pond required to produce this item. Default 0.
+Chance (Optional) The probability that this item will be produced, as a value between 0 (never) and 1 (always). This is applied after the base chance of producing any item above. Default 1.
+MinQuantity
+MaxQuantity (Deprecated) Use MinStack/MaxStack from the item spawn fields instead.
+PopulationGates The rules which decide when the fish pond population can grow (up to a hardcoded limit of 10 fish), and the quests that must be completed to do so. If omitted, the population can grow to 10 fish with no quests.
+This consists of a number → item IDs lookup, where:
+The key is the population number at which this gate applies.
+The value is a list of possible quest items that may be requested by the fish at random to complete the gate. Each item is represented by 1–3 space-delimited values: the item ID, minimum quantity, and maximum quantity. If both min and max quantity are specified, a random number in that range is used. If only the min quantity is specified, that exact number is used. If neither are specified, the fish will request one.
+For example, consider this population gate:
+"6": [ "422 2 3", "60 2", "749 2 3", "116" ]
+This means that before the population grows to 6, the fish will randomly ask for one of these:
+2–3 purple mushrooms (item ID 422);
+2 emeralds (item ID 60);
+2–3 omni geodes (item ID 749);
+or 1 dried starfish.
+MaxPopulation (Optional) The maximum number of fish that can live in this pond, whether added manually or through population growth. This can't exceed the hardcoded maximum of 10. If omitted, defaults to the maximum based on PopulationGates.
+Precedence (Optional) The order in which this entry should be checked, where 0 is the default value used by most entries. Entries with the same precedence are checked in the order listed. Default 0.
+SpawnTime (Optional) The number of days needed to raise the population by one if there's enough room in the fish pond.
+If omitted, the game chooses a value based on the base fish price: 1 day (0–30g), 2 days (31–80g), 3 days (81–120g), 4 days (121–250g), or 5 days (250g+).
+WaterColor (Optional) The color tint to apply to the water when this entry applies. If multiple are specified, the first matching entry is applied. If none match, the default water color is used.
+This consists of a list of models with these fields:
+field effect
+Id The unique string ID for this entry.
+Color (Optional) The water color to apply. This can be a standard color value, or CopyFromInput (to use the item color from the fish item data). Default none.
+MinPopulation (Optional) The minimum number of fish in the pond before this color applies. Default 1.
+MinUnlockedPopulationGate (Optional) The minimum population for the last population gate that was unlocked, or 0 for any value. Default 0.
+Condition (Optional) A game state query which indicates whether this entry should be applied. Defaults to always true.
+Category: Modding

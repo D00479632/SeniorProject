@@ -1,0 +1,69 @@
+Jump to navigation
+Jump to search
+This article is about the item category. For the item, see Bait (item).
+Bait can be attached to a Fiberglass Rod, an Iridium Rod, an Advanced Iridium Rod, or inserted into a Crab Pot. Fishing rods do not require bait, but fish will bite faster with bait; specialized baits provide additional benefits. Crab Pots require bait to catch fish (unless the player has the Luremaster profession). Some specialized baits also provide benefits to Crab Pots.
+Bait is always a single-use item. If the player uses a fishing rod with the Preserving enchantment, for each nibble there is a 50% chance for bait to not be consumed.
+Use
+Requires: Fiberglass Rod, Iridium Rod, or Advanced Iridium Rod.
+Each cast uses one piece of bait or one magnet. When all bait is used up, the game pops up a notification saying "You've used your last piece of bait."
+To attach bait to a fishing rod, open the inventory, click on the bait ( left-click or right-click, depending on how many bait will be used), and then on the rod. To remove bait, on the rod.
+On an Xbox controller, press on the bait to select the whole stack (or to pick up a single one), then to attach to the rod.
+On a PS4 controller, press on the bait to select the whole stack (or to pick up a single one), then to attach to the rod.
+On a Nintendo Switch Controller, Press on the bait to select the whole stack (Or to pick up a single one), then to attach to the rod.
+Bait can be detached by pressing on either Controller. ( on Nintendo Switch)
+For the mobile version, bait can be added to the fishing rod by opening the inventory, then dragging the bait and dropping it on top of the rod. Bait cannot be removed on mobile.
+Bait Items
+Image Name Description Notes Purchase Crafting
+Bait Causes fish to bite faster. Must first be attached to a fishing rod. Default bait, decreases the time taken for fish to bite (reduces the delay before a nibble by 50%) and lowers chance of getting trash items. The recipe is earned at Fishing level 2. 5g
+Bug Meat (1)
+Magnet Increases the chance of finding treasures when fishing. However, fish aren't crazy about the taste. Increases the treasure chance by 15% (30% base chance instead of 15%). Despite the description, the bite rate is the same as for standard bait. The recipe is earned at Fishing level 9. 1,000g
+Iron Bar (1)
+Wild Bait A unique recipe from Linus that gives you a chance to catch two fish at once. Decreases the time taken for fish to bite slightly more than standard bait, reducing the delay before a nibble by 62.5%. Does not provide a chance to catch two of the same type of Legendary Fish. The recipe is obtained from Linus' 4-heart event.
+When used in a Crab Pot, Wild Bait decreases the chance of catching trash compared to using standard bait if the player does not have the Mariner profession.
+N/A
+Fiber (10)
+Slime (5)
+Bug Meat (5)
+Magic Bait Allows you to catch fish from any season, time, or weather, from whichever type of water you cast into. 20 Magic Bait will be received when purchased. The recipe can also be purchased from Qi's Walnut Room for 20. The bite rate is the same as for standard bait. 5
+Radioactive Ore (1)
+Bug Meat (3)
+Deluxe Bait Causes fish to bite even faster and increases size of the "fishing bar". Decreases the time taken for fish to bite more than standard bait, reducing the delay before a nibble by 67%. The increase of the bar size is a constant 12 pixels. The recipe is earned at Fishing level 4.
+When used in a Crab Pot, Deluxe Bait increases the quality of Crab Pot fish to silver and decreases the chance of catching trash compared to using standard bait if the player does not have the Mariner profession.
+100g
+Bait (5)
+Moss (2)
+Challenge Bait A "perfect" catch yields triple the fish. However, each time a fish escapes the "fishing bar", the catch is reduced. The fish will escape if it leaves the fishing bar 3 times.
+Although not listed in the description, it decreases the time taken for fish to bite by the same amount as Wild Bait, reducing the delay before a nibble by 62.5%. Provides a chance to catch up to three of the same type of fish at once, including Legendary Fish. The recipe is earned after claiming Fishing Mastery.
+N/A
+Bone Fragment (5)
+Moss (2)
+Targeted Bait Increases your chances to catch (fish name). The fish must still be able to be caught in that area at that time, weather, and season. The bite rate is the same as for standard bait.
+Targeted bait also works with Crab Pots, provided the player does not have the Mariner profession. Assuming the player does not have this profession, Targeted Bait decreases the chance of catching trash compared to using standard bait and increases the chance of catching the specific Crab Pot fish. The exact effect depends on the base chance of the targeted fish. Specifically:
+Lobster chance is quadrupled.
+Clam, Crab, and Oyster chances are tripled.
+All other Crab Pot fish chances are doubled.
+0.2 x Fish Price N/A
+History
+1.1: "Check action"-mapped keys should now work to attach bait to a rod.
+1.4: Bait can now be attached to fishing rods directly from treasure chests. Fixed bug where bait was not taken into account for wait time if the first nibble was missed.
+1.5: Added Magic Bait. Using a Fishing rod with the Preserving enchantment now gives a 50% chance for bait to not be consumed.
+1.6: Added Deluxe Bait, Challenge Bait, and Targeted Bait.
+1.6.3: Fixed bug introduced in v1.6 which caused other types of bait to act as targeted bait for no fish, resulting in excess trash fished.
+
+Equipment
+Artisan Bee House • Cask • Cheese Press • Dehydrator • Fish Smoker • Keg • Loom • Mayonnaise Machine • Oil Maker • Preserves Jar
+Refining Bait Maker • Bone Mill • Charcoal Kiln • Crystalarium • Deluxe Worm Bin • Furnace • Geode Crusher • Heavy Furnace • Heavy Tapper • Lightning Rod • Mushroom Log • Ostrich Incubator • Recycling Machine • Seed Maker • Slime Egg-Press • Slime Incubator • Solar Panel • Tapper • Wood Chipper • Worm Bin
+Farming
+Fertilizer Basic Fertilizer • Basic Retaining Soil • Deluxe Fertilizer • Deluxe Retaining Soil • Deluxe Speed-Gro • Hyper Speed-Gro • Quality Fertilizer • Quality Retaining Soil • Speed-Gro • Tree Fertilizer
+Sprinklers Iridium Sprinkler • Quality Sprinkler • Sprinkler
+Other Deluxe Scarecrow • Garden Pot • Rarecrow • Scarecrow
+Fishing
+Bait Bait • Challenge Bait • Deluxe Bait • Magic Bait • Magnet • Targeted Bait • Wild Bait
+Tackle Barbed Hook • Cork Bobber • Curiosity Lure • Dressed Spinner • Lead Bobber • Quality Bobber • Sonar Bobber • Spinner • Trap Bobber • Treasure Hunter
+Other Crab Pot
+Bombs Bomb • Cherry Bomb • Mega Bomb
+Fences Gate • Hardwood Fence • Iron Fence • Stone Fence • Wood Fence
+Storage Big Chest • Big Stone Chest • Chest • Junimo Chest • Mini-Fridge • Stone Chest
+Signs Dark Sign • Stone Sign • Text Sign • Wood Sign
+Misc Anvil • Coffee Maker • Cookout Kit • Deconstructor • Fairy Dust • Farm Computer • Hopper • Mini-Forge • Mini-Jukebox • Mini-Shipping Bin • Sewing Machine • Staircase • Statue Of Blessings • Statue Of The Dwarf King • Telephone • Tent Kit • Tools • Workbench
+Category: Bait

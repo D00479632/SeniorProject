@@ -1,0 +1,61 @@
+Jump to navigation
+Jump to search
+Frog Egg
+Summons a hungry frog companion.
+Information
+Source: Monsters • Crates and Barrels • Skull Cavern Treasure Rooms
+Adventurer's Guild
+Purchase Price: N/A
+Sell Price: 1,000g
+The Frog Egg is a trinket item obtainable after claiming Combat Mastery. It can be obtained by slaying monsters or breaking crates and barrels in the Mines, Skull Cavern, or Quarry Mine. Drop chances from both methods are affected by daily luck and luck buffs, among other factors. The Burglar's Ring and Monster Compendium do not impact the chance to obtain it from monsters.[1] There is also a ≈0.6% chance to obtain a Frog Egg from a treasure chest in the Skull Cavern.[2]
+Equipping the Frog Egg in the trinket slot causes a frog to spawn and follow the player around. When monsters are within 4-5 tiles of the frog, it will try to consume the nearest enemy by grabbing the enemy with its tongue. If unsuccessful, the frog will try again after 2 seconds. If successful, then the frog will follow the player with a full belly. After 12 seconds, the frog returns to normal size and is able to eat another enemy.[3]
+Note: Enemies eaten by the frog will not drop anything and do not count as kills towards quests or Monster Eradication Goals.
+The frog will consume most monsters, including ones that are usually invulnerable (e.g., Armored Bugs) or require specific killing methods (e.g., Mummies). However, there are a few enemies that the frog will not try to eat:[3]
+Any Slimes in a Slime Hutch
+Truffle Crabs
+Prismatic Slimes
+The secret enemy in the basement of the Mayor's Manor
+Contents
+1 Colors
+2 Gifting
+3 Notes
+4 Bugs
+5 References
+6 History
+Colors
+Trinket frog colors, from left to right, top to bottom: brown, green, blue-green, red, yellow, blue, void, and various colors that prismatic cycles through.
+The Frog Egg has a random color when dropped, and it can be changed to any of eight possible colors if re-forged on an Anvil. The color of the frog is cosmetic and does not affect its functionality.
+Frog Type Probability[4]
+Green 41.3%
+Brown 21.3%
+Blue-Green 21.3%
+Blue 4.3%
+Red 4.3%
+Yellow 4.3%
+Void 1.6%
+Prismatic 1.6%
+Gifting
+Villager Reactions
+Love  Sebastian •  Vincent
+Like  Wizard
+Neutral  Alex
+Dislike  Abigail •  Caroline •  Clint •  Demetrius •  Dwarf •  Elliott •  Emily •  Evelyn •  George •  Gus •  Haley •  Harvey •  Jas •  Jodi •  Kent •  Krobus •  Leah •  Leo •  Lewis •  Linus •  Marnie •  Maru •  Pam •  Penny •  Pierre •  Robin •  Sam •  Sandy •  Shane •  Willy
+Notes
+The Frog Egg can be put inside any Fish Tank, hatching a frog of that color.
+Bugs
+If the frog is allowed to eat the last monster on an infested floor the ladder will not spawn. This may force the player to abandon a mining run unless they have (or can craft) a Staircase.
+References
+↑ See Trinket::TrySpawnTrinket, GameLocation::monsterDrop, and BreakableContainer::releaseContents in the game code.
+↑ See MineShaft::getTreasureRoomItem in the game code.
+↑ 3.0 3.1 See HungryFrogCompanion::Update in the game code.
+↑ See CompanionTrinketEffect::GenerateRandomStats in the game code.
+History
+1.6: Introduced.
+1.6.4: The frog will no longer try to eat Truffle Crabs or Prismatic Slimes.
+Clothing
+Footwear Cinderclown Shoes • Combat Boots • Cowboy Boots • Crystal Shoes • Dark Boots • Dragonscale Boots • Emily's Magic Boots • Firewalker Boots • Genie Shoes • Leather Boots • Leprechaun Shoes • Mermaid Boots • Rubber Boots • Sneakers • Space Boots • Thermal Boots • Tundra Boots • Work Boots
+Hats ??? • Abigail's Bow • Arcane Hat • Archer's Cap • Beanie • Blobfish Mask • Blue Bonnet • Blue Bow • Blue Cowboy Hat • Blue Ribbon • Bluebird Mask • Bowler Hat • Bridal Veil • Bucket Hat • Butterfly Bow • Cat Ears • Chef Hat • Chicken Mask • Cone Hat • Cool Cap • Copper Pan (hat) • Cowboy Hat • Cowgal Hat • Cowpoke Hat • Daisy • Dark Ballcap • Dark Cowboy Hat • Dark Velvet Bow • Delicate Bow • Deluxe Cowboy Hat • Deluxe Pirate Hat • Dinosaur Hat • Earmuffs • Elegant Turban • Emily's Magic Hat • Eye Patch • Fashion Hat • Fedora • Fishing Hat • Flat Topped Hat • Floppy Beanie • Forager's Hat • Frog Hat • Garbage Hat • Gil's Hat • Gnome's Cap • Goblin Mask • Goggles • Gold Pan (hat) • Golden Helmet • Golden Mask • Good Ol' Cap • Governor's Hat • Green Turban • Hair Bone • Hard Hat • Hunter's Cap • Infinity Crown • Iridium Pan (hat) • Jester Hat • Joja Cap • Junimo Hat • Knight's Helmet • Laurel Wreath Crown • Leprechaun Hat • Living Hat • Logo Cap • Lucky Bow • Magic Cowboy Hat • Magic Turban • Mouse Ears • Mr. Qi's Hat • Mummy Mask • Mushroom Cap • Mystery Hat • Official Cap • Pageboy Cap • Panda Hat • Paper Hat • Party Hat (blue • green • red) • Pink Bow • Pirate Hat • Plum Chapeau • Polka Bow • Propeller Hat • Pumpkin Mask • Qi Mask • Raccoon Hat • Radioactive Goggles • Red Cowboy Hat • Red Fez • Sailor's Cap • Santa Hat • Skeleton Mask • Small Cap • Sombrero • Sou'wester • Space Helmet • Sports Cap • Spotted Headscarf • Squid Hat • Squire's Helmet • Star Helmet • Steel Pan (hat) • Straw Hat • Sunglasses • Swashbuckler Hat • Tiara • Tiger Hat • Top Hat • Totem Mask • Tricorn Hat • Tropiclip • Trucker Hat • Warrior Helmet • Watermelon Band • Wearable Dwarf Helm • White Bow • White Turban • Witch Hat
+Rings Amethyst Ring • Aquamarine Ring • Burglar's Ring • Crabshell Ring • Emerald Ring • Glow Ring • Glowstone Ring • Hot Java Ring • Immunity Band • Iridium Band • Jade Ring • Jukebox Ring • Lucky Ring • Magnet Ring • Napalm Ring • Phoenix Ring • Protection Ring • Ring of Yoba • Ruby Ring • Savage Ring • Slime Charmer Ring • Small Glow Ring • Small Magnet Ring • Soul Sapper Ring • Sturdy Ring • Thorns Ring • Topaz Ring • Vampire Ring • Warrior Ring • Wedding Ring
+Trinkets Basilisk Paw • Fairy Box • Frog Egg • Golden Spur • Ice Rod • Magic Hair Gel • Magic Quiver • Parrot Egg
+Other Dyeing • Tailoring • Emily's Magic Shirt • Luau Skirt • Mystery Shirt • Tight Pants
+Category: Trinkets

@@ -1,0 +1,90 @@
+Jump to navigation
+Jump to search
+Fiddlehead Fern
+The young shoots are an edible specialty.
+Information
+Source Foraging
+Location Secret Woods • Skull Cavern • Dangerous Mines • Ginger Island Jungle • Green Rain Tree (type 3) • Desert Festival
+Season  Summer
+ All on Ginger Island Jungle, Skull Cavern and Dangerous Mines
+XP 7 Foraging XP
+Energy / Health
+25
+11
+35
+15
+45
+20
+65
+29
+Sell Prices
+Base Tiller (+10%)
+90g
+112g
+135g
+180g
+99g
+123g
+148g
+198g
+Artisan Sell Prices
+Base Artisan (+40%)
+202g
+230g
+282g
+322g
+The Fiddlehead Fern is a vegetable that can be found:
+Foraging in the Secret Woods during Summer (78%).
+Foraging in the Prehistoric floors of the Skull Cavern.
+Foraging on levels 41-69 of the Mines while the Shrine of Challenge is active.
+Foraging in the Ginger Island jungle in all seasons.
+Occasionally at the Traveling Cart for 270–1,000g.
+By chopping Green Rain Trees (type 3) during Green Rain.
+By placing a Tapper on fully-grown Green Rain Trees (type 3).
+In Kent's shop at the Desert Festival for 10 Calico Eggs.
+The Fiddlehead Fern is the only foraged item categorized as a vegetable. Being a vegetable, its sell price benefits from the Tiller 10% bonus and it can be turned into Pickles or Juice using a Preserves Jar or Keg. But it also receives several Foraging-related benefits, because it is obtained by foraging. Specifically, 7 Foraging XP is granted per fern and it benefits from the Gatherer double-harvest bonus and Botanist iridium-quality bonus.
+Contents
+1 Gifting
+2 Bundles
+3 Recipes
+4 Tailoring
+5 Quests
+6 History
+Gifting
+Villager Reactions
+Like  Alex •  Caroline •  Clint •  Demetrius •  Dwarf •  Elliott •  Emily •  Evelyn •  George •  Gus •  Harvey •  Jodi •  Kent •  Krobus •  Leah •  Leo •  Lewis •  Linus •  Marnie •  Maru •  Pam •  Penny •  Pierre •  Robin •  Sandy •  Sebastian •  Shane •  Willy •  Wizard
+Dislike  Abigail •  Haley •  Jas •  Sam •  Vincent
+Bundles
+Fiddlehead Fern is used in the Chef's Bundle on the Bulletin Board.
+Five Fiddlehead Ferns are one of the options for the Wild Medicine Bundle in the Crafts Room (Remixed).
+Recipes
+Image Name Description Ingredients Energy / Health Recipe Source(s) Sell Price
+Fiddlehead Risotto A creamy rice dish served with sauteed fern heads. It's a little bland.
+Oil (1)
+Fiddlehead Fern (1)
+Garlic (1)
+225
+101
+The Queen of Sauce
+28 Fall, Year 2
+350g
+Tailoring
+Fiddlehead Fern is used in the spool of the Sewing Machine with Cloth in the feed to create Green Overalls. It is a green dye when used in the spool of the Sewing Machine with a dyeable clothing item in the feed. It can be placed in the green dye pot at Emily's and Haley's house for use in dyeing.
+Quests
+Fiddlehead Fern is not used in any quests.
+History
+1.4: Added to Prehistoric Levels in the Skull Cavern. Can now be used in Tailoring.
+1.5: Can now be found on Ginger Island. Is now an option in the Wild Medicine Bundle.
+1.6: Can now be obtained from Green Rain Trees (type 3). Now obtainable during Desert Festival.
+Foraging
+Basic Sap
+Spring Common Mushroom • Daffodil • Dandelion • Leek • Morel • Salmonberry • Spring Onion • Wild Horseradish
+Summer Fiddlehead Fern • Grape • Red Mushroom • Spice Berry • Sweet Pea
+Fall Blackberry • Chanterelle • Common Mushroom • Hazelnut • Wild Plum
+Winter Crocus • Crystal Fruit • Holly • Snow Yam • Winter Root
+The Beach Clam • Cockle • Coral • Mussel • Nautilus Shell • Oyster • Rainbow Shell • Sea Urchin • Seaweed
+The Mines Cave Carrot • Purple Mushroom • Red Mushroom
+The Desert Cactus Fruit • Coconut
+Skull Cavern Dinosaur Egg • Fiddlehead Fern
+Ginger Island Ginger • Magma Cap
+Categories: Summer ForageVegetables

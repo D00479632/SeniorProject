@@ -1,0 +1,93 @@
+Jump to navigation
+Jump to search
+← Index
+This page documents the in-game data format for wild trees. This is an advanced guide for mod developers.
+Data format
+You now create/edit wild trees by editing the Data/WildTrees asset.
+This consists of a string → model lookup, where...
+The asset key is a unique string ID for the tree type. The vanilla tree IDs are 1 (oak), 2 (maple), 3 (pine), 6 (desert palm), 7 (mushroom), 8 (mahogany), 9 (island palm), 10 (green tree 1), 11 (green tree 2), 12 (giant fiddlehead), and 13 (mystic).
+The asset value is a model with the fields listed below.
+field effect
+Textures The texture to use as the tree's spritesheet in-game. If multiple textures are listed, the first matching one is used.
+This consists of a list of models with these fields:
+field effect
+Texture The asset name for the tree's spritesheet.
+Season (Optional) If set, the specific season when this texture should apply. For more complex conditions, see Condition.
+Condition (Optional) A game state query which indicates whether this texture should be applied for a tree. Defaults to always enabled.
+This is checked when the tree is created, a new day starts, or its texture is reloaded by a mod. More frequent conditions (like time of day) won't work as expected unless a mod manually triggers a tree update.
+SeedItemId (Optional) The qualified item ID for the seed item. If omitted, the tree can't be planted and SeedOnShakeChance will be ignored.
+SeedPlantable (Optional) Whether the seed can be planted by the player. If this is false, it can only be spawned automatically via map properties. Default true.
+GrowthChance (Optional) The probability each day that the tree will grow to the next stage without tree fertilizer, as a value from 0 (will never grow) to 1 (will grow every day). Defaults to 0.2 (20% chance).
+FertilizedGrowthChance (Optional) Equivalent to GrowthChance, but with tree fertilizer. Defaults to 1 (100% chance).
+SeedSpreadChance (Optional) The probability each day that the tree will plant a seed on a nearby tile, as a value from 0 (never) to 1 (always). This only applied in locations where trees plant seeds (e.g. farms in vanilla). Default 0.15 (15% chance).
+SeedOnShakeChance (Optional) The probability each day that the tree will produce a seed that will drop when the tree is shaken, as a value from 0 (never) to 1 (always). Default 0.05 (5% chance).
+SeedOnChopChance (Optional) The probability that a seed will drop when the player chops down the tree, as a value from 0 (never) to 1 (always). Default 0.75 (75% chance).
+DropWoodOnChop (Optional) Whether to drop wood when the player chops down the tree. Default true.
+DropHardwoodOnLumberChop (Optional) Whether to drop hardwood when the player chops down the tree, if they have the Lumberjack profession. Default true.
+IsLeafy (Optional) Whether shaking or chopping the tree causes cosmetic leaves to drop from tree and produces a leaf rustle sound. When a leaf drops, the game will use one of the four leaf sprites in the tree's spritesheet in the slot left of the stump sprite. Default true.
+IsLeafyInWinter (Optional) Whether IsLeafy also applies in winter. Default false.
+GrowsInWinter (Optional) Whether the tree can grow in winter (subject to GrowthChance or FertilizedGrowthChance). Default false.
+IsStumpDuringWinter (Optional) Whether the tree is reduced to a stump in winter and regrows in spring, like the vanilla mushroom tree. Default false.
+AllowWoodpeckers (Optional) Whether woodpeckers can spawn on the tree. Default true.
+UseAlternateSpriteWhenNotShaken
+UseAlternateSpriteWhenSeedReady (Optional) Whether to render a different tree sprite when the player hasn't shaken it on that day (UseAlternateSpriteWhenNotShaken) or it has a seed ready (UseAlternateSpriteWhenSeedReady). If either field is true, the tree spritesheet must be double-width with the alternate textures on the right. If both are true, the same alternate sprites are used for both. Default false.
+DebrisColor (Optional) The color of the cosmetic wood chips when chopping the tree. This can be...
+a standard color format;
+or one of 12 (brown/woody), 100001 (white), 100001 (light green), 100002 (light blue), 100003 (red), 100004 (yellow), 100005 (black), 100006 (gray), or 100007 (charcoal / dim gray).
+Defaults to 12 (brown/woody).
+SeedDropItems (Optional) When a seed is dropped subject to SeedOnShakeChance, the item to drop instead of the item specified by SeedItemId. If this is empty or none match, the SeedItemId will be dropped instead.
+This consists of a list of models with these fields:
+field effect
+common fields See item spawn fields for the generic item fields supported for chop drops.
+If set to an item query which returns multiple items, one of them will be selected at random.
+Season (Optional) If set, the item only applies if the tree's location is in this season.
+Chance (Optional) The probability that the item will drop, as a value between 0 (never drops) and 1 (always drops). Default 1 (100% chance).
+ContinueOnDrop (Optional) If this item is dropped, whether to continue as if it hadn't been dropped for the remaining drop candidates. Default false.
+ChopItems (Optional) The additional items to drop when the tree is chopped down. All matching items are dropped.
+This consists of a list of models with these fields:
+field effect
+common fields See item spawn fields for the generic item fields supported for chop drops.
+If set to an item query which returns multiple items, one of them will be selected at random.
+Season (Optional) If set, the item only applies if the tree's location is in this season.
+Chance (Optional) The probability that the item will drop, as a value between 0 (never drops) and 1 (always drops). Default 1 (100% chance).
+MinSize
+MaxSize (Optional) The minimum and/or maximum growth stage for the tree at which this item is produced. The possible values are Seed, Sprout, Sapling, Bush, and Tree. Both default to no limit.
+ForStump (Optional) Whether the item is only produced if the tree is a stump (true), not a stump (false), or both (null). Defaults to false (non-stumps only).
+ShakeItems The items produced by shaking the tree when it's fully grown. This only applies the first time the tree is shaken each day. All matching items are dropped.
+This consists of a list of models with these fields:
+field effect
+common fields See item spawn fields for the generic item fields supported for shake items.
+If set to an item query which returns multiple items, one of them will be selected at random.
+Season (Optional) If set, the item only applies if the tree's location is in this season.
+Chance (Optional) The probability that this entry is selected, as a value between 0 (never drops) and 1 (always drops). Default 1 (100% chance).
+TapItems The items produced by tapping the tree. If multiple items can be produced, the first available one is selected.
+This consists of a list of models with these fields:
+field effect
+common fields See item spawn fields for the generic item fields supported for tapper items.
+If set to an item query which returns multiple items, one of them will be selected at random.
+Season (Optional) If set, the item only applies if the tree's location is in this season.
+Chance (Optional) The probability that this entry is selected, as a value between 0 (never drops) and 1 (always drops). Default 1 (100% chance).
+DaysUntilReady The number of days before the tapper is ready to empty.
+PreviousItemId (Optional) If set, the item only applies if the previous item produced by the tapper matches one of the given qualified item IDs. If an entry is null or an empty string, it matches when there's no previous item.
+For example: "PreviousItemId": [ null ] only applies when a tapper is first added to the tree, and "PreviousItemsId": [ "(O)420" ] applies if the player just collected a red mushroom (object #420) from it.
+DaysUntilReadyModifiers (Optional) Quantity modifiers applied to the DaysUntilReady value. Default none.
+DaysUntilReadyModifiersMode (Optional) Quantity modifier modes which indicate what to do if multiple modifiers in the DaysUntilReadyModifiersMode field apply at the same time. Default Stack.
+PlantableLocationRules (Optional) The rules to decide which locations you can plant the seed in, if applicable. The first matching rule is used. This can override location checks (e.g. crops being limited to the farm), but not built-in requirements like crops needing dirt.
+This consists of a list of models with these fields:
+field effect
+Id The unique string ID for this entry within the list.
+Result Indicates whether the seed can be planted in a location if this entry is selected. The possible values are:
+Default: the seed can be planted if the location normally allows it. This can be used to stop processing further rules, and/or set a custom DeniedMessage.
+Allow: the seed can be planted here, regardless of whether the location normally allows it.
+Deny: the seed can't be planted here, regardless of whether the location normally allows it.
+Condition (Optional) A game state query which indicates whether this entry applies. Default true.
+PlantedIn (Optional) The planting context to apply this rule for. The possible values are Ground (planted directly in the ground), GardenPot (planted in a garden pot), or Any. Default Any.
+Note that trees can't be planted in garden pots.
+DeniedMessage (Optional) If this rule prevents planting the seed, the tokenizable string to show to the player (or null to default to the normal behavior for the context). This also applies when the Result is Default, if that causes the planting to be denied.
+CustomFields The custom fields for this entry.
+GrowsMoss Whether the tree grows moss in warm seasons. If field is true, the tree spritesheet must be triple-width with the mossy textures for the upper tree and stump on the far right.
+Spawning wild trees
+Custom trees can be added to the game in two ways:
+Spawn them on map tiles when the location is created, using the new SpawnTree: wild <tree ID> [growth stage on location created] [growth stage on day-update regrowth] tile property. This must be added on the Paths layer, which must also have tile index 34 from the paths tilesheet.
+Or give the player a seed item in the usual ways (e.g. from a shop, mail letter, etc).
+Category: Modding

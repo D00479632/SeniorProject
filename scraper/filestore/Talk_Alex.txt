@@ -1,0 +1,59 @@
+Jump to navigation
+Jump to search
+This talk page is for discussing Alex.
+Sign and date your posts by typing four tildes (~~~~).
+Put new text below old text.
+Be polite.
+Assume good faith.
+Don't delete discussions.
+Contents
+1 Thunder
+2 Alec gifts
+3 New Alex quote (?)
+4 Page protected
+5 1.5 (mobile)
+6 Question regarding 1.5 likes and dislikes
+7 missing dialogue
+Thunder
+On my farm Alex's birthday was rainy and thundery Orrinpants (talk) 16:06, 5 November 2022 (UTC)
+Sounds about right. Is there a question I can answer for you? margotbean (talk) 18:57, 5 November 2022 (UTC)
+Alec gifts
+Field Snack is NOT a like gift, he hates it! Idk how to edit or I would, someone please update this. BisonFourBravo (talk) 14:19, 28 March 2024 (UTC)
+just tested this in-game, it is indeed a liked gift for him as of v1.6. he even has a unique dialogue for this. Sooji gooji (talk) 14:34, 28 March 2024 (UTC)
+This is true. On the 1.6 update (currently only for PC / laptop) he does like field snacks. But in previous versions he does hate it. Schimeto (talk) 12:50, 11 June 2024 (UTC)
+New Alex quote (?)
+In my game it’s Summer of the first year on a Wednesday and Alex just said to me “Hey farm girl, can I ask you a question?” “Hey, when I turn pro you can say you were my first ‘’fan’’. Not bad, huh?” I don’t see it listed anywhere on his page and I don’t know how to edit it, so I thought I’d mention it as a discussion so someone more skilled than me could figure it out. ChamomileT (talk) 17:42, 15 April 2024 (UTC)
+Page protected
+Thank you to everyone who has reverted changes to Alex's gift tastes! As of v1.6, Alex likes field snack, as it says in the "History" section. I have locked the page for editing for now. If there are valid changes to be made, please comment here or on my talk page. Thank you, margotbean (talk) 22:59, 22 April 2024 (UTC)
+1.5 (mobile)
+Alex has field snacks as a disliked gift on iPad - but it's listed here as liked. When you give him one he goes "Oh... okay. Thanks." And it's on his profile as disliked miscellaneous gifts. Suchwit (talk) 03:01, 28 April 2024 (UTC)
+As mentioned above, Alex likes field snacks as of v1.6, and this wiki hosts the most updated information for the game. If you are playing on a previous version, you may find some differences between what you experience in game and what is stated on the wiki. RaeOSunshine24 (talk) 11:32, 29 April 2024 (UTC)
+Question regarding 1.5 likes and dislikes
+As mentioned previously, Alex's likes and dislikes have changed since the 1.6 update, and therefore the wiki page has updated to meet them. Is there anyway for me to see the old version of the page for the 1.5 update? I'm using xbox and i am struggling with gifting. Sorry if there was an answer to this elsewhere i searched and couldn't find it anywhere. (Goodluckbabeenthusiast (talk) 23:05, 25 June 2024 (UTC))
+In general, you can "View history" by clicking the link at the top right of the page (in desktop view). Choose a date before v1.6 released (March 19, 2024) and compare to the current page. You can edit the URL and remove the "&diff=99999999" part as well.
+For this page, here is a link: https://stardewvalleywiki.com/mediawiki/index.php?title=Alex&oldid=153128 -- margotbean (talk) 23:27, 25 June 2024 (UTC)
+missing dialogue
+a day after giving alex a bouquet, if talked to, he will say:
+"Well, this is a [current season*] I'll never forget!"
+*if given bouquet in a different season then the current, the current will appear
+.
+.
+directly after the dialogue for accepting a dating proposal, if alex is clicked, a text box will appear stating:
+"Alex gives your arm a squeeze, grinning."
+.
+.
+upon being given a wilted bouquet, alex will say:
+"You're giving me wha...?"
+"*huff* Got it. Alright... well, you've made your choice. You're not gonna see me begging."
+.
+.
+missing quote for Alex attending the desert festival:
+"Have you seen the size of these Calico Eggs?"
+"Just imagine the protein..."
+.
+.
+if the player is male (or enters the men's changing room using a glitch as a girl), alex will say:
+"I saw you checking out the bath house the other day. Trying to get in shape? Heh."
+"Uh... you didn't go poking around in my locker, did you?"
+Rivertei (talk) 21:01, 3 November 2024 (UTC)
+Category: Talk pages

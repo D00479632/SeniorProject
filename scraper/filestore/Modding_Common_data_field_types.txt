@@ -1,0 +1,167 @@
+Jump to navigation
+Jump to search
+← Index
+This page documents common field types which appear in the game's data files.
+You normally don't need to read through this page directly; specific sections are linked from field docs on other pages.
+Contents
+1 String formats
+1.1 Unique string ID
+1.2 Asset name
+1.3 Color
+1.4 Context tag
+1.5 Custom fields
+1.6 Game state query
+1.7 Item ID
+1.8 Item query
+1.9 Tokenizable string
+1.10 Translation key
+1.11 Trigger action
+2 Data structures
+2.1 Item spawn fields
+2.2 Mod data
+2.3 Point
+2.4 Quantity modifiers
+2.4.1 Modifier format
+2.4.2 Modifier mode
+2.4.3 Examples
+2.5 Rectangle
+2.6 Vector2
+String formats
+These formats can only be used in fields that specifically support them. The field docs will link to this page if applicable.
+Unique string ID
+The game identifies data using unique string IDs. For example, Town is the unique ID for the Pelican Town location; no other location can use that ID. The IDs are used for a wide range of purposes, from internal game logic to content pack edits.
+Best practices for mods:
+Use namespaced IDs prefixed with your mod's unique ID. For example, if your mod ID is Example.PufferchickMod and you're adding a pufferchick plushy, your item ID would look like Example.PufferchickMod_PufferchickPlushy. In a Content Patcher pack, you can use {{ModId}}_PufferchickPlushy to insert your mod ID automatically.
+Only use alphanumeric (a–z, A–Z, 0–9), underscore (_), and dot (.) characters in string IDs. This is important because they're often used in places where some characters have special meaning (like file names or game state queries).
+Although the game generally doesn't validate the ID format, you're strongly encouraged to use this exact format to maintain good mod compatibility, eliminate ID conflicts, and make it easy (for both troubleshooters and mod code) to identify which mod added custom content.
+Asset name
+An asset name uniquely identifies a game asset. These usually match files in the game's Content folder, but mods can add custom assets using Content Patcher or the C# content API.
+For example, Portraits/Abigail contains Abigail's portraits.
+Asset names do not include the Content/ prefix, file extension, or locale code. For example, the Content/Data/Achievements.de-DE.xnb file has asset name Data/Achievements.
+Color
+Data assets can define colors using a standard format. For example:
+"DebrisColor": "White"
+The supported color formats are:
+format example
+A Color property name.
+Expand
+show color names 
+ForestGreen
+A hexadecimal color code. The optional alpha is a value between 00 (transparent) and FF (opaque). #228B22
+#228B22FF
+An 8-bit RGB color code. The optional alpha is a value between 0 (transparent) and 255 (opaque). 34 139 34
+34 139 34 255
+C# mods can parse a color like Utility.StringToColor("White").
+Context tag
+A context tag is an arbitrary data label attached to items. The game auto-generates some context tags, while others can be added through the item data.
+These can produce various effects in-game, be queried in various asset fields or using the ITEM_CONTEXT_TAG game state query, or may be informational only.
+See Modding:Context tags for more info.
+Custom fields
+Many data assets have a CustomFields field. This is ignored by the game, but can be read by mod frameworks to enable custom features.
+For example, a content pack can add a crop with custom fields:
+"CustomFields": {
+    "Example.FrameworkMod/WetTexture": "{{InternalAssetKey: assets/crops-wet.png}}"
+}
+And then a C# mod could handle the custom field if it's set:
+CropData data = crop.GetData();
+if (data != null && data.CustomFields.TryGetValue("Example.FrameworkMod/WetTexture", out string textureName))
+{
+    // do magic
+}
+Game state query
+A game state query defines a condition using a special command syntax. For example, this checks if today is spring or summer:
+"Condition": "SEASON Spring Summer"
+See Modding:Game state queries for more info.
+Item ID
+Every item is identified by two strings:
+An unqualified item ID (item.ItemId) is a unique string ID for the item. This should generally be unique, but older vanilla items have non-unique numeric IDs for legacy reasons.
+A qualified item ID (item.QualifiedItemId) prefixes the unqualified ID with the type identifier to guarantee uniqueness.
+For example, pufferfish has two item IDs: 128 (unqualified) and (O)128 (qualified).
+See Modding:Items for more info.
+Item query
+An item query creates any number of items dynamically using either an item ID or a special command syntax. For example, you can select random house plants:
+"ItemId": "RANDOM_ITEMS (F) 1376 1390"
+See Modding:Item queries for more info.
+Tokenizable string
+A tokenizable string is text which can contain special tokens. For example, this shows a message like "It's a beautiful spring day":
+"Message": "It's a beautiful [Season] day"
+See Modding:Tokenizable strings for more info.
+Translation key
+A translation key uniquely identifies where to find translatable text, in the form <asset name>:<key>. For example, Strings\\StringsFromCSFiles:spring will look for a spring key in the Strings\StringsFromCSFiles asset file in the content folder.
+This is often used in game code (e.g. via Game1.content.LoadString) and in data assets (e.g. via the LocalizedText tokenizable string token).
+Trigger action
+A trigger action performs an action when something happens, with support for a wide range of actions (like sending mail, changing friendship, starting a quest, etc).
+For example, you can give the player an item from dialogue:
+"Message": "Hi there! Here's a pufferfish.#%action AddItem (O)128"
+See Modding:Trigger actions for more info.
+Data structures
+Item spawn fields
+Item spawn fields are a common set of fields used to create items using item queries in many data assets.
+For example, you can create an iridium-quality strawberry juice:
+"ItemId": "FLAVORED_ITEM Juice (O)400",
+"Quality": 4
+See Modding:Item queries#Item spawn fields for more info.
+Mod data
+modData dictionary fields store custom data about instances. These are synchronized in multiplayer, persisted in the save file, and accessible from both C# and game state queries like PLAYER_MOD_DATA.
+When you split an item stack, the new stack copies the previous one's mod data; when merged into another stack, the merged items adopt the target stack's mod data. Otherwise mod data has no effect on item split/merge logic (e.g. you can still merge items with different mod data).
+In C#, these are available on these types: Character (including monsters, NPCs, and players), GameLocation, Item, Projectile, Quest, and TerrainFeature.
+To avoid mod conflicts, mod data keys should be unique string IDs:
+item.modData[$"{this.ModManifest.UniqueID}/item-age"] = "30";
+Point
+A point represents an integer coordinate or size, usually measured in pixels or tiles. This is formatted as an object with an X/Y position. For example:
+"Position": {
+    "X": 0,
+    "Y": 0
+}
+Quantity modifiers
+Quantity modifiers apply dynamic changes to a numeric field in a data asset like Data/Shops or Data/Machines. For example, you can multiply a shop item's price or increase a machine output's quality. You can specify any number of modifiers for the same field.
+Modifier format
+These consist of a list of models with these fields:
+field effect
+Id The unique string ID for this modifier within the current list.
+Modification The type of change to apply. The possible values are Add, Subtract, Multiply, Divide, and Set.
+Amount (Optional if RandomAmount specified) The operand applied to the target value (e.g. the multiplier if used with Multiply).
+RandomAmount (Optional) A list of possible amounts to randomly choose from. If set, Amount is optional and ignored. Each entry in the list has an equal probability of being chosen, and the choice is persisted for the current day. For example:
+"RandomAmount": [ 1, 2, 3.5, 4 ]
+Condition (Optional) A game state query which indicates whether this change should be applied. Defaults to always true.
+Modifier mode
+Quality modifier fields are often accompanied by a mode field (like PriceModifiers and PriceModifierMode), which indicate what to do when multiple modifiers apply to the same value. Available modes:
+value effect
+Stack Apply each modifier to the result of the previous one. For example, two modifiers which double a value will quadruple it.
+Minimum Apply the modifier which results in the lowest value.
+Maximum Apply the modifier which results in the highest value.
+Examples
+For example, this will double the price of a shop item in Data/Shops:
+"PriceModifiers": [
+    {
+        "Modification": "Multiply",
+        "Amount": 2.0
+    }
+]
+This will set the price to a random value between 100–1000, or 3–5 times the item's normal sell price, whichever is higher (like the Traveling Cart):
+"PriceModifierMode": "Maximum",
+"PriceModifiers": [
+    {
+        "Modification": "Set",
+        "RandomAmount": [ 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000 ]
+    },
+    {
+        "Modification": "Multiply",
+        "RandomAmount": [ 3, 4, 5 ]
+    }
+]
+Rectangle
+A rectangle represents a square area, usually measured in pixels or tiles. This is formatted as an object with an X/Y position (for the top-left corner) and width/height size, where all values are integers. For example:
+"Rectangle": {
+    "X": 0,
+    "Y": 0,
+    "Width": 16,
+    "Height": 32
+}
+Vector2
+A Vector2 represents a non-integer coordinate or size, usually measured in pixels or tiles. This is formatted as an object with an X/Y position. For example:
+"Position": {
+    "X": 10.5,
+    "Y": 12.0
+}
+Category: Modding

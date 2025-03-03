@@ -1,0 +1,155 @@
+Jump to navigation
+Jump to search
+← Index
+This page documents how the game generates weather in the game.
+Contents
+1 Data
+2 Algorithm
+2.1 Forced weather
+2.2 Generated weather
+2.3 TV Channel
+2.4 Weather Icon
+2.5 Rain Totem
+3 Weather probability by type
+3.1 Sunny
+3.2 Rainy
+3.3 Debris
+3.4 Stormy
+3.5 Snowy
+4 Save files
+5 Notes/FAQ
+Data
+The weather is controlled by the string field Game1::weatherForTomorrow. The possible values are:
+value constant weather
+Sun weather_sunny sunny
+Rain weather_rain rain
+GreenRain weather_green_rain green rain
+Wind weather_debris windy
+Storm weather_lightning lightning
+Festival weather_festival festival
+Snow weather_snow snow
+Wedding weather_wedding wedding
+Algorithm
+You can now change the weather algorithm by editing location context data, and (with a C# mod) implement custom weathers.
+Fields like Game1.weather and Game1.weatherForTomorrow are now strings to support custom mod weather IDs. The change for vanilla weather has no effect on Content Patcher packs, since the new weather IDs match the ones Content Patcher was using before (i.e. Sun, Rain, Snow, Storm, and Wind). C# mods may also see a Festival weather, while Content Patcher packs will see Sun for it. The constants like Game1.weather_sunny have the new string values (with new constants like Game1.legacy_weather_sunny for the legacy values).
+The base game will treat an invalid weather as sunny. C# mods can implement custom weather effects using normal SMAPI events like UpdateTicked, or by patching methods like Game1.ApplyWeatherForNewDay and Game1.populateDebrisWeatherArray.
+Forced weather
+Certain dates always have the same weather:
+date weather
+spring 1 weather_sunny
+spring 2 (year 1) weather_sunny
+spring 3 (year 1) weather_rain
+spring 4 (year 1) weather_sunny
+summer 1 weather_sunny
+summer 13 weather_lightning
+summer 26 weather_lightning
+fall 1 weather_sunny
+winter 1 weather_sunny
+Green rain can only occur on Summer 5, 6, 7, 14, 16, 18 and 23.
+Active festivals (defined in Data/Festivals) always have the Festival weather while passive festivals (defined in Data/PassiveFestivals) always have the Sun weather.
+Generated weather
+Weather in Stardew Valley is set within the Game1::newDayAfterFade() function (after the day change code, but before SMAPI's SaveEvents.BeforeSave event).
+The game follows these steps to decide which weather and debris to set for the next day:
+Load the possible weather for the new day for each location, which is set just after the old day started.
+Check for forced weather.
+If today is a wedding, set the weather to Wedding.
+Sync the WeatherForTomorrow field for each location.
+Set Game1::wasRainingYesterday based on whether it was raining or storming.
+Clear the debris weather array.
+Reset all weather flags, and sets them in the following pattern
+If it is going to rain, set the rain flag to true (this does not include the green rain).
+If the weather is green rain, set the green rain flag to true.
+If it is going to storm, set the rain and storm flags to true.
+If it is going to be windy, set the debris flag to true.
+If it is going to snow, set the snow flag to true,
+Prepare for the possible weather the day after the new day:
+Default to Sun;
+If the day after the new day is an active festival, set the weather to be Festival and return;
+If the day after the new day is a passive festival, set the weather to be Sun and return;
+Apply randomized weather conditions from location contexts to get a possible weather.
+Prepare for the possible weather the day after the new day for those locations with CopyWeatherFromLocation specified (copy from source locations).
+Sync the weather.
+Apply all the weather flags to the valley area.
+Populate the debris array if it is debris weather.
+Reset (on the first day of a month) or increment the monthlyNonRainyDayCount for each location.
+Apply the green rain response logic (e.g., show global message, send a mail, etc.)
+At this point, the main function is done setting weather.
+TV Channel
+The TV will check the weather and show the following message:
+weather message
+Festival "It's going to be clear and sunny tomorrow... perfect weather for the Festival! The event will take place Location, starting between Time. Don't be late!"
+Failed to fetch the data: "Um... that's odd. My information sheet just says 'null'. This is embarrassing... "
+Snow 50% chance each:
+"Bundle up, folks. It's going to snow tomorrow!"
+"Expect a few inches of snow tomorrow."
+Rain "It's going to rain all day tomorrow"
+GreenRain "Um... There appears to be some kind of... anomalous reading... I... don't know what this means..."
+Storm "Looks like a storm is approaching. Thunder and lightning is expected."
+Wind Per condition:
+Spring: "Partially cloudy with a light breeze. Expect lots of pollen!"
+Fall: "It's going to be cloudy, with gusts of wind throughout the day."
+Default: "It's going to snow all day. Make sure you bundle up, folks!"
+default 50% chance each:
+"It's going to be clear and sunny all day."
+"It's going to be a beautiful, sunny day tommorow!"
+Note: the TV will not necessarily be accurate for any other day than non festival days, the first of the month and the 3rd of spring, which are force-set by the Game1::newDayAfterFade method. Farmhands (and not host players) may not even get that accuracy for the first of the month and 3rd of spring.
+Note 2: Passive festivals such as the Night Market are not considered to have "festival" weather. Instead, all passive festivals in the valley have "sunny" weather.
+Weather Icon
+The weather icon is set in Game1::updateWeatherIcon, which sets an index in LooseSprite/Cursors.xnb:
+If snowing: 7.
+If sunny: 2.
+If wedding: 0.
+If festival: 1.
+If raining: 4.
+If stormy: 5.
+If spring: debris weather is 3.
+If summer: unset (defaults to sunny).
+If fall: 6.
+If winter: 7 (same as snowing).
+If green rain: 999.
+Rain Totem
+The rain totem (item #681) and is controlled by Object::rainTotem, which is invoked by Object::performUseAction. If tomorrow is a festival day, the item is used up but nothing happens. Otherwise, it uses up the item and sets the weather for tomorrow to weather_rain and displays the message.
+Weather probability by type
+This section explains the probability of each weather type. This only applies on dates with no forced weather.
+Sunny
+Sunny weather covers weather variables 0, 4, and 6.
+Spring: there's an 18.3% base chance of rain (81.7% chance remaining for other weathers). If it doesn't rain, there's an 80% chance to remain sunny (except on spring 3, which will always be rainy). That means that in spring there's a 66.4% chance of sunny weather.
+Summer: The chance of sunny weather diminishes steadily per day from 87.4% on summer 1 to 79.9% on summer 28. The precise chance is 1 - [12% + (0.3% * day of the month)] per day, with a 0% chance on day 1.
+Fall: identical to spring, but no forced weather.
+Winter: there's a 63% chance of precipitation, so only a 37% chance of sunny weather.
+Rainy
+Spring: there's an 18.3% base chance of rain. If it rains, there's a 25% chance of storms except in year 1. So the rain odds in Spring is a flat 18.3% in year 1, and 13.725% in year 2 or later. It will always rain on spring 3 (year 1).
+Summer: the chance of rainy weather increases steadily per day from 12.6% on summer 2 to 20.1% on Summer 27. There's an 85% chance that rain becomes storms. So you have a scale of [12% + (0.3% * day of the month)] * .15 to determine your chances of rainfall.
+Fall: same as spring, except fall in year 1 can be stormy so it's a flat 13.725% chance.
+Winter: never rains.
+Debris
+Debris weather covers weather variable 2.
+Spring: there's a 20% chance of this after rain, so approximately 16.6% chance of debris weather.
+Summer: no debris weather.
+Fall: there's a 60% chance for this after rain, so approximately 49.8% chance of debris weather.
+Winter: no debris weather.
+Stormy
+Stormy weather covers weather variable 3.
+Spring: 4.57% chance of storms.
+Summer: variable chance of storms; starts at 10.71% and increases to 17.085%.
+Fall: 4.57% chance of storms.
+Winter: no stormy weather.
+Snowy
+In winter, there's a 63% chance of snow. No other season has snow.
+Save files
+The save file is a snapshot of the day at 0600 the next morning. The WeatherForTommorow field was used to calculate the weather, but changing it has no effect on the weather since the weather flags have already been set by this point. To change the weather, you need to set one of these combinations of flags:
+weather isRaining isDebrisWeather isLightning isSnowing isGreenRain
+sunny ☐ ☐ ☐ ☐ ☐
+rainy ☑ ☐ ☐ ☐ ☐
+stormy ☑ ☐ ☑ ☐ ☐
+debris ☐ ☑ ☐ ☐ ☐
+snowy ☐ ☐ ☐ ☑ ☐
+festival ☐ ☐ ☐ ☐ ☐
+wedding ☐ ☐ ☐ ☐ ☐
+green rain ☐ ☐ ☐ ☐ ☑
+Note: changing isDebrisWeather during an active game will not create the array. You'll need to call Game1::populateDebrisWeatherArray to get the debris populated. Correspondingly, if you're removing the debris weather flag, remember to call Game1::debrisWeather::Clear.
+Notes/FAQ
+The TV can be fixed by overriding it - or just by using Entoroax's Framework.
+You can set snow and debris at any time, the game just won't.
+You cannot set debris and rain at the same time.
+Category: Modding

@@ -1,0 +1,60 @@
+Jump to navigation
+Jump to search
+This talk page is for discussing Slimes.
+Sign and date your posts by typing four tildes (~~~~).
+Put new text below old text.
+Be polite.
+Assume good faith.
+Don't delete discussions.
+Contents
+1 Second Prismatic Slime
+2 Prismatic Slime can also be found in Quarry Mine
+3 Large Slimes and Red Cabbage Seeds?
+4 Refined quartz drops from near-white slimes?
+5 Semi-transparent Slimes
+6 Yellow Slimes Give Money?
+7 Green Slimes dropping Wumbus Shirt
+Second Prismatic Slime
+Hi, I just get the second Prismatic Slime and Jelly. I am not sure if this is important or not. Should I point this out in the article?
+P.S. I gave one Jelly to Wizard and another jar is stayed. Dimitrit (talk) 15:15, 3 April 2021 (UTC)
+Hi Dimitrit! I don't think the page needs to be changed, since it does not say "you can collect only 1 prismatic slime per quest". You can't sell Prismatic Slime, or use it for anything other than finishing the quest, so it's not really important. It's a unique item to have in a chest, but not really useful. I hope this helps! margotbean (talk) 18:14, 3 April 2021 (UTC)
+Prismatic Slime can also be found in Quarry Mine
+Hi, I just found a Prismatic Slime in Quarry Mine in case that you want to add that in the Prismatic Slime info. Mobley (talk) 19:37, 26 May 2021 (UTC)
+Done, thank you! margotbean (talk) 20:12, 26 May 2021 (UTC)
+Large Slimes and Red Cabbage Seeds?
+An edit has been made to state that large slimes can drop red cabbage seeds, referring to GreenSlime::getExtraDropItems. In the code, Large Slimes related to BigSlime, not GreenSlime. The code in getExtraDropItems appears to be for Iridium Slimes that are first generation i.e. not the product of 2 slimes mating. BlaDe (talk) 07:07, 6 July 2021 (UTC)
+Thanks for the info! I'm 99% certain I encountered a Big purple slime dropping a red cabbage seed in the Skull Cavern, and went looking for the source in the code... It seems I referenced the wrong code. Will remove the reference and continue looking for the source. (Any help there would be appreciated, btw ;) Thanks, margotbean (talk) 15:26, 6 July 2021 (UTC)
+Did the big slime break into smaller slimes? These could drop the seeds. BlaDe (talk) 21:59, 6 July 2021 (UTC)
+Nope, it was the last monster in the room, and it didn't produce any smaller slimes. margotbean (talk) 14:03, 7 July 2021 (UTC)
+Refined quartz drops from near-white slimes?
+I have been breeding white or near-white (unsure of exact values) slimes in my slime hutch and they frequently drop refined quartz, which isn't listed as a drop as far as I can see. I'm wearing a burglar ring if that matters. Not sure if this should be noted somewhere. Samkee00 (talk) 08:14, 23 January 2022 (UTC)
+Thanks so much for your comment, I've found the drop in the code and added it to the page! If you hadn't been breeding white slimes, I don't think anyone would've noticed it. Amazing. Thanks again! margotbean (talk) 15:41, 23 January 2022 (UTC)
+Hooray! Always happy to discover something new. Samkee00 (talk) 05:43, 24 January 2022 (UTC)
+Semi-transparent Slimes
+The Galaxy Soul article's lead mentions that in dangerous mines (or Skull Cavern), that "semi-transparent big slimes" can sometimes be seen, and may contain a Galaxy Soul, which will drop when they are killed.
+This article's Big Slimes section contains no mention of semi-transparent ones at all. It discusses only the big slimes that are found in the standard-danger mines. Neither does the Dangerous Slimes section discuss any type of special big slime, which presumably these semi-transparent ones are. Or are they more dangerous? Or simply a special type found only in dangerous mines? It would be nice to know what kind of adversary they really are, and what the chances are of finding a Galaxy Soul in them. And are other such special drops possible? A Prismatic Shard perhaps? I have no way to look at code, and my current experience does not readily lend any hints. Generally, when I have seen such things, I've been battling a half-dozen or more various enemies, and found it hard to distinguish what damage or drops come from where. Giles (talk) 23:28, 28 November 2023 (UTC)
+All good questions. The way you know a semi-transparent big slime is if you see a prize inside it (a galaxy soul, pink cake, Qi gem, or hearts). Otherwise, it's not a semi-transparent big slime. So, the "Big Slimes" portion of the article hints at their existence by describing their drops. They're not more dangerous than Big Slimes found in the dangerous mines/skull cavern that don't have a visible prize inside. Additionally, not all monsters that drop Galaxy Souls are Big Slimes that have a visible galaxy soul inside them. But Galaxy Souls drop only in the dangerous mines or skull cavern.
+As for the percentages, I don't know, other than what's listed on the Galaxy Soul page. I'm 99.99% positive I didn't add that information to the wiki. Unfortunately, with v1.6 on the horizon, researching the drop % won't be at the very top of my "to do" list. But I will add it. margotbean (talk) 05:59, 29 November 2023 (UTC)
+tbh not sure what a semitransparent big slime is either, aren't they all semitransparent? But yeah, some of them can carry stuff - galaxy souls, qi gems in the hard mines, pink cakes, and also those little hearts. It's in the BigSlime constructor. Atravita (talk) 12:54, 29 November 2023 (UTC)
+Atravita, it's that nebulous appearance of big slimes that made me question "transparent, or not?", like you.
+Thanks for all the clarifications, Margotbean. I think it's the fact that the information is distributed, plus some "opaque" presentation in Slimes, that also made things hard to understand. I'm going to try a bit of editing on it all for that purpose. I think the drop % is all there, just not clearly presented.
+What's missing is any mention anywhere that big slimes can occur in The Mines. Either big slimes should have a page of their own, or else they need a high-level section that can be linked to from anywhere. They're really a separate monster from the smaller slimes. And each monster on its own page lists all its possible drops, which is handy. So there's a better improvement prospect for the 1.6 timeframe.
+I don't do any "social" media. I'd appreciate an estimate for 1.6 targeted release date, if you know. Thanks! Giles (talk) 00:06, 30 November 2023 (UTC)
+I've finished the edits I promised. Hope you find them helpful. Giles (talk) 01:49, 30 November 2023 (UTC)
+Yellow Slimes Give Money?
+Hello, while playing 1.6 I killed a Yellow slime in the mines and it dropped 1500 G, but I couldn't find much on it. Boger65435 (talk) 06:47, 7 April 2024 (UTC)
+Can confirm. Found one on level 7 of the mines and it dropped 250 G. I had made an edit but it was removed for an unspecified reason. --SillyCrow (talk) 01:59, 9 April 2024 (UTC)
+Just happened to me, so I investigated, and found the culprit in StardewValley.Monsters.GreenSlime. If you are in a mine, every slime has a 1 in 1000 chance, when spawning, of having their color set to 255 255 50 (a deep yellow) and having the GoldCoin item added to their list of drops (the one that grants 250g when picked up). Then there is a chance for another GoldCoin to be added (repeating indefinitely until the roll fails). The chance is set to 1+(0.8%*the number of months old the save is), in other words starting at 1%, raising by 0.8% per month, and capping at 6.5%. Let me add it to the article. PrincessFelicity (talk) 01:08, 12 July 2024 (UTC)
+Thank you for the code dive! However, this is not a new slime, it existed in the v1.5.6 code but coin drops weren't implemented then. It might should go under color-based drops. I'll look at again tomorrow. margotbean (talk) 06:07, 12 July 2024 (UTC)
+Is that so? I wonder what it dropped in 1.5.6 then, if it dropped anything. However I'm not sure color-based drops is the right categorizing since it's pretty much not that. The drop isn't set to the color, the color and drop are both separately set by the same random event. PrincessFelicity (talk) 10:23, 12 July 2024 (UTC)
+Yep, the 1.5 code is in the same place as the 1.6 code, here is the 1.5 code:
+if (Game1.random.NextDouble() < 0.001)
+ {
+  color.Value = new Color(255, 255, 50);
+  coinsToDrop.Value = 10;
+ }
+But "coinsToDrop" had no effect. Several monsters had this code, and I can't remember if it was tied to the unimplemented Luck skill or the "crop of the day/week" or the tax system.... It was something unused, anyway.
+I agree that it's not a color based drop. I see that it's a separate code branch where the color is set and then the drop, not a drop based on the random color assigned. Good work in finding this!! Thank you!! margotbean (talk) 17:19, 12 July 2024 (UTC)
+Green Slimes dropping Wumbus Shirt
+I don't know where else to put this, but I just got a Wumbus Shirt dropped from a green slime on level 24 of the mines. Didn't see it in the loot table anywhere and thought I should note it. Indiadragon (talk) 20:30, 2 May 2024 (UTC)
+Category: Talk pages

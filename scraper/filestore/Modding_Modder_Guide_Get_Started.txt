@@ -1,0 +1,250 @@
+< Modding:Modder Guide
+Jump to navigation
+Jump to search
+Creating SMAPI mods
+Get started
+Game fundamentals
+Test & troubleshoot
+Release
+API reference
+Basic SMAPI APIs:
+Mod structure
+Manifest
+Events
+Configuration
+Load & edit content
+Data
+Input
+Logging
+Reflection
+Multiplayer
+Translation
+Update checks
+Utilities
+Advanced SMAPI APIs:
+Content packs
+Mod console commands
+Mod integrations
+Harmony patching
+Specific guides
+← Modding:Index
+If you're making a mod for the first time, see Modding:Index#Creating mods for a short description of the differences between C# mods and content packs. You can create many mods without C#.
+Do you want to create SMAPI mods for Stardew Valley with C#? This guide is for you!
+Contents
+1 Intro
+1.1 What is a SMAPI mod?
+1.2 Why do mods use SMAPI?
+1.3 Can I make a mod?
+1.4 Can I make a mod without SMAPI?
+1.5 Where can I get help?
+2 Get started
+2.1 Learn C#
+2.2 Requirements
+3 Create a basic mod
+3.1 Quick start
+3.2 Create the project
+3.3 Add the code
+3.4 Add your manifest
+3.5 Try your mod
+3.6 Troubleshoot
+4 FAQs
+4.1 Where's the SMAPI documentation?
+4.2 Can I look at other mods' code?
+4.3 How do I make my mod work crossplatform?
+4.4 How do I decompile the game code?
+4.5 What does "target NET 6.0" mean?
+Intro
+What is a SMAPI mod?
+A SMAPI mod uses the SMAPI modding API to extend the game logic. The mod can respond when something happens in the game (like when an object is placed in the world), run code periodically (like once per update tick), change the game's assets and data, etc. SMAPI mods are written in C# using .NET, and Stardew Valley uses MonoGame for the game logic (drawing to the screen, user input, etc).
+Why do mods use SMAPI?
+SMAPI does a lot for you! For example, SMAPI will...
+Load your mod into the game. Code mods aren't possible without SMAPI to load them.
+Provide APIs and events which let you interact with the game in ways you otherwise couldn't. There are simplified APIs for game asset/data changes, player configuration, translation, reflection, etc. These are covered later in the guide.
+Rewrite your mod for crossplatform compatibility when it's loaded. That lets you write mod code without worrying about the differences between the Linux/Mac/Windows versions of the game.
+Rewrite your mod to update it. SMAPI detects and fixes mod code broken by a game update in common cases.
+Intercept errors. If your mod crashes or causes an error, SMAPI will intercept the error, show the error details in the console window, and in most cases automatically recover the game. This means your mod won't accidentally crash the game, and it makes it much easier to troubleshoot errors.
+Provide update checks. SMAPI automatically alerts players when a new version of your mod is available.
+Provide compatibility checks. SMAPI automatically detects when your mod is incompatible and disables it before it causes problems, so players aren't left with broken games.
+Can I make a mod?
+Yes! This guide will help you create a simple mod step-by-step. If you follow along, you'll have created a mod! Then you'll just need to make it do what you want.
+If you're new to programming: many mod developers start with little or no programming experience. You can certainly learn along the way if you're determined, but you should be prepared for a steep learning curve. Don't be too ambitious at first; it's better to start with a small mod when you're figuring it out. It's easy to become overwhelmed at first and give up. The modding community is very welcoming, so don't be afraid to ask questions!
+If you already have programming experience, you should be fine. Programming experience in C# or Java will make things easier, but it isn't critical. If you're unfamiliar with C#, you can skim through the Learning C# references below to fill in any gaps.
+Can I make a mod without SMAPI?
+Yep. Many SMAPI mods support 'content packs', which let you provide JSON text files, images, etc which they use. For example, you can use Content Patcher to edit the game's images and data with zero programming needed. The rest of this guide is about creating a new SMAPI mod; for content packs, see Modding:Content Patcher or Modding:Content pack frameworks for information on other available frameworks (or the mod documentation if creating a content pack for a different mod).
+Where can I get help?
+The Stardew Valley modding community is very welcoming. Feel free to ask for help in #making-mods on the Stardew Valley Discord.
+Get started
+Learn C#
+Since mods are written in C#, it's a good idea to get acquainted with it first. You don't need to memorise everything, but a grasp of the basics (like fields, methods, variables, and classes) will make everything else much easier.
+Some useful resources:
+C# Quickstarts teaches the basics of C# with interactive examples.
+C# Fundamentals for Absolute Beginners is a video guide which will walk you through C#, from the basic concepts to event-driven programming (which is what SMAPI mods mostly use).
+Already know how to program? Get a quick overview of C# syntax and concepts at LearnXinYMinutes.
+A couple of concepts SMAPI uses frequently
+Generics
+Event-based programming
+For serialization, SMAPI usually uses NewtonSoft
+Requirements
+Before you start:
+Read the player guide. The rest of this guide assumes you're already familiar with using mods.
+Install Stardew Valley.
+Install SMAPI.
+Install the .NET 6 SDK.
+You need .NET 6 because it's the version used by the game. On Windows, you probably have x64. on macOS, "x64" is for Intel chips and "Arm64" is for Apple Silicon chips.
+Install the IDE (integrated development environment), which you'll use to edit and compile your mod code:
+Windows: Visual Studio Community (free) or JetBrains Rider (free).
+Linux/macOS: JetBrains Rider (free) or Visual Studio Code (free).
+If you're not familiar with Visual Studio (on Windows), Modding:IDE reference explains how to do the important stuff you need for this guide.
+Create a basic mod
+Quick start
+If you're experienced enough to skip the tutorial, here's a quick summary of this section:
+Expand
+expand for quick start 
+Create the project
+A SMAPI mod is a compiled library (DLL) with an entry method that gets called by SMAPI, so let's set that up.
+Open Visual Studio or MonoDevelop.
+Create a solution with a Class Library project (see how to create a project). (Don't select Class Library (.NET Framework)! That's a separate thing with a similar name.)
+Target .NET 6 (see how to change target framework).You may need to install the SDK.
+That's the version installed and used by the game. Newer versions may not be installed for players, and SMAPI may not be able to load them. Yes we know it's EOL.
+Reference the Pathoschild.Stardew.ModBuildConfig NuGet package (see how to add the package).
+If you are getting an error stating The type or namespace name "StardewModdingAPI" could not be found, then it's possible that your game path is not being detected. You will need to set the GamePath property to the game's executable directory. This can be done by adding a GamePath property to the PropertyGroup in your .csproj settings.
+Restart Visual Studio/MonoDevelop after installing the package.
+Add the code
+Next let's add some code SMAPI will run.
+Delete the Class1.cs or MyClass.cs file (see how to delete a file).
+Add a C# class file called ModEntry.cs to your project (see how to add a file).
+Put this code in the file (replace YourProjectName with the name of your project):
+using System;
+using Microsoft.Xna.Framework;
+using StardewModdingAPI;
+using StardewModdingAPI.Events;
+using StardewModdingAPI.Utilities;
+using StardewValley;
+
+namespace YourProjectName
+{
+    /// <summary>The mod entry point.</summary>
+    internal sealed class ModEntry : Mod
+    {
+        /*********
+        ** Public methods
+        *********/
+        /// <summary>The mod entry point, called after the mod is first loaded.</summary>
+        /// <param name="helper">Provides simplified APIs for writing mods.</param>
+        public override void Entry(IModHelper helper)
+        {
+            helper.Events.Input.ButtonPressed += this.OnButtonPressed;
+        }
+
+
+        /*********
+        ** Private methods
+        *********/
+        /// <summary>Raised after the player presses a button on the keyboard, controller, or mouse.</summary>
+        /// <param name="sender">The event sender.</param>
+        /// <param name="e">The event data.</param>
+        private void OnButtonPressed(object? sender, ButtonPressedEventArgs e)
+        {
+            // ignore if player hasn't loaded a save yet
+            if (!Context.IsWorldReady)
+                return;
+
+            // print button presses to the console window
+            this.Monitor.Log($"{Game1.player.Name} pressed {e.Button}.", LogLevel.Debug);
+        }
+    }
+}
+Here's a breakdown of what that code is doing:
+using X; (see using directive) makes classes in that namespace available in your code.
+namespace YourProjectName (see namespace keyword) defines the scope for your mod code. Don't worry about this when you're starting out, Visual Studio or MonoDevelop will add it automatically when you add a file.
+public class ModEntry : Mod (see class keyword) creates your mod's main class, and subclasses SMAPI's Mod class. SMAPI will detect your Mod subclass automatically, and Mod gives you access to SMAPI's APIs.
+public override void Entry(IModHelper helper) is the method SMAPI will call when your mod is loaded into the game. The helper provides convenient access to many of SMAPI's APIs.
+helper.Events.Input.ButtonPressed += this.OnButtonPressed; adds an 'event handler' (i.e., a method to call) when the button-pressed event happens. In other words, when a button is pressed (the helper.Events.Input.ButtonPressed event), SMAPI will call your this.OnButtonPressed method. See events in the SMAPI reference for more info.
+Note: if you get compile errors along the lines of "Feature XX is not available in C# <number>. Please use language version <number> or greater", add <LangVersion>Latest</LangVersion> to your .csproj.
+Add your manifest
+The mod manifest tells SMAPI about your mod.
+Add a file named manifest.json to your project.
+Paste this code into the file:
+{
+  "Name": "<your project name>",
+  "Author": "<your name>",
+  "Version": "1.0.0",
+  "Description": "<One or two sentences about the mod>",
+  "UniqueID": "<your name>.<your project name>",
+  "EntryDll": "<your project name>.dll",
+  "MinimumApiVersion": "4.0.0",
+  "UpdateKeys": []
+}
+Replace the <...> placeholders with the correct info. Don't leave any <> symbols!
+This will be listed in the console output when the game is launching. For more info, see the manifest docs.
+Try your mod
+Build the project.
+If you did the create the project steps correctly, this will automatically add your mod to the game's Mods folder.
+Run the game through SMAPI.
+The mod so far will just send a message to the console window whenever you press a key in the game.
+Changing console text color
+The default text-colors in the console may be set in a way that makes them unreadable. To change text color:
+Steam: Open Steam and right-click the game in your library. Click "Browse local files" under "Manage" and then open the config.json file in your "/Stardew Valley/smapi-internal/" folder, search for "ConsoleColors" and then edit the "Trace" and "Debug" colors so that they become visible within your console.
+Linux: The default path on linux is ~/.local/share/Steam/steamapps/common/Stardew Valley/smapi-internal/config.json, unless you have installed your game on a different drive/outside the standard steam library folder.
+Windows: The default path on Windows should be "C:\Program files (x86)\Steam\steamapps\common\Stardew Valley\smapi-internal\config.json", unless you have installed your game on a different drive/outside the standard steam library folder.
+Troubleshoot
+If the tutorial mod doesn't work...
+Review the above steps to make sure you didn't skip something.
+Check for error messages which may explain why it's not working:
+In Visual Studio, click Build > Rebuild Solution and check the Output pane or Error list.
+In MonoDevelop, click Build > Rebuild All and wait until it's done. Then click the "Build: XX errors, XX warnings" bar at the top, and check the XX Errors and Build Output tabs.
+If one of the errors (not necessarily the first one) says the package can't find your game folder, see Visual Studio can't find the game/SMAPI/MonoGame DLLs.
+See the troubleshooting guide.
+If all else fails, come ask for help in the #making-mods in the Stardew Valley Discord. :)
+FAQs
+Where's the SMAPI documentation?
+This is just the 'getting started' tutorial. For more documentation, see the SMAPI reference and the topics listed on the index page.
+Can I look at other mods' code?
+Yep, nearly 70% of SMAPI mods have public source code. To find their code:
+Open the mod compatibility page.
+Click "show advanced info" under the search box.
+Look in the "code" column for links.
+How do I make my mod work crossplatform?
+SMAPI will automatically adjust your mod so it works on Linux, MacOS, and Windows. However, there are a few things you should do to avoid problems:
+Use the crossplatform build config package to automatically set up your project references. This makes crossplatform compatibility easier and lets your code compile on any platform. (If you followed the above guide, you already have this.)
+Use System.IO.Path.Combine to build file paths, don't hardcode path separators since they won't work on all platforms.
+// ✘ Don't do this! It won't work on SteamDeck/Linux/Mac.
+string path = this.Helper.DirectoryPath + "\assets\image.png";
+
+// ✓ This is OK
+string path = Path.Combine(this.Helper.DirectoryPath, "assets", "image.png");
+Use this.Helper.DirectoryPath, don't try to determine the mod path yourself.
+// ✘ Don't do this! It will crash if SMAPI rewrites the assembly (''e.g.,'' to update or crossplatform it).
+string modFolder = Assembly.GetCallingAssembly().Location;
+
+// ✓ This is OK
+string modFolder = this.Helper.DirectoryPath;
+An asset name identifies an asset you can load through a content API like Game1.content.Load<T>("asset name"). This is not a file path, and the asset name format doesn't always match the file path format. When comparing asset names, make sure you use PathUtilities.NormalizeAssetName("some/path") instead of path helpers.
+// ✘ Don't do this! It won't work on Windows.
+bool isAbigail = (asset.Name == Path.Combine("Characters", "Abigail"));
+bool isAbigail2 = (asset.Name == PathUtilities.NormalizePath("Characters", "Abigail"));
+
+// ✓ This is OK
+bool isAbigail = (asset.Name == PathUtilities.NormalizeAssetName("Characters", "Abigail"));
+Note that there's no need to normalize asset names you pass into SMAPI APIs, which normalize them automatically (though it doesn't hurt to do it anyway):
+// ✓ This is OK
+helper.Content.Load<Texture2D>("Characters/Abigail");
+helper.Content.Load<Texture2D>(@"Characters\Abigail");
+How do I decompile the game code?
+It's often useful to see how the game code works. The game code is compiled into StardewValley.dll (i.e., converted to a machine-readable format), but you can decompile it get a mostly-readable approximation of the original code. (This might not be fully functional due to decompiler limitations, but you'll be able to see what it's doing.)
+To decompile the game code...
+First-time setup:
+Install ILSpy for Windows (get the "ILSpy_binaries" file under assets), or Avalonia ILSpy for Linux and macOS.
+Open ILSpy.
+Click View > Options, scroll to the "Other" section at the bottom, and enable "Always qualify member references".
+Open Stardew Valley.dll in ILSpy.
+Make sure C# is selected in the language drop-down (not IL, IL with C#, or ReadyToRun).
+Right-click on Stardew Valley and choose Save Code to create a decompiled project you can open in Visual Studio.
+If you're using Avalonia ILSpy, make sure to add the .csproj file extension to the filename in the save dialog, like so: Stardew-Valley.csproj (Otherwise, the project won't decompile properly.)
+To unpack the XNB data/image/map files, see Modding:Editing XNB files.
+What does "target NET 6.0" mean?
+There are multiple different things here.
+target version: this is the version of .NET your binary is compiled against. You have to target net 6.0 for stardew (and in general, you can at maximum use the version of .NET the person loading you uses.)
+sdk version: this is the version of the .NET you installed. You can target any version less than your sdk version. If I have net 7.0 installed with VS 2022, I can still target net 6.0.
+C# version - guess what? the language is versioned separately from the .NET version (although there is a correspondence) and you can pick your language version with <langversion> in the .csproj.
+Category: Modding

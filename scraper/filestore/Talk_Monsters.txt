@@ -1,0 +1,20 @@
+Jump to navigation
+Jump to search
+This talk page is for discussing Monsters.
+Sign and date your posts by typing four tildes (~~~~).
+Put new text below old text.
+Be polite.
+Assume good faith.
+Don't delete discussions.
+Updating the dangerous monsters
+It looks like there is a lot of missing info on the monsters of the dangerous Mines. If I understand correctly they did not receive their own monster entries in Monsters.xnb but are rather just a modification of their base version (e.g. Skeleton gets modified to Skeleton (dangerous)). Where can we best find the information of these versions? I poked around a bit in the decompiled code for stuff like AdditionalDifficulty but I am not a programmer and suck at this! But I found some adjustments e.g. in RockGolem.cs it modifies the Defense by *2 and Speed+1, or the Skeleton receives +300HP, are these changes all there is to the (dangerous) versions, or am I on the wrong track here? Dubesor (talk) 00:40, 8 April 2021 (UTC)
+I'd guess that you're on the right track, but I won't know for sure until I dig around in the code myself. I'll probably have to step through it while running the game, so it won't be a quick process. It is the next thing on my list, however! margotbean (talk) 15:59, 8 April 2021 (UTC)
+I walked through the mines about 5 times with lookup and created the pages and added the infos I observed. However I noticed some discrepancies, for example the Spiders in game all had 3 defense and damage ranged from 15-21, but the monsters.xnb file states 15 damage and 2 defense. I could not find any spider among hundreds that had less than 3 defense. Same goes for Blue Squid: monsters.xnb states 80hp and 2 defense. But ingame the hitpoints were always 310 and defense was 6. Their charged attack also applied a 'Weakness' debuff (-20 Attack). Edit:Royal serpent has 150hp and 23 dmg according to monster.xnb, but ingame it had 675hp, and 28-41 dmg for me (checked about ~30 royal serpents). Dubesor (talk) 01:26, 9 April 2021 (UTC)
+It makes sense, if there is game code to buff all monsters in the dangerous mines, then having reduced stats in the data file would allow the code to increase the stats for all monsters in the same way. margotbean (talk) 17:53, 9 April 2021 (UTC)
+New Beasty
+While running the Dangerous Mines mission from Qi, I came across an enemy that doesn't appear to be mentioned anywhere in the Wiki. It's like a lava crab, except that it disguises itself as a stick in the lush green levels. I'll see if I can get a screenshot of it the next time I come across one. 00:43, 16 August 2023 (UTC)Shavastak
+That would be the Stick Bug you've encountered. Congratulations, they are rare! margotbean (talk) 15:57, 16 August 2023 (UTC)
+Assassin Bug
+At the Desert Festival, I encountered Assassin Bugs, a variant of Armored Bug with black body and big scissors. But this Assassin Bug has no article for them. They are only mentioned in Desert Festival article. I think they should have one, so could I make one? If no, I would like to know why. Mmtraa7 (talk) 07:45, 13 February 2025 (UTC)
+The Assassin Bug doesn't need its own article because it's encountered only at the desert festival under specific conditions. margotbean (talk) 15:49, 13 February 2025 (UTC)
+Category: Talk pages

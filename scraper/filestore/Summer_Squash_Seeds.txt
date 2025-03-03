@@ -1,0 +1,55 @@
+Jump to navigation
+Jump to search
+Summer Squash Seeds
+Plant in the summer. Takes 6 days to grow, and continues to produce after first harvest.
+Information
+Crop:
+Summer Squash
+Growth Time: 6 days
+Season:
+Summer
+Sell Price: 20g
+Purchase Prices
+General Store: Not sold
+JojaMart: Not sold
+Traveling Cart: Not sold
+Summer Squash Seeds are a type of seed. Mature plants yield Summer Squashes.
+They cannot be purchased using Gold from any traditional store, and are instead found in various other ways:[1]
+Digging up Seed Spots.
+Completing Raccoon requests.
+Trading at the Raccoon Wife's Shop for 15 Sap.
+Catching Golden Fishing Treasure Chests (7% chance).[2]
+Using the Seed Maker.
+As the first prize from the Prize Machine in the Mayor's Manor.
+Opening Mystery Boxes or Golden Mystery Boxes.
+Breaking open crates and barrels in the Mines, Skull Cavern, or Volcano Dungeon (2% chance).[3]
+Slaying Iridium Golems (50% chance).[4]
+All methods, other than trading at the Raccoon Wife's Shop and using the Seed Maker, only yield Summer Squash Seeds between Spring 24 and Summer 20.
+Contents
+1 Stages
+2 Gifting
+3 Tailoring
+4 References
+5 History
+Stages
+Stage 1 Stage 2 Stage 3 Stage 4 Stage 5 Harvest After-Harvest
+1 Day 1 Day 1 Day 1 Day 2 Day Total: 6 Days Regrowth: 3 Days
+Gifting
+Villager Reactions
+Dislike  Abigail •  Alex •  Caroline •  Clint •  Demetrius •  Dwarf •  Elliott •  Emily •  Evelyn •  George •  Gus •  Haley •  Harvey •  Jas •  Jodi •  Kent •  Krobus •  Leah •  Leo •  Lewis •  Linus •  Marnie •  Maru •  Pam •  Penny •  Pierre •  Robin •  Sam •  Sandy •  Sebastian •  Shane •  Vincent •  Willy •  Wizard
+Tailoring
+Summer Squash Seeds are not used in any tailoring. They can be used in dyeing, serving as an orange dye at the dye pots located in Emily's and Haley's house, 2 Willow Lane. They can also be used as a brown dye when used in the spool of the Sewing Machine with a dyeable clothing item in the feed.
+References
+↑ See Utility::getRaccoonSeedForCurrentTimeOfYear in the game code.
+↑ See FishingRod::openTreasureMenuEndFunction in the game code.
+↑ See BreakableContainer::releaseContents in the game code.
+↑ See RockGolem::getExtraDropItems in the game code.
+History
+1.6: Introduced.
+Seeds, Starters, and Saplings
+Spring Apricot Sapling • Bean Starter • Carrot Seeds • Cauliflower Seeds • Cherry Sapling • Coffee Beans • Garlic Seeds • Jazz Seeds • Kale Seeds • Parsnip Seeds • Potato Seeds • Rice Shoot • Rhubarb Seeds • Spring Seeds • Strawberry Seeds • Tulip Bulb
+Summer Blueberry Seeds • Coffee Beans • Corn Seeds • Hops Starter • Melon Seeds • Orange Sapling • Peach Sapling • Pepper Seeds • Poppy Seeds • Radish Seeds • Red Cabbage Seeds • Spangle Seeds • Summer Seeds • Summer Squash Seeds • Sunflower Seeds • Starfruit Seeds • Tomato Seeds • Wheat Seeds
+Fall Amaranth Seeds • Apple Sapling • Artichoke Seeds • Beet Seeds • Bok Choy Seeds • Broccoli Seeds • Corn Seeds • Cranberry Seeds • Eggplant Seeds • Fairy Seeds • Fall Seeds • Grape Starter • Pomegranate Sapling • Pumpkin Seeds • Rare Seed • Sunflower Seeds • Wheat Seeds • Yam Seeds
+Winter Powdermelon Seeds • Winter Seeds
+Other Acorn • Ancient Seeds • Banana Sapling • Blue Grass Starter • Cactus Seeds • Fiber Seeds • Grass Starter • Mahogany Seed • Mango Sapling • Maple Seed • Mixed Flower Seeds • Mixed Seeds • Mossy Seed • Mushroom Tree Seed • Mystic Tree Seed • Pineapple Seeds • Qi Bean • Tea Sapling • Pine Cone • Taro Tuber
+Category: Summer seeds

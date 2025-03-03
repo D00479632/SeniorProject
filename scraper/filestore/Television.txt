@@ -1,0 +1,39 @@
+Jump to navigation
+Jump to search
+The Television is available in the Player's farmhouse when beginning the game. There is a variety of channels with content that changes daily.
+Players on the standard map start with a Budget TV and players on non-standard maps start with a Floor TV. Additional televisions can be purchased at the Carpenter's Shop. After the first farmhouse upgrade, the larger Plasma TV becomes available. The Tropical TV can be purchased from the Island Trader for 30 Taro Roots. The Retro TV can be purchased from George's shop at the Desert Festival for 200 Calico Eggs.
+All televisions, with the exception of the Tropical TV and Retro TV, can also be acquired from the Furniture Catalogue for 0g.
+There is no benefit to using certain types of TVs, as all TVs have access to all of the channels available in the game.
+Contents
+1 Weather Report
+2 Fortune Teller
+3 Livin' Off The Land
+4 The Queen of Sauce
+5 F.I.B.S.
+6 ???
+7 Green Rain
+8 History
+Weather Report
+See also: Weather
+The weather report predicts the weather for the next day. After using a Rain Totem, the forecast is updated to reflect any change. Knowing about an upcoming rainy day is especially useful, since crops will not need watering then. Thus, continuity of crop watering can be assured even if the watering can is turned in for an upgrade today.
+Once Ginger Island is unlocked, KOZU-5 also displays the island forecast immediately after the one for Stardew Valley itself.
+Fortune Teller
+See also: Luck
+The Fortune Teller, named Welwick, tells the player what their daily luck is for the current day.
+Livin' Off The Land
+Main page: Livin' Off The Land
+Livin' Off The Land is a channel that plays every Monday and Thursday, which gives the player a tip related to farming, fishing, foraging, or town life. There are no new episodes after the end of Year 2; the show plays re-runs on a 2-year cycle thereafter.
+The Queen of Sauce
+Main page: The Queen of Sauce
+The Queen of Sauce is a television channel which teaches the player cooking recipes. Beginning on Spring 7, a new recipe airs each Sunday for the first 2 years of the game. On Wednesday, a random recipe that has previously aired on a Sunday airs as a "Re-run", prioritizing recipes the player does not yet know. Simply watching the channel will teach the player the recipe if it's not yet known. The rotation of Sunday recipes repeats on a 2-year schedule.
+F.I.B.S.
+Main page: Fishing Information Broadcasting Service
+The Fishing Information Broadcasting Service is a channel unlocked after completing Pam's special order "The Strong Stuff". Pam sends the player a letter in the mail the day after the "Potato Juice" cutscene, asking if the player has ever tuned in to channel 736. It provides information about the current season's fishing opportunities (including species, time, weather requirement, and location).
+???
+There is a secret channel that plays on Fall 26 on the Standard Farm if the player meets certain conditions.
+Green Rain
+All TV channels will show a green TV static during a Green Rain day. TVs placed on Ginger Island will still work normally.
+History
+1.5: Added Weather Report for Ginger Island, FIBS channel. Added Tropical TV.
+1.6: All TV channels will show a green TV static during a Green Rainy day. Added Retro TV.
+Category: Television

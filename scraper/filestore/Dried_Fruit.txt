@@ -1,0 +1,54 @@
+Jump to navigation
+Jump to search
+Dried Fruit
+Chewy pieces of dried fruit.
+Information
+Source Artisan Goods
+Sell Price 7.5 × Fruit Base Price + 25
+Artisan Goods
+Equipment
+Dehydrator
+Processing Time
+1750m (≈1d)
+Ingredients Any Fruit except Grapes (5)
+Dried Fruit is an Artisan Good made from placing Fruits inside a Dehydrator, taking one in-game day. Dried Fruit is always normal quality.
+The amount of Energy and Health restored from Dried Fruit is 3 times the base fruit Energy/Health restoration. The color of Dried Fruit is also determined by the base fruit used.
+Contents
+1 Profitability
+2 Gifting
+3 Bundles
+4 Recipes
+5 Tailoring
+6 Quests
+7 History
+Profitability
+Since the Dehydrator requires 5 fruit per use, the sell price of Dried Fruit is (1.5 x Fruit Base Price + 5) per fruit used. With the Artisan Profession, the sell price is (2.1 x Fruit Base Price + 7) per fruit used.
+Since sell price is based on Fruit Base Price alone, the profit compared to selling the raw fruit will decrease for fruit of higher quality, and from the Tiller Profession.
+For example, if neither the Artisan nor Tiller Professions are chosen, iridium quality fruit will generally make a loss if dehydrated, and gold quality will make a profit of only 5g per fruit.
+Gifting
+Villager Reactions
+Like  Abigail •  Alex •  Caroline •  Clint •  Demetrius •  Dwarf •  Elliott •  Emily •  Evelyn •  George •  Gus •  Haley •  Harvey •  Jodi •  Kent •  Krobus •  Leah •  Leo •  Lewis •  Marnie •  Maru •  Pam •  Penny •  Pierre •  Robin •  Sam •  Sandy •  Shane •  Willy •  Wizard
+Hate  Jas •  Sebastian •  Vincent
+Bundles
+Dried Fruit is not used in any Bundles.
+Recipes
+Dried Fruit is not used in any recipes.
+Tailoring
+Dried Fruit is a yellow dye when used in the spool of the Sewing Machine with a dyeable clothing item in the feed. It can be placed in the yellow dye pot at Emily's and Haley's house for use in dyeing.
+Quests
+One Dried Fruit is requested by the Raccoon at the Giant Stump as part of his second request. It may also be requested as part of any request starting with the sixth.
+History
+1.6: Introduced.
+Artisan Goods
+Bee House Honey
+Cask Beer • Cheese • Goat Cheese • Mead • Pale Ale • Wine
+Cheese Press Cheese • Goat Cheese
+Keg Beer • Coffee • Green Tea • Juice • Mead • Pale Ale • Wine
+Loom Cloth
+Mayonnaise Machine Dinosaur Mayonnaise • Duck Mayonnaise • Mayonnaise • Void Mayonnaise
+Oil Maker Oil • Truffle Oil
+Preserves Jar Aged Roe • Caviar • Jellies and Pickles
+Fish Smoker Smoked Fish
+Dehydrator Dried Mushrooms • Dried Fruit • Raisins
+Misc Maple Syrup • Oak Resin • Pine Tar • Mystic Syrup
+Category: Artisan Goods

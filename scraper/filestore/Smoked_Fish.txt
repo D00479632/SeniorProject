@@ -1,0 +1,45 @@
+Jump to navigation
+Jump to search
+Smoked Fish
+A whole fish, smoked to perfection.
+Information
+Source Artisan Goods
+Sell Price 2 × Fish Sell Price (includes Quality & Artisan prices)
+Artisan Goods
+Equipment
+Fish Smoker
+Processing Time
+50m
+Ingredients Any Fish (1)
+Coal (1)
+Smoked Fish is an Artisan Good made from the Fish Smoker using any fish and 1 coal, taking 50 minutes. It doubles the sell price of the fish while retaining quality, as well as multiplying the energy and health restoration by 1.5.
+Smoked fish benefit from the Fisher and Angler professions, as well as the Artisan profession. Thus, if the player does not have the Artisan profession, the Smoked Fish will always sell for 2 times as much as the original fish. If the player has the Artisan profession, the Smoked Fish will always sell for 2.8 times as much as the original fish.
+Because Smoked fish is an Artisan Good, it can be sold at Pierre's General Store but cannot be sold to Willy at the Fish Shop.
+Contents
+1 Gifting
+2 Bundles
+3 Quests
+4 History
+Gifting
+Villager Reactions
+Like  Abigail •  Alex •  Caroline •  Clint •  Demetrius •  Dwarf •  Elliott •  Emily •  Evelyn •  George •  Gus •  Haley •  Harvey •  Jodi •  Kent •  Krobus •  Leah •  Leo •  Lewis •  Marnie •  Maru •  Pam •  Penny •  Pierre •  Robin •  Sam •  Sandy •  Shane •  Willy •  Wizard
+Hate  Jas •  Sebastian •  Vincent
+Bundles
+Smoked Fish is not used in any bundles.
+Quests
+One Smoked Fish is requested by the Raccoon as part of their first request and may be requested as part of any request starting with the sixth.
+History
+1.6: Introduced.
+Artisan Goods
+Bee House Honey
+Cask Beer • Cheese • Goat Cheese • Mead • Pale Ale • Wine
+Cheese Press Cheese • Goat Cheese
+Keg Beer • Coffee • Green Tea • Juice • Mead • Pale Ale • Wine
+Loom Cloth
+Mayonnaise Machine Dinosaur Mayonnaise • Duck Mayonnaise • Mayonnaise • Void Mayonnaise
+Oil Maker Oil • Truffle Oil
+Preserves Jar Aged Roe • Caviar • Jellies and Pickles
+Fish Smoker Smoked Fish
+Dehydrator Dried Mushrooms • Dried Fruit • Raisins
+Misc Maple Syrup • Oak Resin • Pine Tar • Mystic Syrup
+Category: Artisan Goods

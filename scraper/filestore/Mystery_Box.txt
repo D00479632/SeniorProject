@@ -1,0 +1,104 @@
+Jump to navigation
+Jump to search
+Mystery Box
+A blacksmith can open this for you. Who knows what might be inside?
+Information
+Source Fishing • Mining • Artifact Spot • Panning • Combat • Mayor Lewis' Prize Machine • Desert Festival • Trout Derby • SquidFest • Trees • Bookseller • Giant Stump
+Sell Price 0g
+Mystery Boxes are drop crates released by Mr. Qi. After spending 50 days in the valley or after collecting the second Prize Ticket from the billboard,[1] the player will see a cutscene with Mr. Qi and will be informed by a pop up that Mystery Boxes can now be found. Afterwards, they can be obtained in a variety of ways. After opening more than 10 boxes, they can contain any item found in Golden Mystery Boxes (other than Golden Animal Crackers or Auto-Petters).
+Mystery Boxes can be cracked by Clint in the Blacksmith shop for 25g, similar to Geodes. However, unlike Geodes, they cannot be broken open using a Geode Crusher.
+Contents
+1 Locations
+2 Contents
+3 Gifting
+4 Bundles
+5 Quests
+6 Tailoring
+7 Trading
+8 References
+9 History
+Locations
+The following table lists the different actions that can spawn a Mystery Box if the player does not have Foraging Mastery.
+The "Chance" column below indicates the probabilities that the game will attempt to spawn a Mystery Box. When such an attempt is made, the game performs a further check to see if it succeeds. If the player has Foraging Mastery, the check will fail (and will attempt to spawn a Golden Mystery Box instead). Otherwise, the probability of succeeding is 66% if the player does not have the power obtained from the Book of Mysteries and 88% if they do.[2]
+Also note that the chances of obtaining Mystery Boxes from some of the sources depends on and increases with higher daily luck, and in some cases, with Luck Buffs.
+Activity Chance
+Regular Fishing Treasure Chests [3] 9-17% (dependent on daily luck)
+Golden Fishing Treasure Chests [3] 12-21% (dependent on daily luck)
+Panning [4] 5%
+Shaking trees with seeds [5] 3%
+Monsters [6] 0.01 + (Daily Luck / 10) + (Luck Buffs / 125)
+Breaking containers in the Mines, Skull Cavern, and Volcano Dungeon [7] 0.0081 + (Daily Luck / 15)
+Chopping trees (Each Axe hit) [8] 0.5%
+Present train cars during Winter [9] 2%
+While train cars do have the same check for success as the other methods listed in the table, they will only ever drop Mystery Boxes.
+Many other ways to obtain Mystery Boxes, even after claiming Foraging Mastery, are listed below. These chances are not subject to additional checks for success.
+Purchasing from the Calico Egg Merchant at the Desert Festival.
+Reward from the Trout Derby and SquidFest festivals.
+Trading a Book of Mysteries with the Bookseller.
+Digging Artifact Spots (0-11.25% chance, depending on Daily Luck).[10]
+Opening treasure chests in the Skull Cavern, if Foraging Mastery hasn't been claimed (3.6% chance, increased if Farming and/or Combat Mastery have not been claimed).[11]
+Opening Golden Mystery Boxes or other Mystery Boxes.
+Completing Raccoon requests beyond the fifth one.
+Completing the Winter Star Bundle on the Bulletin Board (Remixed).
+Using the prize machine in the Mayor's Manor.
+If a player chops down a giant Qi Fruit when the "Qi's Crop" quest is not active, then they will receive one Mystery Box.[12]
+If a player places any Milk or Cookies on a table or long table during the night of Winter 24th, then they will be exchanged for a Mystery Box.[13]
+Contents
+Below is a table of possible contents. All percent chances listed below are assuming that the player has already received at least one Book of Mysteries. If the player has not received their first Book of Mysteries, then the Book Of Stars cannot be obtained from Mystery Boxes, and the Book of Mysteries has an increased chance. See the Book of Mysteries page for more details.
+All items marked with an asterisk (*) are only obtainable after the player has opened more than 10 Mystery Boxes and/or Golden Mystery Boxes. If the player has opened 10 or fewer boxes, then all items without asterisks have increased chances (ranging from +0.02% to +1.11%).
+Item Chance [14] 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Gifting
+Villager Reactions
+Hate  Abigail •  Alex •  Caroline •  Clint •  Demetrius •  Dwarf •  Elliott •  Emily •  Evelyn •  George •  Gus •  Haley •  Harvey •  Jas •  Jodi •  Kent •  Krobus •  Leah •  Leo •  Lewis •  Linus •  Marnie •  Maru •  Pam •  Penny •  Pierre •  Robin •  Sam •  Sandy •  Sebastian •  Shane •  Vincent •  Willy •  Wizard
+Bundles
+Five Mystery Boxes are required for the Helper's Bundle on the Bulletin Board (Remixed).
+Quests
+The Mystery Box is not used in any quests.
+Tailoring
+Mystery Box is not used in any tailoring. It can be used in dyeing, serving as a blue dye at the dye pots located in Emily's and Haley's house, 2 Willow Lane. It can also be used as a dark cyan dye when used in the spool of the Sewing Machine with a dyeable clothing item in the feed.
+Trading
+Three Mystery Boxes can be traded to the Raccoon's wife for 1 Golden Mystery Box, after the sixth request from the Raccoon family is completed and Foraging Mastery is claimed.
+References
+↑ See Quest::questComplete in the game code.
+↑ See Utility::tryRollMysteryBox in the game code.
+↑ 3.0 3.1 See FishingRod::openTreasureMenuEndFunction in the game code.
+↑ See Pan::getPanItems in the game code.
+↑ See tree::Shake in the game code.
+↑ See GameLocation::monsterDrop in the game code.
+↑ See BreakableContainer::releaseContents in the game code.
+↑ See tree::performToolAction in the game code.
+↑ See TrainCar::draw in the game code.
+↑ See GameLocation::digUpArtifactSpot in the game code.
+↑ See MineShaft::getTreasureRoomItem in the game code.
+↑ See GiantCrop::performToolAction in the game code.
+↑ See Furniture::DayUpdate in the game code.
+↑ See Utility::getTreasureFromGeode in the game code.
+History
+1.6: Introduced.
+1.6.4: Can now be traded for Golden Mystery Boxes at the Giant Stump. Slightly reduced chance to find mystery boxes. The order of mystery box rewards is now randomized per-player instead of per-save.
+Category: Special items

@@ -1,0 +1,49 @@
+Jump to navigation
+Jump to search
+Warp Totem: Beach
+Warp directly to the beach. Consumed on use.
+Information
+Source Crafting
+Sell Price 20g
+Recipe
+Recipe Source(s) Foraging Level 6
+Ingredients
+Hardwood (1)
+Coral (2)
+Fiber (10)
+The Warp Totem: Beach is a Warp Totem that teleports the player to The Beach by selecting it in inventory and right-clicking. It can be crafted when the recipe becomes available at Foraging Level 6.
+The Warp Totem: Beach can be used to bypass events occurring in town without triggering them, but if used while an event is happening at the beach, it will start the event.
+Note that using a Warp Totem: Beach on the day of the Luau or Dance of the Moonlight Jellies before the festival starts will consume the totem, but will not transport the player to the beach.
+Contents
+1 Other Sources
+2 Destination
+3 Gifting
+4 Bundles
+5 Tailoring
+6 Quests
+7 History
+Other Sources
+One Warp Totem: Beach may be received from opening a Mystery Box.
+The following Crab Pot fish have a small daily chance to produce one Warp Totem: Beach in a Fish Pond once the population is 9 or higher: Lobster, Crab, Cockle, Mussel, Shrimp, and Oyster. All fish have the same daily chance (6% for population level 9, and 7% for population level 10).
+Twenty-five Warp Totem: Beach may be received as a gift from Willy at the Feast of the Winter Star.
+Five Warp Totem: Beach are the reward for completing the Ocean Fish Bundle in the Fish Tank.
+Starting Summer 1 of year 1 there is a 10% chance for a Warp Totem: Beach to replace Clay in an Artifact Spot.
+Destination
+Gifting
+Villager Reactions
+Hate  Abigail •  Alex •  Caroline •  Clint •  Demetrius •  Dwarf •  Elliott •  Emily •  Evelyn •  George •  Gus •  Haley •  Harvey •  Jas •  Jodi •  Kent •  Krobus •  Leah •  Leo •  Lewis •  Linus •  Marnie •  Maru •  Pam •  Penny •  Pierre •  Robin •  Sam •  Sandy •  Sebastian •  Shane •  Vincent •  Willy •  Wizard
+Bundles
+The Warp Totem: Beach is not used in any bundles.
+Tailoring
+The Warp Totem: Beach can be used in the spool of the Sewing Machine to create the Totem Mask. It can be used in dyeing, serving as an orange dye at the dye pots, located in Emily's and Haley's house, 2 Willow Lane.
+Quests
+The Warp Totem: Beach is not used in any quests.
+History
+1.4: Can now be used in Tailoring. Can be produced by Fish Ponds.
+1.5: Can replace clay in artifact spots.
+1.6: Added as possible prize from Mystery Box.
+Totems
+Warp Totems Warp Totem: Beach • Warp Totem: Desert • Warp Totem: Farm • Warp Totem: Island • Warp Totem: Mountains
+Permanent Teleporters Desert Obelisk • Earth Obelisk • Farm Obelisk • Island Obelisk • Return Scepter • Water Obelisk
+Other Totems Mini-Obelisk • Rain Totem • Treasure Totem
+Category: Warp Totems

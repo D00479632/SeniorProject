@@ -1,0 +1,26 @@
+Jump to navigation
+Jump to search
+Sou'wester
+The shape helps to keep sailors dry during storms.
+Information
+Source Abandoned House
+Achievement Fisherman
+Achievement Description Catch 10 different fish.
+Purchase Price 1,000g
+Sell Price Cannot be sold
+The Sou'wester is a hat that can be purchased from the Abandoned House for 1,000g after earning the "Fisherman" Achievement (catch 10 different fish). It can also be obtained from Emily's outfit services at the Desert Festival. There is a ≈2% chance[1] to receive the gender-neutral outfit with the Sou'wester.
+Notes
+The Sou'wester outfit also includes the Rain Coat and Relaxed Fit Pants (dyed RGB value 255,169,2).[2]
+References
+↑ Male players have 47 possible outfits (1/47 ≈ 2.13%), while female players have 48 possible ones (1/48 ≈ 2.08%).
+↑ See Content\Data\MakeoverOutfits.xnb. RGB refers to "Red,Green,Blue".
+History
+1.0: Introduced.
+1.6: Can now be randomly obtained as part of an outfit from the Desert Festival.
+Clothing
+Footwear Cinderclown Shoes • Combat Boots • Cowboy Boots • Crystal Shoes • Dark Boots • Dragonscale Boots • Emily's Magic Boots • Firewalker Boots • Genie Shoes • Leather Boots • Leprechaun Shoes • Mermaid Boots • Rubber Boots • Sneakers • Space Boots • Thermal Boots • Tundra Boots • Work Boots
+Hats ??? • Abigail's Bow • Arcane Hat • Archer's Cap • Beanie • Blobfish Mask • Blue Bonnet • Blue Bow • Blue Cowboy Hat • Blue Ribbon • Bluebird Mask • Bowler Hat • Bridal Veil • Bucket Hat • Butterfly Bow • Cat Ears • Chef Hat • Chicken Mask • Cone Hat • Cool Cap • Copper Pan (hat) • Cowboy Hat • Cowgal Hat • Cowpoke Hat • Daisy • Dark Ballcap • Dark Cowboy Hat • Dark Velvet Bow • Delicate Bow • Deluxe Cowboy Hat • Deluxe Pirate Hat • Dinosaur Hat • Earmuffs • Elegant Turban • Emily's Magic Hat • Eye Patch • Fashion Hat • Fedora • Fishing Hat • Flat Topped Hat • Floppy Beanie • Forager's Hat • Frog Hat • Garbage Hat • Gil's Hat • Gnome's Cap • Goblin Mask • Goggles • Gold Pan (hat) • Golden Helmet • Golden Mask • Good Ol' Cap • Governor's Hat • Green Turban • Hair Bone • Hard Hat • Hunter's Cap • Infinity Crown • Iridium Pan (hat) • Jester Hat • Joja Cap • Junimo Hat • Knight's Helmet • Laurel Wreath Crown • Leprechaun Hat • Living Hat • Logo Cap • Lucky Bow • Magic Cowboy Hat • Magic Turban • Mouse Ears • Mr. Qi's Hat • Mummy Mask • Mushroom Cap • Mystery Hat • Official Cap • Pageboy Cap • Panda Hat • Paper Hat • Party Hat (blue • green • red) • Pink Bow • Pirate Hat • Plum Chapeau • Polka Bow • Propeller Hat • Pumpkin Mask • Qi Mask • Raccoon Hat • Radioactive Goggles • Red Cowboy Hat • Red Fez • Sailor's Cap • Santa Hat • Skeleton Mask • Small Cap • Sombrero • Sou'wester • Space Helmet • Sports Cap • Spotted Headscarf • Squid Hat • Squire's Helmet • Star Helmet • Steel Pan (hat) • Straw Hat • Sunglasses • Swashbuckler Hat • Tiara • Tiger Hat • Top Hat • Totem Mask • Tricorn Hat • Tropiclip • Trucker Hat • Warrior Helmet • Watermelon Band • Wearable Dwarf Helm • White Bow • White Turban • Witch Hat
+Rings Amethyst Ring • Aquamarine Ring • Burglar's Ring • Crabshell Ring • Emerald Ring • Glow Ring • Glowstone Ring • Hot Java Ring • Immunity Band • Iridium Band • Jade Ring • Jukebox Ring • Lucky Ring • Magnet Ring • Napalm Ring • Phoenix Ring • Protection Ring • Ring of Yoba • Ruby Ring • Savage Ring • Slime Charmer Ring • Small Glow Ring • Small Magnet Ring • Soul Sapper Ring • Sturdy Ring • Thorns Ring • Topaz Ring • Vampire Ring • Warrior Ring • Wedding Ring
+Trinkets Basilisk Paw • Fairy Box • Frog Egg • Golden Spur • Ice Rod • Magic Hair Gel • Magic Quiver • Parrot Egg
+Other Dyeing • Tailoring • Emily's Magic Shirt • Luau Skirt • Mystery Shirt • Tight Pants
+Category: Hats

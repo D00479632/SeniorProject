@@ -1,0 +1,73 @@
+Jump to navigation
+Jump to search
+Vinegar
+An aged fermented liquid used in many cooking recipes.
+Information
+Source Keg • Pierre's General Store • Desert Festival
+Energy / Health
+13
+5
+Sell Price 100g
+Crafting
+Equipment
+Keg
+Processing Time
+600 minutes (10 hours)
+Ingredients
+Rice (1)
+Produces 2 Vinegar per Rice
+Vinegar is a cooking ingredient that can be used in a variety of recipes. It can be purchased for 200g at Pierre's General Store. It can also be purchased from George's shop at the Desert Festival for 5 Calico Eggs. Two Vinegar can also be made by putting Rice into a Keg.
+When used on a tree, it prevents the tree from growing Moss.
+Contents
+1 Recipes
+2 Gifting
+3 Tailoring
+4 History
+Recipes
+Image Name Description Ingredients Energy / Health Recipe Source(s) Sell Price
+Coleslaw It's light, fresh and very healthy.
+Red Cabbage (1)
+Vinegar (1)
+Mayonnaise (1)
+213
+95
+The Queen of Sauce
+14 Spring, Year 1
+345g
+Parsnip Soup It's fresh and hearty.
+Parsnip (1)
+Milk (1)
+Vinegar (1)
+85
+38
+Caroline (Mail - 3+ )
+120g
+Radish Salad The radishes are so crisp!
+Oil (1)
+Vinegar (1)
+Radish (1)
+200
+90
+The Queen of Sauce
+21 Spring, Year 1
+300g
+Salad A healthy garden salad.
+Leek (1)
+Dandelion (1)
+Vinegar (1)
+113
+50
+Emily (Mail - 3+ )
+110g
+Gifting
+Villager Reactions
+Dislike  Abigail •  Alex •  Caroline •  Clint •  Demetrius •  Dwarf •  Elliott •  Emily •  Evelyn •  George •  Gus •  Haley •  Harvey •  Jas •  Jodi •  Kent •  Krobus •  Leah •  Leo •  Lewis •  Linus •  Marnie •  Maru •  Pam •  Penny •  Pierre •  Robin •  Sam •  Sandy •  Sebastian •  Shane •  Vincent •  Willy •  Wizard
+Tailoring
+Vinegar is used in the spool of the Sewing Machine to create the dyeable Orange Gi.
+History
+1.4: Can now be used in Tailoring.
+1.6: Now sold by George at the Desert Festival. Added creation by putting Rice into a Keg.
+1.6.4: Can now use on a tree to prevent them from growing Moss.
+Ingredients
+Ingredients Wheat Flour • Sugar • Rice • Oil • Vinegar
+Category: Ingredients

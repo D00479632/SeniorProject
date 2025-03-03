@@ -1,0 +1,33 @@
+Jump to navigation
+Jump to search
+The Diamond Hunter
+All stones have a chance to drop a diamond when mined by hand.
+Information
+Source Volcano Dungeon
+Sell Price 1,000g
+The Diamond Hunter is a power book that can be traded from the Volcano Dwarf in the Volcano Dungeon for 10 Diamonds.
+The first reading grants the player a power that makes all stones have a 0.66% chance to drop a diamond when mined with a pickaxe, with a 50% chance to drop double if the player has the Geologist profession.[1] These drops are not affected by Mining Mastery. Once read, it can be found in the Player's menu on the Special Items & Powers tab. Each subsequent reading gives the player 100 Mining XP.
+Contents
+1 Gifting
+2 Bundles
+3 Tailoring
+4 Quests
+5 References
+6 History
+Gifting
+Villager Reactions
+Love  Penny
+Like  Elliott
+Neutral  Abigail •  Caroline •  Clint •  Demetrius •  Dwarf •  Emily •  Evelyn •  George •  Gus •  Haley •  Harvey •  Jas •  Jodi •  Kent •  Krobus •  Leah •  Leo •  Lewis •  Linus •  Marnie •  Maru •  Pam •  Pierre •  Robin •  Sam •  Sandy •  Sebastian •  Shane •  Vincent •  Willy •  Wizard
+Dislike  Alex
+Bundles
+The Diamond Hunter is not used in any bundles.
+Tailoring
+The Diamond Hunter is not used in any tailoring. It can be used in dyeing, serving as a blue dye at the dye pots located in Emily's and Haley's house, 2 Willow Lane. It can also be used as a cyan dye when used in the spool of the Sewing Machine with a dyeable clothing item in the feed.
+Quests
+The Diamond Hunter is not used in any quests.
+References
+↑ See Pickaxe::DoFunction in the game code.
+History
+1.6: Introduced.
+Category: Books

@@ -1,0 +1,41 @@
+Jump to navigation
+Jump to search
+Mini-Fridge
+Allows you to store additional ingredients for cooking.
+Information
+Source
+Carpenter's Shop for 3,000g
+"Gus' Famous Omelet" Special Order
+Sell Price Cannot be sold
+The Mini-Fridge allows players to expand their Refrigerator storage used for cooking. It's sold at the Carpenter's Shop for 3,000g after upgrading the farmhouse or received in the mail after completing "Gus' Famous Omelet" Special Order.
+Similar to how a regular Refrigerator works inside the Farmhouse, adding cooking ingredients to the Mini-Fridge allows players to cook food using any stored ingredients as if they were stored in inventory. There are 36 inventory slots inside.
+The Mini-Fridge can be placed only inside the farmhouse, not including the cellar. It cannot be placed if obtained before the upgraded farmhouse. The Mini-Fridge can also be placed in the farmhouse on Ginger Island.
+Notes
+Every recipe searches for ingredients in the following locations, always in the same order from the bottom right slot to the top left slot:
+first in the player's inventory
+then in the main refrigerator
+finally in any Mini-Fridges
+When auto-sorted with the Organize button, this bottom-right-first order will automatically consume lower quality items of the same type. However, for recipes with substitutes, place ingredients accordingly as desired towards the bottom right, in order to avoid using more valuable ingredients in less valuable recipes, or in recipes that accept a wide variety of ingredients. As an example, Tuna (which is required for Fish Taco) is accepted in Sashimi which accepts any type of fish. However, by placing a Mussel in the bottom right slot, the Mussel will be picked first and save the Tuna for the more exclusive and valuable recipe.
+When searching multiple Mini-Fridges, the game picks from the last placed one in the exact chronological order in which the fridges were first placed, and then works backwards. The location of the fridge in the farmhouse does not matter.
+History
+1.4: Introduced.
+1.5: Can be earned via Special Order board quests.
+1.5.2: Fixed being unable to place mini-fridges in the Island farmhouse.
+
+Equipment
+Artisan Bee House • Cask • Cheese Press • Dehydrator • Fish Smoker • Keg • Loom • Mayonnaise Machine • Oil Maker • Preserves Jar
+Refining Bait Maker • Bone Mill • Charcoal Kiln • Crystalarium • Deluxe Worm Bin • Furnace • Geode Crusher • Heavy Furnace • Heavy Tapper • Lightning Rod • Mushroom Log • Ostrich Incubator • Recycling Machine • Seed Maker • Slime Egg-Press • Slime Incubator • Solar Panel • Tapper • Wood Chipper • Worm Bin
+Farming
+Fertilizer Basic Fertilizer • Basic Retaining Soil • Deluxe Fertilizer • Deluxe Retaining Soil • Deluxe Speed-Gro • Hyper Speed-Gro • Quality Fertilizer • Quality Retaining Soil • Speed-Gro • Tree Fertilizer
+Sprinklers Iridium Sprinkler • Quality Sprinkler • Sprinkler
+Other Deluxe Scarecrow • Garden Pot • Rarecrow • Scarecrow
+Fishing
+Bait Bait • Challenge Bait • Deluxe Bait • Magic Bait • Magnet • Targeted Bait • Wild Bait
+Tackle Barbed Hook • Cork Bobber • Curiosity Lure • Dressed Spinner • Lead Bobber • Quality Bobber • Sonar Bobber • Spinner • Trap Bobber • Treasure Hunter
+Other Crab Pot
+Bombs Bomb • Cherry Bomb • Mega Bomb
+Fences Gate • Hardwood Fence • Iron Fence • Stone Fence • Wood Fence
+Storage Big Chest • Big Stone Chest • Chest • Junimo Chest • Mini-Fridge • Stone Chest
+Signs Dark Sign • Stone Sign • Text Sign • Wood Sign
+Misc Anvil • Coffee Maker • Cookout Kit • Deconstructor • Fairy Dust • Farm Computer • Hopper • Mini-Forge • Mini-Jukebox • Mini-Shipping Bin • Sewing Machine • Staircase • Statue Of Blessings • Statue Of The Dwarf King • Telephone • Tent Kit • Tools • Workbench
+Category: Special items

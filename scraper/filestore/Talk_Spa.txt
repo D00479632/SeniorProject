@@ -1,0 +1,22 @@
+Jump to navigation
+Jump to search
+This talk page is for discussing Spa.
+Sign and date your posts by typing four tildes (~~~~).
+Put new text below old text.
+Be polite.
+Assume good faith.
+Don't delete discussions.
+Bugs tested in 1.5.6
+I'm not reporting bugs here. I'm just wondering if it's necessary to mention these bugs on the page, for I'm not sure if they'll be fixed in the upcoming v1.6.
+Bugs:
+After changing clothes in the locker room, if the player's health points are depleted (e.g., hit by a bomb), causing them to pass out, they will remain in their swimsuit after they wake up at Harvey's Clinic. (screenshot)
+Using the sword-swing glitch in the locker room allows the player to enter the pool without changing clothes (screenshot)
+--Shirotsuki (talk) 19:43, 21 July 2023 (UTC)
+The first one was reported and supposedly patched out in v1.4, so it shouldn't be possible in v1.5. The second bug is mildly interesting, but has no practical value, since it's quicker to walk through the changing room. I'm not sure if it's patched out in v1.6 or not. margotbean (talk) 20:06, 21 July 2023 (UTC)
+Okay, I see. But it's strange that I did encounter the swimsuit bug in v1.5.6. I'll report it on the forum then. --Shirotsuki (talk) 14:23, 23 July 2023 (UTC)
+Checked 1.6, can't replicate. Also, how do you die in the locker room? Atravita (talk) 00:11, 24 July 2023 (UTC)
+Thanks for checking! You die in the locker room by getting to low health (in the mines) and then placing a bomb in the walkway where you change clothes. Walk past the point of changing, then let the bomb kill you.
+(I remember because I reported the bug with v1.4, when my farmer, who was female, was briefly topless inside Harvey's Clinic. I found it very funny at the time.) 😁 margotbean (talk) 03:16, 24 July 2023 (UTC)
+I wonder if being hit by a bomb changes it? (I actually just used the debug die command XD). Atravita (talk) 11:01, 24 July 2023 (UTC)
+I finally had time to test, and the exact bug I reported is back. Including the topless farmer. I'll adjust the page. Thank you Shirotsuki for finding and reporting this! margotbean (talk) 16:47, 24 July 2023 (UTC)
+Category: Talk pages

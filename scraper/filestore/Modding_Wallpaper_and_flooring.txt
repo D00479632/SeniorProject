@@ -1,0 +1,50 @@
+Jump to navigation
+Jump to search
+← Items
+This page explains how the game stores and parses wallpaper and flooring-type item data. For items in general, see Modding:Items.
+Contents
+1 Overview
+2 Data format
+3 Example
+4 See also
+Overview
+Wallpaper and flooring (or floorpaper) are items which can be applied to a decoratable location like a farmhouse or shed to visually change its floor or wall design. These are separate from placeable flooring items like brick floor.
+They have item types (WP) and (FL) respectively (or ItemRegistry.type_wallpaper and ItemRegistry.type_floorpaper in C# code); their data in Data/AdditionalWallpaperFlooring; their icon sprites in Maps/walls_and_floors, Maps/floors_2, or Maps/wallpapers_2 by default; and their code in StardewValley.Objects.Wallpaper.
+Data format
+The wallpaper and flooring data in Data/AdditionalWallpaperFlooring consists of a list of models, where each value is a model with the fields listed below.
+field description
+ID A unique ID value. This is not shown in-game.
+Texture The asset name which contains 32x32 pixel (flooring) or 16x48 pixel (wallpaper) sprites. The tilesheet must be 256 pixels wide, but can have any number of flooring/wallpaper rows.
+IsFlooring Whether this is a flooring tilesheet; else it's a wallpaper tilesheet.
+Count The number of flooring or wallpaper sprites in the tilesheet.
+Example
+For example, this Content Patcher pack would add three new wallpapers to the game:
+{
+    "Format": "2.5.0",
+    "Changes": [
+        // define wallpaper
+        {
+            "Action": "EditData",
+            "Target": "Data/AdditionalWallpaperFlooring",
+            "Entries": {
+                "{{ModId}}_ExampleWallpapers": { // for technical reasons, you need to specify the ID here *and* in the "ID" field
+                    "ID": "{{ModId}}_ExampleWallpapers",
+                    "Texture": "Mods/{{ModId}}/Wallpapers",
+                    "IsFlooring": false,
+                    "Count": 3
+                }
+            }
+        },
+
+        // load wallpaper tilesheet
+        {
+            "Action": "Load",
+            "Target": "Mods/{{ModId}}/Wallpapers",
+            "FromFile": "assets/wallpapers.png"
+        }
+    ]
+}
+See also
+The logWallAndFloorWarnings console command
+Modding:Items for item data in general
+Category: Modding

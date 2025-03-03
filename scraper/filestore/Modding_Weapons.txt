@@ -1,0 +1,100 @@
+Jump to navigation
+Jump to search
+← Items
+This page explains how the game stores and parses weapon-type item data. For items in general, see Modding:Items.
+Contents
+1 Overview
+2 Data format
+2.1 Basic weapon info
+2.2 Appearance
+2.3 Stats
+2.4 Game logic
+2.5 Advanced
+3 Implementation notes
+3.1 Slingshots
+3.2 Mine container drops
+4 References
+5 See also
+Overview
+Weapons are tools that can be swung or used by the player to damage monsters.
+They have item type (W) (or ItemRegistry.type_weapon in C# code), their data in Data/Weapons, their in-game sprites in TileSheets/weapons by default, and their code in StardewValley.Tools.MeleeWeapon and StardewValley.Tools.Slingshot.
+Data format
+The weapon data in Data/Weapons consists of a string → model lookup, where...
+The key is the unqualified item ID.
+The value is model with the fields listed below.
+Basic weapon info
+field effect
+Name The internal weapon name.
+DisplayName
+Description A tokenizable string for the translated display name & description.
+Type The weapon type. One of 0 (stabbing sword), 1 (dagger), 2 (club or hammer), or 3 (slashing sword).
+Appearance
+field effect
+Texture The asset name for the spritesheet containing the weapon's sprite.
+SpriteIndex The index within the Texture for the weapon sprite, where 0 is the top-left sprite.
+Stats
+field effect
+MinDamage
+MaxDamage The minimum and maximum based damage caused when hitting a monster with this weapon.
+Knockback (Optional) How far the target is pushed when hit, as a multiplier relative to a base weapon like the Rusty Sword (e.g. 1.5 for 150% of Rusty Sword's weight). Default 1.
+Speed (Optional) How fast the player can swing the weapon. Each point of speed is worth 40ms of swing time relative to 0. This stacks with the player's weapon speed. Default 0.
+Precision (Optional) Reduces the chance that a strike will miss. Default 0.
+Defense (Optional) Reduces damage received by the player. Default 0.
+AreaOfEffect (Optional) Slightly increases the area of effect. Default 0.
+CritChance (Optional) The chance of a critical hit, as a decimal value between 0 (never) and 1 (always). Default 0.02.
+CritMultiplier (Optional) A multiplier applied to the base damage for a critical hit. This can be a decimal value. Default 3.
+Game logic
+field effect
+CanBeLostOnDeath Whether the player can lose this tool when they die. Default true.
+MineBaseLevel
+MineMinLevel (Optional) The base and minimum mine level, which affect mine container drops. Both default to -1, which disables automatic mine drops.
+Advanced
+field effect
+Projectiles (Optional) The projectiles fired when the weapon is used, which continue along their path until they hit a monster and cause damage. A separate projectile is fired for each entry in this list.
+This consists of a list of models with these fields (one projectile will fire for each entry in the list):
+field effect
+Id The unique string ID for the projectile within the current weapon's data.
+Damage (Optional) The amount of damage caused when the projectile hits a monster. Default 10.
+Explodes (Optional) Whether the projectile explodes when it collides with something. Default false.
+Bounces (Optional) The number of times the projectile can bounce off walls before being destroyed. Default 0.
+MaxDistance (Optional) The maximum tile distance the projectile can travel. Default 4.
+Velocity (Optional) The speed at which the projectile moves. Default 10.
+RotationVelocity (Optional) The rotation velocity. Default 32.
+TailLength (Optional) The length of the tail which trails behind the main projectile. Default 1.
+FireSound
+BounceSound
+CollisionSound (Optional) The sound played when the projectile is fired, bounces off a wall, or collides with something. All three default to none.
+MinAngleOffset
+MaxAngleOffset (Optional) A random offset applied to the direction of the project each time it's fired. Both fields default to 0, in which case it's always shot at the 90° angle matching the player's facing direction.
+SpriteIndex (Optional) The sprite index in the TileSheets/Projectiles asset to draw for this projectile. Defaults to 11 (a glowing-yellow-ball sprite).
+Item (Optional) The item to shoot. If set, this overrides SpriteIndex.
+This consists of a list of models with these fields:
+field effect
+common fields See item spawn fields for the generic item fields supported for ammo items.
+If set to an item query which returns multiple items, one of them will be selected at random.
+Note that these are magic projectiles fired when the weapon is used, they're not aimed directly like slingshot projectiles.
+CustomFields The custom fields for this entry.
+Weapons have a hardcoded category of -98 (Object.weaponCategory).
+Implementation notes
+Slingshots
+The base slingshot has ParentSheetIndex 32 in the weapon data, which increases by one for each upgrade level (up to 34 in the weapon data, though only 32 and 33 are obtainable without mods).
+Slingshot damage is calculated dynamically regardless of the weapon data.
+Mine container drops
+When the player breaks a container in the mines, there's a chance it will drop a weapon. Here's how the weapon to drop is chosen[1]:
+Match weapons whose minimum mine level is less than the current mine level.
+From that list, match weapons with a probability check based on the gap between the base mine level and current mine level. The probability is a bell curve centered on the base mine level:
+level difference probability
+0 100%
+5 92%
+10 71%
+15 46%
+20 25%
+25 4%
+The difference applies in both directions; for example, two weapons whose base levels are 5 below and 5 above the current level both have a 92% chance. (The probability is calculated with a Gaussian function e-(current mine level - base mine level)2 / (2 * 122).)
+Find the weapon with the smallest gap between the current and base mine levels, and add it to the list. (If the item was also selected in step 2, it has two chances to drop.)
+From the remaining list of weapons, randomly choose one to drop.
+References
+↑ See Utility.getUncommonItemForThisMineLevel in the game code.
+See also
+Modding:Items for item data in general
+Category: Modding
