@@ -22,11 +22,13 @@ def heartbeat():
     last_heartbeat = time.time()
     return jsonify({'status': 'ok'}), 200
 
-@app.route('/random', methods=['GET'])  
+@app.route('/random', methods=['POST'])  # Change to POST method
 def get_random_number():
-    random_number = random.randint(1, 10)  # Generate a random number 
-    # between 1 and 100
-    return jsonify({'random_number': random_number})  # Return the random number as a JSON response
+    # Getting the data sent
+    data = request.get_json()
+    max_number = data.get('max', 0)  # Default to 0 if not provided
+    random_number = random.randint(0, max_number)  # Generate a random number between 0 and max_number
+    return jsonify({'random_number': random_number})
 
 @app.route('/shutdown', methods=['GET'])  
 def shutdown():

@@ -3,6 +3,7 @@ using System.ComponentModel;
 using PropertyChanged.SourceGenerator;
 using System.Net.Http;
 using System.Threading.Tasks;
+using System.Text;
 
 namespace InGameAssistant
 {
@@ -14,19 +15,27 @@ namespace InGameAssistant
 
         public async void GenerateRandom()
         {
-            int randomNumber = await GetRandomNumberFromServer();
-            RandomNumberText = randomNumber != -1 
-                ? $"Your random number is: {randomNumber}" 
-                : "Failed to retrieve random number.";
+            if (int.TryParse(Text, out int maxNumber))
+            {
+                int randomNumber = await GetRandomNumberFromServer(maxNumber);
+                RandomNumberText = randomNumber != -1 
+                    ? $"Your random number is: {randomNumber}" 
+                    : "Failed to retrieve random number.";
+            }
+            else
+            {
+                RandomNumberText = "Please enter a valid number.";
+            }
         }
 
-        private async Task<int> GetRandomNumberFromServer()
+        private async Task<int> GetRandomNumberFromServer(int maxNumber)
         {
             using (var client = new HttpClient())
             {
                 try
                 {
-                    HttpResponseMessage response = await client.GetAsync("http://127.0.0.1:8080/random");
+                    var content = new StringContent(System.Text.Json.JsonSerializer.Serialize(new { max = maxNumber }), Encoding.UTF8, "application/json");
+                    HttpResponseMessage response = await client.PostAsync("http://127.0.0.1:8080/random", content);
                     response.EnsureSuccessStatusCode();
 
                     string responseBody = await response.Content.ReadAsStringAsync();
