@@ -142,27 +142,6 @@ namespace InGameAssistant
             }
         }
 
-        private async Task<int> GetRandomNumberFromServer()
-        {
-            using (var client = new HttpClient())
-            {
-                try
-                {
-                    HttpResponseMessage response = await client.GetAsync("http://127.0.0.1:8080/random");
-                    response.EnsureSuccessStatusCode();
-
-                    string responseBody = await response.Content.ReadAsStringAsync();
-                    var json = System.Text.Json.JsonDocument.Parse(responseBody);
-                    return json.RootElement.GetProperty("random_number").GetInt32();
-                }
-                catch (HttpRequestException e)
-                {
-                    this.Monitor.Log($"Request error: {e.Message}", LogLevel.Error);
-                    return -1;
-                }
-            }
-        }
-
         private string GetPythonScriptPath()
         {
             string path = Path.Combine(this.Helper.DirectoryPath, "script.py");
