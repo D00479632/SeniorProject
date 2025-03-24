@@ -10,7 +10,7 @@ namespace MenuMod
 {
     internal sealed class ModEntry : Mod
     {
-        private IViewEngine viewEngine;
+        private IViewEngine? viewEngine;
 
         public override void Entry(IModHelper helper)
         {

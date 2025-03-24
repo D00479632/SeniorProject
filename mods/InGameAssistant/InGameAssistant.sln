@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InGameAssistant", "InGameAssistant\InGameAssistant.csproj", "{8776A5B0-FB36-47B7-A37F-E02994235251}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8776A5B0-FB36-47B7-A37F-E02994235251}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8776A5B0-FB36-47B7-A37F-E02994235251}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8776A5B0-FB36-47B7-A37F-E02994235251}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8776A5B0-FB36-47B7-A37F-E02994235251}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

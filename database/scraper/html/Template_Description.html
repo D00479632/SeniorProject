@@ -1,0 +1,112 @@
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Stardew Valley Wiki</div>
+<div id="contentSub"></div>
+<div id="contentSub2"></div>
+<div id="jump-to-nav"></div>
+<a class="mw-jump-link" href="#mw-head">Jump to navigation</a>
+<a class="mw-jump-link" href="#searchInput">Jump to search</a>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1"><a href="#Description"><span class="tocnumber">1</span> <span class="toctext">Description</span></a></li>
+<li class="toclevel-1"><a href="#Parameter"><span class="tocnumber">2</span> <span class="toctext">Parameter</span></a></li>
+<li class="toclevel-1"><a href="#Use"><span class="tocnumber">3</span> <span class="toctext">Use</span></a></li>
+<li class="toclevel-1"><a href="#Examples"><span class="tocnumber">4</span> <span class="toctext">Examples</span></a></li>
+<li class="toclevel-1"><a href="#Recipes.2FBlueprints"><span class="tocnumber">5</span> <span class="toctext">Recipes/Blueprints</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Spanish_Example"><span class="tocnumber">5.1</span> <span class="toctext">Spanish Example</span></a></li>
+<li class="toclevel-2"><a href="#Chinese_Example"><span class="tocnumber">5.2</span> <span class="toctext">Chinese Example</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Notes"><span class="tocnumber">6</span> <span class="toctext">Notes</span></a></li>
+</ul>
+</div>
+<h2><span class="mw-headline" id="Description">Description</span></h2>
+<p>This template automatically populates the description for several items.
+</p>
+<h2><span class="mw-headline" id="Parameter">Parameter</span></h2>
+<p>The name of the item in English (or the <a href="/Modding:Common_data_field_types#Item_ID" title="Modding:Common data field types">unqualified item ID</a> from <samp>Content\Data\Objects.xnb</samp>).
+</p>
+<h2><span class="mw-headline" id="Use">Use</span></h2>
+<p>Enter the following:
+</p>
+<pre>{{Description|''item name''}}
+{{Description|''item number''}}</pre>
+<h2><span class="mw-headline" id="Examples">Examples</span></h2>
+<pre>{{Description|Wild Horseradish}}</pre>
+<p>...results in
+</p><p>A spicy root found in the spring.
+</p>
+<pre>{{Description|Prismatic Shard}}</pre>
+<p>...results in
+</p><p>A very rare and powerful substance with unknown origins.
+</p>
+<pre>{{Description|700}}</pre>
+<p>...results in
+</p><p>A relative of the catfish that eats a variety of foods off the lake bottom.
+</p>
+<h2><span id="Recipes/Blueprints"></span><span class="mw-headline" id="Recipes.2FBlueprints">Recipes/Blueprints</span></h2>
+<p>These take a second parameter, the name of the item in the wiki's native language.
+</p>
+<pre>{{Description|Recipe|Lucky Lunch}}
+{{Description|Blueprint|Stone Brazier}}</pre>
+<h3><span class="mw-headline" id="Spanish_Example">Spanish Example</span></h3>
+<p>In Spanish, for example, this would look like:
+</p>
+<pre>{{Description|Recipe|Almuerzo de la suerte}}
+{{Description|Blueprint|Brasero de piedra}}</pre>
+<p>...which would result in
+</p><p>Receta para cocinar «Almuerzo de la suerte»
+</p><p>Planos para fabricar «Brasero de piedra»
+</p>
+<h3><span class="mw-headline" id="Chinese_Example">Chinese Example</span></h3>
+<p>In Chinese, this would look like:
+</p>
+<pre>{{Description|Recipe|幸运午餐}}
+{{Description|Blueprint|石头火炬}}</pre>
+<p>...which would result in
+</p><p>一个用于制作 幸运午餐 的配方
+</p><p>用于制造 石头火炬 的设计图
+</p>
+<h2><span class="mw-headline" id="Notes">Notes</span></h2>
+<p>This template was created to assist in translating the wiki from English into other languages.  In other languages, this template allows the item name to be in English or in the other language.
+</p><p>Items from the following data files are included:
+</p>
+<ol><li><samp>Data\BigCraftables.xnb</samp></li>
+<li><samp>Data\Boots.xnb</samp></li>
+<li><samp>Data\Buildings.xnb</samp></li>
+<li><samp>Data\Hats.xnb</samp></li>
+<li><samp>Data\Objects.xnb</samp></li>
+<li><samp>Data\Weapons.xnb</samp></li>
+<li><samp>Data\Furniture.xnb</samp> (Catalogue &amp; Furniture Catalogue names)</li>
+<li><samp>Strings\Objects.xnb</samp> (Catalogue &amp; Furniture Catalogue descriptions)</li>
+<li><samp>Data\FarmAnimals.xnb</samp> (name of Void Chicken)</li>
+<li><samp>Strings\StringsFromCSFiles.xnb</samp> (tools, furniture, wallpaper, flooring, animals, recipes, blueprints)</li>
+<li><samp>Strings\1_6_Strings.xnb</samp> (various additions in version 1.6.x)</li></ol>
+<!-- 
+NewPP limit report
+Cached time: 20250304071232
+Cache expiry: 86400
+Dynamic content: false
+Complications: [vary‐revision‐sha1]
+CPU time usage: 0.084 seconds
+Real time usage: 0.139 seconds
+Preprocessor visited node count: 2825/1000000
+Post‐expand include size: 3389/2097152 bytes
+Template argument size: 34/2097152 bytes
+Highest expansion depth: 6/40
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 456/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   24.825      1 Template:Description/doc
+100.00%   24.825      1 -total
+ 80.95%   20.096      3 Template:Description
+  7.40%    1.838      1 Template:Addlanglinks
+-->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:8445-0!canonical and timestamp 20250304071232 and revision id 183117
+ -->
+</div></div><div class="printfooter">Retrieved from "<a dir="ltr" href="https://stardewvalleywiki.com/mediawiki/index.php?title=Template:Description&amp;oldid=183117">https://stardewvalleywiki.com/mediawiki/index.php?title=Template:Description&amp;oldid=183117</a>"</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="/Category:Templates" title="Category:Templates">Templates</a></li></ul></div></div>
+</div>

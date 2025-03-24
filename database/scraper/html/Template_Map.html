@@ -1,0 +1,81 @@
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Stardew Valley Wiki</div>
+<div id="contentSub"></div>
+<div id="contentSub2"></div>
+<div id="jump-to-nav"></div>
+<a class="mw-jump-link" href="#mw-head">Jump to navigation</a>
+<a class="mw-jump-link" href="#searchInput">Jump to search</a>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p>The doc below may be outdated. It will be updated soon.
+</p>
+<div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1"><a href="#Description"><span class="tocnumber">1</span> <span class="toctext">Description</span></a></li>
+<li class="toclevel-1"><a href="#Use"><span class="tocnumber">2</span> <span class="toctext">Use</span></a></li>
+<li class="toclevel-1"><a href="#Example"><span class="tocnumber">3</span> <span class="toctext">Example</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Map_with_3_locations"><span class="tocnumber">3.1</span> <span class="toctext">Map with 3 locations</span></a></li>
+<li class="toclevel-2"><a href="#Map_with_Island_Shown"><span class="tocnumber">3.2</span> <span class="toctext">Map with Island Shown</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h2><span class="mw-headline" id="Description">Description</span></h2>
+<p>This template is used to insert a player icon over a map of the game.  It's used to generate dynamic location markers over the game map image for the site.
+</p>
+<h2><span class="mw-headline" id="Use">Use</span></h2>
+<p>This template can be used by entering the following onto a relevant page.  The x-and y-coordinates give the placement of the player's head on the map.
+</p><p>The first x- and y-coordinates are unnamed, and must appear 1st and 2nd in the template.  If width is specified, it must be the 3rd parameter specified.
+</p>
+<pre>{{map
+|x-coordinate (left-inset)
+|y-coordinate (top-inset)
+|width (optional, defaults to 400)
+|loc2x = x-coordinate of 2nd location for player head (optional)
+|loc2y = y-coordinate of 2nd location for player head (optional)
+|loc3x = x-coordinate of 3rd location for player head (optional)
+|loc3y = y-coordinate of 3rd location for player head (optional)
+|loc4x = x-coordinate of 4th location for player head (optional)
+|loc4y = y-coordinate of 4th location for player head (optional)
+|island = (Optional, true to show map with Ginger Island)
+}}</pre>
+<p><br/>
+</p>
+<h2><span class="mw-headline" id="Example">Example</span></h2><p>
+Example formatting would be </p><pre>{{map|100|100}}</pre><p>Result:
+<style data-mw-deduplicate="TemplateStyles:r120947">.mw-parser-output .mapcontainer{position:relative;overflow:hidden}.mw-parser-output .maplocation{position:absolute}</style></p><div class="mapcontainer" style="width:400px;height:244px;"><div class="maplocation" style="left:100px;top:100px;"><img alt="Maplocation.png" decoding="async" height="20" src="/mediawiki/images/thumb/5/5c/Maplocation.png/20px-Maplocation.png" srcset="/mediawiki/images/thumb/5/5c/Maplocation.png/30px-Maplocation.png 1.5x, /mediawiki/images/thumb/5/5c/Maplocation.png/40px-Maplocation.png 2x" width="20"/></div><img alt="Map.png" decoding="async" height="244" src="/mediawiki/images/4/43/Map.png" width="400"/></div><p>
+For a smaller map use </p><pre>{{map|100|10|200}}</pre><p>Result:
+<link href="mw-data:TemplateStyles:r120947" rel="mw-deduplicated-inline-style"/></p><div class="mapcontainer" style="width:200px;height:122px;"><div class="maplocation" style="left:100px;top:10px;"><img alt="Maplocation.png" decoding="async" height="20" src="/mediawiki/images/thumb/5/5c/Maplocation.png/20px-Maplocation.png" srcset="/mediawiki/images/thumb/5/5c/Maplocation.png/30px-Maplocation.png 1.5x, /mediawiki/images/thumb/5/5c/Maplocation.png/40px-Maplocation.png 2x" width="20"/></div><img alt="Map.png" decoding="async" height="122" src="/mediawiki/images/thumb/4/43/Map.png/200px-Map.png" srcset="/mediawiki/images/thumb/4/43/Map.png/300px-Map.png 1.5x, /mediawiki/images/4/43/Map.png 2x" width="200"/></div>
+<h3><span class="mw-headline" id="Map_with_3_locations">Map with 3 locations</span></h3>
+<pre>{{Map|200|150|loc2x=276|loc2y=54|loc3x=96|loc3y=130}}</pre><p>Result:
+<link href="mw-data:TemplateStyles:r120947" rel="mw-deduplicated-inline-style"/></p><div class="mapcontainer" style="width:400px;height:244px;"><div class="maplocation" style="left:200px;top:150px;"><img alt="Maplocation.png" decoding="async" height="20" src="/mediawiki/images/thumb/5/5c/Maplocation.png/20px-Maplocation.png" srcset="/mediawiki/images/thumb/5/5c/Maplocation.png/30px-Maplocation.png 1.5x, /mediawiki/images/thumb/5/5c/Maplocation.png/40px-Maplocation.png 2x" width="20"/></div><div class="maplocation" style="left:276px;top:54px;"><img alt="Maplocation.png" decoding="async" height="20" src="/mediawiki/images/thumb/5/5c/Maplocation.png/20px-Maplocation.png" srcset="/mediawiki/images/thumb/5/5c/Maplocation.png/30px-Maplocation.png 1.5x, /mediawiki/images/thumb/5/5c/Maplocation.png/40px-Maplocation.png 2x" width="20"/></div><div class="maplocation" style="left:96px;top:130px;"><img alt="Maplocation.png" decoding="async" height="20" src="/mediawiki/images/thumb/5/5c/Maplocation.png/20px-Maplocation.png" srcset="/mediawiki/images/thumb/5/5c/Maplocation.png/30px-Maplocation.png 1.5x, /mediawiki/images/thumb/5/5c/Maplocation.png/40px-Maplocation.png 2x" width="20"/></div><img alt="Map.png" decoding="async" height="244" src="/mediawiki/images/4/43/Map.png" width="400"/></div>
+<h3><span class="mw-headline" id="Map_with_Island_Shown">Map with Island Shown</span></h3>
+<pre>{{Map|360|214|island=true}}</pre>
+<link href="mw-data:TemplateStyles:r120947" rel="mw-deduplicated-inline-style"/><div class="mapcontainer" style="width:400px;height:244px;"><div class="maplocation" style="left:360px;top:214px;"><img alt="Maplocation.png" decoding="async" height="20" src="/mediawiki/images/thumb/5/5c/Maplocation.png/20px-Maplocation.png" srcset="/mediawiki/images/thumb/5/5c/Maplocation.png/30px-Maplocation.png 1.5x, /mediawiki/images/thumb/5/5c/Maplocation.png/40px-Maplocation.png 2x" width="20"/></div><img alt="Map.png" decoding="async" height="244" src="/mediawiki/images/4/43/Map.png" width="400"/></div><link href="mw-data:TemplateStyles:r120947" rel="mw-deduplicated-inline-style"/><div class="mapcontainer" style="width:400px;height:244px;"><div class="maplocation" style="left:0px;top:0px;"><img alt="Maplocation.png" decoding="async" height="20" src="/mediawiki/images/thumb/5/5c/Maplocation.png/20px-Maplocation.png" srcset="/mediawiki/images/thumb/5/5c/Maplocation.png/30px-Maplocation.png 1.5x, /mediawiki/images/thumb/5/5c/Maplocation.png/40px-Maplocation.png 2x" width="20"/></div><img alt="Ginger Island Map.png" decoding="async" height="244" src="/mediawiki/images/4/47/Ginger_Island_Map.png" width="400"/></div>
+<!-- 
+NewPP limit report
+Cached time: 20250227004900
+Cache expiry: 86400
+Dynamic content: false
+Complications: [vary‐revision‐sha1]
+CPU time usage: 0.030 seconds
+Real time usage: 0.034 seconds
+Preprocessor visited node count: 302/1000000
+Post‐expand include size: 6922/2097152 bytes
+Template argument size: 101/2097152 bytes
+Highest expansion depth: 8/40
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 1797/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   12.214      1 Template:Map/doc
+100.00%   12.214      1 -total
+ 58.93%    7.197      4 Template:Map
+ 13.71%    1.674      1 Template:Addlanglinks
+-->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:1443-0!canonical and timestamp 20250227004900 and revision id 178840
+ -->
+</div></div><div class="printfooter">Retrieved from "<a dir="ltr" href="https://stardewvalleywiki.com/mediawiki/index.php?title=Template:Map&amp;oldid=178840">https://stardewvalleywiki.com/mediawiki/index.php?title=Template:Map&amp;oldid=178840</a>"</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="/Category:Templates" title="Category:Templates">Templates</a></li></ul></div></div>
+</div>

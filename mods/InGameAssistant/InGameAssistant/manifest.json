@@ -1,0 +1,10 @@
+{
+  "Name": "InGameAssistant",
+  "Author": "Paula",
+  "Version": "0.0.1",
+  "Description": "LLM assistant to ask questions.",
+  "UniqueID": "Paula.InGameAssistant",
+  "EntryDll": "InGameAssistant.dll",
+  "MinimumApiVersion": "4.1.0",
+  "UpdateKeys": []
+}

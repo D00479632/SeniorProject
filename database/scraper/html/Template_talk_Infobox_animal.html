@@ -1,0 +1,83 @@
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Stardew Valley Wiki</div>
+<div id="contentSub"></div>
+<div id="contentSub2"></div>
+<div id="jump-to-nav"></div>
+<a class="mw-jump-link" href="#mw-head">Jump to navigation</a>
+<a class="mw-jump-link" href="#searchInput">Jump to search</a>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><style data-mw-deduplicate="TemplateStyles:r177397">.mw-parser-output #talkheadertitle{background-color:#03A007;text-align:center;color:white;text-shadow:0px 2px #00321f;font-size:120%}.mw-parser-output #talkheaderbody{width:80%;margin:0 auto 1em auto;border:1px solid rgb(170,170,170);background-color:rgba(255,255,255,0.58);color:rgb(0,0,0)}.mw-parser-output #talkheadertitle a{color:white}</style>
+<table id="talkheaderbody">
+<tbody><tr>
+<th colspan="2" id="talkheadertitle">This talk page is for discussing <a class="external text" href="//stardewvalleywiki.com/Template:Infobox_animal" rel="nofollow">Template:Infobox animal</a>.
+</th></tr>
+<tr>
+<td>
+<ul><li>Sign and date your posts by typing four tildes (~~~~).</li>
+<li>Put new text below old text.</li></ul>
+</td>
+<td>
+<ul><li>Be polite.</li>
+<li>Assume good faith.</li>
+<li>Don't delete discussions.</li></ul>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Proposed_Change">Proposed Change</span></h2>
+<p>It's been proposed that we add a field to the template specifying days to grow to maturity. It seems this value is not affected by any profession bonuses (correct me if I'm wrong), and could be added. On the other hand, we could make sure it exists in the body text of all the animals' pages instead.
+</p><p>If we decide to add it, should it be hidden if there is no value in it? Currently, the infobox is used on 11 pages, all of which are farm animals, so there <i>should</i> be a valid value for each animal.
+</p><p>How do we differentiate between time to hatch (<i>i.e.,</i> time in the <a href="/Incubator" title="Incubator">incubator</a>) and time to maturity for chickens, dinosaurs, and ducks? This is one reason I would vote "no" to the field being in the infobox, and instead in the body of the text. Please add your thoughts below. Thanks, <a href="/User:Margotbean" title="User:Margotbean">margotbean</a> (<a href="/User_talk:Margotbean" title="User talk:Margotbean">talk</a>) 19:51, 12 November 2021 (UTC)
+</p>
+<dl><dd>I agree the info doesn't stand out on the animal pages as there are right now, mainly because the redaction is not consistent at all between articles.</dd>
+<dd>Regarding hatching, time are listed on the <a href="/Incubator" title="Incubator">incubator</a> page, whereas it is nowhere for maturing time. But there could indeed be a confusion between hatching and maturing time if only one of the two is stated in the infobox, and I don't know if both infos should belong to it (why not regularity of the produce also?).</dd>
+<dd>I would suggest to adopt a consistent redaction for each farm animal.</dd>
+<dd>I also wonder: is there a reason why for some it's written "sheep/ostriches <b>who eat every day</b> mature after 4/7 days", when it's not stated for cows or goats? Do they grow even if unfed?</dd>
+<dd>-- <a href="/User:Charly" title="User:Charly">Charly</a> (<a href="/User_talk:Charly" title="User talk:Charly">talk</a>) 20:36, 12 November 2021 (UTC)</dd></dl>
+<dl><dd><dl><dd>From <a href="/Animals#Produce" title="Animals">Animals#Produce</a>: No animal will produce if it is not fed that day. So, the text should read the same on all farm animals' pages. Clearly there is some consistency that is lacking. I like the idea of cleaning up the text on the pages so it's more clear about incubation time and time to maturity, and making the text consistent across pages, rather than adding something to the infobox. <a href="/User:Margotbean" title="User:Margotbean">margotbean</a> (<a href="/User_talk:Margotbean" title="User talk:Margotbean">talk</a>) 21:39, 12 November 2021 (UTC)</dd></dl></dd></dl>
+<dl><dd><dl><dd><dl><dd>Sorry, wasn't sure where to request the information be more visible. I noticed it when looking at the chicken page compared to the cow page, where it took a few re-reads of the chicken page to spot where the information was. I'm not strongly of the opinion that it definitely should be in the infobox, even though it's a property that would be relevant to all the animals, along with incubation time, but it would be nice then if the location of the incubation and maturation time could be normalised across the animal pages. (Time taken to produce is seems fine under the produce section of those pages though). It also appears the page for the dinosaur when I last checked doesn't explicitely mention maturation time at all, so I wasn't even sure what value to put in there without testing growing a new dino. <a class="new" href="/mediawiki/index.php?title=User:Skenvy&amp;action=edit&amp;redlink=1" title="User:Skenvy (page does not exist)">Skenvy</a> (<a href="/User_talk:Skenvy" title="User talk:Skenvy">talk</a>) 09:52, 13 November 2021 (UTC)</dd></dl></dd></dl></dd></dl>
+<dl><dd><dl><dd><dl><dd><dl><dd>Note that incubation time apply only to oviparous (animals procuding eggs, <i>i.e.,</i> Chicken and variations, Dino, Duck, Ostrich), viviparous reproduce themselves directly (Cow, Goat, Sheep), and Rabbit cannot reproduce at all. Also this distinction is not very clearly stated through the wiki, <i>e.g.,</i> see <a href="/Animals#Animal_Births" title="Animals">Animals#Animal Births</a> (I presume an Ostrich in Barn doesn't count for the game to provoke pregnancy).</dd>
+<dd>Also, according to <a href="/Modding:Animal_data" title="Modding:Animal data">Modding:Animal data</a> and <code>Content\Data\FarmAnimals.xnb</code>, the maturing time for Dino is 0. It surprise me a bit, since I remembered the dino to be a child before being larger, but my memories are probably wrong (especially since there is no <samp>BabyDinosaur</samp> file in <samp>Content\Animals</samp> – neither <samp>BabyDuck</samp> tho).</dd>
+<dd>And I found the formula determining the selling value too: <code>base price * (friendship / 1000 + 0.3)</code> (base price is the same as Marnie selling, same for all chicken, 1000 for Dino, 16000 for Ostrich). So it's <samp>x0.3</samp> at lowest and <samp>x1.3</samp> at max.</dd>
+<dd>Raw game code (<code>Stardew Valley.exe\FarmAnimal.cs::getSellPrice</code>):</dd>
+<dd><div class="mw-highlight mw-highlight-lang-c# mw-content-ltr" dir="ltr"><pre><span></span><span class="k">public</span> <span class="kt">int</span> <span class="nf">getSellPrice</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="kt">double</span> <span class="n">num</span> <span class="p">=</span> <span class="p">(</span><span class="kt">double</span><span class="p">)</span><span class="n">NetFieldBase</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="n">NetInt</span><span class="p">&gt;.</span><span class="n">op_Implicit</span><span class="p">((</span><span class="n">NetFieldBase</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="n">NetInt</span><span class="p">&gt;)(</span><span class="kt">object</span><span class="p">)</span><span class="n">friendshipTowardFarmer</span><span class="p">)</span> <span class="p">/</span> <span class="m">1000.0</span> <span class="p">+</span> <span class="m">0.3</span><span class="p">;</span>
+	<span class="k">return</span> <span class="p">(</span><span class="kt">int</span><span class="p">)((</span><span class="kt">double</span><span class="p">)</span><span class="n">NetFieldBase</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="n">NetInt</span><span class="p">&gt;.</span><span class="n">op_Implicit</span><span class="p">((</span><span class="n">NetFieldBase</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="n">NetInt</span><span class="p">&gt;)(</span><span class="kt">object</span><span class="p">)</span><span class="n">price</span><span class="p">)</span> <span class="p">*</span> <span class="n">num</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div></dd>
+<dd>I'm also not a big fan of the <a href="/Animals" title="Animals">Animals</a> page, which is very talkative. I feel like Coop and Barn animals sections should be merged into a table with link to each individual animal page, and maybe some more infos for the sake of normalization, and the Animal Care section put below (when I look for the page, my priority is to see the Farm Animals list, for which right now I have to scroll down <i>a lot</i>. Also some things could be hidden behind <i>Details</i> tag in the Produce sub-section).</dd>
+<dd>-- <a href="/User:Charly" title="User:Charly">Charly</a> (<a href="/User_talk:Charly" title="User talk:Charly">talk</a>) 12:09, 13 November 2021 (UTC)</dd></dl></dd></dl></dd></dl></dd></dl>
+<dl><dd><dl><dd><dl><dd><dl><dd><dl><dd>So it seems we agree to place the info in the body of the pages, and make the pages read consistently. We can create a section heading called "Maturity" or "Incubation and Maturity"... or we can place the information in the header text (the text that appears above the table of contents), or we can make sure it appears under "Produce" on every page. I don't have a strong opinion about any of them, although adding a separate heading for one or two sentences may be too much.</dd>
+<dd>Perhaps in lieu of a separate heading, we add a line of boldfaced text to the intro paragraph, like so:</dd>
+<dd><b>Incubation</b><br/>[Animal name] will hatch from an incubator after x days</dd>
+<dd><b>Maturity</b><br/>[Animal name] will grow to maturity in x days, if fed each day.</dd>
+<dd>Thoughts? <a href="/User:Margotbean" title="User:Margotbean">margotbean</a> (<a href="/User_talk:Margotbean" title="User talk:Margotbean">talk</a>) 20:37, 13 November 2021 (UTC)</dd></dl></dd></dl></dd></dl></dd></dl></dd></dl>
+<dl><dd><dl><dd><dl><dd><dl><dd><dl><dd><dl><dd>Quick thought: I feel that a separate heading would be overkill. To me hatching should belong to the intro as it is a way to obtain the animal, and maturity probably to the <i>Produce</i> section (but both on the intro as suggested by Margotbean could be possible also). At first I thought about something as follows.
+<ul><li>Wording suggestion for Intro: <i>A &lt;Animal name&gt; is a farm <a href="/Animals" title="Animals">animal</a> living in a [[&lt;Animal building&gt;]] [or better]. It can be [purchased at Marnie's Ranch for &lt;price&gt;, or] obtained by placing a &lt;Animal egg&gt; in an [Ostrich] Incubator, taking <b>&lt;x&gt; days to incubate</b>.</i> Or, at the end for viviparous: <i>It can be purchased at Marnie's Ranch for &lt;price&gt;. &lt;Animal name&gt;s can [not] <a href="/Animals#Animal_Births" title="Animals">reproduce</a> themselves</i> ("not" is for rabbits).</li>
+<li>Wording suggestion for Produce: <i>&lt;Animal name&gt; will grow to <b>maturity after &lt;x&gt; nights</b>, if fed each day. A mature &lt;Animal name&gt; will <b><a href="/Animals#Produce" title="Animals">produce</a> [[&lt;Animal product&gt;]] every &lt;y&gt; days</b> &lt;additional conditions and deluxe product&gt;.</i> Then on another line, Product selling, processing, hatching. I would also suggest to add a "Processed" column in each table in this section, with the icon and price of the item if processed.</li></ul></dd>
+<dd>I thought of <i>maturity in &lt;x&gt; days</i> at first but I feel that speaking about nights is more precise. I also was hesitant about the bolding on <i>&lt;x&gt; days to incubate</i>. Wording may be improved, my English is not from the uttermost elegance, but I feel that plain sentences with bolding could be clearer here.</dd>
+<dd>-- <a href="/User:Charly" title="User:Charly">Charly</a> (<a href="/User_talk:Charly" title="User talk:Charly">talk</a>) 01:23, 14 November 2021 (UTC)
+<dl><dd>I've started the process of rewriting by adding the info to the <a href="/Chicken" title="Chicken">Chicken</a> page, since it seems to be the worst offender in this issue. I personally don't think boldfacing is required, as long as the information is on the page in shorter paragraphs. Someone else can pick up where I left off, if they want to. <a href="/User:Margotbean" title="User:Margotbean">margotbean</a> (<a href="/User_talk:Margotbean" title="User talk:Margotbean">talk</a>) 18:35, 14 November 2021 (UTC)</dd></dl></dd></dl></dd></dl></dd></dl></dd></dl></dd></dl></dd></dl>
+<!-- 
+NewPP limit report
+Cached time: 20250227171057
+Cache expiry: 86400
+Dynamic content: false
+Complications: []
+CPU time usage: 0.030 seconds
+Real time usage: 0.340 seconds
+Preprocessor visited node count: 46/1000000
+Post‐expand include size: 748/2097152 bytes
+Template argument size: 8/2097152 bytes
+Highest expansion depth: 8/40
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 2382/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   12.523      1 Template:Talkheader
+100.00%   12.523      1 -total
+-->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:13438-0!canonical and timestamp 20250227171056 and revision id 134828
+ -->
+</div></div><div class="printfooter">Retrieved from "<a dir="ltr" href="https://stardewvalleywiki.com/mediawiki/index.php?title=Template_talk:Infobox_animal&amp;oldid=134828">https://stardewvalleywiki.com/mediawiki/index.php?title=Template_talk:Infobox_animal&amp;oldid=134828</a>"</div>
+<div class="catlinks" data-mw="interface" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="/Category:Template_talk_pages" title="Category:Template talk pages">Template talk pages</a></li></ul></div></div>
+</div>

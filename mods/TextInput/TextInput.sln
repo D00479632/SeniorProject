@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextInput", "TextInput\TextInput.csproj", "{CDB1A770-1127-439E-8544-F349897DCEDA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CDB1A770-1127-439E-8544-F349897DCEDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDB1A770-1127-439E-8544-F349897DCEDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDB1A770-1127-439E-8544-F349897DCEDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDB1A770-1127-439E-8544-F349897DCEDA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

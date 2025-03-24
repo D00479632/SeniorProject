@@ -1,0 +1,89 @@
+<div class="mw-body-content" id="bodyContent">
+<div class="noprint" id="siteSub">From Stardew Valley Wiki</div>
+<div id="contentSub"></div>
+<div id="contentSub2"></div>
+<div id="jump-to-nav"></div>
+<a class="mw-jump-link" href="#mw-head">Jump to navigation</a>
+<a class="mw-jump-link" href="#searchInput">Jump to search</a>
+<div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en"><div class="mw-parser-output"><p>I <a class="external text" href="https://www.nexusmods.com/users/80928528?tab=user+files" rel="nofollow">mod</a> and I explore the game code. Find me on Discord or wherever snack foods are sold.
+</p>
+<div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Notes_on_Android_SMAPI_modding"><span class="tocnumber">1</span> <span class="toctext">Notes on Android SMAPI modding</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Tools"><span class="tocnumber">1.1</span> <span class="toctext">Tools</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Decompiling"><span class="tocnumber">1.2</span> <span class="toctext">Decompiling</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Coding"><span class="tocnumber">1.3</span> <span class="toctext">Coding</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Deployment"><span class="tocnumber">1.4</span> <span class="toctext">Deployment</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Testing"><span class="tocnumber">1.5</span> <span class="toctext">Testing</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h2><span class="mw-headline" id="Notes_on_Android_SMAPI_modding">Notes on Android SMAPI modding</span></h2>
+<p>These notes are based on my experiences with making my mods work on Android in April 2020. Linux is my PC OS; adjustments will be needed for Mac or Windows.
+</p>
+<h3><span class="mw-headline" id="Tools">Tools</span></h3>
+<ul><li><a class="external text" href="https://developer.android.com/studio/command-line/adb" rel="nofollow">Android Debug Bridge</a> (<code>adb</code>) for communication between your development PC and your Android device</li>
+<li><a class="external text" href="https://github.com/Genymobile/scrcpy" rel="nofollow">scrcpy</a> for viewing and controlling your Android device screen from your PC</li>
+<li><a class="external text" href="https://github.com/icsharpcode/ILSpy/tree/master/ICSharpCode.Decompiler.Console" rel="nofollow">ILSpy Console</a> (<code>ilspycmd</code>) for decompiling the Android port of the game</li></ul>
+<h3><span class="mw-headline" id="Decompiling">Decompiling</span></h3>
+<ul><li>To decompile the Android port of the game (after installing <code>adb</code> and <code>ilspycmd</code> and changing to a new directory):</li></ul>
+<pre>adb pull /storage/self/primary/StardewValley/smapi-internal/StardewValley.dll ./
+adb pull /storage/self/primary/StardewValley/smapi-internal/StardewValley.GameData.dll ./
+adb pull /storage/self/primary/StardewValley/smapi-internal/MonoGame.Framework.dll ./
+adb pull /storage/self/primary/StardewValley/smapi-internal/xTile.dll ./
+ilspycmd -p -o . StardewValley.dll
+mkdir StardewValley.GameData
+ilspycmd -p -o StardewValley.GameData StardewValley.GameData.dll
+</pre>
+<h3><span class="mw-headline" id="Coding">Coding</span></h3>
+<ul><li>The Android port of SMAPI provides workarounds to keep many of the common game methods and properties working despite the differences in the Android port of the base game. Nevertheless, check the Android source carefully if you rely on menus/input (heavily rewritten) or networking/multiplayer (dummied out).</li>
+<li>Lots of <code>System.*</code> assemblies are missing in the Android version of Mono, so check <a class="external text" href="https://docs.microsoft.com/en-us/dotnet/api/?view=xamarinandroid-7.1" rel="nofollow">the Xamarin.Android API list</a> from Microsoft before relying on one.</li>
+<li>Mobile users can save at any time and restore either from their save point or the beginning of the day. As such, don't rely on save/load events and day end/start events occurring in the regular sequence. Choose one or another depending on whether you are wrangling data (load/save) or updating the world for passage of time (day end/start).</li>
+<li>All taps will register as the <code>MouseLeft</code> button, so testing <code>IsUseToolButton</code> vs. <code>IsActionButton</code> will not work. Each tap does update the cursor position to its location, however.</li>
+<li>Dialog boxes (for the Latin alphabet) are scaled quite large on Android, so there is less room to fit text, question responses, etc., than on PC. Their scaling is also fixed, ignoring the player's current overworld zoom, unlike on PC. Succinctness is the order of the day. Manual line breaks (<code>^</code>) are not likely to work as intended.</li></ul>
+<h3><span class="mw-headline" id="Deployment">Deployment</span></h3>
+<ul><li>To copy your deployed PC mod folder to the device for initial install:</li></ul>
+<pre>adb push <i>$STARDEW_PATH</i>/Mods/<i>$MOD_NAME</i> /storage/self/primary/StardewValley/Mods/
+</pre>
+<ul><li>To update files on the device from your PC mod folder:</li></ul>
+<pre>adb push <i>$STARDEW_PATH</i>/Mods/<i>$MOD_NAME</i>/* /storage/self/primary/StardewValley/Mods/<i>$MOD_NAME</i>/
+</pre>
+<ul><li>To update just the mod DLL from your build directory (while in that directory):</li></ul>
+<pre>adb push bin/Debug/<i>$MOD_NAME</i>.dll /storage/self/primary/StardewValley/Mods/<i>$MOD_NAME</i>/
+</pre>
+<h3><span class="mw-headline" id="Testing">Testing</span></h3>
+<ul><li>To pipe the SMAPI console output to a terminal on your PC:</li></ul>
+<pre>adb shell tail -fn9999 /storage/self/primary/StardewValley/ErrorLogs/SMAPI-latest.txt
+</pre>
+<ul><li>To display the Android device screen on your PC:</li></ul>
+<pre>scrcpy
+</pre>
+<ul><li>Pipe the Android audio to your PC via Bluetooth if it is available to you. If not, <a class="external text" href="https://github.com/rom1v/usbaudio" rel="nofollow">USBaudio</a> may work for you; I have not tried it.</li>
+<li>There are several <a href="/Mobile_Controls" title="Mobile Controls">control schemes</a> on mobile; be sure to test with more than one if your mod handles input events.</li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20250304235827
+Cache expiry: 86400
+Dynamic content: false
+Complications: []
+CPU time usage: 0.008 seconds
+Real time usage: 0.009 seconds
+Preprocessor visited node count: 18/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+<!-- Saved in parser cache with key enwiki:pcache:idhash:12599-0!canonical and timestamp 20250304235827 and revision id 115698
+ -->
+</div></div><div class="printfooter">Retrieved from "<a dir="ltr" href="https://stardewvalleywiki.com/mediawiki/index.php?title=User:Kdau&amp;oldid=115698">https://stardewvalleywiki.com/mediawiki/index.php?title=User:Kdau&amp;oldid=115698</a>"</div>
+<div class="catlinks catlinks-allhidden" data-mw="interface" id="catlinks"></div>
+</div>

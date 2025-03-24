@@ -1,0 +1,9 @@
+﻿{
+  "Name": "TextInput",
+  "Author": "patatotama",
+  "Version": "1.0.0",
+  "Description": "Menu with text input",
+  "UniqueID": "patatotama.TextInput",
+  "EntryDll": "TextInput.dll",
+  "UpdateKeys": []
+}
