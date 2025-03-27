@@ -5,10 +5,11 @@
             background-border-thickness="48,0"
             padding="12"
             text="Get your random number" />
-    <frame layout="500px content"
-           margin="0,8,0,0"
-           padding="32,24"
-           background={@Mods/StardewUI/Sprites/ControlBorderUncolored}>
+    <frame layout="700px content"
+           background={@Mods/StardewUI/Sprites/MenuBackground}
+           border={@Mods/StardewUI/Sprites/MenuBorder}
+           border-thickness="36,36,40,36"
+           padding="32,24">
         <lane layout="stretch content" orientation="vertical">
             <form-row title="Enter text:">
                 <textinput layout="250px 48px"
