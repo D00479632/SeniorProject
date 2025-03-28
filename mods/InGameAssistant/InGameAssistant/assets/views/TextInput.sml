@@ -4,7 +4,7 @@
     <banner background={@Mods/StardewUI/Sprites/BannerBackground}
             background-border-thickness="48,0"
             padding="12"
-            text="Get your random number" />
+            text="Ask your questions here:" />
     <frame layout="700px content"
            background={@Mods/StardewUI/Sprites/MenuBackground}
            border={@Mods/StardewUI/Sprites/MenuBorder}
@@ -17,8 +17,8 @@
                           max-length="100"
                           text={<>Text} />
             </form-row>
-            <button text="Generate Random Number" 
-                    click=|GenerateRandom()|
+            <button text="Generate Response" 
+                    click=|AskQuestion()|
                     margin="0,8" />
             <label text={RandomNumberText}
                    margin="0,8"

@@ -4,6 +4,8 @@ import os
 import signal
 import threading
 import time
+from marqo import Client
+from ollama import chat
 
 app = Flask(__name__)  # Create a new Flask application instance
 last_heartbeat = time.time()
@@ -34,6 +36,51 @@ def get_random_number():
 def shutdown():
     os.kill(os.getpid(), signal.SIGINT)  # Send a SIGINT signal to the current process to shut it down
     return 'Server shutting down...'
+
+def get_ollama_response(question, context=""):
+    messages = [
+        {"role": "system", "content": """
+        ALL RESPONSES SHOULD BE ONLY PERTAINING TO THE STARDEW VALLEY VIDEO GAME NOT REAL LIFE.
+        You are a Stardew Valley game assistant, where you can farm, mine, fish, craft and make friends.
+        This is a game and does not work like reality, the seasons are 28 days long.
+        You provide only relevant, concise, and accurate answers to the player's questions.
+        You do not assume extra details beyond what is explicitly asked.
+        Always prioritize game-accurate information and avoid speculation.
+        Do not add information that was not requested.
+        Just answer concise to the question asked.
+        A good example of how to answer 'can I plant tomatoes in the spring?' would be 'tomatoes only grow on the summer so you cannot plant them in the spring'."""},
+        {"role": "user", "content": f"{context} {question}"},
+    ]
+    response = chat("llama3.2:1b", messages=messages)
+    return response['message']['content']
+
+@app.route('/ask', methods=['POST'])
+def ask_question():
+    data = request.get_json()
+    question = data.get('question', '')
+    index_name = 'stardew-valley-data' 
+    # Set up Marqo Client
+    mq = Client(url='http://localhost:8882')
+    
+    try:
+        # Perform search on Marqo index
+        results = mq.index(index_name).search(
+            q=question,
+            limit=4
+        )
+
+        # Prepare context
+        context = ''
+        for i, hit in enumerate(results['hits']):
+            title = hit['Title']
+            text = hit['Description']
+            context += f"Source {i + 1}) {title} || {text} \n"
+
+        # Get response from Ollama
+        final_response = get_ollama_response(question, context)
+        return jsonify({'response': final_response})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
     # Start heartbeat monitoring in a background thread

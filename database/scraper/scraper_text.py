@@ -12,6 +12,18 @@ class StarDewScraper:
         self.driver = webdriver.Firefox()
         self.links = set()  # Set to store links to visit
         self.visited = set()  # Set to store already visited links
+        self.exclude_segments = [
+            '/Special:', 
+            '/Modding:', 
+            '/Talk:', 
+            '/File:', 
+            '/Category:',
+            '/User:',
+            '/Template_talk:',
+            '/User_talk:',
+            '/Module:',
+            '/Template:'
+        ]
     
     def start_scraper(self):
         self.driver.get("https://www.stardewvalleywiki.com/Stardew_Valley_Wiki")
@@ -29,42 +41,41 @@ class StarDewScraper:
         """Ensure all URLs use the www.stardewvalleywiki.com version."""
         return url.replace("https://www.stardewvalleywiki.com", "https://stardewvalleywiki.com")
     
-   def scrape_page(self, url):
-    """Process a single page, extract content and find new links"""
-    if url in self.visited:
-        return
+    def scrape_page(self, url):
+        """Process a single page, extract content and find new links"""
+        if url in self.visited:
+            return
 
-    # Skip URLs with specific prefixes
-    skip_prefixes = ['Special:', 'Modding:', 'Talk:', 'File:', 'Category:']
-    if any(prefix in url for prefix in skip_prefixes):
-        print(f"Skipping URL with unwanted prefix: {url}")
-        return
+        # Skip URLs with specific prefixes
+        if any(segment in url for segment in self.exclude_segments):
+            print(f"Skipping URL with unwanted prefix: {url}")
+            return
 
-    try:
-        print(f"Visiting: {url}")
-        self.driver.get(url)
-        self.visited.add(url)  # Mark as visited
-        
-        # Extract and save content
-        self.write_stuff()
-        
-        # Find all links on the page
-        new_links = self.driver.find_elements(By.TAG_NAME, 'a')
-        for new_link in new_links:
-            try:
-                href = new_link.get_attribute('href')
-                if href and href.startswith('https://www.stardewvalleywiki.com/') and href not in self.visited and href not in self.links:
-                    # Filter out non-article links
-                    if '#' in href or 'png' in href or 'file:' in href or 'php' in href:
-                        continue
-                    # Skip URLs with specific prefixes
-                    if any(prefix in href for prefix in skip_prefixes):
-                        continue
-                    self.links.add(href)
-            except StaleElementReferenceException:
-                continue  # Skip stale elements
-    except Exception as e:
-        print(f"Error processing {url}: {e}") 
+        try:
+            print(f"Visiting: {url}")
+            self.driver.get(url)
+            self.visited.add(url)  # Mark as visited
+            
+            # Extract and save content
+            self.write_stuff()
+            
+            # Find all links on the page
+            new_links = self.driver.find_elements(By.TAG_NAME, 'a')
+            for new_link in new_links:
+                try:
+                    href = new_link.get_attribute('href')
+                    if href and href.startswith('https://www.stardewvalleywiki.com/') and href not in self.visited and href not in self.links:
+                        # Filter out non-article links
+                        if '#' in href or 'png' in href or 'file:' in href or 'php' in href:
+                            continue
+                        # Skip URLs with specific prefixes
+                        if any(segment in href for segment in self.exclude_segments):
+                            continue
+                        self.links.add(href)
+                except StaleElementReferenceException:
+                    continue  # Skip stale elements
+        except Exception as e:
+            print(f"Error processing {url}: {e}") 
 
     def write_stuff(self):
         try:

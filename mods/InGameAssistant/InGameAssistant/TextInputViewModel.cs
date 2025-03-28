@@ -9,43 +9,38 @@ namespace InGameAssistant
 {
     public partial class TextInputViewModel : INotifyPropertyChanged
     {
-        private readonly Random random = new();
         [Notify] private string text = "";
-        [Notify] private string randomNumberText = "Click the button to generate a random number";
-
-        public async void GenerateRandom()
+        [Notify] private string randomNumberText = "Click the button to generate a response";
+        public async void AskQuestion()
         {
-            if (int.TryParse(Text, out int maxNumber))
+            if (string.IsNullOrWhiteSpace(Text))
             {
-                int randomNumber = await GetRandomNumberFromServer(maxNumber);
-                RandomNumberText = randomNumber != -1 
-                    ? $"Your random number is: {randomNumber}" 
-                    : "Failed to retrieve random number.";
+                RandomNumberText = "Please enter a valid question.";
+                return;
             }
-            else
-            {
-                RandomNumberText = "Please enter a valid number.";
-            }
+
+            RandomNumberText = "We are generating the response, please wait.";
+            string responseText = await GetResponseFromServer(Text);
+            RandomNumberText = responseText ?? "Failed to retrieve a response.";
         }
 
-        private async Task<int> GetRandomNumberFromServer(int maxNumber)
+        private async Task<string?> GetResponseFromServer(string question)
         {
             using (var client = new HttpClient())
             {
                 try
                 {
-                    var content = new StringContent(System.Text.Json.JsonSerializer.Serialize(new { max = maxNumber }), Encoding.UTF8, "application/json");
-                    HttpResponseMessage response = await client.PostAsync("http://127.0.0.1:8080/random", content);
+                    var content = new StringContent(System.Text.Json.JsonSerializer.Serialize(new { query = question }), Encoding.UTF8, "application/json");
+                    HttpResponseMessage response = await client.PostAsync("http://127.0.0.1:8080/ask", content);
                     response.EnsureSuccessStatusCode();
 
                     string responseBody = await response.Content.ReadAsStringAsync();
                     var json = System.Text.Json.JsonDocument.Parse(responseBody);
-                    return json.RootElement.GetProperty("random_number").GetInt32();
+                    return json.RootElement.GetProperty("answer").GetString();
                 }
-                catch (HttpRequestException e)
+                catch (HttpRequestException)
                 {
-                    // Log error (you may want to use a logging mechanism here)
-                    return -1;
+                    return null;
                 }
             }
         }
