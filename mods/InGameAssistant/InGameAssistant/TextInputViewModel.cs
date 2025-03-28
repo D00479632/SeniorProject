@@ -31,16 +31,31 @@ namespace InGameAssistant
                 try
                 {
                     var content = new StringContent(System.Text.Json.JsonSerializer.Serialize(new { query = question }), Encoding.UTF8, "application/json");
+                    Console.WriteLine($"Sending request: {content}"); // Log the request being sent
+
                     HttpResponseMessage response = await client.PostAsync("http://127.0.0.1:8080/ask", content);
                     response.EnsureSuccessStatusCode();
 
                     string responseBody = await response.Content.ReadAsStringAsync();
                     var json = System.Text.Json.JsonDocument.Parse(responseBody);
-                    return json.RootElement.GetProperty("answer").GetString();
+
+                    if (json.RootElement.TryGetProperty("answer", out var answerElement))
+                    {
+                        return answerElement.GetString();
+                    }
+                    else
+                    {
+                        Console.WriteLine($"The answer was: {json.RootElement.GetRawText()}");
+                        return "Error: Server response missing 'answer' key.";
+                    }
                 }
-                catch (HttpRequestException)
+                catch (HttpRequestException e)
                 {
-                    return null;
+                    return $"Error: {e.Message}";
+                }
+                catch (System.Text.Json.JsonException)
+                {
+                    return "Error: Invalid JSON response from server.";
                 }
             }
         }

@@ -58,11 +58,13 @@ def get_ollama_response(question, context=""):
 def ask_question():
     data = request.get_json()
     question = data.get('question', '')
+    print(question)
     index_name = 'stardew-valley-data' 
     # Set up Marqo Client
     mq = Client(url='http://localhost:8882')
     
     try:
+        print("Searching marqo")
         # Perform search on Marqo index
         results = mq.index(index_name).search(
             q=question,
@@ -77,8 +79,9 @@ def ask_question():
             context += f"Source {i + 1}) {title} || {text} \n"
 
         # Get response from Ollama
+        print("Asking ollama")
         final_response = get_ollama_response(question, context)
-        return jsonify({'response': final_response})
+        return jsonify({'answer': final_response})
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
