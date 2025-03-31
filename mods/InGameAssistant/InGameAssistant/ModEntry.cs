@@ -76,7 +76,7 @@ namespace InGameAssistant
             if (!Context.IsWorldReady)
                 return;
 
-            if (e.Button == SButton.F1)
+            if (e.Button == SButton.F8)
             {
                 Game1.activeClickableMenu = viewEngine.CreateMenuFromAsset(
                     "Mods/InGameAssistant/Views/TextInput",

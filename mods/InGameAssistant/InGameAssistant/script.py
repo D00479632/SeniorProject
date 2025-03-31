@@ -40,25 +40,26 @@ def shutdown():
 def get_ollama_response(question, context=""):
     messages = [
         {"role": "system", "content": """
-        ALL RESPONSES SHOULD BE ONLY PERTAINING TO THE STARDEW VALLEY VIDEO GAME NOT REAL LIFE.
-        You are a Stardew Valley game assistant, where you can farm, mine, fish, craft and make friends.
-        This is a game and does not work like reality, the seasons are 28 days long.
-        You provide only relevant, concise, and accurate answers to the player's questions.
-        You do not assume extra details beyond what is explicitly asked.
-        Always prioritize game-accurate information and avoid speculation.
-        Do not add information that was not requested.
-        Just answer concise to the question asked.
-        A good example of how to answer 'can I plant tomatoes in the spring?' would be 'tomatoes only grow on the summer so you cannot plant them in the spring'."""},
-        {"role": "user", "content": f"{context} {question}"},
+        YOU ANSWER IN NO MORE THAN 4 SENTENCES.
+        ALL RESPONSES SHOULD ONLY PERTAIN TO THE STARDEW VALLEY VIDEO GAME, NOT REAL LIFE.
+        You are a Stardew Valley game assistant. Provide answers that are strictly relevant to the question asked.
+        Avoid unnecessary context or elaboration. Focus solely on the question and provide a direct answer.
+        For example, if asked 'can I plant tomatoes in the spring?', respond with 'tomatoes only grow in summer, so you cannot plant them in spring.'"""},
+        {"role": "user", "content": f"{"THIS IS YOUR CONTEXT: " + context} {"NOW ANSWER THIS QUESTION: " + question}"},
     ]
-    response = chat("llama3.2:1b", messages=messages)
+    # llama3.2:1b
+    MODEL = "gemma3:4b"
+    response = chat(MODEL, messages=messages)
     return response['message']['content']
 
 @app.route('/ask', methods=['POST'])
 def ask_question():
     data = request.get_json()
-    question = data.get('question', '')
-    print(question)
+    question = data.get('query', '')
+    
+    # Print the received question for debugging
+    print(f"Received question: {question}")
+    
     index_name = 'stardew-valley-data' 
     # Set up Marqo Client
     mq = Client(url='http://localhost:8882')
@@ -68,7 +69,7 @@ def ask_question():
         # Perform search on Marqo index
         results = mq.index(index_name).search(
             q=question,
-            limit=4
+            limit=1
         )
 
         # Prepare context

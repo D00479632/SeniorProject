@@ -20,10 +20,12 @@
             <button text="Generate Response" 
                     click=|AskQuestion()|
                     margin="0,8" />
+            <scrollable layout="600px content">
             <label text={RandomNumberText}
                    margin="0,8"
                    shadow-alpha="0.8"
                    shadow-offset="-2, 2" />
+            </scrollable>
         </lane>
     </frame>
 </lane>

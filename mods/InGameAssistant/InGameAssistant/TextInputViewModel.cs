@@ -19,6 +19,9 @@ namespace InGameAssistant
                 return;
             }
 
+            // Print the question being sent for debugging
+            Console.WriteLine($"Sending question: {Text}");
+
             RandomNumberText = "We are generating the response, please wait.";
             string responseText = await GetResponseFromServer(Text);
             RandomNumberText = responseText ?? "Failed to retrieve a response.";
@@ -31,7 +34,10 @@ namespace InGameAssistant
                 try
                 {
                     var content = new StringContent(System.Text.Json.JsonSerializer.Serialize(new { query = question }), Encoding.UTF8, "application/json");
-                    Console.WriteLine($"Sending request: {content}"); // Log the request being sent
+            
+                    // Log the request being sent
+                    string requestBody = await content.ReadAsStringAsync(); // Get the string content
+                    Console.WriteLine($"Sending question: {requestBody}"); // Log the actual JSON being sent
 
                     HttpResponseMessage response = await client.PostAsync("http://127.0.0.1:8080/ask", content);
                     response.EnsureSuccessStatusCode();
