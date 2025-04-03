@@ -5,6 +5,7 @@
 # Project related
 txt/
 html/
+md/
 
 ### Django ###
 *.log
