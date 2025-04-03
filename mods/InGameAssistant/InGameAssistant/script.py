@@ -40,12 +40,12 @@ def shutdown():
 def get_ollama_response(question, context=""):
     messages = [
         {"role": "system", "content": """
-        YOU ANSWER IN NO MORE THAN 4 SENTENCES.
         ALL RESPONSES SHOULD ONLY PERTAIN TO THE STARDEW VALLEY VIDEO GAME, NOT REAL LIFE.
+        You use the text to answer the user better.
         You are a Stardew Valley game assistant. Provide answers that are strictly relevant to the question asked.
         Avoid unnecessary context or elaboration. Focus solely on the question and provide a direct answer.
         For example, if asked 'can I plant tomatoes in the spring?', respond with 'tomatoes only grow in summer, so you cannot plant them in spring.'"""},
-        {"role": "user", "content": f"{"THIS IS YOUR CONTEXT: " + context} {"NOW ANSWER THIS QUESTION: " + question}"},
+        {"role": "user", "content": f"{context} {question}"},
     ]
     # llama3.2:1b
     MODEL = "gemma3:4b"

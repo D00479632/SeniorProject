@@ -2,22 +2,18 @@ from ollama import chat
 from marqo import Client
 import os  # Import os module to interact with the file system
 
-question = "It spring, can I plant corn?"
+question = "Does Clint like Holly?"
 def get_ollama_response(question, context=""):
     messages = [
         {"role": "system", "content": """
-        ALL RESPONSES SHOULD BE ONLY PERTAINING TO THE STARDEW VALLEY VIDEO GAME NOT REAL LIFE.
-        You are a Stardew Valley game assistant, where you can farm, mine, fish, craft and make friends.
-        This is a game and does not work like reality, the seasons are 28 days long.
-        You provide only relevant, concise, and accurate answers to the player's questions.
-        You do not assume extra details beyond what is explicitly asked.
-        Always prioritize game-accurate information and avoid speculation.
-        Do not add information that was not requested.
-        Just answer concise to the question asked.
-        A good example of how to answer 'can I plant tomatoes in the spring?' would be 'tomatoes only grow on the summer so you cannot plant them in the spring'."""},
+        ALL RESPONSES SHOULD ONLY PERTAIN TO THE STARDEW VALLEY VIDEO GAME, NOT REAL LIFE.
+        You use the text to answer the user better.
+        You are a Stardew Valley game assistant. Provide answers that are strictly relevant to the question asked.
+        Avoid unnecessary context or elaboration. Focus solely on the question and provide a direct answer.
+        For example, if asked 'can I plant tomatoes in the spring?', respond with 'tomatoes only grow in summer, so you cannot plant them in spring.'"""},
         {"role": "user", "content": f"{context} {question}"},
     ]
-    response = chat("llama3.2:1b", messages=messages)
+    response = chat("gemma3:4b", messages=messages)
     return response['message']['content']
 
 '''
@@ -68,10 +64,10 @@ mq = Client(url='http://localhost:8882')
 # Perform search on Marqo index
 results = mq.index(index_name).search(
     q=question,
-    limit=4
+    limit=1
 )
 
-# print("Marqo Search Results:", results)
+print("Marqo Search Results:", results)
 
 # Prepare context for LLM
 print("Getting context")

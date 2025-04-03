@@ -82,8 +82,6 @@ namespace InGameAssistant
                     "Mods/InGameAssistant/Views/TextInput",
                     viewModel);
             }
-
-            this.Monitor.Log($"{Game1.player.Name} pressed {e.Button}.", LogLevel.Debug);
         }
 
         private async void StartPythonServer()
