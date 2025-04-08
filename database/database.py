@@ -3,12 +3,11 @@ import os
 import json
 import time
 
-# Define paths and settings
-filestore_path = 'txt/'
-index_name = 'stardew-valley-data'
+filestore_path = 'scraper/md/'
+index_name = 'stardew-valley-db'
 tracking_file = 'indexed_files.json'
 batch_size = 15  # Number of files to process in each run
-cooldown_seconds = 10  # Time to wait between batches
+cooldown_seconds = 5  # Time to wait between batches
 
 # Set up Marqo Client
 mq = Client(url='http://localhost:8882')
@@ -48,7 +47,7 @@ def get_next_batch(tracking_data):
     # Get list of all files that haven't been indexed yet
     pending_files = []
     for filename in os.listdir(filestore_path):
-        if filename.endswith('.txt') and filename not in indexed_files:
+        if filename.endswith('.md') and filename not in indexed_files:
             pending_files.append(filename)
     
     # Return a batch of files (up to batch_size)
@@ -124,7 +123,7 @@ def process_all_files():
     create_index_if_needed(tracking_data)
     
     # Get total number of files for progress tracking
-    total_files = len([f for f in os.listdir(filestore_path) if f.endswith('.txt')])
+    total_files = len([f for f in os.listdir(filestore_path) if f.endswith('.md')])
     indexed_count = len(tracking_data["indexed_files"])
     
     print(f"Starting indexing process: {indexed_count}/{total_files} files already indexed")
@@ -185,5 +184,5 @@ def process_all_files():
 
 # Main execution
 if __name__ == "__main__":
-    # process_all_files()
+    process_all_files()
     run_test_search()

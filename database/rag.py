@@ -1,17 +1,12 @@
 from ollama import chat
 from marqo import Client
-import os  # Import os module to interact with the file system
 
-question = "What gifts does Clint love?"
-question = "Can you plant strawberries in the spring?"
-question = "What is the price of corn seeds?"
-question = "Give me a list of people that like Diamond."
 def get_ollama_response(question, context=""):
-    print("This is the context: ", context)
+    index_name = "stardew-valley-db"
     question2 = "What gifts does Clint love?"
-    context2 = get_marqo_context(question2)
+    context2 = get_marqo_context(question2, index_name)
     question3 = "Give me a list of people that like Amethyst."
-    context3 = get_marqo_context(question3)
+    context3 = get_marqo_context(question3, index_name)
     messages = [
         {"role": "system", "content": """
         ALL RESPONSES SHOULD ONLY PERTAIN TO THE STARDEW VALLEY VIDEO GAME, NOT REAL LIFE.
@@ -21,18 +16,17 @@ def get_ollama_response(question, context=""):
         {"role": "user", "content": f"Given this information: {context2} please answer the following question: {question2}"}, 
         {"role": "assistant", "content": "Clint loves: Amethyst, Aquamarine, Artichoke Dip, Emerald, Fiddlehead Risotto, Gold Bar, Iridium Bar, Jade, Omni Geode, Ruby, Topaz"}, 
         {"role": "user", "content": f"Given this information: {context3} please answer the following question: {question3}"}, 
-        {"role": "assistant", "content": "Like  Alex •  Caroline •  Demetrius •  Elliott •  Evelyn •  George •  Gus •  Haley •  Harvey •  Jas •  Jodi •  Kent •  Krobus •  Leo •  Lewis •  Marnie •  Maru •  Pam •  Penny •  Robin •  Sam •  Sandy •  Sebastian •  Shane •  Vincent •  Willy •  Wizard"}, 
+        {"role": "assistant", "content": "Like:  Alex •  Caroline •  Demetrius •  Elliott •  Evelyn •  George •  Gus •  Haley •  Harvey •  Jas •  Jodi •  Kent •  Krobus •  Leo •  Lewis •  Marnie •  Maru •  Pam •  Penny •  Robin •  Sam •  Sandy •  Sebastian •  Shane •  Vincent •  Willy •  Wizard"}, 
         {"role": "user", "content": f"Given this information: {context} please answer the following question: {question}"},
     ]
     response = chat("gemma3:4b", messages=messages)
     return response['message']['content']
 
-def get_marqo_context(question):
-    index_name = 'stardew-valley-data' 
+def get_marqo_context(question, index_name):
     # Set up Marqo Client
     mq = Client(url='http://localhost:8882')
     
-    print("Searching marqo")
+    print(f"Searching marqo index: {index_name}")
     # Perform search on Marqo index
     results = mq.index(index_name).search(
         q=question,
@@ -48,50 +42,38 @@ def get_marqo_context(question):
         context += f"Source {i + 1}) {title} || {text} \n"
     return context
 
-'''
-first_response = get_ollama_response(question)
+def compare_databases(question):
+    # Test with first database
+    print("\n=== Testing 'stardew-valley-data' database ===")
+    context1 = get_marqo_context(question, 'stardew-valley-data')
+    response1 = get_ollama_response(question, context1)
+    print("Response from 'stardew-valley-data':", response1)
+    
+    # Test with second database
+    print("\n=== Testing 'stardew-valley-db' database ===")
+    context2 = get_marqo_context(question, 'stardew-valley-db')
+    response2 = get_ollama_response(question, context2)
+    print("Response from 'stardew-valley-db':", response2)
+    
+    return {
+        'stardew-valley-data': {'context': context1, 'response': response1},
+        'stardew-valley-db': {'context': context2, 'response': response2}
+    }
 
-print("Just LLM Response:", first_response)
-'''
+# Test questions to compare databases
+test_questions = [
+    "Give me a list of people that like Diamond.",
+    "What gifts does Clint love?",
+    "What is Clint's regular schedule?",
+    "What are the best crops to grow in Spring?",
+    "How do I get a Prismatic Shard?"
+]
 
+# Run comparison tests
+print("=== DATABASE COMPARISON TESTS ===")
+results = {}
+for question in test_questions:
+    print(f"\n\n=== Testing question: '{question}' ===")
+    results[question] = compare_databases(question)
 
-# Define the path to the directory containing your text files
-filestore_path = 'Scraper/txt/crops'
-index_name = 'stardew-valley-data'
-
-'''
-# Initialize the DOCUMENTS list
-DOCUMENTS = []
-
-print("Getting documents ready")
-# Loop through each file in the filestore directory
-for filename in os.listdir(filestore_path):
-    if filename.endswith('.txt'):  # Check if the file is a text file
-        with open(os.path.join(filestore_path, filename), 'r') as file:
-            filecontent = file.read()  # Read the content of the file
-            DOCUMENTS.append({
-                'Title': filename, 
-                'Description': filecontent
-            })
-
-
-
-
-# Create index (delete if it exists)
-try:
-    mq.index(index_name).delete()
-except:
-    pass
-
-mq.create_index(index_name)
-
-# Index documents
-# Tensor fields are for similarity search
-mq.index(index_name).add_documents(DOCUMENTS, tensor_fields=["Title", "Description"])
-'''
-
-
-# Final LLM call with context
-context = get_marqo_context(question)
-final_response = get_ollama_response(question, context)
-print("LLM & Marqo Response:", final_response)
+print("\n=== COMPARISON COMPLETE ===")
