@@ -6,5 +6,12 @@
   "UniqueID": "Paula.InGameAssistant",
   "EntryDll": "InGameAssistant.dll",
   "MinimumApiVersion": "4.1.0",
+  "Dependencies": [
+        {
+            "UniqueID": "focustense.StardewUI",
+            "MinimumVersion": "0.6.1",
+            "IsRequired": true
+        }
+    ],
   "UpdateKeys": []
 }
