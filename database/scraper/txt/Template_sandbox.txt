@@ -1,9 +1,0 @@
-Jump to navigation
-Jump to search
-Template sandbox
-You can choose a set of templates saved in your sandbox space by using an appropriate sandbox prefix. For example, if you want to preview a version of Template:Test that you have saved as "User:Foo/sandbox/Template:Test", use "User:Foo/sandbox" as the prefix.
-Sandbox prefix:
-Render page:
-Render revision:
-Render wikitext:
-View
